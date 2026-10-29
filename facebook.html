@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/js/langue.js"></script>
+<title>Famille Miailhe – Vins de Bordeaux | Facebook</title>
+<!-- La Page Facebook proposée à la famille, @famillemiailhe (29/10/2026, demande de l'utilisateur : « duplique pour
+     Facebook aussi, avec le même feed qu'Insta »). La Page est à créer : une seule version, pas d'Avant / Après.
+     Reproduit une Page Facebook vue sur ordinateur, relevée le 29/10/2026 dans Chrome à 1440 × 900 sur la vraie Page
+     de Château Soudars (couverture de 940 × 348 aux coins bas arrondis, photo de profil de 168 px cerclée de blanc, nom
+     en 32 px, onglets de 60 px, colonne « Intro » de 360 px, fil de 500 px, cartes blanches sur #f0f2f5). Comme sur
+     instagram.html, on la montre telle qu'un visiteur connecté la voit, sans rien de propre à ce visiteur : barre du
+     haut sans pastilles ni photo, boutons Suivre et Message ; aucun champ de connexion. Sur téléphone, la version
+     mobile (couverture pleine largeur, photo de 96 px, une seule colonne, photos recadrées en 4:5).
+     Le fil reprend les 69 publications de la grille Instagram (assets/img/instagram/apres-post-NN.jpg), dans le même
+     ordre : le triptyque épinglé en tête, publié en une seule fois (trois photos côte à côte), puis de la plus récente
+     à la plus ancienne. Chaque publication a une légende courte tirée de son texte alternatif, sa date et des
+     compteurs de maquette. Les dates suivent le calendrier de publication (Feed/source/exporter_feed.py) : la Page est
+     montrée au lendemain de la dernière publication (29 octobre 2027), un an après la relance. Couverture : le
+     panorama des trois châteaux du triptyque (Feed/source/triptyque/fond.jpg). Rien n'est envoyé. -->
+<style>
+  :root {
+    --fond: #f0f2f5; --carte: #fff; --texte: #050505; --gris: #65676b; --bleu: #0866ff; --lien: #0064d1;
+    --bouton: #e4e6eb; --bouton-survol: #d8dadf; --trait: #ced0d4; --ombre: 0 1px 2px rgba(0, 0, 0, .2);
+    --barre-ombre: 0 1px 2px rgba(0, 0, 0, .1), 0 2px 4px rgba(0, 0, 0, .04); --cherche: #f0f2f5; --survol: rgba(0, 0, 0, .05);
+    --media: #fff;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #18191a; --carte: #242526; --texte: #e4e6eb; --gris: #b0b3b8; --lien: #4599ff; --bouton: #3a3b3c;
+      --bouton-survol: #4e4f50; --trait: #3e4042; --ombre: 0 1px 2px rgba(0, 0, 0, .4); --barre-ombre: 0 1px 2px rgba(0, 0, 0, .4);
+      --cherche: #3a3b3c; --survol: rgba(255, 255, 255, .1); --media: #242526;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { padding-top: 56px; background: var(--fond); color: var(--texte); font-family: system-ui, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; line-height: 20px; -webkit-font-smoothing: antialiased; }
+  /* en japonais, pas de coupure au milieu d'un mot (オー・メドック) */
+  html:lang(ja) body { line-break: strict; word-break: auto-phrase; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; border: 0; background: none; padding: 0; cursor: pointer; }
+  svg { display: block; flex: none; }
+  p, h1, h2, h3 { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  .carte { border-radius: 8px; background: var(--carte); box-shadow: var(--ombre); }
+
+  /* ---------- La barre du haut ---------- */
+  .fb-barre { position: fixed; z-index: 10; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; height: 56px; padding: 0 16px; background: var(--carte); box-shadow: var(--barre-ombre); }
+  .fb-gauche { display: flex; align-items: center; gap: 8px; width: 320px; }
+  .fb-logo svg { width: 40px; height: 40px; }
+  .fb-mot { display: none; color: var(--bleu); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.045em; line-height: 1; }
+  .fb-cherche { display: flex; align-items: center; gap: 8px; width: 240px; height: 40px; padding: 0 12px; border-radius: 50px; background: var(--cherche); color: var(--gris); }
+  .fb-cherche svg { width: 16px; height: 16px; }
+  .fb-centre { display: flex; justify-content: center; gap: 8px; flex: 1; max-width: 680px; height: 56px; }
+  .fb-centre a { display: grid; place-items: center; flex: 1; max-width: 112px; height: 48px; margin-top: 4px; border-radius: 8px; color: var(--gris); }
+  .fb-centre a:hover { background: var(--survol); }
+  .fb-centre svg { width: 24px; height: 24px; }
+  .fb-droite { display: flex; justify-content: flex-end; gap: 8px; width: 320px; }
+  .fb-rond { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--bouton); color: var(--texte); }
+  .fb-rond svg { width: 20px; height: 20px; }
+  .fb-seul-mobile-rond { display: none; }
+  .fb-moi { background: var(--bouton); color: var(--gris); overflow: hidden; }
+  .fb-moi svg { width: 40px; height: 40px; margin-top: 8px; }
+
+  /* ---------- L'en-tête de la Page ---------- */
+  .fb-entete { background: var(--carte); box-shadow: var(--barre-ombre); }
+  .fb-entete-centre { max-width: 940px; margin: 0 auto; }
+  .fb-couverture { position: relative; height: 348px; overflow: hidden; border-radius: 0 0 8px 8px; background: #6f8fb5; }
+  .fb-couverture img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 84%; display: block; }
+  .fb-identite { display: flex; align-items: flex-end; gap: 14px; padding: 0 32px 16px; }
+  .fb-avatar { position: relative; z-index: 1; align-self: flex-start; flex: none; width: 176px; height: 176px; margin: -61px 0 0 -4px; padding: 4px; border-radius: 50%; background: var(--carte); }
+  .fb-avatar img { width: 100%; height: 100%; border-radius: 50%; display: block; box-shadow: 0 0 0 1px rgba(0, 0, 0, .1) inset; }
+  .fb-nom-bloc { flex: 1; min-width: 0; align-self: flex-start; padding-top: 24px; }
+  .fb-nom { display: inline; font-size: 32px; font-weight: 700; line-height: 38px; }
+  .fb-certifie { display: inline-block; width: 20px; height: 20px; margin-left: 8px; vertical-align: -1px; }
+  .fb-certifie svg { width: 100%; height: 100%; }
+  .fb-abonnes { margin-top: 6px; color: var(--gris); font-size: 15px; }
+  .fb-abonnes a { font-weight: 600; }
+  .fb-actions { display: flex; flex: none; gap: 8px; margin-bottom: 0; }
+  .fb-actions button { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; border-radius: 6px; background: var(--bouton); font-size: 15px; font-weight: 600; }
+  .fb-actions button:hover { background: var(--bouton-survol); }
+  .fb-actions svg { width: 16px; height: 16px; }
+  .fb-actions .fb-message { background: var(--bleu); color: #fff; }
+  .fb-actions .fb-message:hover { background: #0b5fe0; }
+  .fb-onglets-rangee { display: flex; align-items: center; justify-content: space-between; height: 60px; margin: 0 32px; border-top: 1px solid var(--trait); }
+  .fb-onglets { display: flex; height: 100%; overflow-x: auto; scrollbar-width: none; }
+  .fb-onglets::-webkit-scrollbar { display: none; }
+  .fb-onglet { position: relative; display: flex; align-items: center; gap: 4px; height: 100%; padding: 0 16px; color: var(--gris); font-size: 15px; font-weight: 600; white-space: nowrap; }
+  .fb-onglet:hover::before { content: ""; position: absolute; inset: 4px 0; border-radius: 6px; background: var(--survol); }
+  .fb-onglet[aria-current="page"] { color: var(--bleu); }
+  .fb-onglet[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--bleu); }
+  .fb-onglet[aria-current="page"]:hover::before { content: none; }
+  .fb-onglet svg { width: 16px; height: 16px; }
+  .fb-points { display: grid; place-items: center; flex: none; width: 48px; height: 36px; border-radius: 6px; background: var(--bouton); }
+  .fb-points svg { width: 16px; height: 16px; }
+
+  /* ---------- Le corps : Intro et photos à gauche, le fil à droite ---------- */
+  .fb-corps { display: grid; grid-template-columns: 360px 500px; justify-content: center; gap: 16px; max-width: 876px; margin: 16px auto 0; padding-bottom: 48px; }
+  .fb-colonne { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  /* la colonne de gauche reste en vue quand on fait défiler le fil (facebook.js règle son « top ») */
+  .fb-colonne--gauche { position: sticky; top: 72px; align-self: start; }
+  .fb-titre { font-size: 20px; font-weight: 700; line-height: 24px; }
+  .fb-intro { padding: 15px 16px 16px; }
+  .fb-bio { margin-top: 12px; text-align: center; overflow-wrap: anywhere; }
+  .fb-intro hr { margin: 16px 0; border: 0; border-top: 1px solid var(--trait); }
+  .fb-infos { display: flex; flex-direction: column; gap: 16px; }
+  .fb-info { display: flex; align-items: flex-start; gap: 12px; overflow-wrap: anywhere; }
+  .fb-info svg { width: 20px; height: 20px; color: #8c939d; }
+  .fb-info a { color: var(--lien); font-weight: 600; }
+  .fb-photos { padding: 16px; }
+  .fb-photos-tete { display: flex; align-items: center; justify-content: space-between; }
+  .fb-photos-tete a { padding: 6px 8px; margin: -6px -8px; border-radius: 6px; color: var(--lien); font-size: 15px; font-weight: 400; }
+  .fb-photos-tete a:hover { background: var(--survol); }
+  .fb-photos-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 16px; overflow: hidden; border-radius: 8px; }
+  .fb-photos-grille img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+  .fb-pied { padding: 0 8px; color: var(--gris); font-size: 13px; line-height: 16px; }
+  .fb-pied span + span::before { content: " · "; }
+
+  .fb-fil-tete { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; }
+  .fb-filtres { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; border-radius: 6px; background: var(--bouton); font-weight: 600; }
+  .fb-filtres svg { width: 16px; height: 16px; }
+
+  /* une publication */
+  .fb-pub { padding-bottom: 4px; }
+  .fb-epingle { display: flex; align-items: center; gap: 6px; padding: 12px 16px 0; color: var(--gris); font-size: 13px; font-weight: 600; line-height: 16px; }
+  .fb-epingle svg { width: 14px; height: 14px; }
+  .fb-pub-tete { display: flex; align-items: center; gap: 8px; padding: 12px 16px 0; }
+  .fb-pub-avatar { width: 40px; height: 40px; border-radius: 50%; display: block; }
+  .fb-pub-qui { flex: 1; min-width: 0; }
+  .fb-pub-nom { display: flex; align-items: center; gap: 4px; font-weight: 600; line-height: 20px; }
+  .fb-pub-nom span, .fb-pub-nom svg { display: block; width: 14px; height: 14px; }
+  .fb-pub-date { display: flex; align-items: center; margin-top: 2px; color: var(--gris); font-size: 13px; line-height: 16px; }
+  .fb-pub-date a:hover { text-decoration: underline; }
+  .fb-pub-date svg { width: 12px; height: 12px; }
+  .fb-pub-options { display: grid; place-items: center; width: 36px; height: 36px; margin-right: -8px; border-radius: 50%; color: var(--gris); }
+  .fb-pub-options:hover { background: var(--survol); }
+  .fb-pub-options svg { width: 20px; height: 20px; }
+  .fb-pub-texte { padding: 12px 16px 0; overflow-wrap: anywhere; }
+  .fb-pub-texte a { color: var(--lien); font-weight: 600; }
+  .fb-pub-texte a:hover { text-decoration: underline; }
+  /* une photo en hauteur garde son format, 575 px au plus, centrée dans la largeur du fil */
+  .fb-pub-media { position: relative; display: flex; justify-content: center; margin-top: 12px; background: var(--media); }
+  .fb-pub-media img { display: block; width: auto; max-width: 100%; height: min(575px, calc(100vw * 4 / 3)); aspect-ratio: 3 / 4; object-fit: cover; }
+  .fb-pub-media--triptyque { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .fb-pub-media--triptyque img { width: 100%; height: auto; }
+  .fb-lecture { position: absolute; top: 50%; left: 50%; display: grid; place-items: center; width: 64px; height: 64px; margin: -32px 0 0 -32px; border: 3px solid #fff; border-radius: 50%; background: rgba(0, 0, 0, .45); color: #fff; pointer-events: none; }
+  .fb-lecture svg { width: 26px; height: 26px; margin-left: 4px; }
+  .fb-reel { position: absolute; left: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 6px; background: rgba(0, 0, 0, .55); color: #fff; font-size: 13px; font-weight: 600; line-height: 16px; }
+  .fb-reel svg { width: 14px; height: 14px; }
+  .fb-pub-compteurs { display: flex; align-items: center; gap: 12px; margin: 0 16px; padding: 10px 0; color: var(--gris); }
+  .fb-reactions { display: flex; align-items: center; flex: 1; gap: 6px; }
+  .fb-reactions span { display: flex; }
+  .fb-reactions svg { width: 18px; height: 18px; border-radius: 50%; box-shadow: 0 0 0 2px var(--carte); }
+  .fb-reactions svg + svg { margin-left: -4px; }
+  .fb-pub-actions { display: flex; margin: 0 12px; padding: 4px 0; border-top: 1px solid var(--trait); }
+  .fb-pub-actions button { display: flex; align-items: center; justify-content: center; gap: 8px; flex: 1; height: 36px; border-radius: 6px; color: var(--gris); font-size: 15px; font-weight: 600; }
+  .fb-pub-actions button:hover { background: var(--survol); }
+  .fb-pub-actions svg { width: 20px; height: 20px; }
+
+  /* ---------- Écran moyen : une seule colonne ---------- */
+  @media (max-width: 1099px) { .fb-centre { display: none; } .fb-gauche, .fb-droite { width: auto; } }
+  @media (max-width: 939px) and (min-width: 768px) {
+    .fb-corps { grid-template-columns: minmax(0, 680px); padding: 0 16px 48px; }
+    .fb-colonne--gauche { position: static; }
+    .fb-entete-centre { padding: 0 16px; }
+  }
+
+  /* ---------- Téléphone : la version mobile de Facebook ---------- */
+  @media (max-width: 767px) {
+    body { padding-top: 52px; font-size: 15px; }
+    .fb-barre { height: 52px; padding: 0 12px; box-shadow: none; border-bottom: 1px solid var(--trait); }
+    .fb-logo, .fb-cherche, .fb-centre, .fb-seul-ordinateur { display: none; }
+    .fb-mot { display: block; }
+    .fb-seul-mobile-rond { display: grid; }
+    .fb-gauche, .fb-droite { width: auto; }
+    .fb-rond { width: 36px; height: 36px; }
+    .fb-entete { box-shadow: none; }
+    .fb-couverture { height: auto; aspect-ratio: 2.7; border-radius: 0; }
+    .fb-identite { display: block; padding: 0 12px 12px; }
+    .fb-avatar { width: 104px; height: 104px; margin: -52px 0 0; }
+    .fb-nom-bloc { padding-top: 8px; }
+    .fb-nom { font-size: 24px; line-height: 29px; }
+    .fb-certifie { width: 18px; height: 18px; }
+    .fb-abonnes { margin-top: 4px; }
+    .fb-actions { margin-top: 12px; }
+    .fb-actions button { flex: 1; justify-content: center; }
+    .fb-actions .fb-points-mobile { display: grid; flex: none; width: 44px; padding: 0; place-items: center; }
+    .fb-onglets-rangee { height: 48px; margin: 0 12px; }
+    .fb-onglet { padding: 0 12px; }
+    .fb-points { display: none; }
+    .fb-corps { display: block; margin: 0; padding: 0 0 24px; }
+    .fb-colonne { gap: 0; }
+    .fb-colonne--gauche { position: static; }
+    .carte { border-radius: 0; box-shadow: none; margin-top: 8px; }
+    .fb-intro, .fb-photos { padding: 12px; }
+    .fb-photos-grille { border-radius: 0; }
+    .fb-pied { padding: 16px 12px; }
+    .fb-fil-tete { padding: 12px; }
+    .fb-pub-tete, .fb-epingle { padding-left: 12px; padding-right: 12px; }
+    .fb-pub-texte { padding: 8px 12px 0; }
+    .fb-pub-media { margin-top: 10px; }
+    /* Facebook mobile recadre les photos en hauteur en 4:5 ; on garde ici le 3:4 entier, sans quoi la mention
+       sanitaire, tout en bas de chaque publication, serait coupée (prévoir des exports 4:5 pour Facebook) */
+    .fb-pub-media img { width: 100%; height: auto; }
+    .fb-pub-compteurs { margin: 0 12px; }
+    .fb-pub-actions { margin: 0 4px; }
+  }
+  .fb-actions .fb-points-mobile { display: none; }
+  @media (max-width: 767px) { .fb-actions .fb-points-mobile { display: grid; } }
+</style>
+</head>
+<body>
+
+<!-- La barre du haut de Facebook (sans rien qui dépende de celui qui regarde) -->
+<header class="fb-barre">
+  <div class="fb-gauche">
+    <a class="fb-logo" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M36 18C36 8.06 27.94 0 18 0S0 8.06 0 18c0 8.44 5.81 15.52 13.65 17.46v-11.97H9.94V18h3.71v-2.37c0-6.13 2.77-8.97 8.79-8.97 1.14 0 3.11.22 3.92.45v4.99c-.43-.05-1.17-.07-2.09-.07-2.96 0-4.1 1.12-4.1 4.03V18h5.9l-1.01 5.49h-4.88v12.34C29.13 34.76 36 27.18 36 18Z" fill="#0866ff"/><path d="m25.05 23.49 1.01-5.49h-5.9v-1.94c0-2.91 1.14-4.03 4.1-4.03.92 0 1.66.02 2.09.07V7.11c-.81-.23-2.78-.45-3.92-.45-6.02 0-8.79 2.84-8.79 8.97V18H9.94v5.49h3.71v11.97c1.39.35 2.85.54 4.35.54.74 0 1.46-.05 2.17-.13V23.49h4.88Z" fill="#fff"/></svg></a>
+    <a class="fb-mot" href="https://www.facebook.com/" target="_blank" rel="noopener" translate="no">facebook</a>
+    <span class="fb-cherche"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 2a8.5 8.5 0 1 0 5.2 15.2l4.6 4.6a1 1 0 0 0 1.4-1.4l-4.6-4.6A8.5 8.5 0 0 0 10.5 2Zm-6.5 8.5a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z" fill="currentColor"/></svg><span>Rechercher sur Facebook</span></span>
+  </div>
+  <nav class="fb-centre" aria-label="Navigation de Facebook">
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Accueil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6 2.4 10.4a1 1 0 0 0 1.3 1.5l.8-.7V19a3 3 0 0 0 3 3h3a1 1 0 0 0 1-1v-4.5h1V21a1 1 0 0 0 1 1h3a3 3 0 0 0 3-3v-7.8l.8.7a1 1 0 1 0 1.3-1.5L12 2.6Zm5.5 7v9.4a1 1 0 0 1-1 1H15v-4.5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1V20H7.5a1 1 0 0 1-1-1V9.6L12 5.2l5.5 4.4Z" fill="currentColor"/></svg></a>
+    <a href="https://www.facebook.com/watch" target="_blank" rel="noopener" aria-label="Vidéo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V7a4 4 0 0 0-4-4H5Zm0 2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm4.5 3.4v7.2a.9.9 0 0 0 1.4.75l5.4-3.6a.9.9 0 0 0 0-1.5l-5.4-3.6a.9.9 0 0 0-1.4.75Z" fill="currentColor"/></svg></a>
+    <a href="https://www.facebook.com/marketplace" target="_blank" rel="noopener" aria-label="Marketplace"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.3 2.5a1 1 0 0 0-.94.66L1.6 8.1A3.6 3.6 0 0 0 3 11.3V19a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-7.7a3.6 3.6 0 0 0 1.4-3.2l-1.76-4.94a1 1 0 0 0-.94-.66H4.3Zm-.8 6 1.5-4h14l1.5 4a1.6 1.6 0 0 1-3.2 0 1 1 0 0 0-2 0 1.6 1.6 0 0 1-3.2 0 1 1 0 0 0-2 0 1.6 1.6 0 0 1-3.2 0 1 1 0 0 0-2 0 1.6 1.6 0 0 1-3.2 0ZM5 12.1a3.6 3.6 0 0 0 2.6-.9 3.6 3.6 0 0 0 4.4.4 3.6 3.6 0 0 0 4.4-.4 3.6 3.6 0 0 0 2.6.9V19a1 1 0 0 1-1 1h-3v-4a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v4H6a1 1 0 0 1-1-1v-6.9ZM11 20v-3h2v3h-2Z" fill="currentColor"/></svg></a>
+    <a href="https://www.facebook.com/groups" target="_blank" rel="noopener" aria-label="Groupes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 4a2 2 0 1 1 4 0 2 2 0 0 1-4 0ZM5.5 7.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-1 3a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm14-3a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-1 3a1 1 0 1 1 2 0 1 1 0 0 1-2 0ZM12 13.5c-3.3 0-6 2.2-6 5V20a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1.5c0-2.8-2.7-5-6-5ZM8 18.5c0-1.6 1.7-3 4-3s4 1.4 4 3v.5H8v-.5Zm-2.8-3.6A5.6 5.6 0 0 0 1 20a1 1 0 0 0 2 0c0-1.7 1.1-3 2.6-3.3l-.4-1.8Zm13.6 0-.4 1.8c1.5.3 2.6 1.6 2.6 3.3a1 1 0 0 0 2 0 5.6 5.6 0 0 0-4.2-5.1Z" fill="currentColor"/></svg></a>
+    <a href="https://www.facebook.com/gaming" target="_blank" rel="noopener" aria-label="Jeux vidéo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5A5.5 5.5 0 0 0 2 10.5v3.8a3.7 3.7 0 0 0 6.5 2.4l.9-1.2h5.2l.9 1.2a3.7 3.7 0 0 0 6.5-2.4v-3.8A5.5 5.5 0 0 0 16.5 5h-9Zm-3.5 5.5A3.5 3.5 0 0 1 7.5 7h9a3.5 3.5 0 0 1 3.5 3.5v3.8a1.7 1.7 0 0 1-3 1.1l-1.2-1.6a1 1 0 0 0-.8-.4H9a1 1 0 0 0-.8.4L7 15.4a1.7 1.7 0 0 1-3-1.1v-3.8ZM7.5 9a1 1 0 0 0-1 1v.5H6a1 1 0 1 0 0 2h.5v.5a1 1 0 1 0 2 0v-.5H9a1 1 0 1 0 0-2h-.5V10a1 1 0 0 0-1-1Zm8 1.2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm2-1.7a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" fill="currentColor"/></svg></a>
+  </nav>
+  <div class="fb-droite">
+    <span class="fb-rond fb-seul-ordinateur" role="img" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><circle cx="5" cy="5" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></g></svg></span>
+    <span class="fb-rond fb-seul-mobile-rond" role="img" aria-label="Rechercher"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 2a8.5 8.5 0 1 0 5.2 15.2l4.6 4.6a1 1 0 0 0 1.4-1.4l-4.6-4.6A8.5 8.5 0 0 0 10.5 2Zm-6.5 8.5a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z" fill="currentColor"/></svg></span>
+    <span class="fb-rond" role="img" aria-label="Messenger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C6.1 1.5 1.5 5.8 1.5 11.6c0 3 1.2 5.6 3.3 7.4v3.4a.6.6 0 0 0 .85.55l3-1.35c1.05.3 2.15.45 3.35.45 5.9 0 10.5-4.3 10.5-10.1S17.9 1.5 12 1.5Zm6.2 7.6-3.2 5a1.6 1.6 0 0 1-2.3.45l-2.5-1.9a.6.6 0 0 0-.75 0l-3.4 2.6c-.45.35-1.05-.2-.75-.7l3.2-5a1.6 1.6 0 0 1 2.3-.45l2.5 1.9a.6.6 0 0 0 .75 0l3.4-2.6c.45-.35 1.05.2.75.7Z" fill="currentColor"/></svg></span>
+    <span class="fb-rond fb-seul-ordinateur" role="img" aria-label="Notifications"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v3.6l-1.7 3A1.6 1.6 0 0 0 4.7 18h14.6a1.6 1.6 0 0 0 1.4-2.4l-1.7-3V9a7 7 0 0 0-7-7Zm-3 17.5a3 3 0 0 0 6 0H9Z" fill="currentColor"/></svg></span>
+    <span class="fb-rond fb-moi fb-seul-ordinateur" role="img" aria-label="Votre profil"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4.5" fill="currentColor"/><path d="M3 22c0-5 4-8.5 9-8.5s9 3.5 9 8.5Z" fill="currentColor"/></svg></span>
+  </div>
+</header>
+
+<!-- L'en-tête de la Page -->
+<div class="fb-entete">
+  <div class="fb-entete-centre">
+    <div class="fb-couverture"><img src="assets/img/facebook/couverture.jpg" alt="Photo de couverture : Coufran, Verdignan et Soudars dans le même paysage du Haut-Médoc, sous un ciel bleu"></div>
+    <div class="fb-identite">
+      <div class="fb-avatar"><img src="assets/img/facebook/profil.jpg" alt="Photo de profil de Famille Miailhe – Vins de Bordeaux : le logo MIAILHE"></div>
+      <div class="fb-nom-bloc">
+        <div class="fb-nom-ligne">
+          <h1 class="fb-nom" data-nom translate="no">Famille Miailhe – Vins&nbsp;de&nbsp;Bordeaux</h1>
+          <span class="fb-certifie" role="img" aria-label="Compte vérifié"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z" fill="#0866ff" fill-rule="evenodd"/></svg></span>
+        </div>
+        <div class="fb-abonnes"><a href="#" data-inerte>862 followers</a> • <a href="#" data-inerte>41 suivi(e)s</a></div>
+      </div>
+      <div class="fb-actions">
+        <button type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2.5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-3 5a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2 20.5c0-3.6 3.2-6.5 8-6.5 1 0 2 .1 2.8.4l-.6 1.9A7.6 7.6 0 0 0 10 16c-3.7 0-6 2-6 4.5a1 1 0 1 1-2 0Zm17-6.5a1 1 0 0 1 1 1v2h2a1 1 0 1 1 0 2h-2v2a1 1 0 1 1-2 0v-2h-2a1 1 0 1 1 0-2h2v-2a1 1 0 0 1 1-1Z" fill="currentColor"/></svg><span>Suivre</span></button>
+        <button class="fb-message" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C6.1 1.5 1.5 5.8 1.5 11.6c0 3 1.2 5.6 3.3 7.4v3.4a.6.6 0 0 0 .85.55l3-1.35c1.05.3 2.15.45 3.35.45 5.9 0 10.5-4.3 10.5-10.1S17.9 1.5 12 1.5Zm6.2 7.6-3.2 5a1.6 1.6 0 0 1-2.3.45l-2.5-1.9a.6.6 0 0 0-.75 0l-3.4 2.6c-.45.35-1.05-.2-.75-.7l3.2-5a1.6 1.6 0 0 1 2.3-.45l2.5 1.9a.6.6 0 0 0 .75 0l3.4-2.6c.45-.35 1.05.2.75.7Z" fill="currentColor"/></svg><span>Message</span></button>
+        <button class="fb-points-mobile" type="button" aria-label="Plus d'actions"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></g></svg></button>
+      </div>
+    </div>
+    <div class="fb-onglets-rangee">
+      <nav class="fb-onglets" aria-label="Onglets de la Page">
+        <a class="fb-onglet" href="#" aria-current="page" data-inerte>Publications</a>
+        <a class="fb-onglet" href="#" data-inerte>À propos</a>
+        <a class="fb-onglet" href="#" data-inerte>Photos</a>
+        <a class="fb-onglet" href="#" data-inerte>Vidéos</a>
+        <a class="fb-onglet" href="#" data-inerte><span>Plus</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.3 5.8a.9.9 0 0 1 1.3 0L8 9.2l3.4-3.4a.9.9 0 1 1 1.3 1.3l-4 4a.9.9 0 0 1-1.3 0l-4-4a.9.9 0 0 1 0-1.3Z" fill="currentColor"/></svg></a>
+      </nav>
+      <button class="fb-points" type="button" aria-label="Voir plus d'options"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></g></svg></button>
+    </div>
+  </div>
+</div>
+
+<main class="fb-corps">
+  <!-- à gauche : Intro, Photos, pied de page -->
+  <div class="fb-colonne fb-colonne--gauche">
+    <section class="carte fb-intro">
+      <h2 class="fb-titre">Intro</h2>
+      <!-- la présentation d'une Page : 101 caractères au plus -->
+      <p class="fb-bio">1 famille, 3 châteaux, 1 même racine.<br>Coufran · Verdignan · Soudars, Haut-Médoc, depuis 1924.</p>
+      <hr>
+      <ul class="fb-infos">
+        <li class="fb-info"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21ZM11 7a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm0 3.5a1 1 0 1 1 2 0V17a1 1 0 1 1-2 0v-6.5Z" fill="currentColor"/></svg><span><b>Page</b> · Vignoble</span></li>
+        <li class="fb-info"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5a8 8 0 0 0-8 8c0 5.6 6.7 12 7.3 12.6a1 1 0 0 0 1.4 0C13.3 21.5 20 15.1 20 9.5a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" fill="currentColor"/></svg><span>Château Coufran, 33180 Saint-Seurin-de-Cadourne, France</span></li>
+        <li class="fb-info"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm7.9 9.5h-3.4a16 16 0 0 0-1.8-6.9 8.5 8.5 0 0 1 5.2 6.9ZM12 20.4c-.9-.9-2.3-3.5-2.5-7.4h5c-.2 3.9-1.6 6.5-2.5 7.4ZM9.5 11c.2-3.9 1.6-6.5 2.5-7.4.9.9 2.3 3.5 2.5 7.4h-5Zm-.2-6.9A16 16 0 0 0 7.5 11H4.1a8.5 8.5 0 0 1 5.2-6.9ZM4.1 13h3.4a16 16 0 0 0 1.8 6.9A8.5 8.5 0 0 1 4.1 13Zm10.6 6.9a16 16 0 0 0 1.8-6.9h3.4a8.5 8.5 0 0 1-5.2 6.9Z" fill="currentColor"/></svg><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html" target="_blank" rel="noopener" translate="no">miailhe.com</a></li>
+      </ul>
+    </section>
+    <section class="carte fb-photos">
+      <div class="fb-photos-tete"><h2 class="fb-titre">Photos</h2><a href="#" data-inerte>Toutes les photos</a></div>
+      <div class="fb-photos-grille" data-photos></div>
+    </section>
+    <p class="fb-pied"><span>Confidentialité</span><span>Conditions</span><span>Publicités</span><span>Choix publicitaires</span><span>Cookies</span><span>Plus</span><span>Meta © 2027</span></p>
+  </div>
+
+  <!-- à droite : le fil des publications -->
+  <div class="fb-colonne" data-fil>
+    <section class="carte fb-fil-tete">
+      <h2 class="fb-titre">Publications</h2>
+      <button class="fb-filtres" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6a1 1 0 0 1 1-1h3.2a3 3 0 0 1 5.6 0H19a1 1 0 1 1 0 2h-5.2a3 3 0 0 1-5.6 0H5a1 1 0 0 1-1-1Zm7-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-7 13a1 1 0 0 1 1-1h3.2a3 3 0 0 1 5.6 0H19a1 1 0 1 1 0 2h-5.2a3 3 0 0 1-5.6 0H5a1 1 0 0 1-1-1Zm7-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-7-5a1 1 0 0 1 1-1h8.2a3 3 0 0 1 5.6 0H19a1 1 0 1 1 0 2h-.2a3 3 0 0 1-5.6 0H5a1 1 0 0 1-1-1Zm12-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" fill="currentColor"/></svg><span>Filtres</span></button>
+    </section>
+  </div>
+</main>
+
+<script src="assets/js/facebook.js"></script>
+</body>
+</html>

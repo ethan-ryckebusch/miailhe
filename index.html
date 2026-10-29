@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script src="assets/js/langue.js"></script><!-- la langue d'abord : la page est traduite avant d'être montrée -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIAILHE · Trois portes, une seule famille</title>
+  <meta name="description" content="Coufran, Verdignan, Soudars : trois châteaux du Haut-Médoc, trois générations d'une même famille. Poussez la porte qui vous ressemble.">
+  <link rel="stylesheet" href="assets/css/polices.css">
+  <link rel="stylesheet" href="assets/css/typographie.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/motifs.css">
+  <link rel="stylesheet" href="assets/css/vitrine.css">
+  <link rel="stylesheet" href="assets/css/carte-france.css">
+</head>
+<body class="accueil">
+
+  <!-- Âge légal -->
+  <div class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-titre">
+    <!-- Intro (assets/js/intro.js) : le logo sort du flou, une racine traverse l'écran et écrit le logo des trois châteaux -->
+    <div class="intro-ecran" aria-hidden="true">
+      <span class="wordmark intro-logo"></span>
+      <div class="intro-racines">
+        <svg class="intro-svg"></svg>
+        <ol class="intro-noms">
+          <li class="intro-nom intro-nom--coufran"><span class="mot logo-chateau" data-logo-chateau="coufran" data-forme="logotype"><span class="sr-only">Coufran</span></span><small>1924</small></li>
+          <li class="intro-nom intro-nom--verdignan"><span class="mot logo-chateau" data-logo-chateau="verdignan" data-forme="logotype"><span class="sr-only">Verdignan</span></span><small>1976</small></li>
+          <li class="intro-nom intro-nom--soudars"><span class="mot logo-chateau" data-logo-chateau="soudars" data-forme="logotype"><span class="sr-only">Soudars</span></span><small>1980</small></li>
+        </ol>
+      </div>
+    </div>
+    <figure class="entree-fond"><picture><source media="(max-aspect-ratio: 4/5)" srcset="assets/img/entree/drone-trois-chateaux-portrait.jpg"><img src="assets/img/entree/drone-trois-chateaux.jpg" alt="" fetchpriority="high"></picture></figure><!-- 29/10/2026 : le domaine vu du ciel, les trois châteaux (plus la photo de 1931) -->
+    <div class="entree">
+      <span class="wordmark" aria-label="MIAILHE"><span class="sr-only">MIAILHE</span></span>
+      <p id="age-titre">Trois châteaux du Haut-Médoc, une même famille. Pour entrer, vous devez avoir l'âge légal de consommer de l'alcool dans votre pays.</p>
+      <div class="choix">
+        <button class="btn btn--plein" type="button" data-entrer><span>J'ai l'âge légal, entrer</span></button>
+      </div>
+      <button class="refus" type="button">Je n'ai pas l'âge légal</button>
+      <p class="refus-message">Revenez nous voir plus tard. La vigne, elle, sait attendre.</p>
+      <p class="mention">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+      <ul class="langues langues--porte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </div>
+
+  <!-- En-tête et menu plein écran, reproduits d'après chateau-cheval-blanc.com -->
+  <header class="site-header">
+    <div class="header-gauche">
+      <button class="ouvrir-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu"><span></span></button>
+      <!-- Les onglets de l'accueil : chacun ouvre un panneau au-dessus des portes (onglets.js) -->
+      <nav class="onglets" aria-label="Découvrir la maison">
+        <a href="#famille" data-onglet="famille">La famille</a>
+        <a href="#terroir" data-onglet="terroir">Le terroir</a>
+        <a href="#pret-a-boire" data-onglet="pret-a-boire">Prêt-à-boire</a>
+        <a href="#ou-trouver" data-onglet="ou-trouver">Où nous trouver</a>
+        <a href="blog/index.html" data-onglet="blog">Le blog</a><!-- une page à part, pas un panneau (29/10/2026) -->
+      </nav>
+    </div>
+    <a class="wordmark" href="#accueil" aria-label="MIAILHE, accueil"><span class="sr-only">MIAILHE</span></a>
+    <div class="header-droite">
+      <!-- La boutique et l'enquête en avant, puis l'espace client, le panier et la langue (source/entete.py ; espace.js) -->
+      <a class="entete-fort entete-fort--boutique" href="boutique.html" aria-label="La boutique de la famille : les vins des trois châteaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 2.6h3.6M10.7 2.6v4.5c0 .8-.4 1.3-1 1.9-.9.8-1.5 1.8-1.5 3.1v8.2c0 .6.5 1.1 1.1 1.1h5.4c.6 0 1.1-.5 1.1-1.1v-8.2c0-1.3-.6-2.3-1.5-3.1-.6-.6-1-1.1-1-1.9V2.6"/><path d="M8.2 13.4h7.6v4.4H8.2z"/></svg><span>La boutique</span></a>
+      <a class="entete-fort entete-fort--enquete" href="enquete.html" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <a class="entete-icone entete-compte-lien" href="compte.html" data-compte aria-label="Mon espace client"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.3" r="3.8"/><path d="M4.6 20.4c.9-3.9 3.9-6 7.4-6s6.5 2.1 7.4 6"/></svg><span class="entete-initiale" data-compte-initiale translate="no" hidden></span></a>
+      <a class="entete-icone" href="boutique.html#panier" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 11.3a1.1 1.1 0 0 1-1.1 1H7.4a1.1 1.1 0 0 1-1.1-1L5.2 8.2z"/><path d="M9 10.4V6.6a3 3 0 0 1 6 0v3.8"/></svg><b class="entete-pastille" data-panier-compte translate="no" hidden>0</b></a>
+      <ul class="langues langues--compacte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </header>
+
+  <nav class="mainnav" id="menu-principal" aria-label="Menu principal" aria-hidden="true">
+    <div class="mainnav-contenu">
+      <div class="mainnav-enquete">
+        <p class="titre-3">L'enquête &nbsp;—&nbsp; <a class="lien-trait" href="enquete.html">Enquête à la racine</a></p>
+        <a class="couverture-enquete couverture-enquete--racine" href="enquete.html" aria-label="Ouvrir le dossier de l'enquête">
+          <span class="marque">Miailhe</span>
+          <span class="photo"><img src="assets/img/enquete/couverture-racines.jpg" alt="" loading="lazy"></span>
+          <span class="cachet">Dossier n° 1924-001</span>
+          <span class="loupe" aria-hidden="true"></span>
+          <span class="titre"><span>Enquête</span><br><span>à la racine</span></span>
+        </a>
+        <p class="mainnav-trimestre">Une nouvelle enquête chaque trimestre</p>
+      </div>
+      <div class="mainnav-menus">
+        <ul class="menu-principal">
+          <li><a href="#accueil"><span>Nos châteaux<span class="num">I.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="coufran/index.html?porte"><span>Château Coufran</span></a></li>
+              <li><a href="verdignan/index.html?porte"><span>Château Verdignan</span></a></li>
+              <li><a href="soudars/index.html?porte"><span>Château Soudars</span></a></li>
+              <li><a href="#accueil" data-ouvrir-test><span>Quel château vous ressemble ?</span></a></li>
+              <li><a href="boutique.html"><span>La boutique des trois châteaux</span></a></li>
+              <li><a href="boutique.html#ou-trouver"><span>Où trouver nos vins</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#famille"><span>La famille<span class="num">II.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="#famille"><span>Cinq générations</span></a></li>
+              <li><a href="#racine"><span>Une même racine</span></a></li>
+              <li><a href="#pret-a-boire"><span>Le prêt-à-boire</span></a></li>
+              <li><a href="blog/index.html"><span>Le blog de la famille</span></a></li>
+              <li><a href="identite.html"><span>Notre identité</span></a></li>
+            </ul>
+          </li>
+          <li><a href="enquete.html"><span>L'enquête<span class="num">III.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="enquete.html"><span>Ouvrir le dossier</span></a></li>
+              <li><a href="enquete.html#inscription"><span>S'inscrire</span></a></li>
+              <li class="sous-groupe"><span class="sous-label">Les témoins</span> <a href="coufran/index.html#temoin"><span>Coufran</span></a> <a href="verdignan/index.html#temoin"><span>Verdignan</span></a> <a href="soudars/index.html#temoin"><span>Soudars</span></a></li>
+              <li><a href="enquete.html#reglement"><span>Le règlement</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#visiter"><span>Visiter<span class="num">IV.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="#visiter"><span>Venir à Saint-Seurin</span></a></li>
+              <li><a href="#contact"><span>Visites sur rendez-vous</span></a></li>
+              <li><a href="boutique.html?espace=pro"><span>Professionnels</span></a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="menu-second">
+          <li><a href="boutique.html"><span>La boutique</span></a></li>
+          <li><a href="boutique.html#panier"><span>Mon panier</span></a></li>
+          <li><a href="#accueil" data-ouvrir-test><span>Trouver mon château</span></a></li>
+          <li><a href="blog/index.html"><span>Le blog</span></a></li>
+          <li><a href="#contact"><span>Contact &amp; accès</span></a></li>
+        </ul>
+        <ul class="menu-third">
+          <li><nav class="reseaux" data-reseaux></nav></li>
+          <li><a href="compte.html"><span>Mon espace client</span></a></li>
+          <li><a href="boutique.html?espace=pro"><span>Espace professionnel</span></a></li>
+          <li><ul class="langues langues--menu" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="v">
+
+    <!-- L'accueil : le seuil, trois vraies portes, et rien d'autre ; le reste est dans les onglets de l'en-tête. Trois portes, chacune dans le style de son château, tournées comme un triptyque (même
+         caméra, même cadrage, même lumière dorée de fin d'après-midi : source/videos-originales/portes/BIBLE_DE_TOURNAGE.md).
+         Chaque film a deux plans : au survol, l'ouverture (caméra fixe) s'arrête porte ouverte (data-ouverture, en secondes) ;
+         au clic, le travelling avant franchit le seuil (Coufran : le vestibule des années 1920 et le pigeonnier au bout ;
+         Verdignan : le vieux cuvier, où les bouteilles attendent dans leurs casiers, et l'estuaire ; Soudars : le chai à barriques et les vignes), puis on entre (vitrine.js).
+         Images : Nano Banana Pro ; films : MiniMax H3, image de départ et image de fin ; montage : source/monter_portes.py.
+         data-travelling : la vitesse de lecture du travelling, mesurée par monter_portes.py pour que la caméra avance à la
+         même vitesse à l'écran derrière les trois portes. -->
+    <section class="seuil" id="accueil" data-header="dark">
+      <div class="battants">
+        <a class="battant" href="coufran/index.html?porte" data-chateau="coufran" data-ouverture="4.9" data-travelling="1.7">
+          <img class="battant-ouverte" src="assets/img/portes/coufran-ouverte.jpg" alt="" loading="lazy">
+          <video class="battant-film" muted playsinline preload="metadata" poster="assets/img/portes/coufran-fermee.jpg" aria-hidden="true">
+            <source src="assets/video/porte-coufran.webm" type="video/webm"><source src="assets/video/porte-coufran.mp4" type="video/mp4">
+          </video>
+          <span class="battant-voile"></span>
+          <span class="battant-legende">
+            <span class="armoirie" data-armoirie="coufran"></span>
+            <span class="battant-nom"><span class="logo-chateau" data-logo-chateau="coufran" data-forme="logo"></span><span class="sr-only">Coufran</span></span>
+            <span class="battant-qui">Chez Louis, le grand-père · 1924</span>
+            <span class="battant-trait">Le caractère</span>
+            <span class="battant-entrer">Entrer</span>
+          </span>
+        </a>
+        <a class="battant" href="verdignan/index.html?porte" data-chateau="verdignan" data-ouverture="4.9" data-travelling="1.39">
+          <img class="battant-ouverte" src="assets/img/portes/verdignan-ouverte.jpg" alt="" loading="lazy">
+          <video class="battant-film" muted playsinline preload="metadata" poster="assets/img/portes/verdignan-fermee.jpg" aria-hidden="true">
+            <source src="assets/video/porte-verdignan.webm" type="video/webm"><source src="assets/video/porte-verdignan.mp4" type="video/mp4">
+          </video>
+          <span class="battant-voile"></span>
+          <span class="battant-legende">
+            <span class="armoirie" data-armoirie="verdignan"></span>
+            <span class="battant-nom"><span class="logo-chateau" data-logo-chateau="verdignan" data-forme="logo"></span><span class="sr-only">Verdignan</span></span>
+            <span class="battant-qui">Chez Jean, le père · 1976</span>
+            <span class="battant-trait">L'élégance classique</span>
+            <span class="battant-entrer">Entrer</span>
+          </span>
+        </a>
+        <a class="battant" href="soudars/index.html?porte" data-chateau="soudars" data-ouverture="4.9" data-travelling="1.48">
+          <img class="battant-ouverte" src="assets/img/portes/soudars-ouverte.jpg" alt="" loading="lazy">
+          <video class="battant-film" muted playsinline preload="metadata" poster="assets/img/portes/soudars-fermee.jpg" aria-hidden="true">
+            <source src="assets/video/porte-soudars.webm" type="video/webm"><source src="assets/video/porte-soudars.mp4" type="video/mp4">
+          </video>
+          <span class="battant-voile"></span>
+          <span class="battant-legende">
+            <span class="armoirie" data-armoirie="soudars"></span>
+            <span class="battant-nom"><span class="logo-chateau" data-logo-chateau="soudars" data-forme="logo"></span><span class="sr-only">Soudars</span></span>
+            <span class="battant-qui">Chez Éric, le fils · 1980</span>
+            <span class="battant-trait">Le plaisir partagé</span>
+            <span class="battant-entrer">Entrer</span>
+          </span>
+        </a>
+      </div>
+      <h1 class="sr-only">MIAILHE : trois châteaux du Haut-Médoc, trois portes, une famille</h1>
+      <!-- Avant les portes, une invitation au test pour qui découvre la maison ; jamais obligatoire : un clic à côté,
+           une porte survolée ou « Je connais la maison » la referment, et elle ne revient plus (vitrine.js). -->
+      <div class="seuil-guide" data-guide hidden>
+        <p class="seuil-guide-sur">Première visite ?</p>
+        <p class="seuil-guide-titre">Trois portes, trois châteaux. <em>Laquelle est la vôtre ?</em></p>
+        <p class="seuil-guide-texte">Sept questions simples sur ce que vous aimez, vos goûts compris, sans rien connaître au vin. Deux minutes, et la bonne porte s'ouvre pour vous.</p>
+        <div class="seuil-guide-actions">
+          <button class="seuil-guide-oui" type="button" data-ouvrir-test>Me laisser guider</button>
+          <button class="seuil-guide-non" type="button" data-guide-fermer>Je connais la maison, je choisis ma porte</button>
+        </div>
+      </div>
+      <!-- La bande du bas, sous les portes : la consigne y reste toujours lisible, sans jamais gêner une porte ouverte -->
+      <div class="seuil-bas">
+        <p class="seuil-consigne"><span>Approchez-vous d'une porte</span><button type="button" data-ouvrir-test>ou laissez-vous guider</button></p>
+        <p class="seuil-sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+        <!-- les réseaux de la famille, au bout de la bande (reseaux.js ; demande de l'utilisateur, 28/10/2026) -->
+        <nav class="reseaux seuil-reseaux" data-reseaux></nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- La famille : une histoire en racines de vigne, tracées au fil du défilement comme l'intro (histoire.js).
+       Les faits sont ceux de la frise de la v4 (archives/vitrine-v4-six-actes/) ; la date d'Élie est à vérifier
+       (1783 ou 1793), d'où « fin du XVIIIe siècle ». -->
+  <div class="panneau v panneau--sombre" id="famille" data-panneau role="dialog" aria-modal="true" aria-label="La famille" hidden>
+    <div class="panneau-defile">
+      <section class="histoire" data-histoire data-header="dark">
+        <svg class="histoire-svg" aria-hidden="true"></svg>
+        <header class="histoire-ouverture">
+          <p class="histoire-sur">La famille</p>
+          <h2 class="histoire-titre"><span>Avant de faire du vin,</span><span>les Miailhe l'ont <em>goûté</em>.</span></h2>
+          <p class="histoire-chapeau">Une racine, cinq générations, trois châteaux.</p>
+          <p class="histoire-defiler" aria-hidden="true">Faites défiler</p>
+        </header>
+        <article class="histoire-chapitre" data-cote="droite">
+          <div class="histoire-texte">
+            <p class="histoire-annee">Fin du XVIII<sup>e</sup> siècle</p>
+            <h3>Élie</h3>
+            <p>Courtier à Bordeaux. Il goûte, juge et place le vin des autres. La famille fera ce métier pendant deux siècles.</p>
+          </div>
+        </article>
+        <article class="histoire-chapitre" data-cote="gauche" data-chateau="coufran">
+          <div class="histoire-texte">
+            <p class="histoire-annee">1924</p>
+            <h3>Louis, le grand-père</h3>
+            <p>Le courtier devient vigneron. Il achète Coufran et le replante tout en merlot, quand ses voisins ne jurent que par le cabernet.</p>
+            <span class="histoire-logo logo-chateau" data-logo-chateau="coufran" data-forme="logo"></span>
+          </div>
+        </article>
+        <article class="histoire-chapitre" data-cote="droite" data-chateau="verdignan">
+          <div class="histoire-texte">
+            <p class="histoire-annee">1976</p>
+            <h3>Jean, le père</h3>
+            <p>Dernier courtier de la famille, il achète Verdignan, le château voisin qui regarde l'estuaire.</p>
+            <span class="histoire-logo logo-chateau" data-logo-chateau="verdignan" data-forme="logo"></span>
+          </div>
+        </article>
+        <article class="histoire-chapitre" data-cote="gauche" data-chateau="soudars">
+          <div class="histoire-texte">
+            <p class="histoire-annee">1980</p>
+            <h3>Éric, le fils</h3>
+            <p>Il bâtit Soudars de toutes pièces, sur des friches encombrées de pierres, et replante presque tout le vignoble.</p>
+            <span class="histoire-logo logo-chateau" data-logo-chateau="soudars" data-forme="logo"></span>
+          </div>
+        </article>
+        <article class="histoire-chapitre" data-cote="droite">
+          <div class="histoire-texte">
+            <p class="histoire-annee">2006</p>
+            <h3>Lovely</h3>
+            <p>La quatrième génération. Elle veille sur les trois châteaux aux côtés de son père.</p>
+          </div>
+        </article>
+        <div class="histoire-final">
+          <ol class="histoire-chateaux">
+            <li data-chateau="coufran"><span class="logo-chateau" data-logo-chateau="coufran" data-forme="logo"></span><span class="sr-only">Coufran</span><small>1924</small></li>
+            <li data-chateau="verdignan"><span class="logo-chateau" data-logo-chateau="verdignan" data-forme="logo"></span><span class="sr-only">Verdignan</span><small>1976</small></li>
+            <li data-chateau="soudars"><span class="logo-chateau" data-logo-chateau="soudars" data-forme="logo"></span><span class="sr-only">Soudars</span><small>1980</small></li>
+          </ol>
+          <h2 class="histoire-titre histoire-titre--fin"><span>Trois châteaux,</span><span><em>une même racine.</em></span></h2>
+          <div class="histoire-photos">
+            <figure><img src="assets/img/acte-famille-1931.jpg" alt="La famille Miailhe réunie en 1931" loading="lazy"><figcaption>La famille, en 1931</figcaption></figure>
+            <p class="histoire-chute">Deux siècles à goûter le vin des autres. <em>Cent ans</em> à faire le sien.</p>
+            <figure><img src="assets/img/acte-aujourdhui.jpg" alt="Éric et Lovely Miailhe devant le château Coufran" loading="lazy"><figcaption>Éric et Lovely, aujourd'hui</figcaption></figure>
+          </div>
+          <a class="histoire-porte" href="#accueil">Pousser une porte</a>
+        </div>
+      </section>
+        <nav class="panneau-fin" aria-label="Suite">
+          <a class="panneau-retour" href="#accueil">Revenir aux portes</a>
+          <a class="panneau-suivant" href="#terroir">Le terroir <span aria-hidden="true">→</span></a>
+          <p class="v-sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+        </nav>
+    </div>
+  </div>
+
+  <!-- Le terroir (28/10/2026, refait comme un film : « je veux du cinématique et du beau visuellement avec ce côté famille »).
+       Un plan d'ouverture (l'estuaire vu du ciel), puis les trois terres choisies par trois générations : Louis et les graves
+       de Coufran, Jean et les graves face à l'eau de Verdignan, Éric et l'argile sur le calcaire de Soudars ; la planche où
+       leurs racines se rejoignent ; la carte ; la famille qui reçoit ; le pied de page. Les plans réagissent au défilement
+       (plans.js). Faits : sites des châteaux (Sites/ : « en quelques mots », « héritage », « terroir », « de la vigne à la
+       bouteille ») ; photos : sites et films des châteaux. -->
+  <div class="panneau v panneau--clair panneau--terroir" id="terroir" data-panneau role="dialog" aria-modal="true" aria-label="Le terroir" hidden>
+    <div class="panneau-defile">
+      <section class="plan plan--ouverture" data-header="dark" data-plan>
+        <figure class="plan-image" aria-hidden="true"><img src="assets/img/feed/medoc-ciel-large.jpg" alt="" loading="lazy" decoding="async"></figure>
+        <div class="plan-texte">
+          <p class="plan-sur">Le terroir</p>
+          <h2 class="plan-titre"><span>Avant le vin,</span><span>il y a <em>la terre.</em></span></h2>
+          <p class="plan-chapeau">Saint-Seurin-de-Cadourne, au bord de l'estuaire de la Gironde. Trois générations de Miailhe y ont choisi leur terre, à quelques rangs les unes des autres.</p>
+        </div>
+        <p class="plan-legende">Les vignes de Saint-Seurin-de-Cadourne et l'estuaire de la Gironde</p>
+        <p class="plan-defiler" aria-hidden="true">Faites défiler</p>
+      </section>
+
+      <!-- L'eau : la devise de Verdignan, et ce que l'estuaire et l'océan font au village -->
+      <section class="t-eau" data-header="light">
+        <blockquote class="t-eau-devise" data-apparait><p>« Les grands terroirs <em>regardent l'eau.</em> »</p><footer>Château Verdignan</footer></blockquote>
+        <p class="t-eau-texte" data-apparait>De tout le Haut-Médoc, Saint-Seurin-de-Cadourne est le village qui profite le plus de l'estuaire. L'océan Atlantique n'est qu'à trente kilomètres. L'eau donne aux vignes un microclimat que les trois châteaux partagent.</p>
+      </section>
+
+      <!-- Trois générations, trois terres -->
+      <section class="terres" data-header="light" aria-labelledby="terres-titre">
+        <header class="terres-tete" data-apparait>
+          <p class="v-sur-titre">Trois générations, trois terres</p>
+          <h3 class="terres-titre" id="terres-titre">Le même village, <em>trois sols.</em></h3>
+        </header>
+        <article class="terre" data-chateau="coufran" data-plan>
+          <figure class="terre-image"><img src="assets/img/feed/graves.jpg" alt="Des graves, galets roulés par l'eau, au pied d'un pied de vigne" loading="lazy"></figure>
+          <div class="terre-texte" data-apparait>
+            <p class="terre-qui"><span class="terre-annee">1924</span><span>Louis, le grand-père</span></p>
+            <h4 class="terre-sol">Une colline <em>de graves</em></h4>
+            <p>D'un seul tenant, soixante-seize hectares de graves et d'argiles sur une colline qui culmine à vingt et un mètres. Le vin d'alors, presque tout en cabernet, se vend mal : Louis replante en merlot, plus rond. Il fait encore 85 % de Coufran.</p>
+            <span class="terre-logo logo-chateau" data-logo-chateau="coufran" data-forme="logo"></span><span class="sr-only">Château Coufran</span>
+          </div>
+        </article>
+        <article class="terre terre--droite" data-chateau="verdignan" data-plan>
+          <figure class="terre-image"><img src="assets/img/verdignan-estuaire.jpg" alt="Le château Verdignan au milieu de ses vignes, l'estuaire de la Gironde à l'horizon" loading="lazy"></figure>
+          <div class="terre-texte" data-apparait>
+            <p class="terre-qui"><span class="terre-annee">1976</span><span>Jean, le père</span></p>
+            <h4 class="terre-sol">Des graves <em>face à l'eau</em></h4>
+            <p>Jean reste dans la vigne pour prendre la suite de son père à Saint-Seurin-de-Cadourne, puis achète le château voisin, en 1976. Quarante hectares de graves et d'argiles l'entourent, le château fait face à l'estuaire, et le cabernet-sauvignon y domine.</p>
+            <span class="terre-logo logo-chateau" data-logo-chateau="verdignan" data-forme="logo"></span><span class="sr-only">Château Verdignan</span>
+          </div>
+        </article>
+        <article class="terre" data-chateau="soudars" data-plan>
+          <figure class="terre-image"><img src="assets/img/soudars-terre.jpg" alt="Des pierres calcaires blanches entre les ceps de Soudars, au moment des vendanges" loading="lazy"></figure>
+          <div class="terre-texte" data-apparait>
+            <p class="terre-qui"><span class="terre-annee">1980</span><span>Éric, le fils</span></p>
+            <h4 class="terre-sol">L'argile <em>sur le calcaire</em></h4>
+            <p>Éric choisit ce que le Médoc délaisse : des parcelles d'argile et de calcaire, qui lui rappellent les terroirs de Saint-Émilion, en friche et encombrées de tonnes de pierres. Il les défriche et replante presque tout. Par endroits, il a fallu défoncer la roche pour planter : les racines descendent dans ses fissures, parmi les fossiles marins.</p>
+            <span class="terre-logo logo-chateau" data-logo-chateau="soudars" data-forme="logo"></span><span class="sr-only">Château Soudars</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- La racine : une planche gravée, les trois châteaux côte à côte et la coupe de leur sol commun.
+           Au défilement, une racine pousse sous chacun, dans sa couleur, et les trois se rejoignent en une seule : la famille.
+           Planche : Higgsfield, d'après les cartes postales des châteaux ; racines recolorées et carte de pousse :
+           source/racine_planche.py ; pousse en WebGL (vitrine.js). -->
+      <section class="racine" id="racine" data-header="light">
+        <div class="racine-scene">
+          <div class="racine-tete">
+            <p class="v-sur-titre">Sous la terre · Une même racine</p>
+            <div class="racine-titres">
+              <p class="racine-t" data-de="-1" data-a=".2">Trois châteaux, <em>trois caractères.</em></p>
+              <p class="racine-t" data-de=".2" data-a=".72">Sous la terre, <em>leurs racines se cherchent.</em></p>
+              <p class="racine-t" data-de=".72" data-a="9">Et n'en font plus qu'une : <em>la famille.</em></p>
+            </div>
+          </div>
+          <div class="racine-cadre">
+            <figure class="racine-planche">
+              <picture>
+                <source media="(max-aspect-ratio: 4/5)" srcset="assets/img/racine/planche-haute.jpg">
+                <img class="racine-fond" src="assets/img/racine/planche-large.jpg" alt="Planche gravée : les châteaux Coufran, Verdignan et Soudars côte à côte ; sous eux, la coupe du sol, où leurs trois racines descendent et se rejoignent en une seule." loading="lazy" decoding="async">
+              </picture>
+              <canvas class="racine-pousse" aria-hidden="true"></canvas>
+              <div class="racine-reperes" aria-hidden="true">
+                <p class="racine-chateau" data-chateau="coufran"><b><span class="logo-chateau" data-logo-chateau="coufran" data-forme="logotype"></span><span class="sr-only">Coufran</span></b><span>1924 · Louis</span></p>
+                <p class="racine-chateau" data-chateau="verdignan"><b><span class="logo-chateau" data-logo-chateau="verdignan" data-forme="logotype"></span><span class="sr-only">Verdignan</span></b><span>1976 · Jean</span></p>
+                <p class="racine-chateau" data-chateau="soudars"><b><span class="logo-chateau" data-logo-chateau="soudars" data-forme="logotype"></span><span class="sr-only">Soudars</span></b><span>1980 · Éric</span></p>
+                <p class="racine-sol">Graves</p>
+                <p class="racine-sol">Argile</p>
+                <p class="racine-sol">Calcaire à fossiles marins</p>
+              </div>
+              <!-- sous la planche, la racine commune devient le I du logo -->
+              <span class="wordmark racine-famille" aria-hidden="true"></span>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- La carte du Médoc (source/carte.py) : trois voisins -->
+      <section class="t-carte" id="visiter" data-header="light">
+        <figure class="t-carte-image" data-apparait><img src="assets/img/carte-medoc.svg" alt="Carte du Médoc : les trois domaines de la famille Miailhe à Saint-Seurin-de-Cadourne, au bord de l'estuaire de la Gironde" loading="lazy"></figure>
+        <div class="t-carte-texte" data-apparait>
+          <p class="v-sur-titre">Le Médoc</p>
+          <h3 class="t-carte-titre"><span>Trois châteaux</span><span>dans un <em>mouchoir</em></span><span>de poche.</span></h3>
+          <p>Coufran, Verdignan et Soudars sont voisins, à Saint-Seurin-de-Cadourne, aux portes de Saint-Estèphe. On passe de l'un à l'autre à pied, en suivant les rangs.</p>
+          <ol class="t-carte-trois">
+            <li data-chateau="coufran"><b>Coufran</b><span>76 hectares d'un seul tenant</span></li>
+            <li data-chateau="verdignan"><b>Verdignan</b><span>60 hectares face à l'estuaire</span></li>
+            <li data-chateau="soudars"><b>Soudars</b><span>22 hectares sur le calcaire</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- La famille reçoit : Éric et Lovely, devant Coufran -->
+      <section class="plan plan--famille" data-header="dark" data-plan>
+        <figure class="plan-image" aria-hidden="true"><img src="assets/img/acte-aujourdhui.jpg" alt="" loading="lazy"></figure>
+        <div class="plan-texte" data-apparait>
+          <p class="plan-sur">Visiter</p>
+          <h3 class="plan-titre plan-titre--moyen"><span>La famille vous ouvre</span><span><em>ses portes.</em></span></h3>
+          <p class="plan-chapeau">Visites et dégustations sur rendez-vous, pour les particuliers comme pour les professionnels. L'enquête se joue aussi sur place.</p>
+          <div class="plan-actions">
+            <a class="v-bouton v-bouton--clair" href="tel:+33556593102">Prendre rendez-vous</a>
+            <a class="v-lien" href="enquete.html">Mener l'enquête</a>
+          </div>
+        </div>
+        <p class="plan-legende">Éric et Lovely Miailhe, devant Coufran</p>
+      </section>
+        <nav class="panneau-fin" aria-label="Suite">
+          <a class="panneau-retour" href="#accueil">Revenir aux portes</a>
+          <a class="panneau-suivant" href="#pret-a-boire">Prêt-à-boire <span aria-hidden="true">→</span></a>
+          <p class="v-sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+        </nav>
+      <footer class="site-footer v-pied" id="contact" data-header="light">
+        <div class="v-pied-haut">
+          <div>
+            <p class="titre">Contact</p>
+            <p><a href="tel:+33556593102">+33 5 56 59 31 02</a></p>
+            <p class="gris">Visites sur rendez-vous, particuliers et professionnels.</p>
+          </div>
+          <a class="wordmark" href="#accueil" aria-label="MIAILHE, revenir aux portes"><span class="sr-only">MIAILHE</span></a>
+          <div>
+            <p class="titre">Adresse</p>
+            <p>Vignobles de la famille Miailhe<br>Château Coufran, 33180 Saint-Seurin-de-Cadourne</p>
+          </div>
+        </div>
+        <div class="v-pied-bas">
+          <nav class="v-pied-chateaux" aria-label="Les châteaux">
+            <a href="coufran/index.html"><span class="armoirie" data-armoirie="coufran"></span>Château Coufran</a>
+            <a href="verdignan/index.html"><span class="armoirie" data-armoirie="verdignan"></span>Château Verdignan</a>
+            <a href="soudars/index.html"><span class="armoirie" data-armoirie="soudars"></span>Château Soudars</a>
+          </nav>
+          <nav class="reseaux" data-reseaux></nav>
+          <ul class="langues langues--pied" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+          <nav aria-label="Liens du pied de page">
+            <a href="enquete.html">L'enquête</a>
+            <a href="blog/index.html">Le blog</a>
+            <a href="identite.html">Notre identité</a>
+            <a href="boutique.html?espace=pro">Espace professionnel</a>
+            <a href="#accueil">Revenir aux portes</a>
+          </nav>
+        </div>
+        <p class="v-sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+        <p class="v-mentions">Maquette de concept réalisée dans le cadre d'un projet étudiant ISCOM (2026). Site non officiel. Photographies : châteaux Coufran, Verdignan et Soudars. Films d'intro : créations originales (Higgsfield).</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Prêt-à-boire (28/10/2026, refait comme un film) : ce qui distingue la famille, elle garde ses vins au château jusqu'à
+       ce qu'ils soient prêts. Le plan d'ouverture (le local climatisé de Coufran), puis l'histoire d'une bouteille, un
+       Verdignan 2005, en six plans qui défilent (plans.js) : les vendanges, l'assemblage de décembre, les douze mois de
+       barrique, la mise en bouteille et son numéro de lot gravé (2005 est le premier millésime à le porter), les années de
+       garde au château (un compteur, et la famille qui avance : Lovely en 2006, les cent ans de Coufran en 2024), puis
+       prêt à boire, aujourd'hui. Enfin, la cave : les plus vieux millésimes encore en vente, vers la boutique.
+       Faits : pages « Vigneron du prêt-à-boire » et « De la vigne à la bouteille » de Coufran et de Verdignan ; millésimes :
+       source/boutique/catalogue.json. Films : les films des châteaux (source/decouper_films.py). -->
+  <div class="panneau v panneau--sombre panneau--pret" id="pret-a-boire" data-panneau role="dialog" aria-modal="true" aria-label="Prêt-à-boire" hidden>
+    <div class="panneau-defile">
+      <section class="plan plan--ouverture plan--cave" data-header="dark" data-plan>
+        <figure class="plan-image" aria-hidden="true"><img src="assets/img/feed/culots-large.jpg" alt="" loading="lazy" decoding="async"></figure>
+        <div class="plan-texte plan-texte--centre">
+          <p class="plan-sur">Prêt-à-boire</p>
+          <h2 class="plan-titre"><span>Nous attendons</span><span><em>pour vous.</em></span></h2>
+          <p class="plan-chapeau">Un grand bordeaux n'est prêt à boire qu'après quelques années. D'ordinaire, il quitte le château jeune, et c'est à vous de l'attendre. Chez les Miailhe, c'est le château qui attend.</p>
+        </div>
+        <p class="plan-legende">Le local climatisé de Coufran, où les bouteilles vieillissent avant de partir</p>
+        <p class="plan-defiler" aria-hidden="true">Faites défiler</p>
+      </section>
+
+      <!-- L'histoire d'une bouteille : six plans, un film par étape à gauche, le récit à droite, la frise en bas -->
+      <section class="attente" data-header="dark" data-sequence aria-labelledby="attente-titre">
+        <div class="attente-scene">
+          <p class="attente-tete" id="attente-titre"><span>L'histoire d'une bouteille</span><b>Château Verdignan 2005</b></p>
+          <div class="attente-films" aria-hidden="true">
+            <video class="attente-film" data-etape-media="0" muted playsinline loop preload="none" poster="assets/img/attente/grappe.jpg"><source src="assets/video/savoir-grappe.webm" type="video/webm"><source src="assets/video/savoir-grappe.mp4" type="video/mp4"></video>
+            <video class="attente-film" data-etape-media="1" muted playsinline loop preload="none" poster="assets/img/attente/cuvier.jpg"><source src="assets/video/savoir-cuvier.webm" type="video/webm"><source src="assets/video/savoir-cuvier.mp4" type="video/mp4"></video>
+            <video class="attente-film" data-etape-media="2" muted playsinline loop preload="none" poster="assets/img/attente/barrique.jpg"><source src="assets/video/savoir-barrique.webm" type="video/webm"><source src="assets/video/savoir-barrique.mp4" type="video/mp4"></video>
+            <div class="attente-film attente-bouteille" data-etape-media="3"><img src="assets/img/bouteille-verdignan.webp" alt="" loading="lazy"><span class="attente-gravure">N° de lot gravé</span></div>
+            <video class="attente-film" data-etape-media="4" muted playsinline loop preload="none" poster="assets/img/attente/attente.jpg"><source src="assets/video/savoir-attente.webm" type="video/webm"><source src="assets/video/savoir-attente.mp4" type="video/mp4"></video>
+            <div class="attente-film" data-etape-media="5"><img src="assets/img/soudars-verre.jpg" alt="" loading="lazy"></div>
+          </div>
+          <ol class="attente-recit">
+            <li class="attente-etape" data-etape="0" data-annee="2005">
+              <p class="attente-quand">Automne 2005</p>
+              <h3>Les vendanges</h3>
+              <p>Le raisin est cueilli mûr, puis réparti par cépage, par terroir et par âge des vignes.</p>
+            </li>
+            <li class="attente-etape" data-etape="1" data-annee="2005">
+              <p class="attente-quand">Décembre 2005</p>
+              <h3>L'assemblage</h3>
+              <p>Après les fermentations, on goûte chaque cuve. Seule une partie de la récolte, celle des graves, entre dans le premier vin.</p>
+            </li>
+            <li class="attente-etape" data-etape="2" data-annee="2006">
+              <p class="attente-quand">2006</p>
+              <h3>Douze mois en barriques</h3>
+              <p>Le vin s'élève dans le chêne français ; chaque année, un quart des barriques est neuf.</p>
+              <p class="attente-famille"><b>2006</b> Lovely rejoint son père : la quatrième génération.</p>
+            </li>
+            <li class="attente-etape" data-etape="3">
+              <p class="attente-quand">La mise en bouteille</p>
+              <h3>Un numéro, gravé sur le verre</h3>
+              <p>Bouchon de liège naturel, bouteille extra-lourde, et le numéro de lot gravé sur chaque flacon. 2005 est le premier millésime à le porter.</p>
+              <p class="attente-ailleurs">Ailleurs, le vin quitterait le château ici, jeune.</p>
+            </li>
+            <li class="attente-etape" data-etape="4" data-compteur-de="2007" data-compteur-a="2026">
+              <p class="attente-quand">Les années de garde</p>
+              <h3>Au château, <em>il attend.</em></h3>
+              <p>La bouteille vieillit chez nous, dans le local climatisé, à l'abri. Elle ne partira que prête.</p>
+              <p class="attente-famille" data-des="2024"><b>2024</b> Coufran fête ses cent ans dans la famille.</p>
+            </li>
+            <li class="attente-etape" data-etape="5" data-annee="2026">
+              <p class="attente-quand">Aujourd'hui</p>
+              <h3>Prêt à boire. <em>Vous l'ouvrez ce soir.</em></h3>
+              <p>Le Verdignan 2005 est encore au château, et il est prêt. Ni cave, ni patience à prévoir.</p>
+              <a class="v-bouton v-bouton--clair" href="boutique.html?vin=chateau-verdignan#verdignan">Le voir dans la boutique</a>
+            </li>
+          </ol>
+          <!-- l'année qui passe, en grand -->
+          <p class="attente-annee" aria-hidden="true" translate="no" data-annee-grande>2005</p>
+          <!-- la frise : où part le vin, ailleurs et chez les Miailhe -->
+          <div class="attente-frise" aria-hidden="true">
+            <span class="attente-frise-trait"></span>
+            <ol>
+              <li>Vendanges</li><li>Assemblage</li><li>Barriques</li><li>Bouteille</li><li>Garde</li><li>Prêt</li>
+            </ol>
+            <p class="attente-repere attente-repere--ailleurs" data-des-etape="3">Ailleurs, il part ici</p>
+            <p class="attente-repere attente-repere--miailhe" data-des-etape="5">Chez les Miailhe, <em>ici</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lovely et Fred dans la cave (29/10/2026, demande de l'utilisateur : des photos de Lovely et Fred, pour « ressentir
+           ce sentiment d'appartenance et ce côté affectif familial » ; prise du feed Instagram) -->
+      <section class="plan plan--famille" data-header="dark" data-plan>
+        <figure class="plan-image" aria-hidden="true"><img src="assets/img/feed/lovely-fred-cave-large.jpg" alt="" loading="lazy"></figure>
+        <div class="plan-texte" data-apparait>
+          <p class="plan-sur">Lovely et Fred</p>
+          <h3 class="plan-titre plan-titre--moyen"><span>Votre année ?</span><span><em>On la cherche pour vous.</em></span></h3>
+          <p class="plan-chapeau">Lovely et Fred, deux cousins de la famille, veillent sur la cave. Donnez-leur votre année de naissance : s'il en reste une bouteille, elle vous attend dans la boutique.</p>
+          <div class="plan-actions">
+            <a class="v-bouton v-bouton--clair" href="boutique.html#votre-annee">Le vin de votre année</a>
+          </div>
+        </div>
+        <p class="plan-legende">Lovely et Fred, dans la cave du château</p>
+      </section>
+
+      <!-- La cave : les plus vieux millésimes de chaque château encore en vente, vers la boutique -->
+      <section class="cave" data-header="dark" aria-labelledby="cave-titre">
+        <header class="cave-tete" data-apparait>
+          <p class="v-sur-titre">La cave de la famille</p>
+          <h3 class="cave-titre" id="cave-titre"><span>Encore au château,</span><span><em>déjà prêts.</em></span></h3>
+          <p class="cave-chapeau">Les trois châteaux vendent ensemble les millésimes qu'ils ont gardés pour vous, dans la boutique de la famille.</p>
+        </header>
+        <ol class="cave-bouteilles">
+          <li data-chateau="coufran" data-apparait>
+            <a href="boutique.html?vin=chateau-coufran#coufran">
+              <img src="assets/img/bouteille-coufran.webp" alt="" loading="lazy">
+              <span class="cave-millesime" translate="no">2007</span>
+              <span class="cave-nom">Château Coufran</span>
+              <span class="cave-qui">Chez Louis, le grand-père</span>
+            </a>
+          </li>
+          <li data-chateau="verdignan" data-apparait>
+            <a href="boutique.html?vin=chateau-verdignan#verdignan">
+              <img src="assets/img/bouteille-verdignan.webp" alt="" loading="lazy">
+              <span class="cave-millesime" translate="no">2005</span>
+              <span class="cave-nom">Château Verdignan</span>
+              <span class="cave-qui">Chez Jean, le père</span>
+            </a>
+          </li>
+          <li data-chateau="soudars" data-apparait>
+            <a href="boutique.html?vin=chateau-soudars#soudars">
+              <img src="assets/img/bouteille-soudars.webp" alt="" loading="lazy">
+              <span class="cave-millesime" translate="no">2000</span>
+              <span class="cave-nom">Château Soudars</span>
+              <span class="cave-qui">Chez Éric, le fils</span>
+            </a>
+          </li>
+        </ol>
+        <p class="cave-soudars" data-apparait>Soudars, lui, n'a pas besoin d'attendre : c'est le vin de la famille qui se partage dès sa jeunesse. Il garde pourtant quelques doubles magnums, depuis 1982.</p>
+        <p class="cave-action" data-apparait><a class="v-bouton v-bouton--clair" href="boutique.html">Ouvrir la boutique de la famille</a></p>
+      </section>
+
+        <nav class="panneau-fin" aria-label="Suite">
+          <a class="panneau-retour" href="#accueil">Revenir aux portes</a>
+          <a class="panneau-suivant" href="#ou-trouver">Où nous trouver <span aria-hidden="true">→</span></a>
+          <p class="v-sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+        </nav>
+    </div>
+  </div>
+
+  <!-- « Où nous trouver » (28/10/2026, demande de l'utilisateur : « un onglet pour la carte ») : la grande carte de France
+       de la boutique (#ou-trouver de boutique.html), la même, dessinée par carte-france.js d'après carte-magasins.js ;
+       les deux scripts ne se chargent qu'à la première ouverture du panneau (data-scripts, onglets.js). Ses liens
+       « Commander en ligne » et le drive mènent à la boutique (data-boutique). -->
+  <div class="panneau v panneau--clair panneau--carte" id="ou-trouver" data-panneau data-scripts="assets/js/carte-magasins.js assets/js/carte-france.js" role="dialog" aria-modal="true" aria-label="Où nous trouver" hidden>
+    <div class="panneau-defile">
+      <section class="carte-panneau" data-header="light" aria-labelledby="carte-titre">
+        <header class="carte-tete">
+          <p class="v-sur-titre">Où trouver nos vins</p>
+          <h2 class="carte-titre" id="carte-titre"><span>Près de chez vous,</span><span><em>partout en France.</em></span></h2>
+          <p class="carte-chapeau">Coufran et Verdignan vous attendent dans les rayons des grandes enseignes, Soudars chez les cavistes V and B. Cherchez votre ville, ou touchez un département : la carte vous montre les magasins.</p>
+        </header>
+        <div class="bq-carte-france" data-carte-france data-boutique="boutique.html" translate="no"></div>
+        <p class="bq-carte-note">Les vins sont proposés dans ces enseignes ; la disponibilité varie selon les magasins. Pas de magasin près de chez vous ? <a href="boutique.html#la-cave">La boutique livre partout en France métropolitaine.</a><br><small>Points de vente : © les contributeurs d'OpenStreetMap (ODbL). Fond de carte : IGN Admin Express (Licence ouverte).</small></p>
+      </section>
+
+        <nav class="panneau-fin" aria-label="Suite">
+          <a class="panneau-retour" href="#accueil">Revenir aux portes</a>
+          <a class="panneau-suivant" href="#famille">La famille <span aria-hidden="true">→</span></a>
+          <p class="v-sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+        </nav>
+    </div>
+  </div>
+
+  <!-- Le test, ouvert au-dessus des portes (quiz.js) -->
+  <div class="test-voile v" role="dialog" aria-modal="true" aria-label="Quel château vous ressemble ?" hidden>
+    <button class="test-fermer" type="button" data-fermer-test>Revenir aux portes</button>
+    <div class="circuit" data-quiz="#test"></div>
+  </div>
+
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/feuille-miailhe.js"></script><!-- la feuille de vigne du logo, partout la même -->
+  <script src="assets/js/armoiries.js"></script>
+  <script src="assets/js/logos-chateaux.js"></script><!-- avant intro.js : l'intro mesure les logos pour les souligner -->
+  <script src="assets/js/intro.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/espace.js"></script><!-- l'initiale du client et le panier, dans l'en-tête -->
+  <script src="assets/js/typographie.js"></script>
+  <script src="assets/js/reseaux.js"></script>
+  <script src="assets/js/quiz.js"></script>
+  <script src="assets/js/voix.js"></script><!-- « Bienvenue dans notre château », dit en entrant -->
+  <script src="assets/js/vitrine.js"></script>
+  <script src="assets/js/onglets.js"></script>
+  <script src="assets/js/plans.js"></script>
+  <script src="assets/js/survol.js"></script>
+  <script src="assets/js/histoire.js"></script>
+</body>
+</html>

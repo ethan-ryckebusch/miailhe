@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Château Verdignan · Le vin du père · Haut-Médoc</title>
+  <meta name="description" content="Château Verdignan, Haut-Médoc. Le vin du père : Jean Miailhe l'acquiert en 1972, un château face à l'estuaire, le vin de garde de la famille.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-verdignan">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="verdignan" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <a class="ch-logo" href="index.html" aria-label="Château Verdignan, accueil">Verdignan</a>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins">Nos vins</a>
+      <a href="famille.html">La famille</a>
+      <a href="index.html#temoin">L'enquête</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="ch-droite">
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span></a><a class="famille-lien ici" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan" aria-current="page"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span></a><a class="famille-lien" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span></a></nav>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Une maison de la famille MIAILHE">Une maison <span class="wordmark"></span></a>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main>
+    <section class="intro" aria-label="Château Verdignan">
+      <!-- Film d'intro en boucle, comme sur privios.com : la photo du château sert d'affiche pendant le chargement -->
+      <div class="intro-fond">
+        <video autoplay muted loop playsinline preload="auto" poster="../assets/img/verdignan-hero.jpg" aria-hidden="true">
+          <source src="../assets/video/verdignan-intro.webm" type="video/webm">
+          <source src="../assets/video/verdignan-intro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="intro-contenu">
+        <span class="embleme" data-armoirie="verdignan" aria-hidden="true"></span>
+        <h1 class="intro-texte">
+          <span data-anime="1">Gardez</span>
+          <span data-anime="2">l'<span class="it">élégance</span> du</span>
+          <span data-anime="3">père</span>
+        </h1>
+      </div>
+      <a class="fleche-bas" href="#nos-vins" aria-label="Découvrir nos vins"></a>
+    </section>
+
+    <section class="vins-titre" id="nos-vins">
+      <img src="../assets/img/verdignan-cabane.jpg" alt="" loading="lazy">
+      <p data-anime><span class="it">découvrez</span><br>nos vins</p>
+    </section>
+
+    <section class="bouteilles" aria-label="Nos vins" tabindex="-1">
+      <div class="piste">
+        <button class="bouteille" type="button" data-nom="Château Verdignan" data-origine="AOC Haut-Médoc · le grand vin" data-lien="chateau-verdignan.html" aria-label="Château Verdignan"><img src="../assets/img/bouteille-verdignan.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="N°2 de Verdignan" data-origine="AOC Haut-Médoc · le second vin" data-lien="n2-de-verdignan.html" aria-label="N°2 de Verdignan"><img src="../assets/img/bouteille-verdignan-n2.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="Château Plantey de la Croix" data-origine="AOC Haut-Médoc · les jeunes vignes" data-lien="plantey-de-la-croix.html" aria-label="Château Plantey de la Croix"><img src="../assets/img/bouteille-plantey.webp" alt="" loading="lazy"></button>
+      </div>
+      <button class="fleche-carrousel fleche-carrousel--prec" type="button" aria-label="Bouteille précédente"></button>
+      <button class="fleche-carrousel fleche-carrousel--suiv" type="button" aria-label="Bouteille suivante"></button>
+      <div class="bouteille-desc" aria-live="polite"><p class="nom"></p><p class="origine"></p></div>
+      <div class="points"></div>
+      <div class="bouteilles-bas">
+        <div class="filtre">
+          <button class="pilule" type="button" aria-expanded="false">La gamme <span class="chevron"></span></button>
+          <ul class="filtre-liste">
+              <li><button type="button" data-aller-bouteille="0">Château Verdignan<small>Le grand vin</small></button></li>
+              <li><button type="button" data-aller-bouteille="1">N°2 de Verdignan<small>Le second vin</small></button></li>
+              <li><button type="button" data-aller-bouteille="2">Château Plantey de la Croix<small>Les jeunes vignes</small></button></li>
+          </ul>
+        </div>
+        <a class="pilule pilule--pleine" href="#" data-lien-vin>Le découvrir</a>
+        <div class="filtre">
+          <button class="pilule" type="button" aria-expanded="false">Où l'acheter <span class="chevron"></span></button>
+          <ul class="filtre-liste">
+              <li><a href="https://www.coufran-verdignan.com/" target="_blank" rel="noopener">Boutique en ligne<small>coufran-verdignan.com</small></a></li>
+              <li>Maisons du Vin<small>Saint-Seurin-de-Cadourne et Pauillac</small></li>
+              <li>En Belgique<small>Carrefour, depuis plus de quarante ans</small></li>
+              <li>Dans le monde<small>Les négociants de la Place de Bordeaux</small></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le temps de la garde : où en est votre bouteille ? ([data-garde]) -->
+    <section class="atelier atelier--garde" aria-labelledby="garde-titre">
+      <div class="atelier-texte">
+        <h2 class="titre-65" id="garde-titre" data-anime><span>Le temps</span><span>de la <span class="it">garde</span></span></h2>
+        <p class="paragraphe" data-anime="2">L'œnologue Éric Boissenot se souvient de ce que lui disait son père, Jacques, qui conseillait déjà la famille : Verdignan avait de l'avenir, c'était un vignoble qui se révélerait avec les années. Le château ne vend un millésime que lorsqu'il est prêt ; à vous de choisir quand l'ouvrir. Quel est le vôtre ?</p>
+      </div>
+      <div class="garde" data-garde data-anime="2">
+        <label class="garde-choix"><span>Mon millésime</span>
+          <select><option value="1997" data-note="Élégance et équilibre, agréable fraîcheur, tanins goûteux : un classique de l'appellation.">1997</option><option value="1998" data-note="Plus de saveur et de concentration. Long, très distingué, d'une aptitude certaine au vieillissement.">1998</option><option value="1999" data-note="Épices, mûre, quetsche. Une bouche ronde et riche, un boisé français élégant.">1999</option><option value="2000" data-note="Certainement le meilleur millésime jamais produit par le cru : particulièrement vineux, et de garde." data-vedette>2000</option><option value="2001" data-note="Fruits épicés dans un boisé noble. De la complexité et de la longueur.">2001</option><option value="2002" data-note="Tanins tendres et fondus, grande persistance, complexité et élégance : une bouteille destinée à un bel avenir.">2002</option><option value="2003" data-note="Fruits noirs vifs et intenses, matière riche, attaque souple : un assemblage tourné vers le charme.">2003</option><option value="2004" data-note="Élégant et profond, un joli grain de tanins, une belle tenue en longueur.">2004</option><option value="2005" data-note="Distingué et puissant, texture serrée. Avec le temps, le boisé s'harmonise avec sa fermeté pour une très belle finale.">2005</option><option value="2006" data-note="Dense et concentré, du style stéphanois très cabernet : une pointe d'acidité, gage de vieillissement.">2006</option><option value="2007" data-note="Attaque veloutée, structure souple et ronde, tanins sans sécheresse, grande persistance.">2007</option><option value="2008" data-note="Cassis et prune. Puissance et densité dans un ensemble rond et onctueux, des tanins longs et savoureux.">2008</option><option value="2009" data-note="Prune et cerise, un corps velouté, des tanins fondus : un grand potentiel de vieillissement.">2009</option><option value="2010" data-note="Une matière exceptionnelle, qui grâce à sa fraîcheur pourra vieillir très longtemps.">2010</option><option value="2011" data-note="Torréfié et fruits rouges, un tanin serré, et la fraîcheur tout au long de la dégustation.">2011</option><option value="2012" data-note="Myrtille, mûre et épices : volume, souplesse et raffinement.">2012</option><option value="2013" data-note="Fruits noirs et toasté, une structure droite et fraîche : un vin équilibré, au bon potentiel de garde.">2013</option><option value="2014" data-note="Un grand vin de garde, qui vieillira longtemps grâce à sa structure tannique et son caractère affirmé.">2014</option><option value="2015" data-note="Chocolat, épices, fruits rouges : une grande capacité de garde, sans empêcher de l'ouvrir dès aujourd'hui.">2015</option><option value="2016" data-note="Gourmand, puissant, élégant et très long : sans doute un des plus beaux millésimes de Verdignan." data-vedette>2016</option></select>
+        </label>
+        <input class="garde-curseur" type="range" min="1997" max="2016" step="1" value="2010" aria-label="Millésime">
+        <p class="garde-age"><strong>2010</strong><span></span></p>
+        <ol class="garde-frise" aria-label="Les âges d'un Verdignan">
+          <li data-de="0" data-a="5"><strong>La jeunesse</strong>Le fruit domine, les tanins sont encore fermes : une à deux heures en carafe.</li>
+          <li data-de="6" data-a="12"><strong>L'ouverture</strong>Les tanins s'assouplissent, le bouquet se dessine : cassis, épices, cèdre.</li>
+          <li data-de="13" data-a="22"><strong>La plénitude</strong>Le bouquet s'épanouit : cuir, sous-bois, tabac. Le moment des grandes tablées.</li>
+          <li data-de="23" data-a="99"><strong>Le grand âge</strong>Pour les amateurs de vins évolués : ouvrez-le peu avant de servir, sans carafe.</li>
+        </ol>
+        <blockquote class="garde-note"><p></p><cite>Le château, à la mise en bouteille</cite></blockquote>
+        <p class="garde-avertissement">Les âges sont des repères indicatifs pour un Haut-Médoc à dominante de cabernet-sauvignon ; tout dépend de la conservation de la bouteille.</p>
+      </div>
+    </section>
+
+    <section class="manifeste">
+      <h2 class="manifeste-titre" data-anime>Le grand classique<br><span class="it">qui regarde l'eau</span><br>et prend son temps</h2>
+      <a class="cercle" href="famille.html" data-anime="2">
+        <img src="../assets/img/verdignan-main.jpg" alt="" loading="lazy">
+        <p><span class="it">découvrez</span><br>la famille</p>
+      </a>
+    </section>
+
+    <!-- Le témoin de l'Enquête « La page arrachée » (la vitrine MIAILHE renvoie ici) -->
+    <section class="temoin" id="temoin" aria-labelledby="temoin-nom">
+      <div class="temoin-grille">
+        <div>
+          <span class="cachet">L'enquête Miailhe · Témoin n° 2</span>
+          <h2 id="temoin-nom" data-anime>Jean</h2>
+          <p class="role">Le père · arrivé en 1972</p>
+          <blockquote data-anime="2">« J'ai été le dernier courtier de la famille. Deux ans après avoir arrêté, j'ai acheté le voisin de Coufran. Ici, rien ne se presse : la plus vieille porte du cuvier était déjà là bien avant nous. »</blockquote>
+          <a class="pilule" href="../enquete.html">Reprendre l'enquête</a>
+        </div>
+        <div class="piece piece--loupe" data-anime="3" data-loupe data-x="67.5" data-y="36.5" data-valeur="1720">
+          <p class="piece-etiquette">Pièce à conviction</p>
+          <p class="loupe-consigne">Passez la loupe sur le linteau de la plus vieille porte du cuvier : une date y est gravée.</p>
+          <div class="linteau" style="--lx: 30%; --ly: 50%">
+            <img class="linteau-ombre" src="../assets/img/verdignan-linteau.jpg" alt="" loading="lazy">
+            <img class="linteau-net" src="../assets/img/verdignan-linteau.jpg" alt="Le linteau de pierre de la vieille porte du cuvier, avec une date gravée" loading="lazy">
+            <span class="loupe-cercle" aria-hidden="true"></span>
+          </div>
+          <p class="piece-valeur" aria-live="polite">· · · ·</p>
+          <p class="piece-legende" hidden>C'est la date gravée sur le linteau de pierre de la plus vieille porte du cuvier de Verdignan.</p>
+          <button class="loupe-aide" type="button">Je ne trouve pas</button>
+          <p class="loupe-credit">Illustration : le linteau n'a pas encore été photographié.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593102">+33 5 56 59 31 02</a> &nbsp; <a href="mailto:contact@chateau-verdignan.com">contact@chateau-verdignan.com</a></p>
+        <p class="gris">Visites sur rendez-vous, pour les particuliers et les professionnels.</p>
+      </div>
+      <span class="embleme" data-armoirie="verdignan" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Verdignan, 33180 Saint-Seurin-de-Cadourne</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Verdignan · une maison de la famille <span class="wordmark"></span></a>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../coufran/index.html">Coufran</a> · <a href="../soudars/index.html">Soudars</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+</body>
+</html>

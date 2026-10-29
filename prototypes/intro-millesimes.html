@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIAILHE · Intro « Les millésimes » (prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Federo&family=Fraunces:opsz,wght,SOFT@9..144,500,100&family=Jost:wght@300;400&display=swap">
+<style>
+  /* Prototype d'intro n° 2 : un compteur fait défiler les dates de la famille, comme un millésime sur une étiquette.
+     Chaque date fait apparaître une ligne d'histoire ; tout se resserre ensuite sur le logo. */
+  :root { --blanc: #ffffff; --encre: #0d0d0d; --rouge: #e50041; --gris: #8a8a8a; --filet: #e5e5e5; --ease: cubic-bezier(.2, .7, .1, 1); }
+  html, body { margin: 0; height: 100%; background: var(--blanc); color: var(--encre); overflow: hidden; }
+  .scene { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; }
+  .chrono { transition: opacity 1s var(--ease), filter 1s var(--ease), transform 1.2s var(--ease); }
+  .is-logo .chrono { opacity: 0; filter: blur(10px); transform: scale(.96); }
+
+  /* Le compteur : chaque chiffre est une bande 0-9 0-9 qui défile verticalement */
+  .date {
+    display: flex; justify-content: center;
+    font-family: "Cormorant Garamond", serif; font-weight: 300; font-size: clamp(5rem, 21vw, 13rem); line-height: 1;
+    font-variant-numeric: lining-nums tabular-nums; letter-spacing: -.01em;
+    opacity: 0; transform: translateY(18px); transition: opacity 1.1s var(--ease), transform 1.1s var(--ease);
+  }
+  .is-parti .date { opacity: 1; transform: none; }
+  .chiffre {
+    display: block; height: 1em; width: .56em; overflow: hidden;
+    -webkit-mask-image: linear-gradient(transparent, #000 14%, #000 86%, transparent);
+    mask-image: linear-gradient(transparent, #000 14%, #000 86%, transparent);
+  }
+  .bande { display: block; transition: transform 1s cubic-bezier(.7, 0, .2, 1); }
+  .bande span { display: block; height: 1em; }
+
+  .legende {
+    min-height: 1.6em; margin: 1.6rem 0 0; font-family: Jost, sans-serif; font-weight: 300;
+    font-size: clamp(.8rem, 1.4vw, 1rem); letter-spacing: .16em; text-transform: uppercase; color: #3d3d3d;
+    transition: opacity .5s var(--ease), transform .5s var(--ease);
+  }
+  .legende.is-cache { opacity: 0; transform: translateY(8px); }
+  .legende b { font-weight: 400; color: var(--rouge); letter-spacing: .12em; }
+  .legende .coufran { font-family: Federo, serif; }
+  .legende .verdignan { font-family: "Bodoni Moda", serif; font-weight: 500; }
+  .legende .soudars { font-family: Fraunces, serif; font-variation-settings: "SOFT" 100; font-weight: 500; }
+  /* Le fil du temps : un trait rouge avance d'une date à l'autre */
+  .fil { position: relative; width: min(240px, 60vw); height: 1px; margin: 2.2rem auto 0; background: var(--filet); }
+  .fil i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--rouge); transition: width 1.1s cubic-bezier(.7, 0, .2, 1); }
+
+  .final { position: absolute; left: 50%; top: 50%; width: min(360px, 70vw); transform: translate(-50%, -50%); pointer-events: none; }
+  .logo { color: var(--encre); opacity: 0; filter: blur(8px); transform: scale(.94); transition: opacity 1.6s var(--ease), filter 1.6s var(--ease), transform 2s var(--ease); }
+  .logo svg { display: block; width: 100%; height: auto; }
+  .is-logo .logo { opacity: 1; filter: blur(0); transform: none; }
+  .accroche {
+    margin: 2.4rem 0 0; font-family: "Cormorant Garamond", serif; font-weight: 300; font-size: clamp(1.25rem, 2.4vw, 2rem); white-space: nowrap;
+    opacity: 0; transform: translateY(14px); transition: opacity 1.4s var(--ease), transform 1.4s var(--ease);
+  }
+  .accroche em { color: var(--rouge); }
+  .is-accroche .accroche { opacity: 1; transform: none; }
+
+  .etiquette { position: fixed; top: 22px; left: 24px; margin: 0; font-family: Jost, sans-serif; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: #b5b5b5; }
+  .rejouer {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    font-family: Jost, sans-serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+    background: none; border: 1px solid #d9d9d9; border-radius: 99px; padding: .9em 1.6em; color: var(--gris); cursor: pointer;
+    opacity: 0; pointer-events: none; transition: opacity .8s;
+  }
+  .is-fin .rejouer { opacity: 1; pointer-events: auto; }
+</style>
+</head>
+<body>
+  <p class="etiquette">Prototype · Intro 2 · Les millésimes</p>
+  <div class="scene">
+    <div class="chrono" aria-hidden="true">
+      <div class="date"></div>
+      <p class="legende is-cache"></p>
+      <div class="fil"><i></i></div>
+    </div>
+    <div class="final">
+      <div class="logo" role="img" aria-label="MIAILHE"></div>
+      <p class="accroche">Trois châteaux. <em>Une seule racine.</em></p>
+    </div>
+  </div>
+  <button class="rejouer" type="button">Rejouer</button>
+
+  <script src="../assets/js/logo.js"></script>
+  <script>
+  (function () {
+    // Chronologie vérifiée (Veille/00_ANALYSE_brief_veille_pistes_logo.md)
+    const ETAPES = [
+      { annee: '1793', texte: 'Élie Miailhe, courtier du roi' },
+      { annee: '1924', texte: 'Louis achète <b class="coufran">Coufran</b>' },
+      { annee: '1972', texte: 'Jean acquiert <b class="verdignan">Verdignan</b>' },
+      { annee: '1973', texte: 'Éric fait naître <b class="soudars">Soudars</b>' },
+      { annee: '2006', texte: 'Lovely, la quatrième génération' },
+    ];
+    const PAS = 1500;   // durée de chaque date à l'écran (ms)
+
+    const date = document.querySelector('.date');
+    const legende = document.querySelector('.legende');
+    const fil = document.querySelector('.fil i');
+    const L = window.MIAILHE_LOGO.logo;
+    document.querySelector('.logo').innerHTML = `<svg viewBox="${L.viewBox}" aria-hidden="true"><g transform="${L.transform}" fill="currentColor"><path d="${L.d}"/></g></svg>`;
+
+    // Quatre chiffres, chacun une bande 0-9 0-9 : on défile toujours vers le haut, en passant par la seconde série si besoin
+    const chiffres = [...Array(4)].map(() => {
+      const c = document.createElement('span'); c.className = 'chiffre';
+      const b = document.createElement('span'); b.className = 'bande';
+      b.innerHTML = [...Array(20)].map((_, i) => `<span>${i % 10}</span>`).join('');
+      c.appendChild(b); date.appendChild(c);
+      return { b, pos: 0 };
+    });
+    const placer = (ch, pos, anime, delai = 0) => {
+      ch.b.style.transition = anime ? '' : 'none';
+      ch.b.style.transitionDelay = anime ? `${delai}ms` : '0ms';
+      ch.b.style.transform = `translateY(${-pos}em)`;
+      ch.pos = pos;
+    };
+    const afficher = (annee, anime) => annee.split('').forEach((d, i) => {
+      const ch = chiffres[i], cible = +d;
+      if (!anime) { placer(ch, cible, false); return; }
+      if (cible === ch.pos % 10) return;
+      const pos = cible > ch.pos % 10 ? cible : cible + 10;
+      placer(ch, ch.pos % 10, false);
+      void ch.b.offsetHeight;                          // repartir de la première série sans transition
+      placer(ch, pos, true, i * 90);
+    });
+
+    let course = 0, minuteurs = [];
+    const plus_tard = (fn, ms) => minuteurs.push(setTimeout(fn, ms));
+    function jouer() {
+      course++;
+      minuteurs.forEach(clearTimeout); minuteurs = [];
+      document.body.className = '';
+      legende.classList.add('is-cache');
+      fil.style.width = '0';
+      afficher(ETAPES[0].annee, false);
+      plus_tard(() => document.body.classList.add('is-parti'), 300);
+      ETAPES.forEach((e, i) => {
+        plus_tard(() => {
+          if (i) afficher(e.annee, true);
+          legende.classList.add('is-cache');
+          plus_tard(() => { legende.innerHTML = e.texte; legende.classList.remove('is-cache'); }, i ? 650 : 500);
+          fil.style.width = `${((i + 1) / ETAPES.length) * 100}%`;
+        }, 300 + i * PAS);
+      });
+      const fin = 300 + ETAPES.length * PAS + 400;
+      plus_tard(() => document.body.classList.add('is-logo'), fin);
+      plus_tard(() => document.body.classList.add('is-accroche'), fin + 1300);
+      plus_tard(() => document.body.classList.add('is-fin'), fin + 2600);
+    }
+
+    document.querySelector('.rejouer').addEventListener('click', jouer);
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(jouer);
+  })();
+  </script>
+</body>
+</html>

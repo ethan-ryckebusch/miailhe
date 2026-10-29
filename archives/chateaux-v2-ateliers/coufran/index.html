@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Château Coufran · Le vin du grand-père · Haut-Médoc</title>
+  <meta name="description" content="Château Coufran, Haut-Médoc. Le vin du grand-père : Louis Miailhe l'a fait entrer dans la famille en 1924 et planté à 85 % de merlot.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-coufran">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="coufran" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <a class="ch-logo" href="index.html" aria-label="Château Coufran, accueil">Coufran</a>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins">Nos vins</a>
+      <a href="famille.html">La famille</a>
+      <a href="index.html#temoin">L'enquête</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="ch-droite">
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien ici" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran" aria-current="page"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span></a><a class="famille-lien" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span></a><a class="famille-lien" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span></a></nav>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Une maison de la famille MIAILHE">Une maison <span class="wordmark"></span></a>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main>
+    <section class="intro" aria-label="Château Coufran">
+      <!-- Film d'intro en boucle, comme sur privios.com : la photo du château sert d'affiche pendant le chargement -->
+      <div class="intro-fond">
+        <video autoplay muted loop playsinline preload="auto" poster="../assets/img/coufran-hero.jpg" aria-hidden="true">
+          <source src="../assets/video/coufran-intro.webm" type="video/webm">
+          <source src="../assets/video/coufran-intro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="intro-contenu">
+        <span class="embleme" data-armoirie="coufran" aria-hidden="true"></span>
+        <h1 class="intro-texte">
+          <span data-anime="1">Goûtez</span>
+          <span data-anime="2">le <span class="it">caractère</span> du</span>
+          <span data-anime="3">grand-père</span>
+        </h1>
+      </div>
+      <a class="fleche-bas" href="#nos-vins" aria-label="Découvrir nos vins"></a>
+    </section>
+
+    <section class="vins-titre" id="nos-vins">
+      <img src="../assets/img/coufran-pigeonnier.jpg" alt="" loading="lazy">
+      <p data-anime><span class="it">découvrez</span><br>nos vins</p>
+    </section>
+
+    <section class="bouteilles" aria-label="Nos vins" tabindex="-1">
+      <div class="piste">
+        <button class="bouteille" type="button" data-nom="Château Coufran" data-origine="AOC Haut-Médoc · le grand vin" data-lien="chateau-coufran.html" aria-label="Château Coufran"><img src="../assets/img/bouteille-coufran.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="N°2 de Coufran" data-origine="AOC Haut-Médoc · le second vin" data-lien="n2-de-coufran.html" aria-label="N°2 de Coufran"><img src="../assets/img/bouteille-coufran-n2.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="Château La Rose Maréchale" data-origine="AOC Haut-Médoc · les jeunes vignes" data-lien="la-rose-marechale.html" aria-label="Château La Rose Maréchale"><img src="../assets/img/bouteille-la-rose-marechale.webp" alt="" loading="lazy"></button>
+      </div>
+      <button class="fleche-carrousel fleche-carrousel--prec" type="button" aria-label="Bouteille précédente"></button>
+      <button class="fleche-carrousel fleche-carrousel--suiv" type="button" aria-label="Bouteille suivante"></button>
+      <div class="bouteille-desc" aria-live="polite"><p class="nom"></p><p class="origine"></p></div>
+      <div class="points"></div>
+      <div class="bouteilles-bas">
+        <div class="filtre">
+          <button class="pilule" type="button" aria-expanded="false">La gamme <span class="chevron"></span></button>
+          <ul class="filtre-liste">
+              <li><button type="button" data-aller-bouteille="0">Château Coufran<small>Le grand vin</small></button></li>
+              <li><button type="button" data-aller-bouteille="1">N°2 de Coufran<small>Le second vin</small></button></li>
+              <li><button type="button" data-aller-bouteille="2">Château La Rose Maréchale<small>Les jeunes vignes</small></button></li>
+          </ul>
+        </div>
+        <a class="pilule pilule--pleine" href="#" data-lien-vin>Le découvrir</a>
+        <div class="filtre">
+          <button class="pilule" type="button" aria-expanded="false">Où l'acheter <span class="chevron"></span></button>
+          <ul class="filtre-liste">
+              <li><a href="https://www.coufran-verdignan.com/" target="_blank" rel="noopener">Boutique en ligne<small>coufran-verdignan.com</small></a></li>
+              <li>Maisons du Vin<small>Saint-Seurin-de-Cadourne et Pauillac</small></li>
+              <li>En France<small>Monoprix, en bouteille et en demi-bouteille</small></li>
+              <li>En Belgique<small>Colruyt, depuis plus de soixante-dix ans</small></li>
+              <li>Dans le monde<small>Les négociants de la Place de Bordeaux</small></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Les quatre mots de l'œnologue : la roue (assets/js/chateau.js, [data-mots]) -->
+    <section class="atelier atelier--mots" aria-labelledby="mots-titre">
+      <div class="atelier-texte">
+        <h2 class="titre-65" id="mots-titre" data-anime><span>En quatre</span><span class="it">mots</span></h2>
+        <p class="paragraphe" data-anime="2">Interrogé pour le film du château, l'œnologue conseil Éric Boissenot résume Coufran en quatre mots : la générosité, la force, la délicatesse et la rondeur. On les retrouve, millésime après millésime, dans les notes de dégustation du château. Touchez un mot.</p>
+      </div>
+      <div class="roue" data-mots data-anime="2">
+        <svg viewBox="0 0 400 400" aria-hidden="false" role="group" aria-label="Les quatre mots de Coufran">
+          <g class="mot is-actif" data-mot="0" tabindex="0" role="button" aria-label="La générosité"><path d="M204.2 0.0A200 200 0 0 1 400.0 195.8L328.0 197.3A128 128 0 0 0 202.7 72.0Z"/><text x="316.0" y="89.0" text-anchor="middle">générosité</text></g>
+          <g class="mot" data-mot="1" tabindex="0" role="button" aria-label="La force"><path d="M400.0 204.2A200 200 0 0 1 204.2 400.0L202.7 328.0A128 128 0 0 0 328.0 202.7Z"/><text x="316.0" y="321.0" text-anchor="middle">force</text></g>
+          <g class="mot" data-mot="2" tabindex="0" role="button" aria-label="La délicatesse"><path d="M195.8 400.0A200 200 0 0 1 0.0 204.2L72.0 202.7A128 128 0 0 0 197.3 328.0Z"/><text x="84.0" y="321.0" text-anchor="middle">délicatesse</text></g>
+          <g class="mot" data-mot="3" tabindex="0" role="button" aria-label="La rondeur"><path d="M0.0 195.8A200 200 0 0 1 195.8 0.0L197.3 72.0A128 128 0 0 0 72.0 197.3Z"/><text x="84.0" y="89.0" text-anchor="middle">rondeur</text></g>
+        </svg>
+        <div class="roue-centre" aria-live="polite">
+          <div class="mot-note" data-note="0"><p class="mot-titre">La générosité</p><p class="mot-texte">« Beaucoup de gras et d'éclat, dus aux merlots de vieilles vignes cueillis au moment idéal. »</p><p class="mot-source">Château Coufran 2005</p></div>
+          <div class="mot-note" data-note="1" hidden><p class="mot-titre">La force</p><p class="mot-texte">« Une trame tannique puissante et tendue, qui lui donne sapidité et persistance. »</p><p class="mot-source">Château Coufran 2010</p></div>
+          <div class="mot-note" data-note="2" hidden><p class="mot-titre">La délicatesse</p><p class="mot-texte">« Une palette aromatique très fine, qui mêle des notes grillées, les fruits noirs et le cèdre. »</p><p class="mot-source">Château Coufran 2010</p></div>
+          <div class="mot-note" data-note="3" hidden><p class="mot-titre">La rondeur</p><p class="mot-texte">« Étonnant par son gras, rond et souple à la dégustation ; sa finale est longue et persistante. »</p><p class="mot-source">La fiche technique du château</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- La cave de Louis : les millésimes et ce qu'en dit le château ([data-cave]) -->
+    <section class="atelier atelier--cave" aria-labelledby="cave-titre">
+      <div class="atelier-texte">
+        <h2 class="titre-65" id="cave-titre" data-anime><span>La cave</span><span>de <span class="it">Louis</span></span></h2>
+        <p class="paragraphe" data-anime="2">Ici, on ne vend pas un vin tant qu'il n'est pas prêt : les bouteilles attendent au château, au frais, parfois des années. Dix-huit millésimes, de 1999 à 2016, et ce que le château en dit. Choisissez une bouteille.</p>
+      </div>
+      <div class="cave" data-cave data-anime="2">
+        <div class="casier" role="group" aria-label="Les millésimes de Château Coufran">
+          <button class="culot" type="button" data-annee="1999" data-note="Rubis, nez de cerise. Très bonne texture et concentration : un vin gourmand. Le premier millésime du nouveau style du cru." aria-pressed="false"><span>1999</span></button>
+          <button class="culot" type="button" data-annee="2000" data-note="Un vin de caractère. Nez intense de fruits rouges et noirs, bouche assez riche, vive et épicée." aria-pressed="false"><span>2000</span></button>
+          <button class="culot" type="button" data-annee="2001" data-note="Gras et gourmand. Une jolie trame qui permet à ce vin un peu austère de s'épanouir avec le temps." aria-pressed="false"><span>2001</span></button>
+          <button class="culot" type="button" data-annee="2002" data-note="Nez légèrement vanillé, fruits rouges flatteurs, tanins denses et fins : une bouteille de caractère, promise à un bel avenir." aria-pressed="false"><span>2002</span></button>
+          <button class="culot" type="button" data-annee="2003" data-note="Nez expressif aux notes délicates de pruneau. Bouche puissante et opulente, sans mollesse." aria-pressed="false"><span>2003</span></button>
+          <button class="culot" type="button" data-annee="2004" data-note="Nez subtil de fruits noirs mûrs. Un vin étonnamment concentré, à la finale persistante." aria-pressed="false"><span>2004</span></button>
+          <button class="culot is-vedette" type="button" data-annee="2005" data-note="Étonnants arômes de fruits et d'épices, beaucoup de gras et d'éclat. Le plus grand millésime de Coufran jamais produit, qui détrône le fabuleux 1995." aria-pressed="true"><span>2005</span></button>
+          <button class="culot" type="button" data-annee="2006" data-note="Nez complexe et gourmand. Avec le temps, ce grand vin de merlot s'arrondit et sa finale devient de plus en plus soyeuse." aria-pressed="false"><span>2006</span></button>
+          <button class="culot" type="button" data-annee="2007" data-note="Friand et aimable. Il s'épanouit après une heure de carafe, sur une finale de fruits frais." aria-pressed="false"><span>2007</span></button>
+          <button class="culot" type="button" data-annee="2008" data-note="Fruits noirs vifs et intenses, attaque ample, ronde et soyeuse. Un équilibre remarquable." aria-pressed="false"><span>2008</span></button>
+          <button class="culot" type="button" data-annee="2009" data-note="Myrtille, mûre et boisé fin. Une matière charnue, des tanins tendres, une finesse rare : le reflet d'un millésime exceptionnel." aria-pressed="false"><span>2009</span></button>
+          <button class="culot" type="button" data-annee="2010" data-note="Fruits noirs, cèdre, notes grillées. Une trame puissante et tendue : un grand vin, au gros potentiel de vieillissement." aria-pressed="false"><span>2010</span></button>
+          <button class="culot" type="button" data-annee="2011" data-note="Cassis, fruits rouges, torréfié. Vite prêt à être dégusté, il peut aussi attendre quelques années." aria-pressed="false"><span>2011</span></button>
+          <button class="culot" type="button" data-annee="2012" data-note="Fruits noirs, épices, toasté. Beau potentiel de vieillissement, mais sa souplesse permet de l'apprécier vite." aria-pressed="false"><span>2012</span></button>
+          <button class="culot" type="button" data-annee="2013" data-note="Épices et toasté, fraîcheur et souplesse, finale longue et précise. Une belle réussite dans un millésime délicat." aria-pressed="false"><span>2013</span></button>
+          <button class="culot" type="button" data-annee="2014" data-note="Fruits rouges confiturés, boisé fumé. Volume, fraîcheur et puissance : un grand potentiel de vieillissement." aria-pressed="false"><span>2014</span></button>
+          <button class="culot" type="button" data-annee="2015" data-note="Mûre, groseille, boisé toasté. L'opulence des merlots à belle maturité : plein, gourmand et sapide." aria-pressed="false"><span>2015</span></button>
+          <button class="culot" type="button" data-annee="2016" data-note="Fruits rouges mûrs, touches torréfiées. Parfumé, gourmand, puissant et long : un Coufran avec beaucoup d'avenir." aria-pressed="false"><span>2016</span></button>
+        </div>
+        <div class="cave-note" aria-live="polite">
+          <p class="cave-annee">2005</p>
+          <p class="cave-texte">Étonnants arômes de fruits et d'épices, beaucoup de gras et d'éclat. Le plus grand millésime de Coufran jamais produit, qui détrône le fabuleux 1995.</p>
+          <p class="cave-vedette">Le plus grand millésime de Coufran</p>
+          <p class="cave-source">D'après les commentaires de dégustation du château</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifeste">
+      <h2 class="manifeste-titre" data-anime>Le merlot<br><span class="it">qui a tenu tête</span><br>au cabernet</h2>
+      <a class="cercle" href="famille.html" data-anime="2">
+        <img src="../assets/img/coufran-merlot.jpg" alt="" loading="lazy">
+        <p><span class="it">découvrez</span><br>la famille</p>
+      </a>
+    </section>
+
+    <!-- Le témoin de l'Enquête « La page arrachée » (la vitrine MIAILHE renvoie ici) -->
+    <section class="temoin" id="temoin" aria-labelledby="temoin-nom">
+      <div class="temoin-grille">
+        <div>
+          <span class="cachet">L'enquête Miailhe · Témoin n° 1</span>
+          <h2 id="temoin-nom" data-anime>Louis</h2>
+          <p class="role">Le grand-père · arrivé en 1924</p>
+          <blockquote data-anime="2">« En 1924, ici, tout le monde plantait du cabernet. J'ai tout arraché pour replanter en merlot. On m'a pris pour un fou. Cent ans plus tard, la part de merlot n'a pas bougé d'un pied. »</blockquote>
+          <a class="pilule" href="../enquete.html">Reprendre l'enquête</a>
+        </div>
+        <div class="piece" data-anime="3">
+          <p class="piece-etiquette">Pièce à conviction</p>
+          <p class="piece-valeur">85 %</p>
+          <p class="piece-legende">de merlot dans les vignes de Coufran : la part que Louis a choisie en 1924. Un siècle plus tard, elle n'a pas changé.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593102">+33 5 56 59 31 02</a> &nbsp; <a href="mailto:contact@chateau-coufran.com">contact@chateau-coufran.com</a></p>
+        <p class="gris">Visites sur rendez-vous, pour les particuliers et les professionnels.</p>
+      </div>
+      <span class="embleme" data-armoirie="coufran" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Coufran, 33180 Saint-Seurin-de-Cadourne</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Coufran · une maison de la famille <span class="wordmark"></span></a>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../verdignan/index.html">Verdignan</a> · <a href="../soudars/index.html">Soudars</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+</body>
+</html>

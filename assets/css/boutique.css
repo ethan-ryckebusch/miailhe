@@ -1,0 +1,960 @@
+/* La boutique de la famille (boutique.html). Troisième version, 28/10/2026 : deux espaces, particuliers et professionnels,
+   et un bouton pour passer de l'un à l'autre ; une boutique « incroyable et cinématique, digne d'une boutique viticole
+   très professionnelle » (demande de l'utilisateur). La version d'avant est dans archives/boutique-v2-cave/.
+   - La scène : les films des trois châteaux l'un après l'autre (particuliers), l'estuaire (professionnels).
+   - La barre : le choix de l'espace et ses chapitres, collée sous l'en-tête.
+   - Particuliers : les doyennes, la famille, la cave (chaque vin sur sa scène, la frise de ses millésimes), le vin de
+     votre année, la livraison ; la fiche d'un vin, le tiroir du panier, la commande (maquette).
+   - Professionnels : l'offre des trois châteaux, les millésimes prêts à boire, les palettes, les étapes, le kit, le devis.
+   Fond blanc et gris pâle, encre presque noire, les trois couleurs des châteaux ; les films font le cinéma. */
+
+.page-boutique {
+  --encre: #16120f;
+  --muet: #6b635d;
+  --doux: #4b443f;
+  --pale: #f5f4f1;
+  --filet: rgba(22, 18, 15, .12);
+  --nuit: #0d0a08;
+  --ivoire: #f6f2e9;
+  --courbe: cubic-bezier(.2, .7, .1, 1);
+  --rideau: cubic-bezier(.76, 0, .24, 1);
+  --entete: 70px; --racine: 34px;
+  --marge: 6vw;
+  --tricolore: linear-gradient(90deg, var(--coufran) 0 33.3%, var(--verdignan) 33.3% 66.6%, var(--soudars) 66.6%);
+  background: #fff; color: var(--encre);
+  font-family: var(--f-ui); font-size: 17px; line-height: 1.55;
+}
+.page-boutique :where(h1, h2, h3, h4, p, figure, ol, ul, dl, dd, blockquote, fieldset) { margin: 0; font-weight: 400; }
+.page-boutique :where(main, .bq-panier, .bq-fiche, .bq-pied) a { color: inherit; text-decoration: none; }
+.page-boutique :where(main, .bq-fiche) :where(ol, ul) { padding: 0; list-style: none; }
+.page-boutique em, .page-boutique .it { font-family: var(--f-it); font-style: italic; font-weight: 400; letter-spacing: -.01em; }
+.page-boutique.bq-bloque { overflow: hidden; }
+.page-boutique [hidden] { display: none !important; }
+[data-chateau="coufran"] { --c: var(--coufran); --t: var(--coufran-teinte); --v: var(--coufran-vif); --motif: var(--motif-coufran); }
+[data-chateau="verdignan"] { --c: var(--verdignan); --t: var(--verdignan-teinte); --v: var(--verdignan-vif); --motif: var(--motif-verdignan); }
+[data-chateau="soudars"] { --c: var(--soudars); --t: var(--soudars-teinte); --v: var(--soudars-vif); --motif: var(--motif-soudars); }
+.page-boutique .motif { position: absolute; inset: 0; pointer-events: none; background: currentColor; -webkit-mask: var(--motif) repeat; mask: var(--motif) repeat; }
+.page-boutique main .armoirie svg, .page-boutique .bq-fiche .armoirie svg { display: block; width: 100%; height: auto; color: var(--armoirie); }
+.motif-tricolore { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--tricolore); }
+
+/* L'en-tête : transparent sur la scène ; blanc ensuite, et une bande blanche prolonge la racine du logo qui pend dessous */
+.page-boutique .site-header.is-scrolled:not(.on-dark) { background: #fff; box-shadow: 0 var(--racine) 0 0 #fff; }
+.chev { display: inline-block; width: 8px; height: 8px; border-left: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; }
+.chev--g { transform: rotate(45deg); }
+.bq-retour { display: inline-flex; align-items: center; gap: 10px; font-family: var(--f-ui); font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; color: inherit; }
+.bq-retour:hover { opacity: .6; }
+
+/* ---------- La typographie de la boutique ---------- */
+.bq-sur { display: inline-flex; align-items: center; gap: 12px; font-size: 11.5px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; }
+/* la signature de la marque mère : les trois couleurs, côte à côte */
+.bq-sur--trait::before { content: ""; width: 30px; height: 3px; border-radius: 2px; background: var(--tricolore); }
+.bq-h2 { font-family: "Cormorant", var(--f-serif); font-size: clamp(42px, 5.2vw, 84px); font-weight: 500; line-height: .96; letter-spacing: -.018em; }
+.bq-h2 > span { display: block; }
+.bq-h2 em { font-size: 1.04em; }
+.bq-chapeau { max-width: 36em; font-size: clamp(16.5px, 1.2vw, 19.5px); line-height: 1.58; color: var(--doux); }
+.bq-section-tete { display: grid; gap: 22px; justify-items: center; max-width: 880px; margin: 0 auto; text-align: center; }
+.bq-section-tete .bq-chapeau { margin: 0 auto; }
+.bq-bouton {
+  display: inline-flex; align-items: center; justify-content: center; gap: .7em; padding: 1.2em 2.2em; border: 0; border-radius: 2px; cursor: pointer;
+  background: var(--encre); color: #fff; font: inherit; font-size: 12.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+  transition: transform .35s var(--courbe), box-shadow .35s, background .3s, color .3s;
+}
+.bq-bouton:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -14px rgba(22, 18, 15, .55); }
+.page-boutique .bq-bouton--clair { background: var(--ivoire); color: var(--encre); }
+.page-boutique .bq-bouton--clair:hover { background: #fff; box-shadow: 0 18px 44px -16px rgba(0, 0, 0, .7); }
+.bq-lien { display: inline-block; justify-self: start; padding: 0 0 3px; border: 0; border-bottom: 1.5px solid currentColor; background: none; font: inherit; font-size: 12.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; color: inherit; transition: opacity .3s; }
+.bq-lien:hover { opacity: .62; }
+.page-boutique .bq-lien--clair { color: var(--ivoire); }
+.bq-lien-texte { padding: 0; border: 0; border-bottom: 1px solid currentColor; background: none; font: inherit; color: inherit; cursor: pointer; }
+.bq-apparait { opacity: 0; transform: translateY(34px); transition: opacity 1s var(--courbe), transform 1.1s var(--courbe); }
+.bq-apparait.is-in { opacity: 1; transform: none; }
+
+/* ---------- Le choix de l'espace : deux mots séparés d'un filet, un trait souligne l'espace choisi et glisse de l'un à
+   l'autre (29/10/2026 : l'interrupteur en pastille, jugé « très IA » par l'utilisateur, est remplacé) ---------- */
+.bq-espace { position: relative; display: inline-flex; align-items: center; justify-self: start; gap: 0; padding: 0; border: 0; background: none; }
+.bq-espace button {
+  position: relative; z-index: 1; padding: .55em 0; border: 0; background: none; cursor: pointer;
+  font: inherit; font-size: 12px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: rgba(246, 242, 233, .58);
+  transition: color .45s var(--courbe);
+}
+.bq-espace button + button { margin-left: 2.2em; }
+.bq-espace button + button::before { content: ""; position: absolute; left: -1.1em; top: 50%; width: 1px; height: 1.3em; transform: translateY(-50%); background: currentColor; opacity: .5; pointer-events: none; }
+.bq-espace button:hover { color: #fff; }
+.bq-espace button[aria-pressed="true"] { color: var(--ivoire); }
+.bq-espace-curseur { position: absolute; bottom: 0; left: var(--x, 0); width: var(--w, 0); height: 1.5px; background: var(--ivoire); transition: left .55s var(--courbe), width .55s var(--courbe); }
+.bq-espace--barre button { font-size: 10.5px; color: var(--muet); }
+.bq-espace--barre button:hover { color: var(--encre); }
+.bq-espace--barre button[aria-pressed="true"] { color: var(--encre); }
+.bq-espace--barre .bq-espace-curseur { background: var(--encre); }
+
+/* ---------- La scène d'ouverture ---------- */
+.bq-scene { position: relative; isolation: isolate; overflow: hidden; height: 100svh; min-height: 680px; background: var(--nuit); color: var(--ivoire); }
+.bq-scene-films { position: absolute; inset: 0; z-index: -2; }
+.bq-film { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.1); transition: opacity 1.6s ease, transform 14s linear; }
+.bq-film.is-actif { opacity: 1; transform: scale(1); }
+/* avant le premier film (ou sans mouvement), l'affiche du premier château */
+.bq-scene-films:not(:has(.is-actif)) .bq-film[data-pour="particulier"]:first-child, body[data-espace="pro"] .bq-film[data-pour="pro"] { opacity: 1; transform: none; }
+.bq-scene-voile {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(13, 10, 8, .74) 0, rgba(13, 10, 8, .42) 42%, rgba(13, 10, 8, .06) 72%),
+    linear-gradient(to top, rgba(13, 10, 8, .82) 0, rgba(13, 10, 8, 0) 42%),
+    linear-gradient(to bottom, rgba(13, 10, 8, .55) 0, rgba(13, 10, 8, 0) 22%);
+}
+.bq-scene-texte { position: absolute; left: var(--marge); bottom: clamp(128px, 17vh, 170px); display: grid; gap: 24px; justify-items: start; width: min(900px, 58vw); }
+.bq-scene-texte > .bq-sur { color: rgba(246, 242, 233, .82); }
+.bq-scene-texte > .bq-sur::before { content: ""; width: 30px; height: 3px; border-radius: 2px; background: var(--tricolore); }
+.bq-scene-mots { display: grid; gap: 24px; justify-items: start; }
+.bq-titre { font-family: "Cormorant", var(--f-serif); font-size: clamp(54px, min(6.6vw, 11vh), 116px); font-weight: 500; line-height: .9; letter-spacing: -.022em; }
+.bq-titre > span { display: block; }
+.bq-titre em { font-size: 1.02em; }
+.bq-scene .bq-chapeau { max-width: 34em; color: rgba(246, 242, 233, .86); }
+.bq-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px; margin-top: 4px; }
+/* le titre et ses lignes sortent du flou, à l'arrivée et à chaque changement d'espace */
+.bq-scene-mots:not([hidden]) > * { animation: bq-net 1.3s var(--courbe) both; }
+.bq-scene-mots:not([hidden]) .bq-titre span { animation: bq-net 1.4s var(--courbe) both; }
+.bq-scene-mots:not([hidden]) .bq-titre span + span { animation-delay: .14s; }
+.bq-scene-mots:not([hidden]) > .bq-chapeau { animation-delay: .3s; }
+.bq-scene-mots:not([hidden]) > .bq-actions { animation-delay: .42s; }
+@keyframes bq-net { from { opacity: 0; filter: blur(12px); transform: translateY(24px); } }
+/* le film en cours : trois chapitres, un par château, et leur progression */
+.bq-scene-chapitres { position: absolute; right: var(--marge); bottom: clamp(128px, 17vh, 170px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; width: min(560px, 42vw); }
+.bq-scene-chapitres li { display: grid; gap: 6px; opacity: .5; transition: opacity .6s; }
+.bq-scene-chapitres li.is-actif { opacity: 1; }
+.bq-scene-chapitres b { font-family: "Cormorant", var(--f-serif); font-size: 22px; font-weight: 500; line-height: 1; }
+.bq-scene-chapitres small { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: rgba(246, 242, 233, .74); }
+.bq-scene-barre { display: block; height: 2px; margin-bottom: 8px; border-radius: 2px; background: rgba(246, 242, 233, .24); overflow: hidden; }
+.bq-scene-barre i { display: block; height: 100%; width: 0; background: var(--v, var(--ivoire)); }
+.bq-scene-chapitres li.is-actif .bq-scene-barre i { width: calc(var(--avance, 0) * 100%); }
+.bq-scene-chapitres li.is-passe .bq-scene-barre i { width: 100%; }
+.bq-promesses { position: absolute; left: var(--marge); right: var(--marge); bottom: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(246, 242, 233, .22); }
+.bq-promesses--pro { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.bq-promesses li { display: grid; gap: 2px; padding: 22px 26px 28px 0; }
+.bq-promesses li + li { padding-left: 26px; border-left: 1px solid rgba(246, 242, 233, .16); }
+.bq-promesses b { font-family: "Cormorant", var(--f-serif); font-size: clamp(22px, 1.9vw, 30px); font-weight: 500; line-height: 1.05; font-variant-numeric: lining-nums; }
+.bq-promesses li > span { font-size: 12.5px; color: rgba(246, 242, 233, .72); }
+
+/* ---------- La barre : l'espace, ses chapitres ; collée sous l'en-tête et sous la racine du logo ---------- */
+.bq-sonde { display: block; height: 0; }
+.bq-barre {
+  position: sticky; top: calc(var(--entete) + var(--racine) - 1px); z-index: 30;
+  display: flex; align-items: center; gap: clamp(18px, 2.6vw, 40px); padding: 12px var(--marge);
+  background: rgba(255, 255, 255, .95); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--filet);
+  transition: box-shadow .4s;
+}
+.bq-barre.is-collee { box-shadow: 0 18px 30px -26px rgba(22, 18, 15, .5); }
+.bq-barre-liens { display: flex; align-items: center; gap: clamp(14px, 1.6vw, 30px); min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.bq-barre-liens::-webkit-scrollbar { display: none; }
+.bq-barre-liens a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 0; white-space: nowrap; font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--muet); transition: color .3s; }
+.bq-barre-liens a:hover { color: var(--encre); }
+.bq-barre-liens .armoirie { width: 20px; }
+.bq-barre-demande { display: inline-flex; align-items: center; gap: 10px; margin-left: auto; padding: .7em .8em .7em 1.3em; border-radius: 2px; background: var(--encre); color: #fff !important; white-space: nowrap; font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+.bq-barre-demande .bq-court { display: none; }
+.bq-barre-demande b { display: grid; place-items: center; min-width: 24px; height: 24px; padding: 0 6px; border-radius: 20px; background: var(--ivoire); color: var(--encre); font-size: 11.5px; letter-spacing: 0; }
+
+/* ============ Les particuliers ============ */
+
+/* ---------- Les doyennes ---------- */
+.bq-doyennes { padding: clamp(90px, 11vw, 160px) var(--marge) clamp(80px, 9vw, 130px); }
+.bq-doyennes-grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2vw, 30px); margin-top: clamp(50px, 5.5vw, 80px); }
+.bq-doyenne { display: flex; flex-direction: column; }
+.bq-doyenne-scene {
+  --h: clamp(400px, 40vw, 600px);
+  position: relative; isolation: isolate; overflow: hidden; display: grid; place-items: end center;
+  height: var(--h); padding: 0; border: 0; width: 100%; cursor: zoom-in; color: var(--c);
+  background: radial-gradient(ellipse 80% 70% at 50% 40%, #fff 0%, color-mix(in srgb, var(--c) 8%, #fff) 60%, color-mix(in srgb, var(--c) 17%, #fff) 100%);
+}
+.bq-doyenne-scene .motif { z-index: -2; opacity: .06; }
+/* le millésime, immense, derrière la bouteille */
+.bq-doyenne-an {
+  position: absolute; z-index: -1; top: 7%; left: 0; right: 0; text-align: center;
+  font-family: "Cormorant", var(--f-serif); font-size: clamp(120px, 13vw, 220px); font-weight: 500; line-height: .8; letter-spacing: -.035em;
+  font-variant-numeric: lining-nums; color: var(--c); opacity: .15; transition: transform 1.2s var(--courbe), opacity .8s;
+}
+.bq-doyenne-scene::after { content: ""; position: absolute; z-index: -1; left: 22%; right: 22%; bottom: 4%; height: 6%; border-radius: 50%; background: radial-gradient(closest-side, rgba(22, 18, 15, .32), transparent); }
+.bq-doyenne-scene img { height: calc(var(--h) * .8); width: auto; margin-bottom: calc(var(--h) * .055); filter: drop-shadow(0 22px 18px rgba(22, 18, 15, .24)); transition: transform 1s var(--courbe); }
+.bq-doyenne--dm .bq-doyenne-scene img { height: calc(var(--h) * .86); transform: scaleX(1.16); }
+.bq-doyenne-scene:hover img { transform: translateY(-12px); }
+.bq-doyenne--dm .bq-doyenne-scene:hover img { transform: translateY(-12px) scaleX(1.16); }
+.bq-doyenne-scene:hover .bq-doyenne-an { transform: translateY(10px); opacity: .22; }
+.bq-doyenne-age { position: absolute; top: 18px; left: 18px; padding: .5em .95em; border-radius: 2px; background: rgba(255, 255, 255, .9); color: var(--c); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.bq-doyenne-texte { display: flex; flex-direction: column; gap: 8px; flex: 1; padding: 26px 4px 0; }
+.bq-doyenne-qui { font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--c); }
+.bq-doyenne-nom { font-family: "Cormorant", var(--f-serif); font-size: clamp(28px, 2.4vw, 38px); font-weight: 500; line-height: 1.04; }
+.bq-doyenne-nom small { display: block; margin-top: 4px; font-family: var(--f-ui); font-size: 12.5px; font-weight: 400; letter-spacing: 0; color: var(--muet); }
+.bq-doyenne-note { font-family: "Cormorant", var(--f-serif); font-size: 18.5px; line-height: 1.4; color: #3b3530; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.bq-doyenne-bas { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--filet); }
+.bq-doyenne-prix { font-size: 20px; font-weight: 500; }
+.bq-doyenne-prix small { display: block; font-size: 12px; font-weight: 400; color: var(--muet); }
+.bq-doyenne .bq-ajouter { height: 46px; padding: 0 1.5em; }
+
+/* ---------- La famille ---------- */
+.bq-famille { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; gap: clamp(26px, 4vw, 70px); padding: clamp(80px, 9vw, 130px) var(--marge); background: var(--pale); }
+.bq-famille-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
+.bq-famille-photo--hier { margin-bottom: 18%; }
+.bq-famille-photo--hier img { filter: grayscale(.2) contrast(1.05); object-position: 45% 50%; }
+.bq-famille-photo--aujourdhui { margin-top: 18%; }
+.bq-famille-photo--aujourdhui img { object-position: 42% 60%; }
+.bq-famille-photo figcaption { margin-top: 12px; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muet); }
+.bq-famille-texte { display: grid; gap: 24px; justify-items: center; text-align: center; }
+.bq-famille-texte > p:not(.bq-sur) { max-width: 30em; font-family: "Cormorant", var(--f-serif); font-size: clamp(20px, 1.6vw, 24px); line-height: 1.42; color: #3b3530; }
+.bq-generations { display: flex; justify-content: center; gap: clamp(18px, 2.4vw, 40px); margin-top: 8px; }
+.bq-generations li { display: grid; justify-items: center; gap: 6px; }
+.bq-generations .armoirie { width: 34px; margin-bottom: 4px; }
+.bq-generations b { font-family: "Cormorant", var(--f-serif); font-size: 24px; font-weight: 500; line-height: 1; }
+.bq-generations small { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muet); }
+
+/* ---------- La cave ---------- */
+.bq-cave { padding-top: clamp(90px, 11vw, 160px); }
+.bq-cave > .bq-section-tete { padding: 0 var(--marge); margin-bottom: clamp(56px, 6vw, 90px); }
+.bq-chateau + .bq-chateau { margin-top: 0; }
+
+/* le chapitre d'un château, sur son film */
+.bq-chapitre {
+  position: relative; isolation: isolate; overflow: hidden; display: grid; align-items: end;
+  min-height: clamp(520px, 84vh, 860px); padding: 70px var(--marge) 64px; background: var(--nuit); color: var(--ivoire);
+}
+.bq-chapitre-film { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 12s linear; }
+.bq-chapitre.is-vu .bq-chapitre-film { transform: scale(1); }
+.bq-chapitre::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(13, 10, 8, .8) 0, rgba(13, 10, 8, .42) 46%, rgba(13, 10, 8, .05) 80%), linear-gradient(to top, rgba(13, 10, 8, .72), transparent 52%); }
+.bq-chapitre-texte { display: grid; gap: 16px; justify-items: start; max-width: 620px; }
+.bq-chapitre .armoirie { width: 52px; --armoirie-fond: #f6f2e9; }
+.bq-chapitre-qui { font-size: 11.5px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: rgba(246, 242, 233, .82); }
+.bq-chapitre-nom { line-height: 0; }
+/* le logo calé sur le texte : la boîte épouse l'encre (--encre, --retrait, posés par logos-chateaux.js) */
+.bq-chapitre-nom .logo-chateau { --cadre: clamp(260px, 30vw, 460px); display: block; width: calc(var(--cadre) * var(--encre, 1)); color: #fff; }
+.bq-chapitre-nom svg { display: block; width: calc(100% / var(--encre, 1)); height: auto; margin-left: calc(-100% * var(--retrait, 0) / var(--encre, 1)); overflow: visible; }
+.bq-chapitre-ligne { font-family: "Cormorant", var(--f-serif); font-size: clamp(28px, 2.7vw, 42px); line-height: 1.08; }
+.bq-chapitre-histoire { max-width: 34em; font-size: 15.5px; line-height: 1.62; color: rgba(246, 242, 233, .84); }
+.bq-chapitre .bq-lien { margin-top: 4px; }
+.bq-chapitre-compte { position: absolute; right: var(--marge); bottom: 64px; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(246, 242, 233, .74); }
+.bq-chapitre-texte > * { opacity: 0; transform: translateY(24px); filter: blur(6px); transition: opacity 1.1s var(--courbe), transform 1.1s var(--courbe), filter 1.1s var(--courbe); }
+.bq-chapitre.is-vu .bq-chapitre-texte > * { opacity: 1; transform: none; filter: none; }
+.bq-chapitre.is-vu .bq-chapitre-texte > :nth-child(2) { transition-delay: .08s; }
+.bq-chapitre.is-vu .bq-chapitre-texte > :nth-child(3) { transition-delay: .16s; }
+.bq-chapitre.is-vu .bq-chapitre-texte > :nth-child(4) { transition-delay: .26s; }
+.bq-chapitre.is-vu .bq-chapitre-texte > :nth-child(5) { transition-delay: .36s; }
+.bq-chapitre.is-vu .bq-chapitre-texte > :nth-child(6) { transition-delay: .44s; }
+
+/* un vin sur sa scène : la bouteille devant son millésime, et en face la frise des millésimes, la note et le prix */
+.bq-cuvee { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); min-height: min(94vh, 920px); border-bottom: 1px solid var(--filet); }
+.bq-chateau > .bq-cuvee:nth-child(odd) .bq-cuvee-scene { order: 2; }
+.bq-cuvee-scene {
+  position: relative; isolation: isolate; overflow: hidden; display: grid; place-items: end center; color: var(--c);
+  background: radial-gradient(ellipse 72% 62% at 50% 40%, #fff 0%, color-mix(in srgb, var(--c) 7%, #fff) 56%, color-mix(in srgb, var(--c) 17%, #fff) 100%);
+}
+.bq-cuvee-scene .motif { z-index: -3; opacity: .055; }
+.bq-cuvee-an {
+  position: absolute; z-index: -2; top: 9%; left: 0; right: 0; text-align: center;
+  font-family: "Cormorant", var(--f-serif); font-size: clamp(170px, 22vw, 360px); font-weight: 500; line-height: .8; letter-spacing: -.045em;
+  font-variant-numeric: lining-nums; color: var(--c); opacity: .14;
+}
+/* le sol : l'ombre de la bouteille, et une lumière qui passe en biais */
+.bq-cuvee-scene::after { content: ""; position: absolute; z-index: -1; left: 30%; right: 30%; bottom: 6.2%; height: 5%; border-radius: 50%; background: radial-gradient(closest-side, rgba(22, 18, 15, .34), transparent); }
+.bq-cuvee-scene::before { content: ""; position: absolute; z-index: -1; inset: -20% -40%; background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, .55) 50%, transparent 58%); transform: translateX(-60%); pointer-events: none; }
+.bq-cuvee.is-in .bq-cuvee-scene::before { animation: bq-lumiere 3.2s .4s var(--courbe) both; }
+@keyframes bq-lumiere { to { transform: translateX(60%); } }
+.bq-cuvee-bouteille { padding: 0; border: 0; background: none; cursor: zoom-in; line-height: 0; margin-bottom: 7%; }
+.bq-cuvee-bouteille img { height: min(72vh, 700px); width: auto; filter: drop-shadow(0 28px 22px rgba(22, 18, 15, .26)); transition: transform 1s var(--courbe); }
+.bq-cuvee--dm .bq-cuvee-bouteille img { height: min(76vh, 740px); transform: scaleX(1.16); }
+.bq-cuvee--second { min-height: min(80vh, 780px); }
+.bq-cuvee--second .bq-cuvee-bouteille img { height: min(60vh, 580px); }
+.bq-cuvee-bouteille:hover img { transform: translateY(-12px); }
+.bq-cuvee--dm .bq-cuvee-bouteille:hover img { transform: translateY(-12px) scaleX(1.16); }
+.bq-cuvee-bouteille:focus-visible { outline: 2px solid var(--c); outline-offset: 6px; }
+.bq-cuvee-sceau { position: absolute; top: 30px; left: 30px; display: grid; place-content: center; justify-items: center; gap: 2px; width: 104px; height: 104px; border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); border-radius: 50%; background: rgba(255, 255, 255, .6); text-align: center; }
+.bq-cuvee-sceau b { font-family: "Cormorant", var(--f-serif); font-size: 25px; font-weight: 500; line-height: 1; }
+.bq-cuvee-sceau small { max-width: 76px; font-size: 8.5px; font-weight: 600; letter-spacing: .14em; line-height: 1.25; text-transform: uppercase; }
+.bq-chateau > .bq-cuvee:nth-child(odd) .bq-cuvee-sceau { left: auto; right: 30px; }
+/* le changement de millésime : la bouteille, l'année et la note s'effacent et reviennent */
+.bq-cuvee-bouteille img, .bq-cuvee-an, .bq-cuvee-detail { transition: opacity .35s ease, transform .6s var(--courbe), filter .6s var(--courbe); }
+.bq-cuvee.is-change .bq-cuvee-bouteille img { opacity: 0; transform: translateY(18px); }
+.bq-cuvee--dm.is-change .bq-cuvee-bouteille img { transform: translateY(18px) scaleX(1.16); }
+.bq-cuvee.is-change .bq-cuvee-an { opacity: 0; transform: translateY(-20px); }
+.bq-cuvee.is-change .bq-cuvee-detail { opacity: 0; transform: translateY(10px); filter: blur(4px); }
+.bq-cuvee.is-vise .bq-cuvee-scene { box-shadow: inset 0 0 0 2px var(--c); }
+
+.bq-cuvee-texte { display: flex; flex-direction: column; justify-content: center; gap: 22px; min-width: 0; padding: clamp(50px, 6vw, 100px) var(--marge) clamp(50px, 6vw, 100px) clamp(36px, 5vw, 90px); }
+.bq-chateau > .bq-cuvee:nth-child(odd) .bq-cuvee-texte { padding: clamp(50px, 6vw, 100px) clamp(36px, 5vw, 90px) clamp(50px, 6vw, 100px) var(--marge); }
+.bq-cuvee-sur { font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--c); }
+.bq-cuvee-nom { margin-top: -8px; font-family: "Cormorant", var(--f-serif); font-size: clamp(42px, 4.2vw, 68px); font-weight: 500; line-height: .98; letter-spacing: -.012em; }
+.bq-cuvee-infos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 26px; max-width: 560px; }
+.bq-cuvee-infos > div:first-child:not(:last-child):nth-last-child(3) { grid-column: 1 / -1; }
+.bq-cuvee-infos > div { padding: 12px 0; border-top: 1px solid var(--filet); }
+.bq-cuvee-infos dt { font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muet); }
+.bq-cuvee-infos dd { margin-top: 3px; font-size: 14.5px; line-height: 1.4; }
+/* la frise des millésimes */
+.bq-frise { display: grid; gap: 10px; min-width: 0; }
+.bq-frise-titre { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; font-size: 10.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+.bq-frise-titre small { font-size: 11.5px; font-weight: 400; letter-spacing: .04em; text-transform: none; color: var(--muet); }
+.bq-frise-rail {
+  position: relative; display: flex; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; border-top: 1px solid var(--filet); border-bottom: 1px solid var(--filet);
+  -webkit-mask: linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%); mask: linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+}
+.bq-frise-rail::-webkit-scrollbar { display: none; }
+.bq-frise-rail button {
+  position: relative; flex: none; display: grid; gap: 2px; justify-items: center; padding: 14px 16px 15px; border: 0; background: none; cursor: pointer;
+  scroll-snap-align: center; color: var(--muet); transition: color .3s;
+}
+.bq-frise-rail button:first-child { padding-left: 20px; }
+.bq-frise-rail button:last-child { padding-right: 20px; }
+.bq-frise-rail b { font-family: "Cormorant", var(--f-serif); font-size: 26px; font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; }
+.bq-frise-rail small { font-size: 9.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.bq-frise-rail button::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: -1px; height: 2px; background: var(--c); transform: scaleX(0); transition: transform .45s var(--courbe); }
+.bq-frise-rail button:hover, .bq-frise-rail [aria-checked="true"] { color: var(--encre); }
+.bq-frise-rail [aria-checked="true"]::after { transform: none; }
+.bq-frise-rail [data-epuise] b { text-decoration: line-through; text-decoration-thickness: 1px; }
+.bq-frise-rail button:focus-visible { outline: 2px solid var(--c); outline-offset: -4px; }
+/* le millésime choisi : l'année, la note, le prix */
+.bq-cuvee-detail { display: grid; gap: 18px; justify-items: start; }
+.bq-cuvee-annee { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 18px; }
+.bq-cuvee-annee span { font-family: "Cormorant", var(--f-serif); font-size: clamp(64px, 6vw, 96px); font-weight: 500; line-height: .86; letter-spacing: -.02em; font-variant-numeric: lining-nums; }
+.bq-cuvee-annee small { font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--c); }
+.bq-cuvee-note { max-width: 32em; padding-left: 20px; border-left: 2px solid var(--c); font-family: "Cormorant", var(--f-serif); font-size: clamp(19px, 1.45vw, 22px); line-height: 1.42; color: #2f2925; }
+.bq-cuvee-achat { display: grid; gap: 12px; width: 100%; max-width: 520px; padding-top: 18px; border-top: 1px solid var(--filet); }
+.bq-cuvee-prix { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.bq-cuvee-prix > p:first-child { font-size: 30px; font-weight: 500; white-space: nowrap; }
+.bq-cuvee-prix small { font-size: 13px; font-weight: 400; color: var(--muet); }
+.bq-cuvee .bq-ajout { margin-top: 2px; }
+.bq-cuvee .bq-qte button { height: 52px; width: 42px; }
+.bq-cuvee .bq-ajouter { height: 54px; padding: 0 2em; font-size: 12px; }
+
+/* le choix d'une quantité, l'ajout */
+.bq-carton { font-size: 12.5px; color: var(--muet); }
+.bq-ajout { display: flex; gap: 8px; margin-top: 12px; }
+.bq-qte { display: inline-flex; align-items: center; flex: 1; min-width: 0; border: 1px solid var(--filet); border-radius: 2px; }
+.bq-qte button { width: 36px; height: 42px; flex: none; border: 0; background: none; color: var(--encre); font-size: 17px; cursor: pointer; border-radius: 0; }
+.bq-qte button:hover { background: var(--pale); }
+.bq-qte output { flex: 1; min-width: 0; font-size: 12.5px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bq-ajouter { flex: none; padding: 0 1.3em; height: 44px; border: 0; border-radius: 2px; background: var(--encre); color: #fff; font: inherit; font-size: 11.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: background .3s, transform .3s var(--courbe); }
+.bq-ajouter:hover, .bq-ajouter.is-ajoute { background: var(--c, var(--encre)); }
+.bq-ajouter:active { transform: scale(.97); }
+.bq-dans-panier { font-size: 12.5px; color: var(--c); }
+.bq-rupture { margin-top: 12px; font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muet); }
+.bq-sans-js { padding: 60px var(--marge); color: var(--muet); }
+
+/* ---------- Le vin de votre année ---------- */
+.bq-annee { position: relative; padding: clamp(90px, 10vw, 150px) var(--marge); background: var(--pale); }
+.bq-annees { display: grid; gap: 18px; max-width: 1180px; margin: clamp(46px, 5vw, 70px) auto 0; }
+.bq-decennie { display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: center; gap: 20px; padding-top: 18px; border-top: 1px solid var(--filet); }
+.bq-decennie > p { font-family: var(--f-it); font-style: italic; font-size: 22px; color: var(--doux); }
+.bq-decennie > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.bq-decennie button {
+  display: grid; gap: 1px; justify-items: center; min-width: 84px; padding: 12px 14px 11px; border: 1px solid var(--filet); border-radius: 3px; background: #fff; cursor: pointer;
+  color: var(--encre); transition: background .3s, color .3s, border-color .3s, transform .3s var(--courbe);
+}
+.bq-decennie button b { font-family: "Cormorant", var(--f-serif); font-size: 28px; font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; }
+.bq-decennie button small { font-size: 9.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muet); }
+.bq-decennie button:hover { transform: translateY(-2px); border-color: var(--encre); }
+.bq-decennie button[aria-pressed="true"] { background: var(--encre); border-color: var(--encre); color: #fff; }
+.bq-decennie button[aria-pressed="true"] small { color: rgba(255, 255, 255, .7); }
+.bq-annee-resultat { max-width: 1180px; margin: 0 auto; }
+.bq-annee-resultat:not(:empty) { margin-top: clamp(40px, 4vw, 60px); }
+.bq-annee-phrase { margin-bottom: 24px; font-family: "Cormorant", var(--f-serif); font-size: clamp(28px, 2.6vw, 40px); line-height: 1.1; text-align: center; }
+.bq-annee-phrase b { font-weight: 500; font-style: italic; font-family: var(--f-it); }
+.bq-annee-vins { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
+.bq-annee-vin { display: grid; grid-template-columns: 130px minmax(0, 1fr); background: #fff; border-radius: 3px; overflow: hidden; }
+.bq-annee-image { position: relative; isolation: isolate; display: grid; place-items: end center; padding: 0; border: 0; cursor: zoom-in; color: var(--c); background: radial-gradient(ellipse at 50% 30%, #fff, color-mix(in srgb, var(--c) 13%, #fff)); }
+.bq-annee-image .motif { z-index: -1; opacity: .06; }
+.bq-annee-image img { height: 200px; width: auto; margin-bottom: 14px; filter: drop-shadow(0 12px 10px rgba(22, 18, 15, .2)); }
+.bq-annee-texte { display: grid; align-content: start; gap: 6px; padding: 20px 22px; }
+.bq-annee-qui { font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--c); }
+.bq-annee-vin h3 { font-family: "Cormorant", var(--f-serif); font-size: 26px; font-weight: 500; line-height: 1.05; }
+.bq-annee-format { font-size: 12.5px; color: var(--muet); }
+.bq-annee-prix { font-size: 19px; font-weight: 500; }
+.bq-annee-prix small { font-size: 12px; font-weight: 400; color: var(--muet); }
+.bq-annee-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 6px; }
+
+/* ---------- Livraison et retrait ---------- */
+.bq-conditions { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: stretch; }
+.bq-conditions-photo { position: relative; min-height: 560px; overflow: hidden; }
+.bq-conditions-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.92) saturate(.92); }
+.bq-conditions-texte { display: grid; align-content: center; gap: 24px; padding: clamp(60px, 7vw, 110px) var(--marge) clamp(60px, 7vw, 110px) clamp(40px, 5vw, 90px); }
+.bq-conditions-grille { display: grid; gap: 22px; margin-top: 12px; }
+.bq-conditions-grille > div { display: grid; grid-template-columns: 200px 1fr; gap: 20px; padding-top: 20px; border-top: 1px solid var(--filet); }
+.bq-conditions h3 { font-family: "Cormorant", var(--f-serif); font-size: 25px; font-weight: 500; line-height: 1.1; }
+.bq-conditions-grille p { font-size: 15px; color: var(--doux); }
+.bq-conditions-grille a { border-bottom: 1px solid currentColor; }
+
+/* ============ Les professionnels ============ */
+.bq-pro { --ombre: 0 40px 80px -50px rgba(22, 18, 15, .45); }
+.pro-offre { padding-top: clamp(90px, 11vw, 160px); }
+.pro-offre > .bq-section-tete { padding: 0 var(--marge); margin-bottom: clamp(56px, 6vw, 90px); }
+/* un château, une occasion : sa photo d'un côté, ses vins de l'autre */
+.pro-chateau { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); min-height: 88vh; border-top: 1px solid var(--filet); }
+.pro-chateau:nth-child(even) .pro-chateau-image { order: 2; }
+.pro-chateau-image { position: relative; overflow: hidden; min-height: 520px; background: var(--nuit); }
+.pro-chateau-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 8s linear; }
+.pro-chateau.is-in .pro-chateau-image img { transform: scale(1); }
+.pro-chateau-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(13, 10, 8, .72), rgba(13, 10, 8, 0) 46%); }
+.pro-chateau-image figcaption { position: absolute; z-index: 1; left: clamp(26px, 3vw, 46px); bottom: clamp(26px, 3vw, 46px); display: flex; align-items: center; gap: 18px; color: #fff; }
+.pro-chateau-image .armoirie { width: 48px; --armoirie-fond: #f6f2e9; }
+.pro-chateau-image .logo-chateau { --cadre: clamp(220px, 22vw, 330px); display: block; width: calc(var(--cadre) * var(--encre, 1)); line-height: 0; }
+.pro-chateau-image .logo-chateau svg { display: block; width: calc(100% / var(--encre, 1)); height: auto; margin-left: calc(-100% * var(--retrait, 0) / var(--encre, 1)); overflow: visible; }
+.pro-chateau-texte { display: grid; align-content: center; gap: 20px; padding: clamp(50px, 6vw, 96px) var(--marge) clamp(50px, 6vw, 96px) clamp(36px, 5vw, 84px); }
+.pro-chateau:nth-child(even) .pro-chateau-texte { padding: clamp(50px, 6vw, 96px) clamp(36px, 5vw, 84px) clamp(50px, 6vw, 96px) var(--marge); }
+.pro-chateau-texte > .bq-sur { color: var(--c); }
+.pro-chateau-titre { font-family: "Cormorant", var(--f-serif); font-size: clamp(40px, 4vw, 66px); font-weight: 500; line-height: .98; letter-spacing: -.015em; }
+.pro-chateau-accroche { max-width: 36em; font-size: 16px; line-height: 1.6; color: var(--doux); }
+.pro-vins { display: grid; margin-top: 8px; border-top: 1px solid var(--filet); }
+.pro-vin { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 4px 24px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--filet); }
+.pro-vin > img { grid-row: span 2; justify-self: center; height: 140px; width: auto; filter: drop-shadow(0 12px 10px rgba(22, 18, 15, .18)); }
+.pro-vin-texte { display: grid; gap: 4px; min-width: 0; }
+.pro-vin-cat { font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--c); }
+.pro-vin h4 { font-family: "Cormorant", var(--f-serif); font-size: 27px; font-weight: 500; line-height: 1.05; }
+.pro-vin dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 26px; margin-top: 8px; }
+.pro-vin dt { font-size: 9.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muet); }
+.pro-vin dd { font-size: 13.5px; line-height: 1.4; }
+.pro-vin-liens { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; font-size: 12px; }
+.pro-vin-liens a { border-bottom: 1px solid currentColor; }
+.pro-ajouter {
+  grid-column: 2; justify-self: start; display: inline-flex; align-items: center; gap: 10px; margin-top: 10px; padding: .85em 1.2em; border: 1px solid var(--encre); border-radius: 2px; background: none; cursor: pointer;
+  font: inherit; font-size: 10.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--encre); white-space: nowrap; transition: background .3s, color .3s;
+}
+.pro-ajouter i { position: relative; width: 12px; height: 12px; }
+.pro-ajouter i::before, .pro-ajouter i::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: currentColor; transform: translate(-50%, -50%); transition: transform .4s var(--courbe), width .4s var(--courbe); }
+.pro-ajouter i::after { transform: translate(-50%, -50%) rotate(90deg); }
+.pro-ajouter:hover { background: var(--pale); }
+.pro-ajouter[aria-pressed="true"] { background: var(--encre); color: #fff; }
+.pro-ajouter[aria-pressed="true"] i::before { width: 6px; transform: translate(-95%, 0) rotate(45deg); }
+.pro-ajouter[aria-pressed="true"] i::after { width: 11px; transform: translate(-30%, -50%) rotate(-50deg); }
+
+/* les millésimes prêts à boire : un onglet par château, une frise d'années */
+.pro-vieux { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(40px, 6vw, 110px); padding: clamp(90px, 10vw, 150px) var(--marge); background: var(--pale); }
+.pro-vieux-tete { display: grid; align-content: start; gap: 22px; position: sticky; top: calc(var(--entete) + var(--racine) + 110px); align-self: start; }
+.pro-onglets { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+.pro-onglets button { display: inline-flex; align-items: center; gap: 10px; padding: .8em 1.2em; border: 1px solid var(--filet); border-radius: 2px; background: #fff; cursor: pointer; font: inherit; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muet); transition: color .3s, border-color .3s; }
+.pro-onglets button .armoirie { width: 20px; }
+.pro-onglets button[aria-selected="true"] { border-color: var(--c); color: var(--encre); box-shadow: inset 0 0 0 1px var(--c); }
+.pro-frise { position: relative; display: grid; gap: 0; }
+.pro-frise::before { content: ""; position: absolute; left: 7px; top: 14px; bottom: 14px; width: 1px; background: color-mix(in srgb, var(--c) 40%, transparent); }
+.pro-frise li { position: relative; display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 26px; padding: 18px 0 22px 38px; border-bottom: 1px solid var(--filet); animation: bq-net .9s var(--courbe) both; }
+.pro-frise li:nth-child(2) { animation-delay: .06s; } .pro-frise li:nth-child(3) { animation-delay: .12s; } .pro-frise li:nth-child(4) { animation-delay: .18s; } .pro-frise li:nth-child(5) { animation-delay: .24s; }
+.pro-frise li::before { content: ""; position: absolute; left: 3px; top: 30px; width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 4px var(--pale); }
+.pro-frise strong { grid-row: span 2; font-family: "Cormorant", var(--f-serif); font-size: 46px; font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; }
+.pro-frise-age { font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--c); }
+.pro-frise p { margin-top: 4px; font-family: "Cormorant", var(--f-serif); font-size: 19px; line-height: 1.4; color: #2f2925; }
+
+/* les palettes : trois façons de la remplir, dessinées en perspective */
+.pro-formats { padding: clamp(90px, 10vw, 150px) var(--marge); }
+.pro-formats-grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: clamp(50px, 5vw, 80px); }
+.pro-format { display: grid; align-content: start; gap: 12px; padding: 0 0 30px; border: 1px solid var(--filet); border-radius: 4px; overflow: hidden; background: #fff; }
+.pro-format > :not(.pro-format-dessin) { margin: 0 clamp(22px, 2.4vw, 34px); }
+.pro-format-dessin { --hd: clamp(230px, 22vw, 300px); display: grid; place-items: center; height: var(--hd); margin-bottom: 14px; background: radial-gradient(ellipse at 50% 35%, #fff, var(--pale)); }
+.pro-palette { width: auto; height: calc(var(--hd) * .8); max-width: 80%; overflow: visible; }
+.pro-palette .pal-dessus { fill: #b6a892; } .pro-palette .pal-cote { fill: #8f826e; } .pro-palette .pal-face { fill: #a49680; }
+.pro-palette polygon { stroke: rgba(255, 255, 255, .7); stroke-width: .6; stroke-linejoin: round; }
+.carton--kraft .c-dessus { fill: #ecebe8; } .carton--kraft .c-droite { fill: #c9c6c0; } .carton--kraft .c-gauche { fill: #dddbd6; }
+.carton--coufran .c-dessus { fill: color-mix(in srgb, var(--coufran) 55%, #fff); } .carton--coufran .c-droite { fill: color-mix(in srgb, var(--coufran) 95%, #000); } .carton--coufran .c-gauche { fill: var(--coufran); }
+.carton--verdignan .c-dessus { fill: color-mix(in srgb, var(--verdignan) 55%, #fff); } .carton--verdignan .c-droite { fill: color-mix(in srgb, var(--verdignan) 85%, #000); } .carton--verdignan .c-gauche { fill: var(--verdignan); }
+.carton--soudars .c-dessus { fill: color-mix(in srgb, var(--soudars) 50%, #fff); } .carton--soudars .c-droite { fill: color-mix(in srgb, var(--soudars) 85%, #000); } .carton--soudars .c-gauche { fill: var(--soudars); }
+.pro-format-quantite { font-size: 10.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muet); }
+.pro-format h3 { font-family: "Cormorant", var(--f-serif); font-size: 32px; font-weight: 500; line-height: 1.04; }
+.pro-format p:not(.pro-format-quantite) { font-size: 15px; line-height: 1.55; color: var(--doux); }
+.pro-format .bq-lien { margin-top: 6px; }
+.pro-format--famille { border-color: transparent; background: var(--encre); color: var(--ivoire); }
+.pro-format--famille .pro-format-dessin { background: radial-gradient(ellipse at 50% 35%, #2b2520, var(--encre)); }
+.pro-format--famille .pro-format-quantite, .pro-format--famille p:not(.pro-format-quantite) { color: rgba(246, 242, 233, .74); }
+.pro-format--famille .pro-palette polygon { stroke: rgba(22, 18, 15, .5); }
+
+/* les étapes : du devis à la palette */
+.pro-etapes { padding: clamp(90px, 10vw, 150px) var(--marge); background: var(--pale); }
+.pro-etapes-liste { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 36px); margin-top: clamp(50px, 5vw, 80px); counter-reset: etape; }
+.pro-etapes-liste li { display: grid; align-content: start; gap: 10px; padding-top: 24px; border-top: 2px solid var(--encre); }
+.pro-etapes-liste li:nth-child(1) { border-color: var(--coufran); } .pro-etapes-liste li:nth-child(2) { border-color: var(--verdignan); } .pro-etapes-liste li:nth-child(3) { border-color: var(--soudars); }
+.pro-etape-num { font-family: "Cormorant", var(--f-serif); font-size: 64px; font-weight: 500; line-height: .9; font-variant-numeric: lining-nums; color: rgba(22, 18, 15, .22); }
+.pro-etapes-liste h3 { font-family: "Cormorant", var(--f-serif); font-size: 28px; font-weight: 500; line-height: 1.08; }
+.pro-etapes-liste p { font-size: 15px; line-height: 1.55; color: var(--doux); }
+
+/* le kit importateur */
+.pro-kit { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(40px, 6vw, 110px); align-items: center; padding: clamp(90px, 10vw, 150px) var(--marge); }
+.pro-kit-texte { display: grid; gap: 24px; }
+.pro-kit-liste { display: grid; gap: 0; border-top: 1px solid var(--filet); }
+.pro-kit-liste li { position: relative; padding: 15px 0 15px 34px; border-bottom: 1px solid var(--filet); font-family: "Cormorant", var(--f-serif); font-size: 21px; line-height: 1.3; }
+.pro-kit-liste li::before { content: ""; position: absolute; left: 4px; top: 22px; width: 12px; height: 7px; border-left: 1.5px solid var(--encre); border-bottom: 1.5px solid var(--encre); transform: rotate(-45deg); }
+.pro-langues { display: flex; flex-wrap: wrap; gap: 8px; }
+.pro-langues span { padding: .5em 1em; border: 1px solid var(--filet); border-radius: 2px; font-size: 11.5px; letter-spacing: .06em; color: var(--doux); }
+.pro-kit-boite {
+  position: relative; display: grid; justify-items: center; gap: 18px; padding: clamp(50px, 6vw, 90px) clamp(30px, 4vw, 60px); border-radius: 4px; overflow: hidden; text-align: center;
+  background: radial-gradient(ellipse at 50% 0%, #2b2520, var(--encre) 70%); color: var(--ivoire); box-shadow: var(--ombre);
+}
+.pro-kit-boite .wordmark { width: min(260px, 60%); color: var(--ivoire); }
+.pro-kit-nom { font-family: "Cormorant", var(--f-serif); font-size: clamp(30px, 2.6vw, 42px); font-weight: 500; line-height: 1; }
+.pro-kit-cle { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: rgba(246, 242, 233, .72); }
+.pro-kit-cle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+
+/* la demande de devis */
+.pro-demande { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(40px, 5vw, 90px); align-items: start; padding: clamp(90px, 10vw, 150px) var(--marge); background: var(--pale); }
+.pro-demande-texte { display: grid; gap: 24px; position: sticky; top: calc(var(--entete) + var(--racine) + 90px); }
+.pro-note { display: grid; gap: 10px; padding: 22px 24px 22px 27px; background: linear-gradient(180deg, var(--coufran) 0 33.3%, var(--verdignan) 33.3% 66.6%, var(--soudars) 66.6%) left / 3px 100% no-repeat, #fff; }
+.pro-note > p:not(.bq-sur) { font-size: 15px; line-height: 1.55; color: var(--doux); }
+.pro-equipe { display: grid; gap: 14px; }
+.pro-contact { display: grid; gap: 4px; padding-top: 14px; border-top: 1px solid var(--filet); font-size: 14.5px; line-height: 1.55; }
+.pro-contact-qui { font-family: "Cormorant", var(--f-serif); font-size: 21px; }
+.pro-contact a { border-bottom: 1px solid currentColor; }
+.pro-gris { font-size: 13.5px; color: var(--muet); }
+.pro-demande-cadre { padding: clamp(28px, 3.4vw, 50px); border-radius: 4px; background: #fff; box-shadow: var(--ombre); }
+.pro-form { display: grid; gap: 30px; }
+.pro-form fieldset { display: grid; gap: 14px; padding: 0; border: 0; min-width: 0; }
+.pro-form legend { padding: 0 0 14px; font-family: "Cormorant", var(--f-serif); font-size: 26px; font-weight: 500; }
+.pro-aide { font-size: 13.5px; color: var(--muet); }
+.pro-radios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.pro-radio { position: relative; display: block; cursor: pointer; }
+.pro-radio input { position: absolute; opacity: 0; }
+.pro-radio span { display: grid; gap: 4px; height: 100%; padding: 14px 16px; border: 1px solid var(--filet); border-radius: 4px; font-size: 14px; font-weight: 500; line-height: 1.3; transition: border-color .3s, box-shadow .3s; }
+.pro-radio small { font-size: 12px; font-weight: 400; color: var(--muet); }
+.pro-radio input:checked + span { border-color: var(--encre); box-shadow: inset 0 0 0 1px var(--encre); }
+.pro-radio input:focus-visible + span { outline: 2px solid var(--encre); outline-offset: 2px; }
+.pro-choix-vins { display: grid; gap: 18px; transition: opacity .4s; }
+.pro-choix-vins.is-famille { opacity: .4; }
+.pro-choix-chateau { display: grid; gap: 4px; }
+.pro-choix-nom { display: flex; align-items: center; gap: 10px; padding-bottom: 6px; font-size: 10.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--c); }
+.pro-choix-nom .armoirie { width: 22px; }
+.pro-coche { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--filet); font-size: 15px; }
+.pro-coche input { width: 17px; height: 17px; accent-color: var(--encre); }
+.pro-coche select { padding: .45em .6em; border: 1px solid var(--filet); border-radius: 3px; background: #fff; font: inherit; font-size: 13px; color: var(--encre); }
+.pro-coche--seule { grid-template-columns: auto minmax(0, 1fr); border-bottom: 0; font-size: 14px; }
+.pro-famille-info { padding: 12px 14px; border-radius: 3px; background: var(--pale); font-size: 13.5px; color: var(--doux); }
+.pro-ligne { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pro-form label:not(.pro-radio):not(.pro-coche) { display: grid; gap: 6px; font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muet); }
+.pro-form :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) { width: 100%; padding: .8em .9em; border: 1px solid rgba(22, 18, 15, .22); border-radius: 3px; background: #fff; font: inherit; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--encre); }
+.pro-form .pro-coche select { width: auto; padding: .45em .6em; font-size: 13px; }
+.pro-form :is(input, select, textarea):focus-visible { outline: 2px solid var(--encre); outline-offset: 1px; }
+.pro-erreur { padding: 10px 12px; border-radius: 3px; background: #fbeaee; color: #9b0d33; font-size: 13.5px; }
+.pro-envoyer { width: 100%; }
+.pro-merci { display: grid; justify-items: center; gap: 16px; padding: 30px 10px; text-align: center; outline: none; }
+.pro-merci .wordmark { width: 180px; color: var(--encre); }
+.pro-merci h3 { font-family: "Cormorant", var(--f-serif); font-size: 34px; font-weight: 500; line-height: 1.05; }
+.pro-merci p { max-width: 30em; color: var(--doux); }
+.pro-merci .bq-lien { justify-self: center; }
+
+/* ---------- Le passage d'un espace à l'autre : un rideau ---------- */
+.bq-rideau { position: fixed; inset: 0; z-index: 300; display: grid; place-content: center; justify-items: center; gap: 20px; background: var(--encre); color: var(--ivoire); transform: translateY(100%); visibility: hidden; pointer-events: none; }
+.bq-rideau.is-ferme { transform: none; visibility: visible; pointer-events: auto; transition: transform .78s var(--rideau); }
+.bq-rideau.is-ferme.is-ouvre { transform: translateY(-100%); transition: transform .8s var(--rideau); }
+.bq-rideau-mot { font-family: var(--f-it); font-style: italic; font-size: clamp(40px, 6vw, 92px); line-height: 1; opacity: 0; transform: translateY(20px); }
+.bq-rideau-trait { width: 0; height: 3px; border-radius: 2px; background: var(--tricolore); }
+.bq-rideau.is-ferme .bq-rideau-mot { opacity: 1; transform: none; transition: opacity .5s .35s, transform .7s .35s var(--courbe); }
+.bq-rideau.is-ferme .bq-rideau-trait { width: 120px; transition: width .6s .45s var(--courbe); }
+
+/* ---------- La fiche d'un vin ---------- */
+.bq-fiche-voile { position: fixed; inset: 0; z-index: 82; background: rgba(13, 10, 8, .55); opacity: 0; pointer-events: none; transition: opacity .45s; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.bq-fiche-voile.is-ouvert { opacity: 1; pointer-events: auto; }
+.bq-fiche {
+  --h: min(740px, 88vh);
+  position: fixed; z-index: 83; left: 50%; top: 50%; width: min(1120px, 92vw); height: var(--h);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); overflow: hidden; border-radius: 6px; background: #fff; color: var(--encre);
+  box-shadow: 0 60px 120px -40px rgba(0, 0, 0, .6);
+  opacity: 0; visibility: hidden; transform: translate(-50%, -46%) scale(.98); transition: opacity .45s, transform .6s var(--courbe), visibility 0s .6s;
+}
+.bq-fiche.is-ouvert { opacity: 1; visibility: visible; transform: translate(-50%, -50%); transition: opacity .45s, transform .6s var(--courbe); }
+.bq-fiche-scene { position: relative; isolation: isolate; overflow: hidden; display: grid; place-items: end center; color: var(--c); background: radial-gradient(ellipse 80% 70% at 50% 40%, #fff 0%, color-mix(in srgb, var(--c) 8%, #fff) 60%, color-mix(in srgb, var(--c) 17%, #fff) 100%); }
+.bq-fiche-scene .motif { z-index: -2; opacity: .07; }
+.bq-fiche-scene .bq-doyenne-an { top: 9%; font-size: clamp(130px, 16vw, 250px); }
+.bq-fiche-scene::after { content: ""; position: absolute; z-index: -1; left: 24%; right: 24%; bottom: 5%; height: 6%; border-radius: 50%; background: radial-gradient(closest-side, rgba(22, 18, 15, .34), transparent); }
+.bq-fiche-scene img { height: calc(var(--h) * .8); width: auto; margin-bottom: calc(var(--h) * .065); filter: drop-shadow(0 26px 20px rgba(22, 18, 15, .26)); }
+.bq-fiche--dm .bq-fiche-scene img { height: calc(var(--h) * .86); margin-bottom: calc(var(--h) * .05); transform: scaleX(1.16); }
+.bq-fiche.is-ouvert .bq-fiche-scene img { animation: bq-pose 1s var(--courbe) both; }
+@keyframes bq-pose { from { opacity: 0; transform: translateY(40px); } }
+.bq-fiche--dm.is-ouvert .bq-fiche-scene img { animation-name: bq-pose-dm; }
+@keyframes bq-pose-dm { from { opacity: 0; transform: translateY(40px) scaleX(1.16); } }
+.bq-fiche-corps { display: flex; flex-direction: column; gap: 12px; overflow-y: auto; overscroll-behavior: contain; padding: clamp(30px, 3.4vw, 48px) clamp(28px, 4vw, 56px) 30px; }
+.bq-fiche-fermer { position: absolute; top: 16px; right: 16px; z-index: 2; width: 44px; height: 44px; border: 1px solid var(--filet); border-radius: 50%; background: #fff; font-size: 24px; line-height: 1; cursor: pointer; color: var(--encre); }
+.bq-fiche-logo { display: block; width: clamp(140px, 13vw, 180px); color: var(--c); line-height: 0; }
+.bq-fiche-logo svg { display: block; width: 100%; height: auto; overflow: visible; }
+.bq-fiche-qui { font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--muet); }
+.bq-fiche h2 { font-family: "Cormorant", var(--f-serif); font-size: clamp(36px, 3.2vw, 52px); font-weight: 500; line-height: .98; letter-spacing: -.01em; }
+.bq-fiche h2 small { display: block; margin-top: 8px; font-family: var(--f-ui); font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muet); }
+.bq-reperes { display: flex; flex-wrap: wrap; gap: 8px; }
+.bq-reperes li { padding: .45em .9em; border: 1px solid var(--filet); border-radius: 2px; font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--doux); }
+.bq-reperes li.fort { border-color: var(--c); color: var(--c); }
+.bq-fiche-infos { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+.bq-fiche-infos > div { padding: 8px 0; border-top: 1px solid var(--filet); }
+.bq-fiche-infos dt { font-size: 9.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muet); }
+.bq-fiche-infos dd { font-size: 13.5px; }
+.bq-fiche-note { display: grid; gap: 6px; padding: 14px 0; border-top: 1px solid var(--filet); border-bottom: 1px solid var(--filet); }
+.bq-fiche-note > p { font-size: 10.5px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--muet); }
+.bq-fiche-note blockquote { font-family: "Cormorant", var(--f-serif); font-size: clamp(19px, 1.45vw, 22px); line-height: 1.38; color: #2b2622; }
+.bq-fiche-prix { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.bq-fiche-prix p:first-child { font-size: 28px; font-weight: 500; }
+.bq-fiche-prix small { font-size: 13px; font-weight: 400; color: var(--muet); }
+.bq-fiche .bq-ajout { margin-top: 0; }
+.bq-fiche .bq-qte button { height: 48px; }
+.bq-fiche .bq-ajouter { height: 50px; padding: 0 1.8em; }
+.bq-fiche-port { font-size: 13px; color: var(--muet); }
+.bq-fiche-liens { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: auto; padding-top: 6px; }
+
+/* ---------- Le tiroir du panier ---------- */
+/* le voile ne prend les clics que panier ouvert : pendant qu'il s'efface, un clic passe au travers */
+.bq-voile { position: fixed; inset: 0; z-index: 80; background: rgba(13, 10, 8, .42); opacity: 0; pointer-events: none; transition: opacity .4s; }
+.bq-voile.is-ouvert { opacity: 1; pointer-events: auto; }
+.bq-panier {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 81; width: min(470px, 100vw); overflow-y: auto; overscroll-behavior: contain;
+  display: flex; flex-direction: column; background: #fff; color: var(--encre); box-shadow: -30px 0 60px -30px rgba(13, 10, 8, .35);
+  transform: translateX(102%); visibility: hidden; transition: transform .55s var(--courbe), visibility 0s .55s;
+}
+.bq-panier.is-ouvert { transform: none; visibility: visible; transition: transform .55s var(--courbe); }
+.bq-panier-tete { position: sticky; top: 0; z-index: 1; display: flex; justify-content: space-between; align-items: center; padding: 22px 26px; background: #fff; border-bottom: 1px solid var(--filet); }
+.bq-panier-tete h2 { margin: 0; font-family: "Cormorant", var(--f-serif); font-size: 32px; font-weight: 500; }
+.bq-fermer { width: 42px; height: 42px; border: 1px solid var(--filet); border-radius: 50%; background: none; font-size: 22px; line-height: 1; cursor: pointer; color: var(--encre); }
+.bq-panier-corps, .bq-commande, .bq-merci { display: grid; gap: 18px; padding: 22px 26px 34px; }
+.bq-panier-vide { display: grid; gap: 12px; justify-items: start; padding: 4px 0; color: var(--doux); }
+.bq-panier-vide-image { width: 100%; height: 200px; object-fit: cover; border-radius: 3px; filter: brightness(.86); }
+.bq-panier-vide p:nth-of-type(1) { font-family: "Cormorant", var(--f-serif); font-size: 26px; color: var(--encre); }
+.bq-panier-vide .bq-lien { margin-top: 6px; color: var(--encre); }
+.bq-port { display: grid; gap: 10px; padding: 16px 18px; border-radius: 4px; background: var(--pale); font-size: 13.5px; }
+.bq-port.is-offert { color: var(--soudars); }
+.bq-jauge { display: block; height: 4px; border-radius: 2px; background: rgba(22, 18, 15, .1); overflow: hidden; }
+.bq-jauge span { display: block; height: 100%; background: var(--tricolore); background-size: 400px 100%; transition: width .6s var(--courbe); }
+.bq-lignes { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.bq-ligne { display: grid; grid-template-columns: 62px minmax(0, 1fr) auto; gap: 16px; align-items: start; padding: 16px 0; border-bottom: 1px solid var(--filet); }
+.bq-ligne-image { display: grid; place-items: end center; width: 62px; height: 112px; border-radius: 3px; background: radial-gradient(ellipse at 50% 30%, #fff, color-mix(in srgb, var(--c) 10%, #fff)); }
+.bq-ligne-image img { height: 96px; width: auto; margin-bottom: 6px; }
+.bq-ligne-nom { font-size: 14px; font-weight: 500; }
+.bq-ligne-format { margin-top: 2px; font-size: 12px; color: var(--muet); }
+.bq-qte--petit { display: inline-flex; flex: none; margin-top: 10px; }
+.bq-qte--petit button { width: 30px; height: 32px; }
+.bq-qte--petit output { min-width: 96px; padding: 0 4px; }
+.bq-ligne-droite { display: grid; justify-items: end; gap: 8px; font-size: 14px; font-weight: 500; }
+.bq-retirer { padding: 0; border: 0; background: none; font: inherit; font-size: 11.5px; font-weight: 400; color: var(--muet); text-decoration: underline; cursor: pointer; }
+.bq-totaux { display: grid; gap: 8px; margin: 0; font-size: 14px; }
+.bq-totaux > div { display: flex; justify-content: space-between; gap: 20px; }
+.bq-totaux dd { margin: 0; }
+.bq-total { padding-top: 10px; border-top: 1px solid var(--filet); font-size: 17px; font-weight: 500; }
+.bq-commander, .bq-valider { width: 100%; }
+.bq-panier-note, .bq-pays { font-size: 12.5px; color: var(--muet); }
+
+/* ---------- La commande ---------- */
+.bq-retour-panier { justify-self: start; display: inline-flex; align-items: center; gap: 9px; padding: 0; border: 0; background: none; font: inherit; font-size: 11.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; color: var(--encre); }
+.bq-commande h3, .bq-merci h3 { margin: 0; font-family: "Cormorant", var(--f-serif); font-size: 28px; font-weight: 500; }
+.bq-client { padding: 12px 14px; border-radius: 4px; background: var(--pale); font-size: 13.5px; color: var(--doux); }
+.bq-champs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.bq-champs label { display: grid; gap: 5px; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muet); }
+.bq-champs .large { grid-column: 1 / -1; }
+.bq-champs input { width: 100%; padding: .75em .85em; border: 1px solid rgba(22, 18, 15, .22); border-radius: 3px; background: #fff; font: inherit; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--encre); }
+.bq-champs input:focus { outline: 2px solid var(--encre); outline-offset: 1px; }
+.bq-coche { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; line-height: 1.4; }
+.bq-coche input { margin-top: 2px; accent-color: var(--encre); }
+.bq-erreur { padding: 10px 12px; border-radius: 3px; background: #fbeaee; color: #9b0d33; font-size: 13.5px; }
+.bq-recap { padding: 14px 16px; border-radius: 4px; background: var(--pale); }
+.bq-recap-titre { margin-bottom: 8px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muet); }
+.bq-maquette { font-size: 12px; line-height: 1.45; color: var(--muet); }
+.bq-merci { justify-items: start; outline: none; }
+.bq-merci p { color: var(--doux); }
+.bq-merci .bq-sur { color: var(--muet); }
+.bq-merci-numero { width: 100%; padding: 14px 16px; border-radius: 4px; background: var(--pale); font-size: 13px; }
+.bq-merci-numero b { display: block; margin-top: 2px; font-family: "Cormorant", var(--f-serif); font-size: 26px; font-weight: 500; letter-spacing: .04em; color: var(--encre); }
+.bq-merci-espace { display: grid; gap: 10px; justify-items: start; width: 100%; padding: 18px; border: 1px solid var(--filet); border-radius: 4px; }
+.bq-merci-espace p:first-child { font-family: "Cormorant", var(--f-serif); font-size: 22px; line-height: 1.2; color: var(--encre); }
+.bq-merci > .bq-bouton { width: 100%; }
+.bq-annonce { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* ---------- Le pied ---------- */
+.bq-pied { display: grid; justify-items: center; gap: 6px; padding: 50px var(--marge); border-top: 5px solid; border-image: var(--tricolore) 1; font-size: 12.5px; color: var(--muet); text-align: center; }
+.bq-pied-logo { width: 150px; margin-bottom: 18px; color: var(--encre); }
+.bq-pied p { margin: 0; }
+.bq-pied a { color: var(--encre); }
+.bq-pied .reseaux { margin: 10px 0 8px; color: var(--encre); }
+
+/* ---------- Le coffret des trois générations : un vrai coffret, en volume ----------
+   Une scène de studio (lumière d'en haut à gauche, ombre au sol) ; le coffret vu de trois quarts, en trois faces
+   (la face aux trois fenêtres en arche, le côté avec la lignée, le dessus), en carton ivoire grainé, MIAILHE et le titre
+   dorés à chaud. Les tailles suivent la largeur de la scène (unités cqw), pour que le coffret garde ses proportions. */
+.bq-coffret { padding: clamp(90px, 10vw, 150px) var(--marge); background: linear-gradient(#fff, var(--pale)); }
+.bq-coffret-atelier { min-height: min(88vh, 860px); display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: clamp(36px, 5vw, 96px); align-items: start; max-width: 1340px; margin: clamp(50px, 5vw, 80px) auto 0; }
+.bq-coffret-scene { position: sticky; top: calc(var(--entete) + var(--racine) + 96px); container-type: inline-size; }
+.bq-studio {
+  position: relative; display: grid; place-items: center; overflow: hidden; padding: 8cqw 0 13cqw; border-radius: 4px; perspective: 1800px; perspective-origin: 50% 25%;
+  background: radial-gradient(ellipse 80% 70% at 38% 26%, #ffffff 0%, #f5f3ef 46%, #e4dfd6 100%);
+  box-shadow: inset 0 0 0 1px var(--filet);
+}
+.bq-studio::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(118deg, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, 0) 38%), linear-gradient(to top, rgba(120, 104, 84, .14), transparent 30%); }
+.bq-sol { position: absolute; left: 50%; bottom: 8.4cqw; width: 66cqw; height: 7cqw; transform: translateX(-46%); border-radius: 50%; background: radial-gradient(closest-side, rgba(40, 30, 20, .38), rgba(40, 30, 20, .12) 60%, transparent); filter: blur(1.5px); }
+.bq-boite3d {
+  --W: 60cqw; --H: calc(var(--W) * 1.34); --D: calc(var(--W) * .3); --rx: -8deg; --ry: -21deg;
+  position: relative; z-index: 1; width: var(--W); height: var(--H); transform-style: preserve-3d;
+  transform: rotateX(calc(var(--rx) + var(--py, 0) * -3deg)) rotateY(calc(var(--ry) + var(--px, 0) * 6deg));
+  transition: transform 1.4s var(--courbe);
+}
+.bq-boite3d.is-grave { --rx: -3deg; --ry: -7deg; }
+.bq-boite3d.is-recoit { animation: bq-recoit .7s var(--courbe); }
+@keyframes bq-recoit { 40% { translate: 0 .6cqw; } }
+.bq-face { position: absolute; left: 0; top: 0; overflow: hidden; backface-visibility: hidden; background-color: #fbf9f4; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .37 0 0 0 0 .3 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+.bq-face::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+/* la face : MIAILHE et le titre dorés, la dédicace, les trois fenêtres, le liseré aux trois couleurs */
+.bq-face--avant {
+  width: var(--W); height: var(--H); transform: translateZ(calc(var(--D) / 2));
+  display: flex; flex-direction: column; align-items: center; padding: 5.2cqw 3.6cqw 0; text-align: center;
+  box-shadow: inset 0 0 0 1px rgba(22, 18, 15, .06), inset -1.2cqw 0 2cqw -1.2cqw rgba(0, 0, 0, .1);
+}
+.bq-face--avant::after { background: linear-gradient(160deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, .03)); }
+.bq-face--avant > :last-child { margin-bottom: 0; }
+.bq-coffret-logo { width: 21cqw; height: auto; filter: drop-shadow(0 .12cqw 0 rgba(255, 255, 255, .9)) drop-shadow(0 -.06cqw 0 rgba(90, 60, 10, .35)); }
+.bq-coffret-titre {
+  margin-top: 1.6cqw; font-family: "Cormorant", var(--f-serif); font-size: 5.2cqw; font-weight: 500; line-height: 1; letter-spacing: -.01em;
+  background: linear-gradient(100deg, #7d5a1c 0%, #d9bb6f 30%, #9c7329 48%, #ecd596 68%, #85601f 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+/* la dédicace, dorée à chaud à mesure qu'on l'écrit ; la signature dessous */
+.bq-dedicace { display: grid; place-content: center; gap: .3cqw; min-height: 7.6cqw; margin-top: .8cqw; }
+.bq-dedicace-pour {
+  font-family: var(--f-it); font-style: italic; font-size: 4.2cqw; line-height: 1.1;
+  background: linear-gradient(100deg, #7d5a1c 0%, #d9bb6f 32%, #9c7329 50%, #ecd596 70%, #85601f 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 .1cqw 0 rgba(255, 255, 255, .9));
+}
+.bq-dedicace-de { font-size: 1.25cqw; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: #8a7a62; }
+.bq-boite3d:not(.is-grave) .bq-dedicace > * { opacity: 0; }
+.bq-boite3d.is-grave:not(.a-un-nom) .bq-dedicace-pour::before { content: "· · ·"; color: rgba(140, 101, 34, .45); -webkit-text-fill-color: rgba(140, 101, 34, .45); }
+.bq-coffret-fenetres { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2cqw; width: 100%; margin-top: auto; }
+.bq-fenetre { display: grid; justify-items: center; gap: .55cqw; }
+.bq-fenetre-arche { position: relative; isolation: isolate; width: 100%; aspect-ratio: 5 / 8.4; padding: 1cqw; border-radius: 999px 999px 0 0; background: var(--c); color: color-mix(in srgb, var(--c) 52%, #fff); box-shadow: 0 .4cqw .9cqw -.3cqw rgba(0, 0, 0, .35); transition: transform .6s var(--courbe); }
+.bq-fenetre-arche .motif { z-index: 0; opacity: .5; border-radius: inherit; }
+.bq-fenetre-creux { position: relative; z-index: 1; display: grid; place-items: end center; height: 100%; overflow: hidden; border-radius: 999px 999px 0 0; background: radial-gradient(ellipse 90% 70% at 50% 26%, #4a3c33, #110d0a 80%); box-shadow: inset 0 1.4cqw 2.4cqw rgba(0, 0, 0, .65), inset 0 0 0 .14cqw rgba(255, 255, 255, .08); }
+.bq-fenetre-creux img { position: relative; z-index: 1; height: 93%; width: auto; margin-bottom: 1%; filter: drop-shadow(0 1cqw .8cqw rgba(0, 0, 0, .55)); }
+.bq-fenetre-creux img:not([src]) { display: none; }
+.bq-fenetre-creux::after { content: ""; position: absolute; z-index: 2; inset: 0; pointer-events: none; border-radius: inherit; background: linear-gradient(115deg, rgba(255, 255, 255, .16), transparent 34%); }
+.bq-fenetre-vide { position: absolute; inset: 0; display: grid; place-items: end center; opacity: 0; transition: opacity .5s; }
+.bq-fenetre.is-vide .bq-fenetre-vide { opacity: 1; }
+.bq-fenetre-vide svg { height: 84%; margin-bottom: 4%; fill: none; stroke: rgba(246, 242, 233, .42); stroke-width: .8; stroke-dasharray: 3 3; }
+.bq-fenetre.is-pose .bq-fenetre-arche { animation: bq-fenetre-pose .9s var(--courbe); }
+@keyframes bq-fenetre-pose { 35% { transform: translateY(.4cqw) scale(1.02); } }
+.bq-fenetre.is-pose .bq-fenetre-creux::before { content: ""; position: absolute; inset: 0; z-index: 3; background: radial-gradient(circle at 50% 70%, rgba(255, 236, 200, .5), transparent 62%); animation: bq-lueur 1s ease-out forwards; }
+@keyframes bq-lueur { to { opacity: 0; } }
+.bq-fenetre .armoirie { width: 5.4cqw; margin-top: 1cqw; }
+.bq-fenetre-nom { font-family: "Cormorant", var(--f-serif); font-size: 2.5cqw; line-height: 1; }
+.bq-fenetre-qui { display: grid; gap: .2cqw; font-size: 1.05cqw; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--muet); }
+.bq-fenetre-qui b { min-height: 1.2em; font-family: "Cormorant", var(--f-serif); font-size: 2.1cqw; font-weight: 500; letter-spacing: 0; color: var(--c); }
+.bq-coffret-pied { margin: 1.6cqw 0 0; padding-bottom: 2.4cqw; font-size: 1.05cqw; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--muet); }
+.bq-face--avant .bq-coffret-pied::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.3cqw; background: var(--tricolore); }
+/* la lumière qui glisse sur la dorure quand le coffret est scellé, et le sceau de cire */
+.bq-reflet { position: absolute; inset: -20% -60%; pointer-events: none; background: linear-gradient(105deg, transparent 42%, rgba(255, 248, 225, .7) 50%, transparent 58%); transform: translateX(-70%); }
+.bq-boite3d.is-scelle .bq-reflet { animation: bq-reflet 1.8s .5s var(--courbe) both; }
+@keyframes bq-reflet { to { transform: translateX(70%); } }
+/* le cachet, dans le coin haut de la face : il ne couvre ni la dédicace ni les fenêtres (tailles en part de la face) */
+.bq-sceau { position: absolute; right: 4.5%; top: 2.6%; width: 17.5%; opacity: 0; pointer-events: none; filter: drop-shadow(0 .5cqw .6cqw rgba(60, 0, 15, .45)); }
+.bq-sceau svg { display: block; width: 100%; height: auto; }
+.bq-boite3d.is-scelle .bq-sceau { animation: bq-sceau .9s cubic-bezier(.3, 1.4, .5, 1) both; }
+@keyframes bq-sceau { from { opacity: 0; transform: translateY(-6cqw) scale(1.9) rotate(-28deg); } 60% { opacity: 1; } to { opacity: 1; transform: rotate(-12deg); } }
+/* le côté : la lignée, comme sur la maquette du coffret */
+.bq-face--cote {
+  width: var(--D); height: var(--H); left: calc((var(--W) - var(--D)) / 2); transform: rotateY(90deg) translateZ(calc(var(--W) / 2));
+  display: flex; flex-direction: column; padding: 5cqw 2.2cqw 3cqw; background-color: #f1ede6;
+}
+.bq-face--cote::after { background: linear-gradient(90deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2)); }
+.bq-cote-titre { font-size: 1.05cqw; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: #6b5f50; }
+.bq-cote-frise { display: grid; gap: 2.6cqw; margin: 3cqw 0 0; padding: 0 0 0 1.6cqw; list-style: none; border-left: .2cqw solid rgba(22, 18, 15, .35); }
+.bq-cote-frise li { position: relative; display: grid; gap: .3cqw; }
+.bq-cote-frise li::before { content: ""; position: absolute; left: -2.15cqw; top: .8cqw; width: 1.1cqw; height: 1.1cqw; border-radius: 50%; background: var(--c, var(--encre)); }
+.bq-cote-frise b { font-family: var(--f-it); font-style: italic; font-size: 3cqw; font-weight: 400; line-height: 1; color: var(--c, var(--encre)); }
+.bq-cote-frise span { font-size: 1.15cqw; line-height: 1.3; color: #4b443f; }
+.bq-cote-logo { width: 100%; margin-top: auto; }
+/* le dessus : un filet aux trois couleurs, et MIAILHE */
+.bq-face--dessus {
+  width: var(--W); height: var(--D); top: calc((var(--H) - var(--D)) / 2); transform: rotateX(90deg) translateZ(calc(var(--H) / 2));
+  display: grid; place-items: center; background-color: #fdfcf8;
+}
+.bq-face--dessus::after { background: linear-gradient(to bottom, rgba(0, 0, 0, .06), rgba(255, 255, 255, 0) 50%); }
+.bq-dessus-filet { position: absolute; left: 0; right: 0; top: 50%; height: .7cqw; transform: translateY(-50%); background: var(--tricolore); opacity: .9; }
+.bq-dessus-logo { position: relative; width: 18cqw; padding: 0 1.4cqw; background: #fdfcf8; }
+.bq-vol { position: fixed; z-index: 400; pointer-events: none; filter: drop-shadow(0 26px 20px rgba(0, 0, 0, .32)); transform-origin: 50% 60%; }
+
+/* le panneau : un château par étape, ses millésimes, puis la dédicace */
+.bq-coffret-panneau { display: grid; gap: 26px; }
+.bq-coffret-etapes { display: grid; }
+.bq-coffret-etapes li { display: grid; gap: 12px; padding: 20px 0; border-top: 1px solid var(--filet); }
+.bq-coffret-qui { display: flex; align-items: center; gap: 14px; }
+.bq-coffret-qui .armoirie { flex: none; width: 34px; }
+.bq-coffret-qui-texte { display: grid; gap: 2px; }
+.bq-coffret-qui small { font-size: 10.5px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--muet); }
+.bq-coffret-qui b { font-family: "Cormorant", var(--f-serif); font-size: 23px; font-weight: 500; line-height: 1; }
+.bq-coffret-ok { position: relative; flex: none; width: 26px; height: 26px; margin-left: auto; border: 1px solid var(--filet); border-radius: 50%; transition: background .4s, border-color .4s; }
+.bq-coffret-ok::after { content: ""; position: absolute; left: 8px; top: 7px; width: 9px; height: 5px; border-left: 1.5px solid #fff; border-bottom: 1.5px solid #fff; transform: rotate(-45deg) scale(0); transition: transform .4s var(--courbe); }
+.is-choisi .bq-coffret-ok { background: var(--c); border-color: var(--c); }
+.is-choisi .bq-coffret-ok::after { transform: rotate(-45deg) scale(1); }
+.bq-coffret-millesimes { display: flex; flex-wrap: wrap; gap: 6px; }
+.bq-coffret-millesimes button { display: grid; gap: 1px; justify-items: center; min-width: 66px; padding: 8px 10px 7px; border: 1px solid var(--filet); border-radius: 3px; background: #fff; cursor: pointer; color: var(--encre); transition: border-color .3s, background .3s, transform .3s var(--courbe); }
+.bq-coffret-millesimes b { font-family: "Cormorant", var(--f-serif); font-size: 21px; font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; }
+.bq-coffret-millesimes small { font-size: 10.5px; color: var(--muet); }
+.bq-coffret-millesimes button:hover { transform: translateY(-2px); border-color: var(--c); }
+.bq-coffret-millesimes [aria-checked="true"] { border-color: var(--c); background: color-mix(in srgb, var(--c) 7%, #fff); box-shadow: inset 0 0 0 1px var(--c); }
+.bq-coffret-atelier.is-grave .bq-coffret-millesimes button { opacity: .4; pointer-events: none; }
+.bq-coffret-bas { display: grid; gap: 22px; }
+.bq-coffret-total { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding-top: 20px; border-top: 1px solid var(--encre); }
+.bq-coffret-total > p:first-child { font-size: 11px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; }
+.bq-coffret-prix { margin-left: auto; font-size: 30px; font-weight: 500; }
+.bq-coffret-total small { flex-basis: 100%; font-size: 12.5px; color: var(--muet); }
+.bq-coffret-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.page-boutique .bq-bouton[disabled] { opacity: .3; cursor: not-allowed; transform: none; box-shadow: none; }
+.bq-coffret-graver { display: grid; gap: 12px; animation: bq-net .8s var(--courbe) both; }
+.bq-coffret-label { margin-top: 6px; font-size: 11px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--muet); }
+.bq-coffret-label small { font-size: 10px; letter-spacing: .08em; text-transform: none; color: #9a928a; }
+.bq-coffret-graver input { width: 100%; padding: 6px 0 10px; border: 0; border-bottom: 1.5px solid var(--encre); background: transparent; font-family: var(--f-it); font-style: italic; font-size: clamp(24px, 2.2vw, 32px); color: var(--encre); outline: none; }
+.bq-coffret-graver input.bq-coffret-de { font-family: var(--f-ui); font-style: normal; font-size: 17px; }
+.bq-coffret-graver input::placeholder { color: rgba(22, 18, 15, .28); }
+.bq-coffret-idees { display: flex; flex-wrap: wrap; gap: 8px; }
+.bq-coffret-idees button { padding: .55em 1em; border: 1px solid var(--filet); border-radius: 2px; background: #fff; cursor: pointer; font: inherit; font-size: 12.5px; color: var(--doux); transition: border-color .3s, color .3s; }
+.bq-coffret-idees button:hover { border-color: var(--encre); color: var(--encre); }
+.bq-coffret-fait { display: grid; gap: 18px; outline: none; animation: bq-net .8s var(--courbe) both; }
+.bq-coffret-merci { font-family: "Cormorant", var(--f-serif); font-size: clamp(24px, 2.2vw, 32px); line-height: 1.15; }
+
+/* ---------- Le drive du château, dans la commande ---------- */
+.bq-mode { display: grid; gap: 8px; padding: 0; border: 0; margin: 0; }
+.bq-mode legend { padding: 0 0 10px; font-family: "Cormorant", var(--f-serif); font-size: 28px; font-weight: 500; }
+.bq-mode-choix { position: relative; display: block; cursor: pointer; }
+.bq-mode-choix input { position: absolute; opacity: 0; }
+.bq-mode-choix span { display: grid; gap: 3px; padding: 13px 16px; border: 1px solid var(--filet); border-radius: 4px; transition: border-color .3s, box-shadow .3s; }
+.bq-mode-choix b { font-size: 14px; font-weight: 500; }
+.bq-mode-choix small { font-size: 12px; color: var(--muet); }
+.bq-mode-choix input:checked + span { border-color: var(--encre); box-shadow: inset 0 0 0 1px var(--encre); }
+.bq-mode-choix input:focus-visible + span { outline: 2px solid var(--encre); outline-offset: 2px; }
+.bq-drive { display: grid; gap: 12px; padding: 16px; border-radius: 4px; background: var(--pale); }
+.bq-champs select { width: 100%; padding: .75em .85em; border: 1px solid rgba(22, 18, 15, .22); border-radius: 3px; background: #fff; font: inherit; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--encre); }
+.bq-drive-titre { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muet); }
+.bq-creneaux { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.bq-creneau { position: relative; cursor: pointer; }
+.bq-creneau input { position: absolute; opacity: 0; }
+.bq-creneau span { display: block; padding: 10px 0; border: 1px solid var(--filet); border-radius: 3px; background: #fff; text-align: center; font-size: 13.5px; transition: background .3s, color .3s; }
+.bq-creneau input:checked + span { background: var(--encre); border-color: var(--encre); color: #fff; }
+.bq-creneau input:focus-visible + span { outline: 2px solid var(--encre); outline-offset: 1px; }
+.bq-drive-note { font-size: 12.5px; line-height: 1.45; color: var(--muet); }
+.bq-port-drive { font-size: 12.5px; color: var(--muet); }
+/* un coffret dans le panier : ses trois bouteilles côte à côte, et le nom gravé */
+.bq-ligne-coffret { display: flex; align-items: flex-end; justify-content: center; width: 62px; height: 112px; padding-bottom: 6px; border-radius: 3px; background: radial-gradient(ellipse at 50% 30%, #fff, #ece9e3); }
+.bq-ligne-coffret img { height: 74px; width: auto; margin: 0 -7px; }
+.bq-ligne-gravure { margin-top: 2px; font-family: var(--f-it); font-style: italic; font-size: 15px; color: var(--coufran-encre); }
+
+/* ---------- Le japonais : des titres plus petits (les caractères pleins prennent plus de place) ---------- */
+html:lang(ja) .bq-titre { font-size: clamp(34px, min(4.4vw, 7.4vh), 76px); line-height: 1.18; letter-spacing: .02em; }
+@media (min-width: 901px) { html:lang(ja) .bq-scene-texte { width: min(760px, 56vw); } }
+
+/* ---------- Mouvement réduit, captures ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .bq-film { transition: none; transform: none; }
+  .bq-apparait, .bq-chapitre-texte > * { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .bq-scene-mots > *, .bq-scene-mots .bq-titre span, .pro-frise li { animation: none !important; }
+  .bq-cuvee-scene::before { display: none; }
+}
+.capture .bq-apparait, .capture .bq-chapitre-texte > * { opacity: 1 !important; transform: none !important; filter: none !important; }
+
+/* ---------- Tablette ---------- */
+@media (max-width: 1180px) {
+  .bq-scene-chapitres { width: min(480px, 48vw); }
+  .bq-doyennes-grille { gap: 14px; }
+  .bq-doyenne .bq-doyenne-bas { flex-direction: column; align-items: stretch; }
+  .bq-famille { grid-template-columns: 1fr 1fr; }
+  .bq-famille-texte { grid-column: 1 / -1; grid-row: 1; }
+  .bq-famille-photo--hier, .bq-famille-photo--aujourdhui { margin: 0; }
+  .bq-conditions-grille > div { grid-template-columns: 1fr; gap: 8px; }
+  .pro-etapes-liste { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+  .pro-radios { grid-template-columns: 1fr; }
+}
+
+/* ---------- Téléphone ---------- */
+@media (max-width: 900px) {
+  .page-boutique { --marge: 5vw; }
+  .bq-scene-chapitres { display: none; }
+  .bq-retour span:last-child { display: none; }
+  .bq-scene { min-height: 640px; }
+  .bq-scene-texte { left: var(--marge); right: var(--marge); bottom: 104px; width: auto; gap: 18px; }
+  .bq-titre { font-size: clamp(44px, 12.4vw, 70px); }
+  .bq-scene .bq-chapeau { font-size: 15.5px; }
+  .bq-espace button { padding: .9em 1.25em; font-size: 10.5px; letter-spacing: .12em; }
+  .bq-scene-chapitres { left: var(--marge); right: var(--marge); bottom: 96px; width: auto; gap: 12px; }
+  .bq-scene-chapitres small { display: none; }
+  .bq-scene-chapitres b { font-size: 17px; }
+  .bq-promesses, .bq-promesses--pro { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .bq-promesses--pro li:nth-child(4) { display: none; }
+  .bq-promesses li, .bq-promesses li + li { padding: 14px 8px 18px 0; }
+  .bq-promesses li + li { padding-left: 10px; }
+  .bq-promesses b { font-size: 16px; }
+  .bq-promesses li > span { display: none; }
+  .bq-barre { flex-wrap: wrap; gap: 8px 16px; padding: 10px var(--marge) 6px; }
+  .bq-barre-liens { order: 3; flex-basis: 100%; gap: 18px; }
+  .bq-barre-demande { padding: .55em .55em .55em .95em; font-size: 9.5px; }
+  .bq-espace--barre button { padding: .75em .9em; font-size: 9.5px; letter-spacing: .1em; }
+  .bq-barre-demande .bq-long { display: none; }
+  .bq-barre-demande .bq-court { display: inline; }
+  .bq-doyennes-grille { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 40px calc(-1 * var(--marge)) 0; padding: 0 var(--marge) 20px; scrollbar-width: none; }
+  .bq-doyennes-grille::-webkit-scrollbar { display: none; }
+  .bq-doyenne { flex: 0 0 84%; scroll-snap-align: center; }
+  .bq-doyenne-scene { --h: 420px; }
+  .bq-doyenne .bq-doyenne-bas { flex-direction: row; align-items: center; }
+  .bq-famille { grid-template-columns: 1fr 1fr; gap: 26px 14px; }
+  .bq-famille-photo figcaption { font-size: 10px; }
+  .bq-generations { gap: 18px; }
+  .bq-chapitre { min-height: 560px; padding: 44px var(--marge) 36px; }
+  .bq-chapitre::before { background: linear-gradient(to top, rgba(13, 10, 8, .9) 0, rgba(13, 10, 8, .55) 55%, rgba(13, 10, 8, .2) 100%); }
+  .bq-chapitre .armoirie { width: 40px; }
+  .bq-chapitre-nom .logo-chateau { --cadre: 240px; }
+  .bq-chapitre-histoire { font-size: 14.5px; }
+  .bq-chapitre-compte { position: static; margin-top: 18px; }
+  .bq-cuvee { grid-template-columns: 1fr; min-height: 0; }
+  .bq-chateau > .bq-cuvee:nth-child(odd) .bq-cuvee-scene { order: 0; }
+  .bq-cuvee-scene { height: min(66svh, 560px); }
+  .bq-cuvee-bouteille img, .bq-cuvee--dm .bq-cuvee-bouteille img { height: min(54svh, 460px); }
+  .bq-cuvee--second .bq-cuvee-scene { height: min(56svh, 470px); }
+  .bq-cuvee--second .bq-cuvee-bouteille img { height: min(44svh, 380px); }
+  .bq-cuvee-sceau, .bq-chateau > .bq-cuvee:nth-child(odd) .bq-cuvee-sceau { top: 18px; left: 18px; right: auto; width: 84px; height: 84px; }
+  .bq-cuvee-sceau b { font-size: 21px; }
+  .bq-cuvee-texte, .bq-chateau > .bq-cuvee:nth-child(odd) .bq-cuvee-texte { gap: 18px; padding: 34px var(--marge) 50px; }
+  .bq-cuvee .bq-ajout { flex-wrap: wrap; }
+  .bq-cuvee .bq-qte { flex-basis: 100%; }
+  .bq-cuvee .bq-ajouter { flex: 1; }
+  .bq-decennie { grid-template-columns: 1fr; gap: 10px; }
+  .bq-decennie > div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .bq-decennie button { min-width: 0; padding: 10px 6px; }
+  .bq-decennie button b { font-size: 23px; }
+  .bq-annee-vins { grid-template-columns: 1fr; }
+  .bq-annee-vin { grid-template-columns: 104px minmax(0, 1fr); }
+  .bq-annee-image img { height: 160px; }
+  .bq-fiche { --h: 46svh; left: 0; top: 0; width: 100%; height: 100%; border-radius: 0; grid-template-columns: 1fr; grid-template-rows: var(--h) auto; overflow-y: auto; transform: translateY(30px); }
+  .bq-fiche.is-ouvert { transform: none; }
+  .bq-fiche-corps { overflow: visible; padding: 28px var(--marge) 40px; }
+  .bq-fiche-fermer { position: fixed; }
+  .bq-conditions { grid-template-columns: 1fr; }
+  .bq-conditions-photo { min-height: 260px; }
+  .bq-conditions-texte { padding: 50px var(--marge) 60px; }
+  .bq-champs { grid-template-columns: 1fr; }
+  .pro-chateau { grid-template-columns: 1fr; min-height: 0; }
+  .pro-chateau:nth-child(even) .pro-chateau-image { order: 0; }
+  .pro-chateau-image { min-height: 52svh; }
+  .pro-chateau-texte, .pro-chateau:nth-child(even) .pro-chateau-texte { padding: 36px var(--marge) 50px; }
+  .pro-vin dl { grid-template-columns: 1fr; }
+  .pro-vieux, .pro-kit, .pro-demande { grid-template-columns: 1fr; }
+  .pro-vieux-tete, .pro-demande-texte { position: static; }
+  .pro-frise li { grid-template-columns: 1fr; padding-left: 34px; }
+  .pro-frise strong { grid-row: auto; font-size: 38px; }
+  .pro-formats-grille { grid-template-columns: 1fr; }
+  .pro-etapes-liste { grid-template-columns: 1fr; }
+  .pro-ligne { grid-template-columns: 1fr; }
+  .pro-coche { grid-template-columns: auto minmax(0, 1fr); }
+  .pro-coche select { grid-column: 2; justify-self: start; }
+  .bq-coffret-atelier { grid-template-columns: 1fr; gap: 24px; }
+  .bq-coffret-scene { z-index: 3; top: calc(var(--entete) + var(--racine) + 94px); margin: 0 calc(-1 * var(--marge)); padding: 0 var(--marge) 10px; background: linear-gradient(var(--pale) 88%, rgba(245, 244, 241, 0)); }
+  /* le coffret plus petit, mais tout entier à l'échelle : le studio devient le conteneur des unités cqw (rétrécir --W
+     seul laissait le contenu de la face trop grand, et le logo s'écrasait) */
+  .bq-studio { container-type: inline-size; padding: 6cqw 11.5cqw 10cqw; }
+  .bq-coffret-millesimes button { min-width: 58px; padding: 7px 8px 6px; }
+  .bq-coffret-millesimes b { font-size: 19px; }
+}
+
+/* ---------- Le mouvement des scènes (29/10/2026) : profondeur au défilement, inclinaison et reflet au survol (boutique.js)
+   Les propriétés individuelles (translate, rotate) s'ajoutent aux transformations déjà posées (survol, changement de
+   millésime) sans les écraser. ---------- */
+.bq-cuvee-scene, .bq-doyenne-scene { perspective: 1400px; }
+.bq-cuvee-an { translate: 0 calc(var(--p, 0) * 70px); }
+.bq-cuvee-bouteille { translate: 0 calc(var(--p, 0) * -26px); transform-style: preserve-3d; transition: rotate .7s var(--courbe); }
+.bq-cuvee-scene.is-incline .bq-cuvee-bouteille { rotate: y calc(var(--tx, 0) * 9deg); transition: rotate .25s ease-out; }
+.bq-cuvee-scene .motif { translate: 0 calc(var(--p, 0) * 30px); }
+/* le reflet : une lueur blanche qui suit le curseur sur la scène */
+.bq-cuvee-scene > .bq-cuvee-bouteille::after { content: ""; position: absolute; inset: -6% -40%; z-index: 1; pointer-events: none; opacity: 0;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, .5), transparent 70%); width: 50%; height: 40%;
+  left: calc(25% + var(--tx, 0) * 30%); top: calc(18% + var(--ty, 0) * 18%); transition: opacity .5s; mix-blend-mode: soft-light; }
+.bq-cuvee-bouteille { position: relative; }
+.bq-cuvee-scene.is-incline .bq-cuvee-bouteille::after { opacity: 1; }
+.bq-doyenne-scene img { transition: transform 1s var(--courbe), rotate .3s ease-out; }
+.bq-doyenne-scene.is-incline img { rotate: y calc(var(--tx, 0) * 8deg); }
+/* les chapitres des châteaux : le film glisse un peu plus lentement que la page */
+.bq-chapitre-film { top: -48px; bottom: -48px; height: calc(100% + 96px); translate: 0 calc(var(--p, 0) * 44px); }
+@media (prefers-reduced-motion: reduce) {
+  .bq-cuvee-an, .bq-cuvee-bouteille, .bq-cuvee-scene .motif, .bq-chapitre-film { translate: none; }
+}

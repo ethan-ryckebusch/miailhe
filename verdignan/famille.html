@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script src="../assets/js/langue.js"></script><!-- la langue d'abord : la page est traduite avant d'être montrée -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La famille · Château Verdignan · Le vin du père</title>
+  <meta name="description" content="L'histoire du château Verdignan et de la famille Miailhe.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/typographie.css">
+  <link rel="stylesheet" href="../assets/css/motifs.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-verdignan">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="verdignan" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <ul class="langues langues--porte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <div class="ch-signature">
+      <a class="ch-logo" href="index.html" aria-label="Château Verdignan, accueil"><span class="logo-chateau " data-logo-chateau="verdignan" data-forme="logotype" aria-hidden="true"></span></a>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Par MIAILHE : la maison de famille"><i>par</i><span class="wordmark"></span></a>
+    </div>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins">Nos vins</a>
+      <a href="famille.html" aria-current="page">La famille</a>
+      <a href="#contact">Contact</a>
+      <a class="ch-nav-mobile" href="../boutique.html#verdignan">La boutique</a>
+      <a class="ch-nav-mobile" href="../enquete.html">L'enquête</a>
+      <a class="ch-nav-mobile" href="../compte.html">Mon espace client</a>
+      <ul class="langues langues--menu" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </nav>
+    <div class="ch-droite">
+      <a class="ch-fort ch-fort--boutique" href="../boutique.html#verdignan" aria-label="La boutique de la famille : les vins des trois châteaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 2.6h3.6M10.7 2.6v4.5c0 .8-.4 1.3-1 1.9-.9.8-1.5 1.8-1.5 3.1v8.2c0 .6.5 1.1 1.1 1.1h5.4c.6 0 1.1-.5 1.1-1.1v-8.2c0-1.3-.6-2.3-1.5-3.1-.6-.6-1-1.1-1-1.9V2.6"/><path d="M8.2 13.4h7.6v4.4H8.2z"/></svg><span>La boutique</span></a>
+      <a class="ch-fort" href="../enquete.html" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran"><span class="armoirie" data-armoirie="coufran"></span></a><a class="famille-lien ici" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan" aria-current="page"><span class="armoirie" data-armoirie="verdignan"></span></a><a class="famille-lien" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars"><span class="armoirie" data-armoirie="soudars"></span></a></nav>
+      <span class="ch-icones"><a class="entete-icone entete-compte-lien" href="../compte.html" data-compte aria-label="Mon espace client"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.3" r="3.8"/><path d="M4.6 20.4c.9-3.9 3.9-6 7.4-6s6.5 2.1 7.4 6"/></svg><span class="entete-initiale" data-compte-initiale translate="no" hidden></span></a>
+      <a class="entete-icone" href="../boutique.html#panier" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 11.3a1.1 1.1 0 0 1-1.1 1H7.4a1.1 1.1 0 0 1-1.1-1L5.2 8.2z"/><path d="M9 10.4V6.6a3 3 0 0 1 6 0v3.8"/></svg><b class="entete-pastille" data-panier-compte translate="no" hidden>0</b></a></span>
+      <ul class="langues langues--compacte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main>
+    <section class="histoire-intro">
+      <img src="../assets/img/verdignan-estuaire.jpg" alt="Le château Verdignan dans ses vignes, l'estuaire à l'horizon">
+      <h1 class="intro-texte" data-anime><span>L'<span class="it">histoire</span><br>du père</span></h1>
+      <a class="fleche-bas" href="#recit" aria-label="Lire l'histoire"></a>
+    </section>
+
+    <section class="bloc-texte" id="recit">
+      <h2 class="titre-65" data-anime>
+        <span>Jean,</span>
+        <span>1976,</span>
+        <span><span class="it">le gardien</span></span>
+      </h2>
+      <div class="paragraphe" data-anime="2">
+        <p>Verdignan est l'une des plus anciennes propriétés viticoles du canton de Pauillac, et sans doute la plus ancienne de Saint-Seurin-de-Cadourne. Tout près se dressait l'abbaye de Cadourne, halte des pèlerins de Compostelle ; au petit port de La Maréchale, les gabarres chargeaient les barriques pour Bordeaux. La même famille garde le domaine de la fin du XVIII<sup>e</sup> siècle jusqu'en 1934.</p>
+        <p>En 1976, Jean Miailhe, le fils de Louis, achète ce voisin de Coufran. Il vient d'arrêter le courtage : il sera le dernier courtier de la famille, et le premier à garder ses vins comme on garde une tradition.</p>
+      </div>
+    </section>
+
+    <section class="galerie" aria-label="Galerie">
+      <div class="galerie-piste">
+        <figure><img src="../assets/img/feed/lovely-fred-pipette.jpg" alt="Fred tire le vin de la barrique, Lovely tend le verre" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-vendanges.jpg" alt="Grappes noires aux vendanges" loading="lazy"></figure>
+        <figure><img src="../assets/img/acte-verdignan-carte-postale.jpg" alt="Le château vers 1900" loading="lazy"></figure>
+        <figure><img src="../assets/img/feed/larmes-du-vin.jpg" alt="Les larmes du vin sur la paroi du verre" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-chai.jpg" alt="Barriques empilées" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-culots.jpg" alt="Les culots des bouteilles en attente" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-chenes.jpg" alt="Deux chênes devant les vignes d'automne" loading="lazy"></figure>
+        <figure><img src="../assets/img/feed/grappe-rosee.jpg" alt="Une grappe de cabernet couverte de pruine" loading="lazy"></figure>
+      </div>
+      <button class="fleche-carrousel fleche-carrousel--prec" type="button" aria-label="Photos précédentes"></button>
+      <button class="fleche-carrousel fleche-carrousel--suiv" type="button" aria-label="Photos suivantes"></button>
+    </section>
+
+    <section class="terroir">
+      <figure class="carte-terroir" data-anime>
+        <svg class="carte-medoc" viewBox="0 0 600 860" role="img" aria-label="Carte du Médoc : les trois domaines de la famille Miailhe à Saint-Seurin-de-Cadourne, au bord de l'estuaire de la Gironde"><style>
+.cm-terre{fill:var(--cm-terre,#ffffff)}.cm-eau{fill:var(--cm-eau,#e9eefb)}
+.cm-trait{fill:none;stroke:var(--cm-trait,#16120f);stroke-width:1.1;stroke-linejoin:round;opacity:.75}
+.cm-zone{fill:var(--cm-zone,#16120f);opacity:.07}.cm-zone--hm{opacity:.13}
+.cm-label{font-family:"Circular",Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;fill:var(--cm-texte,#16120f)}
+.cm-label--zone{font-size:11px;font-weight:500;letter-spacing:.3em;opacity:.55}
+.cm-eau-label{font-family:"Canela","Cormorant Garamond",Georgia,serif;font-style:italic;font-size:17px;fill:var(--cm-texte,#16120f);opacity:.6}
+.cm-ville{fill:var(--cm-texte,#16120f)}.cm-ici{fill:var(--cm-fort,#a97d2e)}
+.cm-bulle{fill:var(--cm-terre,#ffffff);stroke:var(--cm-trait,#16120f);stroke-width:1.2}
+.cm-lien{fill:none;stroke:var(--cm-trait,#16120f);stroke-width:1;stroke-dasharray:3 4;opacity:.7}
+.cm-domaine{opacity:.95}.cm-domaine-nom{font-family:"Circular",Helvetica,Arial,sans-serif;font-size:19px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.cm-route{fill:none;stroke:var(--cm-trait,#16120f);stroke-width:1.3;stroke-dasharray:3 6;opacity:.45}
+.carte-medoc .cm-domaine:not(.cm-ici-domaine){opacity:.35}
+</style>
+  <defs><clipPath id="cm-clip"><circle cx="168" cy="505" r="122"/></clipPath></defs>
+  <path class="cm-eau" d="M166.3 86.0C168.5 88.3 175.7 93.5 179.7 100.0C183.7 106.5 185.5 115.0 190.2 125.0C194.9 135.0 201.4 148.3 207.9 160.0C214.3 171.7 221.4 183.3 229.0 195.0C236.6 206.7 244.3 219.2 253.7 230.0C263.1 240.8 274.8 250.0 285.4 260.0C295.9 270.0 307.1 279.2 317.1 290.0C327.1 300.8 337.3 313.3 345.3 325.0C353.2 336.7 359.3 347.5 365.0 360.0C370.6 372.5 375.3 387.5 379.1 400.0C382.8 412.5 385.2 423.3 387.5 435.0C389.9 446.7 390.6 457.5 393.2 470.0C395.8 482.5 399.0 496.7 403.0 510.0C407.0 523.3 412.1 536.7 417.1 550.0C422.2 563.3 427.1 577.5 433.3 590.0C439.6 602.5 446.8 613.3 454.5 625.0C462.1 636.7 472.2 649.2 479.1 660.0C486.1 670.8 491.1 678.3 496.0 690.0C501.0 701.7 505.4 716.7 508.7 730.0C512.0 743.3 514.2 758.3 515.8 770.0C517.3 781.7 515.5 785.0 517.9 800.0C520.2 815.0 527.9 850.0 529.9 860.0L536.9 860.0C534.9 850.0 527.0 816.7 524.9 800.0C522.8 783.3 525.4 775.0 524.2 760.0C523.0 745.0 520.0 726.7 517.9 710.0C515.8 693.3 511.2 673.3 511.5 660.0C511.9 646.7 516.0 634.2 520.0 630.0C524.0 625.8 528.2 633.3 535.5 635.0C542.8 636.7 553.1 638.3 563.7 640.0C574.2 641.7 593.0 644.2 598.9 645.0L598.9 630.0C595.4 629.2 587.2 626.7 577.8 625.0C568.4 623.3 553.7 621.7 542.5 620.0C531.4 618.3 520.2 618.3 510.8 615.0C501.4 611.7 494.4 607.5 486.2 600.0C478.0 592.5 468.0 580.8 461.5 570.0C455.1 559.2 449.2 545.0 447.4 535.0C445.7 525.0 450.9 522.5 450.9 510.0C450.9 497.5 448.6 476.7 447.4 460.0C446.2 443.3 445.7 426.7 443.9 410.0C442.1 393.3 440.4 376.7 436.9 360.0C433.3 343.3 428.6 326.7 422.8 310.0C416.9 293.3 410.4 275.8 401.6 260.0C392.8 244.2 380.5 228.3 369.9 215.0C359.3 201.7 351.7 192.5 338.2 180.0C324.7 167.5 303.0 151.7 288.9 140.0C274.8 128.3 263.1 119.2 253.7 110.0C244.3 100.8 239.6 95.0 232.5 85.0C225.5 75.0 219.0 58.3 211.4 50.0C203.7 41.7 185.0 43.3 186.7 35.0C188.5 26.7 216.1 5.8 221.9 0.0L600 0L140.9 0Z"/>
+  <path class="cm-zone" d="M345.3 325.0C340.6 319.2 327.1 300.8 317.1 290.0C307.1 279.2 295.9 270.0 285.4 260.0C274.8 250.0 263.1 240.8 253.7 230.0C244.3 219.2 236.6 206.7 229.0 195.0C221.4 183.3 214.3 171.7 207.9 160.0C201.4 148.3 194.9 135.0 190.2 125.0C185.5 115.0 183.7 106.5 179.7 100.0C175.7 93.5 171.6 81.0 166.3 86.0C161.0 91.0 151.0 112.7 148.0 130.0C144.9 147.3 142.1 168.3 148.0 190.0C153.8 211.7 164.4 234.2 183.2 260.0C202.0 285.8 233.7 334.2 260.7 345.0C287.7 355.8 335.9 334.2 345.3 325.0Z"/><path class="cm-zone cm-zone--hm" d="M365.0 360.0C367.3 366.7 375.3 387.5 379.1 400.0C382.8 412.5 385.2 423.3 387.5 435.0C389.9 446.7 390.6 457.5 393.2 470.0C395.8 482.5 399.0 496.7 403.0 510.0C407.0 523.3 412.1 536.7 417.1 550.0C422.2 563.3 427.1 577.5 433.3 590.0C439.6 602.5 446.8 613.3 454.5 625.0C462.1 636.7 472.2 649.2 479.1 660.0C486.1 670.8 491.1 678.3 496.0 690.0C501.0 701.7 520.9 720.0 508.7 730.0C496.5 740.0 446.5 761.7 422.8 750.0C399.0 738.3 385.2 691.7 366.4 660.0C347.6 628.3 324.1 593.3 310.0 560.0C295.9 526.7 287.1 495.8 281.8 460.0C276.6 424.2 264.5 361.7 278.3 345.0C292.2 328.3 348.2 350.8 365.0 360.0Z"/>
+  <path class="cm-trait" d="M166.3 86.0C162.6 90.8 151.6 104.8 144.4 115.0C137.3 125.2 129.5 134.5 123.3 147.0C117.1 159.5 111.4 171.2 107.1 190.0C102.8 208.8 99.6 231.7 97.2 260.0C94.9 288.3 94.2 330.0 93.0 360.0C91.8 390.0 92.0 411.7 90.2 440.0C88.4 468.3 85.4 500.0 82.4 530.0C79.5 560.0 75.9 591.7 72.6 620.0C69.3 648.3 65.9 673.3 62.7 700.0C59.5 726.7 56.5 753.3 53.5 780.0C50.6 806.7 46.5 846.7 45.1 860.0"/><path class="cm-trait" d="M166.3 86.0C168.5 88.3 175.7 93.5 179.7 100.0C183.7 106.5 185.5 115.0 190.2 125.0C194.9 135.0 201.4 148.3 207.9 160.0C214.3 171.7 221.4 183.3 229.0 195.0C236.6 206.7 244.3 219.2 253.7 230.0C263.1 240.8 274.8 250.0 285.4 260.0C295.9 270.0 307.1 279.2 317.1 290.0C327.1 300.8 337.3 313.3 345.3 325.0C353.2 336.7 359.3 347.5 365.0 360.0C370.6 372.5 375.3 387.5 379.1 400.0C382.8 412.5 385.2 423.3 387.5 435.0C389.9 446.7 390.6 457.5 393.2 470.0C395.8 482.5 399.0 496.7 403.0 510.0C407.0 523.3 412.1 536.7 417.1 550.0C422.2 563.3 427.1 577.5 433.3 590.0C439.6 602.5 446.8 613.3 454.5 625.0C462.1 636.7 472.2 649.2 479.1 660.0C486.1 670.8 491.1 678.3 496.0 690.0C501.0 701.7 505.4 716.7 508.7 730.0C512.0 743.3 514.2 758.3 515.8 770.0C517.3 781.7 515.5 785.0 517.9 800.0C520.2 815.0 527.9 850.0 529.9 860.0"/><path class="cm-trait" d="M221.9 0.0C216.1 5.8 188.5 26.7 186.7 35.0C185.0 43.3 203.7 41.7 211.4 50.0C219.0 58.3 225.5 75.0 232.5 85.0C239.6 95.0 244.3 100.8 253.7 110.0C263.1 119.2 274.8 128.3 288.9 140.0C303.0 151.7 324.7 167.5 338.2 180.0C351.7 192.5 359.3 201.7 369.9 215.0C380.5 228.3 392.8 244.2 401.6 260.0C410.4 275.8 416.9 293.3 422.8 310.0C428.6 326.7 433.3 343.3 436.9 360.0C440.4 376.7 442.1 393.3 443.9 410.0C445.7 426.7 446.2 443.3 447.4 460.0C448.6 476.7 450.9 497.5 450.9 510.0C450.9 522.5 445.7 525.0 447.4 535.0C449.2 545.0 455.1 559.2 461.5 570.0C468.0 580.8 478.0 592.5 486.2 600.0C494.4 607.5 501.4 611.7 510.8 615.0C520.2 618.3 531.4 618.3 542.5 620.0C553.7 621.7 568.4 623.3 577.8 625.0C587.2 626.7 595.4 629.2 598.9 630.0"/><path class="cm-trait" d="M598.9 645.0C593.0 644.2 574.2 641.7 563.7 640.0C553.1 638.3 542.8 636.7 535.5 635.0C528.2 633.3 524.0 625.8 520.0 630.0C516.0 634.2 511.9 646.7 511.5 660.0C511.2 673.3 515.8 693.3 517.9 710.0C520.0 726.7 523.0 745.0 524.2 760.0C525.4 775.0 522.8 783.3 524.9 800.0C527.0 816.7 534.9 850.0 536.9 860.0"/>
+  <text class="cm-label cm-label--zone" x="208" y="220">Médoc</text>
+  <text class="cm-label cm-label--zone" x="352" y="660" transform="rotate(-58 352 660)">Haut-Médoc</text>
+  <text class="cm-eau-label" x="222" y="140" transform="rotate(52 222 140)">Estuaire de la Gironde</text>
+  <text class="cm-eau-label" x="35" y="360" transform="rotate(-90 35 360)">Océan Atlantique</text>
+  <circle class="cm-ville" cx="190.2" cy="38.0" r="2.4"/><text class="cm-label" x="198.2" y="41.5" text-anchor="start">Royan</text><circle class="cm-ville" cx="123.3" cy="147.0" r="2.4"/><text class="cm-label" x="115.3" y="150.5" text-anchor="end">Soulac</text><circle class="cm-ville" cx="388.9" cy="461.0" r="2.4"/><text class="cm-label" x="380.9" y="464.5" text-anchor="end">Pauillac</text><circle class="cm-ville" cx="371.3" cy="397.0" r="2.4"/><text class="cm-label" x="363.3" y="400.5" text-anchor="end">Saint-Estèphe</text><circle class="cm-ville" cx="439.7" cy="620.0" r="2.4"/><text class="cm-label" x="431.7" y="623.5" text-anchor="end">Margaux</text><circle class="cm-ville" cx="450.9" cy="532.0" r="2.4"/><text class="cm-label" x="458.9" y="535.5" text-anchor="start">Blaye</text><circle class="cm-ville" cx="70.5" cy="660.0" r="2.4"/><text class="cm-label" x="78.5" y="663.5" text-anchor="start">Lacanau</text><circle class="cm-ville" cx="507.3" cy="820.0" r="2.4"/><text class="cm-label" x="499.3" y="823.5" text-anchor="end">Bordeaux</text>
+  <path class="cm-lien" d="M359.3 370.0L243.6 408.6"/>
+  <circle class="cm-ici" cx="359.3" cy="370.0" r="5"/>
+  <text class="cm-label" x="350.3" y="361.0" text-anchor="end" font-weight="500">Saint-Seurin-de-Cadourne</text>
+  <circle class="cm-bulle" cx="168" cy="505" r="122"/>
+  <g clip-path="url(#cm-clip)"><g transform="translate(168 505) scale(.5) translate(-318 -236)">
+    <path class="cm-eau" d="M372 -40H660V560H572C548 430 516 352 476 286C444 232 410 150 372 -40Z"/>
+    <path class="cm-trait" d="M372 -40C410 150 444 232 476 286C516 352 548 430 572 560"/>
+    <path class="cm-route" d="M120 20C200 140 300 220 320 300S300 440 330 540"/>
+    <path class="cm-domaine" fill="#a97d2e" d="M262 92C292 70 344 74 366 98C388 122 380 160 352 176C322 194 274 188 254 162C236 138 236 110 262 92Z"/><text class="cm-domaine-nom" fill="#a97d2e" x="308" y="60" text-anchor="middle">Coufran</text><path class="cm-domaine cm-ici-domaine" fill="#0f4366" d="M356 236C380 220 418 226 430 250C442 276 428 304 400 312C372 320 344 304 340 280C336 262 340 246 356 236Z"/><text class="cm-domaine-nom" fill="#0f4366" x="392" y="342" text-anchor="middle">Verdignan</text><path class="cm-domaine" fill="#0f320a" d="M196 356C214 342 244 344 254 362C264 380 252 402 230 406C208 410 186 398 184 380C182 370 186 362 196 356Z"/><text class="cm-domaine-nom" fill="#0f320a" x="220" y="334" text-anchor="middle">Soudars</text>
+    <circle class="cm-ville" cx="306" cy="226" r="5"/><text class="cm-label" x="294" y="231" text-anchor="end" font-size="15">Le village</text>
+  </g></g>
+</svg>
+      </figure>
+      <div class="bloc">
+        <h2 class="titre-65" data-anime>
+          <span>Les grands terroirs</span>
+          <span><span class="it">regardent l'eau</span></span>
+        </h2>
+        <p class="paragraphe" data-anime="2">Soixante hectares face à l'estuaire de la Gironde, à la frontière de Saint-Estèphe. Autour du château, quarante hectares de graves et d'argiles portent les vieux cabernets ; plus loin, vingt hectares de jeunes vignes sur argilo-calcaire. L'eau tempère le climat, les graves drainent et réchauffent les racines.</p>
+        <div class="chiffres" data-anime="3">
+          <div><strong>60 ha</strong>face à l'estuaire</div>
+          <div><strong>65 %</strong>de cabernet-sauvignon</div>
+          <div><strong>45 ans</strong>âge moyen des vignes</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lignee">
+      <div class="lignee-grille">
+        <figure class="photo-a" data-anime><img src="../assets/img/feed/lovely-fred-carrelet.jpg" alt="Lovely et Fred, deux cousins de la famille, au bout d'un carrelet face à l'estuaire" loading="lazy"></figure>
+        <div class="centre">
+          <h2 class="titre-65" data-anime>
+            <span>Jean l'a choisi,</span>
+            <span>Éric l'a <span class="it">élevé</span>,</span>
+            <span>Lovely le transmettra</span>
+          </h2>
+          <div class="paragraphe" data-anime="2">
+            <p>Le vin de garde de la famille demande de la patience, et la patience se transmet. Depuis les années 1980, Éric Miailhe, le fils de Jean, veille sur Verdignan avec sa sœur Marie-Cécile Vicaire. Depuis 2006, sa fille Lovely est à ses côtés.</p>
+            <p>Comme à Coufran, les bouteilles attendent au château que le vin soit prêt. Verdignan ne sort jamais avant son heure.</p>
+          </div>
+          <ol class="generations" aria-label="Quatre générations de vignerons" data-anime="3">
+            <li class=""><strong>Louis</strong>1924</li>
+            <li class="ici"><strong>Jean</strong>1976</li>
+            <li class=""><strong>Éric</strong>1980</li>
+            <li class=""><strong>Lovely</strong>2006</li>
+          </ol>
+          <div class="signe" data-anime="4">
+            <p>Le vigneron :</p>
+            <p class="signature">Éric Miailhe</p>
+            <p>Œnologue-conseil : Éric Boissenot</p>
+          </div>
+        </div>
+        <figure class="photo-b" data-anime="2"><img src="../assets/img/feed/grappe-rosee.jpg" alt="Une grappe de cabernet couverte de pruine et de rosée" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <a class="decouvrir" href="index.html#nos-vins">
+      <img src="../assets/img/feed/culots.jpg" alt="" loading="lazy">
+      <p data-anime><span class="it">Découvrez</span><br>nos vins</p>
+    </a>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Verdignan<br>33180 Saint-Seurin-de-Cadourne, France</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+      <span class="logo-chateau pied-logo" data-logo-chateau="verdignan" data-forme="logo" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593102">+33 5 56 59 31 02</a><br><a href="mailto:contact@chateau-verdignan.com">contact@chateau-verdignan.com</a></p>
+        <p class="gris">Visites sur rendez-vous</p>
+      </div>
+    </div>
+    <div class="ch-contacts">
+      <div class="ch-contact">
+        <p class="titre">Nous rendre visite</p>
+        <p>Les visites de la propriété se font pour les professionnels et les particuliers, uniquement sur rendez-vous.</p>
+        <p>Votre demande : <a href="mailto:emiailhe@coufran-verdignan.com">emiailhe@coufran-verdignan.com</a></p>
+        <p><a class="lien-fleche" href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20Verdignan%20Saint-Seurin-de-Cadourne" target="_blank" rel="noopener">Itinéraire ↗</a></p>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Production et commercialisation</p>
+        <p class="nom">Éric Miailhe</p>
+        <p class="gris">Château Verdignan<br>33180 Saint-Seurin-de-Cadourne</p>
+        <p>Tél. <a href="tel:+33556593102">+33 5 56 59 31 02</a><br>Fax +33 5 56 59 72 39<br>Portable <a href="tel:+33680316878">+33 6 80 31 68 78</a></p>
+        <p><a href="mailto:emiailhe@coufran-verdignan.com">emiailhe@coufran-verdignan.com</a></p>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Administratif et comptabilité</p>
+        <p class="nom">Marie-Cécile Vicaire</p>
+        <p class="gris">24, cours de Verdun<br>33000 Bordeaux</p>
+        <p>Tél. <a href="tel:+33556449084">+33 5 56 44 90 84</a><br>Fax +33 5 56 81 32 35</p>
+        <p><a href="mailto:contact@chateau-verdignan.com">contact@chateau-verdignan.com</a></p>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Acheter nos vins</p>
+        <ul class="ch-achats"><li><a href="../boutique.html#verdignan">La boutique de la famille</a><small>Les trois châteaux, un seul panier</small></li><li><a href="../boutique.html#ou-trouver">Où trouver nos vins</a><small>Auchan, Carrefour, E.Leclerc, Intermarché : la carte des magasins</small></li><li>Maisons du Vin<small>Saint-Seurin-de-Cadourne et Pauillac</small></li><li>En Belgique<small>Carrefour, depuis plus de quarante ans</small></li><li>Dans le monde<small>Les négociants de la Place de Bordeaux</small></li></ul>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Verdignan · une maison de la famille <span class="wordmark"></span></a>
+      <nav class="reseaux" data-reseaux></nav>
+      <ul class="langues langues--pied" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../coufran/index.html">Coufran</a> · <a href="../soudars/index.html">Soudars</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <a href="../blog/index.html">Le blog</a>
+        <a href="../boutique.html?espace=pro">Espace professionnel</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    <p class="mentions">Château Verdignan · RCS Bordeaux 782 004 691 · siège : Château Verdignan, 33180 Saint-Seurin-de-Cadourne · directeur de la publication : Éric Miailhe, représentant légal. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/feuille-miailhe.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/logos-chateaux.js"></script>
+  <script src="../assets/js/typographie.js"></script>
+  <script src="../assets/js/reseaux.js"></script>
+  <script src="../assets/js/espace.js"></script>
+  <script src="../assets/js/voix.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+  <script src="../assets/js/survol.js"></script>
+</body>
+</html>

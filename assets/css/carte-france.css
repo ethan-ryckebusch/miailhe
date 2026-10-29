@@ -1,0 +1,226 @@
+/* La carte « Où trouver nos vins » (assets/js/carte-france.js), sortie de boutique.css le 28/10/2026 pour servir aussi
+   à l'onglet « Où nous trouver » de l'accueil. Les variables (--encre, --muet, --doux, --pale, --filet, --courbe,
+   --marge, --entete, --racine) viennent de la page : boutique.css les pose sur :root, vitrine.css sur le panneau. */
+/* ============ Où trouver nos vins : la grande carte de France (28/10/2026, demande de l'utilisateur) ============
+   Toute la largeur de l'écran ; la mer gravée en traits fins comme le ciel de l'étiquette de Verdignan, la terre en
+   blanc ; un point par vin, aux couleurs exactes des châteaux (carte-france.js). */
+/* la carte remet ses titres et ses listes à zéro, comme la boutique : elle ne dépend pas des remises de la page */
+.bq-carte-france :where(h3, h4, p, ol, ul) { margin: 0; font-weight: 400; }
+.bq-carte-france :where(ol, ul) { padding: 0; list-style: none; }
+.bq-carte { position: relative; padding: clamp(90px, 10vw, 150px) 0 clamp(60px, 7vw, 110px); background: #fff; }
+.bq-carte > .bq-section-tete { padding: 0 var(--marge); }
+.bq-carte-france { margin-top: clamp(36px, 4vw, 60px); }
+.bq-carte-outils { display: grid; gap: 16px; justify-items: center; padding: 0 var(--marge); margin-bottom: clamp(26px, 3vw, 40px); }
+.bq-carte-vins, .bq-carte-enseignes { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.bq-carte-vin {
+  position: relative; display: inline-flex; align-items: center; gap: 12px; padding: 9px 44px 9px 12px; border: 1px solid var(--filet); border-radius: 999px;
+  background: #fff; font: inherit; color: var(--encre); text-align: left; cursor: pointer; transition: opacity .35s, border-color .35s, box-shadow .35s, transform .35s var(--courbe);
+}
+.bq-carte-vin:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -16px rgba(22, 18, 15, .45); }
+.bq-carte-vin[aria-pressed="true"] { border-color: color-mix(in srgb, var(--c) 55%, transparent); }
+.bq-carte-vin .armoirie { width: 30px; flex: none; }
+.bq-carte-vin b { display: block; font-family: "Cormorant", var(--f-serif); font-size: 22px; font-weight: 500; line-height: 1; }
+.bq-carte-vin small { display: block; margin-top: 3px; font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muet); }
+.bq-carte-coche { position: absolute; right: 13px; top: 50%; width: 20px; height: 20px; margin-top: -10px; border: 1.5px solid var(--c); border-radius: 50%; transition: background .3s; }
+.bq-carte-vin[aria-pressed="true"] .bq-carte-coche { background: var(--c); }
+.bq-carte-vin[aria-pressed="true"] .bq-carte-coche::after { content: ""; position: absolute; left: 6px; top: 3px; width: 5px; height: 9px; border: solid #fff; border-width: 0 1.6px 1.6px 0; transform: rotate(45deg); }
+.bq-carte-vin[aria-pressed="false"] { opacity: .5; }
+.bq-carte-vin[aria-pressed="false"] .armoirie { filter: grayscale(1); }
+.bq-carte-enseigne {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border: 1px solid var(--filet); border-radius: 999px; background: #fff;
+  font: inherit; font-size: 13.5px; font-weight: 500; color: var(--encre); cursor: pointer; transition: opacity .3s, background .3s;
+}
+.bq-carte-enseigne b { font-weight: 400; font-size: 12.5px; color: var(--muet); font-variant-numeric: tabular-nums; }
+.bq-carte-enseigne[aria-pressed="false"] { opacity: .42; background: transparent; }
+.bq-carte-enseigne[aria-pressed="false"] span { text-decoration: line-through; text-decoration-thickness: 1px; }
+.bq-carte-enseigne.is-vide { opacity: .3; }
+.bq-carte-points { display: inline-flex; flex: none; }
+.bq-carte-points i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 1.5px #fff; }
+.bq-carte-points i + i { margin-left: -3px; }
+/* la recherche */
+.bq-carte-cherche { position: relative; display: flex; align-items: center; gap: 6px; width: min(760px, 100%); padding: 6px; border: 1px solid var(--filet); border-radius: 999px; background: #fff; box-shadow: 0 14px 34px -24px rgba(22, 18, 15, .5); }
+.bq-carte-loupe { width: 20px; height: 20px; margin-left: 12px; flex: none; fill: none; stroke: var(--encre); stroke-width: 1.6; stroke-linecap: round; }
+.bq-carte-cherche input { flex: 1; min-width: 0; padding: 10px 6px; border: 0; background: none; font: inherit; font-size: 16px; color: var(--encre); outline: none; }
+.bq-carte-cherche input::-webkit-search-cancel-button { display: none; }
+.bq-carte-ok { flex: none; padding: 11px 20px; border: 0; border-radius: 999px; background: var(--encre); color: #fff; font: inherit; font-size: 12.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.bq-carte-moi { flex: none; display: inline-flex; align-items: center; gap: 7px; padding: 11px 16px; border: 0; border-radius: 999px; background: var(--pale); color: var(--encre); font: inherit; font-size: 12.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.bq-carte-moi svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.bq-carte-moi.is-cherche svg { animation: bq-carte-tourne 1.2s linear infinite; }
+@keyframes bq-carte-tourne { to { transform: rotate(360deg); } }
+.bq-carte-suggestions { position: absolute; z-index: 6; left: 18px; right: 18px; top: calc(100% + 8px); padding: 6px; border: 1px solid var(--filet); border-radius: 14px; background: #fff; box-shadow: 0 24px 50px -24px rgba(22, 18, 15, .5); list-style: none; }
+.bq-carte-suggestions button { display: block; width: 100%; padding: 10px 14px; border: 0; border-radius: 9px; background: none; font: inherit; font-size: 15px; text-align: left; color: var(--encre); cursor: pointer; }
+.bq-carte-suggestions button:hover, .bq-carte-suggestions button:focus-visible { background: var(--pale); }
+/* la scène : toute la largeur ; la mer gravée, la terre posée dessus */
+.bq-carte-scene {
+  /* la hauteur de l'écran sous l'en-tête et la barre de la boutique : la carte se voit tout entière quand on s'en sert */
+  position: relative; height: clamp(560px, calc(100vh - var(--entete) - var(--racine) - 90px), 1000px); overflow: hidden; border-block: 1px solid var(--filet);
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 48%, rgba(255, 255, 255, .85), rgba(255, 255, 255, 0) 70%),
+    repeating-linear-gradient(0deg, rgba(15, 67, 102, .075) 0 1px, transparent 1px 7px),
+    var(--pale);
+}
+.bq-carte-cadre { position: absolute; inset: 0; }
+.bq-carte-toile { position: absolute; inset: 0; display: block; touch-action: manipulation; }
+/* les trois châteaux, dans le Médoc */
+.bq-carte-maison { position: absolute; left: 0; top: 0; z-index: 2; width: 30px; height: 30px; margin: -15px 0 0 -15px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; opacity: 0; transition: opacity .8s; }
+.bq-carte-maison.is-visible { opacity: 1; }
+.bq-carte-maison-onde { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(22, 18, 15, .7); background: rgba(255, 255, 255, .9); box-shadow: 0 6px 18px -6px rgba(22, 18, 15, .45); }
+.bq-carte-maison-onde::after { content: ""; position: absolute; inset: -1.5px; border-radius: 50%; border: 1.5px solid var(--coufran); animation: bq-carte-onde 2.6s ease-out infinite; }
+@keyframes bq-carte-onde { from { transform: scale(1); opacity: .8; } to { transform: scale(2.4); opacity: 0; } }
+.bq-carte-maison-points { position: absolute; left: 6px; top: 7px; width: 18px; height: 16px; }
+.bq-carte-maison-points i { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.bq-carte-maison-points i:nth-child(1) { left: 5px; top: 0; }
+.bq-carte-maison-points i:nth-child(2) { left: 0; top: 8px; }
+.bq-carte-maison-points i:nth-child(3) { left: 10px; top: 8px; }
+.bq-carte-maison-nom { position: absolute; right: calc(100% + 9px); top: 4px; padding: 5px 10px; border-radius: 999px; background: var(--encre); color: #fff; font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
+.bq-carte-maison:hover .bq-carte-maison-onde, .bq-carte-maison:focus-visible .bq-carte-maison-onde { border-color: var(--coufran); }
+.bq-carte-vous { position: absolute; left: -9px; top: -9px; z-index: 2; width: 18px; height: 18px; border-radius: 50%; background: #e50041; border: 3px solid #fff; box-shadow: 0 0 0 1px rgba(22, 18, 15, .3), 0 6px 14px -4px rgba(22, 18, 15, .5); pointer-events: none; }
+.bq-carte-vous.is-lieu { background: var(--encre); }   /* la commune cherchée ; « vous » reste rouge */
+/* l'info-bulle */
+.bq-carte-bulle { position: absolute; left: 0; top: 0; z-index: 4; display: grid; gap: 3px; max-width: 280px; padding: 11px 15px 12px; border-radius: 12px; background: #fff; box-shadow: 0 18px 40px -18px rgba(22, 18, 15, .55), 0 0 0 1px var(--filet); pointer-events: none; font-size: 13px; line-height: 1.35; }
+.bq-carte-bulle .bq-carte-points { margin-bottom: 4px; }
+.bq-carte-bulle b { font-weight: 500; font-size: 14px; }
+.bq-carte-bulle small { color: var(--muet); }
+.bq-carte-bulle em { margin-top: 3px; font-family: var(--f-ui); font-style: normal; font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--doux); }
+/* le compte, le zoom, le retour */
+.bq-carte-legende { position: absolute; left: var(--marge); bottom: clamp(24px, 3vw, 40px); z-index: 3; display: grid; justify-items: start; pointer-events: none; text-shadow: 0 0 6px #fff, 0 0 12px #fff; }
+.bq-carte-legende b { font-family: "Cormorant", var(--f-serif); font-size: clamp(44px, 4.4vw, 68px); font-weight: 500; line-height: .9; font-variant-numeric: lining-nums; }
+.bq-carte-legende span { font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; }
+.bq-carte-legende small { margin-top: 6px; font-size: 12.5px; color: var(--muet); }
+.bq-carte-zoom { position: absolute; left: var(--marge); top: 26px; z-index: 3; display: grid; border: 1px solid var(--filet); border-radius: 12px; background: #fff; overflow: hidden; box-shadow: 0 10px 24px -16px rgba(22, 18, 15, .5); }
+.bq-carte-zoom button { width: 40px; height: 40px; border: 0; background: none; font: inherit; font-size: 20px; line-height: 1; color: var(--encre); cursor: pointer; }
+.bq-carte-zoom button + button { border-top: 1px solid var(--filet); }
+.bq-carte-zoom button:hover { background: var(--pale); }
+.bq-carte-retour { position: absolute; left: calc(var(--marge) + 56px); top: 26px; z-index: 3; padding: 11px 18px; border: 1px solid var(--filet); border-radius: 999px; background: #fff; font: inherit; font-size: 12.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--encre); cursor: pointer; box-shadow: 0 10px 24px -16px rgba(22, 18, 15, .5); }
+/* le panneau : posé à droite sur la carte (sous la carte sur téléphone) */
+.bq-carte-panneau {
+  position: absolute; right: clamp(16px, 2.4vw, 36px); top: 24px; bottom: 24px; z-index: 5; width: min(410px, 34vw); overflow: auto; overscroll-behavior: contain;
+  padding: 26px 26px 22px; border-radius: 16px; background: rgba(255, 255, 255, .97); box-shadow: 0 30px 70px -30px rgba(22, 18, 15, .55), 0 0 0 1px var(--filet);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); animation: bq-carte-panneau .6s var(--courbe);
+}
+@keyframes bq-carte-panneau { from { opacity: 0; transform: translateX(24px); } }
+.bq-carte-panneau-tete { position: relative; display: grid; gap: 8px; padding-right: 34px; margin-bottom: 18px; }
+.bq-carte-panneau-tete h3 { font-family: "Cormorant", var(--f-serif); font-size: 34px; font-weight: 500; line-height: 1; }
+.bq-carte-panneau-compte { font-size: 13.5px; color: var(--muet); }
+.bq-carte-fermer { position: absolute; right: -6px; top: -8px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: var(--pale); font-size: 22px; line-height: 1; color: var(--encre); cursor: pointer; }
+.bq-carte-precedent { justify-self: start; padding: 0 0 2px; border: 0; border-bottom: 1px solid currentColor; background: none; font: inherit; font-size: 12.5px; color: var(--doux); cursor: pointer; }
+.bq-carte-groupe + .bq-carte-groupe { margin-top: 18px; }
+.bq-carte-groupe h4 { display: flex; align-items: center; justify-content: flex-start; gap: 9px; text-align: left; padding-bottom: 8px; border-bottom: 1px solid var(--filet); font-size: 12px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
+.bq-carte-groupe h4 > span:last-child { margin-left: auto; color: var(--muet); letter-spacing: 0; }   /* le compte, à droite ; pas les points */
+.bq-carte-liste { display: grid; }
+.bq-carte-item { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; width: 100%; padding: 11px 6px; border: 0; border-bottom: 1px solid rgba(22, 18, 15, .07); background: none; font: inherit; text-align: left; color: var(--encre); cursor: pointer; transition: background .25s; }
+.bq-carte-item:hover, .bq-carte-item:focus-visible { background: var(--pale); }
+.bq-carte-item b { display: block; font-weight: 500; font-size: 14.5px; line-height: 1.3; }
+.bq-carte-item small { display: block; font-size: 12.5px; line-height: 1.4; color: var(--muet); }
+.bq-carte-item em { font-family: var(--f-ui); font-style: normal; font-size: 12.5px; color: var(--doux); white-space: nowrap; }
+.bq-carte-adresse { margin: 0 0 18px; font-size: 15px; line-height: 1.6; }
+.bq-carte-adresse span { color: var(--muet); }
+.bq-carte-vins-ici { display: grid; gap: 10px; margin: 10px 0 22px; }
+.bq-carte-vins-ici li { display: flex; align-items: center; gap: 12px; }
+.bq-carte-vins-ici .armoirie { width: 34px; flex: none; }
+.bq-carte-vins-ici b { display: block; font-family: "Cormorant", var(--f-serif); font-size: 21px; font-weight: 500; line-height: 1.1; }
+.bq-carte-vins-ici small { font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muet); }
+.page-boutique .bq-carte-panneau .bq-bouton { margin-top: 2px; color: #fff; }
+.bq-carte-panneau-pied { margin-top: 20px; font-size: 12.5px; line-height: 1.5; color: var(--muet); }
+.bq-carte-panneau-pied a { color: var(--encre); border-bottom: 1px solid currentColor; }
+.bq-carte-note { max-width: 860px; margin: 26px auto 0; padding: 0 var(--marge); font-size: 14px; line-height: 1.6; text-align: center; color: var(--doux); }
+.bq-carte-note a { color: var(--encre); border-bottom: 1px solid currentColor; }
+.bq-carte-note small { display: inline-block; margin-top: 6px; font-size: 11.5px; color: var(--muet); }
+@media (max-width: 900px) {
+  .bq-carte-outils { justify-items: stretch; padding: 0 16px; }
+  .bq-carte-vins, .bq-carte-enseignes { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin: 0 -16px; padding: 2px 16px 6px; scrollbar-width: none; }
+  .bq-carte-vins::-webkit-scrollbar, .bq-carte-enseignes::-webkit-scrollbar { display: none; }
+  .bq-carte-vin, .bq-carte-enseigne { flex: none; }
+  .bq-carte-vin { padding-right: 40px; }
+  .bq-carte-cherche { flex-wrap: wrap; border-radius: 22px; }
+  .bq-carte-cherche input { flex: 1 1 0; }
+  .bq-carte-moi { order: 3; flex: 1 1 100%; justify-content: center; }
+  .bq-carte-scene { height: auto; overflow: visible; }
+  .bq-carte-cadre { position: relative; inset: auto; height: min(108vw, 640px); overflow: hidden; }
+  .bq-carte-panneau { position: relative; inset: auto; width: auto; max-height: none; margin: 0; padding: 24px 16px 20px; border-radius: 0; box-shadow: none; border-top: 1px solid var(--filet); background: #fff; animation: none; }
+  .bq-carte-legende { left: 16px; bottom: 14px; }
+  .bq-carte-legende b { font-size: 36px; }
+  .bq-carte-legende small { display: none; }
+  .bq-carte-zoom { left: auto; right: 14px; top: 14px; }
+  .bq-carte-zoom button { width: 38px; height: 38px; }
+  .bq-carte-retour { left: 14px; top: 14px; padding: 9px 14px; }
+  .bq-carte-maison-nom { display: none; }
+}
+
+/* ============ La carte de nuit (29/10/2026, demande de l'utilisateur : « des pages plus cinématographiques, dynamiques et
+   interactives », et plus de pastilles « très IA ») ============
+   L'outil entier (filtres, recherche, carte) devient un écran sombre, posé dans la page claire : la France tracée d'or,
+   les points lumineux des trois vins, les routes d'or qui partent du Médoc à l'arrivée (carte-france.js). Les filtres
+   sont des mots, soulignés quand ils sont choisis ; la recherche est un trait ; plus aucune forme en pilule. Le panneau
+   des magasins reste une feuille claire posée sur la carte, pour la lecture. */
+.bq-carte-france { --nuit: #0d0b09; --or-nuit: #c9a35a; position: relative; padding-top: clamp(34px, 4vw, 56px); background: var(--nuit); color: #f6f2e9; }
+.bq-carte-france::before { content: ""; position: absolute; inset: 0 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(201, 163, 90, .5), transparent); }
+.bq-carte-outils { position: relative; z-index: 2; }
+/* les vins : l'armoirie, le nom, la ligne ; un trait de leur couleur sous le vin choisi */
+.bq-carte-vins { gap: clamp(18px, 3vw, 46px); }
+.bq-carte-vin { padding: 8px 2px 12px; border: 0; border-radius: 0; background: none; color: #f6f2e9; }
+.bq-carte-vin::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: var(--l); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--courbe); }
+.bq-carte-vin[aria-pressed="true"]::after { transform: none; }
+.bq-carte-vin:hover { transform: none; box-shadow: none; }
+.bq-carte-vin[aria-pressed="true"] { border-color: transparent; }
+.bq-carte-vin small { color: rgba(246, 242, 233, .6); }
+.bq-carte-vin .armoirie { width: 28px; }
+.bq-carte-coche { display: none; }
+.bq-carte-vin[aria-pressed="false"] { opacity: .38; }
+/* les enseignes : des mots et leurs comptes, séparés d'un point */
+.bq-carte-enseignes { gap: 6px 0; }
+.bq-carte-enseigne { gap: 8px; padding: 6px 16px; border: 0; border-radius: 0; background: none; color: #f6f2e9; font-size: 13px; letter-spacing: .02em; }
+.bq-carte-enseigne + .bq-carte-enseigne { border-left: 1px solid rgba(246, 242, 233, .18); }
+.bq-carte-enseigne b { color: rgba(246, 242, 233, .55); }
+.bq-carte-enseigne[aria-pressed="false"] { opacity: .35; background: none; }
+.bq-carte-points i { background: var(--l, var(--c)); box-shadow: 0 0 8px var(--l, var(--c)); }
+.bq-carte-bulle .bq-carte-points i, .bq-carte-panneau .bq-carte-points i { background: var(--c); box-shadow: 0 0 0 1.5px #fff; }
+/* la recherche : un trait, une loupe, deux liens */
+.bq-carte-cherche { width: min(640px, 100%); padding: 2px 0; border: 0; border-bottom: 1px solid rgba(246, 242, 233, .35); border-radius: 0; background: none; box-shadow: none; }
+.bq-carte-cherche:focus-within { border-bottom-color: var(--or-nuit); }
+.bq-carte-loupe { margin-left: 0; stroke: rgba(246, 242, 233, .8); }
+.bq-carte-cherche input { color: #f6f2e9; }
+.bq-carte-cherche input::placeholder { color: rgba(246, 242, 233, .45); }
+.bq-carte-ok, .bq-carte-moi { padding: 10px 2px; border-radius: 0; background: none; color: var(--or-nuit); font-size: 11.5px; letter-spacing: .16em; }
+.bq-carte-ok { margin-left: 10px; }
+.bq-carte-moi { margin-left: 14px; color: rgba(246, 242, 233, .8); }
+.bq-carte-ok:hover, .bq-carte-moi:hover { color: #fff; }
+.bq-carte-suggestions { border-radius: 2px; }
+.bq-carte-suggestions button { border-radius: 0; }
+/* la scène : la nuit, la mer gravée d'or très pâle, une lumière au-dessus de la France */
+.bq-carte-scene {
+  border-block: 0;
+  background:
+    radial-gradient(ellipse 55% 65% at 46% 52%, rgba(201, 163, 90, .1), rgba(201, 163, 90, 0) 70%),
+    repeating-linear-gradient(0deg, rgba(201, 163, 90, .045) 0 1px, transparent 1px 7px),
+    var(--nuit);
+}
+.bq-carte-maison-onde { border-color: var(--or-nuit); background: rgba(13, 11, 9, .9); box-shadow: 0 0 24px rgba(201, 163, 90, .45); }
+.bq-carte-maison-onde::after { border-color: var(--or-nuit); }
+.bq-carte-maison-nom { padding: 4px 0; border-radius: 0; background: none; color: #e6cd94; text-shadow: 0 1px 8px rgba(0, 0, 0, .9); }
+.bq-carte-vous { border-color: #0d0b09; box-shadow: 0 0 0 1px rgba(246, 242, 233, .6), 0 0 18px rgba(229, 0, 65, .6); }
+.bq-carte-legende { text-shadow: 0 1px 14px rgba(0, 0, 0, .9); }
+.bq-carte-legende b { color: #f6f2e9; }
+.bq-carte-legende span { color: #e6cd94; }
+.bq-carte-legende small { color: rgba(246, 242, 233, .6); }
+.bq-carte-zoom { border: 1px solid rgba(246, 242, 233, .2); border-radius: 0; background: rgba(13, 11, 9, .7); box-shadow: none; }
+.bq-carte-zoom button { color: #f6f2e9; }
+.bq-carte-zoom button + button { border-top-color: rgba(246, 242, 233, .2); }
+.bq-carte-zoom button:hover { background: rgba(246, 242, 233, .08); }
+.bq-carte-retour { border: 1px solid rgba(246, 242, 233, .3); border-radius: 0; background: rgba(13, 11, 9, .7); color: #f6f2e9; box-shadow: none; }
+.bq-carte-bulle { border-radius: 2px; }
+.bq-carte-panneau { border-radius: 2px; color: var(--encre); }
+.bq-carte-fermer { border-radius: 0; }
+.bq-carte-note { padding-top: 22px; }
+@media (max-width: 900px) {
+  .bq-carte-vins { gap: 26px; }
+  .bq-carte-cherche { flex-wrap: wrap; border-radius: 0; }
+  .bq-carte-moi { margin-left: 0; order: 3; flex: 1 1 100%; justify-content: flex-start; }
+  .bq-carte-panneau { border-top: 1px solid rgba(246, 242, 233, .2); }
+}
+/* téléphone : le champ garde 16 px (sinon iOS zoome en le touchant), seule l'invite rétrécit pour se lire en entier */
+@media (max-width: 480px) {
+  .bq-carte-cherche input { padding-inline: 4px 0; }
+  .bq-carte-cherche input::placeholder { font-size: 13.5px; letter-spacing: 0; }
+  .bq-carte-ok { margin-left: 6px; letter-spacing: .12em; }
+}

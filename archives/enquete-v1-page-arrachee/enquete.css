@@ -1,0 +1,228 @@
+/* L'Enquête « La page arrachée » : un dossier d'enquête noir, des pièces sur papier, un seul rouge pour les tampons.
+   Chaque témoin garde la couleur et la police de son château. */
+
+[hidden] { display: none !important; }
+.page-enquete { background: #050505; color: var(--on-dark); }
+.dossier {
+  min-height: 100svh; padding: 120px var(--gutter) 12vh;
+  background: radial-gradient(70% 45% at 50% 0%, rgba(var(--lueur), .12), transparent 70%), #050505;
+}
+.etape { max-width: 1240px; margin: 0 auto; animation: etape .9s var(--ease) both; }
+@keyframes etape { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.dossier .ref { font-family: var(--f-ui); font-size: .7rem; letter-spacing: .26em; text-transform: uppercase; color: var(--on-dark-mute); margin-bottom: 1.4rem; }
+.dossier h1, .dossier h2 { font-weight: 300; letter-spacing: -.02em; }
+.dossier h1 em, .dossier h2 em { color: var(--vigne); }
+.dossier .tampon {
+  display: inline-block; padding: .6em 1.2em; border: 1.5px solid var(--vigne); color: var(--vigne);
+  transform: rotate(-4deg); font-family: var(--f-ui); font-weight: 500; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase;
+}
+.dossier .note { font-family: var(--f-ui); font-size: .72rem; letter-spacing: .02em; color: var(--on-dark-mute); }
+
+/* ---------- 1. Couverture : la chemise du dossier ---------- */
+.etape--couverture { display: grid; place-items: center; min-height: calc(100svh - 240px); }
+.chemise {
+  position: relative; width: min(760px, 100%); padding: clamp(36px, 7vw, 84px) clamp(24px, 6vw, 72px);
+  text-align: center; border: 1px solid rgba(var(--clair), .16);
+  background: linear-gradient(180deg, #0f0f0f, #080808);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, .6);
+}
+.chemise::before { content: ""; position: absolute; top: -14px; left: 9%; width: 32%; height: 14px; border: 1px solid rgba(var(--clair), .16); border-bottom: 0; background: #0f0f0f; }
+.chemise .tampon { margin-bottom: 2.4rem; }
+.chemise h1 { font-size: clamp(3.2rem, 9vw, 7rem); line-height: .95; }
+.chemise .accroche { margin: 1.6rem 0 3rem; font-family: var(--f-ui); font-size: .78rem; letter-spacing: .28em; text-transform: uppercase; color: var(--on-dark-texte); }
+.enqueteur { display: grid; justify-items: center; gap: 14px; }
+.enqueteur label { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .24em; text-transform: uppercase; color: var(--on-dark-mute); }
+.enqueteur input, .cadenas input {
+  width: min(360px, 100%); padding: .7em 0; text-align: center;
+  font-family: var(--f-plume); font-size: 1.6rem; color: var(--on-dark);
+  background: none; border: 0; border-bottom: 1px solid rgba(var(--clair), .35); outline: none;
+}
+.enqueteur input:focus, .cadenas input:focus { border-color: var(--vigne); }
+.enqueteur input::placeholder { color: rgba(var(--clair), .3); }
+.enqueteur .btn { margin-top: 1.2rem; }
+.chemise .note { margin: 1.8rem 0 0; }
+
+/* ---------- 2. Prologue : le mot de Lovely et le carnet ---------- */
+.pieces { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 90px); align-items: start; padding-top: 4vh; }
+.lettre-lovely {
+  padding: clamp(28px, 4vw, 52px); background: #fff; color: #1b1b1b; transform: rotate(1.4deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .55);
+  font-family: "Bad Script", cursive; font-size: 1.22rem; line-height: 1.75;
+}
+.lettre-lovely p { margin: 0 0 .8em; }
+.lettre-lovely .date { font-size: .85rem; opacity: .7; }
+.lettre-lovely .signature { margin: 1.2em 0 0; text-align: right; font-size: 1.5rem; color: var(--vigne); }
+.carnet--dossier { margin-top: 6vh; }
+/* Le carnet, la page déchirée et le mot de Lovely sont stylés dans main.css (section Enquête de la vitrine) */
+.carnet--dossier figcaption { margin-top: 3.4rem; }
+.suite { margin-top: 10vh; text-align: center; }
+
+/* ---------- 3. Le tableau d'enquête ---------- */
+.tableau-entete { text-align: center; margin-bottom: 7vh; }
+.tableau-entete h2 { font-size: clamp(2.6rem, 6vw, 5rem); }
+.progression { margin-top: 1rem; font-family: var(--f-ui); font-size: .76rem; letter-spacing: .24em; text-transform: uppercase; color: var(--vigne); }
+.tableau {
+  position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 3vw, 44px);
+  padding: clamp(24px, 4vw, 56px); border: 1px solid rgba(var(--clair), .1);
+  background: radial-gradient(100% 80% at 50% 100%, rgba(var(--lueur), .07), transparent 70%), #0a0a0a;
+}
+.fils { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+.fils path { fill: none; stroke: var(--vigne); stroke-width: 1.4; stroke-dasharray: 5 6; opacity: .55; }
+.fils path.tendu { stroke-dasharray: none; opacity: .95; }
+
+.fiche {
+  position: relative; display: grid; gap: 4px; padding: 14px 14px 20px; text-align: left; cursor: pointer;
+  background: #f4f2ee; color: #151515; border: 0; transform: rotate(var(--r, 0deg));
+  box-shadow: 0 22px 40px rgba(0, 0, 0, .5); transition: transform .5s var(--ease), box-shadow .5s;
+}
+.fiche--coufran { --r: -2.5deg; --c: var(--coufran-encre); }
+.fiche--verdignan { --r: 1.5deg; --c: var(--verdignan-encre); margin-top: 5vh; }
+.fiche--soudars { --r: -1deg; --c: var(--soudars-encre); }
+.fiche:hover, .fiche:focus-visible { transform: rotate(0) translateY(-6px); box-shadow: 0 30px 60px rgba(0, 0, 0, .6); }
+.fiche .punaise { position: absolute; top: -7px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--vigne); box-shadow: 0 3px 6px rgba(0, 0, 0, .5); z-index: 3; }
+.fiche .photo { display: block; aspect-ratio: 4 / 3; overflow: hidden; margin-bottom: 12px; background: #000; }
+.fiche .photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); transition: filter 1s; }
+.fiche.is-resolu .photo img { filter: none; }
+.fiche .numero { font-family: var(--f-ui); font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: #6b6b6b; }
+.fiche .nom { font-size: 2.2rem; line-height: 1; color: var(--c); }
+.fiche--coufran .nom { font-family: var(--f-coufran); text-transform: uppercase; letter-spacing: .05em; }
+.fiche--verdignan .nom { font-family: var(--f-verdignan); text-transform: uppercase; letter-spacing: .04em; }
+.fiche--soudars .nom { font-family: var(--f-soudars); }
+.fiche .role { font-family: var(--f-ui); font-size: .78rem; color: #3b3b3b; }
+.fiche .statut {
+  justify-self: start; margin-top: 10px; padding: .45em .8em;
+  font-family: var(--f-ui); font-weight: 500; font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
+  border: 1px solid #151515;
+}
+.fiche.is-resolu .statut { border-color: var(--vigne); color: var(--vigne); transform: rotate(-3deg); }
+
+.page-centrale {
+  grid-column: 1 / -1; justify-self: center; position: relative; z-index: 3;
+  width: min(560px, 100%); margin-top: 6vh; padding: 28px 28px 34px; text-align: center;
+  background: #f2efe9; color: #1d1a17; box-shadow: 0 30px 60px rgba(0, 0, 0, .55);
+}
+.page-titre { margin: 0 0 1.2rem; font-family: var(--f-plume); font-size: 1.3rem; }
+.emplacements { display: flex; justify-content: center; gap: 12px; margin-bottom: 1.8rem; }
+.morceau {
+  display: grid; place-items: center; width: 92px; height: 74px;
+  border: 1px dashed rgba(0, 0, 0, .35); font-family: var(--f-menu); font-size: 2rem; color: rgba(0, 0, 0, .3);
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 88% 92%, 74% 80%, 58% 96%, 42% 82%, 26% 95%, 12% 81%, 0 92%);
+}
+.morceau.is-trouve { border-style: solid; border-color: transparent; background: #fff; color: #1d1a17; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12); }
+.reconstituer[disabled] { opacity: .35; cursor: not-allowed; }
+.reconstituer[disabled]:hover { background: var(--sap); }
+
+/* ---------- Interrogatoire (fenêtre) ---------- */
+.interrogatoire {
+  position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: var(--gutter);
+  background: rgba(0, 0, 0, .82); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  opacity: 0; transition: opacity .4s var(--ease); overflow-y: auto;
+}
+.interrogatoire.is-ouverte { opacity: 1; }
+.interrogatoire--coufran { --fond: var(--coufran-fond); --c: var(--coufran); --t: var(--coufran-texte); --f: var(--f-coufran); }
+.interrogatoire--verdignan { --fond: var(--verdignan-fond); --c: var(--verdignan-vif); --t: var(--verdignan-texte); --f: var(--f-verdignan); }
+.interrogatoire--soudars { --fond: var(--soudars-fond); --c: var(--soudars-vif); --t: var(--soudars-texte); --f: var(--f-soudars); }
+.interro-boite {
+  position: relative; display: grid; grid-template-columns: 5fr 7fr; width: min(1100px, 100%); max-height: calc(100svh - 2 * var(--gutter));
+  background: var(--fond); color: var(--t); box-shadow: inset 0 3px 0 var(--c), 0 40px 100px rgba(0, 0, 0, .7);
+  transform: translateY(24px); transition: transform .5s var(--ease); overflow: hidden;
+}
+.is-ouverte .interro-boite { transform: none; }
+.interro-photo { position: relative; min-height: 100%; }
+.interro-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.interro-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 60%, var(--fond)); }
+.interro-texte { padding: clamp(28px, 4vw, 54px); overflow-y: auto; }
+.interro-ref { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; opacity: .7; margin: 0 0 1.4rem; }
+#interro-nom { font-family: var(--f); font-weight: 400; font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: var(--c); }
+.interrogatoire--coufran #interro-nom, .interrogatoire--verdignan #interro-nom { text-transform: uppercase; letter-spacing: .04em; }
+.interro-role { margin: .6rem 0 2rem; font-family: var(--f-ui); font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; }
+.interro-texte h3 { font-family: var(--f-ui); font-weight: 500; font-size: .68rem; letter-spacing: .26em; text-transform: uppercase; color: var(--c); margin-bottom: .8rem; }
+.deposition { margin: 0 0 2rem; font-style: italic; font-size: 1.12em; line-height: 1.5; }
+.cadenas { padding-top: 1.6rem; border-top: 1px solid rgba(255, 255, 255, .14); }
+.cadenas .question { display: block; font-family: var(--f-ui); font-weight: 500; font-size: .92rem; line-height: 1.5; margin-bottom: .6rem; }
+.saisie { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; }
+.cadenas input { width: auto; flex: 1 1 200px; text-align: left; color: var(--t); font-family: var(--f-ui); font-size: 1.3rem; padding: .45em 0; }
+.cadenas input:focus { border-color: var(--c); }
+.cadenas .retour { min-height: 1.5em; margin: .9rem 0 0; font-style: italic; color: var(--c); }
+.cadenas.is-faux .saisie { animation: secoue .45s; }
+@keyframes secoue { 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+.indice { margin-top: 1.4rem; font-family: var(--f-ui); font-size: .8rem; }
+.indice summary { cursor: pointer; letter-spacing: .14em; text-transform: uppercase; font-size: .68rem; opacity: .8; }
+.indice p { margin: .8rem 0; font-family: var(--f-serif); font-size: 1.05rem; }
+.morceau-trouve { padding-top: 1.6rem; border-top: 1px solid rgba(255, 255, 255, .14); }
+.morceau-trouve .tampon { margin-bottom: 1.4rem; }
+.morceau-trouve .morceau.grand { width: 150px; height: 110px; font-size: 3.2rem; margin: .8rem 0 1.8rem; background: #f2efe9; color: #1d1a17; border: 0; }
+.morceau-trouve .btn { color: var(--t); }
+.fermer { position: absolute; top: 16px; right: 16px; z-index: 2; width: 40px; height: 40px; border: 0; background: none; cursor: pointer; color: var(--t); }
+.fermer::before, .fermer::after { content: ""; position: absolute; left: 10px; top: 50%; width: 21px; height: 1px; background: currentColor; transform: rotate(45deg); }
+.fermer::after { transform: rotate(-45deg); }
+
+/* ---------- 4. La page à remettre dans l'ordre ---------- */
+.final-consigne { text-align: center; max-width: 760px; margin: 0 auto 7vh; }
+.final-consigne h2 { font-size: clamp(2.6rem, 6vw, 5rem); }
+.consigne { margin-top: 1.6rem; font-style: italic; font-size: 1.2em; color: var(--on-dark-texte); }
+.assemblage { display: grid; justify-items: center; gap: 4vh; }
+.cases { list-style: none; margin: 0; padding: 24px; display: grid; gap: 10px; width: min(440px, 100%); background: #f2efe9; box-shadow: 0 30px 60px rgba(0, 0, 0, .55); }
+.case { display: block; height: 92px; border: 1px dashed rgba(0, 0, 0, .3); }
+.case.is-pleine { border-color: transparent; }
+.paquet { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; min-height: 92px; }
+.morceau-carte {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  width: 220px; height: 92px; padding: 0 22px; cursor: pointer;
+  background: #fff; color: #1d1a17; border: 0; box-shadow: 0 14px 28px rgba(0, 0, 0, .45);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 90% 94%, 76% 82%, 60% 97%, 44% 83%, 28% 96%, 12% 82%, 0 93%);
+  transition: transform .4s var(--ease);
+}
+.case .morceau-carte { width: 100%; box-shadow: none; cursor: default; }
+.morceau-carte:hover:not([disabled]) { transform: translateY(-4px) rotate(-1deg); }
+.morceau-carte b { font-family: var(--f-menu); font-weight: 400; font-size: 2.6rem; letter-spacing: .2em; }
+.morceau-carte span { font-family: var(--f-signature); font-size: 2.2rem; }
+.morceau-carte--coufran span { color: var(--coufran-encre); }
+.morceau-carte--verdignan span { color: var(--verdignan-encre); }
+.morceau-carte--soudars span { color: var(--soudars-encre); }
+.assemblage .retour { min-height: 1.6em; margin: 0; font-style: italic; color: var(--on-dark-texte); text-align: center; }
+.assemblage.is-juste .retour { font-family: var(--f-menu); font-style: normal; font-size: clamp(2.4rem, 6vw, 4.4rem); letter-spacing: .3em; color: var(--vigne); }
+.assemblage.is-juste .cases { box-shadow: 0 0 0 2px var(--vigne), 0 30px 60px rgba(0, 0, 0, .55); }
+.assemblage.is-faux .cases { animation: secoue .45s; }
+.lien-vider { background: none; border: 0; cursor: pointer; font-family: var(--f-ui); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--on-dark-mute); text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- 5. La révélation et le certificat ---------- */
+.revelation { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(32px, 6vw, 90px); align-items: center; margin-bottom: 14vh; padding-top: 4vh; }
+.page-entiere { padding: 46px 40px 40px; background: #f2efe9; color: #1d1a17; transform: rotate(1.2deg); box-shadow: 0 30px 60px rgba(0, 0, 0, .55); }
+.page-entiere .carnet-texte strong { font-weight: 400; color: var(--vigne); padding: 0 .1em; border-bottom: 2px solid var(--vigne); }
+.carnet-signe { margin: 1.6rem 0 0; text-align: right; font-family: var(--f-signature); font-size: 2.4rem; }
+.revelation-texte h2 { font-size: clamp(2.6rem, 5.4vw, 4.6rem); margin-bottom: 1.6rem; }
+.revelation-texte p { color: var(--on-dark-texte); }
+
+.recompenses { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(28px, 5vw, 70px); align-items: center; }
+.certificat {
+  position: relative; padding: clamp(32px, 5vw, 64px); text-align: center;
+  background: #fff; color: #151515; outline: 1px solid #151515; outline-offset: -14px;
+}
+.certificat .wordmark { width: min(220px, 60%); color: #151515; margin-bottom: 1.6rem; }
+.cert-titre { font-family: var(--f-ui); font-weight: 500; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--vigne); }
+.cert-nom { margin: .6rem 0 1rem; font-family: var(--f-signature); font-size: clamp(3rem, 6vw, 4.4rem); line-height: 1.1; }
+.cert-texte { max-width: 26em; margin: 0 auto 1.4rem; }
+.cert-code { display: inline-block; padding: .55em 1em; border: 1.5px solid var(--vigne); color: var(--vigne); transform: rotate(-2deg); font-family: var(--f-ui); font-weight: 500; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; }
+.cert-date { margin: 1.4rem 0 0; font-family: var(--f-ui); font-size: .72rem; color: #6b6b6b; }
+.gains-liste h3 { font-family: var(--f-ui); font-weight: 500; font-size: .76rem; letter-spacing: .26em; text-transform: uppercase; color: var(--vigne); margin-bottom: 1.6rem; }
+.gains-liste ul { list-style: none; margin: 0 0 1.6rem; padding: 0; display: grid; gap: 1.2rem; }
+.gains-liste li { padding-left: 1.6rem; position: relative; color: var(--on-dark-texte); }
+.gains-liste li::before { content: ""; position: absolute; left: 0; top: .72em; width: .8rem; height: 1px; background: var(--vigne); }
+.gains-liste strong { color: var(--on-dark); font-weight: 500; }
+.suites { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 2.4rem; }
+
+@media (max-width: 900px) {
+  .dossier { padding-top: 96px; }
+  .pieces, .revelation, .recompenses { grid-template-columns: 1fr; }
+  .tableau { grid-template-columns: 1fr; }
+  .fiche--verdignan { margin-top: 0; }
+  .fils { display: none; }
+  .page-centrale { margin-top: 2vh; }
+  .interro-boite { grid-template-columns: 1fr; }
+  .interro-photo { height: 200px; min-height: 0; }
+  .interro-photo::after { background: linear-gradient(180deg, transparent 50%, var(--fond)); }
+  .morceau { width: 76px; height: 64px; font-size: 1.6rem; }
+}
+
+.capture .etape { animation: none; }

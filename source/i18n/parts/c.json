@@ -1,0 +1,3655 @@
+[
+ {
+  "cle": "Château Coufran · Le vin du grand-père · Château Coufran",
+  "ou": [
+   "coufran/chateau-coufran.html · "
+  ]
+ },
+ {
+  "cle": "Château Coufran, le grand vin du château Coufran (Haut-Médoc). Le vin du grand-père.",
+  "ou": [
+   "coufran/chateau-coufran.html · "
+  ]
+ },
+ {
+  "cle": "Château Coufran, accueil",
+  "ou": [
+   "coufran/chateau-coufran.html · a.ch-logo @aria-label",
+   "coufran/famille.html · a.ch-logo @aria-label",
+   "coufran/index.html · a.ch-logo @aria-label",
+   "coufran/la-rose-marechale.html · a.ch-logo @aria-label"
+  ]
+ },
+ {
+  "cle": "Par MIAILHE : la maison de famille",
+  "ou": [
+   "coufran/chateau-coufran.html · a.ch-maison @aria-label",
+   "coufran/famille.html · a.ch-maison @aria-label",
+   "coufran/index.html · a.ch-maison @aria-label",
+   "coufran/la-rose-marechale.html · a.ch-maison @aria-label"
+  ]
+ },
+ {
+  "cle": "Navigation du château",
+  "ou": [
+   "coufran/chateau-coufran.html · nav.ch-nav @aria-label",
+   "coufran/famille.html · nav.ch-nav @aria-label",
+   "coufran/index.html · nav.ch-nav @aria-label",
+   "coufran/la-rose-marechale.html · nav.ch-nav @aria-label"
+  ]
+ },
+ {
+  "cle": "Château Coufran",
+  "ou": [
+   "coufran/chateau-coufran.html · a.famille-lien.ici @aria-label",
+   "coufran/famille.html · a.famille-lien.ici @aria-label",
+   "coufran/index.html · a.famille-lien.ici @aria-label",
+   "coufran/la-rose-marechale.html · a.famille-lien.ici @aria-label"
+  ]
+ },
+ {
+  "cle": "Château Verdignan",
+  "ou": [
+   "coufran/chateau-coufran.html · a.famille-lien @aria-label",
+   "coufran/famille.html · a.famille-lien @aria-label",
+   "coufran/index.html · a.famille-lien @aria-label",
+   "coufran/la-rose-marechale.html · a.famille-lien @aria-label"
+  ]
+ },
+ {
+  "cle": "Château Soudars",
+  "ou": [
+   "coufran/chateau-coufran.html · a.famille-lien @aria-label",
+   "coufran/famille.html · a.famille-lien @aria-label",
+   "coufran/index.html · a.famille-lien @aria-label",
+   "coufran/la-rose-marechale.html · a.famille-lien @aria-label"
+  ]
+ },
+ {
+  "cle": "Menu",
+  "ou": [
+   "coufran/chateau-coufran.html · button.ch-burger @aria-label",
+   "coufran/famille.html · button.ch-burger @aria-label",
+   "coufran/index.html · button.ch-burger @aria-label",
+   "coufran/la-rose-marechale.html · button.ch-burger @aria-label"
+  ]
+ },
+ {
+  "cle": "Son caractère",
+  "ou": [
+   "coufran/chateau-coufran.html · section.vin-section @aria-label",
+   "coufran/la-rose-marechale.html · section.vin-section @aria-label",
+   "coufran/n2-de-coufran.html · section.vin-section @aria-label",
+   "verdignan/chateau-verdignan.html · section.vin-section @aria-label"
+  ]
+ },
+ {
+  "cle": "Son élaboration",
+  "ou": [
+   "coufran/chateau-coufran.html · section.vin-section @aria-label",
+   "coufran/la-rose-marechale.html · section.vin-section @aria-label",
+   "coufran/n2-de-coufran.html · section.vin-section @aria-label",
+   "verdignan/chateau-verdignan.html · section.vin-section @aria-label"
+  ]
+ },
+ {
+  "cle": "Avez-vous l'âge légal pour boire du vin ?",
+  "ou": [
+   "coufran/chateau-coufran.html · p.age-question",
+   "coufran/famille.html · p.age-question",
+   "coufran/index.html · p.age-question",
+   "coufran/la-rose-marechale.html · p.age-question"
+  ]
+ },
+ {
+  "cle": "Oui, entrer",
+  "ou": [
+   "coufran/chateau-coufran.html · button.pilule.pilule--pleine",
+   "coufran/famille.html · button.pilule.pilule--pleine",
+   "coufran/index.html · button.pilule.pilule--pleine",
+   "coufran/la-rose-marechale.html · button.pilule.pilule--pleine"
+  ]
+ },
+ {
+  "cle": "Non",
+  "ou": [
+   "coufran/chateau-coufran.html · button.non",
+   "coufran/famille.html · button.non",
+   "coufran/index.html · button.non",
+   "coufran/la-rose-marechale.html · button.non"
+  ]
+ },
+ {
+  "cle": "Revenez plus tard : la vigne, elle, sait attendre.",
+  "ou": [
+   "coufran/chateau-coufran.html · p.non-message",
+   "coufran/famille.html · p.non-message",
+   "coufran/index.html · p.non-message",
+   "coufran/la-rose-marechale.html · p.non-message"
+  ]
+ },
+ {
+  "cle": "En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.",
+  "ou": [
+   "coufran/chateau-coufran.html · p.age-bas",
+   "coufran/famille.html · p.age-bas",
+   "coufran/index.html · p.age-bas",
+   "coufran/la-rose-marechale.html · p.age-bas"
+  ]
+ },
+ {
+  "cle": "<0/> <1><2>par</2><3/></1>",
+  "ou": [
+   "coufran/chateau-coufran.html · div.ch-signature",
+   "coufran/famille.html · div.ch-signature",
+   "coufran/index.html · div.ch-signature",
+   "coufran/la-rose-marechale.html · div.ch-signature"
+  ]
+ },
+ {
+  "cle": "<0>Nos vins<1/></0> <2>La famille<3/></2> <4>L'enquête<5/></4> <6>Professionnels<7/></6> <8>Contact<9/></8>",
+  "ou": [
+   "coufran/chateau-coufran.html · nav.ch-nav",
+   "coufran/famille.html · nav.ch-nav",
+   "coufran/index.html · nav.ch-nav",
+   "coufran/la-rose-marechale.html · nav.ch-nav"
+  ]
+ },
+ {
+  "cle": "<0><1/> Nos vins</0> <2>Vin suivant <3/></2>",
+  "ou": [
+   "coufran/chateau-coufran.html · div.vin-haut",
+   "coufran/n2-de-coufran.html · div.vin-haut",
+   "verdignan/chateau-verdignan.html · div.vin-haut",
+   "verdignan/n2-de-verdignan.html · div.vin-haut"
+  ]
+ },
+ {
+  "cle": "Coufran<0>Château · grand vin</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · h1.vin-nom.is-in"
+  ]
+ },
+ {
+  "cle": "Haut-Médoc<0/>Appellation d'origine protégée",
+  "ou": [
+   "coufran/chateau-coufran.html · p.vin-origine.is-in",
+   "coufran/la-rose-marechale.html · p.vin-origine.is-in",
+   "coufran/n2-de-coufran.html · p.vin-origine.is-in",
+   "verdignan/chateau-verdignan.html · p.vin-origine.is-in"
+  ]
+ },
+ {
+  "cle": "Le grand vin · bouteille de {0} cl",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "verdignan/chateau-verdignan.html · p",
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "Le vin du grand-père",
+  "ou": [
+   "coufran/chateau-coufran.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Prêt à boire · gardé au château jusqu'à sa mise en vente</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · p.vin-pret",
+   "verdignan/chateau-verdignan.html · p.vin-pret"
+  ]
+ },
+ {
+  "cle": "Où l'acheter",
+  "ou": [
+   "coufran/chateau-coufran.html · a.pilule.pilule--pleine",
+   "coufran/la-rose-marechale.html · a.pilule.pilule--pleine",
+   "coufran/n2-de-coufran.html · a.pilule.pilule--pleine",
+   "verdignan/chateau-verdignan.html · a.pilule.pilule--pleine"
+  ]
+ },
+ {
+  "cle": "<0/> Découvrir son caractère",
+  "ou": [
+   "coufran/chateau-coufran.html · button.vin-lien-bas",
+   "coufran/la-rose-marechale.html · button.vin-lien-bas",
+   "coufran/n2-de-coufran.html · button.vin-lien-bas",
+   "verdignan/chateau-verdignan.html · button.vin-lien-bas"
+  ]
+ },
+ {
+  "cle": "<0/> Coufran",
+  "ou": [
+   "coufran/chateau-coufran.html · button.vin-lien-haut"
+  ]
+ },
+ {
+  "cle": "Ample, <0>généreux</0>, merlot",
+  "ou": [
+   "coufran/chateau-coufran.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Notes de dégustation",
+  "ou": [
+   "coufran/chateau-coufran.html · h3",
+   "coufran/la-rose-marechale.html · h3",
+   "coufran/n2-de-coufran.html · h3",
+   "verdignan/chateau-verdignan.html · h3"
+  ]
+ },
+ {
+  "cle": "Une robe profonde, un nez de fruits noirs, de cèdre et de cuir. Il prend son temps pour se dévoiler, puis la bouche se montre ample, ronde et généreuse, sur des tanins soyeux et une longue finale. Les vieux merlots lui donnent sa tenue dans le temps.",
+  "ou": [
+   "coufran/chateau-coufran.html · p.serif"
+  ]
+ },
+ {
+  "cle": "À table",
+  "ou": [
+   "coufran/chateau-coufran.html · h3",
+   "coufran/la-rose-marechale.html · h3",
+   "coufran/n2-de-coufran.html · h3",
+   "verdignan/chateau-verdignan.html · h3"
+  ]
+ },
+ {
+  "cle": "Le vin qu'on sert pour recevoir, celui qui plaît à presque tout le monde à table : gigot d'agneau, pièce de bœuf, volaille fermière, fromages affinés.",
+  "ou": [
+   "coufran/chateau-coufran.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Service",
+  "ou": [
+   "coufran/chateau-coufran.html · h3",
+   "coufran/la-rose-marechale.html · h3",
+   "coufran/n2-de-coufran.html · h3",
+   "verdignan/chateau-verdignan.html · h3"
+  ]
+ },
+ {
+  "cle": "{0} à {1} °C",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/la-rose-marechale.html · p",
+   "verdignan/chateau-verdignan.html · p",
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "Garde",
+  "ou": [
+   "coufran/chateau-coufran.html · h3",
+   "coufran/la-rose-marechale.html · h3",
+   "coufran/n2-de-coufran.html · h3",
+   "coufran/professionnels.html · dt"
+  ]
+ },
+ {
+  "cle": "Prêt à boire, jusqu'à {0} ans",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Cépages",
+  "ou": [
+   "coufran/chateau-coufran.html · h3",
+   "coufran/la-rose-marechale.html · h3",
+   "coufran/n2-de-coufran.html · h3",
+   "coufran/professionnels.html · dt"
+  ]
+ },
+ {
+  "cle": "{0} % merlot, {1} % cabernet-sauvignon",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Millésime {0} · Terre de Vins, {1}-95/100, coup de cœur",
+  "ou": [
+   "coufran/chateau-coufran.html · p.presse.is-in"
+  ]
+ },
+ {
+  "cle": "<0/> Son élaboration",
+  "ou": [
+   "coufran/chateau-coufran.html · button.vin-lien-bas",
+   "coufran/la-rose-marechale.html · button.vin-lien-bas",
+   "coufran/n2-de-coufran.html · button.vin-lien-bas",
+   "verdignan/chateau-verdignan.html · button.vin-lien-bas"
+  ]
+ },
+ {
+  "cle": "<0/> Son caractère",
+  "ou": [
+   "coufran/chateau-coufran.html · button.vin-lien-haut",
+   "coufran/la-rose-marechale.html · button.vin-lien-haut",
+   "coufran/n2-de-coufran.html · button.vin-lien-haut",
+   "verdignan/chateau-verdignan.html · button.vin-lien-haut"
+  ]
+ },
+ {
+  "cle": "L'<0>élaboration</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · h2.is-in",
+   "coufran/la-rose-marechale.html · h2.is-in",
+   "coufran/n2-de-coufran.html · h2.is-in",
+   "verdignan/chateau-verdignan.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Les merlots sont vendangés les premiers, les cabernets ensuite, et chaque raisin est trié selon sa parcelle et l'âge de ses vignes. La vinification se fait à la bordelaise, en cuves inox thermorégulées. En décembre, l'assemblage est arrêté avec l'œnologue Éric Boissenot : seuls les deux tiers de la récolte entrent dans le grand vin.",
+  "ou": [
+   "coufran/chateau-coufran.html · p"
+  ]
+ },
+ {
+  "cle": "Puis douze mois en barriques de chêne français, renouvelées par quart chaque année. Les bouteilles attendent ensuite au château, au frais, jusqu'à ce qu'elles soient prêtes à boire. C'est la marque de la maison.",
+  "ou": [
+   "coufran/chateau-coufran.html · p"
+  ]
+ },
+ {
+  "cle": "Télécharger la fiche technique",
+  "ou": [
+   "coufran/chateau-coufran.html · a.pilule.is-in",
+   "coufran/professionnels.html · a.pro-lien",
+   "verdignan/chateau-verdignan.html · a.pilule.is-in",
+   "verdignan/professionnels.html · a.pro-lien"
+  ]
+ },
+ {
+  "cle": "<0/> La famille",
+  "ou": [
+   "coufran/chateau-coufran.html · button.vin-lien-bas",
+   "coufran/la-rose-marechale.html · button.vin-lien-bas",
+   "coufran/n2-de-coufran.html · button.vin-lien-bas",
+   "verdignan/chateau-verdignan.html · button.vin-lien-bas"
+  ]
+ },
+ {
+  "cle": "Dans la même <0>famille</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · h2.is-in",
+   "coufran/la-rose-marechale.html · h2.is-in",
+   "coufran/n2-de-coufran.html · h2.is-in",
+   "verdignan/chateau-verdignan.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "N°{0} de Coufran<0>Le cadet du grand-père</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "Château La Rose Maréchale<0>Les jeunes vignes du grand-père</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/n2-de-coufran.html · p"
+  ]
+ },
+ {
+  "cle": "Château Verdignan<0>Le vin du père</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/la-rose-marechale.html · p",
+   "coufran/n2-de-coufran.html · p",
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "Château Soudars<0>Le vin du fils</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/la-rose-marechale.html · p",
+   "coufran/n2-de-coufran.html · p",
+   "verdignan/chateau-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "Château Coufran<0/>{0} Saint-Seurin-de-Cadourne, France",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/famille.html · p",
+   "coufran/index.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "AOC Haut-Médoc",
+  "ou": [
+   "coufran/chateau-coufran.html · p.gris",
+   "coufran/famille.html · p.gris",
+   "coufran/index.html · p.gris",
+   "coufran/la-rose-marechale.html · p.gris"
+  ]
+ },
+ {
+  "cle": "<0/><1/><2>contact@chateau-coufran.com</2>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/famille.html · p",
+   "coufran/index.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "Visites sur rendez-vous",
+  "ou": [
+   "coufran/chateau-coufran.html · p.gris",
+   "coufran/famille.html · p.gris",
+   "coufran/index.html · p.gris",
+   "coufran/la-rose-marechale.html · p.gris"
+  ]
+ },
+ {
+  "cle": "Nous rendre visite",
+  "ou": [
+   "coufran/chateau-coufran.html · p.titre",
+   "coufran/famille.html · p.titre",
+   "coufran/index.html · p.titre",
+   "coufran/la-rose-marechale.html · p.titre"
+  ]
+ },
+ {
+  "cle": "Les visites de la propriété se font pour les professionnels et les particuliers, uniquement sur rendez-vous.",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/famille.html · p",
+   "coufran/index.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "Votre demande : <0>emiailhe@coufran-verdignan.com</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/famille.html · p",
+   "coufran/index.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Itinéraire ↗</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/famille.html · p",
+   "coufran/index.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "Production et commercialisation",
+  "ou": [
+   "coufran/chateau-coufran.html · p.titre",
+   "coufran/famille.html · p.titre",
+   "coufran/index.html · p.titre",
+   "coufran/la-rose-marechale.html · p.titre"
+  ]
+ },
+ {
+  "cle": "Éric Miailhe",
+  "ou": [
+   "coufran/chateau-coufran.html · p.nom",
+   "coufran/famille.html · p.signature",
+   "coufran/index.html · p.nom",
+   "coufran/la-rose-marechale.html · p.nom"
+  ]
+ },
+ {
+  "cle": "Château Coufran<0/>{0} Saint-Seurin-de-Cadourne",
+  "ou": [
+   "coufran/chateau-coufran.html · p.gris",
+   "coufran/famille.html · p.gris",
+   "coufran/index.html · p.gris",
+   "coufran/la-rose-marechale.html · p.gris"
+  ]
+ },
+ {
+  "cle": "Tél. <0/><1/>Fax +{0} {1} {2} {3} {4} {5}<2/>Portable <3/>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/famille.html · p",
+   "coufran/index.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "<0>emiailhe@coufran-verdignan.com</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/famille.html · p",
+   "coufran/index.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "Administratif et comptabilité",
+  "ou": [
+   "coufran/chateau-coufran.html · p.titre",
+   "coufran/famille.html · p.titre",
+   "coufran/index.html · p.titre",
+   "coufran/la-rose-marechale.html · p.titre"
+  ]
+ },
+ {
+  "cle": "Marie-Cécile Vicaire",
+  "ou": [
+   "coufran/chateau-coufran.html · p.nom",
+   "coufran/famille.html · p.nom",
+   "coufran/index.html · p.nom",
+   "coufran/la-rose-marechale.html · p.nom"
+  ]
+ },
+ {
+  "cle": "{0}, cours de Verdun<0/>{1} Bordeaux",
+  "ou": [
+   "coufran/chateau-coufran.html · p.gris",
+   "coufran/famille.html · p.gris",
+   "coufran/index.html · p.gris",
+   "coufran/la-rose-marechale.html · p.gris"
+  ]
+ },
+ {
+  "cle": "Tél. <0/><1/>Fax +{0} {1} {2} {3} {4} {5}",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/famille.html · p",
+   "coufran/index.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "<0>contact@chateau-coufran.com</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · p",
+   "coufran/famille.html · p",
+   "coufran/index.html · p",
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "Acheter nos vins",
+  "ou": [
+   "coufran/chateau-coufran.html · p.titre",
+   "coufran/famille.html · p.titre",
+   "coufran/index.html · p.titre",
+   "coufran/la-rose-marechale.html · p.titre"
+  ]
+ },
+ {
+  "cle": "<0>Boutique en ligne ↗</0><1>coufran-verdignan.com</1>",
+  "ou": [
+   "coufran/chateau-coufran.html · li",
+   "coufran/famille.html · li",
+   "coufran/index.html · li",
+   "coufran/la-rose-marechale.html · li"
+  ]
+ },
+ {
+  "cle": "Maisons du Vin<0>Saint-Seurin-de-Cadourne et Pauillac</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · li",
+   "coufran/famille.html · li",
+   "coufran/index.html · li",
+   "coufran/la-rose-marechale.html · li"
+  ]
+ },
+ {
+  "cle": "En France<0>Monoprix, en bouteille et en demi-bouteille</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · li",
+   "coufran/famille.html · li",
+   "coufran/index.html · li",
+   "coufran/la-rose-marechale.html · li"
+  ]
+ },
+ {
+  "cle": "En Belgique<0>Colruyt, depuis plus de soixante-dix ans</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · li",
+   "coufran/famille.html · li",
+   "coufran/index.html · li",
+   "coufran/la-rose-marechale.html · li"
+  ]
+ },
+ {
+  "cle": "Dans le monde<0>Les négociants de la Place de Bordeaux</0>",
+  "ou": [
+   "coufran/chateau-coufran.html · li",
+   "coufran/famille.html · li",
+   "coufran/index.html · li",
+   "coufran/la-rose-marechale.html · li"
+  ]
+ },
+ {
+  "cle": "Château Coufran · une maison de la famille <0/>",
+  "ou": [
+   "coufran/chateau-coufran.html · a.maison",
+   "coufran/famille.html · a.maison",
+   "coufran/index.html · a.maison",
+   "coufran/la-rose-marechale.html · a.maison"
+  ]
+ },
+ {
+  "cle": "Les autres maisons : <0>Verdignan</0> · <1>Soudars</1>",
+  "ou": [
+   "coufran/chateau-coufran.html · span",
+   "coufran/famille.html · span",
+   "coufran/index.html · span",
+   "coufran/la-rose-marechale.html · span"
+  ]
+ },
+ {
+  "cle": "L'enquête",
+  "ou": [
+   "coufran/chateau-coufran.html · a",
+   "coufran/famille.html · a",
+   "coufran/index.html · a",
+   "coufran/la-rose-marechale.html · a"
+  ]
+ },
+ {
+  "cle": "Espace professionnel",
+  "ou": [
+   "coufran/chateau-coufran.html · a",
+   "coufran/famille.html · a",
+   "coufran/index.html · a",
+   "coufran/la-rose-marechale.html · a"
+  ]
+ },
+ {
+  "cle": "↑ Haut",
+  "ou": [
+   "coufran/chateau-coufran.html · button.haut-page",
+   "coufran/famille.html · button.haut-page",
+   "coufran/index.html · button.haut-page",
+   "coufran/la-rose-marechale.html · button.haut-page"
+  ]
+ },
+ {
+  "cle": "Château Coufran · RCS Bordeaux {0} {1} {2} · siège : Château Coufran, {3} Saint-Seurin-de-Cadourne · directeur de la publication : Éric Miailhe, représentant légal. Maquette de concept, projet étudiant ISCOM {4}, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.",
+  "ou": [
+   "coufran/chateau-coufran.html · p.mentions",
+   "coufran/famille.html · p.mentions",
+   "coufran/index.html · p.mentions",
+   "coufran/la-rose-marechale.html · p.mentions"
+  ]
+ },
+ {
+  "cle": "La famille · Château Coufran · Le vin du grand-père",
+  "ou": [
+   "coufran/famille.html · "
+  ]
+ },
+ {
+  "cle": "L'histoire du château Coufran et de la famille Miailhe.",
+  "ou": [
+   "coufran/famille.html · "
+  ]
+ },
+ {
+  "cle": "Lire l'histoire",
+  "ou": [
+   "coufran/famille.html · a.fleche-bas @aria-label",
+   "verdignan/famille.html · a.fleche-bas @aria-label",
+   "soudars/famille.html · a.fleche-bas @aria-label"
+  ]
+ },
+ {
+  "cle": "Galerie",
+  "ou": [
+   "coufran/famille.html · section.galerie @aria-label",
+   "verdignan/famille.html · section.galerie @aria-label",
+   "soudars/famille.html · section.galerie @aria-label"
+  ]
+ },
+ {
+  "cle": "Le pigeonnier au bout d'un rang de vigne",
+  "ou": [
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Un vendangeur dans les rangs",
+  "ou": [
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "La façade du château",
+  "ou": [
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Le vin jaillit d'une cuve",
+  "ou": [
+   "coufran/famille.html · img @alt",
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Les barriques du chai",
+  "ou": [
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Les bouteilles qui attendent d'être prêtes",
+  "ou": [
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Le sol de graves",
+  "ou": [
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Le château vers {0}, encore orthographié Couffrant",
+  "ou": [
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Photos précédentes",
+  "ou": [
+   "coufran/famille.html · button.fleche-carrousel.fleche-carrousel--prec @aria-label",
+   "verdignan/famille.html · button.fleche-carrousel.fleche-carrousel--prec @aria-label",
+   "soudars/famille.html · button.fleche-carrousel.fleche-carrousel--prec @aria-label"
+  ]
+ },
+ {
+  "cle": "Photos suivantes",
+  "ou": [
+   "coufran/famille.html · button.fleche-carrousel.fleche-carrousel--suiv @aria-label",
+   "verdignan/famille.html · button.fleche-carrousel.fleche-carrousel--suiv @aria-label",
+   "soudars/famille.html · button.fleche-carrousel.fleche-carrousel--suiv @aria-label"
+  ]
+ },
+ {
+  "cle": "L'allée du chai à barriques",
+  "ou": [
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Quatre générations de vignerons",
+  "ou": [
+   "coufran/famille.html · ol.generations.is-in @aria-label",
+   "verdignan/famille.html · ol.generations.is-in @aria-label",
+   "soudars/famille.html · ol.generations.is-in @aria-label"
+  ]
+ },
+ {
+  "cle": "La famille Miailhe devant le château Coufran",
+  "ou": [
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "<0>L'<1>histoire</1><2/>du grand-père</0>",
+  "ou": [
+   "coufran/famille.html · h1.intro-texte.is-in"
+  ]
+ },
+ {
+  "cle": "<0>Louis,</0> <1/> <2><3>le pari du merlot</3></2>",
+  "ou": [
+   "coufran/famille.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Au XVIII<0>e</0> siècle, les archives de l'abbé Baurein citent déjà la maison noble de « Cousran ». Le domaine passe ensuite entre bien des mains : le baron de Brane, le « Napoléon des vignes », qui imposa le cabernet en Médoc ; l'armateur Jean-Valère Cabarrus après la Révolution ; puis les Célérier, négociants à Bordeaux, qui donnent au château son architecture.",
+  "ou": [
+   "coufran/famille.html · p"
+  ]
+ },
+ {
+  "cle": "En {0}, Louis Miailhe, courtier en vins comme les siens depuis {1}, l'achète et fixe son nom : Coufran. En pleine crise, le vin, très cabernet, ne se vend plus. Louis arrache et replante en merlot, plus rond, plus charmeur. Un journaliste l'appellera « le Pomerol du Médoc ». Cent ans plus tard, le domaine n'a pas changé de cap.",
+  "ou": [
+   "coufran/famille.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Soixante-seize hectares</0> <1><2>d'un seul tenant</2></1>",
+  "ou": [
+   "coufran/famille.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Au nord de Saint-Seurin-de-Cadourne, une colline de graves et d'argiles culmine à vingt et un mètres et regarde l'estuaire de la Gironde. L'eau et l'océan tout proches tempèrent le climat. Les vieux merlots, cinquante ans en moyenne, donnent au vin sa rondeur et sa tenue.",
+  "ou": [
+   "coufran/famille.html · p.paragraphe.is-in"
+  ]
+ },
+ {
+  "cle": "<0>{0} ha</0>d'un seul tenant",
+  "ou": [
+   "coufran/famille.html · div"
+  ]
+ },
+ {
+  "cle": "<0/>de merlot",
+  "ou": [
+   "coufran/famille.html · div",
+   "soudars/famille.html · div"
+  ]
+ },
+ {
+  "cle": "<0>{0} ans</0>âge moyen des vignes",
+  "ou": [
+   "coufran/famille.html · div",
+   "verdignan/famille.html · div"
+  ]
+ },
+ {
+  "cle": "<0>Louis l'a planté,</0> <1>Jean l'a <2>gardé</2>,</1> <3>Éric le fait vivre</3>",
+  "ou": [
+   "coufran/famille.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Jean, le fils de Louis, est le seul de ses enfants à rester vigneron : il reprend Coufran. Depuis les années {0}, ses enfants Éric Miailhe et Marie-Cécile Vicaire ont pris le relais, Éric à la vigne et au chai, Marie-Cécile à l'administration. Depuis {1}, Lovely, la fille d'Éric, travaille à ses côtés.",
+  "ou": [
+   "coufran/famille.html · p"
+  ]
+ },
+ {
+  "cle": "Ici, on ne vend pas un vin tant qu'il n'est pas prêt : les bouteilles attendent au château, au frais. Cette patience-là se transmet de père en fils.",
+  "ou": [
+   "coufran/famille.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Louis</0>{0}",
+  "ou": [
+   "coufran/famille.html · li.ici",
+   "verdignan/famille.html · li",
+   "soudars/famille.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Jean</0>{0}",
+  "ou": [
+   "coufran/famille.html · li",
+   "verdignan/famille.html · li.ici",
+   "soudars/famille.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Éric</0>{0}",
+  "ou": [
+   "coufran/famille.html · li",
+   "verdignan/famille.html · li",
+   "soudars/famille.html · li.ici"
+  ]
+ },
+ {
+  "cle": "<0>Lovely</0>{0}",
+  "ou": [
+   "coufran/famille.html · li",
+   "verdignan/famille.html · li",
+   "soudars/famille.html · li"
+  ]
+ },
+ {
+  "cle": "Le vigneron :",
+  "ou": [
+   "coufran/famille.html · p",
+   "verdignan/famille.html · p",
+   "soudars/famille.html · p"
+  ]
+ },
+ {
+  "cle": "Œnologue-conseil : Éric Boissenot",
+  "ou": [
+   "coufran/famille.html · p",
+   "verdignan/famille.html · p",
+   "soudars/famille.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Découvrez</0><1/>nos vins",
+  "ou": [
+   "coufran/famille.html · p.is-in",
+   "verdignan/famille.html · p.is-in",
+   "soudars/famille.html · p.is-in"
+  ]
+ },
+ {
+  "cle": "Château Coufran · Le vin du grand-père · Haut-Médoc",
+  "ou": [
+   "coufran/index.html · "
+  ]
+ },
+ {
+  "cle": "Château Coufran, Haut-Médoc. Le vin du grand-père : Louis Miailhe l'a fait entrer dans la famille en {0} et planté à {1} % de merlot.",
+  "ou": [
+   "coufran/index.html · "
+  ]
+ },
+ {
+  "cle": "Découvrir nos vins",
+  "ou": [
+   "coufran/index.html · a.fleche-bas @aria-label",
+   "verdignan/index.html · a.fleche-bas @aria-label",
+   "soudars/index.html · a.fleche-bas @aria-label"
+  ]
+ },
+ {
+  "cle": "Nos vins",
+  "ou": [
+   "coufran/index.html · section.bouteilles @aria-label",
+   "verdignan/index.html · section.bouteilles @aria-label",
+   "soudars/index.html · section.bouteilles @aria-label"
+  ]
+ },
+ {
+  "cle": "N°{0} de Coufran",
+  "ou": [
+   "coufran/index.html · button.bouteille @aria-label",
+   "coufran/n2-de-coufran.html · section.vin-section @aria-label",
+   "coufran/professionnels.html · img @alt",
+   "coufran/index.html @data-nom"
+  ]
+ },
+ {
+  "cle": "Château La Rose Maréchale",
+  "ou": [
+   "coufran/index.html · button.bouteille @aria-label",
+   "coufran/la-rose-marechale.html · section.vin-section @aria-label",
+   "coufran/professionnels.html · img @alt",
+   "coufran/index.html @data-nom"
+  ]
+ },
+ {
+  "cle": "Bouteille précédente",
+  "ou": [
+   "coufran/index.html · button.fleche-carrousel.fleche-carrousel--prec @aria-label",
+   "verdignan/index.html · button.fleche-carrousel.fleche-carrousel--prec @aria-label",
+   "soudars/index.html · button.fleche-carrousel.fleche-carrousel--prec @aria-label"
+  ]
+ },
+ {
+  "cle": "Bouteille suivante",
+  "ou": [
+   "coufran/index.html · button.fleche-carrousel.fleche-carrousel--suiv @aria-label",
+   "verdignan/index.html · button.fleche-carrousel.fleche-carrousel--suiv @aria-label",
+   "soudars/index.html · button.fleche-carrousel.fleche-carrousel--suiv @aria-label"
+  ]
+ },
+ {
+  "cle": "Bouteille {0}",
+  "ou": [
+   "coufran/index.html · button.is-active @aria-label",
+   "coufran/index.html · button @aria-label",
+   "verdignan/index.html · button.is-active @aria-label",
+   "verdignan/index.html · button @aria-label"
+  ]
+ },
+ {
+  "cle": "Le local climatisé de Coufran : des casiers de bouteilles jusqu'au plafond",
+  "ou": [
+   "coufran/index.html · img @alt"
+  ]
+ },
+ {
+  "cle": "<0>Goûtez</0> <1>le <2>caractère</2> du</1> <3>grand-père</3>",
+  "ou": [
+   "coufran/index.html · h1.intro-texte"
+  ]
+ },
+ {
+  "cle": "<0>découvrez</0><1/>nos vins",
+  "ou": [
+   "coufran/index.html · p.is-in",
+   "verdignan/index.html · p.is-in"
+  ]
+ },
+ {
+  "cle": "AOC Haut-Médoc · le grand vin",
+  "ou": [
+   "coufran/index.html · p.origine",
+   "verdignan/index.html · p.origine",
+   "coufran/index.html @data-origine",
+   "verdignan/index.html @data-origine"
+  ]
+ },
+ {
+  "cle": "La gamme <0/>",
+  "ou": [
+   "coufran/index.html · button.pilule",
+   "verdignan/index.html · button.pilule"
+  ]
+ },
+ {
+  "cle": "Château Coufran<0>Le grand vin</0>",
+  "ou": [
+   "coufran/index.html · button"
+  ]
+ },
+ {
+  "cle": "N°{0} de Coufran<0>Le second vin</0>",
+  "ou": [
+   "coufran/index.html · button"
+  ]
+ },
+ {
+  "cle": "Château La Rose Maréchale<0>Les jeunes vignes</0>",
+  "ou": [
+   "coufran/index.html · button"
+  ]
+ },
+ {
+  "cle": "Le découvrir",
+  "ou": [
+   "coufran/index.html · a.pilule.pilule--pleine",
+   "verdignan/index.html · a.pilule.pilule--pleine",
+   "soudars/index.html · a.pilule.pilule--pleine"
+  ]
+ },
+ {
+  "cle": "Où l'acheter <0/>",
+  "ou": [
+   "coufran/index.html · button.pilule",
+   "verdignan/index.html · button.pilule",
+   "soudars/index.html · button.pilule"
+  ]
+ },
+ {
+  "cle": "<0>Boutique en ligne<1>coufran-verdignan.com</1></0>",
+  "ou": [
+   "coufran/index.html · li",
+   "verdignan/index.html · li"
+  ]
+ },
+ {
+  "cle": "Le merlot<0/><1>qui a tenu tête</1><2/>au cabernet",
+  "ou": [
+   "coufran/index.html · h2.manifeste-titre.is-in"
+  ]
+ },
+ {
+  "cle": "<0>découvrez</0><1/>la famille",
+  "ou": [
+   "coufran/index.html · p",
+   "verdignan/index.html · p",
+   "soudars/index.html · p"
+  ]
+ },
+ {
+  "cle": "Vigneron du prêt-à-boire",
+  "ou": [
+   "coufran/index.html · p.pret-sur",
+   "verdignan/index.html · p.pret-sur",
+   "soudars/index.html · p.pret-sur"
+  ]
+ },
+ {
+  "cle": "Nous l'avons attendu<0/><1>pour vous</1>",
+  "ou": [
+   "coufran/index.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Un grand bordeaux n'est prêt à boire qu'après quelques années de vieillissement. Coufran en a fait sa spécialité : les bouteilles vieillissent au château, dans un local climatisé, et ne sont mises en vente que lorsqu'elles se sont épanouies.",
+  "ou": [
+   "coufran/index.html · p.is-in"
+  ]
+ },
+ {
+  "cle": "Gardé au château jusqu'à sa mise en vente",
+  "ou": [
+   "coufran/index.html · li",
+   "verdignan/index.html · li"
+  ]
+ },
+ {
+  "cle": "Numéro de lot gravé sur chaque flacon depuis le millésime {0}",
+  "ou": [
+   "coufran/index.html · li",
+   "verdignan/index.html · li"
+  ]
+ },
+ {
+  "cle": "À ouvrir le soir même : ni cave, ni patience",
+  "ou": [
+   "coufran/index.html · li",
+   "verdignan/index.html · li"
+  ]
+ },
+ {
+  "cle": "Pourquoi la famille attend",
+  "ou": [
+   "coufran/index.html · a.pilule.is-in",
+   "verdignan/index.html · a.pilule.is-in",
+   "soudars/index.html · a.pilule.is-in"
+  ]
+ },
+ {
+  "cle": "Coufran, Verdignan ou Soudars : <0>lequel vous ressemble ?</0>",
+  "ou": [
+   "coufran/index.html · h2.is-in",
+   "verdignan/index.html · h2.is-in",
+   "soudars/index.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Sept questions simples, sur ce que vous aimez et ce que vous aimez boire, sans rien connaître au vin.",
+  "ou": [
+   "coufran/index.html · p",
+   "verdignan/index.html · p",
+   "soudars/index.html · p"
+  ]
+ },
+ {
+  "cle": "Faire le test",
+  "ou": [
+   "coufran/index.html · a.pilule.pilule--pleine",
+   "verdignan/index.html · a.pilule.pilule--pleine",
+   "soudars/index.html · a.pilule.pilule--pleine"
+  ]
+ },
+ {
+  "cle": "Enquête à la racine · Témoin n° {0}",
+  "ou": [
+   "coufran/index.html · span.cachet",
+   "verdignan/index.html · span.cachet",
+   "soudars/index.html · span.cachet"
+  ]
+ },
+ {
+  "cle": "Le grand-père · arrivé en {0}",
+  "ou": [
+   "coufran/index.html · p.role"
+  ]
+ },
+ {
+  "cle": "« En {0}, ici, tout le monde plantait du cabernet. J'ai tout arraché pour replanter en merlot. On m'a pris pour un fou. Depuis, la part de merlot n'a pas bougé d'un pied. »",
+  "ou": [
+   "coufran/index.html · blockquote.is-in"
+  ]
+ },
+ {
+  "cle": "Reprendre l'enquête",
+  "ou": [
+   "coufran/index.html · a.pilule",
+   "verdignan/index.html · a.pilule",
+   "soudars/index.html · a.pilule"
+  ]
+ },
+ {
+  "cle": "Pièce à conviction",
+  "ou": [
+   "coufran/index.html · p.piece-etiquette",
+   "verdignan/index.html · p.piece-etiquette",
+   "soudars/index.html · p.piece-etiquette"
+  ]
+ },
+ {
+  "cle": "de merlot dans les vignes de Coufran : la part que Louis a choisie en {0}, le reste en cabernet-sauvignon. Un siècle plus tard, elle n'a pas changé.",
+  "ou": [
+   "coufran/index.html · p.piece-legende"
+  ]
+ },
+ {
+  "cle": "Château La Rose Maréchale · Les jeunes vignes du grand-père · Château Coufran",
+  "ou": [
+   "coufran/la-rose-marechale.html · "
+  ]
+ },
+ {
+  "cle": "Château La Rose Maréchale, les jeunes vignes du château Coufran (Haut-Médoc). Les jeunes vignes du grand-père.",
+  "ou": [
+   "coufran/la-rose-marechale.html · "
+  ]
+ },
+ {
+  "cle": "<0><1/> Nos vins</0> <2>Chez Jean, à Verdignan <3/></2>",
+  "ou": [
+   "coufran/la-rose-marechale.html · div.vin-haut"
+  ]
+ },
+ {
+  "cle": "La Rose Maréchale<0>Château · jeunes vignes</0>",
+  "ou": [
+   "coufran/la-rose-marechale.html · h1.vin-nom.is-in"
+  ]
+ },
+ {
+  "cle": "Les jeunes vignes · bouteille de {0} cl",
+  "ou": [
+   "coufran/la-rose-marechale.html · p",
+   "verdignan/plantey-de-la-croix.html · p"
+  ]
+ },
+ {
+  "cle": "Les jeunes vignes du grand-père",
+  "ou": [
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "<0/> La Rose Maréchale",
+  "ou": [
+   "coufran/la-rose-marechale.html · button.vin-lien-haut"
+  ]
+ },
+ {
+  "cle": "Rond, <0>souple</0>, fruité",
+  "ou": [
+   "coufran/la-rose-marechale.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Issu des plus jeunes vignes de merlot et de cabernet-sauvignon de Coufran, c'est un vin rond, souple et fruité, fait pour le plaisir de ses premières années.",
+  "ou": [
+   "coufran/la-rose-marechale.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Les repas simples et les tablées d'amis : grillades, pizza, charcuterie, fromages doux.",
+  "ou": [
+   "coufran/la-rose-marechale.html · p.serif"
+  ]
+ },
+ {
+  "cle": "À boire entre {0} et {1} ans",
+  "ou": [
+   "coufran/la-rose-marechale.html · p",
+   "coufran/professionnels.html · dd",
+   "verdignan/plantey-de-la-croix.html · p",
+   "verdignan/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Merlot et cabernet-sauvignon",
+  "ou": [
+   "coufran/la-rose-marechale.html · p",
+   "coufran/n2-de-coufran.html · p",
+   "coufran/professionnels.html · dd",
+   "verdignan/plantey-de-la-croix.html · p"
+  ]
+ },
+ {
+  "cle": "Son nom vient du petit port du hameau de Cadourne, « La Maréchale ». On raconte qu'une galère de ce nom, rescapée du combat naval de Gênes en {0}, s'y abrita en {1} et lui laissa son nom.",
+  "ou": [
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "Ses vignes sont les plus jeunes de Coufran : c'est le vin de la relève.",
+  "ou": [
+   "coufran/la-rose-marechale.html · p"
+  ]
+ },
+ {
+  "cle": "Château Coufran<0>Le vin du grand-père</0>",
+  "ou": [
+   "coufran/la-rose-marechale.html · p",
+   "coufran/n2-de-coufran.html · p",
+   "verdignan/chateau-verdignan.html · p",
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "N°{0} de Coufran · Le cadet du grand-père · Château Coufran",
+  "ou": [
+   "coufran/n2-de-coufran.html · "
+  ]
+ },
+ {
+  "cle": "N°{0} de Coufran, le second vin du château Coufran (Haut-Médoc). Le cadet du grand-père.",
+  "ou": [
+   "coufran/n2-de-coufran.html · "
+  ]
+ },
+ {
+  "cle": "N°{0}<0>de Coufran · second vin</0>",
+  "ou": [
+   "coufran/n2-de-coufran.html · h1.vin-nom.is-in"
+  ]
+ },
+ {
+  "cle": "Le second vin · bouteille de {0} cl",
+  "ou": [
+   "coufran/n2-de-coufran.html · p",
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "Le cadet du grand-père",
+  "ou": [
+   "coufran/n2-de-coufran.html · p"
+  ]
+ },
+ {
+  "cle": "<0/> N°{0}",
+  "ou": [
+   "coufran/n2-de-coufran.html · button.vin-lien-haut",
+   "verdignan/n2-de-verdignan.html · button.vin-lien-haut"
+  ]
+ },
+ {
+  "cle": "Délicat, <0>rond</0>, gourmand",
+  "ou": [
+   "coufran/n2-de-coufran.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Une robe sombre. Dès l'ouverture, un nez expressif de griotte, de cerise noire et de cacao. La bouche est pleine, un peu droite d'abord, puis elle s'élargit et s'affine à l'aération, sur les fruits noirs et la griotte.",
+  "ou": [
+   "coufran/n2-de-coufran.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Un vin de tous les jours qui sait se tenir à table : volaille rôtie, magret de canard, charcuteries, pâtes aux champignons.",
+  "ou": [
+   "coufran/n2-de-coufran.html · p.serif"
+  ]
+ },
+ {
+  "cle": "{0} °C",
+  "ou": [
+   "coufran/n2-de-coufran.html · p",
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "Souvent prêt à boire, peut attendre",
+  "ou": [
+   "coufran/n2-de-coufran.html · p",
+   "coufran/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Le N°{0} naît des cuves que l'on n'a pas retenues pour le grand vin : le tiers de la récolte de Coufran. Mêmes vignes, même chai, même équipe, et la même patience : il est élevé puis attend au château comme son aîné.",
+  "ou": [
+   "coufran/n2-de-coufran.html · p"
+  ]
+ },
+ {
+  "cle": "Espace professionnel · Château Coufran · palettes sur devis",
+  "ou": [
+   "coufran/professionnels.html · "
+  ]
+ },
+ {
+  "cle": "Château Coufran pour les professionnels : importateurs, distributeurs, négociants, cavistes et restaurateurs. Palettes sur devis, fiches techniques, kit importateur.",
+  "ou": [
+   "coufran/professionnels.html · "
+  ]
+ },
+ {
+  "cle": "Les bouteilles de Coufran qui attendent au château",
+  "ou": [
+   "coufran/professionnels.html · img @alt"
+  ]
+ },
+ {
+  "cle": "En bref",
+  "ou": [
+   "coufran/professionnels.html · section.pro-chiffres @aria-label",
+   "verdignan/professionnels.html · section.pro-chiffres @aria-label",
+   "soudars/professionnels.html · section.pro-chiffres @aria-label"
+  ]
+ },
+ {
+  "cle": "Millésime de Château Coufran",
+  "ou": [
+   "coufran/professionnels.html · select @aria-label"
+  ]
+ },
+ {
+  "cle": "Millésime de N°{0} de Coufran",
+  "ou": [
+   "coufran/professionnels.html · select @aria-label"
+  ]
+ },
+ {
+  "cle": "Millésime de Château La Rose Maréchale",
+  "ou": [
+   "coufran/professionnels.html · select @aria-label"
+  ]
+ },
+ {
+  "cle": "Fermer",
+  "ou": [
+   "coufran/professionnels.html · button.pro-fermer @aria-label",
+   "verdignan/professionnels.html · button.pro-fermer @aria-label",
+   "soudars/professionnels.html · button.pro-fermer @aria-label"
+  ]
+ },
+ {
+  "cle": "Espace professionnel · Château Coufran",
+  "ou": [
+   "coufran/professionnels.html · p.pro-cachet.is-in"
+  ]
+ },
+ {
+  "cle": "Le merlot du Médoc,<0/><1>par palettes</1>",
+  "ou": [
+   "coufran/professionnels.html · h1.is-in"
+  ]
+ },
+ {
+  "cle": "Importateurs, distributeurs, négociants, cavistes et restaurateurs : commandez Coufran sur devis, au départ du château.",
+  "ou": [
+   "coufran/professionnels.html · p.pro-accroche.is-in"
+  ]
+ },
+ {
+  "cle": "Demander un devis",
+  "ou": [
+   "coufran/professionnels.html · a.pilule.pilule--blanche",
+   "verdignan/professionnels.html · a.pilule.pilule--blanche",
+   "soudars/professionnels.html · a.pilule.pilule--blanche"
+  ]
+ },
+ {
+  "cle": "Déjà client",
+  "ou": [
+   "coufran/professionnels.html · button.pilule.pilule--contour",
+   "verdignan/professionnels.html · button.pilule.pilule--contour",
+   "soudars/professionnels.html · button.pilule.pilule--contour"
+  ]
+ },
+ {
+  "cle": "<0>{0} à {1}</0>bouteilles par palette",
+  "ou": [
+   "coufran/professionnels.html · div.is-in",
+   "verdignan/professionnels.html · div.is-in",
+   "soudars/professionnels.html · div.is-in"
+  ]
+ },
+ {
+  "cle": "<0/>vins du château",
+  "ou": [
+   "coufran/professionnels.html · div.is-in",
+   "verdignan/professionnels.html · div.is-in"
+  ]
+ },
+ {
+  "cle": "<0>Sur devis</0>aucun prix public",
+  "ou": [
+   "coufran/professionnels.html · div.is-in",
+   "verdignan/professionnels.html · div.is-in",
+   "soudars/professionnels.html · div.is-in"
+  ]
+ },
+ {
+  "cle": "<0>Une équipe</0>pour les trois châteaux",
+  "ou": [
+   "coufran/professionnels.html · div.is-in",
+   "verdignan/professionnels.html · div.is-in",
+   "soudars/professionnels.html · div.is-in"
+  ]
+ },
+ {
+  "cle": "Pourquoi Coufran",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur.is-in"
+  ]
+ },
+ {
+  "cle": "« Le Pomerol du Médoc » : {0} % de merlot, un vin rond qui plaît à presque tout le monde à table. Une valeur sûre pour une carte de restaurant ou un rayon de caviste, avec des millésimes gardés au château jusqu'à ce qu'ils soient prêts.",
+  "ou": [
+   "coufran/professionnels.html · p.pro-grand.is-in"
+  ]
+ },
+ {
+  "cle": "<0>Comment</0><1>commander</1>",
+  "ou": [
+   "coufran/professionnels.html · h2.titre-65.is-in",
+   "verdignan/professionnels.html · h2.titre-65.is-in",
+   "soudars/professionnels.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Ouvrir un compte",
+  "ou": [
+   "coufran/professionnels.html · h3",
+   "verdignan/professionnels.html · h3",
+   "soudars/professionnels.html · h3"
+  ]
+ },
+ {
+  "cle": "La famille valide chaque compte professionnel. Il donne accès aux tarifs, au kit et à l'historique de vos commandes.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Composer la palette",
+  "ou": [
+   "coufran/professionnels.html · h3",
+   "verdignan/professionnels.html · h3",
+   "soudars/professionnels.html · h3"
+  ]
+ },
+ {
+  "cle": "Un vin ou plusieurs, un millésime, un conditionnement. Pas de panier ni de prix publics : chaque palette se chiffre.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Recevoir le devis",
+  "ou": [
+   "coufran/professionnels.html · h3",
+   "verdignan/professionnels.html · h3",
+   "soudars/professionnels.html · h3"
+  ]
+ },
+ {
+  "cle": "L'équipe commerciale, commune aux trois châteaux, chiffre le vin, le transport, les droits et les documents d'export.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Expédier",
+  "ou": [
+   "coufran/professionnels.html · h3",
+   "verdignan/professionnels.html · h3",
+   "soudars/professionnels.html · h3"
+  ]
+ },
+ {
+  "cle": "La palette part du château, à Saint-Seurin-de-Cadourne, ou rejoint votre transitaire à Bordeaux.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "<0>L'offre</0><1>du château</1>",
+  "ou": [
+   "coufran/professionnels.html · h2.titre-65.is-in",
+   "verdignan/professionnels.html · h2.titre-65.is-in",
+   "soudars/professionnels.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Le grand vin",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur",
+   "verdignan/professionnels.html · p.pro-sur",
+   "soudars/professionnels.html · p.pro-sur"
+  ]
+ },
+ {
+  "cle": "Millésimes",
+  "ou": [
+   "coufran/professionnels.html · dt",
+   "verdignan/professionnels.html · dt",
+   "soudars/professionnels.html · dt"
+  ]
+ },
+ {
+  "cle": "Millésime en cours et vieux millésimes",
+  "ou": [
+   "coufran/professionnels.html · dd",
+   "verdignan/professionnels.html · dd",
+   "soudars/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Formats",
+  "ou": [
+   "coufran/professionnels.html · dt",
+   "verdignan/professionnels.html · dt",
+   "soudars/professionnels.html · dt"
+  ]
+ },
+ {
+  "cle": "{0} cl et {1} cl · cartons de {2} ou de {3}",
+  "ou": [
+   "coufran/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Ajouter à ma demande",
+  "ou": [
+   "coufran/professionnels.html · button.pilule.pilule--pleine",
+   "verdignan/professionnels.html · button.pilule.pilule--pleine",
+   "soudars/professionnels.html · button.pilule.pilule--pleine",
+   "script chateau.js"
+  ]
+ },
+ {
+  "cle": "Le second vin",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur",
+   "verdignan/professionnels.html · p.pro-sur"
+  ]
+ },
+ {
+  "cle": "Millésime en cours",
+  "ou": [
+   "coufran/professionnels.html · dd",
+   "verdignan/professionnels.html · dd",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "{0} cl · cartons de {1}",
+  "ou": [
+   "coufran/professionnels.html · dd",
+   "verdignan/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "La fiche du vin",
+  "ou": [
+   "coufran/professionnels.html · a.pro-lien",
+   "verdignan/professionnels.html · a.pro-lien"
+  ]
+ },
+ {
+  "cle": "Les jeunes vignes",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur",
+   "verdignan/professionnels.html · p.pro-sur"
+  ]
+ },
+ {
+  "cle": "La marque de la maison",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur.is-in",
+   "verdignan/professionnels.html · p.pro-sur.is-in",
+   "soudars/professionnels.html · p.pro-sur.is-in"
+  ]
+ },
+ {
+  "cle": "<0>Des millésimes</0><1>prêts à boire</1>",
+  "ou": [
+   "coufran/professionnels.html · h2.titre-65.is-in",
+   "verdignan/professionnels.html · h2.titre-65.is-in",
+   "soudars/professionnels.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Ici, on ne vend pas un vin tant qu'il n'est pas prêt : les bouteilles attendent au château, au frais. Vos clients reçoivent des millésimes plus anciens, à ouvrir dès leur arrivée. Disponibilités selon le stock, sur demande.",
+  "ou": [
+   "coufran/professionnels.html · p.paragraphe.is-in",
+   "verdignan/professionnels.html · p.paragraphe.is-in",
+   "soudars/professionnels.html · p.paragraphe.is-in"
+  ]
+ },
+ {
+  "cle": "Fruits rouges mûrs, touches torréfiées. Parfumé, gourmand, puissant et long : un Coufran avec beaucoup d'avenir.",
+  "ou": [
+   "coufran/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Mûre, groseille, boisé toasté. L'opulence des merlots à belle maturité : plein, gourmand et sapide.",
+  "ou": [
+   "coufran/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Fruits rouges confiturés, boisé fumé. Volume, fraîcheur et puissance : un grand potentiel de vieillissement.",
+  "ou": [
+   "coufran/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Fruits noirs, cèdre, notes grillées. Une trame puissante et tendue : un grand vin, au gros potentiel de vieillissement.",
+  "ou": [
+   "coufran/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Myrtille, mûre et boisé fin. Une matière charnue, des tanins tendres, une finesse rare : le reflet d'un millésime exceptionnel.",
+  "ou": [
+   "coufran/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Trois façons</0><1>de remplir une palette</1>",
+  "ou": [
+   "coufran/professionnels.html · h2.titre-65.is-in",
+   "verdignan/professionnels.html · h2.titre-65.is-in",
+   "soudars/professionnels.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "La palette du château",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur",
+   "verdignan/professionnels.html · p.pro-sur",
+   "soudars/professionnels.html · p.pro-sur"
+  ]
+ },
+ {
+  "cle": "{0} à {1} bouteilles",
+  "ou": [
+   "coufran/professionnels.html · strong",
+   "verdignan/professionnels.html · strong",
+   "soudars/professionnels.html · strong"
+  ]
+ },
+ {
+  "cle": "Un vin, ou les vins du château panachés, en cartons de {0} ou de {1}.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "La demi-palette",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur",
+   "verdignan/professionnels.html · p.pro-sur",
+   "soudars/professionnels.html · p.pro-sur"
+  ]
+ },
+ {
+  "cle": "Pour un premier ordre, un caviste ou un groupe de restaurants.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "La palette famille",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur",
+   "verdignan/professionnels.html · p.pro-sur",
+   "soudars/professionnels.html · p.pro-sur"
+  ]
+ },
+ {
+  "cle": "Un tiers de chaque château : Coufran, Verdignan et Soudars, aux tarifs habituels.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Trois châteaux,<0/><1>une même racine</1>",
+  "ou": [
+   "coufran/professionnels.html · h2.is-in",
+   "verdignan/professionnels.html · h2.is-in",
+   "soudars/professionnels.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Un tiers de chaque château, aux tarifs habituels. Vous ne vendez plus trois vins séparés mais une famille, et vous couvrez trois occasions avec un seul fournisseur.",
+  "ou": [
+   "coufran/professionnels.html · p.pro-famille-texte.is-in",
+   "verdignan/professionnels.html · p.pro-famille-texte.is-in",
+   "soudars/professionnels.html · p.pro-famille-texte.is-in"
+  ]
+ },
+ {
+  "cle": "<0> <1/> <2>Coufran</2><3>le déjeuner de famille</3> </0> <4> <5/> <6>Verdignan</6><7>les grandes occasions</7> </4> <8> <9/> <10>Soudars</10><11>les repas simples</11> </8>",
+  "ou": [
+   "coufran/professionnels.html · div.pro-trio.is-in",
+   "verdignan/professionnels.html · div.pro-trio.is-in",
+   "soudars/professionnels.html · div.pro-trio.is-in"
+  ]
+ },
+ {
+  "cle": "Demander la palette famille",
+  "ou": [
+   "coufran/professionnels.html · button.pilule.pilule--blanche",
+   "verdignan/professionnels.html · button.pilule.pilule--blanche",
+   "soudars/professionnels.html · button.pilule.pilule--blanche"
+  ]
+ },
+ {
+  "cle": "Pour vos équipes et vos clients",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur.is-in",
+   "verdignan/professionnels.html · p.pro-sur.is-in",
+   "soudars/professionnels.html · p.pro-sur.is-in"
+  ]
+ },
+ {
+  "cle": "<0>Le kit</0><1>importateur</1>",
+  "ou": [
+   "coufran/professionnels.html · h2.titre-65.is-in",
+   "verdignan/professionnels.html · h2.titre-65.is-in",
+   "soudars/professionnels.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Les trois personnalités de la famille, et l'occasion de chaque vin",
+  "ou": [
+   "coufran/professionnels.html · li",
+   "verdignan/professionnels.html · li",
+   "soudars/professionnels.html · li"
+  ]
+ },
+ {
+  "cle": "Les fiches techniques et les commentaires de millésimes",
+  "ou": [
+   "coufran/professionnels.html · li",
+   "verdignan/professionnels.html · li",
+   "soudars/professionnels.html · li"
+  ]
+ },
+ {
+  "cle": "Les photos des bouteilles, des châteaux et de la famille",
+  "ou": [
+   "coufran/professionnels.html · li",
+   "verdignan/professionnels.html · li",
+   "soudars/professionnels.html · li"
+  ]
+ },
+ {
+  "cle": "Les visuels pour les rayons et les réseaux sociaux",
+  "ou": [
+   "coufran/professionnels.html · li",
+   "verdignan/professionnels.html · li",
+   "soudars/professionnels.html · li"
+  ]
+ },
+ {
+  "cle": "Le lien vers l'enquête et ses vidéos sous-titrées",
+  "ou": [
+   "coufran/professionnels.html · li",
+   "verdignan/professionnels.html · li",
+   "soudars/professionnels.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Français</0><1>English</1><2>Nederlands</2><3>日本語</3><4>Norsk</4>",
+  "ou": [
+   "coufran/professionnels.html · p.pro-langues.is-in",
+   "verdignan/professionnels.html · p.pro-langues.is-in",
+   "soudars/professionnels.html · p.pro-langues.is-in"
+  ]
+ },
+ {
+  "cle": "Le kit<0/>importateur",
+  "ou": [
+   "coufran/professionnels.html · p.pro-kit-nom",
+   "verdignan/professionnels.html · p.pro-kit-nom",
+   "soudars/professionnels.html · p.pro-kit-nom"
+  ]
+ },
+ {
+  "cle": "<0/> Réservé aux comptes validés",
+  "ou": [
+   "coufran/professionnels.html · p.pro-kit-cle",
+   "verdignan/professionnels.html · p.pro-kit-cle",
+   "soudars/professionnels.html · p.pro-kit-cle"
+  ]
+ },
+ {
+  "cle": "Se connecter pour le télécharger",
+  "ou": [
+   "coufran/professionnels.html · button.pilule.pilule--blanche",
+   "verdignan/professionnels.html · button.pilule.pilule--blanche",
+   "soudars/professionnels.html · button.pilule.pilule--blanche"
+  ]
+ },
+ {
+  "cle": "<0>Votre demande</0><1>de devis</1>",
+  "ou": [
+   "coufran/professionnels.html · h2.titre-65.is-in",
+   "verdignan/professionnels.html · h2.titre-65.is-in",
+   "soudars/professionnels.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Choisissez les vins, le millésime et le format : l'équipe commerciale de la famille vous répond avec un devis complet, transport, droits et documents d'export compris.",
+  "ou": [
+   "coufran/professionnels.html · p.paragraphe.is-in",
+   "verdignan/professionnels.html · p.paragraphe.is-in",
+   "soudars/professionnels.html · p.paragraphe.is-in"
+  ]
+ },
+ {
+  "cle": "Nos partenaires d'abord",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur",
+   "verdignan/professionnels.html · p.pro-sur",
+   "soudars/professionnels.html · p.pro-sur"
+  ]
+ },
+ {
+  "cle": "Vous achetez déjà nos vins auprès d'un négociant de la Place de Bordeaux, ou votre pays a un importateur exclusif ? Dites-le-nous : nous vous mettons en relation avec lui, pour que rien ne change dans vos habitudes.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "L'équipe commerciale",
+  "ou": [
+   "coufran/professionnels.html · p.pro-sur",
+   "verdignan/professionnels.html · p.pro-sur",
+   "soudars/professionnels.html · p.pro-sur"
+  ]
+ },
+ {
+  "cle": "Éric Miailhe, production et commercialisation<0/>Tél. <1/> · portable <2/><3/><4>emiailhe@coufran-verdignan.com</4>",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Visites et dégustations sur rendez-vous. Chaque année, aux vendanges, une journée au domaine réunit nos importateurs.",
+  "ou": [
+   "coufran/professionnels.html · p.pro-gris",
+   "verdignan/professionnels.html · p.pro-gris",
+   "soudars/professionnels.html · p.pro-gris"
+  ]
+ },
+ {
+  "cle": "Le format",
+  "ou": [
+   "coufran/professionnels.html · legend",
+   "verdignan/professionnels.html · legend",
+   "soudars/professionnels.html · legend"
+  ]
+ },
+ {
+  "cle": "La palette du château<0>{0} à {1} bouteilles</0>",
+  "ou": [
+   "coufran/professionnels.html · span",
+   "verdignan/professionnels.html · span",
+   "soudars/professionnels.html · span"
+  ]
+ },
+ {
+  "cle": "La demi-palette<0>{0} à {1} bouteilles</0>",
+  "ou": [
+   "coufran/professionnels.html · span",
+   "verdignan/professionnels.html · span",
+   "soudars/professionnels.html · span"
+  ]
+ },
+ {
+  "cle": "La palette famille<0>{0} à {1} bouteilles</0>",
+  "ou": [
+   "coufran/professionnels.html · span",
+   "verdignan/professionnels.html · span",
+   "soudars/professionnels.html · span"
+  ]
+ },
+ {
+  "cle": "Les vins de Coufran",
+  "ou": [
+   "coufran/professionnels.html · legend"
+  ]
+ },
+ {
+  "cle": "La palette famille réunit les grands vins des trois châteaux, Coufran, Verdignan et Soudars, un tiers de chacun. Précisez les millésimes dans votre message.",
+  "ou": [
+   "coufran/professionnels.html · p.pro-famille-info",
+   "verdignan/professionnels.html · p.pro-famille-info",
+   "soudars/professionnels.html · p.pro-famille-info"
+  ]
+ },
+ {
+  "cle": "Le conditionnement et la livraison",
+  "ou": [
+   "coufran/professionnels.html · legend",
+   "verdignan/professionnels.html · legend",
+   "soudars/professionnels.html · legend"
+  ]
+ },
+ {
+  "cle": "Cartons",
+  "ou": [
+   "coufran/professionnels.html · label",
+   "verdignan/professionnels.html · label",
+   "soudars/professionnels.html · label"
+  ]
+ },
+ {
+  "cle": "Cartons de {0}",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Livraison",
+  "ou": [
+   "coufran/professionnels.html · label",
+   "verdignan/professionnels.html · label",
+   "soudars/professionnels.html · label"
+  ]
+ },
+ {
+  "cle": "Départ du château",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Chez mon transitaire à Bordeaux",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Rendu chez moi, à chiffrer",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Vous",
+  "ou": [
+   "coufran/professionnels.html · legend",
+   "verdignan/professionnels.html · legend",
+   "soudars/professionnels.html · legend"
+  ]
+ },
+ {
+  "cle": "Société",
+  "ou": [
+   "coufran/professionnels.html · label",
+   "verdignan/professionnels.html · label",
+   "soudars/professionnels.html · label"
+  ]
+ },
+ {
+  "cle": "Vous êtes",
+  "ou": [
+   "coufran/professionnels.html · label",
+   "verdignan/professionnels.html · label",
+   "soudars/professionnels.html · label"
+  ]
+ },
+ {
+  "cle": "Choisir",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Importateur",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Distributeur",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Négociant",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Caviste",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Restaurant ou hôtel",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Cadeaux d'entreprise",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Nom",
+  "ou": [
+   "coufran/professionnels.html · label",
+   "verdignan/professionnels.html · label",
+   "soudars/professionnels.html · label"
+  ]
+ },
+ {
+  "cle": "Pays",
+  "ou": [
+   "coufran/professionnels.html · label",
+   "verdignan/professionnels.html · label",
+   "soudars/professionnels.html · label"
+  ]
+ },
+ {
+  "cle": "Belgique",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "États-Unis",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Japon",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Norvège",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Canada",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "France",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "Un autre pays",
+  "ou": [
+   "coufran/professionnels.html · option",
+   "verdignan/professionnels.html · option",
+   "soudars/professionnels.html · option"
+  ]
+ },
+ {
+  "cle": "E-mail professionnel",
+  "ou": [
+   "coufran/professionnels.html · label",
+   "verdignan/professionnels.html · label",
+   "soudars/professionnels.html · label"
+  ]
+ },
+ {
+  "cle": "Téléphone",
+  "ou": [
+   "coufran/professionnels.html · label",
+   "verdignan/professionnels.html · label",
+   "soudars/professionnels.html · label"
+  ]
+ },
+ {
+  "cle": "Message",
+  "ou": [
+   "coufran/professionnels.html · label",
+   "verdignan/professionnels.html · label",
+   "soudars/professionnels.html · label"
+  ]
+ },
+ {
+  "cle": "J'achète à titre professionnel.",
+  "ou": [
+   "coufran/professionnels.html · span",
+   "verdignan/professionnels.html · span",
+   "soudars/professionnels.html · span"
+  ]
+ },
+ {
+  "cle": "Envoyer ma demande de devis",
+  "ou": [
+   "coufran/professionnels.html · button.pilule.pilule--pleine",
+   "verdignan/professionnels.html · button.pilule.pilule--pleine",
+   "soudars/professionnels.html · button.pilule.pilule--pleine"
+  ]
+ },
+ {
+  "cle": "Merci, votre demande est partie.",
+  "ou": [
+   "coufran/professionnels.html · h3",
+   "verdignan/professionnels.html · h3",
+   "soudars/professionnels.html · h3"
+  ]
+ },
+ {
+  "cle": "Demande n° <0/>. L'équipe commerciale de la famille vous répond sous deux jours ouvrés, avec un devis complet.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Faire une autre demande",
+  "ou": [
+   "coufran/professionnels.html · button.pilule",
+   "verdignan/professionnels.html · button.pilule",
+   "soudars/professionnels.html · button.pilule"
+  ]
+ },
+ {
+  "cle": "Espace client",
+  "ou": [
+   "coufran/professionnels.html · h3",
+   "verdignan/professionnels.html · h3",
+   "soudars/professionnels.html · h3"
+  ]
+ },
+ {
+  "cle": "Recevez un lien de connexion par e-mail : vos tarifs, votre historique et le réassort de votre dernière palette en quelques clics.",
+  "ou": [
+   "coufran/professionnels.html · p",
+   "verdignan/professionnels.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Recevoir le lien",
+  "ou": [
+   "coufran/professionnels.html · button.pilule.pilule--pleine",
+   "verdignan/professionnels.html · button.pilule.pilule--pleine",
+   "soudars/professionnels.html · button.pilule.pilule--pleine"
+  ]
+ },
+ {
+  "cle": "Si ce compte existe, le lien vient de partir. Pas encore de compte ? <0>Faites une demande</0> : la famille valide chaque compte.",
+  "ou": [
+   "coufran/professionnels.html · p.pro-lien-ok",
+   "verdignan/professionnels.html · p.pro-lien-ok",
+   "soudars/professionnels.html · p.pro-lien-ok"
+  ]
+ },
+ {
+  "cle": "Choisissez au moins un vin, ou la palette famille.",
+  "ou": [
+   "coufran/professionnels.html · p.pro-erreur",
+   "verdignan/professionnels.html · p.pro-erreur",
+   "soudars/professionnels.html · p.pro-erreur",
+   "script chateau.js"
+  ]
+ },
+ {
+  "cle": "Château Verdignan · Le vin du père · Château Verdignan",
+  "ou": [
+   "verdignan/chateau-verdignan.html · "
+  ]
+ },
+ {
+  "cle": "Château Verdignan, le grand vin du château Verdignan (Haut-Médoc). Le vin du père.",
+  "ou": [
+   "verdignan/chateau-verdignan.html · "
+  ]
+ },
+ {
+  "cle": "Château Verdignan, accueil",
+  "ou": [
+   "verdignan/chateau-verdignan.html · a.ch-logo @aria-label",
+   "verdignan/famille.html · a.ch-logo @aria-label",
+   "verdignan/index.html · a.ch-logo @aria-label",
+   "verdignan/n2-de-verdignan.html · a.ch-logo @aria-label"
+  ]
+ },
+ {
+  "cle": "Verdignan<0>Château · grand vin</0>",
+  "ou": [
+   "verdignan/chateau-verdignan.html · h1.vin-nom.is-in"
+  ]
+ },
+ {
+  "cle": "Le vin du père",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "<0/> Verdignan",
+  "ou": [
+   "verdignan/chateau-verdignan.html · button.vin-lien-haut"
+  ]
+ },
+ {
+  "cle": "Puissant, <0>frais</0>, de garde",
+  "ou": [
+   "verdignan/chateau-verdignan.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Un grand classique médocain, voisin de Saint-Estèphe. Le nez mêle cassis, épices et chocolat. La bouche allie puissance et fraîcheur, avec des tanins consistants mais soyeux et une belle longueur. Il ne se presse pas : c'est le vin de garde de la famille, et il s'embellit avec les années.",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Le vin des amateurs, qui aime les repas longs et la viande : côte de bœuf, gibier, agneau de sept heures, fromages de caractère.",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Aujourd'hui ou dans longtemps",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p",
+   "verdignan/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Au vignoble, {0} % cabernet-sauvignon, {1} % merlot, {2} % cabernet franc ; le grand vin en assemble environ {3} % de cabernet-sauvignon",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p",
+   "verdignan/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Millésime {0} · Guide Hachette {1}, deux étoiles et coup de cœur",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p.presse.is-in"
+  ]
+ },
+ {
+  "cle": "Seule une partie des graves qui entourent le château entre dans le grand vin, à majorité de cabernet-sauvignon depuis {0}. Merlots vendangés d'abord, cabernets ensuite ; cuves inox thermorégulées ; assemblage arrêté en décembre avec l'œnologue Éric Boissenot.",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "Douze mois en barriques de chêne français renouvelées par quart, puis une longue attente en bouteille, au château. Verdignan sort quand il est prêt, jamais avant.",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "N°{0} de Verdignan<0>Le cadet du père</0>",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p",
+   "verdignan/plantey-de-la-croix.html · p"
+  ]
+ },
+ {
+  "cle": "Château Plantey de la Croix<0>Les jeunes vignes du père</0>",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p",
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "Château Verdignan<0/>{0} Saint-Seurin-de-Cadourne, France",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p",
+   "verdignan/famille.html · p",
+   "verdignan/index.html · p",
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "<0/><1/><2>contact@chateau-verdignan.com</2>",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p",
+   "verdignan/famille.html · p",
+   "verdignan/index.html · p",
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "Château Verdignan<0/>{0} Saint-Seurin-de-Cadourne",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p.gris",
+   "verdignan/famille.html · p.gris",
+   "verdignan/index.html · p.gris",
+   "verdignan/n2-de-verdignan.html · p.gris"
+  ]
+ },
+ {
+  "cle": "<0>contact@chateau-verdignan.com</0>",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p",
+   "verdignan/famille.html · p",
+   "verdignan/index.html · p",
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "En Belgique<0>Carrefour, depuis plus de quarante ans</0>",
+  "ou": [
+   "verdignan/chateau-verdignan.html · li",
+   "verdignan/famille.html · li",
+   "verdignan/index.html · li",
+   "verdignan/n2-de-verdignan.html · li"
+  ]
+ },
+ {
+  "cle": "Château Verdignan · une maison de la famille <0/>",
+  "ou": [
+   "verdignan/chateau-verdignan.html · a.maison",
+   "verdignan/famille.html · a.maison",
+   "verdignan/index.html · a.maison",
+   "verdignan/n2-de-verdignan.html · a.maison"
+  ]
+ },
+ {
+  "cle": "Les autres maisons : <0>Coufran</0> · <1>Soudars</1>",
+  "ou": [
+   "verdignan/chateau-verdignan.html · span",
+   "verdignan/famille.html · span",
+   "verdignan/index.html · span",
+   "verdignan/n2-de-verdignan.html · span"
+  ]
+ },
+ {
+  "cle": "Château Verdignan · RCS Bordeaux {0} {1} {2} · siège : Château Verdignan, {3} Saint-Seurin-de-Cadourne · directeur de la publication : Éric Miailhe, représentant légal. Maquette de concept, projet étudiant ISCOM {4}, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.",
+  "ou": [
+   "verdignan/chateau-verdignan.html · p.mentions",
+   "verdignan/famille.html · p.mentions",
+   "verdignan/index.html · p.mentions",
+   "verdignan/n2-de-verdignan.html · p.mentions"
+  ]
+ },
+ {
+  "cle": "La famille · Château Verdignan · Le vin du père",
+  "ou": [
+   "verdignan/famille.html · "
+  ]
+ },
+ {
+  "cle": "L'histoire du château Verdignan et de la famille Miailhe.",
+  "ou": [
+   "verdignan/famille.html · "
+  ]
+ },
+ {
+  "cle": "Le château Verdignan dans ses vignes, l'estuaire à l'horizon",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Une barrique qu'on fait rouler dans le chai",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Grappes noires aux vendanges",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Le château vers {0}",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Barriques empilées",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Les culots des bouteilles en attente",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Deux chênes devant les vignes d'automne",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Rangs dorés à l'automne",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Barriques empilées dans le chai",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Les vignes de Verdignan à l'automne",
+  "ou": [
+   "verdignan/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "<0>L'<1>histoire</1><2/>du père</0>",
+  "ou": [
+   "verdignan/famille.html · h1.intro-texte.is-in"
+  ]
+ },
+ {
+  "cle": "<0>Jean,</0> <1/> <2><3>le gardien</3></2>",
+  "ou": [
+   "verdignan/famille.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Verdignan est l'une des plus anciennes propriétés viticoles du canton de Pauillac, et sans doute la plus ancienne de Saint-Seurin-de-Cadourne. Tout près se dressait l'abbaye de Cadourne, halte des pèlerins de Compostelle ; au petit port de La Maréchale, les gabarres chargeaient les barriques pour Bordeaux. La même famille garde le domaine de la fin du XVIII<0>e</0> siècle jusqu'en {0}.",
+  "ou": [
+   "verdignan/famille.html · p"
+  ]
+ },
+ {
+  "cle": "En {0}, puis en {1}, Jean Miailhe, le fils de Louis, achète ce voisin de Coufran. Il vient d'arrêter le courtage : il sera le dernier courtier de la famille, et le premier à garder ses vins comme on garde une tradition.",
+  "ou": [
+   "verdignan/famille.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Les grands terroirs</0> <1><2>regardent l'eau</2></1>",
+  "ou": [
+   "verdignan/famille.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Soixante hectares face à l'estuaire de la Gironde, à la frontière de Saint-Estèphe. Autour du château, quarante hectares de graves et d'argiles portent les vieux cabernets ; plus loin, vingt hectares de jeunes vignes sur argilo-calcaire. L'eau tempère le climat, les graves drainent et réchauffent les racines.",
+  "ou": [
+   "verdignan/famille.html · p.paragraphe.is-in"
+  ]
+ },
+ {
+  "cle": "<0>{0} ha</0>face à l'estuaire",
+  "ou": [
+   "verdignan/famille.html · div"
+  ]
+ },
+ {
+  "cle": "<0/>de cabernet-sauvignon",
+  "ou": [
+   "verdignan/famille.html · div"
+  ]
+ },
+ {
+  "cle": "<0>Jean l'a choisi,</0> <1>Éric l'a <2>élevé</2>,</1> <3>Lovely le transmettra</3>",
+  "ou": [
+   "verdignan/famille.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Le vin de garde de la famille demande de la patience, et la patience se transmet. Depuis les années {0}, Éric Miailhe, le fils de Jean, veille sur Verdignan avec sa sœur Marie-Cécile Vicaire. Depuis {1}, sa fille Lovely est à ses côtés.",
+  "ou": [
+   "verdignan/famille.html · p"
+  ]
+ },
+ {
+  "cle": "Comme à Coufran, les bouteilles attendent au château que le vin soit prêt. Verdignan ne sort jamais avant son heure.",
+  "ou": [
+   "verdignan/famille.html · p"
+  ]
+ },
+ {
+  "cle": "Château Verdignan · Le vin du père · Haut-Médoc",
+  "ou": [
+   "verdignan/index.html · "
+  ]
+ },
+ {
+  "cle": "Château Verdignan, Haut-Médoc. Le vin du père : Jean Miailhe l'acquiert en {0}, un château face à l'estuaire, le vin de garde de la famille.",
+  "ou": [
+   "verdignan/index.html · "
+  ]
+ },
+ {
+  "cle": "N°{0} de Verdignan",
+  "ou": [
+   "verdignan/index.html · button.bouteille @aria-label",
+   "verdignan/n2-de-verdignan.html · section.vin-section @aria-label",
+   "verdignan/professionnels.html · img @alt",
+   "verdignan/index.html @data-nom"
+  ]
+ },
+ {
+  "cle": "Château Plantey de la Croix",
+  "ou": [
+   "verdignan/index.html · button.bouteille @aria-label",
+   "verdignan/plantey-de-la-croix.html · section.vin-section @aria-label",
+   "verdignan/professionnels.html · img @alt",
+   "verdignan/index.html @data-nom"
+  ]
+ },
+ {
+  "cle": "Les casiers de bouteilles de Verdignan",
+  "ou": [
+   "verdignan/index.html · img @alt"
+  ]
+ },
+ {
+  "cle": "<0>Gardez</0> <1>l'<2>élégance</2> du</1> <3>père</3>",
+  "ou": [
+   "verdignan/index.html · h1.intro-texte"
+  ]
+ },
+ {
+  "cle": "Château Verdignan<0>Le grand vin</0>",
+  "ou": [
+   "verdignan/index.html · button"
+  ]
+ },
+ {
+  "cle": "N°{0} de Verdignan<0>Le second vin</0>",
+  "ou": [
+   "verdignan/index.html · button"
+  ]
+ },
+ {
+  "cle": "Château Plantey de la Croix<0>Les jeunes vignes</0>",
+  "ou": [
+   "verdignan/index.html · button"
+  ]
+ },
+ {
+  "cle": "Le grand classique<0/><1>qui regarde l'eau</1><2/>et prend son temps",
+  "ou": [
+   "verdignan/index.html · h2.manifeste-titre.is-in"
+  ]
+ },
+ {
+  "cle": "Un vin de garde,<0/><1>gardé pour vous</1>",
+  "ou": [
+   "verdignan/index.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Verdignan s'embellit avec les années. Plutôt que de vous laisser l'attendre, la famille l'attend à votre place : les bouteilles vieillissent au château, dans un local climatisé, et ne partent que lorsqu'elles sont prêtes à boire.",
+  "ou": [
+   "verdignan/index.html · p.is-in"
+  ]
+ },
+ {
+  "cle": "Le père · arrivé en {0}",
+  "ou": [
+   "verdignan/index.html · p.role"
+  ]
+ },
+ {
+  "cle": "« J'ai été le dernier courtier de la famille. En {0}, j'ai acheté le voisin de Coufran. Ici, rien ne se presse : le cabernet attend son heure, et la plus vieille porte du cuvier porte la date de {1}. »",
+  "ou": [
+   "verdignan/index.html · blockquote.is-in"
+  ]
+ },
+ {
+  "cle": "de cabernet-sauvignon dans les vignes de Verdignan, le vin de garde du père. Le merlot en a trente parts, le cabernet franc cinq.",
+  "ou": [
+   "verdignan/index.html · p.piece-legende"
+  ]
+ },
+ {
+  "cle": "N°{0} de Verdignan · Le cadet du père · Château Verdignan",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · "
+  ]
+ },
+ {
+  "cle": "N°{0} de Verdignan, le second vin du château Verdignan (Haut-Médoc). Le cadet du père.",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · "
+  ]
+ },
+ {
+  "cle": "N°{0}<0>de Verdignan · second vin</0>",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · h1.vin-nom.is-in"
+  ]
+ },
+ {
+  "cle": "Le cadet du père",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "Expressif, <0>rond</0>, frais",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Une robe intense. Dès l'ouverture, les fruits noirs et les épices, relevés par la fraîcheur. Les tanins sont fins, le fruit persiste. Prêt à boire, il garde de quoi attendre.",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Viandes grillées, canard, plats mijotés, cuisine de bistrot.",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Prêt à boire, peut attendre",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · p",
+   "verdignan/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Cabernet-sauvignon et merlot",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · p",
+   "verdignan/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Le N°{0} vient en partie des vingt hectares de jeunes vignes sur argilo-calcaire, plantés plus loin du château. Même chai, même équipe, même exigence que le grand vin.",
+  "ou": [
+   "verdignan/n2-de-verdignan.html · p"
+  ]
+ },
+ {
+  "cle": "Château Plantey de la Croix · Les jeunes vignes du père · Château Verdignan",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · "
+  ]
+ },
+ {
+  "cle": "Château Plantey de la Croix, les jeunes vignes du château Verdignan (Haut-Médoc). Les jeunes vignes du père.",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · "
+  ]
+ },
+ {
+  "cle": "<0><1/> Nos vins</0> <2>Chez Éric, à Soudars <3/></2>",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · div.vin-haut"
+  ]
+ },
+ {
+  "cle": "Plantey de la Croix<0>Château · jeunes vignes</0>",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · h1.vin-nom.is-in"
+  ]
+ },
+ {
+  "cle": "Les jeunes vignes du père",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · p"
+  ]
+ },
+ {
+  "cle": "<0/> Plantey de la Croix",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · button.vin-lien-haut"
+  ]
+ },
+ {
+  "cle": "Souple, <0>fruité</0>, frais",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Les plus jeunes vignes de merlot et de cabernet-sauvignon de Verdignan donnent un vin frais et rond, aux tanins souples.",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Apéritifs dînatoires, grillades, cuisine de tous les jours.",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · p.serif"
+  ]
+ },
+ {
+  "cle": "À la fin du XVIII<0>e</0> siècle, quand Bordeaux se met à planter davantage pour exporter, les jeunes plantations prennent le nom de « plantey ».",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · p"
+  ]
+ },
+ {
+  "cle": "Le nom dit tout : c'est le vin des jeunes vignes, celui qui annonce les grands Verdignan de demain.",
+  "ou": [
+   "verdignan/plantey-de-la-croix.html · p"
+  ]
+ },
+ {
+  "cle": "Espace professionnel · Château Verdignan · palettes sur devis",
+  "ou": [
+   "verdignan/professionnels.html · "
+  ]
+ },
+ {
+  "cle": "Château Verdignan pour les professionnels : importateurs, distributeurs, négociants, cavistes et restaurateurs. Palettes sur devis, fiches techniques, kit importateur.",
+  "ou": [
+   "verdignan/professionnels.html · "
+  ]
+ },
+ {
+  "cle": "Les bouteilles de Verdignan qui attendent leur heure",
+  "ou": [
+   "verdignan/professionnels.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Millésime de Château Verdignan",
+  "ou": [
+   "verdignan/professionnels.html · select @aria-label"
+  ]
+ },
+ {
+  "cle": "Millésime de N°{0} de Verdignan",
+  "ou": [
+   "verdignan/professionnels.html · select @aria-label"
+  ]
+ },
+ {
+  "cle": "Millésime de Château Plantey de la Croix",
+  "ou": [
+   "verdignan/professionnels.html · select @aria-label"
+  ]
+ },
+ {
+  "cle": "Espace professionnel · Château Verdignan",
+  "ou": [
+   "verdignan/professionnels.html · p.pro-cachet.is-in"
+  ]
+ },
+ {
+  "cle": "Le vin de garde,<0/><1>servi à son heure</1>",
+  "ou": [
+   "verdignan/professionnels.html · h1.is-in"
+  ]
+ },
+ {
+  "cle": "Importateurs, distributeurs, négociants, cavistes et restaurateurs : commandez Verdignan sur devis, au départ du château.",
+  "ou": [
+   "verdignan/professionnels.html · p.pro-accroche.is-in"
+  ]
+ },
+ {
+  "cle": "Pourquoi Verdignan",
+  "ou": [
+   "verdignan/professionnels.html · p.pro-sur.is-in"
+  ]
+ },
+ {
+  "cle": "Le grand classique médocain, voisin de Saint-Estèphe : une majorité de cabernet-sauvignon, de la structure et de la fraîcheur. Pour les cavistes et les cartes qui aiment les vins de garde, avec des millésimes gardés au château jusqu'à leur heure.",
+  "ou": [
+   "verdignan/professionnels.html · p.pro-grand.is-in"
+  ]
+ },
+ {
+  "cle": "{0} cl · cartons de {1} ou de {2}",
+  "ou": [
+   "verdignan/professionnels.html · dd",
+   "soudars/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Gourmand, puissant, élégant et très long : sans doute un des plus beaux millésimes de Verdignan.",
+  "ou": [
+   "verdignan/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Chocolat, épices, fruits rouges : une grande capacité de garde, sans empêcher de l'ouvrir dès aujourd'hui.",
+  "ou": [
+   "verdignan/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Un grand vin de garde, qui vieillira longtemps grâce à sa structure tannique et son caractère affirmé.",
+  "ou": [
+   "verdignan/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Une matière exceptionnelle, qui grâce à sa fraîcheur pourra vieillir très longtemps.",
+  "ou": [
+   "verdignan/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Prune et cerise, un corps velouté, des tanins fondus : un grand potentiel de vieillissement.",
+  "ou": [
+   "verdignan/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Les vins de Verdignan",
+  "ou": [
+   "verdignan/professionnels.html · legend"
+  ]
+ },
+ {
+  "cle": "Château Soudars · Le vin du fils · Château Soudars",
+  "ou": [
+   "soudars/chateau-soudars.html · "
+  ]
+ },
+ {
+  "cle": "Château Soudars, le grand vin du château Soudars (Haut-Médoc). Le vin du fils.",
+  "ou": [
+   "soudars/chateau-soudars.html · "
+  ]
+ },
+ {
+  "cle": "Château Soudars, accueil",
+  "ou": [
+   "soudars/chateau-soudars.html · a.ch-logo @aria-label",
+   "soudars/famille.html · a.ch-logo @aria-label",
+   "soudars/index.html · a.ch-logo @aria-label",
+   "soudars/professionnels.html · a.ch-logo @aria-label"
+  ]
+ },
+ {
+  "cle": "Les millésimes",
+  "ou": [
+   "soudars/chateau-soudars.html · section.vin-section @aria-label"
+  ]
+ },
+ {
+  "cle": "Château Soudars {0}",
+  "ou": [
+   "soudars/chateau-soudars.html · img @alt",
+   "soudars/index.html · button.bouteille.is-active @aria-label",
+   "soudars/index.html · button.bouteille @aria-label",
+   "soudars/index.html @data-nom"
+  ]
+ },
+ {
+  "cle": "<0><1/> Nos vins</0> <2>Chez Louis, à Coufran <3/></2>",
+  "ou": [
+   "soudars/chateau-soudars.html · div.vin-haut"
+  ]
+ },
+ {
+  "cle": "Soudars<0>Château · grand vin</0>",
+  "ou": [
+   "soudars/chateau-soudars.html · h1.vin-nom.is-in"
+  ]
+ },
+ {
+  "cle": "Le vin du fils",
+  "ou": [
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Prêt à boire dès sa jeunesse</0>",
+  "ou": [
+   "soudars/chateau-soudars.html · p.vin-pret"
+  ]
+ },
+ {
+  "cle": "<0/> Soudars",
+  "ou": [
+   "soudars/chateau-soudars.html · button.vin-lien-haut"
+  ]
+ },
+ {
+  "cle": "Rond, <0>juteux</0>, gourmand",
+  "ou": [
+   "soudars/chateau-soudars.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Ouvert, rond, juteux et gourmand. Des fruits rouges frais, la fraise des bois, la framboise, la cerise, puis des tanins soyeux et une finale épicée. Il est agréable dès qu'on le rencontre.",
+  "ou": [
+   "soudars/chateau-soudars.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Le vin du quotidien et des grandes tablées : viandes rouges, viandes blanches rôties ou grillées, barbecue d'été, poulet du dimanche.",
+  "ou": [
+   "soudars/chateau-soudars.html · p.serif"
+  ]
+ },
+ {
+  "cle": "Tout de suite, ou dans dix ans",
+  "ou": [
+   "soudars/chateau-soudars.html · p",
+   "soudars/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "{0} % merlot, {1} % cabernet-sauvignon, {2} % cabernet franc",
+  "ou": [
+   "soudars/chateau-soudars.html · p",
+   "soudars/professionnels.html · dd"
+  ]
+ },
+ {
+  "cle": "Millésime {0} · James Suckling, 93/100",
+  "ou": [
+   "soudars/chateau-soudars.html · p.presse.is-in"
+  ]
+ },
+ {
+  "cle": "Longues macérations, de trois à quatre semaines ; après la fermentation malolactique, assemblage avec l'œnologue Éric Boissenot, puis élevage en barriques de chêne français à grain fin, renouvelées par quart, voire par tiers selon l'année. Ici, on refuse les raccourcis : ni thermovinification, ni osmose inverse, ni vin standardisé.",
+  "ou": [
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "Comme à Coufran et à Verdignan, presque toutes les bouteilles vieillissent à la propriété avant de partir.",
+  "ou": [
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "Les millésimes {0}-{1} (PDF)",
+  "ou": [
+   "soudars/chateau-soudars.html · a.pilule.is-in",
+   "soudars/professionnels.html · a.pro-lien"
+  ]
+ },
+ {
+  "cle": "<0/> Les millésimes",
+  "ou": [
+   "soudars/chateau-soudars.html · button.vin-lien-bas"
+  ]
+ },
+ {
+  "cle": "Les millésimes se suivent,<0/>mais <1>ne se ressemblent pas</1>",
+  "ou": [
+   "soudars/chateau-soudars.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Cerise, groseille, framboise. Rond, aérien, friand.",
+  "ou": [
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "Année de gel, petite récolte. Fruits frais, digeste.",
+  "ou": [
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "Fruits noirs, boisé raffiné. Gras et onctueux.",
+  "ou": [
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "Fraise des bois, cassis. Rond, tendu, long.",
+  "ou": [
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "Cerise, cassis, épices. Souple, gras et frais.",
+  "ou": [
+   "soudars/chateau-soudars.html · p"
+  ]
+ },
+ {
+  "cle": "Ses frères",
+  "ou": [
+   "soudars/chateau-soudars.html · h3"
+  ]
+ },
+ {
+  "cle": "Château Soudars<0/>{0} Saint-Seurin-de-Cadourne, France",
+  "ou": [
+   "soudars/chateau-soudars.html · p",
+   "soudars/famille.html · p",
+   "soudars/index.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "<0/><1/><2>vignoblesmiailhe@orange.fr</2>",
+  "ou": [
+   "soudars/chateau-soudars.html · p",
+   "soudars/famille.html · p",
+   "soudars/index.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Votre demande : <0>vignoblesmiailhe@orange.fr</0>",
+  "ou": [
+   "soudars/chateau-soudars.html · p",
+   "soudars/famille.html · p",
+   "soudars/index.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Boutique en ligne ↗</0><1>boutique.chateausoudars.com</1>",
+  "ou": [
+   "soudars/chateau-soudars.html · li",
+   "soudars/famille.html · li",
+   "soudars/index.html · li",
+   "soudars/professionnels.html · li"
+  ]
+ },
+ {
+  "cle": "En Belgique<0>Delhaize</0>",
+  "ou": [
+   "soudars/chateau-soudars.html · li",
+   "soudars/famille.html · li",
+   "soudars/index.html · li",
+   "soudars/professionnels.html · li"
+  ]
+ },
+ {
+  "cle": "Suivez-nous",
+  "ou": [
+   "soudars/chateau-soudars.html · p.titre",
+   "soudars/famille.html · p.titre",
+   "soudars/index.html · p.titre",
+   "soudars/professionnels.html · p.titre"
+  ]
+ },
+ {
+  "cle": "<0>Château Soudars sur Facebook ↗</0>",
+  "ou": [
+   "soudars/chateau-soudars.html · p",
+   "soudars/famille.html · p",
+   "soudars/index.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "<0>La famille sur Instagram ↗</0>",
+  "ou": [
+   "soudars/chateau-soudars.html · p",
+   "soudars/famille.html · p",
+   "soudars/index.html · p",
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Château Soudars · une maison de la famille <0/>",
+  "ou": [
+   "soudars/chateau-soudars.html · a.maison",
+   "soudars/famille.html · a.maison",
+   "soudars/index.html · a.maison",
+   "soudars/professionnels.html · a.maison"
+  ]
+ },
+ {
+  "cle": "Les autres maisons : <0>Coufran</0> · <1>Verdignan</1>",
+  "ou": [
+   "soudars/chateau-soudars.html · span",
+   "soudars/famille.html · span",
+   "soudars/index.html · span",
+   "soudars/professionnels.html · span"
+  ]
+ },
+ {
+  "cle": "Château Soudars · RCS Bordeaux {0} {1} {2} · siège : Château Soudars, {3} Saint-Seurin-de-Cadourne · directeur de la publication : Éric Miailhe, représentant légal. Maquette de concept, projet étudiant ISCOM {4}, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.",
+  "ou": [
+   "soudars/chateau-soudars.html · p.mentions",
+   "soudars/famille.html · p.mentions",
+   "soudars/index.html · p.mentions",
+   "soudars/professionnels.html · p.mentions"
+  ]
+ },
+ {
+  "cle": "La famille · Château Soudars · Le vin du fils",
+  "ou": [
+   "soudars/famille.html · "
+  ]
+ },
+ {
+  "cle": "L'histoire du château Soudars et de la famille Miailhe.",
+  "ou": [
+   "soudars/famille.html · "
+  ]
+ },
+ {
+  "cle": "Vieux ceps tortueux de Soudars",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Racines de vieilles vignes arrachées",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Piquets de vigne taillés en pointe",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Deux rangées de barriques",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Un fagot de bois de taille",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Baies noires pruinées",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Les rangs dans une flaque",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Les vignes et le clocher au loin",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Pierres blanches au pied des vignes",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Un fagot de bois de taille aux liens bleus",
+  "ou": [
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "<0>L'<1>histoire</1><2/>du fils</0>",
+  "ou": [
+   "soudars/famille.html · h1.intro-texte.is-in"
+  ]
+ },
+ {
+  "cle": "<0>Éric,</0> <1/> <2><3>parti de rien</3></2>",
+  "ou": [
+   "soudars/famille.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Il était une fois un homme qui décide de créer un vignoble là où personne ne l'attend. En {0}, Éric Miailhe, le fils de Jean, jette son dévolu sur quinze hectares de friches couvertes de pierres et de ronces, sur un sol argilo-calcaire qui lui rappelle les grands terroirs de Saint-Émilion.",
+  "ou": [
+   "soudars/famille.html · p"
+  ]
+ },
+ {
+  "cle": "Il faut épierrer, préparer les sols, replanter presque tout. Les premières années, la jeunesse des vignes est un handicap. Dans les années {0}, le vignoble entre dans l'âge adulte et Soudars prend son essor. Créer un cru de toutes pièces : dans le Médoc, les précédents sont rares.",
+  "ou": [
+   "soudars/famille.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Des racines</0> <1><2>dans la roche</2></1>",
+  "ou": [
+   "soudars/famille.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Sur le calcaire, une fine couche d'argile ; par endroits, il a fallu défoncer la roche pour planter. Les racines descendent dans les fissures chercher l'eau, au milieu des fossiles marins. On disait que les grands vins du Médoc ne naissaient que sur les graves : Éric a fait un autre pari, que le réchauffement du climat rend aujourd'hui visionnaire.",
+  "ou": [
+   "soudars/famille.html · p.paragraphe.is-in"
+  ]
+ },
+ {
+  "cle": "<0>{0} ha</0>argilo-calcaires",
+  "ou": [
+   "soudars/famille.html · div"
+  ]
+ },
+ {
+  "cle": "<0>{0} km</0>de l'océan",
+  "ou": [
+   "soudars/famille.html · div"
+  ]
+ },
+ {
+  "cle": "<0>Éric l'a bâti,</0> <1>Lovely le <2>partage</2></1>",
+  "ou": [
+   "soudars/famille.html · h2.titre-65.is-in"
+  ]
+ },
+ {
+  "cle": "Soudars, c'est l'histoire d'un fils qui voulait sa propre terre, et qui a gardé de ce départ une énergie communicative. Depuis {0}, sa fille Lovely travaille à ses côtés ; comme lui, elle tient à cet outil de travail et veut le transmettre à la génération suivante.",
+  "ou": [
+   "soudars/famille.html · p"
+  ]
+ },
+ {
+  "cle": "« Avant, on faisait les vins qu'on pouvait. Désormais, on peut faire ceux que l'on souhaite. »",
+  "ou": [
+   "soudars/famille.html · p"
+  ]
+ },
+ {
+  "cle": "Château Soudars · Le vin du fils · Haut-Médoc",
+  "ou": [
+   "soudars/index.html · "
+  ]
+ },
+ {
+  "cle": "Château Soudars, Haut-Médoc. Le vin du fils : Éric Miailhe l'a bâti en {0} sur des friches pleines de pierres. Un vin rond et gourmand, à partager.",
+  "ou": [
+   "soudars/index.html · "
+  ]
+ },
+ {
+  "cle": "Le chai à barriques de Soudars",
+  "ou": [
+   "soudars/index.html · img @alt"
+  ]
+ },
+ {
+  "cle": "<0>Partagez</0> <1>le <2>plaisir</2> du</1> <3>fils</3>",
+  "ou": [
+   "soudars/index.html · h1.intro-texte"
+  ]
+ },
+ {
+  "cle": "<0>découvrez</0><1/>nos millésimes",
+  "ou": [
+   "soudars/index.html · p.is-in"
+  ]
+ },
+ {
+  "cle": "Haut-Médoc · Cerise, groseille, framboise. Rond, aérien, friand.",
+  "ou": [
+   "soudars/index.html · p.origine",
+   "soudars/index.html @data-origine"
+  ]
+ },
+ {
+  "cle": "Millésimes <0/>",
+  "ou": [
+   "soudars/index.html · button.pilule"
+  ]
+ },
+ {
+  "cle": "<0>Boutique en ligne<1>boutique.chateausoudars.com</1></0>",
+  "ou": [
+   "soudars/index.html · li"
+  ]
+ },
+ {
+  "cle": "Le vin<0/><1>né de la pierre</1>,<2/>à partager sans attendre",
+  "ou": [
+   "soudars/index.html · h2.manifeste-titre.is-in"
+  ]
+ },
+ {
+  "cle": "Prêt à boire<0/><1>dès sa jeunesse</1>",
+  "ou": [
+   "soudars/index.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Dans la famille, un vin se vend quand il est prêt. Soudars l'est tôt : souple, juteux, gourmand, il s'ouvre sur la framboise et la cerise dès ses premières années. Ses aînés, Coufran et Verdignan, attendent au château le temps qu'il leur faut.",
+  "ou": [
+   "soudars/index.html · p.is-in"
+  ]
+ },
+ {
+  "cle": "Souple et fruité dès sa jeunesse",
+  "ou": [
+   "soudars/index.html · li"
+  ]
+ },
+ {
+  "cle": "À ouvrir sans attendre",
+  "ou": [
+   "soudars/index.html · li"
+  ]
+ },
+ {
+  "cle": "Coufran et Verdignan, eux, vieillissent au château",
+  "ou": [
+   "soudars/index.html · li"
+  ]
+ },
+ {
+  "cle": "Le fils · arrivé en {0}",
+  "ou": [
+   "soudars/index.html · p.role"
+  ]
+ },
+ {
+  "cle": "« En {0}, on m'a dit que les grands vins du Médoc ne naissaient que sur les graves. J'ai acheté des friches pleines de pierres et de ronces. On a tout épierré à la main. »",
+  "ou": [
+   "soudars/index.html · blockquote.is-in"
+  ]
+ },
+ {
+  "cle": "de merlot dans Château Soudars : exactement la moitié. Le cabernet-sauvignon fait presque tout le reste, le cabernet franc une seule part.",
+  "ou": [
+   "soudars/index.html · p.piece-legende"
+  ]
+ },
+ {
+  "cle": "Espace professionnel · Château Soudars · palettes sur devis",
+  "ou": [
+   "soudars/professionnels.html · "
+  ]
+ },
+ {
+  "cle": "Château Soudars pour les professionnels : importateurs, distributeurs, négociants, cavistes et restaurateurs. Palettes sur devis, fiches techniques, kit importateur.",
+  "ou": [
+   "soudars/professionnels.html · "
+  ]
+ },
+ {
+  "cle": "Deux rangées de barriques dans le chai de Soudars",
+  "ou": [
+   "soudars/professionnels.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Millésime de Château Soudars",
+  "ou": [
+   "soudars/professionnels.html · select @aria-label"
+  ]
+ },
+ {
+  "cle": "Espace professionnel · Château Soudars",
+  "ou": [
+   "soudars/professionnels.html · p.pro-cachet.is-in"
+  ]
+ },
+ {
+  "cle": "Le vin gourmand<0/><1>des grandes tablées</1>",
+  "ou": [
+   "soudars/professionnels.html · h1.is-in"
+  ]
+ },
+ {
+  "cle": "Importateurs, distributeurs, négociants, cavistes et restaurateurs : commandez Soudars sur devis, au départ du château.",
+  "ou": [
+   "soudars/professionnels.html · p.pro-accroche.is-in"
+  ]
+ },
+ {
+  "cle": "<0/>millésimes au choix",
+  "ou": [
+   "soudars/professionnels.html · div.is-in"
+  ]
+ },
+ {
+  "cle": "Pourquoi Soudars",
+  "ou": [
+   "soudars/professionnels.html · p.pro-sur.is-in"
+  ]
+ },
+ {
+  "cle": "Rond, juteux et floral : un vin facile à aimer, qui va avec presque tous les plats. Pour le vin au verre, les bistrots et les cavistes qui cherchent un Haut-Médoc à partager, avec des millésimes gardés à la propriété.",
+  "ou": [
+   "soudars/professionnels.html · p.pro-grand.is-in"
+  ]
+ },
+ {
+  "cle": "Fruits noirs et boisé raffiné : gras et onctueux.",
+  "ou": [
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Fraise des bois et cassis : rond, tendu et long.",
+  "ou": [
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Cerise, cassis et épices : souple, gras et frais.",
+  "ou": [
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Fruits noirs mûrs, une puissance et une tension rares : sans doute un des meilleurs vins jamais produits ici.",
+  "ou": [
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Le must de la maison, comme {0} et {1} : du fruit, de la fraîcheur, des notes grillées et de tabac.",
+  "ou": [
+   "soudars/professionnels.html · p"
+  ]
+ },
+ {
+  "cle": "Les vins de Soudars",
+  "ou": [
+   "soudars/professionnels.html · legend"
+  ]
+ },
+ {
+  "cle": "(prefers-reduced-motion: reduce)",
+  "ou": [
+   "script chateau.js",
+   "script main.js"
+  ]
+ },
+ {
+  "cle": ":is(.armoirie, .embleme)[data-armoirie]",
+  "ou": [
+   "script chateau.js"
+  ]
+ },
+ {
+  "cle": "0px 0px -{0}% 0px",
+  "ou": [
+   "script chateau.js",
+   "script main.js"
+  ]
+ },
+ {
+  "cle": "Dans ma demande",
+  "ou": [
+   "script chateau.js"
+  ]
+ },
+ {
+  "cle": "Il manque quelques informations pour préparer le devis.",
+  "ou": [
+   "script chateau.js"
+  ]
+ },
+ {
+  "cle": "AOC Haut-Médoc · le second vin",
+  "ou": [
+   "coufran/index.html @data-origine",
+   "verdignan/index.html @data-origine"
+  ]
+ },
+ {
+  "cle": "AOC Haut-Médoc · les jeunes vignes",
+  "ou": [
+   "coufran/index.html @data-origine",
+   "verdignan/index.html @data-origine"
+  ]
+ },
+ {
+  "cle": "Haut-Médoc · Année de gel, petite récolte. Fruits frais, digeste.",
+  "ou": [
+   "soudars/index.html @data-origine"
+  ]
+ },
+ {
+  "cle": "Haut-Médoc · Fruits noirs, boisé raffiné. Gras et onctueux.",
+  "ou": [
+   "soudars/index.html @data-origine"
+  ]
+ },
+ {
+  "cle": "Haut-Médoc · Fraise des bois, cassis. Rond, tendu, long.",
+  "ou": [
+   "soudars/index.html @data-origine"
+  ]
+ },
+ {
+  "cle": "Haut-Médoc · Cerise, cassis, épices. Souple, gras et frais.",
+  "ou": [
+   "soudars/index.html @data-origine"
+  ]
+ },
+ {
+  "cle": "Bouteille {{0}}",
+  "ou": [
+   "chateau.js @aria-label"
+  ]
+ }
+]

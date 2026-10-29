@@ -1,0 +1,248 @@
+/* La vitrine MIAILHE après l'entrée (27/10/2026) : courte, claire, une aventure en quatre temps.
+   1. Trois portes en arche, une par château et par génération : on pousse celle qui nous ressemble.
+   2. L'histoire en une frise : cinq générations, une racine aux couleurs des trois châteaux.
+   3. Le circuit « Quel Miailhe êtes-vous ? » : quatre questions, puis le vin de son année de naissance.
+   4. Venir : la carte du Médoc.
+   Fond blanc, encre presque noire, et les trois couleurs des châteaux comme seule palette de la marque mère.
+   Titres en Circular, le mot mis en avant en Canela italique. main.css garde la base, l'en-tête, le menu et l'intro. */
+
+.v {
+  --encre: #16120f;
+  --muet: #6b635d;
+  --pale: #f5f4f1;
+  --filet: rgba(22, 18, 15, .12);
+  --courbe: cubic-bezier(.2, .7, .1, 1);
+  background: #fff;
+  color: var(--encre);
+  font-family: var(--f-ui);
+  font-size: 17px;
+  line-height: 1.55;
+}
+:where(.v) :is(h1, h2, h3, p, figure, ol) { margin: 0; font-weight: 400; }
+:where(.v) a { color: inherit; text-decoration: none; }
+.v em { font-family: var(--f-it); font-style: italic; font-weight: 400; letter-spacing: -.01em; }
+
+/* ---------- Typographie ---------- */
+.v-sur-titre { display: inline-flex; align-items: center; gap: 12px; font-size: 11.5px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--muet); }
+/* la signature de la marque mère : les trois couleurs des châteaux, côte à côte */
+.v-sur-titre::before { content: ""; width: 30px; height: 3px; background: linear-gradient(90deg, var(--coufran) 0 33.3%, var(--verdignan) 33.3% 66.6%, var(--soudars) 66.6%); border-radius: 2px; }
+.v-h1 { font-size: clamp(52px, 7.6vw, 124px); line-height: .94; letter-spacing: -.04em; }
+.v-h1 > span, .v-h2 > span { display: block; }
+.v-h2 { font-size: clamp(40px, 5vw, 80px); line-height: .98; letter-spacing: -.035em; }
+.v-chapeau { max-width: 34em; font-size: clamp(17px, 1.25vw, 20px); line-height: 1.5; color: #4b443f; }
+.v-bouton {
+  display: inline-flex; align-items: center; gap: .7em; padding: 1.1em 2em; border: 0; border-radius: 40px; cursor: pointer;
+  background: var(--encre); color: #fff; font: inherit; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+  transition: transform .3s var(--courbe), box-shadow .3s, background .3s;
+}
+.v-bouton:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(22, 18, 15, .5); }
+.v-lien { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1.5px solid currentColor; padding-bottom: 3px; }
+.v-lien:hover { color: var(--muet); }
+.motif { position: absolute; inset: 0; pointer-events: none; background: currentColor; -webkit-mask: var(--motif) repeat; mask: var(--motif) repeat; }
+/* La couleur et le motif de chaque château (motifs intégrés dans motifs.css) */
+[data-chateau="coufran"] { --c: var(--coufran); --t: var(--coufran-teinte); --motif: var(--motif-coufran); }
+[data-chateau="verdignan"] { --c: var(--verdignan); --t: var(--verdignan-teinte); --motif: var(--motif-verdignan); }
+[data-chateau="soudars"] { --c: var(--soudars); --t: var(--soudars-teinte); --motif: var(--motif-soudars); }
+
+/* ---------- 1. Les trois portes ---------- */
+.v-portes { padding: 150px 4vw 110px; text-align: center; }
+.v-portes-tete { display: grid; justify-items: center; gap: 26px; }
+.v-portes .v-h1 > span { opacity: 0; transform: translateY(40px); transition: opacity 1.2s var(--courbe), transform 1.2s var(--courbe); }
+.v-portes .v-h1 > span:nth-child(2) { transition-delay: .12s; }
+.v-portes .v-chapeau, .v-portes .v-sur-titre { opacity: 0; transition: opacity 1.2s .35s; }
+.v.is-entree .v-portes .v-h1 > span { opacity: 1; transform: none; }
+.v.is-entree .v-portes .v-chapeau, .v.is-entree .v-portes .v-sur-titre { opacity: 1; }
+
+.portes { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.6vw, 44px); max-width: 1200px; margin: 70px auto 0; }
+.porte { display: grid; justify-items: center; gap: 24px; color: inherit; opacity: 0; transform: translateY(60px); transition: opacity 1.2s var(--courbe), transform 1.2s var(--courbe), filter .5s; }
+.v.is-entree .porte { opacity: 1; transform: none; }
+.v.is-entree .porte:nth-child(2) { transition-delay: .15s, .15s, 0s; }
+.v.is-entree .porte:nth-child(3) { transition-delay: .3s, .3s, 0s; }
+.porte-arche {
+  position: relative; display: block; width: 100%; aspect-ratio: 3 / 4.35; overflow: hidden; color: #fff;
+  border-radius: 50% 50% 10px 10px / 34% 34% 10px 10px; background: var(--c);
+  box-shadow: 0 40px 70px -40px var(--c); transition: transform .8s var(--courbe), box-shadow .8s;
+}
+.porte-arche > .motif { opacity: .5; }
+.porte-film { position: absolute; inset: clamp(16px, 2.3vw, 32px); overflow: hidden; border-radius: 50% 50% 4px 4px / 33% 33% 4px 4px; background: #000; }
+.porte-film video { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 1.4s var(--courbe), filter .8s; filter: saturate(.92) brightness(.92); }
+.porte-pousser {
+  position: absolute; left: 50%; bottom: 30px; z-index: 1; padding: .8em 1.4em; border-radius: 30px; white-space: nowrap;
+  background: #fff; color: var(--encre); font-size: 11.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  transform: translate(-50%, 12px); opacity: 0; transition: opacity .4s, transform .5s var(--courbe);
+}
+.porte-legende { display: grid; justify-items: center; gap: 6px; }
+.porte-legende .armoirie { width: 42px; margin-bottom: 8px; color: var(--c); }
+.porte-nom { font-size: clamp(28px, 2.7vw, 42px); line-height: 1; letter-spacing: -.03em; }
+.porte-qui { font-size: 11.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--muet); }
+.porte-trait { font-size: 17px; }
+.porte-trait em { color: var(--c); font-size: 1.12em; }
+.porte:hover .porte-arche, .porte:focus-visible .porte-arche { transform: translateY(-10px); box-shadow: 0 50px 80px -40px var(--c); }
+.porte:hover .porte-film video, .porte:focus-visible .porte-film video { transform: scale(1.1); filter: none; }
+.porte:hover .porte-pousser, .porte:focus-visible .porte-pousser { opacity: 1; transform: translate(-50%, 0); }
+.portes:hover .porte:not(:hover) { filter: saturate(.35) opacity(.6); }
+.porte:focus-visible { outline: none; }
+
+/* Le passage : on pousse la porte, elle s'ouvre en grand dans la couleur du château (vitrine.js) */
+.passage { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; background: var(--c); color: #fff; transition: clip-path .85s cubic-bezier(.7, 0, .25, 1); }
+.passage .motif { opacity: .28; }
+.passage .armoirie { position: relative; width: 96px; color: #fff; opacity: 0; transform: scale(.9); transition: opacity .5s .45s, transform .8s .45s var(--courbe); }
+.passage.is-ouvert .armoirie { opacity: 1; transform: none; }
+
+/* ---------- 2. L'histoire : la frise des cinq générations ---------- */
+.v-histoire { padding: 150px 6vw 150px; background: var(--pale); }
+.v-histoire-tete { display: grid; justify-items: center; gap: 26px; text-align: center; }
+.frise { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); max-width: 1240px; margin: 100px auto 0; padding: 0; list-style: none; }
+/* la racine : un trait qui passe de l'encre aux trois couleurs des châteaux, puis revient à l'encre */
+.frise::before {
+  content: ""; position: absolute; top: 25px; left: 10%; right: 10%; height: 3px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--encre) 0 12%, var(--coufran) 25% 37%, var(--verdignan) 50% 62%, var(--soudars) 75% 87%, var(--encre) 100%);
+  transform: scaleX(0); transform-origin: left; transition: transform 2.4s var(--courbe);
+}
+.frise.is-in::before { transform: none; }
+.frise-etape { position: relative; display: grid; justify-items: center; align-content: start; gap: 8px; padding: 0 14px; text-align: center; }
+.frise-noeud { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 14px; border-radius: 50%; background: #fff; border: 2px solid var(--c, var(--encre)); }
+.frise-noeud .armoirie { width: 20px; color: var(--c); }
+.frise-etape:not(.frise-etape--chateau) .frise-noeud::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--encre); }
+.frise-annee { font-family: var(--f-it); font-style: italic; font-size: clamp(36px, 3.4vw, 54px); line-height: 1; color: var(--c, var(--encre)); }
+.frise-nom { font-size: 11.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
+.frise-texte { max-width: 21ch; font-size: 15px; line-height: 1.45; color: var(--muet); }
+.frise-etape:nth-child(2) { transition-delay: .15s; } .frise-etape:nth-child(3) { transition-delay: .3s; }
+.frise-etape:nth-child(4) { transition-delay: .45s; } .frise-etape:nth-child(5) { transition-delay: .6s; }
+
+.v-photos { display: grid; grid-template-columns: 1fr minmax(0, 340px) 1fr; align-items: center; gap: clamp(24px, 4vw, 60px); max-width: 1240px; margin: 120px auto 0; }
+.v-photos figure { position: relative; overflow: hidden; border-radius: 6px; aspect-ratio: 4 / 3; }
+.v-photos img { width: 100%; height: 100%; object-fit: cover; }
+.v-photos figcaption { position: absolute; left: 14px; bottom: 12px; padding: 5px 10px; border-radius: 20px; background: rgba(255, 255, 255, .92); font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
+.v-chute { font-size: clamp(22px, 2vw, 30px); line-height: 1.25; letter-spacing: -.02em; text-align: center; }
+.v-chute em { display: block; font-size: 1.2em; }
+
+/* ---------- 3. Le circuit ---------- */
+.v-circuit { padding: 130px 4vw; }
+.circuit {
+  --pc: 0; --pv: 0; --ps: 0;
+  position: relative; display: grid; place-items: center; max-width: 1140px; min-height: 640px; margin: 0 auto; padding: clamp(40px, 6vw, 90px);
+  overflow: hidden; border-radius: 32px; text-align: center;
+  background:
+    radial-gradient(70% 80% at 0% 0%, color-mix(in srgb, var(--coufran) calc(var(--pc) * 34%), transparent), transparent 70%),
+    radial-gradient(70% 80% at 100% 0%, color-mix(in srgb, var(--verdignan) calc(var(--pv) * 34%), transparent), transparent 70%),
+    radial-gradient(80% 80% at 50% 110%, color-mix(in srgb, var(--soudars) calc(var(--ps) * 34%), transparent), transparent 70%),
+    var(--pale);
+  transition: background .9s;
+}
+.circuit-ecran { display: grid; justify-items: center; gap: 26px; width: 100%; max-width: 900px; animation: entrer .7s var(--courbe); }
+@keyframes entrer { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.circuit-progression { display: flex; gap: 8px; }
+.circuit-progression span { width: 34px; height: 4px; border-radius: 4px; background: var(--filet); transition: background .4s; }
+.circuit-progression span.is-fait { background: var(--encre); }
+.circuit-question { font-size: clamp(32px, 3.6vw, 56px); line-height: 1.02; letter-spacing: -.03em; max-width: 16em; }
+.reponses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; margin-top: 12px; }
+.reponse {
+  display: grid; align-content: start; gap: 14px; padding: 26px 24px 30px; border: 1px solid var(--filet); border-radius: 20px; cursor: pointer;
+  background: #fff; color: var(--encre); font: inherit; font-size: 17px; line-height: 1.4; text-align: left;
+  transition: transform .35s var(--courbe), box-shadow .35s, border-color .35s;
+}
+.reponse b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--filet); font-size: 12px; font-weight: 500; }
+.reponse:hover, .reponse:focus-visible { transform: translateY(-5px); border-color: var(--encre); box-shadow: 0 22px 40px -24px rgba(22, 18, 15, .45); outline: none; }
+.circuit-retour { padding: 0; border: 0; background: none; cursor: pointer; font: inherit; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muet); }
+.circuit-annee input {
+  width: 4.2em; padding: 0 0 6px; border: 0; border-bottom: 2px solid var(--encre); background: transparent; text-align: center;
+  font-family: var(--f-it); font-style: italic; font-size: clamp(56px, 6vw, 88px); line-height: 1; color: var(--encre);
+}
+.circuit-annee input:focus { outline: none; border-color: var(--soudars); }
+.circuit-annee .v-chapeau { margin-inline: auto; }
+.circuit-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px 26px; }
+.circuit-erreur { min-height: 1.5em; font-size: 14px; color: var(--soudars-encre); }
+
+/* Le résultat : la porte du château qui vous ressemble */
+.resultat { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(28px, 5vw, 70px); align-items: center; width: 100%; text-align: left; animation: entrer .8s var(--courbe); }
+.resultat-visuel {
+  position: relative; display: grid; place-items: center; aspect-ratio: 3 / 4; overflow: hidden; color: #fff;
+  border-radius: 50% 50% 14px 14px / 30% 30% 14px 14px; background: var(--c); box-shadow: 0 40px 70px -40px var(--c);
+}
+.resultat-visuel .motif { opacity: .3; }
+.resultat-visuel .armoirie { position: absolute; top: 15%; width: 64px; color: #fff; }
+.resultat-visuel img { position: absolute; left: 50%; bottom: 5%; height: 62%; width: auto; max-width: none; filter: drop-shadow(-18px 26px 26px rgba(0, 0, 0, .3)); transform: translateX(-50%) rotate(-8deg); }
+.resultat-texte { display: grid; gap: 16px; }
+.resultat-nom { font-size: clamp(54px, 6vw, 92px); line-height: .9; letter-spacing: -.04em; color: var(--c); }
+.resultat-trait { font-size: clamp(22px, 2vw, 30px); letter-spacing: -.02em; }
+.resultat-trait em { color: var(--c); }
+.resultat p { font-size: 16.5px; color: #4b443f; }
+.resultat-vin { display: grid; gap: 4px; padding: 16px 0; border-top: 1px solid var(--filet); border-bottom: 1px solid var(--filet); }
+.resultat-vin strong { font-weight: 500; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; }
+.annee-naissance { display: grid; gap: 6px; padding: 18px 20px; border-radius: 16px; background: #fff; border: 1.5px solid var(--c); }
+.annee-naissance .titre { font-size: 11.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--c); }
+.annee-naissance .vin { font-family: var(--f-it); font-style: italic; font-size: 26px; line-height: 1.1; color: var(--encre); }
+.annee-naissance .note { font-size: 15px; }
+.annee-naissance small { font-size: 12px; color: var(--muet); }
+.resultat-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 6px; }
+.resultat-actions .v-bouton { background: var(--c); }
+.resultat-actions button.v-lien { padding: 0 0 3px; border-width: 0 0 1.5px; background: none; cursor: pointer; font: inherit; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--encre); }
+
+/* ---------- 4. Venir ---------- */
+.v-venir { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 6vw; padding: 130px 6vw 150px; background: var(--pale); }
+.v-carte { justify-self: center; width: min(100%, 520px); }
+.v-carte img { width: 100%; height: auto; }
+.v-venir-texte { display: grid; justify-items: start; gap: 28px; }
+.v-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px; }
+
+/* ---------- Pied de page ---------- */
+.v-pied { position: relative; padding: 0 6vw 34px; background: #fff; color: var(--ink); font-family: var(--f-ui); font-size: 13px; line-height: 1.55; }
+.v-pied::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: linear-gradient(90deg, var(--coufran) 0 33.3%, var(--verdignan) 33.3% 66.6%, var(--soudars) 66.6%); }
+.v-pied p { margin: 0; }
+.v-pied a { text-decoration: none; }
+.v-pied .titre { font-weight: 500; }
+.v-pied .gris { color: var(--mute); }
+.v-pied-haut { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; padding: 54px 0 34px; }
+.v-pied-haut > :last-child { justify-self: end; text-align: right; }
+.v-pied .wordmark { width: 160px; color: var(--ink); }
+.v-pied-bas { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 30px; padding-top: 22px; border-top: 1px solid rgba(22, 18, 15, .12); color: var(--mute); }
+.v-pied-bas nav { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+.v-pied-bas a:hover { color: var(--ink); }
+.v-pied-chateaux a { display: inline-flex; align-items: center; gap: 8px; }
+.v-pied-chateaux .armoirie { width: 15px; }
+.v-sante { margin-top: 22px !important; font-weight: 500; }
+.v-mentions { margin-top: 6px !important; color: var(--mute); font-size: 11.5px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .v-portes { padding: 120px 0 90px; }
+  .v-portes-tete { padding: 0 6vw; }
+  /* les portes défilent sur le côté, une et demie à l'écran */
+  .portes { display: flex; gap: 18px; margin-top: 50px; padding: 0 12vw 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .portes::-webkit-scrollbar { display: none; }
+  .porte { flex: 0 0 72vw; scroll-snap-align: center; }
+  .porte-pousser { opacity: 1; transform: translate(-50%, 0); }
+  .portes:hover .porte:not(:hover) { filter: none; }
+  .v-histoire { padding: 110px 6vw; }
+  .frise { grid-template-columns: 1fr; gap: 34px; margin-top: 60px; padding-left: 0; }
+  .frise::before { top: 0; bottom: 0; left: 25px; right: auto; width: 3px; height: auto; transform: scaleY(0); transform-origin: top;
+    background: linear-gradient(180deg, var(--encre) 0 12%, var(--coufran) 25% 37%, var(--verdignan) 50% 62%, var(--soudars) 75% 87%, var(--encre) 100%); }
+  .frise.is-in::before { transform: none; }
+  .frise-etape { grid-template-columns: 52px 1fr; justify-items: start; column-gap: 20px; row-gap: 4px; padding: 0; text-align: left; }
+  .frise-noeud { grid-row: span 3; margin: 0; }
+  .frise-texte { max-width: none; }
+  .v-photos { grid-template-columns: 1fr 1fr; margin-top: 80px; }
+  .v-chute { grid-column: 1 / -1; grid-row: 1; }
+  .v-circuit { padding: 90px 4vw; }
+  .circuit { min-height: 560px; padding: 44px 22px; border-radius: 24px; }
+  .reponses { grid-template-columns: 1fr; }
+  .resultat { grid-template-columns: 1fr; }
+  .resultat-visuel { width: min(100%, 320px); justify-self: center; }
+  .v-venir { grid-template-columns: 1fr; padding: 100px 6vw; }
+  .v-pied-haut { grid-template-columns: 1fr 1fr; }
+  .v-pied-haut .wordmark { display: none; }
+}
+@media (max-width: 520px) {
+  .v-photos { grid-template-columns: 1fr; }
+  .v-pied-haut { grid-template-columns: 1fr; }
+  .v-pied-haut > :last-child { justify-self: start; text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v-portes .v-h1 > span, .v-portes .v-chapeau, .v-portes .v-sur-titre, .porte { opacity: 1; transform: none; }
+  .frise::before { transform: none; }
+}
+
+/* Mode capture (?capture) : tout est visible d'emblée */
+.capture .v-portes .v-h1 > span, .capture .v-portes .v-chapeau, .capture .v-portes .v-sur-titre, .capture .porte { opacity: 1; transform: none; transition: none; }
+.capture .frise::before { transform: none; transition: none; }

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'enquête · La page arrachée · MIAILHE</title>
+  <meta name="description" content="Affaire n° 1793. Interrogez le grand-père, le père et le fils, réunissez les trois morceaux de la page arrachée du carnet d'Élie Miailhe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/polices.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/enquete.css">
+</head>
+<body class="page-enquete" data-etape="couverture">
+
+  <!-- Âge légal (sans intro : on ne le redemande pas à qui l'a déjà confirmé sur la vitrine) -->
+  <div class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-titre">
+    <figure class="entree-fond"><img src="assets/img/acte-famille-1931.jpg" alt=""></figure>
+    <div class="entree">
+      <span class="wordmark" aria-label="MIAILHE"><span class="sr-only">MIAILHE</span></span>
+      <p id="age-titre">L'enquête de la famille Miailhe est réservée aux personnes ayant l'âge légal de consommer de l'alcool dans leur pays.</p>
+      <div class="choix">
+        <button class="btn btn--plein" type="button" data-entrer><span>J'ai l'âge légal, entrer</span></button>
+      </div>
+      <button class="refus" type="button">Je n'ai pas l'âge légal</button>
+      <p class="refus-message">Revenez nous voir plus tard. La vigne, elle, sait attendre.</p>
+      <p class="mention">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    </div>
+  </div>
+
+  <header class="site-header on-dark">
+    <div class="header-gauche">
+      <button class="ouvrir-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu"><span></span></button>
+    </div>
+    <a class="wordmark" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="MIAILHE, accueil"><span class="sr-only">MIAILHE</span></a>
+    <div class="header-droite">
+      <nav class="familles" aria-label="Les trois châteaux de la famille">
+        <a class="famille-lien" href="coufran/index.html" data-nom="Coufran"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span><span class="sr-only">Château Coufran</span></a>
+        <a class="famille-lien" href="verdignan/index.html" data-nom="Verdignan"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span><span class="sr-only">Château Verdignan</span></a>
+        <a class="famille-lien" href="soudars/index.html" data-nom="Soudars"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span><span class="sr-only">Château Soudars</span></a>
+      </nav>
+      <ul class="langues" aria-label="Langue du site">
+        <li><a href="#" lang="fr" aria-current="true">Fr</a></li>
+        <li><a href="#" lang="en" title="English version coming soon">En</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="mainnav" id="menu-principal" aria-label="Menu principal" aria-hidden="true">
+    <div class="mainnav-contenu">
+      <div class="mainnav-enquete">
+        <p class="titre-3">L'enquête &nbsp;—&nbsp; <a class="lien-trait" href="enquete.html">La page arrachée</a></p>
+        <a class="couverture-enquete" href="enquete.html" aria-label="Ouvrir le dossier de l'enquête">
+          <span class="marque">Miailhe</span>
+          <span class="photo"><img src="assets/img/acte-famille-1931.jpg" alt="" loading="lazy"></span>
+          <span class="cachet">Affaire n° 1793</span>
+          <span class="loupe" aria-hidden="true"></span>
+          <span class="titre"><span>La page</span><br><span>arrachée</span></span>
+        </a>
+      </div>
+      <div class="mainnav-menus">
+        <ul class="menu-principal">
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#chateaux"><span>Nos châteaux<span class="num">I.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="coufran/index.html"><span>Château Coufran</span></a></li>
+              <li><a href="verdignan/index.html"><span>Château Verdignan</span></a></li>
+              <li><a href="soudars/index.html"><span>Château Soudars</span></a></li>
+            </ul>
+          </li>
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#descente"><span>La famille<span class="num">II.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#descente"><span>L'histoire</span></a></li>
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#acte-aujourdhui"><span>Cinq générations</span></a></li>
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#racine"><span>La racine commune</span></a></li>
+            </ul>
+          </li>
+          <li><a href="enquete.html"><span>L'enquête<span class="num">III.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="enquete.html"><span>Le dossier</span></a></li>
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#enquete-temoins"><span>Les trois témoins</span></a></li>
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#enquete-gains"><span>À gagner</span></a></li>
+            </ul>
+          </li>
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#visiter"><span>Visiter<span class="num">IV.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#visiter"><span>Venir à Saint-Seurin</span></a></li>
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#enquete-formats"><span>L'enquête au château</span></a></li>
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#visiter"><span>Visites &amp; dégustations</span></a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="menu-second">
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#contact"><span>Où trouver nos vins</span></a></li>
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#contact"><span>Contact &amp; accès</span></a></li>
+        </ul>
+        <ul class="menu-third">
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#contact"><span>Espace professionnels</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="dossier" data-header="dark">
+
+    <!-- ============ 1. La couverture du dossier ============ -->
+    <section class="etape etape--couverture" data-pour="couverture" aria-labelledby="titre-dossier">
+      <div class="chemise">
+        <span class="tampon">Confidentiel · Famille</span>
+        <p class="ref">Affaire n° 1793 · Saint-Seurin-de-Cadourne</p>
+        <h1 id="titre-dossier">La page <em>arrachée</em></h1>
+        <p class="accroche">Trois châteaux. Trois témoins. Une page manquante.</p>
+        <form class="enqueteur" data-form="nom">
+          <label for="nom-enqueteur">Enquêteur chargé du dossier</label>
+          <input id="nom-enqueteur" name="nom" type="text" maxlength="40" autocomplete="off" placeholder="Votre prénom">
+          <button class="btn btn--plein" type="submit"><span>Ouvrir le dossier</span></button>
+        </form>
+        <p class="note">Votre prénom ne sert qu'à signer votre certificat. Il reste dans votre navigateur.</p>
+      </div>
+    </section>
+
+    <!-- ============ 2. Le prologue : le mot de Lovely et le carnet d'Élie ============ -->
+    <section class="etape etape--prologue" data-pour="prologue" aria-label="Prologue">
+      <div class="pieces">
+        <article class="lettre-lovely">
+          <p class="date">Saint-Seurin, octobre 2026</p>
+          <p>Bonjour <span data-enqueteur>à vous</span>,</p>
+          <p>En vidant le vieux bureau de courtage de la famille, j'ai trouvé une boîte en fer. Dedans, le carnet d'Élie, notre aïeul, courtier du roi en 1793. Sa dernière page a été arrachée.</p>
+          <p>Mon arrière-grand-père Louis, mon grand-père Jean et mon père Éric en ont chacun gardé un morceau. Chacun l'a caché sur sa terre. Aucun des trois ne m'a jamais dit pourquoi.</p>
+          <p>Moi, je suis trop proche d'eux pour les interroger. Vous, non. Allez les voir.</p>
+          <p class="signature">Lovely</p>
+        </article>
+        <figure class="carnet carnet--dossier">
+          <div class="carnet-page">
+            <p class="carnet-lieu">Bordeaux, l'an 1793</p>
+            <p class="carnet-texte">Goûté ce jour les vins de trois maisons. Je les ai jugés comme on juge les hommes : à ce qu'ils deviennent avec le temps. Un jour, les miens auront leur terre. Ils seront différents, comme le sont les vins. Qu'ils n'oublient pas que</p>
+            <svg class="dechirure" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H400V12L388 22 371 13 356 25 340 15 322 27 305 14 291 24 273 12 258 26 240 16 224 28 207 15 190 25 174 13 157 27 140 17 123 26 108 14 90 24 73 13 57 26 40 15 22 25 9 14 0 21Z"/></svg>
+          </div>
+          <figcaption>Pièce n° 1 · Le carnet de courtage d'Élie Miailhe, dernière page arrachée.</figcaption>
+        </figure>
+      </div>
+      <div class="suite">
+        <button class="btn btn--plein" type="button" data-aller="tableau"><span>Commencer l'enquête</span></button>
+      </div>
+    </section>
+
+    <!-- ============ 3. Le tableau d'enquête ============ -->
+    <section class="etape etape--tableau" data-pour="tableau" aria-labelledby="titre-tableau">
+      <div class="tableau-entete">
+        <p class="ref">Affaire n° 1793 · Enquêteur : <span data-enqueteur>anonyme</span></p>
+        <h2 id="titre-tableau">Le tableau <em>d'enquête</em></h2>
+        <p class="progression"><span data-compte>0</span> témoignage<span data-pluriel></span> sur 3</p>
+      </div>
+      <div class="tableau">
+        <svg class="fils" aria-hidden="true"></svg>
+        <button class="fiche fiche--coufran" type="button" data-temoin="coufran">
+          <span class="punaise" aria-hidden="true"></span>
+          <span class="photo"><img src="assets/img/coufran-pigeonnier.jpg" alt="" loading="lazy"></span>
+          <span class="numero">Témoin n° 1</span>
+          <span class="nom">Louis</span>
+          <span class="role">Le grand-père · Coufran · 1924</span>
+          <span class="statut">À interroger</span>
+        </button>
+        <button class="fiche fiche--verdignan" type="button" data-temoin="verdignan">
+          <span class="punaise" aria-hidden="true"></span>
+          <span class="photo"><img src="assets/img/verdignan-hero.jpg" alt="" loading="lazy"></span>
+          <span class="numero">Témoin n° 2</span>
+          <span class="nom">Jean</span>
+          <span class="role">Le père · Verdignan · 1972</span>
+          <span class="statut">À interroger</span>
+        </button>
+        <button class="fiche fiche--soudars" type="button" data-temoin="soudars">
+          <span class="punaise" aria-hidden="true"></span>
+          <span class="photo"><img src="assets/img/soudars-vieux-ceps.jpg" alt="" loading="lazy"></span>
+          <span class="numero">Témoin n° 3</span>
+          <span class="nom">Éric</span>
+          <span class="role">Le fils · Soudars · 1973</span>
+          <span class="statut">À interroger</span>
+        </button>
+        <div class="page-centrale">
+          <p class="page-titre">La page arrachée</p>
+          <div class="emplacements">
+            <span class="morceau" data-morceau="coufran"><b>?</b></span>
+            <span class="morceau" data-morceau="verdignan"><b>?</b></span>
+            <span class="morceau" data-morceau="soudars"><b>?</b></span>
+          </div>
+          <button class="btn btn--plein reconstituer" type="button" data-aller="final" disabled><span>Reconstituer la page</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. La page reconstituée ============ -->
+    <section class="etape etape--final" data-pour="final" aria-labelledby="titre-final">
+      <div class="final-consigne">
+        <p class="ref">Dernier témoin · Lovely, la quatrième génération</p>
+        <h2 id="titre-final">Remettez la page <em>dans l'ordre</em></h2>
+        <p class="consigne">« Élie n'écrivait pas dans le désordre. Rangez les trois morceaux dans l'ordre où la famille a grandi, du plus ancien au plus jeune. »</p>
+      </div>
+      <div class="assemblage">
+        <ol class="cases" aria-label="La page, de haut en bas">
+          <li><span class="case" data-case="0"></span></li>
+          <li><span class="case" data-case="1"></span></li>
+          <li><span class="case" data-case="2"></span></li>
+        </ol>
+        <div class="paquet" aria-label="Les trois morceaux, à placer"></div>
+        <p class="retour" role="status" aria-live="polite"></p>
+        <button class="lien-vider" type="button" data-vider>Tout reprendre</button>
+      </div>
+    </section>
+
+    <!-- ============ 5. La révélation et les récompenses ============ -->
+    <section class="etape etape--fin" data-pour="fin" aria-labelledby="titre-fin">
+      <div class="revelation">
+        <div class="page-entiere">
+          <p class="carnet-lieu">Bordeaux, l'an 1793</p>
+          <p class="carnet-texte">… Qu'ils n'oublient pas que les fruits ne se ressemblent jamais, et que c'est bien ainsi. Ce qui les tient ensemble ne se voit pas : c'est la <strong class="mot-cle">racine</strong>.</p>
+          <p class="carnet-signe">É. Miailhe, courtier</p>
+        </div>
+        <div class="revelation-texte">
+          <p class="ref">Affaire n° 1793 · Résolue</p>
+          <h2 id="titre-fin">Trois châteaux, <em>une seule racine</em></h2>
+          <p>Louis a gardé le début, Jean le milieu, Éric la fin. Aucun des trois ne pouvait lire la phrase seul : c'était voulu. Coufran a le caractère, Verdignan l'élégance, Soudars le plaisir. Sous la terre, ils partagent la même racine.</p>
+          <p class="mot-lovely">« Vous l'avez lue avant moi. Bienvenue dans la famille. »<span>Lovely Miailhe</span></p>
+        </div>
+      </div>
+
+      <div class="recompenses">
+        <article class="certificat" aria-label="Certificat d'enquêteur">
+          <span class="wordmark" aria-hidden="true"></span>
+          <p class="cert-titre">Certificat d'enquêteur</p>
+          <p class="cert-nom" data-enqueteur>Enquêteur anonyme</p>
+          <p class="cert-texte">a reconstitué la page arrachée du carnet d'Élie Miailhe et rejoint le cercle des enquêteurs de la famille.</p>
+          <p class="cert-code">Code de visite · <span data-code>RACINE-1793</span></p>
+          <p class="cert-date" data-date></p>
+        </article>
+        <div class="gains-liste">
+          <h3>Ce que vous avez gagné</h3>
+          <ul>
+            <li><strong>Une visite-dégustation pour deux</strong> dans le château de votre choix, sur présentation de votre code.</li>
+            <li><strong>Une place au tirage du mois</strong> : un week-end chez les Miailhe et un atelier d'assemblage avec le maître de chai.</li>
+            <li><strong>Une chance pour le grand prix</strong> : votre nom gravé sur la barrique des racines, récolte 2027.</li>
+          </ul>
+          <p class="note">Maquette : le code et le tirage sont fictifs. Dotations à faire valider au regard de la loi Évin.</p>
+          <div class="suites">
+            <a class="btn btn--plein" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#chateaux"><span>Rencontrer les trois châteaux</span></a>
+            <button class="lien-vider" type="button" data-recommencer>Rejouer l'enquête</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interrogatoire d'un témoin -->
+  <div class="interrogatoire" role="dialog" aria-modal="true" aria-labelledby="interro-nom" hidden>
+    <div class="interro-boite">
+      <button class="fermer" type="button" aria-label="Fermer l'interrogatoire" data-fermer></button>
+      <div class="interro-photo"><img src="" alt=""></div>
+      <div class="interro-texte">
+        <p class="interro-ref"></p>
+        <h2 id="interro-nom"></h2>
+        <p class="interro-role"></p>
+        <h3>Déposition</h3>
+        <blockquote class="deposition"></blockquote>
+        <form class="cadenas" data-form="reponse">
+          <label class="question" for="reponse"></label>
+          <div class="saisie">
+            <input id="reponse" name="reponse" type="text" autocomplete="off" required>
+            <button class="btn btn--plein" type="submit"><span>Ouvrir</span></button>
+          </div>
+          <p class="retour" role="status" aria-live="polite"></p>
+        </form>
+        <details class="indice">
+          <summary>Besoin d'un indice ?</summary>
+          <p class="indice-texte"></p>
+          <a class="lien-trait indice-lien" href="#">Aller au château</a>
+        </details>
+        <div class="morceau-trouve" hidden>
+          <span class="tampon">Témoignage vérifié</span>
+          <p>Vous récupérez le morceau de <span class="qui"></span> :</p>
+          <span class="morceau grand"><b></b></span>
+          <button class="btn" type="button" data-fermer><span>Retour au tableau</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/armoiries.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/enquete.js"></script>
+</body>
+</html>

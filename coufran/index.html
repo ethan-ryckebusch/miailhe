@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script src="../assets/js/langue.js"></script><!-- la langue d'abord : la page est traduite avant d'être montrée -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Château Coufran · Le vin du grand-père · Haut-Médoc</title>
+  <meta name="description" content="Château Coufran, Haut-Médoc. Le vin du grand-père : Louis Miailhe l'a fait entrer dans la famille en 1924 et planté à 85 % de merlot.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/typographie.css">
+  <link rel="stylesheet" href="../assets/css/motifs.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-coufran">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="coufran" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <ul class="langues langues--porte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <div class="ch-signature">
+      <a class="ch-logo" href="index.html" aria-label="Château Coufran, accueil"><span class="logo-chateau " data-logo-chateau="coufran" data-forme="logotype" aria-hidden="true"></span></a>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Par MIAILHE : la maison de famille"><i>par</i><span class="wordmark"></span></a>
+    </div>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins">Nos vins</a>
+      <a href="famille.html">La famille</a>
+      <a href="#contact">Contact</a>
+      <a class="ch-nav-mobile" href="../boutique.html#coufran">La boutique</a>
+      <a class="ch-nav-mobile" href="../enquete.html">L'enquête</a>
+      <a class="ch-nav-mobile" href="../compte.html">Mon espace client</a>
+      <ul class="langues langues--menu" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </nav>
+    <div class="ch-droite">
+      <a class="ch-fort ch-fort--boutique" href="../boutique.html#coufran" aria-label="La boutique de la famille : les vins des trois châteaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 2.6h3.6M10.7 2.6v4.5c0 .8-.4 1.3-1 1.9-.9.8-1.5 1.8-1.5 3.1v8.2c0 .6.5 1.1 1.1 1.1h5.4c.6 0 1.1-.5 1.1-1.1v-8.2c0-1.3-.6-2.3-1.5-3.1-.6-.6-1-1.1-1-1.9V2.6"/><path d="M8.2 13.4h7.6v4.4H8.2z"/></svg><span>La boutique</span></a>
+      <a class="ch-fort" href="../enquete.html" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien ici" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran" aria-current="page"><span class="armoirie" data-armoirie="coufran"></span></a><a class="famille-lien" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan"><span class="armoirie" data-armoirie="verdignan"></span></a><a class="famille-lien" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars"><span class="armoirie" data-armoirie="soudars"></span></a></nav>
+      <span class="ch-icones"><a class="entete-icone entete-compte-lien" href="../compte.html" data-compte aria-label="Mon espace client"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.3" r="3.8"/><path d="M4.6 20.4c.9-3.9 3.9-6 7.4-6s6.5 2.1 7.4 6"/></svg><span class="entete-initiale" data-compte-initiale translate="no" hidden></span></a>
+      <a class="entete-icone" href="../boutique.html#panier" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 11.3a1.1 1.1 0 0 1-1.1 1H7.4a1.1 1.1 0 0 1-1.1-1L5.2 8.2z"/><path d="M9 10.4V6.6a3 3 0 0 1 6 0v3.8"/></svg><b class="entete-pastille" data-panier-compte translate="no" hidden>0</b></a></span>
+      <ul class="langues langues--compacte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main>
+    <!-- La porte du château s'ouvre à l'arrivée (une fois par visite, chateau.js) : on entre chez Louis -->
+    <div class="porte-chateau" aria-hidden="true">
+      <div class="porte-fond"><div class="motif"></div></div>
+      <div class="vantail vantail--g"><div class="motif"></div></div>
+      <div class="vantail vantail--d"><div class="motif"></div></div>
+      <div class="porte-seuil">
+        <span class="embleme" data-armoirie="coufran" aria-hidden="true"></span>
+        <p class="porte-nom"><span class="logo-chateau " data-logo-chateau="coufran" data-forme="logo" aria-hidden="true"></span><span class="sr-only">Château Coufran</span></p>
+        <p class="porte-qui">Chez Louis, le grand-père</p>
+      </div>
+    </div>
+    <section class="intro" aria-label="Château Coufran">
+      <!-- Film d'intro en boucle, comme sur privios.com : la photo du château sert d'affiche pendant le chargement -->
+      <div class="intro-fond">
+        <video autoplay muted loop playsinline preload="auto" poster="../assets/img/coufran-hero.jpg" aria-hidden="true">
+          <source src="../assets/video/coufran-intro.webm" type="video/webm">
+          <source src="../assets/video/coufran-intro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="intro-contenu">
+        <span class="embleme" data-armoirie="coufran" aria-hidden="true"></span>
+        <h1 class="intro-texte">
+          <span data-anime="1">Goûtez</span>
+          <span data-anime="2">le <span class="it">caractère</span> du</span>
+          <span data-anime="3">grand-père</span>
+        </h1>
+      </div>
+      <a class="fleche-bas" href="#nos-vins" aria-label="Découvrir nos vins"></a>
+    </section>
+
+    <section class="vins-titre" id="nos-vins">
+      <img src="../assets/img/coufran-pigeonnier.jpg" alt="" loading="lazy">
+      <p data-anime><span class="it">découvrez</span><br>nos vins</p>
+    </section>
+
+    <section class="bouteilles" aria-label="Nos vins" tabindex="-1">
+      <div class="motif" aria-hidden="true"></div>
+      <div class="piste">
+        <button class="bouteille" type="button" data-nom="Château Coufran" data-origine="AOC Haut-Médoc · le grand vin" data-lien="chateau-coufran.html" aria-label="Château Coufran"><img src="../assets/img/bouteille-coufran.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="N°2 de Coufran" data-origine="AOC Haut-Médoc · le second vin" data-lien="n2-de-coufran.html" aria-label="N°2 de Coufran"><img src="../assets/img/bouteille-coufran-n2.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="Château La Rose Maréchale" data-origine="AOC Haut-Médoc · les jeunes vignes" data-lien="la-rose-marechale.html" aria-label="Château La Rose Maréchale"><img src="../assets/img/bouteille-la-rose-marechale.webp" alt="" loading="lazy"></button>
+      </div>
+      <button class="fleche-carrousel fleche-carrousel--prec" type="button" aria-label="Bouteille précédente"></button>
+      <button class="fleche-carrousel fleche-carrousel--suiv" type="button" aria-label="Bouteille suivante"></button>
+      <div class="bouteille-desc" aria-live="polite"><p class="nom"></p><p class="origine"></p></div>
+      <div class="points"></div>
+      <div class="bouteilles-bas">
+        <div class="filtre">
+          <button class="pilule" type="button" aria-expanded="false">La gamme <span class="chevron"></span></button>
+          <ul class="filtre-liste">
+              <li><button type="button" data-aller-bouteille="0">Château Coufran<small>Le grand vin</small></button></li>
+              <li><button type="button" data-aller-bouteille="1">N°2 de Coufran<small>Le second vin</small></button></li>
+              <li><button type="button" data-aller-bouteille="2">Château La Rose Maréchale<small>Les jeunes vignes</small></button></li>
+          </ul>
+        </div>
+        <a class="pilule pilule--pleine" href="#" data-lien-vin>Le découvrir</a>
+        <div class="filtre">
+          <button class="pilule" type="button" aria-expanded="false">Où l'acheter <span class="chevron"></span></button>
+          <ul class="filtre-liste">
+              <li><a href="../boutique.html#coufran">La boutique de la famille<small>Les trois châteaux, un seul panier</small></a></li>
+              <li><a href="../boutique.html#ou-trouver">Où trouver nos vins<small>Auchan, Carrefour, E.Leclerc, Intermarché : la carte des magasins</small></a></li>
+              <li>Maisons du Vin<small>Saint-Seurin-de-Cadourne et Pauillac</small></li>
+              <li>En France<small>Monoprix, en bouteille et en demi-bouteille</small></li>
+              <li>En Belgique<small>Colruyt, depuis plus de soixante-dix ans</small></li>
+              <li>Dans le monde<small>Les négociants de la Place de Bordeaux</small></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="manifeste">
+      <div class="motif" aria-hidden="true"></div>
+      <h2 class="manifeste-titre" data-anime>Le merlot<br><span class="it">qui a tenu tête</span><br>au cabernet</h2>
+      <a class="cercle" href="famille.html" data-anime="2">
+        <img src="../assets/img/coufran-merlot.jpg" alt="" loading="lazy">
+        <p><span class="it">découvrez</span><br>la famille</p>
+      </a>
+    </section>
+
+    <!-- Le prêt-à-boire, ce qui distingue la famille : elle garde ses vins jusqu'à ce qu'ils soient prêts -->
+    <section class="pret" id="pret-a-boire" aria-labelledby="pret-titre">
+      <figure class="pret-photo" data-anime><img src="../assets/img/feed/ombre-barrique.jpg" alt="L'ombre d'un verre de vin sur une barrique marquée 2005 à la craie" loading="lazy"></figure>
+      <div class="pret-texte">
+        <p class="pret-sur">Vigneron du prêt-à-boire</p>
+        <h2 id="pret-titre" data-anime>Nous l'avons attendu<br><span class="it">pour vous</span></h2>
+        <p data-anime="2">Un grand bordeaux n'est prêt à boire qu'après quelques années de vieillissement. Coufran en a fait sa spécialité : les bouteilles vieillissent au château, dans un local climatisé, et ne sont mises en vente que lorsqu'elles se sont épanouies.</p>
+        <ul class="pret-points" data-anime="3">
+          <li>Gardé au château jusqu'à sa mise en vente</li>
+          <li>Numéro de lot gravé sur chaque flacon depuis le millésime 2005</li>
+          <li>À ouvrir le soir même : ni cave, ni patience</li>
+        </ul>
+        <a class="pilule" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html#pret-a-boire" data-anime="4">Pourquoi la famille attend</a>
+      </div>
+    </section>
+
+    <!-- Le témoin de l'Enquête à la racine : sa pièce à conviction sert à l'étape 4 (enquete.html) -->
+    <section class="relance-test" aria-labelledby="relance-test-titre">
+      <div class="motif"></div>
+      <p class="relance-test-sur">Trois châteaux voisins, une même famille</p>
+      <h2 id="relance-test-titre" data-anime>Coufran, Verdignan ou Soudars : <span class="it">lequel vous ressemble ?</span></h2>
+      <p>Sept questions simples, sur ce que vous aimez et ce que vous aimez boire, sans rien connaître au vin.</p>
+      <a class="pilule pilule--pleine" href="../quiz.html">Faire le test</a>
+    </section>
+
+    <section class="temoin" id="temoin" aria-labelledby="temoin-nom">
+      <div class="temoin-grille">
+        <div>
+          <span class="cachet">Enquête à la racine · Témoin n° 1</span>
+          <h2 id="temoin-nom" data-anime>Louis</h2>
+          <p class="role">Le grand-père · arrivé en 1924</p>
+          <blockquote data-anime="2">« En 1924, ici, tout le monde plantait du cabernet. J'ai tout arraché pour replanter en merlot. On m'a pris pour un fou. Depuis, la part de merlot n'a pas bougé d'un pied. »</blockquote>
+          <a class="pilule" href="../enquete.html">Reprendre l'enquête</a>
+        </div>
+        <div class="piece" data-anime="3">
+          <p class="piece-etiquette">Pièce à conviction</p>
+          <p class="piece-valeur">85 %</p>
+          <p class="piece-legende">de merlot dans les vignes de Coufran : la part que Louis a choisie en 1924, le reste en cabernet-sauvignon. Un siècle plus tard, elle n'a pas changé.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Coufran<br>33180 Saint-Seurin-de-Cadourne, France</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+      <span class="logo-chateau pied-logo" data-logo-chateau="coufran" data-forme="logo" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593102">+33 5 56 59 31 02</a><br><a href="mailto:contact@chateau-coufran.com">contact@chateau-coufran.com</a></p>
+        <p class="gris">Visites sur rendez-vous</p>
+      </div>
+    </div>
+    <div class="ch-contacts">
+      <div class="ch-contact">
+        <p class="titre">Nous rendre visite</p>
+        <p>Les visites de la propriété se font pour les professionnels et les particuliers, uniquement sur rendez-vous.</p>
+        <p>Votre demande : <a href="mailto:emiailhe@coufran-verdignan.com">emiailhe@coufran-verdignan.com</a></p>
+        <p><a class="lien-fleche" href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20Coufran%20Saint-Seurin-de-Cadourne" target="_blank" rel="noopener">Itinéraire ↗</a></p>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Production et commercialisation</p>
+        <p class="nom">Éric Miailhe</p>
+        <p class="gris">Château Coufran<br>33180 Saint-Seurin-de-Cadourne</p>
+        <p>Tél. <a href="tel:+33556593102">+33 5 56 59 31 02</a><br>Fax +33 5 56 59 72 39<br>Portable <a href="tel:+33680316878">+33 6 80 31 68 78</a></p>
+        <p><a href="mailto:emiailhe@coufran-verdignan.com">emiailhe@coufran-verdignan.com</a></p>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Administratif et comptabilité</p>
+        <p class="nom">Marie-Cécile Vicaire</p>
+        <p class="gris">24, cours de Verdun<br>33000 Bordeaux</p>
+        <p>Tél. <a href="tel:+33556449084">+33 5 56 44 90 84</a><br>Fax +33 5 56 81 32 35</p>
+        <p><a href="mailto:contact@chateau-coufran.com">contact@chateau-coufran.com</a></p>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Acheter nos vins</p>
+        <ul class="ch-achats"><li><a href="../boutique.html#coufran">La boutique de la famille</a><small>Les trois châteaux, un seul panier</small></li><li><a href="../boutique.html#ou-trouver">Où trouver nos vins</a><small>Auchan, Carrefour, E.Leclerc, Intermarché : la carte des magasins</small></li><li>Maisons du Vin<small>Saint-Seurin-de-Cadourne et Pauillac</small></li><li>En France<small>Monoprix, en bouteille et en demi-bouteille</small></li><li>En Belgique<small>Colruyt, depuis plus de soixante-dix ans</small></li><li>Dans le monde<small>Les négociants de la Place de Bordeaux</small></li></ul>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Coufran · une maison de la famille <span class="wordmark"></span></a>
+      <nav class="reseaux" data-reseaux></nav>
+      <ul class="langues langues--pied" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../verdignan/index.html">Verdignan</a> · <a href="../soudars/index.html">Soudars</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <a href="../blog/index.html">Le blog</a>
+        <a href="../boutique.html?espace=pro">Espace professionnel</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    <p class="mentions">Château Coufran · RCS Bordeaux 782 004 766 · siège : Château Coufran, 33180 Saint-Seurin-de-Cadourne · directeur de la publication : Éric Miailhe, représentant légal. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/feuille-miailhe.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/logos-chateaux.js"></script>
+  <script src="../assets/js/typographie.js"></script>
+  <script src="../assets/js/reseaux.js"></script>
+  <script src="../assets/js/espace.js"></script>
+  <script src="../assets/js/voix.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+  <script src="../assets/js/survol.js"></script>
+</body>
+</html>

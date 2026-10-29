@@ -1,0 +1,609 @@
+/* MIAILHE — maquette de site vitrine
+   Système : une racine commune (MIAILHE) + trois identités de château.
+   Palette de test « Rouge Bordeaux » (26/10/2026), inspirée de bordeaux.com : blanc, noir, un seul accent rouge vif.
+   Palette précédente « Lie de vin » : --paper #f7f4f1, --ink #171214, terres #4a1f2c → #16090e, --or #d3b48f, --root #b98a88. */
+
+:root {
+  --ink: #0d0d0d;
+  --ink-2: #1f1f1f;
+  --paper: #ffffff;
+  --paper-2: #f5f5f5;
+  --stone: #e5e5e5;
+  --mute: #737373;
+
+  /* Les « terres » des sections sombres : du noir graphite au noir */
+  --earth-1: #1f1f1f;
+  --earth-2: #181818;
+  --earth-3: #121212;
+  --earth-4: #0b0b0b;
+  --earth-5: #050505;
+  --root: #9b0d33;
+  --root-2: #7a0a28;
+  --sap: #ff2d5f;
+  --or: #ffffff;
+  --vigne: #e50041;
+  --on-dark: #ffffff;
+  --on-dark-mute: #a3a3a3;
+  --on-dark-texte: #e5e5e5;
+  /* Les mêmes teintes en composantes RVB, pour les transparences : rgba(var(--voile), .5) */
+  --voile: 5, 5, 5;
+  --lueur: 229, 0, 65;
+  --clair: 255, 255, 255;
+  /* L'or de l'entrée (29/10/2026, demande de l'utilisateur : l'intro et la porte d'âge en doré, plus en rouge) :
+     l'or antique du logo, une teinte plus claire pour les survols, l'or de Coufran pour les traits */
+  --dore: #c9a35a;
+  --dore-clair: #e6cd94;
+  --dore-fonce: #a97d2e;
+
+  /* Les trois châteaux, couleurs choisies par l'équipe le 27/10/2026 : l'or, le bleu de l'estuaire et le vert bouteille (27/10/2026, le bleu remplace le rouge),
+     trois couleurs d'étiquette. Encres, teintes et fonds dérivés en OKLCH, même teinte. */
+  --coufran: #a97d2e;          /* or : la lumière sur les graves, la chaleur du merlot du grand-père */
+  --coufran-encre: #765412;    /* la même, assez sombre pour du texte sur blanc */
+  --coufran-fond: #190d00;
+  --coufran-texte: #f0e1ca;
+  --coufran-teinte: #fbf6ee;
+  --coufran-vif: #ca9c4e;      /* la même, assez claire pour les fonds sombres */
+  --verdignan: #0f4366;        /* bleu de l'estuaire : la Gironde que le château regarde, le temps long du vin de garde */
+  --verdignan-encre: #0f4366;
+  --verdignan-fond: #001123;
+  --verdignan-texte: #d0e6f9;
+  --verdignan-teinte: #f0f8fe;
+  --verdignan-vif: #72abd9;
+  --soudars: #0f320a;          /* vert bouteille : la vigne qu'Éric a plantée sur la pierre */
+  --soudars-encre: #0f320a;
+  --soudars-fond: #051404;
+  --soudars-texte: #d7e9d4;
+  --soudars-teinte: #f2f9f1;
+  --soudars-vif: #7bae73;
+
+  --f-mark: "Cinzel", "Trajan Pro", serif;
+  --f-serif: "Cormorant", "Cormorant Garamond", Garamond, serif;
+  --f-ui: "Circular", "Jost", "Avenir Next", sans-serif;
+  --f-menu: "Felix Titling", "Cinzel", serif;
+  --f-coufran: "Albertus", "Cinzel", serif;
+  --f-verdignan: "Didot Headline", "Bodoni", Didot, serif;
+  --f-verdignan-it: "Bodoni", Didot, serif;
+  --f-soudars: "Cooper Black", "Bookman", Georgia, serif;
+  --f-it: "Canela", "Cormorant", Georgia, serif;
+  --f-plume: "Meddon", cursive;
+  --f-signature: "Herr Von Muellerhoff", cursive;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --ease: cubic-bezier(.2, .7, .1, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+/* Un élément caché l'est vraiment : sans cette règle, un display posé par sa classe l'emporte sur l'attribut hidden,
+   et l'élément, invisible, capte encore la souris (la carte du seuil refermait la porte du milieu) */
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-serif);
+  font-size: clamp(18px, 1.15vw + 12px, 21px);
+  line-height: 1.55;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+body.is-locked { overflow: hidden; }
+img { max-width: 100%; display: block; }
+figure { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+::selection { background: var(--sap); color: var(--on-dark); }
+
+/* Grain photographique sur toute la page */
+body::after {
+  content: "";
+  position: fixed; inset: -50%;
+  pointer-events: none; z-index: 90;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .05;
+  mix-blend-mode: multiply;
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Typographie commune ---------- */
+.overline {
+  font-family: var(--f-mark);
+  font-size: .72rem;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.lead { font-size: 1.28em; line-height: 1.45; font-weight: 400; }
+h1, h2, h3 { font-weight: 300; line-height: 1.02; margin: 0; letter-spacing: -.01em; }
+p { margin: 0 0 1em; }
+em { font-style: italic; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .7em;
+  font-family: var(--f-ui); font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
+  padding: 1.05em 1.6em; border: 1px solid currentColor; border-radius: 999px;
+  background: transparent; cursor: pointer; text-decoration: none;
+  transition: background .4s var(--ease), color .4s var(--ease), border-color .4s;
+}
+.btn:hover { background: currentColor; }
+.btn:hover > span { color: var(--paper); }
+.dark .btn:hover > span, .btn--light:hover > span { color: var(--ink); }
+.btn--plein { background: var(--sap); border-color: var(--sap); color: var(--on-dark); }
+.btn--plein:hover { background: var(--on-dark); border-color: var(--on-dark); }
+.btn--plein:hover > span { color: var(--ink); }
+
+/* ---------- Logo MIAILHE (vectorisé, couleur = currentColor) ---------- */
+.wordmark { display: inline-block; line-height: 0; text-decoration: none; color: inherit; }
+.wordmark .logo-svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* ---------- En-tête et menu plein écran, d'après chateau-cheval-blanc.com ----------
+   Burger à gauche, logo au centre, langues à droite. Le menu glisse depuis la gauche :
+   quatre grands titres numérotés, leurs sous-entrées soulignées, deux menus secondaires à droite
+   et, en bas à gauche, la couverture de l'Enquête à la place du podcast. */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 56;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 1.5%;
+  color: var(--ink);
+  transition: color .5s var(--ease), background-color .5s var(--ease);
+}
+.site-header > div { flex: 1; display: flex; align-items: center; }
+.site-header .header-droite { justify-content: flex-end; }
+.site-header.on-dark { color: var(--on-dark); }
+.site-header.is-scrolled { background-color: rgba(255, 255, 255, .96); }
+.site-header.is-scrolled.on-dark { background-color: rgba(5, 5, 5, .94); }
+.site-header .wordmark { width: clamp(132px, 12.5vw, 188px); transition: color .5s var(--ease), opacity .5s var(--ease); }
+/* les capitales de MIAILHE occupent le tiers haut du logo (la racine pend dessous) : on le descend de 30 % de sa hauteur
+   pour que le milieu des lettres tombe sur la ligne du menu, des onglets et des boutons */
+.site-header > .wordmark { transform: translateY(30%); }
+/* Le logo de l'en-tête reste toujours visible (28/10/2026, demande de l'utilisateur : il s'effaçait en bas des pages,
+   quand le logo du pied de page passait sous l'en-tête) */
+.site-header.active { background-color: #fff; color: #282828; }
+
+.ouvrir-menu { position: relative; display: block; padding: 9px 10px; margin-left: -10px; background: none; border: 0; cursor: pointer; color: inherit; }
+.ouvrir-menu span, .ouvrir-menu::before, .ouvrir-menu::after {
+  content: ""; display: block; width: 21px; height: 1px; margin: 5px 0;
+  background: currentColor; transition: all .5s;
+}
+.site-header.active .ouvrir-menu span { opacity: 0; }
+.site-header.active .ouvrir-menu::before, .site-header.active .ouvrir-menu::after { position: absolute; left: 10px; top: 50%; margin: 0; }
+.site-header.active .ouvrir-menu::before { transform: rotate(45deg); }
+.site-header.active .ouvrir-menu::after { transform: rotate(-45deg); }
+
+/* La racine des onglets (survol.js) : au survol, une racine pousse sous le mot, lâche une radicelle et s'achève en
+   feuille de vigne ; elle se retire dans l'autre sens. L'onglet de la page ouverte la garde. */
+.racine-survol { position: absolute; left: -2px; top: calc(100% - 7px); overflow: visible; pointer-events: none; }
+.racine-survol .brin, .racine-survol .radicelle, .racine-survol .petiole { fill: none; stroke: currentColor; stroke-linecap: round; }
+.racine-survol .brin { stroke-width: 1.05; stroke-dasharray: 1 1.1; stroke-dashoffset: 1.05; transition: stroke-dashoffset .4s cubic-bezier(.4, 0, .6, 1) .12s; }
+.racine-survol .radicelle { stroke-width: .7; stroke-dasharray: 1 1.1; stroke-dashoffset: 1.05; transition: stroke-dashoffset .2s .05s; }
+.racine-survol .petiole { stroke-width: .8; }
+.racine-survol .limbe { fill: var(--racine-feuille, currentColor); }
+.racine-survol .feuille { transform: scale(0) rotate(-40deg); opacity: 0; transition: transform .25s, opacity .2s; }
+:is(a:hover, a:focus-visible, a[aria-current]) > .racine-survol .brin { stroke-dashoffset: 0; transition: stroke-dashoffset .6s cubic-bezier(.3, .6, .2, 1); }
+:is(a:hover, a:focus-visible, a[aria-current]) > .racine-survol .radicelle { stroke-dashoffset: 0; transition: stroke-dashoffset .4s ease-out .3s; }
+:is(a:hover, a:focus-visible, a[aria-current]) > .racine-survol .feuille { transform: none; opacity: 1; transition: transform .7s cubic-bezier(.2, .8, .25, 1.15) .42s, opacity .3s .42s; }
+@media (prefers-reduced-motion: reduce) { .racine-survol * { transition-duration: .01s !important; transition-delay: 0s !important; } }
+
+/* Le sélecteur de langue (.langues) est dans typographie.css, commun à toutes les pages */
+
+.mainnav {
+  position: fixed; inset: 0; z-index: 55;
+  background: #fff; color: #282828;
+  font-family: var(--f-ui); font-size: 13px; line-height: 1.2;
+  transform: translateX(-100%); visibility: hidden;
+  transition: transform .5s, visibility 0s .5s;
+  overflow-y: auto; overscroll-behavior: contain;
+}
+.mainnav.active { transform: none; visibility: visible; transition: transform .5s; }
+body.menu-ouvert { overflow: hidden; }
+.mainnav a { text-decoration: none; color: inherit; }
+.mainnav ul { list-style: none; margin: 0; padding: 0; }
+.mainnav-contenu { position: relative; min-height: 100%; padding: 70px 5%; display: flex; flex-direction: column; justify-content: space-around; }
+
+.menu-principal { text-align: center; }
+.menu-principal > li { margin: 41px 0 30px; }
+.menu-principal > li > a { display: inline-block; overflow: hidden; vertical-align: top; }
+.menu-principal > li > a > span {
+  display: inline-block;
+  font-family: var(--f-menu); font-weight: 300; text-transform: uppercase;
+  font-size: clamp(3.2rem, 6.8vw, 98px); line-height: 1.1; letter-spacing: -.03em;
+  transform: translateY(100%);
+}
+.mainnav.active .menu-principal > li > a > span { animation: monte 1s .2s both; }
+.mainnav.active .menu-principal > li:nth-child(2) > a > span { animation-delay: .28s; }
+.mainnav.active .menu-principal > li:nth-child(3) > a > span { animation-delay: .36s; }
+.mainnav.active .menu-principal > li:nth-child(4) > a > span { animation-delay: .44s; }
+@keyframes monte { from { transform: translateY(100%); } to { transform: none; } }
+.menu-principal .num { margin-left: 10px; font-family: var(--f-ui); font-weight: 500; font-size: 13px; letter-spacing: normal; }
+.sous-menu { display: flex; flex-wrap: wrap; justify-content: center; }
+.sous-menu a, .menu-second a, .menu-third a, .lien-trait {
+  position: relative; display: inline-block;
+  text-transform: uppercase; font-family: var(--f-ui); font-weight: 500; font-size: 13px; letter-spacing: .01em;
+}
+.sous-menu a { margin: 0 16px; }
+.sous-menu a::after, .menu-second a::after, .menu-third a::after, .lien-trait::after {
+  content: ""; position: absolute; right: 0; bottom: -2px;
+  width: 100%; height: 1px; background: currentColor; transition: width .3s;
+}
+.sous-menu a:hover::after, .menu-second a:hover::after, .menu-third a:hover::after, .lien-trait:hover::after { width: 0; }
+.menu-second, .menu-third { position: absolute; right: 12px; top: 84px; text-align: right; }
+.menu-second li, .menu-third li { margin: 20px 0; }
+.menu-second a, .menu-third a { margin: 0 10px; }
+.menu-third { top: auto; bottom: 7px; }
+.mainnav.active .mainnav-menus .menu-second, .mainnav.active .mainnav-menus .sous-menu,
+.mainnav.active .mainnav-menus .menu-third, .mainnav.active .mainnav-enquete { animation: fondu 1s .2s both; }
+@keyframes fondu { from { opacity: 0; } to { opacity: 1; } }
+
+.mainnav-enquete { position: absolute; width: 23%; bottom: 22px; left: 21px; z-index: 1; }
+.titre-3 { margin: 0; font-family: var(--f-serif); font-size: 17px; line-height: 1.4; }
+/* Couverture composée comme la pochette du podcast de Cheval Blanc : photo encadrée, grand titre sur bandeaux */
+.mainnav .couverture-enquete {
+  position: relative; display: block; margin-top: 12px; aspect-ratio: 1; overflow: hidden;
+  background: #0d0d0d; color: #fff;
+}
+.couverture-enquete .marque { position: absolute; top: 6.5%; left: 0; right: 0; text-align: center; font-family: var(--f-mark); font-size: 11px; letter-spacing: .5em; text-transform: uppercase; opacity: .85; }
+.couverture-enquete .photo { position: absolute; top: 15%; left: 15%; right: 15%; bottom: 24%; overflow: hidden; }
+.couverture-enquete img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1) brightness(.8); transition: transform .8s, opacity .8s; }
+.couverture-enquete:hover img { opacity: .7; transform: scale(1.02); }
+.couverture-enquete .cachet {
+  position: absolute; top: 20%; right: 9%; transform: rotate(-6deg);
+  padding: .45em .8em; border: 1.5px solid var(--vigne); background: rgba(13, 13, 13, .55); color: var(--vigne);
+  font-family: var(--f-ui); font-weight: 500; font-size: 10px; letter-spacing: .24em; text-transform: uppercase; white-space: nowrap;
+}
+.couverture-enquete .titre {
+  position: absolute; left: 7%; right: 4%; bottom: 6%;
+  font-family: var(--f-ui); font-weight: 500; font-size: clamp(1.5rem, 3.4vw, 3.3rem); line-height: 1.08; letter-spacing: -.02em; text-transform: uppercase;
+}
+.couverture-enquete .titre span { display: inline-block; padding: 0 .12em; background: #0d0d0d; }
+.couverture-enquete .titre span:last-of-type { margin-left: .55em; color: var(--vigne); }
+/* La loupe tient la place du bouton lecture du podcast */
+.couverture-enquete .loupe {
+  position: absolute; left: 50%; top: 44%; width: 40px; height: 40px; margin: -20px 0 0 -20px;
+  border: 1.5px solid #fff; border-radius: 50%; transition: transform .8s;
+}
+.couverture-enquete .loupe::after { content: ""; position: absolute; right: -9px; bottom: -6px; width: 14px; height: 1.5px; background: #fff; transform: rotate(45deg); }
+.couverture-enquete:hover .loupe { transform: scale(1.05); }
+
+@media (max-width: 900px) {
+  .site-header { padding: 14px 5%; }
+  .site-header .wordmark { width: 132px; }
+  .mainnav-contenu { flex-direction: column-reverse; justify-content: flex-end; }
+  .menu-principal > li { margin: 16px 0; }
+  .menu-principal > li > a > span { font-size: 42px; letter-spacing: -.04em; line-height: 1.35; }
+  .sous-menu { display: block; max-height: 0; overflow: hidden; transition: max-height .5s; }
+  .sous-menu li { margin: 25px 0; }
+  .menu-principal > li.active .sous-menu { max-height: 500px; }
+  .menu-second, .menu-third { position: static; text-align: center; margin: 0; }
+  .menu-second li, .menu-third li { margin: 31px 0; }
+  .menu-second::before { content: ""; display: block; width: 50px; height: 1px; margin: 0 auto; background: rgba(0, 0, 0, .5); }
+  .mainnav-enquete { position: static; width: 100%; margin-top: auto; padding-top: 18px; text-align: center; }
+  .couverture-enquete { max-width: 340px; margin: 12px auto 0; }
+  .couverture-enquete .titre { font-size: 2.1rem; text-align: left; }
+}
+
+/* ---------- Intro (d'après The Symphony of Vines) : logo, racine, noms des trois châteaux ---------- */
+.intro-ecran {
+  position: absolute; inset: 0; z-index: 2; overflow: hidden;
+  background: var(--earth-5); cursor: default;
+  transition: opacity 1s var(--ease), visibility 1s;
+}
+.intro-ecran.is-fini { opacity: 0; visibility: hidden; }
+.intro-logo {
+  position: absolute; left: 50%; top: 40%;
+  width: clamp(230px, 22vw, 330px); color: #fff;  /* le logo de la famille en blanc au lancement (29/10/2026, demande de l'utilisateur) */
+  opacity: 0; filter: blur(8px); transform: translate(-50%, -50%) scale(.8);
+  transition: opacity 2s var(--ease), filter 2s var(--ease), transform 2s var(--ease);
+}
+.intro-ecran.is-joue .intro-logo { opacity: 1; filter: blur(0); transform: translate(-50%, -50%); }
+.intro-racines { position: absolute; left: 0; right: 0; bottom: 8vh; height: 34vh; }
+.intro-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.intro-svg .piste { fill: none; stroke: var(--dore-fonce); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0; transition: opacity 1.2s; }
+.intro-ecran.is-trace .intro-svg .piste { opacity: .3; }
+.intro-svg .revele { fill: none; stroke: #fff; stroke-width: 18; }
+.intro-svg .sarment { fill: var(--dore-fonce); }
+/* La feuille de vigne se déplie au passage de la pointe du sarment */
+.intro-svg .feuille { opacity: 0; transform: scale(0) rotate(-28deg); transition: transform 1.6s cubic-bezier(.2, .8, .25, 1.06), opacity .8s; }
+.intro-svg .noeud.is-ouvert .feuille { opacity: 1; transform: none; }
+.intro-svg .limbe { fill: var(--dore); }
+.intro-svg .nervures { fill: none; stroke: var(--earth-5); stroke-width: .7; stroke-linecap: round; }
+.intro-svg .petiole { fill: none; stroke: var(--dore-fonce); stroke-width: .9; }
+/* Les racines, dessinées à la plume (intro.js) : un ruban plein, pleins et déliés */
+.intro-svg .racine { fill: var(--dore); }
+.intro-svg .limbe { fill-rule: evenodd; }
+.intro-noms {
+  position: absolute; left: 0; right: 0; top: 50%;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  margin: 0; padding: 0 var(--gutter); list-style: none;
+  color: var(--on-dark); text-align: center;
+}
+/* Le nom s'écrit de gauche à droite derrière la pointe de la racine (--f, de 0 à 1, piloté par intro.js) */
+.intro-nom .mot {
+  --f: 0;
+  display: inline-block; font-size: clamp(.95rem, 2vw, 1.8rem); line-height: 1.1; letter-spacing: .12em; text-transform: uppercase;
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(var(--f) * (100% + 1.4em) - 1.4em), transparent calc(var(--f) * (100% + 1.4em)));
+  mask-image: linear-gradient(90deg, #000 calc(var(--f) * (100% + 1.4em) - 1.4em), transparent calc(var(--f) * (100% + 1.4em)));
+}
+/* Les noms sont les logos des châteaux (assets/js/logos-chateaux.js) : même largeur pour les trois, blancs */
+/* logos officiels des châteaux (28/10/2026) : un cadre plus allongé (1000 × 220), d'où des largeurs revues */
+.intro-nom .mot.logo-chateau { width: clamp(8.5rem, 21vw, 20rem); line-height: 0; }
+.intro-nom .mot.logo-chateau svg { display: block; width: 100%; height: auto; }
+.intro-nom small {
+  display: block; margin-top: 1.5em;
+  font-family: var(--f-mark); font-size: .62rem; letter-spacing: .3em; color: var(--on-dark-mute);
+  opacity: 0; transform: translateY(6px); transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.intro-nom.is-ecrit small { opacity: 1; transform: none; }
+
+/* ---------- Vérification de l'âge : l'écran d'entrée, sur le plan drone des trois châteaux, en or (29/10/2026) ---------- */
+.age-gate {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center; padding: var(--gutter);
+  background: radial-gradient(120% 90% at 50% 100%, var(--earth-2), var(--earth-5) 70%);
+  color: var(--on-dark); text-align: center;
+  transition: opacity 1.2s var(--ease), visibility 1.2s;
+}
+.age-gate.is-gone { opacity: 0; visibility: hidden; }
+.entree-fond { position: absolute; inset: 0; overflow: hidden; }
+.entree-fond picture { display: block; width: 100%; height: 100%; }
+.entree-fond img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%;
+  filter: brightness(.68) saturate(.95) contrast(1.04);
+  transform: scale(1.12); transition: transform 16s cubic-bezier(.2, .6, .2, 1);
+}
+.age-gate.is-pret .entree-fond img { transform: scale(1); }
+.entree-fond::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(36% 30% at 50% 50%, rgba(var(--voile), .6), transparent),
+    radial-gradient(80% 70% at 50% 45%, transparent 40%, rgba(var(--voile), .62)),
+    linear-gradient(rgba(var(--voile), .35), transparent 30%, transparent 62%, rgba(var(--voile), .7));
+}
+.entree { position: relative; z-index: 1; }
+.entree > * { opacity: 0; transform: translateY(22px); transition: opacity 1.3s var(--ease), transform 1.3s var(--ease); }
+.age-gate.is-pret .entree > * { opacity: 1; transform: none; }
+.entree > :nth-child(2) { transition-delay: .15s; }
+.entree > :nth-child(3) { transition-delay: .25s; }
+.entree > :nth-child(4) { transition-delay: .4s; }
+.entree > :nth-child(n+5) { transition-delay: .55s; }
+.entree .wordmark { width: min(480px, 76vw); margin-bottom: 2.4rem; color: #fff; }
+.age-gate p { max-width: 34em; margin: 0 auto 1.6rem; color: rgba(243, 236, 223, .9); text-shadow: 0 1px 14px rgba(0, 0, 0, .7); }
+.age-gate .choix { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; margin-top: 1.8rem; }
+/* Boutons au contour ovale tracé à la main, comme « Enter experience » */
+.age-gate .btn { position: relative; border: 0; border-radius: 0; padding: 1.25em 2.1em; background: none; color: var(--on-dark); }
+.age-gate .btn::before, .age-gate .btn::after {
+  content: ""; position: absolute; inset: -3px -8px; pointer-events: none;
+  border: 1px solid var(--dore-fonce); border-radius: 48% 52% 46% 54% / 58% 44% 56% 42%;
+  transition: transform .9s var(--ease), border-color .5s;
+}
+.age-gate .btn::after { inset: 2px -3px; opacity: .45; border-radius: 55% 45% 52% 48% / 44% 58% 42% 56%; transform: rotate(-1.6deg); }
+.age-gate .btn--plein::before { border-color: var(--dore); }
+.age-gate .btn:hover { background: none; }
+.age-gate .btn:hover > span { color: var(--dore-clair); }
+.age-gate .btn:hover::before { transform: rotate(1.6deg) scale(1.04); }
+.age-gate .btn:hover::after { transform: rotate(.8deg) scale(.97); }
+.age-gate .refus { margin-top: 1.4rem; font-family: var(--f-ui); font-size: .78rem; letter-spacing: .08em; background: none; border: 0; color: rgba(243, 236, 223, .78); text-shadow: 0 1px 10px rgba(0, 0, 0, .7); text-decoration: underline; cursor: pointer; }
+.age-gate .mention { margin-top: 2.6rem; font-family: var(--f-ui); font-size: .72rem; letter-spacing: .06em; color: rgba(243, 236, 223, .78); }
+.age-gate .refus-message { display: none; margin-top: 1rem; color: var(--dore-clair); }
+.age-gate.is-refused .refus-message { display: block; }
+
+/* ---------- Révélations au défilement ---------- */
+[data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 1.2s var(--ease), transform 1.2s var(--ease); }
+[data-reveal].is-in { opacity: 1; transform: none; }
+[data-reveal="image"] { opacity: 1; transform: none; clip-path: inset(12% 8% 12% 8%); transition: clip-path 1.6s var(--ease); }
+[data-reveal="image"].is-in { clip-path: inset(0 0 0 0); }
+[data-reveal="image"] :is(img, video) { transform: scale(1.12); transition: transform 2.2s var(--ease); }
+[data-reveal="image"].is-in :is(img, video) { transform: scale(1); }
+
+/* ---------- Armoiries des châteaux (assets/js/armoiries.js), chacune dans sa couleur ---------- */
+.armoirie { display: block; aspect-ratio: 160 / 200; line-height: 0; color: var(--armoirie, currentColor); }
+.armoirie svg { display: block; width: 100%; height: 100%; }
+[data-armoirie="coufran"] { --armoirie: var(--coufran); }
+[data-armoirie="verdignan"] { --armoirie: var(--verdignan); }
+[data-armoirie="soudars"] { --armoirie: var(--soudars); }
+/* Les armoiries gardent toujours la couleur exacte de leur château (or #a97d2e, bleu #0f4366, vert #0f320a). Sur un fond
+   sombre, le bouclier est posé sur son contour en ivoire (.armoirie-fond, injecté avec l'armoirie) : la lettre, les feuilles
+   et le filet restent lisibles sans que la couleur change. */
+.armoirie-fond { fill: var(--armoirie-fond, none); }
+.site-header.on-dark:not(.active) .famille-lien .armoirie { --armoirie-fond: #f6f2e9; }
+
+/* La droite de l'en-tête (source/entete.py, 28/10/2026) : la boutique et l'enquête, puis l'espace client, le panier et la
+   langue repliée. Les armoiries ne sont plus que sur les sites des châteaux. Plus de pilules (l'utilisateur ne les aimait
+   pas) : deux liens sobres, une icône et le mot, dont la racine pousse au survol et finit sur la feuille du logo (survol.js),
+   comme les onglets ; la page où l'on est garde sa racine. */
+.header-droite { gap: 0; }
+.entete-fort {
+  position: relative; display: inline-flex; align-items: center; gap: 8px; margin-right: clamp(16px, 1.9vw, 28px); padding: 8px 0;
+  color: inherit; text-decoration: none; white-space: nowrap;
+  font-family: var(--f-ui); font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+  --racine-feuille: var(--vigne);
+}
+.entete-fort > svg:not(.racine-survol) { flex: none; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.entete-fort--boutique > svg:not(.racine-survol) { width: 17px; height: 17px; }
+.entete-fort:focus-visible { outline: none; }
+@keyframes battre { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.35); } }
+
+/* Les icônes de l'espace client et du panier, la langue repliée : communes à toutes les pages (typographie.css) */
+.site-header .entete-pastille { background: var(--vigne); }
+.site-header { --entete-encre: var(--ink); --entete-fond: #fff; }
+.site-header.on-dark:not(.active) { --entete-encre: #f6f2e9; --entete-fond: #16120f; }
+.site-header.on-dark:not(.active) .entete-pastille { box-shadow: none; }
+.site-header.active .langues--compacte { opacity: 0; pointer-events: none; }
+
+@media (max-width: 1060px) { .entete-fort { margin-right: 14px; letter-spacing: .12em; } }
+@media (max-width: 960px) { .entete-fort > span { display: none; } .entete-fort { margin-right: 10px; } .entete-fort > svg:not(.racine-survol) { width: 19px; height: 19px; } }
+@media (max-width: 900px) { .site-header .wordmark { width: 118px; } }
+@media (max-width: 560px) {
+  .header-droite .langues--compacte { display: none; }      /* sur un téléphone : la langue est dans le menu et en bas de page */
+  .header-droite .entete-fort[aria-current="page"] { display: none; }      /* on y est déjà : la place va à l'espace client */
+  .entete-fort { margin-right: 8px; }
+  .entete-icone { width: 32px; height: 32px; margin: 0; }
+  .site-header .wordmark { width: 108px; }
+}
+@media (max-width: 360px) { .site-header .wordmark { width: 92px; } .entete-fort { margin-right: 6px; } .header-droite .entete-compte-lien { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-reveal], [data-reveal="image"] { opacity: 1; transform: none; clip-path: none; }
+}
+
+/* =========================================================
+   L'ENQUÊTE (section de la vitrine ; le reste de la page est dans vitrine.css)
+   ========================================================= */
+
+/* --- L'Enquête : la campagne phare, juste avant les châteaux --- */
+.enquete {
+  position: relative; overflow: hidden;
+  padding: 18vh var(--gutter) 16vh;
+  background: radial-gradient(70% 40% at 50% 0%, rgba(var(--lueur), .14), transparent 70%), #050505;
+  color: var(--on-dark);
+}
+.enquete > div { max-width: 1240px; margin-left: auto; margin-right: auto; }
+.enquete-entete { text-align: center; margin-bottom: 12vh; }
+.tampon {
+  display: inline-block; margin-bottom: 2.4rem; padding: .6em 1.2em;
+  border: 1.5px solid var(--vigne); color: var(--vigne); transform: rotate(-4deg);
+  font-family: var(--f-ui); font-weight: 500; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase;
+}
+.enquete-entete .overline { display: block; color: var(--on-dark-mute); margin-bottom: 1.4rem; }
+.enquete-entete h2 { font-size: clamp(3.6rem, 11vw, 10rem); line-height: .92; letter-spacing: -.02em; }
+.enquete-entete h2 em { color: var(--vigne); }
+.enquete-entete .accroche { margin: 2rem 0 0; font-family: var(--f-ui); font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; color: var(--on-dark-texte); }
+
+/* Le carnet d'Élie, sa page déchirée et les trois signatures */
+.enquete-prologue { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(32px, 7vw, 110px); align-items: center; margin-bottom: 18vh; }
+.carnet { position: relative; max-width: 440px; justify-self: center; }
+.carnet-page {
+  position: relative; padding: 46px 40px 26px; transform: rotate(-2.2deg);
+  background: #f2efe9; color: #1d1a17; box-shadow: 0 30px 60px rgba(0, 0, 0, .55);
+}
+.carnet-page::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(transparent 0 33px, rgba(0, 0, 0, .06) 33px 34px); pointer-events: none; }
+.carnet-lieu { font-family: var(--f-plume); font-size: 1.15rem; margin: 0 0 1rem; }
+.carnet-texte { position: relative; font-family: var(--f-plume); font-size: 1.02rem; line-height: 2.1; margin: 0; }
+.carnet-page .dechirure { position: absolute; left: 0; right: 0; top: 100%; width: 100%; height: 34px; fill: #f2efe9; }
+.carnet-signatures { display: flex; justify-content: space-around; margin-top: 66px; transform: rotate(-2.2deg); }
+.carnet-signatures span { font-family: var(--f-signature); font-size: clamp(2.6rem, 4vw, 3.4rem); line-height: 1; }
+.carnet-signatures span:nth-child(1) { color: var(--coufran); }
+.carnet-signatures span:nth-child(2) { color: var(--verdignan-vif); }
+.carnet-signatures span:nth-child(3) { color: var(--soudars); }
+.carnet figcaption { margin-top: 1.6rem; text-align: center; font-family: var(--f-ui); font-size: .7rem; letter-spacing: .08em; color: var(--on-dark-mute); }
+.prologue-texte p { color: var(--on-dark-texte); }
+.prologue-texte .lead { color: var(--on-dark); }
+.mot-lovely { margin-top: 2.4rem; padding-left: 1.4rem; border-left: 1px solid var(--vigne); font-size: 1.35em; font-style: italic; line-height: 1.35; color: var(--on-dark) !important; }
+.mot-lovely span { display: block; margin-top: .8rem; font-style: normal; font-family: var(--f-ui); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--on-dark-mute); }
+
+.enquete-sous-titre { text-align: center; margin-bottom: 6vh; font-family: var(--f-ui); font-weight: 500; font-size: .78rem; letter-spacing: .3em; text-transform: uppercase; color: var(--vigne); line-height: 1.4; }
+
+/* Les trois témoins, chacun dans la couleur et la police de son château */
+.temoins { margin-bottom: 18vh; }
+.temoins-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 26px); }
+.temoin { display: flex; flex-direction: column; padding: clamp(24px, 3vw, 40px); min-height: 100%; }
+.temoin .numero { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .26em; text-transform: uppercase; opacity: .7; }
+.temoin .qui { margin: 2.2rem 0 .3rem; font-family: var(--f-ui); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+.temoin h4 { margin: 0; font-weight: 400; font-size: clamp(2.4rem, 3.6vw, 3.6rem); line-height: 1; }
+.temoin .trait { margin: .6rem 0 1.6rem; font-size: 1.3em; }
+.temoin .portrait { font-size: .95em; opacity: .88; }
+.temoin blockquote { margin: auto 0 0; padding-top: 1.6rem; font-style: italic; font-size: 1.08em; line-height: 1.4; border-top: 1px solid currentColor; border-color: rgba(255, 255, 255, .16); }
+.lien-temoin { margin-top: 1.8rem; align-self: flex-start; font-family: var(--f-ui); font-weight: 500; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 5px; }
+.temoin--coufran { background: var(--coufran-fond); color: var(--coufran-texte); box-shadow: inset 0 3px 0 var(--coufran-vif); }
+.temoin--coufran h4 { font-family: var(--f-coufran); text-transform: uppercase; letter-spacing: .06em; color: var(--coufran); }
+.temoin--coufran .trait em { font-family: var(--f-coufran); font-style: italic; color: var(--coufran); }
+.temoin--verdignan { background: var(--verdignan-fond); color: var(--verdignan-texte); box-shadow: inset 0 3px 0 var(--verdignan-vif); }
+.temoin--verdignan h4 { font-family: var(--f-verdignan); text-transform: uppercase; letter-spacing: .03em; color: var(--verdignan-vif); }
+.temoin--verdignan .trait em { font-family: var(--f-verdignan-it); color: var(--verdignan-vif); }
+.temoin--soudars { background: var(--soudars-fond); color: var(--soudars-texte); box-shadow: inset 0 3px 0 var(--soudars-vif); }
+.temoin--soudars h4 { font-family: var(--f-soudars); color: var(--soudars-vif); }
+.temoin--soudars .trait em { font-family: "Bookman", serif; color: var(--soudars-vif); }
+.temoin .lien-temoin:hover { opacity: .75; }
+
+/* Mener l'enquête */
+.enquete-regles { margin-bottom: 18vh; }
+.enquete-regles ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 60px); }
+.enquete-regles li { color: var(--on-dark-texte); }
+.enquete-regles .etape { display: block; font-family: var(--f-serif); font-weight: 300; font-size: clamp(3.4rem, 6vw, 5.2rem); line-height: 1; color: var(--vigne); margin-bottom: 1rem; }
+.enquete-regles strong { display: block; color: var(--on-dark); font-weight: 500; font-size: 1.2em; margin-bottom: .3rem; }
+.enquete-regles .duree { margin-top: 6vh; text-align: center; font-family: var(--f-ui); font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; color: var(--on-dark-mute); }
+
+/* Trois terrains d'enquête */
+.enquete-formats { margin-bottom: 18vh; }
+.formats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(var(--clair), .16); }
+.format { padding: 2.4rem clamp(16px, 2.4vw, 36px) 0; border-left: 1px solid rgba(var(--clair), .16); }
+.format:first-child { border-left: 0; padding-left: 0; }
+.format-num { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .24em; text-transform: uppercase; color: var(--vigne); }
+.format h4 { margin: 1rem 0 1rem; font-weight: 300; font-size: clamp(1.7rem, 2.4vw, 2.3rem); line-height: 1.1; }
+.format p { color: var(--on-dark-texte); font-size: .96em; }
+
+/* Ce que l'on gagne */
+.gains { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: clamp(14px, 2vw, 26px); align-items: stretch; }
+.gain { padding: clamp(24px, 3vw, 40px); border: 1px solid rgba(var(--clair), .18); }
+.gain .quand { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; color: var(--on-dark-mute); }
+.gain h4 { margin: 1.2rem 0 1rem; font-weight: 300; font-size: clamp(1.7rem, 2.4vw, 2.4rem); line-height: 1.08; }
+.gain p { color: var(--on-dark-texte); font-size: .96em; margin: 0; }
+.gain--grand { background: var(--vigne); border-color: var(--vigne); }
+.gain--grand .quand, .gain--grand p { color: rgba(255, 255, 255, .86); }
+
+.enquete-cta { margin-top: 12vh; text-align: center; }
+.enquete-cta .btn { font-size: .86rem; padding: 1.3em 2.4em; }
+.mention-jeu { max-width: 44em; margin: 2.6rem auto 0; font-family: var(--f-ui); font-size: .7rem; line-height: 1.6; letter-spacing: .02em; color: var(--on-dark-mute); }
+
+@media (max-width: 900px) {
+  .enquete-prologue, .temoins-grille, .enquete-regles ol, .formats, .gains { grid-template-columns: 1fr; }
+  .format, .format:first-child { border-left: 0; padding-left: 0; padding-right: 0; }
+  .format + .format { border-top: 1px solid rgba(var(--clair), .16); margin-top: 2.4rem; }
+  .carnet-page { padding: 34px 26px 20px; }
+}
+
+/* Responsive commun */
+@media (max-width: 520px) {
+  .intro-noms { padding: 0 10px; }
+  .intro-nom .mot { font-size: .8rem; letter-spacing: .06em; }
+  .intro-nom .mot.logo-chateau { width: 96%; }
+}
+
+/* Mode capture (?capture) : tout est révélé d'emblée */
+.capture [data-reveal], .capture [data-reveal="image"] { opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important; }
+.capture [data-reveal="image"] :is(img, video) { transform: none !important; }
+.capture .age-gate { display: none; }
+.capture body::after { display: none; }
+.capture .enquete { padding: 160px var(--gutter) 140px; }
+.capture .enquete-entete, .capture .enquete-prologue, .capture .temoins, .capture .enquete-regles, .capture .enquete-formats { margin-bottom: 140px; }
+.capture .enquete-cta { margin-top: 110px; }
+.capture .enquete-sous-titre { margin-bottom: 50px; }
+.couverture-enquete--racine img { filter: none; }
+
+/* Les réseaux sociaux (reseaux.js) : trois pastilles au trait, en bas de chaque page */
+.reseaux { display: flex; align-items: center; gap: 10px; }
+.reseaux a { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid currentColor; border-radius: 50%; color: inherit; opacity: .78; transition: opacity .3s, background-color .3s, color .3s; }
+.reseaux a:hover, .reseaux a:focus-visible { opacity: 1; background: var(--ink, #16120f); border-color: var(--ink, #16120f); color: #fff; }
+.reseaux svg { width: 17px; height: 17px; }
+
+/* Le menu (27/10/2026) : les trois témoins sur une ligne, la mention trimestrielle, les réseaux */
+.sous-menu .sous-groupe { display: inline-flex; align-items: baseline; gap: 2px; }
+.sous-menu .sous-label { margin-left: 16px; font-family: var(--f-ui); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); }
+.sous-menu .sous-groupe a { margin: 0 8px; }
+.mainnav-trimestre { margin: 10px 0 0; font-family: var(--f-ui); font-size: 12px; letter-spacing: .06em; color: var(--mute); }
+.menu-third .reseaux { justify-content: flex-end; margin: 0 10px; color: var(--ink); }
+.menu-third .reseaux a { margin: 0; }
+.menu-third .reseaux a::after { display: none; }
+@media (max-width: 900px) {
+  .sous-menu .sous-groupe { display: block; }
+  .sous-menu .sous-label { display: block; margin: 0 0 6px; }
+  .menu-third .reseaux { justify-content: center; }
+}
+
+
+/* La langue dans le menu plein écran (sur un téléphone, l'en-tête ne la montre plus) */
+.menu-third .langues--menu { display: inline-flex; justify-content: flex-end; font-size: 12px; }
+.menu-third .langues--menu a { margin: 0; }
+.menu-third .langues--menu a::after { display: none; }
+@media (max-width: 900px) { .menu-third .langues--menu { justify-content: center; } }
+
+/* Les petits téléphones : le logo, la boutique, l'enquête et le panier tiennent sans se toucher ; l'espace client passe
+   dans le menu, sauf là où le lien de la page s'efface (on est déjà sur la boutique ou l'enquête) */
+@media (max-width: 440px) {
+  .site-header { padding-left: 4vw; padding-right: 4vw; }
+  .site-header .wordmark { width: 96px; }
+  .header-droite:not(:has(.entete-fort[aria-current])) .entete-compte-lien { display: none; }
+  .entete-fort { margin-right: 7px; }
+  .header-droite .entete-icone { width: 30px; height: 30px; }
+}

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script src="../assets/js/langue.js"></script><!-- la langue d'abord : la page est traduite avant d'être montrée -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Château Soudars · Le vin du fils · Château Soudars</title>
+  <meta name="description" content="Château Soudars, le grand vin du château Soudars (Haut-Médoc). Le vin du fils.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/typographie.css">
+  <link rel="stylesheet" href="../assets/css/motifs.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-soudars">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <ul class="langues langues--porte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <div class="ch-signature">
+      <a class="ch-logo" href="index.html" aria-label="Château Soudars, accueil"><span class="logo-chateau " data-logo-chateau="soudars" data-forme="logotype" aria-hidden="true"></span></a>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Par MIAILHE : la maison de famille"><i>par</i><span class="wordmark"></span></a>
+    </div>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins" aria-current="page">Nos vins</a>
+      <a href="famille.html">La famille</a>
+      <a href="#contact">Contact</a>
+      <a class="ch-nav-mobile" href="../boutique.html#soudars">La boutique</a>
+      <a class="ch-nav-mobile" href="../enquete.html">L'enquête</a>
+      <a class="ch-nav-mobile" href="../compte.html">Mon espace client</a>
+      <ul class="langues langues--menu" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </nav>
+    <div class="ch-droite">
+      <a class="ch-fort ch-fort--boutique" href="../boutique.html#soudars" aria-label="La boutique de la famille : les vins des trois châteaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 2.6h3.6M10.7 2.6v4.5c0 .8-.4 1.3-1 1.9-.9.8-1.5 1.8-1.5 3.1v8.2c0 .6.5 1.1 1.1 1.1h5.4c.6 0 1.1-.5 1.1-1.1v-8.2c0-1.3-.6-2.3-1.5-3.1-.6-.6-1-1.1-1-1.9V2.6"/><path d="M8.2 13.4h7.6v4.4H8.2z"/></svg><span>La boutique</span></a>
+      <a class="ch-fort" href="../enquete.html" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran"><span class="armoirie" data-armoirie="coufran"></span></a><a class="famille-lien" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan"><span class="armoirie" data-armoirie="verdignan"></span></a><a class="famille-lien ici" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars" aria-current="page"><span class="armoirie" data-armoirie="soudars"></span></a></nav>
+      <span class="ch-icones"><a class="entete-icone entete-compte-lien" href="../compte.html" data-compte aria-label="Mon espace client"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.3" r="3.8"/><path d="M4.6 20.4c.9-3.9 3.9-6 7.4-6s6.5 2.1 7.4 6"/></svg><span class="entete-initiale" data-compte-initiale translate="no" hidden></span></a>
+      <a class="entete-icone" href="../boutique.html#panier" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 11.3a1.1 1.1 0 0 1-1.1 1H7.4a1.1 1.1 0 0 1-1.1-1L5.2 8.2z"/><path d="M9 10.4V6.6a3 3 0 0 1 6 0v3.8"/></svg><b class="entete-pastille" data-panier-compte translate="no" hidden>0</b></a></span>
+      <ul class="langues langues--compacte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main class="vin">
+    <div class="vin-texte">
+      <section class="vin-section" aria-label="Château Soudars">
+        <div class="vin-haut">
+          <a href="index.html#nos-vins"><span class="chev chev--g"></span> Nos vins</a>
+          <a href="../coufran/chateau-coufran.html">Chez Louis, à Coufran <span class="chev chev--d"></span></a>
+        </div>
+        <h1 class="vin-nom" data-anime>Soudars<small>Château · grand vin</small></h1>
+        <p class="vin-origine" data-anime="2">Haut-Médoc<br>Appellation d'origine protégée</p>
+        <div class="vin-achat" data-anime="3">
+          <div class="vin-format"><p>Le grand vin · bouteille de 75 cl</p><p>Le vin du fils</p><p class="vin-pret"><a href="index.html#pret-a-boire">Prêt à boire dès sa jeunesse</a></p></div>
+          <a class="pilule pilule--pleine" href="../boutique.html?vin=chateau-soudars#soudars">L'acheter</a>
+        </div>
+        <button class="vin-lien-bas" type="button" data-vers="1"><span class="chev chev--b"></span> Découvrir son caractère</button>
+      </section>
+
+      <section class="vin-section" aria-label="Son caractère">
+        <button class="vin-lien-haut" type="button" data-vers="0"><span class="chev chev--h"></span> Soudars</button>
+        <h2 data-anime>Rond, <span class="it">juteux</span>, gourmand</h2>
+        <div class="bloc" data-anime="2"><h3>Notes de dégustation</h3><p class="serif">Ouvert, rond, juteux et gourmand. Des fruits rouges frais, la fraise des bois, la framboise, la cerise, puis des tanins soyeux et une finale épicée. Il est agréable dès qu'on le rencontre.</p></div>
+        <div class="bloc" data-anime="2"><h3>À table</h3><p class="serif">Le vin du quotidien et des grandes tablées : viandes rouges, viandes blanches rôties ou grillées, barbecue d'été, poulet du dimanche.</p></div>
+        <div class="infos" data-anime="3">
+            <div><h3>Service</h3><p>16 °C</p></div>
+            <div><h3>Garde</h3><p>Tout de suite, ou dans dix ans</p></div>
+            <div><h3>Cépages</h3><p>50 % merlot, 49 % cabernet-sauvignon, 1 % cabernet franc</p></div>
+        </div>
+          <p class="presse" data-anime="4">Millésime 2016 · James Suckling, 93/100</p>
+        <button class="vin-lien-bas" type="button" data-vers="2"><span class="chev chev--b"></span> Son élaboration</button>
+      </section>
+
+      <section class="vin-section" aria-label="Son élaboration">
+        <button class="vin-lien-haut" type="button" data-vers="1"><span class="chev chev--h"></span> Son caractère</button>
+        <h2 data-anime>L'<span class="it">élaboration</span></h2>
+        <div class="bloc" data-anime="2">
+          <div class="serif">
+            <p>Longues macérations, de trois à quatre semaines ; après la fermentation malolactique, assemblage avec l'œnologue Éric Boissenot, puis élevage en barriques de chêne français à grain fin, renouvelées par quart, voire par tiers selon l'année. Ici, on refuse les raccourcis : ni thermovinification, ni osmose inverse, ni vin standardisé.</p>
+            <p>Comme à Coufran et à Verdignan, presque toutes les bouteilles vieillissent à la propriété avant de partir.</p>
+          </div>
+        </div>
+          <a class="pilule" href="../assets/docs/soudars-commentaires-2000-2016.pdf" target="_blank" rel="noopener" data-anime="3">Les millésimes 2000-2016 (PDF)</a>
+        <button class="vin-lien-bas" type="button" data-vers="3"><span class="chev chev--b"></span> Les millésimes</button>
+      </section>
+
+      <section class="vin-section" aria-label="Les millésimes">
+        <button class="vin-lien-haut" type="button" data-vers="2"><span class="chev chev--h"></span> Son élaboration</button>
+        <h2 data-anime>Les millésimes se suivent,<br>mais <span class="it">ne se ressemblent pas</span></h2>
+        <div data-anime="2">
+          <div class="millesimes">
+            <div class="millesime"><img src="../assets/img/bouteille-soudars-2018.webp" alt="Château Soudars 2018" loading="lazy"><strong>2018</strong><p>Cerise, groseille, framboise. Rond, aérien, friand.</p></div>
+            <div class="millesime"><img src="../assets/img/bouteille-soudars-2017.webp" alt="Château Soudars 2017" loading="lazy"><strong>2017</strong><p>Année de gel, petite récolte. Fruits frais, digeste.</p></div>
+            <div class="millesime"><img src="../assets/img/bouteille-soudars-2016.webp" alt="Château Soudars 2016" loading="lazy"><strong>2016</strong><p>Fruits noirs, boisé raffiné. Gras et onctueux.</p></div>
+            <div class="millesime"><img src="../assets/img/bouteille-soudars-2015.webp" alt="Château Soudars 2015" loading="lazy"><strong>2015</strong><p>Fraise des bois, cassis. Rond, tendu, long.</p></div>
+            <div class="millesime"><img src="../assets/img/bouteille-soudars-2014.webp" alt="Château Soudars 2014" loading="lazy"><strong>2014</strong><p>Cerise, cassis, épices. Souple, gras et frais.</p></div>
+          </div>
+          <h3 style="margin-top:44px">Ses frères</h3>
+          <div class="freres">
+            <a class="frere" href="../coufran/chateau-coufran.html"><img src="../assets/img/bouteille-coufran.webp" alt="" loading="lazy"><p>Château Coufran<small>Le vin du grand-père</small></p></a>
+            <a class="frere" href="../verdignan/chateau-verdignan.html"><img src="../assets/img/bouteille-verdignan.webp" alt="" loading="lazy"><p>Château Verdignan<small>Le vin du père</small></p></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="vin-visuel" aria-hidden="true">
+      <div class="motif"></div>
+      <img class="bouteille-vin" src="../assets/img/bouteille-soudars.webp" alt="">
+      <div class="indicateurs">
+        <button type="button" tabindex="-1"></button><button type="button" tabindex="-1"></button><button type="button" tabindex="-1"></button><button type="button" tabindex="-1"></button>
+      </div>
+    </div>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Soudars<br>33180 Saint-Seurin-de-Cadourne, France</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+      <span class="logo-chateau pied-logo" data-logo-chateau="soudars" data-forme="logo" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593609">+33 5 56 59 36 09</a><br><a href="mailto:vignoblesmiailhe@orange.fr">vignoblesmiailhe@orange.fr</a></p>
+        <p class="gris">Visites sur rendez-vous</p>
+      </div>
+    </div>
+    <div class="ch-contacts">
+      <div class="ch-contact">
+        <p class="titre">Nous rendre visite</p>
+        <p>Les visites de la propriété se font pour les professionnels et les particuliers, uniquement sur rendez-vous.</p>
+        <p>Votre demande : <a href="mailto:vignoblesmiailhe@orange.fr">vignoblesmiailhe@orange.fr</a></p>
+        <p><a class="lien-fleche" href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20Soudars%20Saint-Seurin-de-Cadourne" target="_blank" rel="noopener">Itinéraire ↗</a></p>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Acheter nos vins</p>
+        <ul class="ch-achats"><li><a href="../boutique.html#soudars">La boutique de la famille</a><small>Les trois châteaux, un seul panier</small></li><li><a href="../boutique.html#ou-trouver">Où trouver nos vins</a><small>Les caves V and B : la carte des magasins</small></li><li>Maisons du Vin<small>Saint-Seurin-de-Cadourne et Pauillac</small></li><li>En Belgique<small>Delhaize</small></li><li>Dans le monde<small>Les négociants de la Place de Bordeaux</small></li></ul>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Suivez-nous</p>
+        <p><a href="https://fr-fr.facebook.com/chateausoudars" target="_blank" rel="noopener">Château Soudars sur Facebook ↗</a></p>
+        <p><a href="https://www.instagram.com/chateauxcoufranverdignan/" target="_blank" rel="noopener">La famille sur Instagram ↗</a></p>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Soudars · une maison de la famille <span class="wordmark"></span></a>
+      <nav class="reseaux" data-reseaux data-facebook="https://fr-fr.facebook.com/chateausoudars"></nav>
+      <ul class="langues langues--pied" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../coufran/index.html">Coufran</a> · <a href="../verdignan/index.html">Verdignan</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <a href="../blog/index.html">Le blog</a>
+        <a href="../boutique.html?espace=pro">Espace professionnel</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    <p class="mentions">Château Soudars · RCS Bordeaux 384 685 541 · siège : Château Soudars, 33180 Saint-Seurin-de-Cadourne · directeur de la publication : Éric Miailhe, représentant légal. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/feuille-miailhe.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/logos-chateaux.js"></script>
+  <script src="../assets/js/typographie.js"></script>
+  <script src="../assets/js/reseaux.js"></script>
+  <script src="../assets/js/espace.js"></script>
+  <script src="../assets/js/voix.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+  <script src="../assets/js/survol.js"></script>
+</body>
+</html>

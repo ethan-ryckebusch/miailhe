@@ -1,0 +1,425 @@
+/* L'Enquête à la racine (27/10/2026) : le dossier imprimé de l'équipe, rejoué en ligne.
+   Un livret ouvert sur un bureau sombre, une étape par double page, la page se tourne quand on avance.
+   Visuels : Higgsfield (assets/img/enquete/), d'après la planche du livret de l'équipe. */
+
+.page-enquete {
+  --bordeaux: #4a0f17;
+  --bordeaux-vif: #7a1a26;
+  --papier: #f2e9d6;
+  --papier-ombre: #e3d6bb;
+  --encre-d: #2a1f17;
+  --encre-douce: #6b5a48;
+  --rouge-tampon: #a3262a;
+  --craie: #f4efe6;
+  --f-dossier: "Cinzel", "Trajan Pro", serif;
+  --f-corps: "Cormorant", "Cormorant Garamond", Georgia, serif;
+  --f-main: "Bad Script", cursive;
+  background: #140507;
+  color: var(--papier);
+}
+.page-enquete .site-header { z-index: 60; }
+
+/* ---------- Ouverture : le chai, la nuit ---------- */
+.ouverture { position: relative; height: 100svh; min-height: 560px; overflow: hidden; display: grid; place-items: center; text-align: center; }
+.ouverture-fond { position: absolute; inset: 0; margin: 0; }
+.ouverture-fond img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); animation: lent-zoom 22s ease-out forwards; }
+.ouverture-fond::after { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 60% at 50% 45%, rgba(20, 5, 7, .2), rgba(20, 5, 7, .85) 80%), linear-gradient(180deg, rgba(20, 5, 7, .5), transparent 30%, transparent 60%, #140507); }
+@keyframes lent-zoom { to { transform: scale(1); } }
+.ouverture-texte { position: relative; z-index: 1; display: grid; gap: 22px; padding: 0 6vw; }
+.ouverture-lieu { font-family: var(--f-dossier); font-size: 12px; letter-spacing: .34em; text-transform: uppercase; color: rgba(242, 233, 214, .7); }
+.ouverture-phrase { font-family: var(--f-corps); font-style: italic; font-weight: 500; font-size: clamp(40px, 6vw, 92px); line-height: 1.02; color: var(--papier); }
+.ouverture-phrase span { display: inline-block; opacity: 0; transform: translateY(18px); filter: blur(6px); animation: mot 1.6s cubic-bezier(.2, .7, .1, 1) forwards; }
+.ouverture-phrase span:nth-child(2) { animation-delay: .7s; }
+.ouverture-phrase span:nth-child(3) { animation-delay: 1.4s; }
+@keyframes mot { to { opacity: 1; transform: none; filter: none; } }
+.ouverture-suite {
+  position: absolute; z-index: 1; left: 50%; bottom: 7vh; translate: -50% 0;
+  display: grid; justify-items: center; gap: 14px; padding: 0; border: 0; background: none; cursor: pointer;
+  font-family: var(--f-dossier); font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--papier);
+  opacity: 0; animation: mot 1.4s 2.4s forwards;
+}
+.ouverture-suite::after { content: ""; width: 1px; height: 56px; background: linear-gradient(var(--papier), transparent); animation: fil 2.4s infinite; transform-origin: top; }
+@keyframes fil { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* ---------- La table : le livret posé sur le bureau ---------- */
+.table {
+  position: relative; min-height: 100svh; padding: 96px 3vw 30px;
+  display: grid; justify-items: center; align-content: center; gap: 22px;
+  background:
+    radial-gradient(60% 55% at 50% 45%, rgba(122, 26, 38, .35), transparent 70%),
+    radial-gradient(120% 90% at 50% 50%, #2a0b10, #120406 75%);
+}
+.table::before { content: ""; position: absolute; inset: 0; opacity: .18; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+.livret {
+  --h: min(calc(100svh - 190px), calc(94vw / 1.44), 860px);
+  --w: max(calc(var(--h) * 1.44), min(94vw, 1180px));
+  position: relative; width: var(--w); min-height: var(--h); perspective: 2600px;
+  filter: drop-shadow(0 40px 50px rgba(0, 0, 0, .55)) drop-shadow(0 6px 10px rgba(0, 0, 0, .4));
+}
+.tranche { position: absolute; z-index: 5; left: 50%; top: 0; bottom: 0; width: 34px; margin-left: -17px; pointer-events: none; background: linear-gradient(90deg, transparent, rgba(60, 40, 20, .22) 42%, rgba(60, 40, 20, .32) 50%, rgba(60, 40, 20, .22) 58%, transparent); }
+/* les planches inactives sont superposées ; l'active est dans le flux et donne sa hauteur au livret */
+.planche { position: absolute; inset: 0 0 auto 0; min-height: var(--h); display: grid; grid-template-columns: 1fr 1fr; visibility: hidden; }
+.planche.is-active { position: relative; visibility: visible; }
+.livret.is-tourne { pointer-events: none; }
+
+.page {
+  position: relative; display: flex; flex-direction: column; overflow: visible;
+  padding: clamp(26px, 3.4vh, 44px) clamp(24px, 3vw, 46px) 16px;
+  color: var(--encre-d); font-family: var(--f-corps); font-weight: 500; font-size: 16.5px; line-height: 1.42;
+  background-color: var(--papier);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .35 0 0 0 0 .2 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"),
+    radial-gradient(120% 90% at 50% 40%, transparent 60%, rgba(140, 105, 60, .16));
+}
+.page--g { border-radius: 4px 0 0 4px; box-shadow: inset -26px 0 30px -24px rgba(70, 45, 20, .45); }
+.page--d { border-radius: 0 4px 4px 0; box-shadow: inset 26px 0 30px -24px rgba(70, 45, 20, .45); }
+.page p { margin: 0; }
+.page .folio { margin-top: auto; }
+.folio { margin-top: auto; padding-top: 22px; text-align: center; font-family: var(--f-dossier); font-size: 11px; color: var(--encre-douce); }
+
+/* En-tête d'étape, comme le livret : ÉTAPE 1, titre en capitales, sous-titre en italique */
+.etape-num { font-family: var(--f-dossier); font-weight: 600; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--encre-d); }
+.etape-num::after { content: ""; display: block; height: 1px; margin-top: 10px; background: linear-gradient(90deg, var(--encre-douce), transparent); opacity: .5; }
+.page h2 { margin: 16px 0 4px; font-family: var(--f-dossier); font-weight: 400; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.12; letter-spacing: .04em; color: var(--encre-d); }
+.etape-sous { font-style: italic; font-size: 19px; color: var(--encre-douce); }
+.consigne { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; margin: 20px 0 22px; font-size: 15px; line-height: 1.4; }
+.consigne .i { display: grid; place-items: center; width: 20px; height: 20px; margin-top: 1px; border: 1px solid var(--encre-d); border-radius: 50%; font-family: var(--f-dossier); font-size: 11px; font-weight: 600; }
+.sous-titre { margin-bottom: 12px !important; font-family: var(--f-dossier); font-weight: 600; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--encre-d); }
+.fiche-ligne { margin-bottom: 14px !important; font-size: 16px; }
+
+/* Les pièces à conviction */
+.piece { position: relative; margin: 0; }
+.piece--photo img, .piece--enveloppe img, .piece--table img { width: 100%; height: auto; padding: 8px; background: #fbf7ee; box-shadow: 0 10px 22px -10px rgba(40, 25, 10, .55); transform: rotate(-1.2deg); }
+.piece-tampon { position: absolute; z-index: 2; top: -8px; left: 6%; padding: .3em .7em; border: 1.5px solid var(--rouge-tampon); color: var(--rouge-tampon); background: rgba(242, 233, 214, .85); font-family: var(--f-dossier); font-weight: 600; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; transform: rotate(-5deg); }
+.post-it { position: relative; width: 66%; margin: -46px 0 0 auto; padding: 14px 16px 16px; background: #efe3c6; box-shadow: 0 8px 16px -8px rgba(40, 25, 10, .5); font-size: 14.5px; line-height: 1.35; transform: rotate(1.6deg); }
+.post-it::before { content: ""; position: absolute; top: -9px; left: 40%; width: 64px; height: 18px; background: rgba(230, 220, 190, .7); transform: rotate(-3deg); }
+
+.estampille { display: inline-block; padding: .35em .8em; border: 2px solid currentColor; font-family: var(--f-dossier); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; transform: rotate(-6deg); mix-blend-mode: multiply; }
+.estampille--rouge { color: var(--rouge-tampon); }
+.estampille--vert { color: #0f320a; }
+.estampille--petit { font-size: 9.5px; padding: .25em .6em; }
+
+/* ---------- La couverture et la lettre ---------- */
+.couverture { justify-content: space-between; align-items: center; gap: 18px; padding: 40px 30px 34px; background: var(--bordeaux); color: #f1d9cf; text-align: center; box-shadow: inset -26px 0 30px -24px rgba(0, 0, 0, .7); overflow: hidden; }
+.couverture-racines { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .9; }
+.couverture > :not(img) { position: relative; }
+.couverture-haut { display: grid; justify-items: center; gap: 8px; }
+.couverture-haut .wordmark { width: 120px; color: #e9c9bd; line-height: 0; }
+.couverture-haut p { font-family: var(--f-dossier); font-size: 9.5px; letter-spacing: .3em; text-transform: uppercase; opacity: .8; }
+.couverture h1 { display: grid; margin-top: 4vh; font-family: var(--f-dossier); font-weight: 400; font-size: clamp(26px, 3.1vw, 44px); line-height: 1.1; letter-spacing: .1em; text-transform: uppercase; color: #f6e6dd; text-shadow: 0 2px 20px rgba(30, 0, 5, .8); }
+.couverture-sous { margin-top: -6px !important; font-family: var(--f-corps); font-style: italic; font-size: 18px; line-height: 1.3; color: #ecd0c4; text-shadow: 0 1px 10px rgba(30, 0, 5, .8); }
+.couverture-chateaux { display: flex; justify-content: center; gap: clamp(16px, 2.6vw, 36px); margin: auto 0 0; padding: 0; list-style: none; }
+.couverture-chateaux li { display: grid; justify-items: center; gap: 2px; font-family: var(--f-dossier); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; }
+.couverture-chateaux .armoirie { display: block; width: 26px; margin-bottom: 6px; color: var(--armoirie); --armoirie-fond: #f6f2e9; }
+.couverture-chateaux small { font-family: var(--f-corps); font-style: italic; font-size: 13px; letter-spacing: 0; text-transform: none; opacity: .8; }
+.couverture-chateaux--encre { margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(42, 31, 23, .25); }
+.couverture-chateaux--encre li { color: var(--encre-d); }
+
+.lettre { gap: 14px; }
+.lettre-ref { font-family: var(--f-dossier); font-size: 11px; letter-spacing: .1em; color: var(--encre-douce); }
+.lettre .estampille { position: absolute; top: 24px; right: 30px; }
+.lettre-a { margin-top: 18px !important; font-family: var(--f-dossier); font-weight: 600; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; }
+.lettre-corps { display: grid; gap: 9px; font-size: 16px; line-height: 1.42; }
+.lettre-corps strong { font-weight: 700; }
+.lettre-signature { margin-top: 4px !important; font-family: "Herr Von Muellerhoff", cursive; font-size: 40px; line-height: 1; color: var(--encre-d); }
+.lettre-signe { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.lettre-croquis { flex: none; width: 112px; margin: -26px 4px -10px 0; mix-blend-mode: multiply; opacity: .75; transform: rotate(-12deg); pointer-events: none; }
+.lettre-note { font-size: 13.5px; font-style: italic; color: var(--encre-douce); }
+
+/* Champs et boutons du dossier */
+.page :is(input:not([type="radio"]), select) {
+  min-width: 0; padding: 6px 2px; border: 0; border-bottom: 1px solid rgba(42, 31, 23, .45); border-radius: 0; background: transparent;
+  font-family: var(--f-corps); font-weight: 500; font-size: 17px; color: var(--encre-d);
+}
+.page select { appearance: none; -webkit-appearance: none; padding-right: 18px; cursor: pointer; background: linear-gradient(45deg, transparent 50%, var(--encre-d) 50%) calc(100% - 8px) 55% / 4px 4px no-repeat, linear-gradient(-45deg, transparent 50%, var(--encre-d) 50%) calc(100% - 4px) 55% / 4px 4px no-repeat; }
+.page :is(input, select):focus { outline: none; border-bottom-color: var(--bordeaux-vif); }
+.page ::placeholder { color: rgba(42, 31, 23, .4); }
+.bouton-dossier {
+  display: inline-flex; align-items: center; justify-content: center; padding: .85em 1.4em; border: 0; border-radius: 2px; cursor: pointer;
+  background: var(--bordeaux); color: var(--papier); font-family: var(--f-dossier); font-weight: 600; font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  box-shadow: 0 6px 14px -8px rgba(74, 15, 23, .8); transition: background .3s, transform .3s;
+}
+.bouton-dossier:hover { background: var(--bordeaux-vif); transform: translateY(-1px); }
+.enigme { display: grid; gap: 14px; margin-top: 6px; }
+.enigme > .bouton-dossier { justify-self: start; }
+.retour { min-height: 1.3em; font-style: italic; font-size: 15px; color: var(--rouge-tampon); }
+.retour:empty { min-height: 0; }
+.retour.is-ok { color: #2f5a22; }
+.enigme.is-faux { animation: hésite .4s; }
+@keyframes hésite { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.indice { margin-top: 14px; font-size: 15px; }
+.indice summary { cursor: pointer; font-family: var(--f-dossier); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--encre-douce); list-style: none; }
+.indice summary::before { content: "＋ "; }
+.indice[open] summary::before { content: "－ "; }
+.indice p { margin-top: 8px !important; font-style: italic; }
+:is(.indice, .indices) .liens a { border-bottom: 1px solid currentColor; font-style: normal; }
+.lien-reprendre { justify-self: start; padding: 0; border: 0; background: none; cursor: pointer; font-family: var(--f-dossier); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--encre-douce); border-bottom: 1px solid currentColor; }
+
+/* La lettre gagnée : un cachet de cire */
+.lettre-gagnee { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; align-items: center; margin-top: 18px; padding-top: 18px; border-top: 1px dashed rgba(42, 31, 23, .3); }
+.lettre-gagnee > span {
+  grid-row: span 2; display: grid; place-items: center; width: 74px; height: 74px; border-radius: 47% 53% 50% 50%;
+  background: radial-gradient(circle at 35% 30%, #9a2a36, var(--bordeaux) 60%, #2c070d); color: #f1c9bf;
+  font-family: var(--f-dossier); font-weight: 600; font-size: 34px; box-shadow: inset 0 0 0 5px rgba(0, 0, 0, .15), inset 0 0 0 7px rgba(255, 200, 190, .15), 0 6px 12px -4px rgba(40, 0, 5, .6);
+  animation: cachet .7s cubic-bezier(.3, 1.6, .5, 1) both;
+}
+@keyframes cachet { from { transform: scale(1.8) rotate(-20deg); opacity: 0; } }
+.lettre-gagnee p { font-size: 16px; }
+.lettre-gagnee .bouton-dossier { justify-self: start; }
+.planche.is-resolue .enigme :is(input, select, button:not([data-suivant])) { pointer-events: none; }
+.planche.is-resolue :is(.indice, .indices, [data-reprendre]) { display: none; }
+.enigme.is-bloque button { pointer-events: none; }
+.lettre-gagnee { scroll-margin-bottom: 96px; }
+
+/* ---------- Les indices : trois par étape, du plus difficile au plus facile ---------- */
+.indices { display: grid; gap: 10px; margin-top: 16px; }
+/* Le bouton « + » se place sous le dernier indice ouvert : un clic, un nouvel indice, plus facile */
+.indices-bouton { order: 2; justify-self: start; display: inline-flex; align-items: center; gap: 10px; padding: 5px 14px 5px 5px; border: 1px dashed rgba(42, 31, 23, .45); border-radius: 30px; background: rgba(255, 246, 170, .28); cursor: pointer;
+  font-family: var(--f-dossier); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--encre-d); transition: background .3s, border-color .3s; }
+.indices-bouton:hover, .indices-bouton:focus-visible { background: rgba(255, 233, 150, .7); border-style: solid; outline: none; }
+.indices-plus { position: relative; flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--encre-d); font-size: 0; transition: transform .35s cubic-bezier(.2, .7, .1, 1); }
+.indices-plus::before, .indices-plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 1.6px; border-radius: 1px; background: var(--papier); transform: translate(-50%, -50%); }
+.indices-plus::after { transform: translate(-50%, -50%) rotate(90deg); }
+.indices-bouton:hover .indices-plus { transform: rotate(90deg); }
+.indices-bouton small { font-family: var(--f-corps); font-style: italic; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--encre-douce); }
+@media (prefers-reduced-motion: no-preference) {
+  .indices-bouton .indices-plus { animation: appel 2.8s 1.5s ease-in-out 2; }
+  @keyframes appel { 0%, 100% { box-shadow: 0 0 0 0 rgba(42, 31, 23, .35); } 50% { box-shadow: 0 0 0 7px rgba(42, 31, 23, 0); } }
+}
+.indices-liste { order: 1; display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.indices .liens { order: 3; }
+.indices-liste li { position: relative; padding: 10px 14px 11px; border-radius: 3px; background: rgba(255, 246, 170, .55); box-shadow: 0 4px 8px -5px rgba(60, 40, 10, .35); font-size: 15.5px; line-height: 1.4; animation: indice-in .45s cubic-bezier(.2, .7, .1, 1); outline: none; }
+.indices-liste li:nth-child(2) { background: rgba(255, 233, 150, .62); }
+.indices-liste li:nth-child(3) { background: rgba(255, 214, 140, .7); }
+.indices-niveau { display: block; margin-bottom: 3px; font-family: var(--f-dossier); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--encre-douce); }
+@keyframes indice-in { from { opacity: 0; transform: translateY(6px) rotate(-.6deg); } }
+.indices .liens { font-size: 14.5px; }
+
+/* le consentement du formulaire de la récompense */
+.accord { flex-basis: 100%; display: flex; gap: 8px; align-items: flex-start; font-size: 13px; line-height: 1.35; color: var(--encre-douce); }
+.accord input { flex: none; width: auto; margin-top: 3px; }
+
+/* ---------- Étape 1 : le casier, à la craie ---------- */
+.casier { display: grid; gap: 5px; margin-bottom: 18px; padding: 10px; border-radius: 3px; background: linear-gradient(#5b3a22, #3e2614); box-shadow: inset 0 0 0 3px #2c1a0c, 0 10px 18px -10px rgba(30, 15, 5, .7); }
+.rang { position: relative; display: grid; grid-template-columns: 118px repeat(6, 1fr); gap: 5px; align-items: center; padding: 4px; background: #24140a; border-radius: 2px; }
+.ardoise { padding: 5px 8px; border-radius: 2px; background: #2f3331; color: var(--craie); font-family: var(--f-main); font-size: 14px; line-height: 1.1; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
+.rang i, .rang b { aspect-ratio: 1; border-radius: 50%; }
+.rang i { background: radial-gradient(circle at 38% 34%, #6a7a52 0 8%, #233019 30%, #0b1208 70%); box-shadow: inset 0 0 0 2px #0a0f07, 0 1px 0 rgba(255, 255, 255, .08); }
+.rang b { background: radial-gradient(circle, #0c0703 55%, #1c110a); box-shadow: inset 0 3px 6px rgba(0, 0, 0, .9); }
+.craie { position: absolute; right: 6px; bottom: -3px; font-family: var(--f-main); font-size: 12px; color: var(--craie); transform: rotate(-3deg); text-shadow: 0 0 2px #000; }
+.champs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 22px; }
+.champs label { display: grid; gap: 2px; font-family: var(--f-dossier); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--encre-douce); }
+
+/* ---------- Étape 2 : les portraits et la frise ---------- */
+.portraits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.portraits figure { margin: 0; text-align: center; }
+.portraits img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; padding: 5px; background: #fbf7ee; box-shadow: 0 8px 14px -8px rgba(40, 25, 10, .6); }
+.portraits figure:nth-child(1) img { transform: rotate(-1.5deg); }
+.portraits figure:nth-child(3) img { transform: rotate(1.2deg); }
+.portraits figcaption { display: grid; margin-top: 10px; font-size: 14px; color: var(--encre-douce); }
+.portraits strong { font-family: var(--f-dossier); font-weight: 600; font-size: 13px; letter-spacing: .08em; color: var(--encre-d); }
+.portraits small { font-style: italic; font-size: 13px; }
+.mention-portraits { margin-top: 12px !important; text-align: center; font-style: italic; font-size: 12px; color: var(--encre-douce); opacity: .8; }
+.archives { display: grid; gap: 8px; margin: 0 0 18px; padding-left: 22px; font-style: italic; font-size: 16px; }
+.frise-ligne { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding-top: 22px; }
+.frise-ligne::before { content: ""; position: absolute; top: 5px; left: 0; right: 0; height: 1px; background: var(--encre-d); opacity: .5; }
+.jalon { position: relative; display: grid; gap: 6px; }
+.jalon::before { content: ""; position: absolute; top: -21px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--bordeaux); }
+.jalon strong { font-family: var(--f-dossier); font-weight: 600; font-size: 22px; }
+.jalon select { font-size: 15px; }
+
+/* ---------- Étape 3 : la fiche de production, les étapes à remettre dans l'ordre ---------- */
+.piece--vigne { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: start; }
+.piece--vigne img { width: 100%; padding: 6px; background: #fbf7ee; box-shadow: 0 10px 18px -10px rgba(40, 25, 10, .6); transform: rotate(-2deg); }
+.fiche-prod { position: relative; margin: 30px 0 0 -18px; padding: 18px 18px 22px; background: #efe5cd; box-shadow: 0 10px 18px -10px rgba(40, 25, 10, .6); transform: rotate(1.5deg); }
+.fiche-prod-titre { font-family: var(--f-dossier); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px !important; }
+.fiche-prod ol { margin: 0; padding-left: 20px; font-size: 14.5px; line-height: 1.5; }
+.fiche-prod .anomalie { text-decoration: underline wavy rgba(163, 38, 42, .6); text-underline-offset: 3px; }
+.fiche-prod .estampille { position: absolute; right: -6px; bottom: -12px; background: rgba(239, 229, 205, .9); }
+.cartes-ordre { display: flex; flex-wrap: wrap; gap: 8px; }
+.cartes-ordre button {
+  padding: .55em .9em; border: 1px solid rgba(42, 31, 23, .35); border-radius: 2px; background: #f8f1e1; cursor: pointer;
+  font-family: var(--f-corps); font-weight: 500; font-size: 15.5px; color: var(--encre-d); box-shadow: 0 2px 0 rgba(42, 31, 23, .12); transition: transform .2s, opacity .3s;
+}
+.cartes-ordre button:hover { transform: translateY(-2px); }
+.cartes-ordre button.is-pris { opacity: .25; pointer-events: none; }
+.ordre-choisi { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 20px; min-height: 40px; margin: 0; padding-left: 22px; font-size: 16px; }
+.ordre-choisi li::marker { font-family: var(--f-dossier); font-size: 12px; color: var(--bordeaux-vif); }
+
+/* ---------- Étape 4 : les assemblages ---------- */
+.indices-assemblage { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.indices-assemblage li { display: grid; grid-template-columns: 34% 1fr; gap: 14px; align-items: center; }
+.indices-assemblage img { width: 100%; mix-blend-mode: multiply; }
+.indices-assemblage p { font-style: italic; font-size: 15px; line-height: 1.35; }
+.indices-assemblage strong { display: block; font-family: var(--f-dossier); font-style: normal; font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.assemblages { gap: 10px; }
+.assemblage { display: grid; grid-template-columns: repeat(3, 1fr) 60px; gap: 6px 12px; align-items: end; margin: 0; padding: 12px 14px; border: 1px solid rgba(42, 31, 23, .25); border-radius: 2px; background: rgba(255, 252, 244, .45); }
+.assemblage legend { padding: 0 6px; font-family: var(--f-dossier); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.assemblage label { display: grid; gap: 2px; font-size: 13px; font-style: italic; color: var(--encre-douce); }
+.assemblage input { width: 100%; text-align: center; font-size: 19px; }
+.assemblage .total { align-self: center; text-align: right; font-family: var(--f-dossier); font-size: 15px; color: var(--encre-douce); }
+.assemblage .total.is-cent { color: #2f5a22; font-weight: 600; }
+
+/* ---------- Étape 5 : le registre, écrit à la main ---------- */
+.registre { width: 100%; margin-bottom: 16px; border-collapse: collapse; font-size: 14px; }
+.registre th { padding: 4px 6px; border-bottom: 1.5px solid var(--encre-d); font-family: var(--f-dossier); font-weight: 600; font-size: 9.5px; letter-spacing: .1em; text-align: left; text-transform: uppercase; }
+.registre td { padding: 5px 6px; border-bottom: 1px solid rgba(70, 90, 140, .25); font-family: var(--f-main); font-size: 14px; color: #2d3550; vertical-align: top; }
+.registre tr:nth-child(n+4):nth-child(-n+6) td:nth-child(4) { color: #4d2330; }
+.choix-radio { display: grid; gap: 6px; margin: 0; padding: 0; border: 0; }
+.choix-radio legend { margin-bottom: 8px; font-family: var(--f-dossier); font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.choix-radio label { display: flex; gap: 10px; align-items: baseline; font-size: 16px; cursor: pointer; }
+.choix-radio input { accent-color: var(--bordeaux); }
+.qui { display: grid; gap: 4px; font-family: var(--f-dossier); font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.qui select { max-width: 320px; font-family: var(--f-corps); font-size: 16px; letter-spacing: 0; text-transform: none; }
+
+/* ---------- Étape 6 : le mot ---------- */
+.piece--enveloppe .post-it { width: 72%; }
+.cases-mot { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+.cases-mot li { display: grid; place-items: center; aspect-ratio: 1; border: 1px dashed rgba(42, 31, 23, .45); font-family: var(--f-dossier); font-weight: 600; font-size: clamp(20px, 2.2vw, 32px); }
+.cases-mot li.is-pleine { border-style: solid; background: rgba(255, 252, 244, .6); }
+.tuiles { display: flex; flex-wrap: wrap; gap: 10px; }
+.tuiles button {
+  width: 52px; height: 52px; border: 0; border-radius: 47% 53% 50% 50%; cursor: pointer;
+  background: radial-gradient(circle at 35% 30%, #9a2a36, var(--bordeaux) 60%, #2c070d); color: #f1c9bf;
+  font-family: var(--f-dossier); font-weight: 600; font-size: 22px; box-shadow: 0 5px 10px -4px rgba(40, 0, 5, .6); transition: transform .2s, opacity .3s;
+}
+.tuiles button:hover { transform: translateY(-2px) rotate(-4deg); }
+.tuiles button.is-pris { opacity: .2; pointer-events: none; }
+
+/* ---------- Conclusion ---------- */
+.conclusion { align-items: center; gap: 12px; text-align: center; }
+.conclusion h2 { margin: 6px 0 0; font-size: clamp(20px, 2vw, 28px); letter-spacing: .08em; }
+.conclusion .arbre { width: 62%; mix-blend-mode: multiply; margin: 0 0 6px; }
+.conclusion p { max-width: 380px; font-size: 16px; }
+.planche--fin .page--d { gap: 14px; }
+.planche--fin .estampille { position: absolute; top: 22px; right: 24px; z-index: 2; font-size: 13px; }
+.piece--table img { transform: rotate(.8deg); }
+.lovely p:first-child { font-style: italic; font-size: 16px; line-height: 1.42; }
+.signature-lovely { font-family: "Herr Von Muellerhoff", cursive; font-size: 40px; line-height: 1; text-align: right; }
+.recompense { display: grid; gap: 10px; padding-top: 14px; border-top: 1px dashed rgba(42, 31, 23, .3); }
+.acces { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.acces input { flex: 1 1 180px; }
+.acces-ok { font-style: italic; color: #2f5a22; }
+.mention-jeu { font-family: var(--f-corps); font-size: 13px; font-style: italic; color: var(--encre-douce); }
+.suites { display: flex; flex-wrap: wrap; gap: 18px; font-family: var(--f-dossier); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; }
+.suites a, .suites button { padding: 0; border: 0; border-bottom: 1px solid currentColor; background: none; cursor: pointer; font: inherit; text-transform: inherit; letter-spacing: inherit; color: var(--encre-d); }
+
+/* ---------- La page qui se tourne ---------- */
+.feuille { position: absolute; z-index: 8; top: 0; bottom: 0; left: 50%; width: 50%; transform-origin: 0 50%; transform-style: preserve-3d; pointer-events: none; }
+.feuille > .page { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; overflow: hidden; }
+.feuille > .feuille-dos { transform: rotateY(180deg); }
+.feuille.is-tourne { animation: tourner 1.1s cubic-bezier(.45, .05, .25, 1) forwards; }
+.feuille.is-retour { left: 0; transform-origin: 100% 50%; animation: tourner-retour 1.1s cubic-bezier(.45, .05, .25, 1) forwards; }
+@keyframes tourner { 0% { transform: rotateY(0); } 100% { transform: rotateY(-180deg); } }
+@keyframes tourner-retour { 0% { transform: rotateY(0); } 100% { transform: rotateY(180deg); } }
+.feuille::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0, 0, 0, .25), transparent 40%); opacity: 0; animation: ombre 1.1s forwards; }
+@keyframes ombre { 50% { opacity: 1; } }
+.cache { position: absolute; z-index: 7; top: 0; bottom: 0; width: 50%; overflow: hidden; pointer-events: none; }
+
+/* ---------- Le carnet des lettres ---------- */
+.progression { position: sticky; bottom: 14px; z-index: 20; display: flex; align-items: center; gap: 18px; padding: 8px 14px; border-radius: 40px; background: rgba(20, 5, 7, .8); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: var(--papier); }
+.progression-lettres { display: flex; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.progression-lettres li { display: grid; justify-items: center; gap: 2px; width: 40px; }
+.progression-lettres span { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid rgba(242, 233, 214, .3); border-radius: 50%; font-family: var(--f-dossier); font-weight: 600; font-size: 17px; color: rgba(242, 233, 214, .5); transition: background .5s, color .5s, border-color .5s; }
+.progression-lettres small { font-family: var(--f-dossier); font-size: 9px; color: rgba(242, 233, 214, .45); }
+.progression-lettres li.is-trouvee span { border-color: transparent; background: radial-gradient(circle at 35% 30%, #9a2a36, var(--bordeaux) 60%, #2c070d); color: #f6d8cf; }
+.progression-lettres li.is-ici small { color: var(--papier); }
+.progression-fleche { position: relative; width: 40px; height: 40px; border: 1px solid rgba(242, 233, 214, .3); border-radius: 50%; background: none; cursor: pointer; }
+.progression-fleche::before { content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; border-left: 1.5px solid var(--papier); border-bottom: 1.5px solid var(--papier); transform: translate(-30%, -50%) rotate(45deg); }
+.progression-fleche--suiv::before { transform: translate(-70%, -50%) rotate(-135deg); }
+.progression-fleche:disabled { opacity: .2; cursor: default; }
+
+/* ---------- Téléphone : les deux pages l'une sous l'autre, sans page tournée ---------- */
+@media (max-width: 900px) {
+  .table { padding: 84px 0 0; align-content: start; }
+  .livret { width: 100%; height: auto; min-height: 0; perspective: none; filter: none; }
+  .tranche { display: none; }
+  .planche { position: static; display: none; grid-template-columns: 1fr; min-height: 0; }
+  .planche.is-active { display: grid; animation: fondu-page .6s; }
+  @keyframes fondu-page { from { opacity: 0; transform: translateY(14px); } }
+  .page { overflow: visible; border-radius: 0 !important; padding: 34px 20px 50px; box-shadow: none !important; }
+  .page--g { border-bottom: 1px dashed rgba(42, 31, 23, .25); }
+  .couverture { min-height: 92svh; }
+  .progression { position: sticky; bottom: 0; z-index: 20; width: 100%; justify-content: center; gap: 8px; padding: 10px 8px calc(10px + env(safe-area-inset-bottom)); border-radius: 0; background: rgba(20, 5, 7, .94); backdrop-filter: blur(6px); }
+  .progression-lettres { gap: 4px; }
+  .progression-lettres li, .progression-lettres span { width: 34px; }
+  .progression-lettres span { height: 34px; font-size: 15px; }
+  .rang { grid-template-columns: 96px repeat(6, 1fr); }
+  .ardoise { font-size: 12.5px; }
+  .assemblage { grid-template-columns: repeat(3, 1fr); }
+  .assemblage .total { grid-column: 1 / -1; text-align: left; }
+  .frise-ligne { grid-template-columns: 1fr; }
+  .frise-ligne::before { display: none; }
+  .jalon::before { display: none; }
+  .registre { font-size: 12.5px; }
+  .registre td { font-size: 12.5px; padding: 4px 3px; }
+  .ordre-choisi { grid-template-columns: 1fr; }
+}
+
+/* Mode capture (?capture) : tout est visible d'un coup */
+.capture .ouverture-phrase span, .capture .ouverture-suite { opacity: 1; transform: none; filter: none; animation: none; }
+.page-enquete [hidden] { display: none !important; }
+/* Les gravures sur fond crème se fondent dans le papier, sans cadre visible */
+.conclusion .arbre, .indices-assemblage img, .lettre-croquis { -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent); mask-image: radial-gradient(closest-side, #000 72%, transparent); }
+
+/* ---------- L'inscription (27/10/2026) : avec compte, la partie est gardée ; sans, on joue tout de suite ---------- */
+.inscription { display: grid; gap: 12px; margin-top: 8px; padding-top: 16px; border-top: 1px dashed rgba(42, 31, 23, .3); scroll-margin-top: 90px; }
+.inscription-titre { font-family: var(--f-dossier); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--encre-douce); }
+.inscription-choix { display: inline-grid; grid-template-columns: 1fr 1fr; justify-self: start; padding: 3px; border: 1px solid rgba(42, 31, 23, .3); border-radius: 30px; }
+.inscription-choix label { position: relative; cursor: pointer; }
+.inscription-choix input { position: absolute; opacity: 0; pointer-events: none; }
+.inscription-choix span { display: block; padding: 7px 16px; border-radius: 30px; font-family: var(--f-dossier); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--encre-douce); transition: background .3s, color .3s; }
+.inscription-choix input:checked + span { background: var(--encre-d); color: var(--papier); }
+.inscription-choix input:focus-visible + span { outline: 2px solid var(--bordeaux-vif); outline-offset: 2px; }
+.inscription-form { display: grid; gap: 10px; }
+.inscription-champs { display: grid; grid-template-columns: 1fr 1.4fr; gap: 14px; }
+.champ { display: grid; gap: 2px; }
+.champ > span { font-family: var(--f-dossier); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--encre-douce); }
+.inscription-atouts { display: grid; gap: 4px; margin: 2px 0 0; padding: 0; list-style: none; font-size: 14.5px; line-height: 1.35; }
+.inscription-atouts li { position: relative; padding-left: 20px; }
+.inscription-atouts li::before { content: ""; position: absolute; left: 2px; top: .45em; width: 9px; height: 5px; border-left: 1.5px solid var(--bordeaux-vif); border-bottom: 1.5px solid var(--bordeaux-vif); transform: rotate(-45deg); }
+.inscription-invite { font-size: 14.5px; line-height: 1.4; }
+.inscription-form .bouton-dossier { justify-self: start; }
+.accord a { border-bottom: 1px solid currentColor; }
+.reprendre summary { cursor: pointer; font-size: 14px; font-style: italic; color: var(--encre-douce); list-style: none; }
+.reprendre summary::-webkit-details-marker { display: none; }
+.reprendre summary::before { content: "+ "; font-style: normal; }
+.reprendre[open] summary::before { content: "– "; }
+.reprendre-form { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin-top: 8px; }
+.reprendre-form .champ { flex: 1 1 200px; }
+.reprendre-form .retour { flex-basis: 100%; }
+.bouton-dossier--clair { background: transparent; color: var(--encre-d); box-shadow: inset 0 0 0 1px rgba(42, 31, 23, .5); }
+.bouton-dossier--clair:hover { background: var(--encre-d); color: var(--papier); }
+.acces-appel { flex-basis: 100%; font-size: 15px; line-height: 1.4; }
+.acces .retour { flex-basis: 100%; }
+
+/* L'état de la sauvegarde, dans le carnet */
+.progression-statut { display: inline-flex; align-items: center; gap: 7px; font-family: var(--f-dossier); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 233, 214, .55); white-space: nowrap; }
+.progression-statut::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: rgba(242, 233, 214, .35); }
+.progression-statut.is-sauvee { color: rgba(242, 233, 214, .85); }
+.progression-statut.is-sauvee::before { background: #7fb069; }
+
+/* ---------- Le règlement et le pied de page ---------- */
+.reglement { width: min(1180px, 92vw); margin: 40px auto 0; color: rgba(242, 233, 214, .82); scroll-margin-top: 90px; }
+.reglement summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; padding: 18px 0; border-top: 1px solid rgba(242, 233, 214, .2); border-bottom: 1px solid rgba(242, 233, 214, .2); cursor: pointer; list-style: none; font-family: var(--f-dossier); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--papier); }
+.reglement summary::-webkit-details-marker { display: none; }
+.reglement summary::before { content: "+"; font-family: var(--f-corps); font-size: 22px; line-height: .6; letter-spacing: 0; }
+.reglement details[open] summary::before { content: "–"; }
+.reglement summary small { font-family: var(--f-corps); font-style: italic; font-size: 15px; letter-spacing: 0; text-transform: none; color: rgba(242, 233, 214, .6); }
+.reglement ol { display: grid; gap: 10px; max-width: 760px; margin: 22px 0 0; padding-left: 22px; font-family: var(--f-corps); font-size: 17px; line-height: 1.45; }
+.reglement strong { color: var(--papier); font-weight: 600; }
+.reglement-note { margin: 18px 0 0; font-family: var(--f-corps); font-style: italic; font-size: 14.5px; color: rgba(242, 233, 214, .5); }
+.enquete-pied { display: grid; justify-items: center; gap: 18px; padding: 70px 6vw 120px; text-align: center; color: rgba(242, 233, 214, .6); font-family: var(--f-ui, sans-serif); font-size: 12.5px; }
+.enquete-pied .wordmark { width: 130px; color: var(--papier); }
+.enquete-pied .reseaux { color: var(--papier); }
+.enquete-pied .reseaux a:hover, .enquete-pied .reseaux a:focus-visible { background: var(--papier); border-color: var(--papier); color: #140507; }
+
+@media (max-width: 900px) {
+  .inscription-champs { grid-template-columns: 1fr; }
+  .progression-statut { font-size: 0; gap: 0; }
+  .progression-statut::before { width: 9px; height: 9px; }
+  .enquete-pied { padding-bottom: 110px; }
+}
+/* les cases du formulaire de fin ne s'étirent pas comme le champ e-mail */
+.acces .accord input { flex: none; width: auto; }

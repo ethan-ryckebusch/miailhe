@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script src="assets/js/langue.js"></script><!-- la langue d'abord : la page est traduite avant d'être montrée -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon espace client · MIAILHE</title>
+  <meta name="description" content="Votre espace client de la famille Miailhe : vos commandes des trois châteaux, vos adresses, votre enquête et vos préférences, au même endroit.">
+  <link rel="stylesheet" href="assets/css/polices.css">
+  <link rel="stylesheet" href="assets/css/typographie.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/compte.css">
+</head>
+<!-- L'espace client (28/10/2026, demande de l'utilisateur : l'icône « espace client » de la boutique). Un seul espace pour
+     les trois châteaux : les commandes de la boutique, le panier, l'enquête, le château du test, les coordonnées.
+     Connexion sans mot de passe : sur miailhe.com, un lien serait envoyé par e-mail. Maquette : tout vit dans ce
+     navigateur (localStorage : miailhe-client, miailhe-clients, miailhe-commandes ; assets/js/compte.js). -->
+<body class="page-compte">
+
+  <!-- Âge légal (sans intro : on ne le redemande pas à qui l'a déjà confirmé) -->
+  <div class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-titre">
+    <figure class="entree-fond"><img src="assets/img/acte-famille-1931.jpg" alt=""></figure>
+    <div class="entree">
+      <span class="wordmark" aria-label="MIAILHE"><span class="sr-only">MIAILHE</span></span>
+      <p id="age-titre">L'espace client de la famille Miailhe est réservé aux personnes ayant l'âge légal de consommer de l'alcool dans leur pays.</p>
+      <div class="choix">
+        <button class="btn btn--plein" type="button" data-entrer><span>J'ai l'âge légal, entrer</span></button>
+      </div>
+      <button class="refus" type="button">Je n'ai pas l'âge légal</button>
+      <p class="refus-message">Revenez nous voir plus tard. La vigne, elle, sait attendre.</p>
+      <p class="mention">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+      <ul class="langues langues--porte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-gauche">
+      <a class="cp-retour" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html"><span class="chev chev--g" aria-hidden="true"></span><span>Les trois portes</span></a>
+    </div>
+    <a class="wordmark" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="MIAILHE, accueil"><span class="sr-only">MIAILHE</span></a>
+    <div class="header-droite">
+      <!-- La boutique et l'enquête en avant, puis l'espace client, le panier et la langue (source/entete.py ; espace.js) -->
+      <a class="entete-fort entete-fort--boutique" href="boutique.html" aria-label="La boutique de la famille : les vins des trois châteaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 2.6h3.6M10.7 2.6v4.5c0 .8-.4 1.3-1 1.9-.9.8-1.5 1.8-1.5 3.1v8.2c0 .6.5 1.1 1.1 1.1h5.4c.6 0 1.1-.5 1.1-1.1v-8.2c0-1.3-.6-2.3-1.5-3.1-.6-.6-1-1.1-1-1.9V2.6"/><path d="M8.2 13.4h7.6v4.4H8.2z"/></svg><span>La boutique</span></a>
+      <a class="entete-fort entete-fort--enquete" href="enquete.html" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <a class="entete-icone entete-compte-lien" href="compte.html" data-compte aria-label="Mon espace client"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.3" r="3.8"/><path d="M4.6 20.4c.9-3.9 3.9-6 7.4-6s6.5 2.1 7.4 6"/></svg><span class="entete-initiale" data-compte-initiale translate="no" hidden></span></a>
+      <a class="entete-icone" href="boutique.html#panier" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 11.3a1.1 1.1 0 0 1-1.1 1H7.4a1.1 1.1 0 0 1-1.1-1L5.2 8.2z"/><path d="M9 10.4V6.6a3 3 0 0 1 6 0v3.8"/></svg><b class="entete-pastille" data-panier-compte translate="no" hidden>0</b></a>
+      <ul class="langues langues--compacte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </header>
+
+  <main class="cp">
+
+    <!-- Pas encore connecté : la famille vous accueille, on entre avec son e-mail -->
+    <section class="cp-accueil" data-vue="accueil" hidden>
+      <figure class="cp-photo">
+        <img src="assets/img/acte-aujourdhui.jpg" alt="Éric et Lovely Miailhe devant le château Coufran">
+        <figcaption>Éric et Lovely, aujourd'hui, à Coufran</figcaption>
+      </figure>
+      <div class="cp-porte">
+        <p class="cp-sur">Mon espace client</p>
+        <h1 class="cp-titre">Bienvenue <em>chez nous.</em></h1>
+        <p class="cp-chapeau">Un seul espace pour les trois châteaux : vos commandes, vos adresses, votre enquête, et un mot de la famille quand un millésime sort de la réserve.</p>
+
+        <div class="cp-onglets" role="tablist" aria-label="Se connecter ou créer son espace">
+          <button type="button" role="tab" id="onglet-entrer" aria-controls="cp-entrer" aria-selected="true" data-onglet="entrer">J'ai déjà un espace</button>
+          <button type="button" role="tab" id="onglet-creer" aria-controls="cp-creer" aria-selected="false" data-onglet="creer">Créer mon espace</button>
+        </div>
+
+        <form class="cp-form" id="cp-entrer" role="tabpanel" aria-labelledby="onglet-entrer" data-form="entrer" novalidate>
+          <label class="cp-champ"><span>Votre e-mail</span><input name="email" type="email" autocomplete="email" required placeholder="prenom@exemple.fr"></label>
+          <button class="cp-bouton" type="submit">Recevoir mon lien de connexion</button>
+          <p class="cp-note">Pas de mot de passe à retenir : sur miailhe.com, un lien de connexion vous serait envoyé par e-mail.</p>
+          <p class="cp-erreur" data-erreur role="alert" translate="no" hidden></p>
+        </form>
+
+        <form class="cp-form" id="cp-creer" role="tabpanel" aria-labelledby="onglet-creer" data-form="creer" novalidate hidden>
+          <div class="cp-deux">
+            <label class="cp-champ"><span>Prénom</span><input name="prenom" autocomplete="given-name" required></label>
+            <label class="cp-champ"><span>Nom</span><input name="nom" autocomplete="family-name" required></label>
+          </div>
+          <label class="cp-champ"><span>Votre e-mail</span><input name="email" type="email" autocomplete="email" required placeholder="prenom@exemple.fr"></label>
+          <label class="cp-coche"><input type="checkbox" name="age" required> <span>J'ai l'âge légal pour acheter de l'alcool (18 ans en France).</span></label>
+          <label class="cp-coche"><input type="checkbox" name="newsletter"> <span>Recevoir la lettre de la famille : une par trimestre, avec la nouvelle enquête et les millésimes qui sortent de la réserve.</span></label>
+          <button class="cp-bouton" type="submit">Créer mon espace</button>
+          <p class="cp-erreur" data-erreur role="alert" translate="no" hidden></p>
+        </form>
+
+        <ul class="cp-atouts">
+          <li><strong>Vos commandes</strong> des trois châteaux, suivies au même endroit.</li>
+          <li><strong>Votre enquête</strong>, reprise là où vous l'aviez laissée.</li>
+          <li><strong>Les millésimes</strong> qui sortent de la réserve : la famille vous prévient quand ils sont prêts.</li>
+        </ul>
+        <p class="cp-maquette">Maquette : rien n'est envoyé. Votre espace vit dans ce navigateur ; sur miailhe.com, il serait gardé sur nos serveurs.</p>
+      </div>
+    </section>
+
+    <!-- Connecté : le tableau de bord (compte.js) -->
+    <section class="cp-tableau" data-vue="tableau" hidden>
+      <header class="cp-bonjour">
+        <p class="cp-sur">Mon espace client</p>
+        <h1 class="cp-titre" data-bonjour translate="no"></h1>
+        <p class="cp-depuis" data-depuis translate="no"></p>
+      </header>
+      <div class="cp-grille" data-grille translate="no"></div>
+    </section>
+
+  </main>
+
+  <p class="cp-annonce" aria-live="polite" data-annonce translate="no"></p>
+
+  <footer class="cp-pied">
+    <p><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html">miailhe.com</a> · Trois châteaux du Haut-Médoc, une même famille</p>
+    <nav class="reseaux" data-reseaux></nav>
+    <p>La vente d'alcool aux mineurs est interdite. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </footer>
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/feuille-miailhe.js"></script><!-- la feuille de vigne du logo, partout la même -->
+  <script src="assets/js/logos-chateaux.js"></script>
+  <script src="assets/js/typographie.js"></script>
+  <script src="assets/js/reseaux.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/espace.js"></script><!-- l'initiale du client et le panier, dans l'en-tête -->
+  <script src="assets/js/survol.js"></script><!-- la racine sous les liens de l'en-tête, au survol -->
+  <script src="assets/js/compte.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /compte
+Disallow: /archives/
+Disallow: /prototypes/
+
+Sitemap: https://miailhe.com/sitemap.xml

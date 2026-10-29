@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIAILHE · Trois portes, une seule famille</title>
+  <meta name="description" content="Coufran, Verdignan, Soudars : trois châteaux du Haut-Médoc, trois générations d'une même famille. Poussez la porte qui vous ressemble.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/polices.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/motifs.css">
+  <link rel="stylesheet" href="assets/css/vitrine.css">
+</head>
+<body class="accueil">
+
+  <!-- Âge légal -->
+  <div class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-titre">
+    <!-- Intro (assets/js/intro.js) : le logo sort du flou, une racine traverse l'écran et écrit le nom des trois châteaux -->
+    <div class="intro-ecran" aria-hidden="true">
+      <span class="wordmark intro-logo"></span>
+      <div class="intro-racines">
+        <svg class="intro-svg"></svg>
+        <ol class="intro-noms">
+          <li class="intro-nom intro-nom--coufran"><span class="mot">Coufran</span><small>1924</small></li>
+          <li class="intro-nom intro-nom--verdignan"><span class="mot">Verdignan</span><small>1972</small></li>
+          <li class="intro-nom intro-nom--soudars"><span class="mot">Soudars</span><small>1973</small></li>
+        </ol>
+      </div>
+    </div>
+    <figure class="entree-fond"><img src="assets/img/acte-famille-1931.jpg" alt=""></figure>
+    <div class="entree">
+      <span class="wordmark" aria-label="MIAILHE"><span class="sr-only">MIAILHE</span></span>
+      <p id="age-titre">Trois châteaux du Haut-Médoc, une même famille. Pour entrer, vous devez avoir l'âge légal de consommer de l'alcool dans votre pays.</p>
+      <div class="choix">
+        <button class="btn btn--plein" type="button" data-entrer><span>J'ai l'âge légal, entrer</span></button>
+      </div>
+      <button class="refus" type="button">Je n'ai pas l'âge légal</button>
+      <p class="refus-message">Revenez nous voir plus tard. La vigne, elle, sait attendre.</p>
+      <p class="mention">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    </div>
+  </div>
+
+  <!-- En-tête et menu plein écran, reproduits d'après chateau-cheval-blanc.com -->
+  <header class="site-header">
+    <div class="header-gauche">
+      <button class="ouvrir-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu"><span></span></button>
+    </div>
+    <a class="wordmark" href="#accueil" aria-label="MIAILHE, accueil"><span class="sr-only">MIAILHE</span></a>
+    <div class="header-droite">
+      <a class="bouton-enquete" href="enquete.html" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <!-- Les trois armoiries : on entre dans le château de son choix -->
+      <nav class="familles" aria-label="Les trois châteaux de la famille">
+        <a class="famille-lien" href="coufran/index.html?porte" data-nom="Coufran"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span><span class="sr-only">Château Coufran</span></a>
+        <a class="famille-lien" href="verdignan/index.html?porte" data-nom="Verdignan"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span><span class="sr-only">Château Verdignan</span></a>
+        <a class="famille-lien" href="soudars/index.html?porte" data-nom="Soudars"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span><span class="sr-only">Château Soudars</span></a>
+      </nav>
+      <ul class="langues" aria-label="Langue du site">
+        <li><a href="#" lang="fr" aria-current="true">Fr</a></li>
+        <li><a href="#" lang="en" title="English version coming soon">En</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="mainnav" id="menu-principal" aria-label="Menu principal" aria-hidden="true">
+    <div class="mainnav-contenu">
+      <div class="mainnav-enquete">
+        <p class="titre-3">L'enquête &nbsp;—&nbsp; <a class="lien-trait" href="enquete.html">La page arrachée</a></p>
+        <a class="couverture-enquete" href="enquete.html" aria-label="Ouvrir le dossier de l'enquête">
+          <span class="marque">Miailhe</span>
+          <span class="photo"><img src="assets/img/acte-famille-1931.jpg" alt="" loading="lazy"></span>
+          <span class="cachet">Affaire n° 1793</span>
+          <span class="loupe" aria-hidden="true"></span>
+          <span class="titre"><span>La page</span><br><span>arrachée</span></span>
+        </a>
+      </div>
+      <div class="mainnav-menus">
+        <ul class="menu-principal">
+          <li><a href="#accueil"><span>Nos châteaux<span class="num">I.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="coufran/index.html?porte"><span>Château Coufran</span></a></li>
+              <li><a href="verdignan/index.html?porte"><span>Château Verdignan</span></a></li>
+              <li><a href="soudars/index.html?porte"><span>Château Soudars</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#histoire"><span>La famille<span class="num">II.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="#histoire"><span>Cinq générations</span></a></li>
+              <li><a href="#circuit"><span>Quel Miailhe êtes-vous ?</span></a></li>
+              <li><a href="identite.html"><span>Notre identité</span></a></li>
+            </ul>
+          </li>
+          <li><a href="enquete.html"><span>L'enquête<span class="num">III.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="enquete.html"><span>Ouvrir le dossier</span></a></li>
+              <li><a href="coufran/index.html#temoin"><span>Les trois témoins</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#visiter"><span>Visiter<span class="num">IV.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="#visiter"><span>Venir à Saint-Seurin</span></a></li>
+              <li><a href="#visiter"><span>Visites &amp; dégustations</span></a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="menu-second">
+          <li><a href="#circuit"><span>Trouver mon vin</span></a></li>
+          <li><a href="#contact"><span>Contact &amp; accès</span></a></li>
+        </ul>
+        <ul class="menu-third">
+          <li><a href="#contact"><span>Espace professionnels</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="v">
+
+    <!-- 1. Trois portes : derrière chacune, une génération de la famille. On pousse celle qui nous ressemble. -->
+    <section class="v-portes" id="accueil" data-header="light">
+      <div class="v-portes-tete">
+        <p class="v-sur-titre">Une famille du Haut-Médoc · depuis 1793</p>
+        <h1 class="v-h1"><span>Trois portes,</span><span>une seule <em>famille</em>.</span></h1>
+        <p class="v-chapeau">Derrière chaque porte, une génération des Miailhe vous attend. Poussez celle qui vous ressemble.</p>
+      </div>
+      <div class="portes">
+        <a class="porte" href="coufran/index.html?porte" data-chateau="coufran">
+          <span class="porte-arche">
+            <span class="motif"></span>
+            <span class="porte-film"><video muted loop playsinline preload="metadata" poster="assets/img/coufran-hero.jpg" aria-hidden="true"><source src="assets/video/coufran-intro.webm" type="video/webm"><source src="assets/video/coufran-intro.mp4" type="video/mp4"></video></span>
+            <span class="porte-pousser">Pousser la porte</span>
+          </span>
+          <span class="porte-legende">
+            <span class="armoirie" data-armoirie="coufran"></span>
+            <span class="porte-nom">Coufran</span>
+            <span class="porte-qui">Louis, le grand-père · 1924</span>
+            <span class="porte-trait">Le <em>caractère</em></span>
+          </span>
+        </a>
+        <a class="porte" href="verdignan/index.html?porte" data-chateau="verdignan">
+          <span class="porte-arche">
+            <span class="motif"></span>
+            <span class="porte-film"><video muted loop playsinline preload="metadata" poster="assets/img/verdignan-hero.jpg" aria-hidden="true"><source src="assets/video/verdignan-intro.webm" type="video/webm"><source src="assets/video/verdignan-intro.mp4" type="video/mp4"></video></span>
+            <span class="porte-pousser">Pousser la porte</span>
+          </span>
+          <span class="porte-legende">
+            <span class="armoirie" data-armoirie="verdignan"></span>
+            <span class="porte-nom">Verdignan</span>
+            <span class="porte-qui">Jean, le père · 1972</span>
+            <span class="porte-trait">L'élégance <em>classique</em></span>
+          </span>
+        </a>
+        <a class="porte" href="soudars/index.html?porte" data-chateau="soudars">
+          <span class="porte-arche">
+            <span class="motif"></span>
+            <span class="porte-film"><video muted loop playsinline preload="metadata" poster="assets/img/soudars-intro-poster.jpg" aria-hidden="true"><source src="assets/video/soudars-intro.webm" type="video/webm"><source src="assets/video/soudars-intro.mp4" type="video/mp4"></video></span>
+            <span class="porte-pousser">Pousser la porte</span>
+          </span>
+          <span class="porte-legende">
+            <span class="armoirie" data-armoirie="soudars"></span>
+            <span class="porte-nom">Soudars</span>
+            <span class="porte-qui">Éric, le fils · 1973</span>
+            <span class="porte-trait">Le plaisir <em>partagé</em></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. L'histoire, en une frise : cinq générations, une racine -->
+    <section class="v-histoire" id="histoire" data-header="light">
+      <div class="v-histoire-tete">
+        <p class="v-sur-titre">L'histoire</p>
+        <h2 class="v-h2" data-reveal><span>Avant de faire du vin,</span><span>les Miailhe l'ont <em>goûté</em>.</span></h2>
+        <p class="v-chapeau" data-reveal>Courtiers à Bordeaux depuis 1793, ils ont passé deux siècles à juger le vin des autres. Puis, de père en fils, chacun a planté le sien.</p>
+      </div>
+      <ol class="frise" data-frise>
+        <li class="frise-etape" data-reveal><span class="frise-noeud"></span><span class="frise-annee">1793</span><span class="frise-nom">Élie</span><span class="frise-texte">Courtier du roi à Bordeaux. Il goûte, juge et place le vin des autres.</span></li>
+        <li class="frise-etape frise-etape--chateau" data-reveal style="--c: var(--coufran)"><span class="frise-noeud"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span></span><span class="frise-annee">1924</span><span class="frise-nom">Louis, le grand-père</span><span class="frise-texte">Achète Coufran et replante tout en merlot, quand ses voisins ne jurent que par le cabernet.</span></li>
+        <li class="frise-etape frise-etape--chateau" data-reveal style="--c: var(--verdignan)"><span class="frise-noeud"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span></span><span class="frise-annee">1972</span><span class="frise-nom">Jean, le père</span><span class="frise-texte">Dernier courtier de la famille, il achète Verdignan, le château voisin qui regarde l'estuaire.</span></li>
+        <li class="frise-etape frise-etape--chateau" data-reveal style="--c: var(--soudars)"><span class="frise-noeud"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span></span><span class="frise-annee">1973</span><span class="frise-nom">Éric, le fils</span><span class="frise-texte">Bâtit Soudars de toutes pièces, sur des friches couvertes de pierres et de ronces.</span></li>
+        <li class="frise-etape" data-reveal><span class="frise-noeud"></span><span class="frise-annee">2006</span><span class="frise-nom">Lovely</span><span class="frise-texte">La quatrième génération. Elle veille sur les trois châteaux aux côtés de son père.</span></li>
+      </ol>
+      <div class="v-photos" data-reveal>
+        <figure><img src="assets/img/acte-famille-1931.jpg" alt="La famille Miailhe réunie en 1931" loading="lazy"><figcaption>La famille, en 1931</figcaption></figure>
+        <p class="v-chute">Trois châteaux différents au-dessus du sol. <em>Une seule racine</em> en dessous.</p>
+        <figure><img src="assets/img/acte-aujourdhui.jpg" alt="Éric et Lovely Miailhe devant le château Coufran" loading="lazy"><figcaption>Éric et Lovely, aujourd'hui</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 3. Le circuit : quatre questions pour trouver son château, et le vin de son année (vitrine.js) -->
+    <section class="v-circuit" id="circuit" data-header="light">
+      <div class="circuit" data-circuit>
+        <div class="circuit-ecran circuit-depart">
+          <p class="v-sur-titre">Le circuit</p>
+          <h2 class="v-h2"><span>Quel Miailhe</span><span><em>êtes-vous</em> ?</span></h2>
+          <p class="v-chapeau">Quatre questions pour trouver, parmi les trois maisons, le vin qui vous ressemble. Et, si vous le voulez, celui de votre année de naissance.</p>
+          <button class="v-bouton" type="button" data-commencer>Commencer le circuit</button>
+          <noscript><p class="v-chapeau">Le circuit demande JavaScript. Poussez directement une porte : <a href="coufran/index.html">Coufran</a>, <a href="verdignan/index.html">Verdignan</a> ou <a href="soudars/index.html">Soudars</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Venir : la carte du Médoc (source/carte.py) -->
+    <section class="v-venir" id="visiter" data-header="light">
+      <figure class="v-carte" data-reveal><img src="assets/img/carte-medoc.svg" alt="Carte du Médoc : les trois domaines de la famille Miailhe à Saint-Seurin-de-Cadourne, au bord de l'estuaire de la Gironde" loading="lazy"></figure>
+      <div class="v-venir-texte" data-reveal>
+        <p class="v-sur-titre">Visiter</p>
+        <h2 class="v-h2"><span>Trois châteaux</span><span>dans un <em>mouchoir</em></span><span>de poche.</span></h2>
+        <p class="v-chapeau">Coufran, Verdignan et Soudars sont voisins, à Saint-Seurin-de-Cadourne, au bord de l'estuaire de la Gironde. On passe de l'un à l'autre à pied, en suivant les rangs. Visites et dégustations sur rendez-vous ; l'enquête se joue aussi sur place.</p>
+        <div class="v-actions">
+          <a class="v-bouton" href="tel:+33556593102">Prendre rendez-vous</a>
+          <a class="v-lien" href="enquete.html">Mener l'enquête</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer v-pied" id="contact" data-header="light">
+    <div class="v-pied-haut">
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593102">+33 5 56 59 31 02</a></p>
+        <p class="gris">Visites sur rendez-vous, particuliers et professionnels.</p>
+      </div>
+      <a class="wordmark" href="#accueil" aria-label="MIAILHE, retour en haut"><span class="sr-only">MIAILHE</span></a>
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Vignobles de la famille Miailhe<br>Château Coufran, 33180 Saint-Seurin-de-Cadourne</p>
+      </div>
+    </div>
+    <div class="v-pied-bas">
+      <nav class="v-pied-chateaux" aria-label="Les châteaux">
+        <a href="coufran/index.html"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span>Château Coufran</a>
+        <a href="verdignan/index.html"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span>Château Verdignan</a>
+        <a href="soudars/index.html"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span>Château Soudars</a>
+      </nav>
+      <nav aria-label="Liens du pied de page">
+        <a href="enquete.html">L'enquête</a>
+        <a href="identite.html">Notre identité</a>
+        <a href="tel:+33556593102">Espace professionnels</a>
+        <a href="#accueil">↑ Haut</a>
+      </nav>
+    </div>
+    <p class="v-sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    <p class="v-mentions">Maquette de concept réalisée dans le cadre d'un projet étudiant ISCOM (2026). Site non officiel. Photographies : châteaux Coufran, Verdignan et Soudars. Films d'intro : créations originales (Higgsfield).</p>
+  </footer>
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/armoiries.js"></script>
+  <script src="assets/js/millesimes.js"></script>
+  <script src="assets/js/intro.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/vitrine.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* Le système typographique MIAILHE (27/10/2026), commun à la vitrine, aux trois châteaux, à l'Enquête et au quiz.
+
+   Quatre rôles, pas un de plus :
+   - Cormorant (Christian Thalmann, SIL OFL) : les titres et le texte éditorial. Un Garamond de display, très contrasté,
+     avec de vraies petites capitales (smcp, c2sc), des chiffres elzéviriens (onum) et des ligatures ;
+   - Canela italique : le mot mis en avant dans un titre, toujours un seul ;
+   - Cinzel (la romaine du logotype MIAILHE) : les inscriptions, comme sur une pierre : dates, sur-titres solennels ;
+   - Circular : l'interface (menus, boutons, légendes, formulaires).
+   Les polices historiques des châteaux (Albertus, Didot, Cooper Black) ne vivent plus que dans leurs logos
+   (Logos/CHATEAUX), pour que le texte des trois sites soit le même.
+
+   L'échelle est modulaire et fluide : tierce majeure (1,25) sur téléphone, quarte (1,333) sur grand écran.
+   La microtypographie française (espaces fines insécables, guillemets, apostrophes, mots orphelins) est faite par
+   typographie.js. Le site existe aussi en anglais et en japonais (langue.js) : le japonais a ses propres règles, en bas. */
+
+:root {
+  --t-titre: "Cormorant", "Cormorant Garamond", Garamond, Georgia, serif;
+  --t-italique: "Canela", "Cormorant", Georgia, serif;
+  --t-inscription: "Cinzel", "Trajan Pro", serif;
+  --t-interface: "Circular", "Jost", "Avenir Next", system-ui, sans-serif;
+
+  --t--1: clamp(.8rem, .78rem + .1vw, .85rem);
+  --t-0: clamp(1rem, .97rem + .15vw, 1.0625rem);
+  --t-1: clamp(1.2rem, 1.13rem + .35vw, 1.42rem);
+  --t-2: clamp(1.5rem, 1.33rem + .8vw, 1.89rem);
+  --t-3: clamp(1.88rem, 1.55rem + 1.5vw, 2.52rem);
+  --t-4: clamp(2.34rem, 1.8rem + 2.6vw, 3.36rem);
+  --t-5: clamp(2.93rem, 2rem + 4.2vw, 4.48rem);
+  --t-6: clamp(3.66rem, 2.2rem + 6.4vw, 5.97rem);
+  --t-7: clamp(4.58rem, 2.4rem + 9.6vw, 7.96rem);
+
+  /* l'œil d'un Cormorant est petit : en texte courant on l'aligne sur celui d'un livre (rapport x/corps de .47) */
+  --t-oeil-texte: .47;
+}
+
+html { font-kerning: normal; font-synthesis: none; text-rendering: optimizeLegibility; hanging-punctuation: first last; }
+
+/* Titres équilibrés, paragraphes sans veuve ni orpheline */
+:is(h1, h2, h3, h4, blockquote, .titre-equilibre) { text-wrap: balance; }
+:is(p, li, figcaption, dd) { text-wrap: pretty; }
+
+/* Le texte éditorial : césure française mesurée, ligatures, chiffres elzéviriens qui s'alignent sur les bas-de-casse */
+.texte-editorial, .texte-serif, blockquote {
+  hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 8 3 3;
+  font-variant-ligatures: common-ligatures contextual; font-variant-numeric: oldstyle-nums proportional-nums;
+}
+/* Les chiffres qui se comparent (pourcentages, prix, quantités, formulaires) restent alignés */
+:is(table, input, select, output, .chiffres, .chiffre, .num) { font-variant-numeric: lining-nums tabular-nums; }
+
+/* Petites capitales vraies (pas des capitales réduites) et exposants dessinés */
+.pcap { font-variant-caps: all-small-caps; letter-spacing: .06em; }
+.exposant { font-variant-position: super; }
+
+/* Lettrine : trois lignes, dans la couleur de la maison */
+.lettrine::first-letter { -webkit-initial-letter: 3; initial-letter: 3; margin-right: .08em; font-family: var(--t-titre); font-weight: 500; color: var(--forte, currentColor); }
+
+/* Guillemets suspendus en tête de citation : le texte s'aligne sur la lettre, pas sur le guillemet */
+blockquote.suspendu { text-indent: -.52em; }
+
+
+/* ---------- Les langues : le sélecteur Fr / En / 日本語 (langue.js), dans l'en-tête, le menu, la porte d'âge, le pied ---------- */
+.langues { display: flex; flex-shrink: 0; align-items: baseline; list-style: none; margin: 0; padding: 0; font-family: var(--t-interface); font-size: 13px; text-transform: uppercase; white-space: nowrap; }
+.langues li:not(:last-child)::after { content: "/"; margin: 0 .55em; opacity: .5; }
+.langues a { color: inherit; text-decoration: none; opacity: .55; transition: opacity .3s; }
+.langues a[aria-current] { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+.langues a:hover { opacity: .85; }
+.langues a:lang(ja) { font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", var(--t-interface); font-size: .92em; letter-spacing: .04em; }
+.langues--porte { justify-content: center; margin-top: 16px; font-size: 12px; }
+.langues--pied { align-self: center; align-items: center; font-size: 12px; }
+
+/* ---------- Le japonais ----------
+   Les polices latines n'ont pas de kana ni de kanji : chaque rôle reçoit son équivalent japonais (mincho pour les titres
+   et le texte, comme le Cormorant ; gothique pour l'interface, comme le Circular). Les lettres latines (noms des
+   châteaux, MIAILHE) gardent leurs polices. Pas d'italique ni de capitales en japonais ; un interlignage plus ouvert,
+   et des retours à la ligne entre les mots (auto-phrase), jamais au milieu d'un mot. */
+:root:lang(ja) {
+  --jp-mincho: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", "Shippori Mincho", serif;
+  --jp-gothique: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+  --t-titre: "Cormorant", "Cormorant Garamond", var(--jp-mincho);
+  --t-italique: "Canela", "Cormorant", var(--jp-mincho);
+  --t-inscription: "Cinzel", var(--jp-mincho);
+  --t-interface: "Circular", "Jost", var(--jp-gothique);
+  --f-serif: "Cormorant", "Cormorant Garamond", var(--jp-mincho);
+  --f-it: "Canela", "Cormorant", var(--jp-mincho);
+  --f-mark: "Cinzel", var(--jp-mincho);
+  --f-menu: "Felix Titling", "Cinzel", var(--jp-mincho);
+  --f-ui: "Circular", "Jost", var(--jp-gothique);
+}
+html:lang(ja) { line-break: strict; word-break: auto-phrase; overflow-wrap: break-word; }
+:lang(ja) :is(p, li, dd, blockquote, figcaption) { line-height: max(1.75, 1em + .7em); }
+:lang(ja) :is(h1, h2, h3, h4) { line-height: 1.38 !important; letter-spacing: .02em !important; }
+:lang(ja) :is(em, i, cite, .it) { font-style: normal; }
+:lang(ja) .texte-editorial, :lang(ja) blockquote { hyphens: manual; }
+
+/* ---------- L'en-tête de toutes les pages (28/10/2026) : l'espace client, le panier, la langue repliée ----------
+   Écrits par source/entete.py et generer_chateaux.py ; espace.js y met l'initiale du client et le nombre de bouteilles.
+   --entete-encre et --entete-fond suivent l'en-tête (clair ou sombre) : main.css, chateau.css. */
+/* L'espace client et le panier : deux icônes au trait ; l'initiale du client connecté, le nombre de bouteilles (espace.js) */
+.entete-icone {
+  position: relative; display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0; margin: 0 2px;
+  border: 0; border-radius: 50%; background: none; color: inherit; cursor: pointer; text-decoration: none;
+  transition: background .3s;
+}
+.entete-icone svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
+.entete-icone:hover, .entete-icone:focus-visible { background: color-mix(in srgb, currentColor 12%, transparent); outline: none; }
+.entete-pastille {
+  position: absolute; top: 1px; right: -1px; min-width: 17px; height: 17px; padding: 0 4px; border-radius: 9px;
+  display: grid; place-items: center; font-family: var(--t-interface); font-size: 9.5px; font-weight: 600; line-height: 1; font-style: normal;
+  background: var(--pastille, #e50041); color: #fff; box-shadow: 0 0 0 2px #fff;
+}
+.entete-pastille[hidden] { display: none; }
+.entete-initiale {
+  position: absolute; inset: 6px; display: grid; place-items: center; border-radius: 50%;
+  font-family: var(--t-interface); font-size: 12px; font-weight: 600; letter-spacing: 0;
+  background: var(--entete-encre, #16120f); color: var(--entete-fond, #fff);
+}
+.entete-initiale[hidden] { display: none; }
+.entete-compte-lien.est-connecte svg { opacity: 0; }
+/* une étiquette sous l'icône, au survol (le texte est l'aria-label, traduit avec la page) */
+.entete-icone::before {
+  content: attr(aria-label); position: absolute; top: calc(100% + 10px); left: 50%; transform: translate(-50%, -4px);
+  padding: 5px 9px; font-family: var(--t-interface); font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+  color: #fff; background: rgba(0, 0, 0, .84); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s;
+}
+.entete-icone:hover::before, .entete-icone:focus-visible::before { opacity: 1; transform: translate(-50%, 0); }
+@media (hover: none) { .entete-icone::before { display: none; } }
+
+/* La langue, repliée : la langue en cours et un chevron ; les deux autres descendent au survol ou au toucher */
+.langues--compacte { position: relative; display: flex; flex-direction: column; align-items: stretch; align-self: center; height: 36px; margin-left: 10px; font-size: 12px; line-height: 1; letter-spacing: .06em; z-index: 3; }
+.langues--compacte li { order: 1; visibility: hidden; opacity: 0; transform: translateY(-4px); transition: opacity .2s, transform .2s, visibility 0s .2s; }
+.langues--compacte li::after { content: none !important; }
+.langues--compacte li:has([aria-current]) { order: 0; visibility: visible; opacity: 1; transform: none; }
+.langues--compacte li:has([aria-current]) a { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 2px; opacity: 1; text-decoration: none; cursor: default; }
+.langues--compacte li:has([aria-current]) a::after { content: ""; width: 5px; height: 5px; margin-top: -3px; border: solid currentColor; border-width: 0 1.2px 1.2px 0; transform: rotate(45deg); opacity: .7; }
+.langues--compacte li:not(:has([aria-current])) a { display: block; padding: 8px 12px; color: rgba(22, 18, 15, .62); background: #fff; opacity: 1; box-shadow: 0 6px 18px rgba(0, 0, 0, .12); }
+.langues--compacte li:not(:has([aria-current])) a:hover, .langues--compacte li:not(:has([aria-current])) a:focus-visible { color: #16120f; }
+.langues--compacte:hover li, .langues--compacte:focus-within li { visibility: visible; opacity: 1; transform: none; transition: opacity .2s, transform .2s; }

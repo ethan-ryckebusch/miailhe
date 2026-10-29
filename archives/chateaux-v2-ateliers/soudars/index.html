@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Château Soudars · Le vin du fils · Haut-Médoc</title>
+  <meta name="description" content="Château Soudars, Haut-Médoc. Le vin du fils : Éric Miailhe l'a bâti en 1973 sur des friches pleines de pierres. Un vin rond et gourmand, à partager.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-soudars">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <a class="ch-logo" href="index.html" aria-label="Château Soudars, accueil">Soudars</a>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins">Nos vins</a>
+      <a href="famille.html">La famille</a>
+      <a href="index.html#temoin">L'enquête</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="ch-droite">
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span></a><a class="famille-lien" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span></a><a class="famille-lien ici" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars" aria-current="page"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span></a></nav>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Une maison de la famille MIAILHE">Une maison <span class="wordmark"></span></a>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main>
+    <section class="intro" aria-label="Château Soudars">
+      <!-- Film d'intro en boucle, comme sur privios.com : la photo du château sert d'affiche pendant le chargement -->
+      <div class="intro-fond">
+        <video autoplay muted loop playsinline preload="auto" poster="../assets/img/soudars-intro-poster.jpg" aria-hidden="true">
+          <source src="../assets/video/soudars-intro.webm" type="video/webm">
+          <source src="../assets/video/soudars-intro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="intro-contenu">
+        <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+        <h1 class="intro-texte">
+          <span data-anime="1">Partagez</span>
+          <span data-anime="2">le <span class="it">plaisir</span> du</span>
+          <span data-anime="3">fils</span>
+        </h1>
+      </div>
+      <a class="fleche-bas" href="#nos-vins" aria-label="Découvrir nos vins"></a>
+    </section>
+
+    <section class="vins-titre" id="nos-vins">
+      <img src="../assets/img/soudars-terre.jpg" alt="" loading="lazy">
+      <p data-anime><span class="it">découvrez</span><br>nos millésimes</p>
+    </section>
+
+    <section class="bouteilles" aria-label="Nos vins" tabindex="-1">
+      <div class="piste">
+        <button class="bouteille" type="button" data-nom="Château Soudars 2018" data-origine="Haut-Médoc · Cerise, groseille, framboise. Rond, aérien, friand." data-lien="chateau-soudars.html" aria-label="Château Soudars 2018"><img src="../assets/img/bouteille-soudars-2018.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="Château Soudars 2017" data-origine="Haut-Médoc · Année de gel, petite récolte. Fruits frais, digeste." data-lien="chateau-soudars.html" aria-label="Château Soudars 2017"><img src="../assets/img/bouteille-soudars-2017.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="Château Soudars 2016" data-origine="Haut-Médoc · Fruits noirs, boisé raffiné. Gras et onctueux." data-lien="chateau-soudars.html" aria-label="Château Soudars 2016"><img src="../assets/img/bouteille-soudars-2016.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="Château Soudars 2015" data-origine="Haut-Médoc · Fraise des bois, cassis. Rond, tendu, long." data-lien="chateau-soudars.html" aria-label="Château Soudars 2015"><img src="../assets/img/bouteille-soudars-2015.webp" alt="" loading="lazy"></button>
+        <button class="bouteille" type="button" data-nom="Château Soudars 2014" data-origine="Haut-Médoc · Cerise, cassis, épices. Souple, gras et frais." data-lien="chateau-soudars.html" aria-label="Château Soudars 2014"><img src="../assets/img/bouteille-soudars-2014.webp" alt="" loading="lazy"></button>
+      </div>
+      <button class="fleche-carrousel fleche-carrousel--prec" type="button" aria-label="Bouteille précédente"></button>
+      <button class="fleche-carrousel fleche-carrousel--suiv" type="button" aria-label="Bouteille suivante"></button>
+      <div class="bouteille-desc" aria-live="polite"><p class="nom"></p><p class="origine"></p></div>
+      <div class="points"></div>
+      <div class="bouteilles-bas">
+        <div class="filtre">
+          <button class="pilule" type="button" aria-expanded="false">Millésimes <span class="chevron"></span></button>
+          <ul class="filtre-liste">
+              <li><button type="button" data-aller-bouteille="0">2018</button></li>
+              <li><button type="button" data-aller-bouteille="1">2017</button></li>
+              <li><button type="button" data-aller-bouteille="2">2016</button></li>
+              <li><button type="button" data-aller-bouteille="3">2015</button></li>
+              <li><button type="button" data-aller-bouteille="4">2014</button></li>
+          </ul>
+        </div>
+        <a class="pilule pilule--pleine" href="#" data-lien-vin>Le découvrir</a>
+        <div class="filtre">
+          <button class="pilule" type="button" aria-expanded="false">Où l'acheter <span class="chevron"></span></button>
+          <ul class="filtre-liste">
+              <li><a href="https://boutique.chateausoudars.com/" target="_blank" rel="noopener">Boutique en ligne<small>boutique.chateausoudars.com</small></a></li>
+              <li>Maisons du Vin<small>Saint-Seurin-de-Cadourne et Pauillac</small></li>
+              <li>En Belgique<small>Delhaize</small></li>
+              <li>Dans le monde<small>Les négociants de la Place de Bordeaux</small></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- À partager : les accords par occasion et l'invitation ([data-partage], [data-invitation]) -->
+    <section class="atelier atelier--partage" id="a-partager" aria-labelledby="partage-titre">
+      <div class="atelier-texte atelier-texte--large">
+        <h2 class="titre-65" id="partage-titre" data-anime><span>À partager</span><span class="it">sans attendre</span></h2>
+        <p class="paragraphe" data-anime="2">Le château conseille Soudars avec les viandes rouges et les viandes blanches, rôties ou grillées. Voici nos idées pour l'ouvrir, selon l'occasion.</p>
+      </div>
+      <div class="partage" data-partage data-anime="2">
+        <div class="onglets" role="tablist" aria-label="Les occasions">
+          <button type="button" role="tab" id="onglet-barbecue" aria-controls="occasion-barbecue" aria-selected="true" data-occasion="Le barbecue aux sarments">Le barbecue aux sarments</button>
+          <button type="button" role="tab" id="onglet-dimanche" aria-controls="occasion-dimanche" aria-selected="false" tabindex="-1" data-occasion="Le poulet du dimanche">Le poulet du dimanche</button>
+          <button type="button" role="tab" id="onglet-tablee" aria-controls="occasion-tablee" aria-selected="false" tabindex="-1" data-occasion="La grande tablée">La grande tablée</button>
+          <button type="button" role="tab" id="onglet-aperitif" aria-controls="occasion-aperitif" aria-selected="false" tabindex="-1" data-occasion="L'apéritif dînatoire">L'apéritif dînatoire</button>
+        </div>
+        <div class="occasion" role="tabpanel" id="occasion-barbecue" aria-labelledby="onglet-barbecue"><figure><img src="../assets/img/soudars-fagot.jpg" alt="" loading="lazy"></figure><div><h3>Le barbecue aux sarments</h3><p>Une entrecôte grillée sur les sarments de la taille, comme on le fait dans le Bordelais, des brochettes d'agneau, des saucisses aux herbes. Servi à 16 °C, son fruit rouge tient tête à la braise.</p></div></div>
+        <div class="occasion" role="tabpanel" id="occasion-dimanche" aria-labelledby="onglet-dimanche" hidden><figure><img src="../assets/img/soudars-clocher.jpg" alt="" loading="lazy"></figure><div><h3>Le poulet du dimanche</h3><p>Un poulet fermier rôti, des pommes de terre dans le jus, des petits pois. Ouvrez la bouteille quand la volaille entre au four : il aime prendre l'air.</p></div></div>
+        <div class="occasion" role="tabpanel" id="occasion-tablee" aria-labelledby="onglet-tablee" hidden><figure><img src="../assets/img/soudars-barriques.jpg" alt="" loading="lazy"></figure><div><h3>La grande tablée</h3><p>Un gigot de sept heures ou un rôti de porc aux herbes, un plateau de fromages au milieu de la table. Une carafe, et chacun se sert.</p></div></div>
+        <div class="occasion" role="tabpanel" id="occasion-aperitif" aria-labelledby="onglet-aperitif" hidden><figure><img src="../assets/img/soudars-verre.jpg" alt="" loading="lazy"></figure><div><h3>L'apéritif dînatoire</h3><p>Une planche de charcuteries, des rillettes, du magret séché, des croûtons à la tapenade. Rond et juteux, il plaît dès qu'on le rencontre.</p></div></div>
+      </div>
+
+      <div class="invitation" data-invitation>
+        <div class="invitation-form">
+          <h3 class="invitation-titre">Invitez vos amis</h3>
+          <p class="invitation-intro">Composez votre invitation, puis envoyez-la ou enregistrez-la en image.</p>
+          <label>Votre prénom<input type="text" name="prenom" maxlength="30" placeholder="Lovely" autocomplete="given-name"></label>
+          <label>Le jour<input type="text" name="quand" maxlength="40" placeholder="Samedi 12, vers 19 h"></label>
+          <label>L'adresse<input type="text" name="ou" maxlength="60" placeholder="Au fond du jardin"></label>
+          <div class="invitation-actions">
+            <button class="pilule pilule--pleine" type="button" data-action="image">Enregistrer l'image</button>
+            <button class="pilule" type="button" data-action="partager">Partager</button>
+            <a class="pilule" href="#" data-action="mail">Envoyer par e-mail</a>
+            <button class="pilule" type="button" data-action="copier">Copier le texte</button>
+          </div>
+          <p class="invitation-retour" aria-live="polite"></p>
+        </div>
+        <figure class="carte-invitation" aria-label="Aperçu de l'invitation">
+          <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+          <p class="carte-occasion">Le barbecue aux sarments</p>
+          <p class="carte-chez">chez <span data-champ="prenom">Lovely</span></p>
+          <p class="carte-details"><span data-champ="quand">Samedi 12, vers 19 h</span><br><span data-champ="ou">Au fond du jardin</span></p>
+          <p class="carte-mot">On ouvre un Soudars.</p>
+          <p class="carte-sante">Château Soudars · Haut-Médoc. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+        </figure>
+      </div>
+    </section>
+
+    <section class="manifeste">
+      <h2 class="manifeste-titre" data-anime>Le vin<br><span class="it">né de la pierre</span>,<br>à partager sans attendre</h2>
+      <a class="cercle" href="famille.html" data-anime="2">
+        <img src="../assets/img/soudars-verre.jpg" alt="" loading="lazy">
+        <p><span class="it">découvrez</span><br>la famille</p>
+      </a>
+    </section>
+
+    <!-- Le témoin de l'Enquête « La page arrachée » (la vitrine MIAILHE renvoie ici) -->
+    <section class="temoin" id="temoin" aria-labelledby="temoin-nom">
+      <div class="temoin-grille">
+        <div>
+          <span class="cachet">L'enquête Miailhe · Témoin n° 3</span>
+          <h2 id="temoin-nom" data-anime>Éric</h2>
+          <p class="role">Le fils · arrivé en 1973</p>
+          <blockquote data-anime="2">« En 1973, on m'a dit que les grands vins du Médoc ne naissaient que sur les graves. J'ai acheté des friches pleines de pierres et de ronces. On a tout épierré à la main. »</blockquote>
+          <a class="pilule" href="../enquete.html">Reprendre l'enquête</a>
+        </div>
+        <div class="piece" data-anime="3">
+          <p class="piece-etiquette">Pièce à conviction</p>
+          <p class="piece-valeur">Soudar</p>
+          <p class="piece-legende">Un vieux mot gallois, du temps des Anglais en Aquitaine : un enclos de murs de pierres sèches qui protégeait le bétail. Soudars n'a pas de château : son monument, c'est cet enclos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593609">+33 5 56 59 36 09</a> &nbsp; <a href="mailto:contact@chateausoudars.com">contact@chateausoudars.com</a></p>
+        <p class="gris">Visites sur rendez-vous, pour les particuliers et les professionnels.</p>
+      </div>
+      <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Soudars, 33180 Saint-Seurin-de-Cadourne</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Soudars · une maison de la famille <span class="wordmark"></span></a>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../coufran/index.html">Coufran</a> · <a href="../verdignan/index.html">Verdignan</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+</body>
+</html>

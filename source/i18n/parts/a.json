@@ -1,0 +1,2173 @@
+[
+ {
+  "cle": "MIAILHE · Trois portes, une seule famille",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · "
+  ]
+ },
+ {
+  "cle": "Coufran, Verdignan, Soudars : trois châteaux du Haut-Médoc, trois générations d'une même famille. Poussez la porte qui vous ressemble.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · "
+  ]
+ },
+ {
+  "cle": "MIAILHE",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · span.wordmark @aria-label",
+   "quiz.html · span.wordmark @aria-label",
+   "enquete.html · span.wordmark @aria-label"
+  ]
+ },
+ {
+  "cle": "Ouvrir le menu",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.ouvrir-menu @aria-label",
+   "enquete.html · button.ouvrir-menu @aria-label",
+   "script main.js"
+  ]
+ },
+ {
+  "cle": "Découvrir la maison",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav.onglets @aria-label"
+  ]
+ },
+ {
+  "cle": "MIAILHE, accueil",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.wordmark @aria-label",
+   "quiz.html · a.wordmark @aria-label",
+   "enquete.html · a.wordmark @aria-label"
+  ]
+ },
+ {
+  "cle": "L'enquête Miailhe : participer",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.bouton-enquete @aria-label",
+   "coufran/chateau-coufran.html · a.ch-enquete @aria-label",
+   "coufran/famille.html · a.ch-enquete @aria-label",
+   "coufran/index.html · a.ch-enquete @aria-label"
+  ]
+ },
+ {
+  "cle": "Les trois châteaux de la famille",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav.familles @aria-label",
+   "quiz.html · nav.familles @aria-label",
+   "enquete.html · nav.familles @aria-label",
+   "coufran/chateau-coufran.html · nav.ch-familles @aria-label"
+  ]
+ },
+ {
+  "cle": "Menu principal",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav.mainnav @aria-label",
+   "enquete.html · nav.mainnav @aria-label"
+  ]
+ },
+ {
+  "cle": "Ouvrir le dossier de l'enquête",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.couverture-enquete.couverture-enquete--racine @aria-label",
+   "enquete.html · a.couverture-enquete.couverture-enquete--racine @aria-label"
+  ]
+ },
+ {
+  "cle": "La famille Miailhe sur les réseaux",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav.reseaux @aria-label",
+   "quiz.html · nav.reseaux @aria-label",
+   "enquete.html · nav.reseaux @aria-label",
+   "identite.html · nav.reseaux @aria-label"
+  ]
+ },
+ {
+  "cle": "Instagram (nouvel onglet)",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a @aria-label",
+   "quiz.html · a @aria-label",
+   "enquete.html · a @aria-label",
+   "identite.html · a @aria-label"
+  ]
+ },
+ {
+  "cle": "Facebook (nouvel onglet)",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a @aria-label",
+   "quiz.html · a @aria-label",
+   "enquete.html · a @aria-label",
+   "identite.html · a @aria-label"
+  ]
+ },
+ {
+  "cle": "TikTok (nouvel onglet)",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a @aria-label",
+   "quiz.html · a @aria-label",
+   "enquete.html · a @aria-label",
+   "identite.html · a @aria-label"
+  ]
+ },
+ {
+  "cle": "La famille",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · div.panneau.v @aria-label",
+   "coufran/chateau-coufran.html · section.vin-section @aria-label",
+   "coufran/la-rose-marechale.html · section.vin-section @aria-label",
+   "coufran/n2-de-coufran.html · section.vin-section @aria-label"
+  ]
+ },
+ {
+  "cle": "La famille Miailhe réunie en {0}",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · img @alt",
+   "coufran/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Éric et Lovely Miailhe devant le château Coufran",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Suite",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav.panneau-fin @aria-label"
+  ]
+ },
+ {
+  "cle": "Le terroir",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · div.panneau.v @aria-label"
+  ]
+ },
+ {
+  "cle": "Planche gravée : les châteaux Coufran, Verdignan et Soudars côte à côte ; sous eux, la coupe du sol, où leurs trois racines descendent et se rejoignent en une seule.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · img.racine-fond @alt"
+  ]
+ },
+ {
+  "cle": "Carte du Médoc : les trois domaines de la famille Miailhe à Saint-Seurin-de-Cadourne, au bord de l'estuaire de la Gironde",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · img @alt"
+  ]
+ },
+ {
+  "cle": "MIAILHE, revenir aux portes",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.wordmark @aria-label"
+  ]
+ },
+ {
+  "cle": "Les châteaux",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav.v-pied-chateaux @aria-label"
+  ]
+ },
+ {
+  "cle": "Liens du pied de page",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav @aria-label",
+   "coufran/chateau-coufran.html · nav @aria-label",
+   "coufran/famille.html · nav @aria-label",
+   "coufran/index.html · nav @aria-label"
+  ]
+ },
+ {
+  "cle": "Prêt-à-boire",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · div.panneau.v @aria-label"
+  ]
+ },
+ {
+  "cle": "Quel château vous ressemble ?",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · div.test-voile.v @aria-label",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>MIAILHE</0><1/>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · span.wordmark",
+   "quiz.html · span.wordmark",
+   "enquete.html · span.wordmark",
+   "identite.html · a.wordmark"
+  ]
+ },
+ {
+  "cle": "Trois châteaux du Haut-Médoc, une même famille. Pour entrer, vous devez avoir l'âge légal de consommer de l'alcool dans votre pays.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p"
+  ]
+ },
+ {
+  "cle": "<0>J'ai l'âge légal, entrer</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.btn.btn--plein",
+   "quiz.html · button.btn.btn--plein",
+   "enquete.html · button.btn.btn--plein"
+  ]
+ },
+ {
+  "cle": "Je n'ai pas l'âge légal",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.refus",
+   "quiz.html · button.refus",
+   "enquete.html · button.refus"
+  ]
+ },
+ {
+  "cle": "Revenez nous voir plus tard. La vigne, elle, sait attendre.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.refus-message",
+   "quiz.html · p.refus-message",
+   "enquete.html · p.refus-message"
+  ]
+ },
+ {
+  "cle": "L'abus d'alcool est dangereux pour la santé, à consommer avec modération.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.mention",
+   "quiz.html · p.mention",
+   "enquete.html · p.mention",
+   "coufran/chateau-coufran.html · p.sante"
+  ]
+ },
+ {
+  "cle": "<0>La famille<1/></0> <2>Le terroir<3/></2> <4>Prêt-à-boire<5/></4> <6>Le test<7/></6>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav.onglets"
+  ]
+ },
+ {
+  "cle": "<0/><1>L'enquête</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.bouton-enquete",
+   "coufran/chateau-coufran.html · a.ch-enquete",
+   "coufran/famille.html · a.ch-enquete",
+   "coufran/index.html · a.ch-enquete"
+  ]
+ },
+ {
+  "cle": "<0><1/><2>Château Coufran</2></0> <3><4/><5>Château Verdignan</5></3> <6><7/><8>Château Soudars</8></6>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav.familles",
+   "quiz.html · nav.familles",
+   "enquete.html · nav.familles"
+  ]
+ },
+ {
+  "cle": "L'enquête — <0>Enquête à la racine</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.titre-3",
+   "enquete.html · p.titre-3"
+  ]
+ },
+ {
+  "cle": "<0>Miailhe</0> <1/> <2>Dossier n° {0}-{1}</2> <3/> <4><5>Enquête</5><6/><7>à la racine</7></4>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.couverture-enquete.couverture-enquete--racine",
+   "enquete.html · a.couverture-enquete.couverture-enquete--racine"
+  ]
+ },
+ {
+  "cle": "Une nouvelle enquête chaque trimestre",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.mainnav-trimestre",
+   "enquete.html · p.mainnav-trimestre"
+  ]
+ },
+ {
+  "cle": "<0>Nos châteaux<1>I.</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a",
+   "enquete.html · a"
+  ]
+ },
+ {
+  "cle": "<0><1>Château Coufran</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Château Verdignan</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Château Soudars</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Quel château vous ressemble ?</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>La famille<1>II.</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a",
+   "enquete.html · a"
+  ]
+ },
+ {
+  "cle": "<0><1>Cinq générations</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Une même racine</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Le prêt-à-boire</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Notre identité</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>L'enquête<1>III.</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a",
+   "enquete.html · a"
+  ]
+ },
+ {
+  "cle": "<0><1>Ouvrir le dossier</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>S'inscrire</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Les témoins</0> <1><2>Coufran</2></1> <3><4>Verdignan</4></3> <5><6>Soudars</6></5>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li.sous-groupe",
+   "enquete.html · li.sous-groupe"
+  ]
+ },
+ {
+  "cle": "<0><1>Le règlement</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Visiter<1>IV.</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a",
+   "enquete.html · a"
+  ]
+ },
+ {
+  "cle": "<0><1>Venir à Saint-Seurin</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Visites sur rendez-vous</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Professionnels</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Trouver mon château</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Contact & accès</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0><1>Espace professionnel</1></0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li",
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0> <1/> <2/> <3/> <4> <5/> <6><7/><8>Coufran</8></6> <9>Chez Louis, le grand-père · {0}</9> <10>Le caractère</10> <11>Entrer</11> </4> </0> <12> <13/> <14/> <15/> <16> <17/> <18><19/><20>Verdignan</20></18> <21>Chez Jean, le père · {1}</21> <22>L'élégance classique</22> <23>Entrer</23> </16> </12> <24> <25/> <26/> <27/> <28> <29/> <30><31/><32>Soudars</32></30> <33>Chez Éric, le fils · {2}</33> <34>Le plaisir partagé</34> <35>Entrer</35> </28> </24>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · div.battants"
+  ]
+ },
+ {
+  "cle": "MIAILHE : trois châteaux du Haut-Médoc, trois portes, une famille",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h1.sr-only"
+  ]
+ },
+ {
+  "cle": "Première visite ?",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.seuil-guide-sur"
+  ]
+ },
+ {
+  "cle": "Trois portes, trois châteaux. <0>Laquelle est la vôtre ?</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.seuil-guide-titre"
+  ]
+ },
+ {
+  "cle": "Sept questions simples sur ce que vous aimez, vos goûts compris, sans rien connaître au vin. Deux minutes, et la bonne porte s'ouvre pour vous.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.seuil-guide-texte"
+  ]
+ },
+ {
+  "cle": "Me laisser guider",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.seuil-guide-oui"
+  ]
+ },
+ {
+  "cle": "Je connais la maison, je choisis ma porte",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.seuil-guide-non"
+  ]
+ },
+ {
+  "cle": "Approchez-vous d'une porte",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · span"
+  ]
+ },
+ {
+  "cle": "ou laissez-vous guider",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button"
+  ]
+ },
+ {
+  "cle": "<0>Avant de faire du vin,</0><1>les Miailhe l'ont <2>goûté</2>.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.histoire-titre"
+  ]
+ },
+ {
+  "cle": "Une racine, cinq générations, trois châteaux.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.histoire-chapeau"
+  ]
+ },
+ {
+  "cle": "Faites défiler",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.histoire-defiler"
+  ]
+ },
+ {
+  "cle": "Fin du XVIII<0>e</0> siècle",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.histoire-annee"
+  ]
+ },
+ {
+  "cle": "Élie",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h3"
+  ]
+ },
+ {
+  "cle": "Courtier à Bordeaux. Il goûte, juge et place le vin des autres. La famille fera ce métier pendant deux siècles.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p"
+  ]
+ },
+ {
+  "cle": "Louis, le grand-père",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h3"
+  ]
+ },
+ {
+  "cle": "Le courtier devient vigneron. Il achète Coufran et le replante tout en merlot, quand ses voisins ne jurent que par le cabernet.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p"
+  ]
+ },
+ {
+  "cle": "Jean, le père",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h3"
+  ]
+ },
+ {
+  "cle": "Dernier courtier de la famille, il achète Verdignan, le château voisin qui regarde l'estuaire.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p"
+  ]
+ },
+ {
+  "cle": "Éric, le fils",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h3"
+  ]
+ },
+ {
+  "cle": "Il bâtit Soudars de toutes pièces, sur des friches encombrées de pierres, et replante presque tout le vignoble.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p"
+  ]
+ },
+ {
+  "cle": "Lovely",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h3",
+   "enquete.html · p.signature-lovely"
+  ]
+ },
+ {
+  "cle": "La quatrième génération. Elle veille sur les trois châteaux aux côtés de son père.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p"
+  ]
+ },
+ {
+  "cle": "<0/><1>Coufran</1><2/>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li"
+  ]
+ },
+ {
+  "cle": "<0/><1>Verdignan</1><2/>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li"
+  ]
+ },
+ {
+  "cle": "<0/><1>Soudars</1><2/>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Trois châteaux,</0><1><2>une même racine.</2></1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.histoire-titre.histoire-titre--fin"
+  ]
+ },
+ {
+  "cle": "La famille, en {0}",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · figcaption"
+  ]
+ },
+ {
+  "cle": "Deux siècles à goûter le vin des autres. <0>Cent ans</0> à faire le sien.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.histoire-chute"
+  ]
+ },
+ {
+  "cle": "Éric et Lovely, aujourd'hui",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · figcaption"
+  ]
+ },
+ {
+  "cle": "Pousser une porte",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.histoire-porte"
+  ]
+ },
+ {
+  "cle": "Revenir aux portes",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.panneau-retour"
+  ]
+ },
+ {
+  "cle": "Le terroir <0/>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.panneau-suivant"
+  ]
+ },
+ {
+  "cle": "Le terroir · Une même racine",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "Trois châteaux, <0>trois caractères.</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.racine-t.is-vu"
+  ]
+ },
+ {
+  "cle": "Sous la terre, <0>leurs racines se cherchent.</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.racine-t"
+  ]
+ },
+ {
+  "cle": "Et n'en font plus qu'une : <0>la famille.</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.racine-t"
+  ]
+ },
+ {
+  "cle": "<0><1/><2>Coufran</2></0><3>{0} · Louis</3>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.racine-chateau"
+  ]
+ },
+ {
+  "cle": "<0><1/><2>Verdignan</2></0><3>{0} · Jean</3>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.racine-chateau"
+  ]
+ },
+ {
+  "cle": "<0><1/><2>Soudars</2></0><3>{0} · Éric</3>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.racine-chateau"
+  ]
+ },
+ {
+  "cle": "Graves",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.racine-sol"
+  ]
+ },
+ {
+  "cle": "Argile",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.racine-sol"
+  ]
+ },
+ {
+  "cle": "Calcaire à fossiles marins",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.racine-sol"
+  ]
+ },
+ {
+  "cle": "Le terroir · Le Médoc",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "<0>Trois châteaux</0><1>dans un <2>mouchoir</2></1><3>de poche.</3>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.v-h2"
+  ]
+ },
+ {
+  "cle": "Coufran, Verdignan et Soudars sont voisins, à Saint-Seurin-de-Cadourne, au bord de l'estuaire de la Gironde. On passe de l'un à l'autre à pied, en suivant les rangs. Visites et dégustations sur rendez-vous ; l'enquête se joue aussi sur place.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-chapeau"
+  ]
+ },
+ {
+  "cle": "<0>Prendre rendez-vous</0> <1>Mener l'enquête</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · div.v-actions"
+  ]
+ },
+ {
+  "cle": "Prêt-à-boire <0/>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.panneau-suivant"
+  ]
+ },
+ {
+  "cle": "Contact",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.titre",
+   "coufran/chateau-coufran.html · p.titre",
+   "coufran/famille.html · p.titre",
+   "coufran/index.html · p.titre"
+  ]
+ },
+ {
+  "cle": "Visites sur rendez-vous, particuliers et professionnels.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.gris"
+  ]
+ },
+ {
+  "cle": "Adresse",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.titre",
+   "coufran/chateau-coufran.html · p.titre",
+   "coufran/famille.html · p.titre",
+   "coufran/index.html · p.titre"
+  ]
+ },
+ {
+  "cle": "Vignobles de la famille Miailhe<0/>Château Coufran, {0} Saint-Seurin-de-Cadourne",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p"
+  ]
+ },
+ {
+  "cle": "<0><1/>Château Coufran</0> <2><3/>Château Verdignan</2> <4><5/>Château Soudars</4>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav.v-pied-chateaux"
+  ]
+ },
+ {
+  "cle": "<0>L'enquête</0> <1>Notre identité</1> <2>Espace professionnel</2> <3>Revenir aux portes</3>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · nav"
+  ]
+ },
+ {
+  "cle": "Maquette de concept réalisée dans le cadre d'un projet étudiant ISCOM ({0}). Site non officiel. Photographies : châteaux Coufran, Verdignan et Soudars. Films d'intro : créations originales (Higgsfield).",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-mentions"
+  ]
+ },
+ {
+  "cle": "Prêt-à-boire · Le temps",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "<0>Nous attendons</0><1><2>pour vous.</2></1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.v-h2.is-in"
+  ]
+ },
+ {
+  "cle": "Un grand bordeaux n'est prêt à boire qu'après quelques années de vieillissement. D'ordinaire, il quitte le château jeune, et c'est à vous de l'attendre. Chez les Miailhe, c'est le château qui attend : les bouteilles vieillissent chez nous et ne partent que lorsqu'elles sont prêtes.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-chapeau.is-in"
+  ]
+ },
+ {
+  "cle": "Ailleurs, il part ici : <0>jeune</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.courbe-etiquette.courbe-etiquette--jeune"
+  ]
+ },
+ {
+  "cle": "Chez les Miailhe, il part ici : <0>prêt à boire</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.courbe-etiquette.courbe-etiquette--pret"
+  ]
+ },
+ {
+  "cle": "<0>Vendange</0><1>Mise en bouteille</1><2>Les années de garde, au château</2><3>Le temps</3>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · div.courbe-legendes"
+  ]
+ },
+ {
+  "cle": "Schéma indicatif : un grand vin s'épanouit avec les années, puis décline. Chaque millésime a son rythme.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · figcaption"
+  ]
+ },
+ {
+  "cle": "<0/><1>Le temps, nous le prenons.</1> À Coufran et à Verdignan, les bouteilles vieillissent dans un local climatisé, au château, jusqu'à leur mise en vente.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li.is-in"
+  ]
+ },
+ {
+  "cle": "<0/><1>Vous l'ouvrez ce soir.</1> Vous achetez un vin à maturité, pas une promesse : ni cave, ni patience à prévoir.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li.is-in"
+  ]
+ },
+ {
+  "cle": "<0/><1>Chaque bouteille est suivie.</1> Depuis le millésime {0}, le numéro de lot est gravé sur chaque flacon.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · li.is-in"
+  ]
+ },
+ {
+  "cle": "Soudars, lui, n'a pas besoin d'attendre : c'est le vin de la famille qui se partage dès sa jeunesse.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.temps-chute.is-in"
+  ]
+ },
+ {
+  "cle": "La famille <0/>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.panneau-suivant"
+  ]
+ },
+ {
+  "cle": "La découverte · {0} sur {1}",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre",
+   "quiz.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "En voyage, vous êtes plutôt du genre à...",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.circuit-question",
+   "quiz.html · h2.circuit-question",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>A</0><1>Retourner dans le lieu que vous aimez, et y emmener ceux que vous aimez.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>B</0><1>Visiter le monument incontournable, en connaissant déjà son histoire.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>C</0><1>Pousser la porte que personne n'avait remarquée.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "La tradition · {0} sur {1}",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre",
+   "quiz.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "Une tradition, pour vous, c'est...",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.circuit-question",
+   "quiz.html · h2.circuit-question",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>A</0><1>Un savoir-faire exigeant, que l'on transmet avec patience.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>B</0><1>Quelque chose que l'on peut aussi inventer soi-même.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>C</0><1>Un héritage que l'on garde vivant, avec son caractère et ses habitudes.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "← Question précédente",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.circuit-retour",
+   "quiz.html · button.circuit-retour"
+  ]
+ },
+ {
+  "cle": "L'histoire · {0} sur {1}",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre",
+   "quiz.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "Quelle histoire vous donne envie d'en savoir plus ?",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.circuit-question",
+   "quiz.html · h2.circuit-question",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>A</0><1>Celle d'un domaine bâti de toutes pièces, sur des friches couvertes de pierres.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>B</0><1>Celle d'un homme qui, en {0}, a osé faire autrement que tous ses voisins.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>C</0><1>Celle d'un château qui regarde l'estuaire depuis plus d'un siècle.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "La dégustation · {0} sur {1}",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre",
+   "quiz.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "Une dégustation, pour vous, c'est d'abord...",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.circuit-question",
+   "quiz.html · h2.circuit-question",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>A</0><1>Un moment de partage, autour d'une grande table.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>B</0><1>Une rencontre simple et spontanée, sans protocole.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>C</0><1>Une découverte que l'on prend le temps de comprendre.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "Le lieu · {0} sur {1}",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre",
+   "quiz.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "Pour une journée au vignoble, vous choisiriez...",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.circuit-question",
+   "quiz.html · h2.circuit-question",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>A</0><1>La visite du cuvier et du chai, face à l'estuaire.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>B</0><1>Une promenade jusqu'au pigeonnier, au milieu des vignes.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>C</0><1>Une balade entre les murets de pierres sèches, à la recherche de fossiles.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "Le goût · {0} sur {1}",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre",
+   "quiz.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "Au quotidien, ce que vous aimez boire, c'est plutôt...",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.circuit-question",
+   "quiz.html · h2.circuit-question",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>A</0><1>Un café serré, noir, qui a du corps et de la longueur.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>B</0><1>Un café crème ou un chocolat chaud, rond et doux.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>C</0><1>Un jus de fruits pressés ou un thé aux fruits rouges.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "Le vin · {0} sur {1}",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre",
+   "quiz.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "Le vin que vous aimez, c'est plutôt...",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.circuit-question",
+   "quiz.html · h2.circuit-question",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>A</0><1>Un vin rond et souple, qui fond en bouche.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>B</0><1>Un vin plein et droit, avec du caractère, qui gagne à attendre.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "<0>C</0><1>Un vin fruité et frais, déjà bon dans sa jeunesse.</1>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.reponse",
+   "quiz.html · button.reponse"
+  ]
+ },
+ {
+  "cle": "Le château qui vous ressemble",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.v-sur-titre",
+   "quiz.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "Coufran",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.resultat-nom",
+   "quiz.html · h2.resultat-nom",
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "<0>Le caractère généreux</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.resultat-trait",
+   "quiz.html · p.resultat-trait"
+  ]
+ },
+ {
+  "cle": "<0>La maison de <1>Louis</1>, le grand-père, depuis {0}</0><2>Portrait d'illustration</2>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · figcaption",
+   "quiz.html · figcaption"
+  ]
+ },
+ {
+  "cle": "Son histoire",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.titre",
+   "quiz.html · p.titre"
+  ]
+ },
+ {
+  "cle": "En {0}, Louis Miailhe achète Coufran, à Saint-Seurin-de-Cadourne. Le vin d'alors, presque tout en cabernet, se vend mal : Louis décide de tout replanter en merlot. Le pari a tenu, et un journaliste a fini par surnommer Coufran « le Pomerol du Médoc ».",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Son univers",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.titre",
+   "quiz.html · p.titre"
+  ]
+ },
+ {
+  "cle": "Une façade de la fin du XIXᵉ siècle, des orangers en caisses de Versailles, et au milieu des vignes un pigeonnier-belvédère, devenu l'emblème du domaine.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Son goût",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.titre",
+   "quiz.html · p.titre"
+  ]
+ },
+ {
+  "cle": "Une robe profonde, un nez de fruits noirs et de griotte, puis une bouche ample, ronde et généreuse, aux tanins soyeux : la marque du merlot.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Une clé pour comprendre",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.titre",
+   "quiz.html · p.titre"
+  ]
+ },
+ {
+  "cle": "<0>Merlot ou cabernet ?</0> Ce sont deux cépages, deux variétés de raisin. Le Médoc plante surtout du cabernet-sauvignon, qui donne des vins plus fermes. Coufran est fait d'environ {0} % de merlot, qui donne des vins plus ronds : c'est ce qui le rend à part.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p"
+  ]
+ },
+ {
+  "cle": "Ouvrir la porte de Coufran",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.v-bouton"
+  ]
+ },
+ {
+  "cle": "Son histoire de famille",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.v-lien"
+  ]
+ },
+ {
+  "cle": "Son témoin de l'enquête",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · a.v-lien"
+  ]
+ },
+ {
+  "cle": "Trois châteaux voisins, une même famille",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.titre",
+   "quiz.html · p.titre",
+   "coufran/index.html · p.relance-test-sur",
+   "verdignan/index.html · p.relance-test-sur"
+  ]
+ },
+ {
+  "cle": "<0><1/><2><3>Coufran</3><4>Louis, le grand-père · {0}</4></2></0><5><6/><7><8>Verdignan</8><9>Jean, le père · {1}</9></7></5><10><11/><12><13>Soudars</13><14>Éric, le fils · {2}</14></12></10>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · div.famille-chateaux",
+   "quiz.html · div.famille-chateaux"
+  ]
+ },
+ {
+  "cle": "Partager",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.v-lien",
+   "quiz.html · button.v-lien"
+  ]
+ },
+ {
+  "cle": "Refaire le test",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.v-lien",
+   "quiz.html · button.v-lien"
+  ]
+ },
+ {
+  "cle": "Un jeu pour découvrir les châteaux, pas un conseil de consommation. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.resultat-mention",
+   "quiz.html · p.resultat-mention"
+  ]
+ },
+ {
+  "cle": "Verdignan",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.resultat-nom",
+   "quiz.html · h2.resultat-nom",
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "<0>L'élégance classique</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.resultat-trait",
+   "quiz.html · p.resultat-trait"
+  ]
+ },
+ {
+  "cle": "<0>La maison de <1>Jean</1>, le père, depuis {0}</0><2>Portrait d'illustration</2>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · figcaption",
+   "quiz.html · figcaption"
+  ]
+ },
+ {
+  "cle": "En {0}, puis en {1}, Jean Miailhe, le fils de Louis, achète Verdignan, le voisin de Coufran. Il vient d'arrêter le courtage : il sera le dernier courtier de la famille, et le premier à garder ses vins comme on garde une tradition.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Une tour coiffée d'une flèche d'ardoise qu'on voit de loin, un vieux cuvier de pierre, et l'estuaire de la Gironde au bout des rangs, à la frontière de Saint-Estèphe.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Le cassis, les épices et le chocolat. Une bouche qui allie puissance et fraîcheur, des tanins consistants mais soyeux, une belle longueur : il s'embellit avec les années.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>Que veut dire « vin de garde » ?</0> C'est un vin qui gagne à vieillir quelques années avant d'être ouvert. Chez les Miailhe, c'est le château qui attend : les bouteilles vieillissent sur place et ne partent que lorsqu'elles sont prêtes.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p"
+  ]
+ },
+ {
+  "cle": "Ouvrir la porte de Verdignan",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.v-bouton"
+  ]
+ },
+ {
+  "cle": "Soudars",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · h2.resultat-nom",
+   "quiz.html · h2.resultat-nom",
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "<0>Le plaisir spontané</0>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p.resultat-trait",
+   "quiz.html · p.resultat-trait"
+  ]
+ },
+ {
+  "cle": "<0>La maison de <1>Éric</1>, le fils, depuis {0}</0><2>Portrait d'illustration</2>",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · figcaption",
+   "quiz.html · figcaption"
+  ]
+ },
+ {
+  "cle": "En {0}, Éric Miailhe, le fils de Jean, se lance à son tour. Pas de château à reprendre : il défriche des terres couvertes de pierres et de ronces, et crée Soudars de toutes pièces.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un vignoble entouré de murets de pierres sèches, sur un sol d'argile et de calcaire où l'on trouve encore des oursins fossiles, souvenirs de la mer qui couvrait le Médoc.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Des fruits rouges frais, la fraise des bois, la framboise, la cerise. Un vin ouvert, rond et juteux, aux tanins soyeux et à la finale épicée, agréable dès sa jeunesse.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p",
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "<0>Qu'est-ce qu'un terroir ?</0> C'est le sol, le climat et le savoir-faire d'un lieu. Chaque parcelle a le sien : c'est pour cela que trois châteaux voisins, à Saint-Seurin-de-Cadourne, ne donnent pas le même vin.",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · p",
+   "quiz.html · p"
+  ]
+ },
+ {
+  "cle": "Ouvrir la porte de Soudars",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.v-bouton"
+  ]
+ },
+ {
+  "cle": "Fermer le menu",
+  "ou": [
+   "★ MIAILHE Vitrine V1.html · button.ouvrir-menu @aria-label",
+   "script main.js"
+  ]
+ },
+ {
+  "cle": "Quel château vous ressemble ? · MIAILHE",
+  "ou": [
+   "quiz.html · "
+  ]
+ },
+ {
+  "cle": "Sept questions simples, vos goûts compris, sans rien connaître au vin, pour découvrir lequel des trois châteaux de la famille Miailhe vous ressemble : Coufran, Verdignan ou Soudars.",
+  "ou": [
+   "quiz.html · "
+  ]
+ },
+ {
+  "cle": "Le test de la famille Miailhe est réservé aux personnes ayant l'âge légal de consommer de l'alcool dans leur pays.",
+  "ou": [
+   "quiz.html · p"
+  ]
+ },
+ {
+  "cle": "Trois châteaux, une famille",
+  "ou": [
+   "quiz.html · p.v-sur-titre"
+  ]
+ },
+ {
+  "cle": "<0>Quel château</0><1>vous <2>ressemble</2> ?</1>",
+  "ou": [
+   "quiz.html · h1.v-h2"
+  ]
+ },
+ {
+  "cle": "Sept questions simples sur ce que vous aimez découvrir, et sur vos goûts, sans rien connaître au vin. À la fin, le château de la famille Miailhe qui vous ressemble, son histoire, son univers, son goût, et par où commencer la visite.",
+  "ou": [
+   "quiz.html · p.v-chapeau"
+  ]
+ },
+ {
+  "cle": "Commencer le test",
+  "ou": [
+   "quiz.html · button.v-bouton"
+  ]
+ },
+ {
+  "cle": "Un jeu de découverte des trois châteaux, pas un conseil de consommation.",
+  "ou": [
+   "quiz.html · p.circuit-mention"
+  ]
+ },
+ {
+  "cle": "<0>miailhe.com</0> · Trois châteaux du Haut-Médoc, une même famille",
+  "ou": [
+   "quiz.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Pousser la porte de Verdignan</0> <1>Son histoire de famille</1> <2>Son témoin de l'enquête</2>",
+  "ou": [
+   "quiz.html · div.resultat-actions"
+  ]
+ },
+ {
+  "cle": "<0>Pousser la porte de Coufran</0> <1>Son histoire de famille</1> <2>Son témoin de l'enquête</2>",
+  "ou": [
+   "quiz.html · div.resultat-actions"
+  ]
+ },
+ {
+  "cle": "<0>Pousser la porte de Soudars</0> <1>Son histoire de famille</1> <2>Son témoin de l'enquête</2>",
+  "ou": [
+   "quiz.html · div.resultat-actions"
+  ]
+ },
+ {
+  "cle": "Identité MIAILHE",
+  "ou": [
+   "identite.html · "
+  ]
+ },
+ {
+  "cle": "Le logo, les armoiries, les couleurs, les motifs et la typographie de la maison MIAILHE et de ses trois châteaux, et pourquoi.",
+  "ou": [
+   "identite.html · "
+  ]
+ },
+ {
+  "cle": "MIAILHE, retour à l'accueil",
+  "ou": [
+   "identite.html · a.wordmark @aria-label"
+  ]
+ },
+ {
+  "cle": "Sommaire",
+  "ou": [
+   "identite.html · nav @aria-label"
+  ]
+ },
+ {
+  "cle": "Logo MIAILHE",
+  "ou": [
+   "identite.html · span.wordmark.id-logo-grand @aria-label"
+  ]
+ },
+ {
+  "cle": "Les logos de Coufran, Verdignan et Soudars, chacun avec son élément en couleur, et le logo MIAILHE dont le I-racine reprend les trois couleurs.",
+  "ou": [
+   "identite.html · img @alt"
+  ]
+ },
+ {
+  "cle": "<0>Logo</0><1>Armoiries</1><2>Logos des châteaux</2><3>Couleurs</3><4>Motifs</4><5>Typographie</5>",
+  "ou": [
+   "identite.html · nav"
+  ]
+ },
+ {
+  "cle": "Charte de marque · {0}",
+  "ou": [
+   "identite.html · p.id-sur-titre"
+  ]
+ },
+ {
+  "cle": "Une famille, <0>trois maisons</0>, un seul langage.",
+  "ou": [
+   "identite.html · h1"
+  ]
+ },
+ {
+  "cle": "Pourquoi ce logo, ces armoiries, ces couleurs et ces motifs : chaque choix raconte la même histoire, celle d'une racine commune et de trois générations qui ne se ressemblent pas.",
+  "ou": [
+   "identite.html · p.id-chapeau"
+  ]
+ },
+ {
+  "cle": "Le logo : un nom qui <0>prend racine</0>",
+  "ou": [
+   "identite.html · h2"
+  ]
+ },
+ {
+  "cle": "Le I central de MIAILHE plonge sous la ligne et devient une racine. Elle se divise en trois, et chacune se termine par une feuille de vigne.",
+  "ou": [
+   "identite.html · p.id-chapeau"
+  ]
+ },
+ {
+  "cle": "<0>Des capitales romaines.</0> La lettre gravée des actes et des enseignes : celle d'une maison de courtiers bordelais depuis {0}. Elle ne se démode pas.",
+  "ou": [
+   "identite.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Le I devient un tronc.</0> Au centre du nom, c'est la famille : elle porte, elle nourrit, elle ne se voit pas. Dans une vigne, c'est le porte-greffe.",
+  "ou": [
+   "identite.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Trois racines de tailles différentes.</0> Trois générations, trois châteaux : Louis à Coufran, Jean à Verdignan, Éric à Soudars. Aucune n'est la copie des autres.",
+  "ou": [
+   "identite.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Une feuille au bout de chaque racine.</0> Chaque château est un greffon : il donne le fruit, le goût, le nom. Au-dessus du sol, trois vins ; sous la terre, une seule racine.",
+  "ou": [
+   "identite.html · li"
+  ]
+ },
+ {
+  "cle": "Encre sur blanc",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Blanc sur or",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Blanc sur bleu estuaire",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Blanc sur vert bouteille",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Les armoiries : <0>la même famille</0>, trois maisons",
+  "ou": [
+   "identite.html · h2"
+  ]
+ },
+ {
+  "cle": "Un seul bouclier, une seule écriture. Seuls changent la couleur, la lettre et l'année. On reconnaît la famille avant de reconnaître le château.",
+  "ou": [
+   "identite.html · p.id-chapeau"
+  ]
+ },
+ {
+  "cle": "<0>Les trois feuilles de la famille.</0> Celles du logo, en tête de chaque bouclier, dans l'ordre des générations. La feuille du château est pleine, les deux autres sont dessinées au trait : chacun porte les siens.",
+  "ou": [
+   "identite.html · li"
+  ]
+ },
+ {
+  "cle": "<0>La lettre, en Cinzel.</0> Une romaine cousine des capitales du logo, la même pour les trois : C, V, S.",
+  "ou": [
+   "identite.html · li"
+  ]
+ },
+ {
+  "cle": "<0>L'année d'entrée dans la famille.</0> {0}, {1}, {2}, entre deux losanges, comme sur une étiquette ancienne.",
+  "ou": [
+   "identite.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Un filet gravé et un bouclier commun.</0> Pans coupés en haut, pointe douce en bas : classique, sans emphase, lisible jusqu'à {0} pixels.",
+  "ou": [
+   "identite.html · li"
+  ]
+ },
+ {
+  "cle": "Coufran · Louis, le grand-père",
+  "ou": [
+   "identite.html · figcaption"
+  ]
+ },
+ {
+  "cle": "Verdignan · Jean, le père",
+  "ou": [
+   "identite.html · figcaption"
+  ]
+ },
+ {
+  "cle": "Soudars · Éric, le fils",
+  "ou": [
+   "identite.html · figcaption"
+  ]
+ },
+ {
+  "cle": "Les logos des châteaux : <0>trois logos</0>, une seule racine",
+  "ou": [
+   "identite.html · h2"
+  ]
+ },
+ {
+  "cle": "Trois logos typographiques, le mot seul, trois écritures de trois générations. Ils sont posés sur une même grille, comme trois mots d'une même famille de caractères : même cadre, même ligne de base, même ligne des capitales. Chacun prolonge la lettre centrale de son nom sous la ligne, à la même place et à la même profondeur, en un élément du logo MIAILHE, et un seul. Réunis, ces trois éléments font le I-racine de MIAILHE.",
+  "ou": [
+   "identite.html · p.id-chapeau"
+  ]
+ },
+ {
+  "cle": "<0>Coufran · les trois racines</0>Des capitales Art déco de {0}, au fort contraste, pleins massifs et déliés fins : Louis arrive à Coufran en {1}. Sous le F, au centre du nom, trois racines de tailles différentes naissent d'un même tronc : le grand-père est l'origine de la famille.",
+  "ou": [
+   "identite.html · figcaption"
+  ]
+ },
+ {
+  "cle": "<0>Verdignan · le I qui plonge</0>Des capitales au contraste des Didot, l'écriture classique d'un vin de garde. Le I, au centre du nom, traverse la ligne de base et plonge en racine pivot : le père transmet, comme le pivot qui tient la vigne.",
+  "ou": [
+   "identite.html · figcaption"
+  ]
+ },
+ {
+  "cle": "<0>Soudars · la feuille</0>Un bas-de-casse rond et gourmand des années {0}, celles d'Éric, qui commence en {1} sur des friches. Le d, au centre du nom, traverse la ligne, coule comme une goutte et se termine en feuille de vigne : le fils, c'est la jeune pousse, au bout de la racine.",
+  "ou": [
+   "identite.html · figcaption"
+  ]
+ },
+ {
+  "cle": "<0>Le I de Verdignan</0>, qui plonge en pivot, <1>les trois racines de Coufran</1>, qui le ramifient, <2>la feuille de Soudars</2>, au bout de chacune : le I-racine de MIAILHE, c'est la famille entière, sous terre, qui tient les trois châteaux.",
+  "ou": [
+   "identite.html · figcaption"
+  ]
+ },
+ {
+  "cle": "Les trois logos ont été générés en vecteur sur Higgsfield (Recraft V4.{0}, plusieurs pistes par château), nettoyés en un seul tracé et calés sur la grille commune (Logos/source/construire_logos_chateaux.py ; fichiers et planches dans Logos/CHATEAUX). Recherche d'antériorité à faire avant tout dépôt.",
+  "ou": [
+   "identite.html · p.id-note"
+  ]
+ },
+ {
+  "cle": "Les couleurs : <0>trois caractères</0>, trois couleurs d'étiquette",
+  "ou": [
+   "identite.html · h2"
+  ]
+ },
+ {
+  "cle": "Un fond blanc, une encre, et trois couleurs choisies par l'équipe : l'or, le bleu de l'estuaire et le vert bouteille. Une par château.",
+  "ou": [
+   "identite.html · p.id-chapeau"
+  ]
+ },
+ {
+  "cle": "Or <0>Coufran</0>",
+  "ou": [
+   "identite.html · h3"
+  ]
+ },
+ {
+  "cle": "#A97D2E · encre #2C1F09 · teinte #FBF6EE",
+  "ou": [
+   "identite.html · p.id-codes"
+  ]
+ },
+ {
+  "cle": "La lumière du soir sur la colline de graves et sur le pigeonnier. La chaleur et la rondeur du merlot du grand-père.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Bleu estuaire <0>Verdignan</0>",
+  "ou": [
+   "identite.html · h3"
+  ]
+ },
+ {
+  "cle": "#0F4366 · encre #08223A · teinte #F0F8FE",
+  "ou": [
+   "identite.html · p.id-codes"
+  ]
+ },
+ {
+  "cle": "L'eau profonde de la Gironde, que le château regarde depuis trois siècles. Le bleu de la constance, pour le vin de garde de la famille.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Vert bouteille <0>Soudars</0>",
+  "ou": [
+   "identite.html · h3"
+  ]
+ },
+ {
+  "cle": "#0F320A · encre #071B05 · teinte #F2F9F1",
+  "ou": [
+   "identite.html · p.id-codes"
+  ]
+ },
+ {
+  "cle": "Le vert de la vigne qu'Éric a fait pousser sur la pierre, en partant de rien, et le verre de la bouteille qu'on partage. La couleur du vignoble bâti de ses mains.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "<0>La méthode.</0> Chaque couleur garde sa teinte dans toutes ses déclinaisons (calculées en OKLCH) : une encre sombre pour le texte, une teinte très claire pour les fonds, et une version lumineuse pour les fonds sombres, où le bleu et le vert s'éteindraient.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "La marque mère n'a pas de couleur à elle.",
+  "ou": [
+   "identite.html · strong"
+  ]
+ },
+ {
+  "cle": "MIAILHE parle en encre",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "sur blanc, et signe avec les trois couleurs côte à côte : le petit trait tricolore des sur-titres, le liseré du pied de page, la racine de la frise.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Les motifs : <0>une histoire</0> en papier peint",
+  "ou": [
+   "identite.html · h2"
+  ]
+ },
+ {
+  "cle": "Chaque château a son motif, tiré d'un élément réel de son histoire ou de sa terre, qu'on peut aller voir sur place. Les trois sont gravés de la même main, en taille-douce, comme les gravures des étiquettes : un trait, des hachures, des aplats. Chacun a sa structure. On les retrouve sur les aplats des sites et les fiches des vins ; demain, sur les coffrets et les papiers de soie.",
+  "ou": [
+   "identite.html · p.id-chapeau"
+  ]
+ },
+ {
+  "cle": "Le pigeonnier dans les rangs",
+  "ou": [
+   "identite.html · h3"
+  ]
+ },
+ {
+  "cle": "La tour-belvédère, corps carré, lanterne vitrée et toit d'ardoise, au bout de l'allée de vigne, comme sur la photo du domaine. Les rangs qui fuient vers elle dessinent un soleil levant, celui de l'Art déco de {0}, l'année de Louis.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "L'estuaire gravé",
+  "ou": [
+   "identite.html · h3"
+  ]
+ },
+ {
+  "cle": "Le vrai trait de côte de la Gironde, de Royan au Bec d'Ambès, l'eau gravée comme le ciel de l'étiquette de Verdignan, les îles en blanc et le château marqué du signe des cartes. Données © contributeurs OpenStreetMap.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Les jeunes ceps sur la friche",
+  "ou": [
+   "identite.html · h3"
+  ]
+ },
+ {
+  "cle": "En {0}, Éric choisit des parcelles en friche, « encombrées de tonnes de pierres », et y replante presque tout le vignoble. Chaque jeune plant a sa butte de terre, son piquet et trois feuilles de vigne, dessinées comme celles du logo MIAILHE ; à son pied, l'herbe et les pierres de la friche. Plantés en quinconce, comme une vigne neuve.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "La typographie : <0>une seule voix</0>, réglée au cordeau",
+  "ou": [
+   "identite.html · h2"
+  ]
+ },
+ {
+  "cle": "Quatre polices, quatre rôles, pas un de plus. Le même texte sur la vitrine et sur les trois sites ; les châteaux gardent leur accent dans leur logo, dessiné à part.",
+  "ou": [
+   "identite.html · p.id-chapeau"
+  ]
+ },
+ {
+  "cle": "Trois châteaux, <0>une même</0> racine depuis {0}.",
+  "ou": [
+   "identite.html · p.specimen.specimen--cormorant"
+  ]
+ },
+ {
+  "cle": "<0>Cormorant</0> · les titres et le récit. Un Garamond de titrage très contrasté, avec de vraies petites capitales et des chiffres elzéviriens, qui s'alignent sur les minuscules. Libre (SIL OFL).",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "le caractère, l'élégance, le partage",
+  "ou": [
+   "identite.html · p.specimen.specimen--canela"
+  ]
+ },
+ {
+  "cle": "<0>Canela italique</0> · le mot qui compte, un seul par titre, dans la couleur du château. L'émotion, sans emphase.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Cinzel</0> · la romaine du logotype : les inscriptions, comme gravées dans la pierre (armoiries, millésimes, l'Enquête). Libre (SIL OFL).",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Nos vins · La famille · Professionnels",
+  "ou": [
+   "identite.html · p.specimen.specimen--circular"
+  ]
+ },
+ {
+  "cle": "<0>Circular</0> · l'interface : menus, boutons, légendes, formulaires. Nette et lisible partout.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "« Un vin de garde ? » {0} % de merlot, servi à {1} °C.",
+  "ou": [
+   "identite.html · p.specimen.specimen--micro"
+  ]
+ },
+ {
+  "cle": "<0>La microtypographie française, partout</0> · espace fine insécable avant ; ! ? et dans les guillemets, insécable avant les deux-points et entre un nombre et son unité, apostrophe typographique, pas de mot orphelin, césure française dans les textes longs. Appliquée automatiquement, même aux textes du test et de l'Enquête.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Aa</0><1>Aa</1><2>Aa</2><3>Aa</3><4>Aa</4>",
+  "ou": [
+   "identite.html · p.specimen.specimen--echelle"
+  ]
+ },
+ {
+  "cle": "<0>Une échelle modulaire fluide</0> · tierce majeure sur téléphone, quarte sur grand écran : les tailles grandissent avec l'écran, dans les mêmes rapports. Les titres sont équilibrés ligne à ligne, le texte de lecture garde {0} à {1} signes par ligne.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "Circular et Canela viennent du Livre de polices de l'équipe : leurs licences web sont à vérifier avant toute mise en ligne. Cormorant et Cinzel sont libres (SIL Open Font License). Les logos des châteaux ne dépendent d'aucune police.",
+  "ou": [
+   "identite.html · p.id-note"
+  ]
+ },
+ {
+  "cle": "Maquette de concept, projet étudiant ISCOM {0}. Fichiers sources : Logos/LOGO_FINAL, Logos/ARMOIRIES, Site_MIAILHE/assets/img/motifs.",
+  "ou": [
+   "identite.html · p"
+  ]
+ },
+ {
+  "cle": "La découverte",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Retourner dans le lieu que vous aimez, et y emmener ceux que vous aimez.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Visiter le monument incontournable, en connaissant déjà son histoire.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Pousser la porte que personne n'avait remarquée.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "La tradition",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un savoir-faire exigeant, que l'on transmet avec patience.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Quelque chose que l'on peut aussi inventer soi-même.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un héritage que l'on garde vivant, avec son caractère et ses habitudes.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Celle d'un domaine bâti de toutes pièces, sur des friches couvertes de pierres.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Celle d'un homme qui, en {0}, a osé faire autrement que tous ses voisins.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Celle d'un château qui regarde l'estuaire depuis plus d'un siècle.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "La dégustation",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un moment de partage, autour d'une grande table.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Une rencontre simple et spontanée, sans protocole.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Une découverte que l'on prend le temps de comprendre.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Le lieu",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "La visite du cuvier et du chai, face à l'estuaire.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Une promenade jusqu'au pigeonnier, au milieu des vignes.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Une balade entre les murets de pierres sèches, à la recherche de fossiles.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Le goût",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un café serré, noir, qui a du corps et de la longueur.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un café crème ou un chocolat chaud, rond et doux.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un jus de fruits pressés ou un thé aux fruits rouges.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Le vin",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un vin rond et souple, qui fond en bouche.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un vin plein et droit, avec du caractère, qui gagne à attendre.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Un vin fruité et frais, déjà bon dans sa jeunesse.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Le caractère généreux",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "le grand-père",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Merlot ou cabernet ?",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Ce sont deux cépages, deux variétés de raisin. Le Médoc plante surtout du cabernet-sauvignon, qui donne des vins plus fermes. Coufran est fait d'environ {0} % de merlot, qui donne des vins plus ronds : c'est ce qui le rend à part.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "L'élégance classique",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "le père",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Que veut dire « vin de garde » ?",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "C'est un vin qui gagne à vieillir quelques années avant d'être ouvert. Chez les Miailhe, c'est le château qui attend : les bouteilles vieillissent sur place et ne partent que lorsqu'elles sont prêtes.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Le plaisir spontané",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "le fils",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Qu'est-ce qu'un terroir ?",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "C'est le sol, le climat et le savoir-faire d'un lieu. Chaque parcelle a le sien : c'est pour cela que trois châteaux voisins, à Saint-Seurin-de-Cadourne, ne donnent pas le même vin.",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "Le château qui me ressemble : {{0}}, {{1}}. Et vous ?",
+  "ou": [
+   "script quiz.js",
+   "quiz.js : texte partagé ({0} = nom, {1} = surnom)"
+  ]
+ },
+ {
+  "cle": "Lien copié",
+  "ou": [
+   "script quiz.js"
+  ]
+ },
+ {
+  "cle": "(hover: hover) and (pointer: fine)",
+  "ou": [
+   "script vitrine.js"
+  ]
+ },
+ {
+  "cle": "clip-path {0}.05s cubic-bezier(.{1}, {2}, .{3}, {4})",
+  "ou": [
+   "script vitrine.js"
+  ]
+ },
+ {
+  "cle": "(max-aspect-ratio: 4/5)",
+  "ou": [
+   "script vitrine.js"
+  ]
+ },
+ {
+  "cle": "cubic-bezier(.{0}, .{1}, .{2}, {3})",
+  "ou": [
+   "script main.js"
+  ]
+ },
+ {
+  "cle": "(max-width: 900px)",
+  "ou": [
+   "script main.js"
+  ]
+ },
+ {
+  "cle": "a:not(.menu-principal > li > a)",
+  "ou": [
+   "script main.js"
+  ]
+ }
+]

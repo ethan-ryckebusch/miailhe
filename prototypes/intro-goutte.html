@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIAILHE · Intro « La goutte de vin » (prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap">
+<style>
+  /* Prototype d'intro n° 1 : une goutte de vin tombe sur le papier blanc, la tache s'étale,
+     le logo apparaît dedans en réserve blanche, puis la tache est bue par le papier et le logo reste, en rouge. */
+  :root { --blanc: #ffffff; --encre: #0d0d0d; --rouge: #e50041; --vin: #9b0d33; --gris: #8a8a8a; --ease: cubic-bezier(.2, .7, .1, 1); }
+  html, body { margin: 0; height: 100%; background: var(--blanc); overflow: hidden; }
+  .toile { position: fixed; inset: 0; width: 100%; height: 100%; }
+  /* Le papier boit la tache : elle se résorbe vers son centre et reste rouge jusqu'au bout */
+  .tache { transform-box: fill-box; transform-origin: center; transition: transform 1.3s cubic-bezier(.6, 0, .3, 1), opacity .35s 1s; }
+  .is-bue .tache { opacity: 0; transform: scale(0); }
+  .logo {
+    position: absolute; left: 50%; top: 50%; color: #fff;
+    opacity: 0; filter: blur(6px); transform: translate(-50%, -50%) scale(.96);
+    transition: opacity 1.4s var(--ease), filter 1.4s var(--ease), transform 1.8s var(--ease), color 1.5s var(--ease);
+  }
+  .logo svg { display: block; width: 100%; height: auto; }
+  .is-logo .logo { opacity: 1; filter: blur(0); transform: translate(-50%, -50%); }
+  .is-bue .logo { color: var(--rouge); }
+  .accroche {
+    position: absolute; left: 0; right: 0; margin: 0; text-align: center;
+    font-family: "Cormorant Garamond", serif; font-weight: 300; font-size: clamp(1.25rem, 2.4vw, 2rem); color: var(--encre);
+    opacity: 0; transform: translateY(14px); transition: opacity 1.4s var(--ease), transform 1.4s var(--ease);
+  }
+  .accroche em { color: var(--rouge); }
+  .is-accroche .accroche { opacity: 1; transform: none; }
+  .etiquette { position: fixed; top: 22px; left: 24px; margin: 0; font-family: Jost, sans-serif; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: #b5b5b5; }
+  .rejouer {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    font-family: Jost, sans-serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+    background: none; border: 1px solid #d9d9d9; border-radius: 99px; padding: .9em 1.6em; color: var(--gris); cursor: pointer;
+    opacity: 0; pointer-events: none; transition: opacity .8s;
+  }
+  .is-fin .rejouer { opacity: 1; pointer-events: auto; }
+</style>
+</head>
+<body>
+  <p class="etiquette">Prototype · Intro 1 · La goutte de vin</p>
+  <svg class="toile" aria-hidden="true"></svg>
+  <div class="logo" role="img" aria-label="MIAILHE"></div>
+  <p class="accroche">Trois châteaux. <em>Une seule racine.</em></p>
+  <button class="rejouer" type="button">Rejouer</button>
+
+  <script src="../assets/js/logo.js"></script>
+  <script>
+  (function () {
+    const NS = 'http://www.w3.org/2000/svg';
+    const el = (name, attrs = {}, parent) => {
+      const n = document.createElementNS(NS, name);
+      for (const k in attrs) n.setAttribute(k, attrs[k]);
+      if (parent) parent.appendChild(n);
+      return n;
+    };
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    const entree = t => t * t * t;
+    const sortie = t => 1 - Math.pow(1 - t, 3);
+    const rebond = t => 1 + 2.7 * Math.pow(t - 1, 3) + 1.7 * Math.pow(t - 1, 2);
+    const alea = graine => () => ((graine = (graine * 16807) % 2147483647) - 1) / 2147483646;
+
+    const svg = document.querySelector('.toile');
+    const logo = document.querySelector('.logo');
+    const accroche = document.querySelector('.accroche');
+    const L = window.MIAILHE_LOGO.logo;
+    logo.innerHTML = `<svg viewBox="${L.viewBox}" aria-hidden="true"><g transform="${L.transform}" fill="currentColor"><path d="${L.d}"/></g></svg>`;
+
+    let course = 0;
+    function jouer() {
+      const id = ++course;
+      const etat = c => document.body.classList.add(c);
+      document.body.className = '';
+      svg.innerHTML = '';
+      const W = innerWidth, H = innerHeight, cx = W / 2, cy = H * .47;
+      const R = Math.min(W * .42, H * .3);           // rayon final de la tache
+      const r = alea(1924);
+      svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+      logo.style.width = `${Math.min(340, R * 1.3)}px`;
+      logo.style.top = `${cy}px`;
+      accroche.style.top = `${cy + R * .62}px`;
+
+      // Bord organique : du bruit qui déforme le contour, comme du vin qui file dans les fibres du papier
+      const defs = el('defs', {}, svg);
+      const f = el('filter', { id: 'bord', x: '-40%', y: '-40%', width: '180%', height: '180%' }, defs);
+      el('feTurbulence', { type: 'fractalNoise', baseFrequency: (2.2 / R).toFixed(4), numOctaves: 3, seed: 11, result: 'bruit' }, f);
+      el('feDisplacementMap', { in: 'SourceGraphic', in2: 'bruit', scale: (R * .2).toFixed(1), xChannelSelector: 'R', yChannelSelector: 'G' }, f);
+      // Plus claire au centre, plus sombre au bord : une tache de vin qui sèche
+      const g = el('radialGradient', { id: 'vin' }, defs);
+      [[0, '#c4003c', .9], [.72, '#c4003c', .93], [.93, '#9e0a33', .97], [1, '#7f0a2a', 1]].forEach(([o, c, a]) => el('stop', { offset: o, 'stop-color': c, 'stop-opacity': a }, g));
+
+      const tache = el('g', { class: 'tache', filter: 'url(#bord)' }, svg);
+      const disque = el('circle', { cx, cy, r: 0, fill: 'url(#vin)' }, tache);
+      const eclats = [...Array(6)].map(() => {
+        const a = r() * Math.PI * 2, d = R * (1.06 + r() * .28);
+        return { c: el('circle', { cx: cx + Math.cos(a) * d, cy: cy + Math.sin(a) * d, r: 0, fill: '#a8083a' }, tache), taille: R * (.012 + r() * .03), delai: r() * 220 };
+      });
+      const goutte = el('path', { d: 'M0 -20C5 -9 11 0 11 8A11 11 0 0 1 -11 8C-11 0 -5 -9 0 -20Z', fill: '#c4003c' }, svg);
+
+      const t0 = performance.now();
+      const ATTENTE = 450, CHUTE = 650, IMPACT = ATTENTE + CHUTE, ETALEMENT = 1600;
+      const boucle = now => {
+        if (id !== course) return;
+        const t = now - t0;
+        // La goutte tombe en accélérant et s'étire
+        const q = clamp((t - ATTENTE) / CHUTE, 0, 1);
+        if (q < 1) {
+          const s = 1 + q * .35;
+          goutte.setAttribute('transform', `translate(${cx} ${(-30 + (cy + 30) * entree(q)).toFixed(1)}) scale(${(1 / Math.sqrt(s)).toFixed(3)} ${s.toFixed(3)})`);
+        } else goutte.setAttribute('opacity', 0);
+        // La tache s'étale vite puis ralentit, avec quelques éclats autour
+        const p = clamp((t - IMPACT) / ETALEMENT, 0, 1);
+        disque.setAttribute('r', (R * sortie(p)).toFixed(1));
+        eclats.forEach(e => e.c.setAttribute('r', (e.taille * rebond(clamp((t - IMPACT - e.delai) / 420, 0, 1))).toFixed(2)));
+        if (t > IMPACT + 650) etat('is-logo');
+        if (t > IMPACT + 3000) etat('is-bue');
+        if (t > IMPACT + 3600) etat('is-accroche');
+        if (t > IMPACT + 4900) { etat('is-fin'); return; }
+        requestAnimationFrame(boucle);
+      };
+      requestAnimationFrame(boucle);
+    }
+
+    document.querySelector('.rejouer').addEventListener('click', jouer);
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(jouer);
+  })();
+  </script>
+</body>
+</html>

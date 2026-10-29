@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/js/langue.js"></script>
+<title>Famille Miailhe – Vins de Bordeaux (@famillemiailhe) | TikTok</title>
+<!-- Le compte TikTok proposé à la famille, @famillemiailhe (29/10/2026, demande de l'utilisateur : « duplique le même
+     feed Insta version TikTok, avec uniquement les posts des réels »). Le compte est à créer : une seule version, pas
+     d'Avant / Après comme sur instagram.html.
+     Reproduit la page de profil de TikTok vue sur ordinateur, déconnecté, relevée le 29/10/2026 dans Chrome à
+     1440 × 900 (www.tiktok.com/@tiktok?lang=fr) : barre latérale de 240 px, avatar de 172 px, onglets Vidéos ·
+     Republications · Favoris · A aimé, tri Récents · Populaire · La plus ancienne, listes de lecture, grille de six
+     vignettes par ligne. Les vignettes de TikTok sont en 3:4 (175 × 232 px mesurés, 129 × 172 sur téléphone) : les
+     couvertures 9:16 des reels y sont recadrées au centre, comme le ferait TikTok, et leurs textes tiennent dans cette
+     zone. Sur téléphone, la version web mobile (en-tête, avatar de 90 px, trois onglets en icônes, trois colonnes).
+     Les 16 reels de la grille Instagram, du plus récent au plus ancien (le numéro de chaque image est sa place dans la
+     grille d'instagram.js). Les listes de lecture regroupent les séries. Les vues, abonnés et J'aime sont des chiffres
+     de maquette, plausibles et modestes. Les icônes viennent de la vraie page. Rien n'est envoyé : les boutons ne font
+     rien, sauf le tri. -->
+<style>
+  :root {
+    --fond: #fff; --texte: rgb(22, 24, 35); --noir: #000; --gris: rgba(22, 24, 35, .5); --sous: rgba(0, 0, 0, .48);
+    --pale: rgba(0, 0, 0, .05); --pale-2: rgba(22, 24, 35, .03); --onglet: rgb(115, 116, 123); --trait: rgba(0, 0, 0, .12);
+    --rouge: rgb(254, 44, 85); --vide: rgba(22, 24, 35, .06); --barre-fond: rgba(255, 255, 255, .8); --actif: #fff;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #121212; --texte: rgba(255, 255, 255, .9); --noir: rgba(255, 255, 255, .9); --gris: rgba(255, 255, 255, .5);
+      --sous: rgba(255, 255, 255, .5); --pale: rgba(255, 255, 255, .08); --pale-2: rgba(255, 255, 255, .05);
+      --onglet: rgba(255, 255, 255, .5); --trait: rgba(255, 255, 255, .16); --vide: rgba(255, 255, 255, .08);
+      --barre-fond: rgba(37, 37, 37, .85); --actif: rgba(255, 255, 255, .16);
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--fond); color: var(--texte); font-family: TikTokFont, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 21px; -webkit-font-smoothing: antialiased; }
+  /* en japonais, pas de coupure au milieu d'un mot (オー・メドック) */
+  html:lang(ja) body { line-break: strict; word-break: auto-phrase; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; border: 0; background: none; padding: 0; cursor: pointer; }
+  svg { display: block; flex: none; }
+  p, h1, h2, h3, h4 { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  /* ---------- La barre latérale (déconnecté, ordinateur) ---------- */
+  .tt-barre { position: fixed; z-index: 10; top: 0; bottom: 0; left: 0; width: 240px; padding: 0 16px; overflow-y: auto; scrollbar-width: none; background: var(--fond); }
+  .tt-barre::-webkit-scrollbar { display: none; }
+  .tt-logo-rangee { display: flex; align-items: center; justify-content: space-between; height: 48px; padding: 20px 0 0 8px; }
+  .tt-logo { color: var(--texte); }
+  .tt-replier { display: grid; place-items: center; width: 24px; height: 24px; color: var(--sous); }
+  .tt-cherche { display: flex; align-items: center; gap: 10px; width: 100%; height: 40px; margin-top: 16px; padding: 6px 10px; border-radius: 999px; background: var(--pale); color: var(--texte); font-size: 16px; font-weight: 500; }
+  .tt-cherche span { color: var(--gris); font-size: 14px; font-weight: 400; }
+  .tt-nav { padding: 12px 0 8px; }
+  .tt-nav li { margin-bottom: 4px; }
+  .tt-nav a, .tt-nav button { display: flex; align-items: center; gap: 12px; width: 100%; height: 40px; padding: 0 4px; border-radius: 6px; color: var(--noir); font-size: 16px; font-weight: 500; text-align: left; }
+  .tt-nav a:hover, .tt-nav button:hover { background: var(--pale); }
+  .tt-nav svg { width: 32px; height: 32px; }
+  .tt-nav .tt-plus-point { position: relative; }
+  .tt-nav .tt-plus-point::after { content: ""; position: absolute; top: 8px; left: 31px; width: 6px; height: 6px; border-radius: 50%; background: var(--rouge); }
+  .tt-connexion-cote { padding: 16px 4px 8px; }
+  .tt-connexion-cote button { width: 100%; height: 40px; border-radius: 6px; background: var(--rouge); color: #fff; font-size: 16px; font-weight: 500; }
+  .tt-pied { padding: 16px 8px 24px; }
+  .tt-pied h4 { margin-bottom: 5px; color: var(--gris); font-size: 15px; font-weight: 700; line-height: 22px; }
+  .tt-pied small { display: block; margin-top: 4px; color: var(--gris); font-size: 12px; font-weight: 600; line-height: 16px; }
+
+  /* les boutons du coin, en haut à droite */
+  .tt-coin { position: fixed; z-index: 10; top: 24px; right: 24px; display: flex; align-items: center; gap: 0; padding: 8px; border-radius: 32px; background: var(--barre-fond); box-shadow: 0 2px 10px rgba(0, 0, 0, .07); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .tt-coin-icone { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 52px; color: var(--texte); }
+  .tt-coin-icone:hover { background: var(--pale); }
+  .tt-coin-icone svg { width: 16px; height: 16px; }
+  .tt-coin-connexion { height: 32px; margin-left: 17px; padding: 1px 12px; border-radius: 999px; background: var(--rouge); color: #fff; font-size: 15px; font-weight: 500; }
+
+  /* l'en-tête de la version téléphone */
+  .tt-tete-mobile { display: none; }
+
+  /* ---------- Le profil ---------- */
+  .tt-page { min-height: 100vh; margin-left: 240px; padding: 36px 32px 48px; }
+  .tt-profil { display: grid; grid-template-columns: 172px minmax(0, 1fr); column-gap: 28px; }
+  .tt-avatar { width: 172px; height: 172px; border-radius: 50%; overflow: hidden; background: var(--vide); }
+  .tt-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tt-infos { min-width: 0; }
+  .tt-ligne-nom { display: flex; align-items: center; gap: 6px; min-width: 0; }
+  .tt-nom { overflow: hidden; font-family: TikTokDisplayFont, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 30px; white-space: nowrap; text-overflow: ellipsis; }
+  .tt-separateur { flex: none; width: 1px; height: 14px; margin: 0 8px; background: var(--trait); }
+  .tt-compte { flex: none; color: var(--sous); font-size: 16px; font-weight: 400; line-height: 21px; }
+  .tt-chiffres { display: flex; flex-wrap: wrap; gap: 0 20px; margin-top: 6px; font-size: 16px; line-height: 21px; color: var(--noir); }
+  .tt-chiffres strong { margin-right: 2px; font-weight: 700; }
+  .tt-boutons { display: flex; gap: 12px; margin-top: 14px; }
+  .tt-boutons button { display: inline-flex; align-items: center; justify-content: center; height: 44px; min-width: 44px; padding: 1px 16px; border-radius: 9999px; background: var(--pale); color: var(--noir); font-size: 16px; font-weight: 600; }
+  .tt-boutons button svg { width: 20px; height: 20px; }
+  .tt-boutons .tt-suivre { min-width: 108px; background: var(--rouge); color: #fff; }
+  .tt-boutons .tt-carre { width: 44px; padding: 1px 0; }
+  .tt-boutons .tt-deroule { display: none; }
+  .tt-bio { margin-top: 14px; font-size: 16px; font-weight: 400; line-height: 21px; overflow-wrap: anywhere; }
+  .tt-arobase, .tt-onglet.tt-seul-mobile { display: none; }
+  .tt-lien { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; color: var(--rouge); font-size: 16px; font-weight: 600; line-height: 22px; }
+  .tt-lien svg { width: 14px; height: 14px; }
+
+  /* les onglets et le tri */
+  .tt-onglets-rangee { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 27px; }
+  .tt-onglets { position: relative; display: flex; }
+  .tt-onglet { display: flex; align-items: center; justify-content: center; gap: 6px; height: 44px; padding: 0 32px; color: var(--onglet); font-size: 18px; font-weight: 600; line-height: 24px; white-space: nowrap; cursor: pointer; }
+  .tt-onglet svg { width: 20px; height: 20px; }
+  .tt-onglet[aria-selected="true"] { color: var(--texte); }
+  .tt-onglet-trait { position: absolute; left: 0; bottom: 0; height: 2px; background: var(--texte); transition: transform .25s, width .25s; }
+  .tt-onglet .tt-icone-mobile { display: none; }
+  .tt-tri { display: flex; flex: none; padding: 2px; border-radius: 6px; background: var(--pale); }
+  .tt-tri button { height: 32px; padding: 6px 10px; border-radius: 4px; color: var(--sous); font-size: 13px; font-weight: 500; line-height: 20px; white-space: nowrap; }
+  .tt-tri button[aria-pressed="true"] { background: var(--actif); color: var(--noir); box-shadow: 0 1px 2px rgba(0, 0, 0, .06); }
+
+  /* les listes de lecture */
+  .tt-titre-section { margin-top: 25px; font-size: 16px; font-weight: 600; line-height: 20px; }
+  .tt-listes-rangee { position: relative; margin-top: 16px; }
+  .tt-listes { display: flex; gap: 16px; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; }
+  .tt-listes::-webkit-scrollbar { display: none; }
+  .tt-liste { display: flex; align-items: center; gap: 12px; flex: none; width: 365px; height: 94px; padding: 11px; border-radius: 8px; background: var(--pale-2); cursor: pointer; }
+  .tt-liste:hover { background: var(--pale); }
+  .tt-liste img { width: 54px; height: 72px; border-radius: 4px; object-fit: cover; }
+  .tt-liste b { display: block; font-size: 16px; font-weight: 600; line-height: 21px; }
+  .tt-liste span { display: block; margin-top: 4px; color: var(--gris); font-size: 14px; line-height: 18px; }
+  .tt-listes-fleche { position: absolute; top: 31px; right: -12px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--fond); box-shadow: 0 2px 8px rgba(0, 0, 0, .16); color: var(--texte); }
+  .tt-listes-fleche[hidden] { display: none; }
+  .tt-listes-fleche[data-sens="-1"] { right: auto; left: -12px; }
+  .tt-listes-fleche[data-sens="-1"] svg { transform: scaleX(-1); }
+  .tt-listes-fleche svg { width: 16px; height: 16px; }
+  .tt-videos-titre { margin-top: 24px; }
+
+  /* la grille : six vignettes 3:4 par ligne sur un écran de 1 440 px, 24 px entre les lignes, 16 px entre les colonnes */
+  .tt-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 24px 16px; margin-top: 16px; }
+  .tt-video { position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 8px; background: var(--vide); cursor: pointer; }
+  .tt-video img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tt-video::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 72%, rgba(0, 0, 0, .32)); pointer-events: none; }
+  .tt-vues { position: absolute; z-index: 1; left: 12px; bottom: 9px; display: flex; align-items: center; gap: 4px; color: #fff; font-size: 14px; font-weight: 600; line-height: 21px; }
+  .tt-vues svg { width: 14px; height: 14px; }
+
+  .tt-logo .tt-logo-note { display: none; }
+  /* le nom ne passe pas sous les boutons du coin */
+  @media (max-width: 1279px) { .tt-ligne-nom { padding-right: 220px; } }
+
+  /* ---------- Écran moyen : la barre latérale se replie en icônes ---------- */
+  @media (max-width: 1071px) and (min-width: 768px) {
+    .tt-barre { width: 72px; padding: 0 12px; }
+    .tt-logo-rangee { justify-content: center; padding: 20px 0 0; }
+    .tt-logo svg { width: 28px; height: 28px; }
+    .tt-logo .tt-logo-mot { display: none; }
+    .tt-logo .tt-logo-note { display: block; }
+    .tt-replier, .tt-cherche span, .tt-nav span, .tt-connexion-cote, .tt-pied { display: none; }
+    .tt-cherche { justify-content: center; padding: 0; }
+    .tt-nav a, .tt-nav button { justify-content: center; padding: 0; }
+    .tt-page { margin-left: 72px; }
+    .tt-profil { grid-template-columns: 116px minmax(0, 1fr); column-gap: 20px; }
+    .tt-avatar { width: 116px; height: 116px; }
+    .tt-coin { top: 16px; right: 16px; }
+    .tt-onglets-rangee { flex-wrap: wrap; }
+    .tt-onglet { padding: 0 18px; }
+  }
+
+  /* ---------- Téléphone : la version web mobile de TikTok ---------- */
+  @media (max-width: 767px) {
+    .tt-barre, .tt-coin { display: none; }
+    .tt-tete-mobile { position: fixed; z-index: 10; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; height: 44px; padding: 0 4px; background: var(--fond); }
+    .tt-tete-mobile button { display: grid; place-items: center; width: 40px; height: 40px; color: var(--texte); }
+    .tt-tete-mobile button svg { width: 22px; height: 22px; }
+    .tt-tete-mobile h1 { min-width: 0; overflow: hidden; font-size: 18px; font-weight: 700; line-height: 25px; white-space: nowrap; text-overflow: ellipsis; }
+    .tt-page { margin-left: 0; padding: 60px 0 24px; }
+    .tt-ligne-nom { padding-right: 0; }
+    .tt-profil { grid-template-columns: 90px minmax(0, 1fr); column-gap: 12px; padding: 0 12px; }
+    .tt-avatar { width: 90px; height: 90px; }
+    .tt-infos { padding-top: 4px; }
+    .tt-nom, .tt-separateur { display: none; }
+    .tt-compte { color: var(--texte); font-size: 16px; font-weight: 600; line-height: 21px; }
+    .tt-arobase { display: inline; }
+    .tt-onglet.tt-seul-mobile { display: flex; }
+    .tt-chiffres { gap: 0; margin-top: 8px; font-size: 11px; line-height: 16px; color: var(--gris); }
+    .tt-chiffres li { display: flex; align-items: baseline; }
+    .tt-chiffres li + li::before { content: ""; align-self: center; width: 1px; height: 12px; margin: 0 8px; background: var(--trait); }
+    .tt-chiffres strong { margin-right: 4px; color: var(--texte); font-size: 12px; }
+    .tt-bio { margin-top: 8px; font-size: 12px; line-height: 16px; }
+    .tt-lien { margin-top: 7px; font-size: 12px; line-height: 16px; }
+    .tt-boutons { gap: 4px; margin-top: 8px; }
+    .tt-boutons button { height: 32px; min-width: 32px; padding: 6px 8px; border-radius: 8px; font-size: 15px; }
+    .tt-boutons .tt-suivre { min-width: 120px; }
+    .tt-boutons .tt-message, .tt-boutons .tt-carre { display: none; }
+    .tt-boutons .tt-deroule { display: grid; place-items: center; width: 32px; padding: 0; background: var(--vide); }
+    .tt-boutons .tt-deroule svg { width: 24px; height: 24px; }
+    .tt-onglets-rangee { display: block; margin-top: 16px; }
+    .tt-onglets { width: 100%; }
+    .tt-onglet { flex: 1; padding: 0; color: var(--sous); }
+    .tt-onglet[data-seul-ordinateur], .tt-onglet .tt-icone-ordinateur, .tt-tri { display: none; }
+    .tt-onglet .tt-texte-onglet { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .tt-onglet .tt-icone-mobile { display: block; width: 24px; height: 24px; }
+    .tt-onglet-trait { width: 48px !important; }
+    .tt-titre-section, .tt-listes-rangee { display: none; }
+    .tt-grille { grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 0; }
+    .tt-video { border-radius: 0; }
+    .tt-vues { left: 6px; bottom: 4px; gap: 3px; font-size: 12px; line-height: 16px; }
+    .tt-vues svg { width: 12px; height: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- La barre latérale de TikTok -->
+<nav class="tt-barre" aria-label="Navigation de TikTok">
+  <div class="tt-logo-rangee">
+    <a class="tt-logo" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg class="tt-logo-mot" width="105" height="28" viewBox="0 0 105 28" fill="none" aria-hidden="true"><path d="M73.6292 19.4778C73.6292 15.5478 76.5273 12.4649 80.4333 12.1743C80.2328 12.1596 80.0305 12.1513 79.8263 12.1513C75.6177 12.1513 72.4161 15.3473 72.4161 19.4768C72.4161 23.6064 75.6177 26.8051 79.8263 26.8051C80.0305 26.8051 80.2328 26.7969 80.4333 26.7821C76.5282 26.4915 73.6292 23.4068 73.6292 19.4768V19.4778ZM24.0277 7.46994V6.64955C22.7751 6.56126 21.4635 6.16762 20.3102 5.40885C21.3716 6.50147 22.6941 7.16643 24.0277 7.46994ZM12.6452 0V18.3401C12.6452 20.7433 10.9153 22.2884 8.81185 22.2884C8.11378 22.2884 7.45158 22.1256 6.87584 21.8249C7.60702 22.7565 8.76035 23.2918 10.0259 23.2918C12.1293 23.2918 13.8593 21.7467 13.8593 19.3416V1.00157H17.1933C17.1022 0.682429 17.0277 0.348572 16.9707 0H12.6462H12.6452ZM9.91 10.6623V9.75359C9.48877 9.68369 9.06753 9.6607 8.71896 9.6607C3.9732 9.6607 0 13.4628 0 18.1773C0 21.2721 1.50926 23.9181 3.80213 25.4844C2.20457 23.9016 1.21403 21.6869 1.21403 19.1788C1.21403 14.4717 5.17527 10.6724 9.91092 10.6623H9.91Z" fill="#2DCCD3"/><path d="M82.2534 12.1524C82.0492 12.1524 81.8469 12.1606 81.6464 12.1753C85.5497 12.466 88.4477 15.5507 88.4477 19.4788C88.4477 23.4069 85.5497 26.4935 81.6464 26.7841C81.8469 26.7988 82.0492 26.8071 82.2534 26.8071C86.4602 26.8071 89.6617 23.6093 89.6617 19.4788C89.6617 15.3484 86.4602 12.1533 82.2534 12.1533V12.1524ZM20.3092 5.40991C19.2837 4.35683 18.5011 2.90644 18.1828 1.00171H17.1923C17.7579 3.06003 18.9223 4.49663 20.3092 5.40991ZM24.0267 10.9429C22.1008 10.9429 20.278 10.576 18.6721 9.49621C20.5419 11.3632 22.8109 11.9463 25.2408 11.9463V7.65218C24.8407 7.62551 24.4314 7.56572 24.0267 7.47099V10.9429ZM6.87486 21.8259C6.35889 21.1748 6.05078 20.3323 6.05078 19.3427C6.05078 16.567 8.22409 15.1 11.1221 15.4045V10.7553C10.7009 10.6854 10.2797 10.6624 9.92925 10.6624H9.90902V14.4001C7.01098 14.0976 4.83767 15.5627 4.83767 18.3402C4.83767 19.9644 5.6691 21.1959 6.87486 21.825V21.8259ZM17.4581 18.0385C17.4581 23.8953 12.9708 26.9984 8.74097 26.9984C6.9098 26.9984 5.20924 26.4466 3.80115 25.4855C5.38215 27.0518 7.55821 28 9.955 28C14.1848 28 18.6721 24.8969 18.6721 19.0401V9.49713C18.2509 9.21294 17.8462 8.88092 17.4581 8.49372V18.0385Z" fill="#F1204A"/><path d="M63.745 13.7278H58.5559L54.6278 17.9622V7.8352H50.2573V26.5018H54.6278V23.0482L56.3578 21.2281L58.9992 26.4779H64.0945L59.5832 18.194L63.7459 13.726L63.745 13.7278ZM28.5233 11.9473H33.0585V26.5027H37.7095V11.9473H40.7648L42.3661 7.83612H28.5243V11.9473H28.5233ZM43.4182 26.5027H47.7887V13.7278H43.4182V26.5027ZM45.5915 7.60251C44.166 7.60251 43.1607 8.58293 43.1607 9.93583C43.1607 11.2887 44.166 12.2692 45.5915 12.2692C47.0171 12.2692 48.0224 11.2657 48.0224 9.93583C48.0224 8.60592 47.0171 7.60251 45.5915 7.60251ZM100.125 18.1958L104.287 13.7278H99.0982L95.17 17.9622V7.8352H90.7995V26.5018H95.17V23.0482L96.9 21.2281L99.5415 26.4779H104.637L100.125 18.194L100.125 18.1958ZM76.1539 7.83612H61.7326V11.9473H66.2669V26.5027H70.9179V11.9473H74.5517L76.1539 7.83612ZM81.6474 12.1753C81.4469 12.1606 81.2445 12.1524 81.0403 12.1524C80.8362 12.1524 80.6338 12.1606 80.4333 12.1753C76.5282 12.466 73.6292 15.5489 73.6292 19.4788C73.6292 23.4088 76.5273 26.4935 80.4333 26.7841C80.6338 26.7988 80.8362 26.8071 81.0403 26.8071C81.2445 26.8071 81.4469 26.7988 81.6474 26.7841C85.5507 26.4935 88.4487 23.4069 88.4487 19.4788C88.4487 15.5507 85.5507 12.466 81.6474 12.1753ZM81.6474 22.7631C81.4533 22.7981 81.251 22.8146 81.0403 22.8146C80.8297 22.8146 80.6274 22.7981 80.4333 22.7631C78.8974 22.4973 77.8839 21.218 77.8839 19.4779C77.8839 17.7378 78.8974 16.4594 80.4333 16.1927C80.6274 16.1577 80.8297 16.1412 81.0403 16.1412C81.251 16.1412 81.4533 16.1577 81.6474 16.1927C83.1815 16.4585 84.195 17.7378 84.195 19.4779C84.195 21.218 83.1815 22.4964 81.6474 22.7631ZM17.1933 1.00171H13.8593V19.3418C13.8593 21.7468 12.1293 23.292 10.0259 23.292C8.76037 23.292 7.60704 22.7558 6.87586 21.825C5.6701 21.1968 4.83868 19.9644 4.83868 18.3402C4.83868 15.5627 7.01198 14.0976 9.91002 14.4001V10.6624C5.17437 10.6725 1.21313 14.4728 1.21313 19.179C1.21313 21.687 2.20367 23.9017 3.80123 25.4846C5.20932 26.4447 6.90989 26.9975 8.74105 26.9975C12.9709 26.9975 17.4582 23.8944 17.4582 18.0376V8.4928C17.8463 8.88 18.251 9.21202 18.6722 9.49621C20.278 10.576 22.1009 10.9429 24.0268 10.9429V7.47099C22.6932 7.16841 21.3697 6.50253 20.3093 5.40991C18.9224 4.49663 17.758 3.06095 17.1924 1.00171H17.1933Z" fill="currentColor"/></svg>
+      <svg class="tt-logo-note" width="28" height="28" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M28.68 11.5h-4.1v16.39a3.51 3.51 0 1 1-2.34-3.31v-4.21a7.61 7.61 0 1 0 6.44 7.52v-8.34a9.9 9.9 0 0 0 5.86 1.9v-4.1a5.85 5.85 0 0 1-5.86-5.85Z"/></svg>
+    </a>
+    <span class="tt-replier" role="img" aria-label="Réduire la barre latérale"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg></span>
+  </div>
+  <button class="tt-cherche" type="button"><svg width="16" height="16" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.83 7.5a14.34 14.34 0 1 1 0 28.68 14.34 14.34 0 0 1 0-28.68Zm0-4a18.33 18.33 0 1 0 11.48 32.64l8.9 8.9a1 1 0 0 0 1.42 0l1.4-1.41a1 1 0 0 0 0-1.42l-8.89-8.9A18.34 18.34 0 0 0 21.83 3.5Z"/></svg><span>Rechercher</span></button>
+  <ul class="tt-nav">
+    <li><a href="https://www.tiktok.com/foryou" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M23.05 7.84a1.5 1.5 0 0 1 1.9 0l16.1 13.2a1.5 1.5 0 0 1-.95 2.66h-2.33l-1.2 13.03A2.5 2.5 0 0 1 34.1 39H13.9a2.5 2.5 0 0 1-2.49-2.27L10.23 23.7H7.9a1.5 1.5 0 0 1-.95-2.66l16.1-13.2Zm.95 3.1L12.1 20.7h.87l1.4 15.3h8.13v-7.69a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1V36h8.13l1.4-15.3h.87L24 10.94Z"/></svg><span>Pour toi</span></a></li>
+    <li><a href="https://www.tiktok.com/explore" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M24 37.4a13.4 13.4 0 1 0 0-26.8 13.4 13.4 0 0 0 0 26.8ZM40.5 24a16.5 16.5 0 1 1-33 0 16.5 16.5 0 0 1 33 0Z"/><path d="M27.13 27.18 19 32.1a.6.6 0 0 1-.9-.63l1.84-9.33a2 2 0 0 1 .92-1.32L29 15.9a.6.6 0 0 1 .9.63l-1.84 9.33a2 2 0 0 1-.93 1.32Zm-5.04-.45 3.11-1.89.7-3.57-3.1 1.89-.7 3.57Z"/></svg><span>Explorer</span></a></li>
+    <li><a href="https://www.tiktok.com/following" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M18.99 3a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm0 4a6 6 0 1 0 0 12.00A6 6 0 0 0 19 7ZM18.99 26c2.96 0 5.6.58 7.87 1.65l-3.07 3.06a15.38 15.38 0 0 0-4.8-.71C10.9 30 6.3 35.16 6 43c-.02.55-.46 1-1.02 1h-2c-.55 0-1-.45-.98-1C2.330 32.99 8.7 26 19 26ZM35.7 41.88 31.82 38H45a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H31.82l3.88-3.88a1 1 0 0 0 0-1.41l-1.41-1.42a1 1 0 0 0-1.42 0l-7.3 7.3a2 2 0 0 0 0 2.82l7.3 7.3a1 1 0 0 0 1.42 0l1.41-1.42a1 1 0 0 0 0-1.41Z"/></svg><span>Suivis</span></a></li>
+    <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M30.5 24.87a1 1 0 0 0 0-1.74L20 17.07a1 1 0 0 0-1.5.87v12.12a1 1 0 0 0 1.5.87l10.5-6.06Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2 15c0-2.8 0-4.7.54-5.77a5 5 0 0 1 2.19-2.19C5.8 6.5 7.2 6.5 10 6.5h28c2.8 0 4.2 0 5.270.54a5 5 0 0 1 2.18 2.19C46 10.3 46 12.2 46 15v18c0 2.8 0 4.7-.55 5.77a5 5 0 0 1-2.18 2.18c-1.07.55-2.47.55-5.27.55H10c-2.8 0-4.2 0-5.27-.55a5 5 0 0 1-2.19-2.18C2 37.7 2 35.8 2 33V15Zm8-4.9v7.4H5.6c0-1.99-.1-4 .06-6 .03-.43.08-.6.1-.64.13-.26.34-.47.6-.6.04-.02.2-.07.65-.1 1.16-.1 1.83-.06 2.99-.06ZM5.6 30.5c0 1.99-.1 4 .06 6 .03.43.08.6.1.64.13.26.34.47.6.6.04.02.2.07.65.1 1.16.1 1.83.06 2.99.06v-7.4H5.6Zm0-3H10v-7H5.6v7Zm7.9 10.4V10.1h21v27.8h-21Zm24.5 0c1.16 0 1.83.04 3-.06.43-.03.6-.08.64-.1.26-.13.47-.34.6-.6.02-.04.07-.2.1-.65.17-1.98.06-4 .06-5.99H38v7.4Zm0-10.4h4.4v-7H38v7Zm0-10h4.4c0-1.99.1-4-.06-6a2.94 2.94 0 0 0-.1-.64 1.4 1.4 0 0 0-.6-.6c-.04-.02-.2-.07-.65-.1-1.16-.1-1.83-.06-2.99-.06v7.4Z"/></svg><span>Mini-dramas</span></a></li>
+    <li><a href="https://www.tiktok.com/live" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M16.78 26.82c-.08.18-.08.41-.08.88v3.9c0 .47 0 .7.08.88.1.25.3.44.54.54.18.08.41.08.88.08.47 0 .7 0 .88-.08a1 1 0 0 0 .54-.54c.08-.18.08-.41.08-.88v-3.9c0-.47 0-.7-.08-.88a1 1 0 0 0-.54-.54c-.18-.08-.41-.08-.88-.08-.47 0-.7 0-.88.08a1 1 0 0 0-.54.54ZM22.5 21.4c0-.47 0-.7.08-.88a1 1 0 0 1 .54-.54c.18-.08.41-.08.88-.08.47 0 .7 0 .88.08.25.1.44.3.54.54.08.18.08.41.08.88v10.2c0 .47 0 .7-.08.88a1 1 0 0 1-.54.54c-.18.08-.41.08-.88.08-.47 0-.7 0-.88-.08a1 1 0 0 1-.54-.54c-.08-.18-.08-.41-.08-.88V21.4ZM28.38 24.32c-.08.18-.08.41-.08.88v6.4c0 .47 0 .7.08.88.1.25.3.44.54.54.18.08.41.08.88.08.47 0 .7 0 .88-.08a1 1 0 0 0 .54-.54c.08-.18.08-.41.08-.88v-6.4c0-.47 0-.7-.08-.88a1 1 0 0 0-.54-.54c-.18-.08-.41-.08-.88-.08-.47 0-.7 0-.88.08a1 1 0 0 0-.54.54Z"/><path d="M16.57 7.49a1 1 0 0 0-.13 1.4l3.62 4.31H15.7c-2.8 0-4.2 0-5.27.55a5 5 0 0 0-2.18 2.18C7.7 17 7.7 18.4 7.7 21.2v10.7c0 2.8 0 4.2.55 5.27a5 5 0 0 0 2.18 2.19c1.07.54 2.47.54 5.27.54h16.6c2.8 0 4.2 0 5.27-.54a5 5 0 0 0 2.19-2.19c.54-1.07.54-2.47.54-5.27V21.2c0-2.8 0-4.2-.54-5.27a5 5 0 0 0-2.19-2.18c-1.07-.55-2.47-.55-5.27-.55h-4.42l3.61-4.3a1 1 0 0 0-.12-1.41l-.77-.65a1 1 0 0 0-1.4.13l-5.23 6.22-5.23-6.22a1 1 0 0 0-1.4-.13l-.77.65Zm-.87 8.71h16.6c1.45 0 2.36 0 3.04.06.65.05.83.14.87.16.37.19.68.5.87.87.02.04.1.22.16.87.06.68.06 1.6.06 3.04v10.7c0 1.45 0 2.36-.06 3.04-.05.65-.14.83-.16.87a2 2 0 0 1-.87.87c-.04.02-.22.1-.87.16-.68.06-1.59.06-3.04.06H15.7c-1.45 0-2.36 0-3.04-.06a2.47 2.47 0 0 1-.87-.16 2 2 0 0 1-.87-.87c-.02-.04-.1-.22-.16-.87-.06-.68-.06-1.59-.06-3.04V21.2c0-1.45 0-2.36.06-3.04.05-.65.14-.83.16-.87a2 2 0 0 1 .87-.87c.04-.02.22-.1.87-.16a42.2 42.2 0 0 1 3.04-.06Z"/></svg><span>LIVE</span></a></li>
+    <li><a href="https://www.tiktok.com/upload" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M25 15a1 1 0 0 1 1 1v6h6a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-6h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h6v-6a1 1 0 0 1 1-1h2Z"/><path d="M33.58 4.5H14.42c-1.33 0-2.45 0-3.37.07-.95.08-1.86.25-2.73.7a7 7 0 0 0-3.06 3.05 7.14 7.14 0 0 0-.69 2.73 44.6 44.6 0 0 0-.07 3.37v19.16c0 1.33 0 2.45.07 3.37.08.95.25 1.86.7 2.73a7 7 0 0 0 3.050 3.06c.87.44 1.78.6 2.73.69.92.07 2.04.07 3.37.07h19.16c1.33 0 2.45 0 3.37-.07a7.14 7.14 0 0 0 2.73-.7 7 7 0 0 0 3.06-3.05c.44-.87.6-1.78.69-2.73.07-.92.07-2.04.07-3.37V14.42c0-1.33 0-2.45-.07-3.37a7.14 7.14 0 0 0-.7-2.73 7 7 0 0 0-3.05-3.06 7.14 7.14 0 0 0-2.73-.69 44.6 44.6 0 0 0-3.37-.07ZM10.14 8.83c.2-.1.53-.21 1.24-.27.73-.06 1.69-.06 3.12-.06h19c1.43 0 2.39 0 3.12.06a3.3 3.3 0 0 1 1.24.27 3 3 0 0 1 1.31 1.3c.1.21.21.54.27 1.25.06.73.06 1.69.06 3.12v19c0 1.43 0 2.39-.06 3.12a3.3 3.3 0 0 1-.27 1.24 3 3 0 0 1-1.3 1.31c-.21.1-.54.21-1.25.27-.73.06-1.69.06-3.12.06h-19c-1.43 0-2.39 0-3.12-.06a3.3 3.3 0 0 1-1.24-.27 3 3 0 0 1-1.31-1.3c-.1-.21-.21-.54-.27-1.25-.06-.73-.06-1.69-.06-3.12v-19c0-1.43 0-2.39.06-3.12a3.3 3.3 0 0 1 .27-1.24 3 3 0 0 1 1.3-1.31Z"/></svg><span>Importer</span></a></li>
+    <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M24 3a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm0 4a6 6 0 1 0 0 12.00A6 6 0 0 0 24 7Zm0 19c10.3 0 16.67 6.99 17 17 .02.55-.43 1-1 1h-2c-.54 0-.98-.45-1-1-.3-7.84-4.9-13-13-13s-12.7 5.16-13 13c-.02.55-.46 1-1.02 1h-2c-.55 0-1-.45-.98-1 .33-10.01 6.7-17 17-17Z"/></svg><span>Profil</span></a></li>
+    <li><button type="button" class="tt-plus-point"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M5 24a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm15 0a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm15 0a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"/></svg><span>Plus</span></button></li>
+  </ul>
+  <div class="tt-connexion-cote"><button type="button">Se connecter</button></div>
+  <div class="tt-pied">
+    <h4>Entreprise</h4>
+    <h4>Programme</h4>
+    <h4>Conditions générales</h4>
+    <small>© 2026 TikTok</small>
+  </div>
+</nav>
+
+<!-- Le coin en haut à droite (déconnecté) -->
+<div class="tt-coin">
+  <button class="tt-coin-icone" type="button" aria-label="Obtenir des pièces"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M28.68 11.5h-4.1v16.39a3.51 3.51 0 1 1-2.34-3.31v-4.21a7.61 7.61 0 1 0 6.44 7.52v-8.34a9.9 9.9 0 0 0 5.86 1.9v-4.1a5.85 5.85 0 0 1-5.86-5.85Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24 2a22 22 0 1 0 0 44 22 22 0 0 0 0-44ZM6 24a18 18 0 1 1 36 0 18 18 0 0 1-36 0Z"/></svg></button>
+  <button class="tt-coin-icone" type="button" aria-label="Obtenir l'appli TikTok"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M20 9c0-1.1.9-2 2-2h4a2 2 0 1 1 0 4h-4a2 2 0 0 1-2-2ZM18 38.5c0-.83.67-1.5 1.5-1.5h9a1.5 1.5 0 0 1 0 3h-9a1.5 1.5 0 0 1-1.5-1.5Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8 10.6c0-3.36 0-5.04.65-6.32a6 6 0 0 1 2.63-2.63C12.56 1 14.23 1 17.6 1h12.8c3.36 0 5.04 0 6.32.65a6 6 0 0 1 2.63 2.63C40 5.56 40 7.24 40 10.6v26.8c0 3.36 0 5.04-.65 6.32a6 6 0 0 1-2.63 2.63c-1.28.65-2.96.65-6.32.65H17.6c-3.36 0-5.04 0-6.32-.65a6 6 0 0 1-2.63-2.63C8 42.44 8 40.75 8 37.4V10.6ZM17.6 5h12.8c1.75 0 2.82 0 3.62.07.37.03.6.07.73.1.48.11.96.58 1.08 1.08.03.14.07.36.1.73.07.8.07 1.87.07 3.62v26.8c0 1.75 0 2.82-.07 3.62-.03.37-.07.6-.1.73-.11.48-.58.96-1.08 1.08-.14.03-.36.07-.73.1-.8.07-1.87.07-3.62.07H17.6c-1.75 0-2.82 0-3.62-.07-.37-.03-.6-.07-.73-.1-.5-.12-.97-.6-1.08-1.08a5.11 5.11 0 0 1-.1-.73c-.07-.8-.07-1.87-.07-3.62V10.6c0-1.75 0-2.82.07-3.62.03-.37.07-.6.1-.73.12-.5.6-.97 1.08-1.08.14-.03.36-.07.73-.1C14.78 5 15.85 5 17.6 5Z"/></svg></button>
+  <button class="tt-coin-connexion" type="button">Se connecter</button>
+</div>
+
+<!-- L'en-tête de la version téléphone -->
+<header class="tt-tete-mobile">
+  <button type="button" aria-label="Retour"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.58579 22.5858L20.8787 6.29289C21.2692 5.90237 21.9024 5.90237 22.2929 6.29289L23.7071 7.70711C24.0976 8.09763 24.0976 8.7308 23.7071 9.12132L8.82843 24L23.7071 38.8787C24.0976 39.2692 24.0976 39.9024 23.7071 40.2929L22.2929 41.7071C21.9024 42.0976 21.2692 42.0976 20.8787 41.7071L4.58579 25.4142C3.80474 24.6332 3.80474 23.3668 4.58579 22.5858Z"/></svg></button>
+  <h1 data-nom-compte translate="no">Famille Miailhe – Vins de Bordeaux</h1>
+  <button type="button" aria-label="Partager"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M26.2627 5.14086C27.0249 4.83858 27.8944 5.03217 28.4564 5.62927L44.4564 22.6293C45.1812 23.3994 45.1812 24.6006 44.4564 25.3707L28.4564 42.3707C27.8944 42.9678 27.0249 43.1614 26.2627 42.8591C25.5005 42.5569 25 41.82 25 41V32.5621C19.365 32.9136 14.8898 34.7029 11.736 36.49C9.97604 37.4874 8.63311 38.4812 7.73929 39.2164C7.29282 39.5837 6.95983 39.8853 6.74434 40.0888C6.63664 40.1905 6.55845 40.2676 6.51025 40.316L6.4564 40.3707C5.89108 40.9683 5.02332 41.1608 4.26271 40.8591C3.50049 40.5569 3 39.82 3 39C3 37.3105 3.71048 34.991 4.78949 32.6236C5.90132 30.1843 7.51673 27.4503 9.55935 24.8805C13.2198 20.2754 18.5168 15.8846 25 15.1179V7.00061C25 6.18065 25.5005 5.44313 26.2627 5.14086ZM29 12.0432V17C29 18.1046 28.1046 19 27 19C21.3967 19 16.4105 22.6897 12.6906 27.3695C11.0464 29.4381 9.71235 31.626 8.74629 33.6101C9.07093 33.411 9.41022 33.2104 9.76397 33.01C13.7457 30.7537 19.5829 28.5 27 28.5C28.1046 28.5 29 29.3954 29 30.5V35.9563L40.2535 24L29 12.0432Z"/></svg></button>
+</header>
+
+<main class="tt-page">
+  <section class="tt-profil" aria-label="Le compte proposé : @famillemiailhe">
+    <div class="tt-avatar"><img src="assets/img/tiktok/profil.jpg" alt="Photo de profil de famillemiailhe : le logo MIAILHE"></div>
+    <div class="tt-infos">
+      <div class="tt-ligne-nom">
+        <h1 class="tt-nom" translate="no">Famille Miailhe – Vins de Bordeaux</h1>
+        <span class="tt-separateur"></span>
+        <h2 class="tt-compte" translate="no"><span class="tt-arobase">@</span>famillemiailhe</h2>
+      </div>
+      <ul class="tt-chiffres" data-chiffres></ul>
+      <div class="tt-boutons">
+        <button class="tt-suivre" type="button">Suivre</button>
+        <button class="tt-message" type="button">Message</button>
+        <button class="tt-carre" type="button" aria-label="Comptes suggérés"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M31 2.5a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM31 25.5c-10.94 0-17 7.92-17 14.44 0 3.56 2 3.56 9 3.56h16c7 0 9 0 9-3.56 0-6.52-6.06-14.44-17-14.44ZM9 12.5a1 1 0 0 0-1 1v7H1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h7v7a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-7h7a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-7v-7a1 1 0 0 0-1-1H9Z"/></svg></button>
+        <button class="tt-carre" type="button" aria-label="Partager"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M23.82 3.5A2 2 0 0 0 20.5 5v10.06C8.7 15.96 1 25.32 1 37a2 2 0 0 0 3.41 1.41c4.14-4.13 10.4-5.6 16.09-5.88v9.97a2 2 0 0 0 3.3 1.52l21.5-18.5a2 2 0 0 0 .02-3.02l-21.5-19Z"/></svg></button>
+        <button class="tt-carre" type="button" aria-label="Plus d'options"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M5 24a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm15 0a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm15 0a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"/></svg></button>
+        <button class="tt-deroule" type="button" aria-label="Comptes suggérés"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.7125 32.0323C24.3109 32.5525 23.5252 32.5505 23.1263 32.0282L14.4015 20.6071C13.8988 19.949 14.368 19 15.1962 19H32.7385C33.569 19 34.0375 19.9537 33.53 20.6111L24.7125 32.0323Z"/></svg></button>
+      </div>
+      <!-- la bio de TikTok : 80 caractères au plus -->
+      <h2 class="tt-bio">1 famille, 3 châteaux, 1 même racine.<br>Haut-Médoc, depuis 1924 🍷<br>👇 Faites le test</h2>
+      <a class="tt-lien" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.5857 9.58571C27.6805 5.49096 34.3194 5.49096 38.4141 9.58571C42.5089 13.6805 42.5089 20.3194 38.4141 24.4141L37.1212 25.707C36.7307 26.0975 36.0975 26.0975 35.707 25.707L34.2928 24.2928C33.9023 23.9023 33.9023 23.2691 34.2928 22.8786L35.5857 21.5857C38.1184 19.0531 38.1184 14.9468 35.5857 12.4141C33.053 9.88149 28.9468 9.88148 26.4141 12.4141L22.4141 16.4141C20.121 18.7072 19.9041 22.2903 21.7634 24.8275C22.0899 25.2729 22.0976 25.9023 21.707 26.2928L20.2928 27.707C19.9023 28.0975 19.2646 28.1001 18.9126 27.6745C15.5048 23.5554 15.7292 17.4422 19.5857 13.5857L23.5857 9.58571ZM27.707 20.2928C28.0976 19.9023 28.7352 19.8997 29.0873 20.3253C32.495 24.4444 32.2706 30.5576 28.4141 34.4141L24.4141 38.4141C20.3194 42.5089 13.6805 42.5089 9.58571 38.4141C5.49096 34.3193 5.49096 27.6804 9.58573 23.5857L10.8786 22.2928C11.2691 21.9023 11.9023 21.9023 12.2928 22.2928L13.707 23.707C14.0976 24.0975 14.0975 24.7307 13.707 25.1212L12.4141 26.4141C9.88148 28.9468 9.88148 33.053 12.4141 35.5857C14.9468 38.1183 19.053 38.1183 21.5857 35.5857L25.5857 31.5857C27.8788 29.2926 28.0957 25.7095 26.2364 23.1724C25.9099 22.7269 25.9023 22.0975 26.2928 21.707L27.707 20.2928Z"/></svg><span translate="no">miailhe.com</span></a>
+    </div>
+  </section>
+
+  <div class="tt-onglets-rangee">
+    <div class="tt-onglets" role="tablist" aria-label="Onglets du profil">
+      <p class="tt-onglet" role="tab" aria-selected="true" tabindex="0">
+        <svg class="tt-icone-ordinateur" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M11 8a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-2Zm0 18a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V27a1 1 0 0 0-1-1h-2ZM22 9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V9Zm1 17a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V27a1 1 0 0 0-1-1h-2ZM34 9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V9Zm1 17a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V27a1 1 0 0 0-1-1h-2Z"/></svg>
+        <svg class="tt-icone-mobile" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 8C10.4477 8 10 8.44772 10 9V21C10 21.5523 10.4477 22 11 22H13C13.5523 22 14 21.5523 14 21V9C14 8.44772 13.5523 8 13 8H11ZM11 26C10.4477 26 10 26.4477 10 27V39C10 39.5523 10.4477 40 11 40H13C13.5523 40 14 39.5523 14 39V27C14 26.4477 13.5523 26 13 26H11ZM22 9C22 8.44772 22.4477 8 23 8H25C25.5523 8 26 8.44772 26 9V21C26 21.5523 25.5523 22 25 22H23C22.4477 22 22 21.5523 22 21V9ZM23 26C22.4477 26 22 26.4477 22 27V39C22 39.5523 22.4477 40 23 40H25C25.5523 40 26 39.5523 26 39V27C26 26.4477 25.5523 26 25 26H23ZM34 9C34 8.44772 34.4477 8 35 8H37C37.5523 8 38 8.44772 38 9V21C38 21.5523 37.5523 22 37 22H35C34.4477 22 34 21.5523 34 21V9ZM35 26C34.4477 26 34 26.4477 34 27V39C34 39.5523 34.4477 40 35 40H37C37.5523 40 38 39.5523 38 39V27C38 26.4477 37.5523 26 37 26H35Z"/></svg>
+        <span class="tt-texte-onglet">Vidéos</span>
+      </p>
+      <p class="tt-onglet" role="tab" aria-selected="false" tabindex="-1" data-seul-ordinateur>
+        <svg class="tt-icone-ordinateur" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M37.7 15v19.7l3.48-3.7a.7.7 0 0 1 .99-.03l1.46 1.37c.28.26.3.7.03.99l-6.26 6.66a2.3 2.3 0 0 1-3.34.01l-6.36-6.66a.7.7 0 0 1 .02-.99l1.45-1.38a.7.7 0 0 1 .99.02l4.14 4.34V15a4.3 4.3 0 0 0-4.3-4.3h-3.5a.7.7 0 0 1-.7-.7V8c0-.39.31-.7.7-.7H30a7.7 7.7 0 0 1 7.7 7.7ZM17.84 17.34 13.7 13v20a4.3 4.3 0 0 0 4.3 4.3h3.5c.39 0 .7.31.7.7v2a.7.7 0 0 1-.7.7H18a7.7 7.7 0 0 1-7.7-7.7V13.63l-3.48 3.7a.7.7 0 0 1-.99.03L4.37 16a.7.7 0 0 1-.03-.98l6.26-6.67a2.3 2.3 0 0 1 3.34-.01l6.36 6.66a.7.7 0 0 1-.02.99l-1.45 1.38a.7.7 0 0 1-.99-.02Z"/></svg>
+        <span class="tt-texte-onglet">Republications</span>
+      </p>
+      <p class="tt-onglet" role="tab" aria-selected="false" tabindex="-1" data-seul-ordinateur>
+        <svg class="tt-icone-ordinateur" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M10.5 11A4.5 4.5 0 0 1 15 6.5h18a4.5 4.5 0 0 1 4.5 4.5v28a1.5 1.5 0 0 1-2.38 1.21L24 32.14 12.88 40.2A1.5 1.5 0 0 1 10.5 39V11ZM15 9.5c-.83 0-1.5.67-1.5 1.5v25.06l9.62-7a1.5 1.5 0 0 1 1.76 0l9.62 7V11c0-.83-.67-1.5-1.5-1.5H15Z"/></svg>
+        <span class="tt-texte-onglet">Favoris</span>
+      </p>
+      <p class="tt-onglet tt-seul-mobile" role="tab" aria-selected="false" tabindex="-1">
+        <svg class="tt-icone-mobile" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 3C7.22386 3 7 3.22386 7 3.5V4C7 4.27614 7.22386 4.5 7.5 4.5H16.75C18.2688 4.5 19.5 5.73122 19.5 7.25V16.5C19.5 16.7761 19.7239 17 20 17H20.5C20.7761 17 21 16.7761 21 16.5V7.25C21 4.90279 19.0972 3 16.75 3H7.5Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.38313 10.0959C8.61975 9.96315 8.9096 9.96857 9.14109 10.11L13.6411 12.86C13.864 12.9963 14 13.2387 14 13.5C14 13.7613 13.864 14.0037 13.6411 14.14L9.14109 16.89C8.9096 17.0314 8.61975 17.0369 8.38313 16.9041C8.14651 16.7714 8 16.5213 8 16.25V10.75C8 10.4787 8.14651 10.2286 8.38313 10.0959ZM9.5 14.9127L11.8117 13.5L9.5 12.0873V14.9127Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 6C4.00736 6 3 7.00736 3 8.25V18.75C3 19.9926 4.00736 21 5.25 21H15.75C16.9926 21 18 19.9926 18 18.75V8.25C18 7.00736 16.9926 6 15.75 6H5.25ZM4.5 8.25C4.5 7.83579 4.83579 7.5 5.25 7.5H15.75C16.1642 7.5 16.5 7.83579 16.5 8.25V18.75C16.5 19.1642 16.1642 19.5 15.75 19.5H5.25C4.83579 19.5 4.5 19.1642 4.5 18.75V8.25Z"/></svg>
+        <span class="tt-texte-onglet">Listes de lecture</span>
+      </p>
+      <p class="tt-onglet" role="tab" aria-selected="false" tabindex="-1">
+        <svg class="tt-icone-ordinateur" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M8.71 10.56c4.24-4.2 10.93-4.15 15.29.63 4.36-4.78 11.05-4.84 15.29-.63a10.82 10.82 0 0 1 2.82 10.55L39.5 18.5c.06-2.1-.71-4.21-2.32-5.81-3.06-3.03-7.92-3.03-11.17.75l-.03.04-.92.91a1.5 1.5 0 0 1-2.12 0l-.92-.91-.03-.04c-3.25-3.78-8.11-3.78-11.17-.75a7.82 7.82 0 0 0 0 11.12L24 36.89l1.95-1.94 2.12 2.12-3.01 3a1.5 1.5 0 0 1-2.12 0L8.71 25.93a10.82 10.82 0 0 1 0-15.38Zm33.14 21.3a16.64 16.64 0 0 0 2.25-2.68 4 4 0 0 0 .22-.41c.04-.09.18-.4.18-.77 0-.3-.09-.56-.12-.64a8.38 8.38 0 0 0-.68-1.32c-.43-.67-1.07-1.5-1.910-2.31a11.15 11.15 0 0 0-10.85-2.8l2.57 2.58.49-.01c2.5 0 4.4 1.14 5.71 2.4a9.87 9.87 0 0 1 1.63 2.02 13.67 13.67 0 0 1-1.6 1.8l2.11 2.13Zm-5.84.27c-.65.24-1.33.37-2.01.37-1.95 0-3.85-1.1-5.37-2.44a13.9 13.9 0 0 1-1.97-2.14l.17-.26a9.87 9.87 0 0 1 2.26-2.45L36 32.13Zm-9.06-9.06a12.74 12.74 0 0 0-3.17 3.89c-.06.13-.12.27-.16.4-.03.08-.12.34-.12.64 0 .37.14.68.18.76a9.6 9.6 0 0 0 .84 1.3c.51.66 1.23 1.47 2.12 2.25 1.74 1.54 4.34 3.19 7.36 3.19 1.57 0 3.02-.44 4.3-1.08l1.93 1.93a1 1 0 0 0 1.42 0l.7-.7a1 1 0 0 0 0-1.42L27.77 19.65a1 1 0 0 0-1.42 0l-.7.7a1 1 0 0 0 0 1.42l1.3 1.3Z"/></svg>
+        <svg class="tt-icone-mobile" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M8.71 10.56c4.24-4.2 10.93-4.15 15.29.63 4.36-4.78 11.05-4.84 15.29-.63a10.82 10.82 0 0 1 2.82 10.55L39.5 18.5c.06-2.1-.71-4.21-2.32-5.81-3.06-3.03-7.92-3.03-11.17.75l-.03.04-.92.91a1.5 1.5 0 0 1-2.12 0l-.92-.91-.03-.04c-3.25-3.78-8.11-3.78-11.17-.75a7.82 7.82 0 0 0 0 11.12L24 36.89l1.95-1.94 2.12 2.12-3.01 3a1.5 1.5 0 0 1-2.12 0L8.71 25.930a10.82 10.82 0 0 1 0-15.38Zm33.14 21.3a16.64 16.64 0 0 0 2.25-2.68 4 4 0 0 0 .22-.41c.04-.09.18-.4.18-.77 0-.3-.09-.56-.12-.64a8.38 8.38 0 0 0-.68-1.32c-.43-.67-1.07-1.5-1.91-2.31a11.15 11.15 0 0 0-10.85-2.8l2.57 2.58.49-.01c2.5 0 4.4 1.14 5.71 2.4a9.87 9.87 0 0 1 1.63 2.02 13.67 13.67 0 0 1-1.6 1.8l2.11 2.13Zm-5.84.27c-.65.24-1.33.37-2.01.37-1.95 0-3.85-1.1-5.37-2.44a13.9 13.9 0 0 1-1.97-2.14l.17-.26a9.87 9.87 0 0 1 2.26-2.45L36 32.13Zm-9.06-9.06a12.74 12.74 0 0 0-3.17 3.89c-.06.13-.12.27-.16.4-.03.08-.12.34-.12.64 0 .37.14.68.18.76a9.6 9.6 0 0 0 .84 1.3c.51.66 1.23 1.47 2.12 2.25 1.74 1.54 4.34 3.19 7.36 3.19 1.57 0 3.02-.44 4.3-1.08l1.93 1.93a1 1 0 0 0 1.42 0l.7-.7a1 1 0 0 0 0-1.42L27.77 19.65a1 1 0 0 0-1.42 0l-.7.7a1 1 0 0 0 0 1.420l1.3 1.3Z"/></svg>
+        <span class="tt-texte-onglet">A aimé</span>
+      </p>
+      <span class="tt-onglet-trait" aria-hidden="true"></span>
+    </div>
+    <div class="tt-tri" role="group" aria-label="Trier les vidéos">
+      <button type="button" data-tri="recents" aria-pressed="true">Récents</button>
+      <button type="button" data-tri="populaire" aria-pressed="false">Populaire</button>
+      <button type="button" data-tri="ancienne" aria-pressed="false">La plus ancienne</button>
+    </div>
+  </div>
+
+  <h2 class="tt-titre-section">Listes de lecture</h2>
+  <div class="tt-listes-rangee">
+    <ul class="tt-listes" data-listes></ul>
+    <button class="tt-listes-fleche" type="button" data-sens="-1" aria-label="Précédent" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5 16.5 12 9 19.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="tt-listes-fleche" type="button" data-sens="1" aria-label="Suivant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5 16.5 12 9 19.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+
+  <h2 class="tt-titre-section tt-videos-titre">Vidéos</h2>
+  <ul class="tt-grille" data-grille></ul>
+</main>
+
+<script src="assets/js/tiktok.js"></script>
+</body>
+</html>

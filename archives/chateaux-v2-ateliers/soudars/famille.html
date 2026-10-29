@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La famille · Château Soudars · Le vin du fils</title>
+  <meta name="description" content="L'histoire du château Soudars et de la famille Miailhe.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-soudars">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <a class="ch-logo" href="index.html" aria-label="Château Soudars, accueil">Soudars</a>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins">Nos vins</a>
+      <a href="famille.html" aria-current="page">La famille</a>
+      <a href="index.html#temoin">L'enquête</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="ch-droite">
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span></a><a class="famille-lien" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span></a><a class="famille-lien ici" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars" aria-current="page"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span></a></nav>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Une maison de la famille MIAILHE">Une maison <span class="wordmark"></span></a>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main>
+    <section class="histoire-intro">
+      <img src="../assets/img/soudars-vieux-ceps.jpg" alt="Vieux ceps tortueux de Soudars">
+      <h1 class="intro-texte" data-anime><span>L'<span class="it">histoire</span><br>du fils</span></h1>
+      <a class="fleche-bas" href="#recit" aria-label="Lire l'histoire"></a>
+    </section>
+
+    <section class="bloc-texte" id="recit">
+      <h2 class="titre-65" data-anime>
+        <span>Éric,</span>
+        <span>1973,</span>
+        <span><span class="it">parti de rien</span></span>
+      </h2>
+      <div class="paragraphe" data-anime="2">
+        <p>Il était une fois un homme qui décide de créer un vignoble là où personne ne l'attend. En 1973, Éric Miailhe, le fils de Jean, jette son dévolu sur quinze hectares de friches couvertes de pierres et de ronces, sur un sol argilo-calcaire qui lui rappelle les grands terroirs de Saint-Émilion.</p>
+        <p>Il faut épierrer, préparer les sols, replanter presque tout. Les premières années, la jeunesse des vignes est un handicap. Dans les années 1980, le vignoble entre dans l'âge adulte et Soudars prend son essor. Créer un cru de toutes pièces : dans le Médoc, les précédents sont rares.</p>
+      </div>
+    </section>
+
+    <!-- Épierrer la parcelle : les pierres sont semées par le script ; une fois la terre nette, la vigne pousse -->
+    <section class="atelier atelier--epierrer" aria-labelledby="epierrer-titre">
+      <div class="atelier-texte atelier-texte--large">
+        <h2 class="titre-65" id="epierrer-titre" data-anime><span>À vous</span><span>d'<span class="it">épierrer</span></span></h2>
+        <p class="paragraphe" data-anime="2">En 1973, les parcelles de Soudars étaient couvertes de pierres et de ronces. Avant de planter, il a fallu tout enlever, une pierre après l'autre. Essayez sur ce petit carré de terre : touchez les pierres, ou passez dessus en gardant le doigt ou le bouton appuyé.</p>
+      </div>
+      <div class="epierrer" data-epierrer data-anime="2">
+        <div class="parcelle" role="application" aria-label="Parcelle à épierrer">
+          <svg class="vigne" viewBox="0 0 900 500" preserveAspectRatio="none" aria-hidden="true"></svg>
+        </div>
+        <div class="epierrer-bas">
+          <p class="compteur" aria-live="polite"><strong>0</strong> pierre retirée</p>
+          <button class="pilule" type="button" data-recommencer>Recommencer</button>
+        </div>
+        <p class="epierrer-fin" hidden>La terre est nette, la vigne peut pousser. En 1973, il a fallu faire la même chose sur quinze hectares. Cinquante ans plus tard, ces vignes donnent Soudars.</p>
+      </div>
+    </section>
+
+    <section class="galerie" aria-label="Galerie">
+      <div class="galerie-piste">
+        <figure><img src="../assets/img/acte-soudars-racines.jpg" alt="Racines de vieilles vignes arrachées" loading="lazy"></figure>
+        <figure><img src="../assets/img/soudars-piquets.jpg" alt="Piquets de vigne taillés en pointe" loading="lazy"></figure>
+        <figure><img src="../assets/img/soudars-barriques.jpg" alt="Deux rangées de barriques" loading="lazy"></figure>
+        <figure><img src="../assets/img/soudars-fagot.jpg" alt="Un fagot de bois de taille" loading="lazy"></figure>
+        <figure><img src="../assets/img/soudars-baies.jpg" alt="Baies noires pruinées" loading="lazy"></figure>
+        <figure><img src="../assets/img/soudars-flaque.jpg" alt="Les rangs dans une flaque" loading="lazy"></figure>
+        <figure><img src="../assets/img/soudars-clocher.jpg" alt="Les vignes et le clocher au loin" loading="lazy"></figure>
+        <figure><img src="../assets/img/acte-soudars-pierres.jpg" alt="Pierres blanches au pied des vignes" loading="lazy"></figure>
+      </div>
+      <button class="fleche-carrousel fleche-carrousel--prec" type="button" aria-label="Photos précédentes"></button>
+      <button class="fleche-carrousel fleche-carrousel--suiv" type="button" aria-label="Photos suivantes"></button>
+    </section>
+
+    <section class="terroir">
+      <figure class="carte-terroir" data-anime>
+        <svg viewBox="0 0 600 520" role="img" aria-label="Carte indicative : les trois domaines de la famille à Saint-Seurin-de-Cadourne, au bord de l'estuaire">
+          <path class="estuaire" d="M372 0H600V520H572C548 430 516 352 476 286C444 232 410 150 372 0Z"/>
+          <text x="540" y="210" class="petit" transform="rotate(66 540 210)">Estuaire de la Gironde</text>
+          <path class="route" d="M120 40C200 140 300 220 320 300S300 440 330 520"/>
+          <circle cx="306" cy="226" r="3.5" fill="currentColor" opacity=".6"/>
+          <text x="296" y="230" text-anchor="end" class="petit">Saint-Seurin-de-Cadourne</text>
+          <text x="306" y="498" class="petit">Saint-Estèphe ↓</text>
+          <text x="20" y="306" class="petit">← Océan, 30 km</text>
+          <path class="domaine" d="M262 92C292 70 344 74 366 98C388 122 380 160 352 176C322 194 274 188 254 162C236 138 236 110 262 92Z"/>
+          <text x="308" y="66" text-anchor="middle" class="">Coufran</text>
+          <path class="domaine" d="M356 236C380 220 418 226 430 250C442 276 428 304 400 312C372 320 344 304 340 280C336 262 340 246 356 236Z"/>
+          <text x="388" y="210" text-anchor="middle" class="">Verdignan</text>
+          <path class="domaine ici" d="M196 356C214 342 244 344 254 362C264 380 252 402 230 406C208 410 186 398 184 380C182 370 186 362 196 356Z"/>
+          <text x="220" y="334" text-anchor="middle" class="ici">Soudars</text>
+        </svg>
+      </figure>
+      <div class="bloc">
+        <h2 class="titre-65" data-anime>
+          <span>Des racines</span>
+          <span><span class="it">dans la roche</span></span>
+        </h2>
+        <p class="paragraphe" data-anime="2">Sur le calcaire, une fine couche d'argile ; par endroits, il a fallu défoncer la roche pour planter. Les racines descendent dans les fissures chercher l'eau, au milieu des fossiles marins. On disait que les grands vins du Médoc ne naissaient que sur les graves : Éric a fait un autre pari, que le réchauffement du climat rend aujourd'hui visionnaire.</p>
+        <div class="chiffres" data-anime="3">
+          <div><strong>22 ha</strong>argilo-calcaires</div>
+          <div><strong>50 %</strong>de merlot</div>
+          <div><strong>30 km</strong>de l'océan</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lignee">
+      <div class="lignee-grille">
+        <figure class="photo-a" data-anime><img src="../assets/img/soudars-fagot.jpg" alt="Un fagot de bois de taille aux liens bleus" loading="lazy"></figure>
+        <div class="centre">
+          <h2 class="titre-65" data-anime>
+            <span>Éric l'a bâti,</span>
+            <span>Lovely le <span class="it">partage</span></span>
+          </h2>
+          <div class="paragraphe" data-anime="2">
+            <p>Soudars, c'est l'histoire d'un fils qui voulait sa propre terre, et qui a gardé de ce départ une énergie communicative. Depuis 2006, sa fille Lovely travaille à ses côtés ; comme lui, elle tient à cet outil de travail et veut le transmettre à la génération suivante.</p>
+            <p>« Avant, on faisait les vins qu'on pouvait. Désormais, on peut faire ceux que l'on souhaite. »</p>
+          </div>
+          <ol class="generations" aria-label="Quatre générations de vignerons" data-anime="3">
+            <li class=""><strong>Louis</strong>1924</li>
+            <li class=""><strong>Jean</strong>1972</li>
+            <li class="ici"><strong>Éric</strong>1973</li>
+            <li class=""><strong>Lovely</strong>2006</li>
+          </ol>
+          <div class="signe" data-anime="4">
+            <p>Le vigneron :</p>
+            <p class="signature">Éric Miailhe</p>
+            <p>Œnologue-conseil : Éric Boissenot</p>
+          </div>
+        </div>
+        <figure class="photo-b" data-anime="2"><img src="../assets/img/acte-aujourdhui.jpg" alt="La famille Miailhe" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <a class="decouvrir" href="index.html#nos-vins">
+      <img src="../assets/img/soudars-barriques.jpg" alt="" loading="lazy">
+      <p data-anime><span class="it">Découvrez</span><br>nos vins</p>
+    </a>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593609">+33 5 56 59 36 09</a> &nbsp; <a href="mailto:contact@chateausoudars.com">contact@chateausoudars.com</a></p>
+        <p class="gris">Visites sur rendez-vous, pour les particuliers et les professionnels.</p>
+      </div>
+      <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Soudars, 33180 Saint-Seurin-de-Cadourne</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Soudars · une maison de la famille <span class="wordmark"></span></a>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../coufran/index.html">Coufran</a> · <a href="../verdignan/index.html">Verdignan</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script src="assets/js/langue.js"></script><!-- la langue d'abord : la page est traduite avant d'être montrée -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quel château vous ressemble ? · MIAILHE</title>
+  <meta name="description" content="Sept questions simples, vos goûts compris, sans rien connaître au vin, pour découvrir lequel des trois châteaux de la famille Miailhe vous ressemble : Coufran, Verdignan ou Soudars.">
+  <link rel="stylesheet" href="assets/css/polices.css">
+  <link rel="stylesheet" href="assets/css/typographie.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/motifs.css">
+  <link rel="stylesheet" href="assets/css/vitrine.css">
+  <style>
+    /* La page des QR codes (étiquettes, coffrets, salons) : le quiz seul, pensé d'abord pour le téléphone */
+    .page-quiz { background: var(--pale); }
+    .page-quiz .site-header { background: #fff; }
+    .page-quiz main { min-height: 100svh; padding: 110px 4vw 60px; }
+    .page-quiz .circuit { min-height: calc(100svh - 230px); }
+    .page-quiz .quiz-pied { display: grid; justify-items: center; gap: 6px; padding: 30px 6vw 40px; font-family: var(--f-ui); font-size: 12.5px; color: var(--muet); text-align: center; }
+    .page-quiz .quiz-pied a { color: var(--encre); }
+    .page-quiz .quiz-pied .reseaux { margin: 10px 0 8px; color: var(--encre); }
+    @media (max-width: 900px) { .page-quiz main { padding: 84px 3vw 30px; } }
+  </style>
+</head>
+<body class="page-quiz">
+
+  <!-- Âge légal (sans intro : on ne le redemande pas à qui l'a déjà confirmé) -->
+  <div class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-titre">
+    <figure class="entree-fond"><img src="assets/img/acte-famille-1931.jpg" alt=""></figure>
+    <div class="entree">
+      <span class="wordmark" aria-label="MIAILHE"><span class="sr-only">MIAILHE</span></span>
+      <p id="age-titre">Le test de la famille Miailhe est réservé aux personnes ayant l'âge légal de consommer de l'alcool dans leur pays.</p>
+      <div class="choix">
+        <button class="btn btn--plein" type="button" data-entrer><span>J'ai l'âge légal, entrer</span></button>
+      </div>
+      <button class="refus" type="button">Je n'ai pas l'âge légal</button>
+      <p class="refus-message">Revenez nous voir plus tard. La vigne, elle, sait attendre.</p>
+      <p class="mention">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+      <ul class="langues langues--porte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-gauche"></div>
+    <a class="wordmark" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="MIAILHE, accueil"><span class="sr-only">MIAILHE</span></a>
+    <div class="header-droite">
+      <!-- La boutique et l'enquête en avant, puis l'espace client, le panier et la langue (source/entete.py ; espace.js) -->
+      <a class="entete-fort entete-fort--boutique" href="boutique.html" aria-label="La boutique de la famille : les vins des trois châteaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 2.6h3.6M10.7 2.6v4.5c0 .8-.4 1.3-1 1.9-.9.8-1.5 1.8-1.5 3.1v8.2c0 .6.5 1.1 1.1 1.1h5.4c.6 0 1.1-.5 1.1-1.1v-8.2c0-1.3-.6-2.3-1.5-3.1-.6-.6-1-1.1-1-1.9V2.6"/><path d="M8.2 13.4h7.6v4.4H8.2z"/></svg><span>La boutique</span></a>
+      <a class="entete-fort entete-fort--enquete" href="enquete.html" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <a class="entete-icone entete-compte-lien" href="compte.html" data-compte aria-label="Mon espace client"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.3" r="3.8"/><path d="M4.6 20.4c.9-3.9 3.9-6 7.4-6s6.5 2.1 7.4 6"/></svg><span class="entete-initiale" data-compte-initiale translate="no" hidden></span></a>
+      <a class="entete-icone" href="boutique.html#panier" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 11.3a1.1 1.1 0 0 1-1.1 1H7.4a1.1 1.1 0 0 1-1.1-1L5.2 8.2z"/><path d="M9 10.4V6.6a3 3 0 0 1 6 0v3.8"/></svg><b class="entete-pastille" data-panier-compte translate="no" hidden>0</b></a>
+      <ul class="langues langues--compacte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="circuit" data-quiz="">
+      <div class="circuit-ecran circuit-depart">
+        <p class="v-sur-titre">Trois châteaux, une famille</p>
+        <h1 class="v-h2"><span>Quel château</span><span>vous <em>ressemble</em> ?</span></h1>
+        <p class="v-chapeau">Sept questions simples sur ce que vous aimez découvrir, et sur vos goûts, sans rien connaître au vin. À la fin, le château de la famille Miailhe qui vous ressemble, son histoire, son univers, son goût, et par où commencer la visite.</p>
+        <button class="v-bouton" type="button" data-commencer>Commencer le test</button>
+        <p class="circuit-mention">Un jeu de découverte des trois châteaux, pas un conseil de consommation.</p>
+        <noscript><p class="v-chapeau">Le test demande JavaScript. Poussez directement une porte : <a href="coufran/index.html">Coufran</a>, <a href="verdignan/index.html">Verdignan</a> ou <a href="soudars/index.html">Soudars</a>.</p></noscript>
+      </div>
+    </div>
+  </main>
+
+  <footer class="quiz-pied">
+    <p><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html">miailhe.com</a> · Trois châteaux du Haut-Médoc, une même famille</p>
+    <nav class="reseaux" data-reseaux></nav>
+    <ul class="langues langues--pied" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    <p>L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </footer>
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/feuille-miailhe.js"></script><!-- la feuille de vigne du logo, partout la même -->
+  <script src="assets/js/armoiries.js"></script>
+  <script src="assets/js/logos-chateaux.js"></script>
+  <script src="assets/js/typographie.js"></script>
+  <script src="assets/js/reseaux.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/espace.js"></script><!-- l'initiale du client et le panier, dans l'en-tête -->
+  <script src="assets/js/survol.js"></script><!-- la racine sous les liens de l'en-tête, au survol -->
+  <script src="assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,1800 @@
+[
+ {
+  "cle": "{{0}}e trimestre {{1}}",
+  "ou": [
+   "enquete.html · ",
+   "script enquete.js",
+   "enquete.js : trimestre du tirage ({1} = 2, 3 ou 4 ; {0} = l'année)"
+  ]
+ },
+ {
+  "cle": "enquêteur",
+  "ou": [
+   "enquete.html · "
+  ]
+ },
+ {
+  "cle": "Enquête à la racine · MIAILHE",
+  "ou": [
+   "enquete.html · "
+  ]
+ },
+ {
+  "cle": "Neuf bouteilles ont disparu du chai. Six étapes, trois générations, trois châteaux : l'enquête de la famille Miailhe, à jouer en ligne.",
+  "ou": [
+   "enquete.html · "
+  ]
+ },
+ {
+  "cle": "Le test : quel château vous ressemble ?",
+  "ou": [
+   "enquete.html · a.bouton-enquete.bouton-test @aria-label",
+   "coufran/chateau-coufran.html · a.ch-enquete.ch-test @aria-label",
+   "coufran/famille.html · a.ch-enquete.ch-test @aria-label",
+   "coufran/index.html · a.ch-enquete.ch-test @aria-label"
+  ]
+ },
+ {
+  "cle": "Le dossier de l'enquête",
+  "ou": [
+   "enquete.html · section.table @aria-label"
+  ]
+ },
+ {
+  "cle": "Comment voulez-vous enquêter ?",
+  "ou": [
+   "enquete.html · div.inscription-choix @aria-label"
+  ]
+ },
+ {
+  "cle": "Le casier du chai, où manquent des bouteilles",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Le casier : chaque rangée porte une étiquette à la craie",
+  "ou": [
+   "enquete.html · div.casier @aria-label"
+  ]
+ },
+ {
+  "cle": "Un indice, indice {0} sur {1}",
+  "ou": [
+   "enquete.html · button.indices-bouton @aria-label"
+  ]
+ },
+ {
+  "cle": "Portrait de Louis Miailhe",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Portrait de Jean Miailhe",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Portrait d'Éric Miailhe",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Qui, en {0} ?",
+  "ou": [
+   "enquete.html · select @aria-label"
+  ]
+ },
+ {
+  "cle": "Quel château, en {0} ?",
+  "ou": [
+   "enquete.html · select @aria-label"
+  ]
+ },
+ {
+  "cle": "Un vendangeur dans les rangs de vigne",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Votre ordre",
+  "ou": [
+   "enquete.html · ol.ordre-choisi @aria-label"
+  ]
+ },
+ {
+  "cle": "Gravure du château Coufran",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Gravure du château Verdignan",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Gravure de l'enclos de Soudars",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Le registre du chai, une ligne entourée au crayon rouge",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Une enveloppe fermée d'un cachet de cire",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Le mot, lettre par lettre",
+  "ou": [
+   "enquete.html · ol.cases-mot @aria-label"
+  ]
+ },
+ {
+  "cle": "Vos lettres",
+  "ou": [
+   "enquete.html · div.tuiles @aria-label"
+  ]
+ },
+ {
+  "cle": "Lettre N",
+  "ou": [
+   "enquete.html · button @aria-label"
+  ]
+ },
+ {
+  "cle": "Lettre E",
+  "ou": [
+   "enquete.html · button @aria-label"
+  ]
+ },
+ {
+  "cle": "Lettre R",
+  "ou": [
+   "enquete.html · button @aria-label"
+  ]
+ },
+ {
+  "cle": "Lettre I",
+  "ou": [
+   "enquete.html · button @aria-label"
+  ]
+ },
+ {
+  "cle": "Lettre A",
+  "ou": [
+   "enquete.html · button @aria-label"
+  ]
+ },
+ {
+  "cle": "Lettre C",
+  "ou": [
+   "enquete.html · button @aria-label"
+  ]
+ },
+ {
+  "cle": "Un arbre et ses racines",
+  "ou": [
+   "enquete.html · img.arbre @alt"
+  ]
+ },
+ {
+  "cle": "La table de dégustation préparée, les neuf bouteilles retrouvées",
+  "ou": [
+   "enquete.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Votre e-mail",
+  "ou": [
+   "enquete.html · input @placeholder"
+  ]
+ },
+ {
+  "cle": "Progression de l'enquête",
+  "ou": [
+   "enquete.html · nav.progression @aria-label"
+  ]
+ },
+ {
+  "cle": "Page précédente",
+  "ou": [
+   "enquete.html · button.progression-fleche @aria-label"
+  ]
+ },
+ {
+  "cle": "Page suivante",
+  "ou": [
+   "enquete.html · button.progression-fleche.progression-fleche--suiv @aria-label"
+  ]
+ },
+ {
+  "cle": "Sans inscription, la partie recommence si vous fermez la page",
+  "ou": [
+   "enquete.html · span.progression-statut @title",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "L'enquête de la famille Miailhe est réservée aux personnes ayant l'âge légal de consommer de l'alcool dans leur pays.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "<0/><1>Le test</1>",
+  "ou": [
+   "enquete.html · a.bouton-enquete.bouton-test",
+   "coufran/chateau-coufran.html · a.ch-enquete.ch-test",
+   "coufran/famille.html · a.ch-enquete.ch-test",
+   "coufran/index.html · a.ch-enquete.ch-test"
+  ]
+ },
+ {
+  "cle": "Saint-Seurin-de-Cadourne, octobre",
+  "ou": [
+   "enquete.html · p.ouverture-lieu"
+  ]
+ },
+ {
+  "cle": "<0>Neuf bouteilles</0> <1>ont disparu</1> <2>du chai.</2>",
+  "ou": [
+   "enquete.html · p.ouverture-phrase"
+  ]
+ },
+ {
+  "cle": "Ouvrir le dossier",
+  "ou": [
+   "enquete.html · button.ouverture-suite"
+  ]
+ },
+ {
+  "cle": "Vignobles du Haut-Médoc",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Enquête</0><1>à la racine</1>",
+  "ou": [
+   "enquete.html · h1"
+  ]
+ },
+ {
+  "cle": "L'enquête des trois châteaux<0/>de la famille Miailhe",
+  "ou": [
+   "enquete.html · p.couverture-sous"
+  ]
+ },
+ {
+  "cle": "<0/>Coufran<1>depuis {0}</1>",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0/>Verdignan<1>depuis {0}</1>",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0/>Soudars<1>depuis {0}</1>",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Dossier n° {0}-{1}",
+  "ou": [
+   "enquete.html · p.lettre-ref",
+   "identite.html · p.specimen.specimen--cinzel"
+  ]
+ },
+ {
+  "cle": "Confidentiel",
+  "ou": [
+   "enquete.html · span.estampille.estampille--rouge"
+  ]
+ },
+ {
+  "cle": "À l'attention de l'enquêteur",
+  "ou": [
+   "enquete.html · p.lettre-a"
+  ]
+ },
+ {
+  "cle": "Cher enquêteur,",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Ce matin, au chai, on a constaté que neuf bouteilles manquaient. Elles étaient réservées à une dégustation exceptionnelle : trois bouteilles de chaque château, le plus grand millésime de chaque génération.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Aucun signe d'effraction. Les registres semblent en ordre, mais certains détails ne collent pas.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Pour comprendre, vous allez interroger trois générations, remonter le travail de la vigne, percer le secret de l'assemblage et croiser les registres. <0>Chaque étape vous donne une lettre.</0> Les six lettres forment le dernier mot de l'affaire.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Votre mission : retrouver les bouteilles, et découvrir ce qui relie les trois châteaux.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Bonne enquête.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "La famille Miailhe",
+  "ou": [
+   "enquete.html · p.lettre-signature",
+   "soudars/famille.html · img @alt"
+  ]
+ },
+ {
+  "cle": "Enquêteur chargé du dossier",
+  "ou": [
+   "enquete.html · p.inscription-titre"
+  ]
+ },
+ {
+  "cle": "Avec inscription",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Sans inscription",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Prénom",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "E-mail",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Votre progression est sauvegardée : reprenez l'enquête quand vous voulez.",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Affaire résolue : vous participez au tirage au sort du trimestre, <0>une bouteille offerte</0> à l'un des enquêteurs.",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Une nouvelle enquête chaque trimestre</0>, et vous êtes prévenu le premier.",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Sans inscription, vous jouez tout de suite, mais <0>rien n'est sauvegardé</0> : si vous fermez la page, l'enquête recommence. Vous pourrez vous inscrire à la fin pour participer au tirage.",
+  "ou": [
+   "enquete.html · p.inscription-invite"
+  ]
+ },
+ {
+  "cle": "J'ai {0} ans ou plus et j'accepte le <0>règlement du jeu</0>.",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Je veux recevoir la prochaine enquête et les nouvelles de la famille par e-mail (facultatif, désinscription en un clic).",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "M'inscrire et commencer",
+  "ou": [
+   "enquete.html · button.bouton-dossier",
+   "enquete.html @data-libelle-inscrit"
+  ]
+ },
+ {
+  "cle": "Déjà inscrit ? Reprendre ma partie",
+  "ou": [
+   "enquete.html · summary"
+  ]
+ },
+ {
+  "cle": "Votre e-mail d'inscription",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Reprendre",
+  "ou": [
+   "enquete.html · button.bouton-dossier.bouton-dossier--clair"
+  ]
+ },
+ {
+  "cle": "Dix à quinze minutes, sur téléphone ou ordinateur. Des indices se cachent aussi sur les sites des trois châteaux.",
+  "ou": [
+   "enquete.html · p.lettre-note"
+  ]
+ },
+ {
+  "cle": "Étape {0}",
+  "ou": [
+   "enquete.html · p.etape-num"
+  ]
+ },
+ {
+  "cle": "L'ouverture de l'affaire",
+  "ou": [
+   "enquete.html · h2"
+  ]
+ },
+ {
+  "cle": "Les bouteilles disparues",
+  "ou": [
+   "enquete.html · p.etape-sous"
+  ]
+ },
+ {
+  "cle": "i",
+  "ou": [
+   "enquete.html · span.i"
+  ]
+ },
+ {
+  "cle": "<0>Objectif :</0> identifier les informations manquantes pour comprendre ce qui a disparu.<1/><2>Mécanique :</2> observation et déduction.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Pièce à conviction n° {0}",
+  "ou": [
+   "enquete.html · span.piece-tampon"
+  ]
+ },
+ {
+  "cle": "Les bouteilles manquantes sont celles réservées à la dégustation. À vous de trouver ce qui s'est réellement passé.",
+  "ou": [
+   "enquete.html · figcaption.post-it"
+  ]
+ },
+ {
+  "cle": "Le relevé du chai, ce matin",
+  "ou": [
+   "enquete.html · p.sous-titre"
+  ]
+ },
+ {
+  "cle": "<0>Coufran {0}</0><1/><2/><3/><4/><5/><6/><7>{1} bouteilles manquantes</7>",
+  "ou": [
+   "enquete.html · div.rang"
+  ]
+ },
+ {
+  "cle": "<0>Coufran {0}</0><1/><2/><3/><4/><5/><6/><7>complet</7>",
+  "ou": [
+   "enquete.html · div.rang"
+  ]
+ },
+ {
+  "cle": "<0>Verdignan {0}</0><1/><2/><3/><4/><5/><6/><7>{1} bouteilles manquantes</7>",
+  "ou": [
+   "enquete.html · div.rang"
+  ]
+ },
+ {
+  "cle": "<0>Verdignan {0}</0><1/><2/><3/><4/><5/><6/><7>{1} → boutique, le {2}</7><8>{3} bouteille manquante</8>",
+  "ou": [
+   "enquete.html · div.rang"
+  ]
+ },
+ {
+  "cle": "<0>Soudars {0}</0><1/><2/><3/><4/><5/><6/><7>{1} bouteilles manquantes</7>",
+  "ou": [
+   "enquete.html · div.rang"
+  ]
+ },
+ {
+  "cle": "<0>Soudars {0}</0><1/><2/><3/><4/><5/><6/><7>complet</7>",
+  "ou": [
+   "enquete.html · div.rang"
+  ]
+ },
+ {
+  "cle": "Le signalement",
+  "ou": [
+   "enquete.html · p.sous-titre"
+  ]
+ },
+ {
+  "cle": "Bouteilles réservées à la dégustation, trois par château :",
+  "ou": [
+   "enquete.html · p.fiche-ligne"
+  ]
+ },
+ {
+  "cle": "Disparues en tout",
+  "ou": [
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "Valider le signalement",
+  "ou": [
+   "enquete.html · button.bouton-dossier"
+  ]
+ },
+ {
+  "cle": "<0/><1>Un indice</1><2>{0} sur {1}</2>",
+  "ou": [
+   "enquete.html · button.indices-bouton"
+  ]
+ },
+ {
+  "cle": "Indice {0} · difficile",
+  "ou": [
+   "enquete.html · span.indices-niveau"
+  ]
+ },
+ {
+  "cle": "Un casier garde la trace de chaque bouteille qui manque. Mais toute bouteille absente n'a pas disparu : certaines sont simplement parties.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Indice {0} · plus facile",
+  "ou": [
+   "enquete.html · span.indices-niveau"
+  ]
+ },
+ {
+  "cle": "Comptez les emplacements vides, rangée par rangée. Une seule rangée porte une note à la craie : sa bouteille est partie à la boutique le {0}, elle ne fait pas partie de l'affaire.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Indice {0} · très facile",
+  "ou": [
+   "enquete.html · span.indices-niveau"
+  ]
+ },
+ {
+  "cle": "Trois rangées ont perdu trois bouteilles chacune : Coufran {0}, Verdignan {1} et Soudars {2}. Trois fois trois : neuf.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "R",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Au fond du casier vide, quelqu'un a tracé une lettre à la craie : <0>R</0>.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Étape suivante",
+  "ou": [
+   "enquete.html · button.bouton-dossier"
+  ]
+ },
+ {
+  "cle": "Les témoins de l'histoire",
+  "ou": [
+   "enquete.html · h2"
+  ]
+ },
+ {
+  "cle": "Trois générations, trois châteaux",
+  "ou": [
+   "enquete.html · p.etape-sous"
+  ]
+ },
+ {
+  "cle": "<0>Objectif :</0> reconstituer la chronologie et associer chaque membre de la famille à son domaine.<1/><2>Mécanique :</2> chronologie et déduction.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Louis</0>{0} – {1}<1>le grand-père</1>",
+  "ou": [
+   "enquete.html · figcaption"
+  ]
+ },
+ {
+  "cle": "<0>Jean</0>{0} – {1}<1>le père</1>",
+  "ou": [
+   "enquete.html · figcaption"
+  ]
+ },
+ {
+  "cle": "<0>Éric</0>né en {0}<1>le fils</1>",
+  "ou": [
+   "enquete.html · figcaption"
+  ]
+ },
+ {
+  "cle": "Portraits d'illustration",
+  "ou": [
+   "enquete.html · p.mention-portraits"
+  ]
+ },
+ {
+  "cle": "Ce que disent les archives",
+  "ou": [
+   "enquete.html · p.sous-titre"
+  ]
+ },
+ {
+  "cle": "« Le premier château est entré dans la famille quand son acquéreur avait trente-deux ans. »",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "« Le père a acheté le voisin du château du grand-père. »",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "« Le fils n'a rien acheté de bâti : il a créé son vignoble sur des friches pleines de pierres, un an après l'achat de son père. »",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Qui ?",
+  "ou": [
+   "enquete.html · option"
+  ]
+ },
+ {
+  "cle": "Louis",
+  "ou": [
+   "enquete.html · option",
+   "coufran/index.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Jean",
+  "ou": [
+   "enquete.html · option",
+   "verdignan/index.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Éric",
+  "ou": [
+   "enquete.html · option",
+   "soudars/index.html · h2.is-in"
+  ]
+ },
+ {
+  "cle": "Quel château ?",
+  "ou": [
+   "enquete.html · option"
+  ]
+ },
+ {
+  "cle": "Classer les témoignages",
+  "ou": [
+   "enquete.html · button.bouton-dossier"
+  ]
+ },
+ {
+  "cle": "Sous les portraits, les dates ne sont pas là pour décorer : elles permettent de vérifier la première archive.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Louis est né en {0} : à trente-deux ans, nous sommes en {1}. Dans les archives, le grand-père est Louis, le père est Jean, le fils est Éric. Pour les châteaux, relisez la couverture du dossier, ou la page « La famille » de chaque site.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "{0} : Louis, à Coufran. {1} : Jean, à Verdignan, le voisin de Coufran. {2} : Éric, à Soudars, planté sur des friches pleines de pierres.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Les pages « La famille » : <0>Coufran</0> · <1>Verdignan</1> · <2>Soudars</2>",
+  "ou": [
+   "enquete.html · p.liens"
+  ]
+ },
+ {
+  "cle": "A",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Au dos du portrait de Louis, une lettre au crayon : <0>A</0>.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Les indices dans la vigne",
+  "ou": [
+   "enquete.html · h2"
+  ]
+ },
+ {
+  "cle": "Du raisin au vin",
+  "ou": [
+   "enquete.html · p.etape-sous"
+  ]
+ },
+ {
+  "cle": "<0>Objectif :</0> remettre dans l'ordre les étapes de production et comprendre le travail de la vigne.<1/><2>Mécanique :</2> remettre les étapes dans l'ordre.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Fiche de production retrouvée au chai",
+  "ou": [
+   "enquete.html · p.fiche-prod-titre"
+  ]
+ },
+ {
+  "cle": "Vendanges",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Tri",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Éraflage",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Fermentation",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Élevage",
+  "ou": [
+   "enquete.html · li.anomalie"
+  ]
+ },
+ {
+  "cle": "Assemblage",
+  "ou": [
+   "enquete.html · li.anomalie"
+  ]
+ },
+ {
+  "cle": "Mise en bouteille",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Anomalie",
+  "ou": [
+   "enquete.html · span.estampille.estampille--rouge"
+  ]
+ },
+ {
+  "cle": "Reconstituez le bon ordre",
+  "ou": [
+   "enquete.html · p.sous-titre"
+  ]
+ },
+ {
+  "cle": "Touchez les étapes dans l'ordre où le raisin devient vin, jusqu'à la bouteille prête à boire.",
+  "ou": [
+   "enquete.html · p.fiche-ligne"
+  ]
+ },
+ {
+  "cle": "Élevage en barriques",
+  "ou": [
+   "enquete.html · button"
+  ]
+ },
+ {
+  "cle": "Fermentation et macération",
+  "ou": [
+   "enquete.html · button"
+  ]
+ },
+ {
+  "cle": "Attente au château",
+  "ou": [
+   "enquete.html · button"
+  ]
+ },
+ {
+  "cle": "Tri des raisins",
+  "ou": [
+   "enquete.html · button"
+  ]
+ },
+ {
+  "cle": "Tout reprendre",
+  "ou": [
+   "enquete.html · button.lien-reprendre"
+  ]
+ },
+ {
+  "cle": "La fiche retrouvée au chai est presque juste : deux lignes soulignées de rouge ont échangé leur place, et il manque la toute dernière étape. Attention : au premier faux pas, tout est à refaire.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Sur le site de Coufran, ouvrez la fiche du grand vin, puis « Son élaboration » : l'assemblage y est arrêté en décembre, avant douze mois de barrique. La dernière phrase dit ce que la famille fait ensuite de ses bouteilles.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Vendanges, tri des raisins, éraflage, fermentation et macération, assemblage, élevage en barriques, mise en bouteille, et pour finir l'attente au château.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Château Coufran, le grand vin</0>",
+  "ou": [
+   "enquete.html · p.liens"
+  ]
+ },
+ {
+  "cle": "C",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Au pied du dernier rang, une lettre gravée sur un piquet : <0>C</0>.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Le mystère de l'assemblage",
+  "ou": [
+   "enquete.html · h2"
+  ]
+ },
+ {
+  "cle": "L'art de l'équilibre",
+  "ou": [
+   "enquete.html · p.etape-sous"
+  ]
+ },
+ {
+  "cle": "<0>Objectif :</0> retrouver la part de chaque cépage dans les vignes de chaque château, en écoutant les trois témoins.<1/><2>Mécanique :</2> énigme logique : trois cépages font toujours {0} %.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Chez Louis</0> « J'ai tout misé sur le merlot. Il ne reste que quinze parts de cabernet-sauvignon, et pas une de cabernet franc. »",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Chez Jean</0> « Dans mes vignes, le cabernet-sauvignon mène, avec soixante-cinq parts. Le cabernet franc n'en a que cinq. »",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "<0>Chez Éric</0> « Le merlot fait exactement la moitié. Le cabernet franc, une seule part. »",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Les registres du vignoble",
+  "ou": [
+   "enquete.html · p.sous-titre"
+  ]
+ },
+ {
+  "cle": "Merlot",
+  "ou": [
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "Cabernet-sauvignon",
+  "ou": [
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "Cabernet franc",
+  "ou": [
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "Vérifier les vignobles",
+  "ou": [
+   "enquete.html · button.bouton-dossier"
+  ]
+ },
+ {
+  "cle": "Chaque témoin ne vous donne que deux chiffres. Le troisième se déduit : trois cépages font toujours cent parts.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Une part vaut un pour cent, et une case laissée vide compte pour zéro. Chaque château confirme son chiffre clé dans sa pièce à conviction, en bas de sa page d'accueil.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Coufran : {0} % de merlot, et pas de cabernet franc. Verdignan : {1} % de cabernet-sauvignon et {2} % de cabernet franc. Soudars : {3} % de merlot et {4} % de cabernet franc. Complétez chaque ligne jusqu'à {5}.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Les pièces à conviction : <0>Coufran</0> · <1>Verdignan</1> · <2>Soudars</2>",
+  "ou": [
+   "enquete.html · p.liens"
+  ]
+ },
+ {
+  "cle": "I",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Dans la marge du registre, à l'encre rouge : <0>I</0>.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Les registres ne mentent pas",
+  "ou": [
+   "enquete.html · h2"
+  ]
+ },
+ {
+  "cle": "Entre stocks et millésimes",
+  "ou": [
+   "enquete.html · p.etape-sous"
+  ]
+ },
+ {
+  "cle": "<0>Objectif :</0> croiser les informations pour retrouver les bouteilles disparues.<1/><2>Mécanique :</2> recoupement d'indices et déduction.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Attention aux fausses pistes : les plus grosses lignes du registre ne sont pas forcément les bonnes.",
+  "ou": [
+   "enquete.html · figcaption.post-it"
+  ]
+ },
+ {
+  "cle": "Extrait du registre du chai, octobre",
+  "ou": [
+   "enquete.html · p.sous-titre"
+  ]
+ },
+ {
+  "cle": "Date",
+  "ou": [
+   "enquete.html · th"
+  ]
+ },
+ {
+  "cle": "Vin",
+  "ou": [
+   "enquete.html · th"
+  ]
+ },
+ {
+  "cle": "Qté",
+  "ou": [
+   "enquete.html · th"
+  ]
+ },
+ {
+  "cle": "Mouvement",
+  "ou": [
+   "enquete.html · th"
+  ]
+ },
+ {
+  "cle": "Visa",
+  "ou": [
+   "enquete.html · th"
+  ]
+ },
+ {
+  "cle": "Coufran {0}",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "Palette · importateur, Belgique",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "É. M.",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "Verdignan {0}",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "Boutique en ligne",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "Exp.",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "Soudars {0}",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "Demi-palette · importateur, Norvège",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "Sortie · « là où tout a commencé »",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "L. M.",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "Palette · importateur, Japon",
+  "ou": [
+   "enquete.html · td"
+  ]
+ },
+ {
+  "cle": "Où sont les bouteilles ?",
+  "ou": [
+   "enquete.html · legend"
+  ]
+ },
+ {
+  "cle": "Parties en Belgique avec la palette",
+  "ou": [
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "Vendues sur la boutique en ligne",
+  "ou": [
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "À Coufran, là où la famille a pris racine",
+  "ou": [
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "À Soudars, le plus jeune des trois",
+  "ou": [
+   "enquete.html · label"
+  ]
+ },
+ {
+  "cle": "Qui les a sorties ?",
+  "ou": [
+   "enquete.html · label.qui"
+  ]
+ },
+ {
+  "cle": "Le visa...",
+  "ou": [
+   "enquete.html · option"
+  ]
+ },
+ {
+  "cle": "É. M. · Éric Miailhe",
+  "ou": [
+   "enquete.html · option"
+  ]
+ },
+ {
+  "cle": "L. M. · Lovely Miailhe",
+  "ou": [
+   "enquete.html · option"
+  ]
+ },
+ {
+  "cle": "Exp. · le service des expéditions",
+  "ou": [
+   "enquete.html · option"
+  ]
+ },
+ {
+  "cle": "Conclure",
+  "ou": [
+   "enquete.html · button.bouton-dossier"
+  ]
+ },
+ {
+  "cle": "Les plus grosses lignes du registre sont rarement les plus intéressantes. Cherchez celles qui parlent de vos millésimes.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Trois lignes du {0} reprennent exactement les trois millésimes de votre signalement, trois bouteilles chacune, avec la même mention et le même visa. Pour le lieu, revenez à l'étape {1} : où, et en quelle année, tout a-t-il commencé ?",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Tout a commencé en {0}, à Coufran. Le visa L. M. est celui de Lovely, la fille d'Éric : c'est elle qui a sorti les bouteilles.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "N",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Sous les trois lignes du {0}, une lettre au crayon : <0>N</0>.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "La révélation",
+  "ou": [
+   "enquete.html · h2"
+  ]
+ },
+ {
+  "cle": "Ce que vous avez découvert",
+  "ou": [
+   "enquete.html · p.etape-sous"
+  ]
+ },
+ {
+  "cle": "<0>Objectif :</0> résoudre l'énigme finale et comprendre le lien entre les trois châteaux.<1/><2>Mécanique :</2> déchiffrer le message final grâce aux indices collectés.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Les bouteilles n'ont pas été volées. Elles ont été déplacées... Mais pour quelle raison ?",
+  "ou": [
+   "enquete.html · figcaption.post-it"
+  ]
+ },
+ {
+  "cle": "Le message final",
+  "ou": [
+   "enquete.html · p.sous-titre"
+  ]
+ },
+ {
+  "cle": "Gravée dans la cire du cachet, une dernière lettre : l'initiale de l'aïeul qui fit entrer la famille dans le vin, Élie, courtier à Bordeaux. Remettez vos six lettres dans l'ordre.",
+  "ou": [
+   "enquete.html · p.fiche-ligne"
+  ]
+ },
+ {
+  "cle": "E",
+  "ou": [
+   "enquete.html · button"
+  ]
+ },
+ {
+  "cle": "Le mot que vous cherchez désigne ce que les trois châteaux ont en commun, et que personne ne voit.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Vos cinq premières lettres sont arrivées dans l'ordre de l'enquête : relisez votre carnet, de l'étape {0} à l'étape {1}, puis ajoutez l'initiale d'Élie.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "R, A, C, I, N, puis le E d'Élie : RACINE.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Le cachet cède. Dedans, un mot de Lovely.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Lire la conclusion",
+  "ou": [
+   "enquete.html · button.bouton-dossier"
+  ]
+ },
+ {
+  "cle": "Conclusion",
+  "ou": [
+   "enquete.html · p.etape-num"
+  ]
+ },
+ {
+  "cle": "Trois châteaux,<0/>une même racine",
+  "ou": [
+   "enquete.html · h2"
+  ]
+ },
+ {
+  "cle": "Derrière chaque bouteille, il y a une histoire, un terroir, un savoir-faire et une famille.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Les trois châteaux ont chacun leur caractère, mais ils sont unis par une même racine : la passion d'une famille, transmise depuis {0}.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Coufran<0>depuis {0}</0>",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Verdignan<0>depuis {0}</0>",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Soudars<0>depuis {0}</0>",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Affaire résolue",
+  "ou": [
+   "enquete.html · span.estampille.estampille--vert"
+  ]
+ },
+ {
+  "cle": "« Pardon pour la frayeur. C'est moi qui ai sorti les bouteilles : je préparais la dégustation de famille, à Coufran, là où nous avons pris racine en {0}. Les plus grands millésimes de chaque génération, servis ensemble : Coufran {1}, Verdignan {2}, Soudars {3}. Votre enquête a suivi le même chemin que nous, de Louis à Jean, de Jean à Éric, et d'Éric à moi. Bienvenue dans la famille. »",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Votre accès, <0/>",
+  "ou": [
+   "enquete.html · p.sous-titre"
+  ]
+ },
+ {
+  "cle": "La famille ouvre aux enquêteurs sa vente privée de vieux millésimes, gardés au château jusqu'à ce qu'ils soient prêts à boire. En quantités limitées.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Vous avez joué sans inscription : inscrivez-vous pour enregistrer votre victoire, participer au tirage du trimestre et recevoir votre accès.",
+  "ou": [
+   "enquete.html · p.acces-appel"
+  ]
+ },
+ {
+  "cle": "Enregistrer ma victoire",
+  "ou": [
+   "enquete.html · button.bouton-dossier"
+  ]
+ },
+ {
+  "cle": "Je veux recevoir la prochaine enquête et les nouvelles de la famille (facultatif).",
+  "ou": [
+   "enquete.html · span"
+  ]
+ },
+ {
+  "cle": "Jeu gratuit, sans obligation d'achat, réservé aux personnes majeures. Une nouvelle enquête chaque trimestre. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.",
+  "ou": [
+   "enquete.html · p.mention-jeu"
+  ]
+ },
+ {
+  "cle": "Rencontrer les trois châteaux",
+  "ou": [
+   "enquete.html · a"
+  ]
+ },
+ {
+  "cle": "Rejouer",
+  "ou": [
+   "enquete.html · button"
+  ]
+ },
+ {
+  "cle": "Sans sauvegarde",
+  "ou": [
+   "enquete.html · span.progression-statut",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "<0>Règlement du jeu</0> <1>Enquête à la racine · une enquête par trimestre</1>",
+  "ou": [
+   "enquete.html · summary"
+  ]
+ },
+ {
+  "cle": "<0>Organisateur.</0> Les vignobles de la famille Miailhe, Château Coufran, {0} Saint-Seurin-de-Cadourne.",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Participation.</0> Gratuite et sans obligation d'achat, réservée aux personnes majeures résidant en France métropolitaine. On peut jouer sans inscription, mais seule une enquête résolue par un enquêteur inscrit participe au tirage. Une participation par personne et par trimestre.",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Durée.</0> Chaque enquête dure un trimestre civil. Une nouvelle enquête ouvre au début du trimestre suivant ; les inscrits en sont prévenus s'ils l'ont demandé.",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Tirage au sort.</0> Parmi les enquêteurs inscrits qui ont résolu l'enquête pendant le trimestre, un gagnant est tiré au sort dans les quinze jours qui suivent la fin du trimestre. Il est prévenu par e-mail.",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Dotation.</0> Une bouteille ({0} cl) de l'un des trois châteaux, à retirer au château ou envoyée au gagnant. Elle ne peut être échangée contre sa valeur en argent.",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "<0>Vos données.</0> Le prénom et l'e-mail servent à sauvegarder votre partie, à organiser le tirage et, seulement si vous l'avez accepté, à vous envoyer la prochaine enquête et les nouvelles de la famille. Ils ne sont jamais cédés ni vendus, et sont conservés trois ans après votre dernier contact. Vous pouvez y accéder, les corriger ou les faire effacer à tout moment en écrivant au château.",
+  "ou": [
+   "enquete.html · li"
+  ]
+ },
+ {
+  "cle": "Maquette : règlement indicatif, à faire valider par un juriste (loi Évin pour la dotation en vin, droit des jeux-concours, RGPD).",
+  "ou": [
+   "enquete.html · p.reglement-note"
+  ]
+ },
+ {
+  "cle": "L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Maquette de concept, projet étudiant ISCOM {0}, site non officiel.",
+  "ou": [
+   "enquete.html · p"
+  ]
+ },
+ {
+  "cle": "Indiquez votre prénom pour ouvrir le dossier.",
+  "ou": [
+   "enquete.html · p.retour",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Commencer sans m'inscrire",
+  "ou": [
+   "enquete.html · button.bouton-dossier",
+   "enquete.html @data-libelle-invite"
+  ]
+ },
+ {
+  "cle": "Un indice plus facile",
+  "ou": [
+   "enquete.html · span",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "{0} sur {1}",
+  "ou": [
+   "enquete.html · small"
+  ]
+ },
+ {
+  "cle": "Un indice plus facile, indice {0} sur {1}",
+  "ou": [
+   "enquete.html · button.indices-bouton @aria-label"
+  ]
+ },
+ {
+  "cle": "Le dernier indice, presque la réponse",
+  "ou": [
+   "enquete.html · span",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Le dernier indice, presque la réponse, indice {0} sur {1}",
+  "ou": [
+   "enquete.html · button.indices-bouton @aria-label"
+  ]
+ },
+ {
+  "cle": "Le signalement est incomplet : il manque encore des informations.",
+  "ou": [
+   "enquete.html · p.retour",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Placez une personne et un château sur chaque date.",
+  "ou": [
+   "enquete.html · p.retour",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "{{0}} et {{1}}",
+  "ou": [
+   "enquete.html · ",
+   "script enquete.js",
+   "enquete.js : liste de noms de châteaux"
+  ]
+ },
+ {
+  "cle": "Trois cépages font toujours {0} % : vérifiez {{1}}.",
+  "ou": [
+   "enquete.html · ",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Trois cépages font toujours {0} % : vérifiez Coufran, Verdignan et Soudars.",
+  "ou": [
+   "enquete.html · p.retour"
+  ]
+ },
+ {
+  "cle": "Répondez aux deux questions.",
+  "ou": [
+   "enquete.html · p.retour",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Cette adresse e-mail ne semble pas complète.",
+  "ou": [
+   "enquete.html · p.retour",
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "1er trimestre {{0}}",
+  "ou": [
+   "script enquete.js",
+   "enquete.js : trimestre du tirage"
+  ]
+ },
+ {
+  "cle": "(min-width: 901px)",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "input, select",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "h1, h2",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "input, select, textarea",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Partie sauvegardée",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Cochez la case du règlement pour vous inscrire, ou jouez sans inscription.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Aucune enquête n'est enregistrée à cette adresse sur ce navigateur. Inscrivez-vous pour commencer.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Partie retrouvée : le dossier se rouvre.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Un indice",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Signalement enregistré : neuf bouteilles, trois grands millésimes.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "La chronologie tient : Louis, puis Jean, puis Éric.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Le bon ordre : on assemble en décembre, puis douze mois de barrique, puis le vin attend au château.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Tout commence dans la vigne.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Pas encore « {{0}} ». Reprenons depuis le début.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Trois vignobles, trois caractères : le merlot de Louis, le cabernet de Jean, l'équilibre d'Éric.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Les totaux sont bons, mais pas encore le vignoble de {{0}}.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Les neuf bouteilles sont parties le même jour, au même endroit, sous le même visa.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Fausse piste : ces lignes ne parlent pas des bons millésimes.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "« Là où tout a commencé » : en quelle année, et où, la famille a-t-elle pris racine ?",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Le lieu est juste. Regardez le visa des trois lignes.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "RACINE : ce qui relie les trois châteaux ne se voit pas, il est sous la terre.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "« {{0}} » n'est pas le mot de l'affaire. Essayez encore.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "C'est enregistré{{0}} : vous participez au tirage au sort du {{1}} (une bouteille offerte, tirage dans les quinze jours qui suivent le {{2}}). Votre accès à la vente privée arrive à {{3}}.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Vous recevrez aussi la prochaine enquête.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "Cochez la case du règlement pour enregistrer votre victoire.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "{{0}} information sur {{1}} est juste. Regardez encore le casier.",
+  "ou": [
+   "script enquete.js (1 sur 4)"
+  ]
+ },
+ {
+  "cle": "{{0}} informations sur {{1}} sont justes. Regardez encore le casier.",
+  "ou": [
+   "script enquete.js (2 ou 3 sur 4)"
+  ]
+ },
+ {
+  "cle": "Aucune information n'est juste. Regardez encore le casier.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "{{0}} réponse sur {{1}} tient. Relisez les archives.",
+  "ou": [
+   "script enquete.js (1 sur 6)"
+  ]
+ },
+ {
+  "cle": "{{0}} réponses sur {{1}} tiennent. Relisez les archives.",
+  "ou": [
+   "script enquete.js (2 à 5 sur 6)"
+  ]
+ },
+ {
+  "cle": "Aucune réponse ne tient. Relisez les archives.",
+  "ou": [
+   "script enquete.js"
+  ]
+ },
+ {
+  "cle": "<0>+</0><1>Un indice</1><2>{{0}} sur {{1}}</2>",
+  "ou": [
+   "enquete.js : bouton des indices"
+  ]
+ },
+ {
+  "cle": "<0>+</0><1>Un indice plus facile</1><2>{{0}} sur {{1}}</2>",
+  "ou": [
+   "enquete.js : bouton des indices"
+  ]
+ },
+ {
+  "cle": "<0>+</0><1>Le dernier indice, presque la réponse</1><2>{{0}} sur {{1}}</2>",
+  "ou": [
+   "enquete.js : bouton des indices"
+  ]
+ },
+ {
+  "cle": "Un indice, indice {{0}} sur {{1}}",
+  "ou": [
+   "enquete.js : bouton des indices @aria-label"
+  ]
+ },
+ {
+  "cle": "Un indice plus facile, indice {{0}} sur {{1}}",
+  "ou": [
+   "enquete.js : bouton des indices @aria-label"
+  ]
+ },
+ {
+  "cle": "Le dernier indice, presque la réponse, indice {{0}} sur {{1}}",
+  "ou": [
+   "enquete.js : bouton des indices @aria-label"
+  ]
+ }
+]

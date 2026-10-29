@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La famille · Château Verdignan · Le vin du père</title>
+  <meta name="description" content="L'histoire du château Verdignan et de la famille Miailhe.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-verdignan">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="verdignan" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <a class="ch-logo" href="index.html" aria-label="Château Verdignan, accueil">Verdignan</a>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins">Nos vins</a>
+      <a href="famille.html" aria-current="page">La famille</a>
+      <a href="index.html#temoin">L'enquête</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="ch-droite">
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span></a><a class="famille-lien ici" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan" aria-current="page"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span></a><a class="famille-lien" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span></a></nav>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Une maison de la famille MIAILHE">Une maison <span class="wordmark"></span></a>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main>
+    <section class="histoire-intro">
+      <img src="../assets/img/verdignan-estuaire.jpg" alt="Le château Verdignan dans ses vignes, l'estuaire à l'horizon">
+      <h1 class="intro-texte" data-anime><span>L'<span class="it">histoire</span><br>du père</span></h1>
+      <a class="fleche-bas" href="#recit" aria-label="Lire l'histoire"></a>
+    </section>
+
+    <section class="bloc-texte" id="recit">
+      <h2 class="titre-65" data-anime>
+        <span>Jean,</span>
+        <span>1972,</span>
+        <span><span class="it">le gardien</span></span>
+      </h2>
+      <div class="paragraphe" data-anime="2">
+        <p>Verdignan est l'une des plus anciennes propriétés viticoles du canton de Pauillac, et sans doute la plus ancienne de Saint-Seurin-de-Cadourne. Tout près se dressait l'abbaye de Cadourne, halte des pèlerins de Compostelle ; au petit port de La Maréchale, les gabarres chargeaient les barriques pour Bordeaux. La même famille garde le domaine de la fin du XVIII<sup>e</sup> siècle jusqu'en 1934.</p>
+        <p>En 1972, puis en 1975, Jean Miailhe, le fils de Louis, achète ce voisin de Coufran. Il vient d'arrêter le courtage : il sera le dernier courtier de la famille, et le premier à garder ses vins comme on garde une tradition.</p>
+      </div>
+    </section>
+
+    <section class="galerie" aria-label="Galerie">
+      <div class="galerie-piste">
+        <figure><img src="../assets/img/verdignan-barrique.jpg" alt="Une barrique qu'on fait rouler dans le chai" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-vendanges.jpg" alt="Grappes noires aux vendanges" loading="lazy"></figure>
+        <figure><img src="../assets/img/acte-verdignan-carte-postale.jpg" alt="Le château vers 1900" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-vinification.jpg" alt="Le vin jaillit d'une cuve" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-chai.jpg" alt="Barriques empilées" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-culots.jpg" alt="Les culots des bouteilles en attente" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-chenes.jpg" alt="Deux chênes devant les vignes d'automne" loading="lazy"></figure>
+        <figure><img src="../assets/img/verdignan-vignes.jpg" alt="Rangs dorés à l'automne" loading="lazy"></figure>
+      </div>
+      <button class="fleche-carrousel fleche-carrousel--prec" type="button" aria-label="Photos précédentes"></button>
+      <button class="fleche-carrousel fleche-carrousel--suiv" type="button" aria-label="Photos suivantes"></button>
+    </section>
+
+    <!-- La route des gabarres ([data-gabarre]) : carte indicative, non à l'échelle -->
+    <section class="atelier atelier--gabarres" aria-labelledby="gabarres-titre">
+      <div class="atelier-texte">
+        <h2 class="titre-65" id="gabarres-titre" data-anime><span>La route</span><span>des <span class="it">gabarres</span></span></h2>
+        <div class="paragraphe" data-anime="2">
+          <p>Avant les camions, le vin partait par l'eau. Au petit port de La Maréchale, dans le hameau de Cadourne, les gabarres, ces bateaux à fond plat, chargeaient les barriques de Verdignan, puis remontaient l'estuaire avec la marée jusqu'aux quais de Bordeaux, où attendaient négociants et courtiers.</p>
+          <p>Le port a donné son nom à un vin de la famille, La Rose Maréchale : on raconte qu'une galère de ce nom, rescapée du combat naval de Gênes en 1638, vint s'y abriter en 1696.</p>
+        </div>
+      </div>
+      <figure class="carte-gabarres" data-gabarre data-anime="2">
+        <svg viewBox="-70 0 490 640" role="img" aria-label="Carte indicative de l'estuaire de la Gironde, du port de La Maréchale à Bordeaux">
+          <path class="eau" d="M60 0H250C232 70 226 120 236 170C250 240 262 300 262 360C262 420 270 470 286 520C296 560 300 600 304 640H284C278 600 270 560 258 524C238 470 226 420 222 360C218 300 196 240 168 176C140 116 100 56 60 0Z"/>
+          <path class="eau eau--dordogne" d="M262 360C300 372 340 380 420 372V392C340 402 300 396 268 386Z"/>
+          <text class="riviere" x="150" y="96" transform="rotate(58 150 96)">Estuaire de la Gironde</text>
+          <text class="riviere" x="352" y="368">Dordogne</text>
+          <text class="riviere" x="312" y="600" transform="rotate(78 312 600)">Garonne</text>
+          <path class="route" d="M118 70C150 120 176 170 196 230C214 290 236 330 244 380C254 440 266 500 292 600"/>
+          <g class="etapes">
+            <circle cx="118" cy="70" r="5" class="depart"/><text x="104" y="66" text-anchor="end" class="fort">La Maréchale</text><text x="104" y="82" text-anchor="end">Saint-Seurin-de-Cadourne</text>
+            <circle cx="150" cy="122" r="3"/><text x="138" y="126" text-anchor="end">Saint-Estèphe</text>
+            <circle cx="180" cy="180" r="3"/><text x="168" y="184" text-anchor="end">Pauillac</text>
+            <circle cx="200" cy="240" r="3"/><text x="188" y="244" text-anchor="end">Saint-Julien</text>
+            <circle cx="240" cy="360" r="3"/><text x="228" y="364" text-anchor="end">Margaux</text>
+            <circle cx="258" cy="236" r="3"/><text x="270" y="240">Blaye</text>
+            <circle cx="292" cy="600" r="5" class="arrivee"/><text x="280" y="604" text-anchor="end" class="fort">Bordeaux</text><text x="280" y="620" text-anchor="end">les quais des négociants</text>
+          </g>
+          <g class="gabarre" aria-hidden="true"><path d="M-14 0H14L9 6H-9Z"/><path d="M0 0V-18M0 -17L10 -3H0" /></g>
+        </svg>
+        <figcaption>Carte indicative, sans échelle. Une soixantaine de kilomètres d'estuaire séparent le port de La Maréchale des quais de Bordeaux.</figcaption>
+      </figure>
+    </section>
+
+    <section class="terroir">
+      <figure class="carte-terroir" data-anime>
+        <svg viewBox="0 0 600 520" role="img" aria-label="Carte indicative : les trois domaines de la famille à Saint-Seurin-de-Cadourne, au bord de l'estuaire">
+          <path class="estuaire" d="M372 0H600V520H572C548 430 516 352 476 286C444 232 410 150 372 0Z"/>
+          <text x="540" y="210" class="petit" transform="rotate(66 540 210)">Estuaire de la Gironde</text>
+          <path class="route" d="M120 40C200 140 300 220 320 300S300 440 330 520"/>
+          <circle cx="306" cy="226" r="3.5" fill="currentColor" opacity=".6"/>
+          <text x="296" y="230" text-anchor="end" class="petit">Saint-Seurin-de-Cadourne</text>
+          <text x="306" y="498" class="petit">Saint-Estèphe ↓</text>
+          <text x="20" y="306" class="petit">← Océan, 30 km</text>
+          <path class="domaine" d="M262 92C292 70 344 74 366 98C388 122 380 160 352 176C322 194 274 188 254 162C236 138 236 110 262 92Z"/>
+          <text x="308" y="66" text-anchor="middle" class="">Coufran</text>
+          <path class="domaine ici" d="M356 236C380 220 418 226 430 250C442 276 428 304 400 312C372 320 344 304 340 280C336 262 340 246 356 236Z"/>
+          <text x="388" y="210" text-anchor="middle" class="ici">Verdignan</text>
+          <path class="domaine" d="M196 356C214 342 244 344 254 362C264 380 252 402 230 406C208 410 186 398 184 380C182 370 186 362 196 356Z"/>
+          <text x="220" y="334" text-anchor="middle" class="">Soudars</text>
+        </svg>
+      </figure>
+      <div class="bloc">
+        <h2 class="titre-65" data-anime>
+          <span>Les grands terroirs</span>
+          <span><span class="it">regardent l'eau</span></span>
+        </h2>
+        <p class="paragraphe" data-anime="2">Soixante hectares face à l'estuaire de la Gironde, à la frontière de Saint-Estèphe. Autour du château, quarante hectares de graves et d'argiles portent les vieux cabernets ; plus loin, vingt hectares de jeunes vignes sur argilo-calcaire. L'eau tempère le climat, les graves drainent et réchauffent les racines.</p>
+        <div class="chiffres" data-anime="3">
+          <div><strong>60 ha</strong>face à l'estuaire</div>
+          <div><strong>65 %</strong>de cabernet-sauvignon</div>
+          <div><strong>45 ans</strong>âge moyen des vignes</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lignee">
+      <div class="lignee-grille">
+        <figure class="photo-a" data-anime><img src="../assets/img/verdignan-chai.jpg" alt="Barriques empilées dans le chai" loading="lazy"></figure>
+        <div class="centre">
+          <h2 class="titre-65" data-anime>
+            <span>Jean l'a choisi,</span>
+            <span>Éric l'a <span class="it">élevé</span>,</span>
+            <span>Lovely le transmettra</span>
+          </h2>
+          <div class="paragraphe" data-anime="2">
+            <p>Le vin de garde de la famille demande de la patience, et la patience se transmet. Depuis les années 1980, Éric Miailhe, le fils de Jean, veille sur Verdignan avec sa sœur Marie-Cécile Vicaire. Depuis 2006, sa fille Lovely est à ses côtés.</p>
+            <p>Comme à Coufran, les bouteilles attendent au château que le vin soit prêt. Verdignan ne sort jamais avant son heure.</p>
+          </div>
+          <ol class="generations" aria-label="Quatre générations de vignerons" data-anime="3">
+            <li class=""><strong>Louis</strong>1924</li>
+            <li class="ici"><strong>Jean</strong>1972</li>
+            <li class=""><strong>Éric</strong>1973</li>
+            <li class=""><strong>Lovely</strong>2006</li>
+          </ol>
+          <div class="signe" data-anime="4">
+            <p>Le vigneron :</p>
+            <p class="signature">Éric Miailhe</p>
+            <p>Œnologue-conseil : Éric Boissenot</p>
+          </div>
+        </div>
+        <figure class="photo-b" data-anime="2"><img src="../assets/img/verdignan-vignes.jpg" alt="Les vignes de Verdignan à l'automne" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <a class="decouvrir" href="index.html#nos-vins">
+      <img src="../assets/img/verdignan-casiers.jpg" alt="" loading="lazy">
+      <p data-anime><span class="it">Découvrez</span><br>nos vins</p>
+    </a>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593102">+33 5 56 59 31 02</a> &nbsp; <a href="mailto:contact@chateau-verdignan.com">contact@chateau-verdignan.com</a></p>
+        <p class="gris">Visites sur rendez-vous, pour les particuliers et les professionnels.</p>
+      </div>
+      <span class="embleme" data-armoirie="verdignan" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Verdignan, 33180 Saint-Seurin-de-Cadourne</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Verdignan · une maison de la famille <span class="wordmark"></span></a>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../coufran/index.html">Coufran</a> · <a href="../soudars/index.html">Soudars</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+</body>
+</html>

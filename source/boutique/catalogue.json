@@ -1,0 +1,811 @@
+{
+ "releve": "2026-10-28",
+ "sources": [
+  "https://www.coufran-verdignan.com/categorie-produit/chateau-coufran/",
+  "https://www.coufran-verdignan.com/categorie-produit/chateau-verdignan/",
+  "https://boutique.chateausoudars.com/categorie-produit/nos-caisses-chateau-soudars/",
+  "https://boutique.chateausoudars.com/categorie-produit/nos-doubles-magnum/"
+ ],
+ "livraison": {
+  "sources": [
+   "https://www.coufran-verdignan.com/livraison/",
+   "https://boutique.chateausoudars.com/livraison/"
+  ],
+  "forfait_6_bouteilles": 30,
+  "gratuite_des_bouteilles": 12,
+  "gratuite_avec_double_magnum": true,
+  "zone": "France métropolitaine (Corse : sur demande, par téléphone ou par e-mail)",
+  "delai": "10 à 12 jours ouvrés après réception de la commande",
+  "changement_adresse": 15
+ },
+ "produits": [
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU COUFRAN 2007",
+   "millesime": 2007,
+   "vin": "grand-vin",
+   "prix": 15.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 15,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-coufran-2007/"
+  },
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU COUFRAN 2010",
+   "millesime": 2010,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 19,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-coufran-2010/"
+  },
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU COUFRAN 2012",
+   "millesime": 2012,
+   "vin": "grand-vin",
+   "prix": 17.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 17,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-coufran-2012/"
+  },
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU COUFRAN 2013",
+   "millesime": 2013,
+   "vin": "grand-vin",
+   "prix": 15.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 15,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-coufran-2013/"
+  },
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU COUFRAN 2014",
+   "millesime": 2014,
+   "vin": "grand-vin",
+   "prix": 17.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 17,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-coufran-2014/"
+  },
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU COUFRAN 2016",
+   "millesime": 2016,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 19,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-coufran-2016/"
+  },
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU COUFRAN 2018",
+   "millesime": 2018,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 19,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-coufran-2018/"
+  },
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU COUFRAN 2019",
+   "millesime": 2019,
+   "vin": "grand-vin",
+   "prix": 18.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 18,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-coufran-2019/"
+  },
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU COUFRAN 2020",
+   "millesime": 2020,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 19,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-coufran-2020/"
+  },
+  {
+   "chateau": "coufran",
+   "forme": "bouteille",
+   "nom_boutique": "N2 de COUFRAN 2014",
+   "millesime": 2014,
+   "vin": "n2",
+   "prix": 10.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 10,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/n2-de-coufran-2014/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU VERDIGNAN 2005",
+   "millesime": 2005,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 19,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-verdignan-2005/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU VERDIGNAN 2006",
+   "millesime": 2006,
+   "vin": "grand-vin",
+   "prix": 20.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 20,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-verdignan-2006/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU VERDIGNAN 2009",
+   "millesime": 2009,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 19,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-verdignan-2009/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU VERDIGNAN 2013",
+   "millesime": 2013,
+   "vin": "grand-vin",
+   "prix": 15.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 15,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-verdignan-2013/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU VERDIGNAN 2014",
+   "millesime": 2014,
+   "vin": "grand-vin",
+   "prix": 17.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 17,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-verdignan-2014/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU VERDIGNAN 2015",
+   "millesime": 2015,
+   "vin": "grand-vin",
+   "prix": 17.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 17,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-verdignan-2015/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU VERDIGNAN 2016",
+   "millesime": 2016,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 19,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-verdignan-2016/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU VERDIGNAN 2018",
+   "millesime": 2018,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 19,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-verdignan-2018/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "CHÂTEAU VERDIGNAN 2019",
+   "millesime": 2019,
+   "vin": "grand-vin",
+   "prix": 18.0,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 18,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/chateau-verdignan-2019/"
+  },
+  {
+   "chateau": "verdignan",
+   "forme": "bouteille",
+   "nom_boutique": "N2 de VERDIGNAN 2013",
+   "millesime": 2013,
+   "vin": "n2",
+   "prix": 9.5,
+   "stock": true,
+   "variantes": [
+    {
+     "contenance": "75cl",
+     "conditionnement": "6",
+     "prix": 9.5,
+     "actif": true
+    }
+   ],
+   "caisse": null,
+   "source": "https://www.coufran-verdignan.com/produit/n2-de-verdignan-2013/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2019",
+   "millesime": 2019,
+   "vin": "grand-vin",
+   "prix": 17.5,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2019-2/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2018",
+   "millesime": 2018,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2018-2/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2016",
+   "millesime": 2016,
+   "vin": "grand-vin",
+   "prix": 18.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2016-2/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2015",
+   "millesime": 2015,
+   "vin": "grand-vin",
+   "prix": 17.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2015/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2014",
+   "millesime": 2014,
+   "vin": "grand-vin",
+   "prix": 17.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2014/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2012",
+   "millesime": 2012,
+   "vin": "grand-vin",
+   "prix": 17.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2012/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2011",
+   "millesime": 2011,
+   "vin": "grand-vin",
+   "prix": 16.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2011/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2010",
+   "millesime": 2010,
+   "vin": "grand-vin",
+   "prix": 17.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2010/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2009",
+   "millesime": 2009,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2009/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2008",
+   "millesime": 2008,
+   "vin": "grand-vin",
+   "prix": 17.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2018/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2007",
+   "millesime": 2007,
+   "vin": "grand-vin",
+   "prix": 16.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2017/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2006",
+   "millesime": 2006,
+   "vin": "grand-vin",
+   "prix": 18.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2019/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2005",
+   "millesime": 2005,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2005/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "bouteille",
+   "nom_boutique": "Château Soudars 2000",
+   "millesime": 2000,
+   "vin": "grand-vin",
+   "prix": 19.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/chateau-soudars-2021/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2015",
+   "millesime": 2015,
+   "vin": "grand-vin",
+   "prix": 140.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2015/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2014",
+   "millesime": 2014,
+   "vin": "grand-vin",
+   "prix": 140.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2014/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2012",
+   "millesime": 2012,
+   "vin": "grand-vin",
+   "prix": 145.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2012/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2011",
+   "millesime": 2011,
+   "vin": "grand-vin",
+   "prix": 160.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2011/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2010",
+   "millesime": 2010,
+   "vin": "grand-vin",
+   "prix": 145.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2010/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2009",
+   "millesime": 2009,
+   "vin": "grand-vin",
+   "prix": 150.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2009/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double Magnum Château Soudars 2008",
+   "millesime": 2008,
+   "vin": "grand-vin",
+   "prix": 150.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2008/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2007",
+   "millesime": 2007,
+   "vin": "grand-vin",
+   "prix": 150.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2007/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double Magnum Château Soudars 2006",
+   "millesime": 2006,
+   "vin": "grand-vin",
+   "prix": 150.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2006/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double Magnum Château Soudars 2005",
+   "millesime": 2005,
+   "vin": "grand-vin",
+   "prix": 155.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2005/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2004",
+   "millesime": 2004,
+   "vin": "grand-vin",
+   "prix": 155.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2004/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2003",
+   "millesime": 2003,
+   "vin": "grand-vin",
+   "prix": 155.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2003/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2002",
+   "millesime": 2002,
+   "vin": "grand-vin",
+   "prix": 155.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2002/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 2001",
+   "millesime": 2001,
+   "vin": "grand-vin",
+   "prix": 160.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2001/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double Magnum Château Soudars 2000",
+   "millesime": 2000,
+   "vin": "grand-vin",
+   "prix": 160.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-2000/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 1996",
+   "millesime": 1996,
+   "vin": "grand-vin",
+   "prix": 165.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-1996/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 1989",
+   "millesime": 1989,
+   "vin": "grand-vin",
+   "prix": 165.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-1989/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 1988",
+   "millesime": 1988,
+   "vin": "grand-vin",
+   "prix": 165.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-1988/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 1985",
+   "millesime": 1985,
+   "vin": "grand-vin",
+   "prix": 165.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-1985/"
+  },
+  {
+   "chateau": "soudars",
+   "forme": "double-magnum",
+   "nom_boutique": "Double magnum Château Soudars 1982",
+   "millesime": 1982,
+   "vin": "grand-vin",
+   "prix": 175.0,
+   "stock": true,
+   "variantes": [],
+   "caisse": null,
+   "source": "https://boutique.chateausoudars.com/produit/double-magnum-chateau-soudars-1982/"
+  }
+ ]
+}

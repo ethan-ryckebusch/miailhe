@@ -1,0 +1,147 @@
+/* L'espace client (compte.html, 28/10/2026) : clair et chaleureux, comme la boutique. À gauche la famille (Éric et
+   Lovely devant Coufran), à droite la porte d'entrée ; une fois connecté, un tableau de bord en cartes. */
+
+.page-compte { --ivoire: #f8f4ed; --encre: #16120f; --muet: #6f665d; --filet: rgba(22, 18, 15, .12); background: var(--ivoire); color: var(--encre); }
+.page-compte .site-header.is-scrolled { background-color: rgba(248, 244, 237, .96); }
+.chev { display: inline-block; width: 8px; height: 8px; border-left: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; }
+.chev--g { transform: rotate(45deg); }
+.cp-retour { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; font-family: var(--t-interface); font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+.cp-retour:hover { color: var(--muet); }
+
+/* Les mots communs */
+.cp-sur { display: flex; align-items: center; gap: 14px; margin: 0; font-family: var(--t-interface); font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--muet); }
+/* le trait tricolore de la maison : l'or de Coufran, le bleu de Verdignan, le vert de Soudars */
+.cp-sur::before { content: ""; width: 30px; height: 2px; background: linear-gradient(90deg, #a97d2e 0 33.3%, #0f4366 33.3% 66.6%, #0f320a 66.6%); }
+.cp-titre { margin: 0; font-family: var(--t-titre); font-weight: 400; font-size: var(--t-6); line-height: .98; letter-spacing: -.012em; }
+.cp-titre em { font-family: var(--t-italique); font-style: italic; font-weight: 400; letter-spacing: -.02em; }
+.cp-chapeau { margin: 0; max-width: 34em; font-family: var(--t-titre); font-size: var(--t-1); line-height: 1.45; color: #3b342e; }
+.cp-note, .cp-maquette { margin: 0; font-family: var(--t-interface); font-size: 12px; line-height: 1.5; color: var(--muet); }
+.cp-maquette { font-style: normal; opacity: .85; }
+.cp-erreur { margin: 0; padding: 10px 14px; font-family: var(--t-interface); font-size: 13px; color: #8a1230; background: rgba(229, 0, 65, .06); border-left: 2px solid #e50041; }
+
+/* Les boutons et les liens */
+.cp-bouton {
+  display: inline-flex; justify-content: center; align-items: center; min-height: 52px; padding: 0 30px; border: 1px solid var(--encre); border-radius: 40px;
+  background: var(--encre); color: #fff; cursor: pointer; text-decoration: none;
+  font-family: var(--t-interface); font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+  transition: background .3s, color .3s;
+}
+.cp-bouton:hover, .cp-bouton:focus-visible { background: transparent; color: var(--encre); outline: none; }
+.cp-bouton--petit { min-height: 42px; padding: 0 22px; justify-self: start; align-self: start; }
+.cp-lien { padding: 0; border: 0; background: none; cursor: pointer; color: inherit; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px;
+  font-family: var(--t-interface); font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+.cp-lien:hover { text-decoration-thickness: 2px; }
+.cp-lien--discret { color: var(--muet); }
+
+/* ---------- Pas connecté : la famille vous accueille ---------- */
+.cp-accueil { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); min-height: 100svh; }
+.cp-photo { position: relative; margin: 0; overflow: hidden; background: #2a2119; }
+.cp-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; animation: cp-lent 26s ease-out both; }
+.cp-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22, 18, 15, .45) 0%, rgba(22, 18, 15, 0) 22%, rgba(22, 18, 15, 0) 62%, rgba(22, 18, 15, .55) 100%); }
+.cp-photo figcaption { position: absolute; left: 5vw; bottom: 5vh; z-index: 1; font-family: var(--t-italique); font-style: italic; font-size: var(--t-1); color: #f6f2e9; }
+@keyframes cp-lent { from { transform: scale(1.08); } to { transform: scale(1); } }
+.cp-porte { display: grid; align-content: center; gap: 26px; padding: 140px clamp(28px, 6vw, 96px) 70px; max-width: 640px; }
+
+.cp-onglets { display: flex; gap: 28px; margin-top: 8px; border-bottom: 1px solid var(--filet); }
+.cp-onglets button { position: relative; padding: 0 0 14px; border: 0; background: none; cursor: pointer; color: var(--muet);
+  font-family: var(--t-interface); font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; transition: color .3s; }
+.cp-onglets button[aria-selected="true"] { color: var(--encre); }
+.cp-onglets button[aria-selected="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--encre); }
+
+.cp-form { display: grid; gap: 20px; }
+.cp-form[hidden] { display: none; }
+.cp-deux { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.cp-champ { display: grid; gap: 6px; }
+.cp-champ span { font-family: var(--t-interface); font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muet); }
+.cp-champ input {
+  width: 100%; padding: 10px 0 11px; border: 0; border-bottom: 1px solid rgba(22, 18, 15, .3); border-radius: 0; background: transparent; color: var(--encre);
+  font-family: var(--t-titre); font-size: 21px; transition: border-color .3s;
+}
+.cp-champ input::placeholder { color: rgba(22, 18, 15, .3); }
+.cp-champ input:focus { outline: none; border-bottom-color: var(--encre); }
+.cp-champ input[readonly] { color: var(--muet); border-bottom-style: dotted; }
+.cp-coche { display: grid; grid-template-columns: 18px 1fr; gap: 12px; align-items: start; font-family: var(--t-interface); font-size: 13px; line-height: 1.5; color: #3b342e; cursor: pointer; }
+.cp-coche input { width: 16px; height: 16px; margin: 2px 0 0; accent-color: var(--encre); }
+
+.cp-atouts { display: grid; gap: 12px; margin: 10px 0 0; padding: 22px 0 0; list-style: none; border-top: 1px solid var(--filet); }
+.cp-atouts li { position: relative; padding-left: 26px; font-family: var(--t-titre); font-size: 18px; line-height: 1.4; color: #3b342e; }
+.cp-atouts li::before { content: ""; position: absolute; left: 0; top: .72em; width: 14px; height: 1px; background: currentColor; opacity: .5; }
+.cp-atouts strong { font-weight: 600; color: var(--encre); }
+
+/* ---------- Connecté : le tableau de bord ---------- */
+.cp-tableau { max-width: 1240px; margin: 0 auto; padding: 150px 5vw 60px; }
+.cp-bonjour { display: grid; gap: 16px; margin-bottom: 54px; }
+.cp-depuis { margin: 0; font-family: var(--t-interface); font-size: 13px; color: var(--muet); }
+.cp-grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.cp-carte { display: grid; align-content: start; gap: 16px; padding: 30px 30px 32px; background: #fff; border: 1px solid rgba(22, 18, 15, .07); box-shadow: 0 1px 0 rgba(22, 18, 15, .04), 0 18px 40px -30px rgba(22, 18, 15, .25); }
+.cp-carte p { margin: 0; font-family: var(--t-titre); font-size: 18px; line-height: 1.45; color: #3b342e; }
+.cp-carte-titre { margin: 0 0 4px; padding-bottom: 14px; border-bottom: 1px solid var(--filet); font-family: var(--t-interface); font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--muet); }
+.cp-grand { font-family: var(--t-titre) !important; font-size: var(--t-3) !important; line-height: 1 !important; color: var(--encre) !important; }
+.cp-vide { color: var(--muet) !important; }
+.cp-carte--commandes { grid-column: span 2; }
+.cp-carte--coordonnees { grid-column: 1 / -1; }
+/* les coordonnées sur toute la largeur : trois colonnes de champs */
+.cp-form--coord { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 26px; }
+.cp-form--coord .cp-deux { grid-column: span 2; }
+.cp-form--coord .cp-note { grid-column: 1 / -1; }
+.cp-form--coord button { grid-column: 1 / -1; }
+.cp-carte .cp-maquette { font-family: var(--t-interface); font-size: 12px; color: var(--muet); }
+
+.cp-commandes { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.cp-commande { display: grid; gap: 10px; padding: 18px 0; border-bottom: 1px solid var(--filet); }
+.cp-commande:first-child { padding-top: 2px; }
+.cp-commande-tete, .cp-commande-pied { display: flex; justify-content: space-between; gap: 16px; font-family: var(--t-interface); font-size: 12.5px; color: var(--muet); }
+.cp-numero { font-weight: 600; letter-spacing: .06em; color: var(--encre); font-variant-numeric: tabular-nums; }
+.cp-commande-pied strong { font-family: var(--t-titre); font-size: 22px; font-weight: 500; color: var(--encre); font-variant-numeric: lining-nums; }
+.cp-commande-vins { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; font-family: var(--t-titre); font-size: 19px; color: var(--encre); }
+.cp-q { font-family: var(--t-interface); font-size: 12px; color: var(--muet); margin-right: 4px; }
+.cp-statut { display: flex; align-items: center; gap: 9px; font-family: var(--t-interface) !important; font-size: 12px !important; color: var(--muet) !important; }
+.cp-point { width: 7px; height: 7px; border-radius: 50%; background: #0f320a; box-shadow: 0 0 0 4px rgba(15, 50, 10, .1); }
+
+/* Mon château : sa teinte pâle et son logo, à sa couleur */
+.cp-carte--coufran { background: #fbf6ee; color: #a97d2e; }
+.cp-carte--verdignan { background: #f1f5f9; color: #0f4366; }
+.cp-carte--soudars { background: #f2f5f0; color: #0f320a; }
+.cp-logo { display: block; width: min(270px, 86%); margin: 8px 0 0; }
+.cp-logo svg { display: block; width: 100%; height: auto; overflow: visible; }
+.cp-qui { font-family: var(--t-interface) !important; font-size: 11px !important; letter-spacing: .16em; text-transform: uppercase; color: currentColor !important; }
+.cp-liens { display: flex; flex-wrap: wrap; gap: 14px 22px; color: var(--encre); }
+
+/* La lettre : une bascule */
+.cp-bascule { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; cursor: pointer; font-family: var(--t-titre); font-size: 18px; line-height: 1.45; color: #3b342e; }
+.cp-bascule input { position: absolute; opacity: 0; pointer-events: none; }
+.cp-bascule-curseur { position: relative; width: 44px; height: 24px; margin-top: 2px; border-radius: 12px; background: rgba(22, 18, 15, .18); transition: background .3s; }
+.cp-bascule-curseur::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, .2); transition: transform .3s; }
+.cp-bascule input:checked + .cp-bascule-curseur { background: var(--encre); }
+.cp-bascule input:checked + .cp-bascule-curseur::after { transform: translateX(20px); }
+.cp-bascule input:focus-visible + .cp-bascule-curseur { outline: 2px solid var(--encre); outline-offset: 2px; }
+
+.cp-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--filet); }
+.cp-grille > .cp-maquette { grid-column: 1 / -1; }
+
+.cp-annonce { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.cp-pied { display: grid; justify-items: center; gap: 16px; padding: 50px 6vw 40px; border-top: 1px solid var(--filet); text-align: center; font-family: var(--t-interface); font-size: 12px; color: var(--muet); }
+.cp-pied p { margin: 0; }
+.cp-pied a { color: inherit; }
+
+@media (max-width: 1000px) {
+  .cp-grille { grid-template-columns: 1fr 1fr; }
+  .cp-carte--commandes, .cp-carte--coordonnees { grid-column: 1 / -1; }
+  .cp-form--coord { grid-template-columns: 1fr 1fr; }
+  .cp-form--coord .cp-deux { grid-column: 1 / -1; }
+}
+@media (max-width: 860px) {
+  .cp-accueil { grid-template-columns: 1fr; }
+  .cp-photo { min-height: 46svh; }
+  .cp-porte { padding: 40px 6vw 60px; max-width: none; }
+}
+@media (max-width: 620px) {
+  .cp-grille { grid-template-columns: 1fr; }
+  .cp-carte { padding: 24px 22px 26px; }
+  .cp-tableau { padding-top: 120px; }
+  .cp-deux { grid-template-columns: 1fr; }
+  .cp-form--coord { grid-template-columns: 1fr; }
+  .cp-retour span:last-child { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .cp-photo img { animation: none; } }

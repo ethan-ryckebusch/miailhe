@@ -1,0 +1,762 @@
+/* MIAILHE — maquette de site vitrine
+   Système : une racine commune (MIAILHE) + trois identités de château.
+   Palette de test « Rouge Bordeaux » (26/10/2026), inspirée de bordeaux.com : blanc, noir, un seul accent rouge vif.
+   Palette précédente « Lie de vin » : --paper #f7f4f1, --ink #171214, terres #4a1f2c → #16090e, --or #d3b48f, --root #b98a88. */
+
+:root {
+  --ink: #0d0d0d;
+  --ink-2: #1f1f1f;
+  --paper: #ffffff;
+  --paper-2: #f5f5f5;
+  --stone: #e5e5e5;
+  --mute: #737373;
+
+  /* Les « terres » des sections sombres : du noir graphite au noir */
+  --earth-1: #1f1f1f;
+  --earth-2: #181818;
+  --earth-3: #121212;
+  --earth-4: #0b0b0b;
+  --earth-5: #050505;
+  --root: #9b0d33;
+  --root-2: #7a0a28;
+  --sap: #ff2d5f;
+  --or: #ffffff;
+  --vigne: #e50041;
+  --on-dark: #ffffff;
+  --on-dark-mute: #a3a3a3;
+  --on-dark-texte: #e5e5e5;
+  /* Les mêmes teintes en composantes RVB, pour les transparences : rgba(var(--voile), .5) */
+  --voile: 5, 5, 5;
+  --lueur: 229, 0, 65;
+  --clair: 255, 255, 255;
+
+  /* Les trois châteaux : une couleur forte et une police chacun (polices.css), comme sur leurs sites */
+  --coufran: #e0782b;          /* ambre : le cuir et le cèdre du grand-père */
+  --coufran-encre: #b8561a;    /* la même, assez sombre pour du texte sur blanc */
+  --coufran-fond: #17100b;
+  --coufran-texte: #f1e3d1;
+  --verdignan: #3156f5;        /* bleu roi : le classicisme du XVIIIe siècle, le père */
+  --verdignan-encre: #2443cc;
+  --verdignan-fond: #070b1c;
+  --verdignan-texte: #e3e8f7;
+  --soudars: #ff3d6e;          /* framboise : les fruits rouges du fils */
+  --soudars-encre: #d81b4c;
+  --soudars-fond: #1a070d;
+  --soudars-texte: #ffe3ea;
+
+  --f-mark: "Cinzel", "Trajan Pro", serif;
+  --f-serif: "Cormorant Garamond", Garamond, serif;
+  --f-ui: "Circular", "Jost", "Avenir Next", sans-serif;
+  --f-menu: "Felix Titling", "Cinzel", serif;
+  --f-coufran: "Albertus", "Cinzel", serif;
+  --f-verdignan: "Didot Headline", "Bodoni", Didot, serif;
+  --f-verdignan-it: "Bodoni", Didot, serif;
+  --f-soudars: "Cooper Black", "Bookman", Georgia, serif;
+  --f-plume: "Meddon", cursive;
+  --f-signature: "Herr Von Muellerhoff", cursive;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --ease: cubic-bezier(.2, .7, .1, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-serif);
+  font-size: clamp(18px, 1.15vw + 12px, 21px);
+  line-height: 1.55;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+body.is-locked { overflow: hidden; }
+img { max-width: 100%; display: block; }
+figure { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+::selection { background: var(--sap); color: var(--on-dark); }
+
+/* Grain photographique sur toute la page */
+body::after {
+  content: "";
+  position: fixed; inset: -50%;
+  pointer-events: none; z-index: 90;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .05;
+  mix-blend-mode: multiply;
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Typographie commune ---------- */
+.overline {
+  font-family: var(--f-mark);
+  font-size: .72rem;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.lead { font-size: 1.28em; line-height: 1.45; font-weight: 400; }
+h1, h2, h3 { font-weight: 300; line-height: 1.02; margin: 0; letter-spacing: -.01em; }
+p { margin: 0 0 1em; }
+em { font-style: italic; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .7em;
+  font-family: var(--f-ui); font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
+  padding: 1.05em 1.6em; border: 1px solid currentColor; border-radius: 999px;
+  background: transparent; cursor: pointer; text-decoration: none;
+  transition: background .4s var(--ease), color .4s var(--ease), border-color .4s;
+}
+.btn:hover { background: currentColor; }
+.btn:hover > span { color: var(--paper); }
+.dark .btn:hover > span, .btn--light:hover > span { color: var(--ink); }
+.btn--plein { background: var(--sap); border-color: var(--sap); color: var(--on-dark); }
+.btn--plein:hover { background: var(--on-dark); border-color: var(--on-dark); }
+.btn--plein:hover > span { color: var(--ink); }
+
+/* ---------- Logo MIAILHE (vectorisé, couleur = currentColor) ---------- */
+.wordmark { display: inline-block; line-height: 0; text-decoration: none; color: inherit; }
+.wordmark .logo-svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* ---------- En-tête et menu plein écran, d'après chateau-cheval-blanc.com ----------
+   Burger à gauche, logo au centre, langues à droite. Le menu glisse depuis la gauche :
+   quatre grands titres numérotés, leurs sous-entrées soulignées, deux menus secondaires à droite
+   et, en bas à gauche, la couverture de l'Enquête à la place du podcast. */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 56;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 1.5%;
+  color: var(--ink);
+  transition: color .5s var(--ease), background-color .5s var(--ease);
+}
+.site-header > div { flex: 1; display: flex; align-items: center; }
+.site-header .header-droite { justify-content: flex-end; }
+.site-header.on-dark { color: var(--on-dark); }
+.site-header.is-scrolled { background-color: rgba(255, 255, 255, .96); }
+.site-header.is-scrolled.on-dark { background-color: rgba(5, 5, 5, .94); }
+.site-header .wordmark { width: clamp(132px, 12.5vw, 188px); transition: color .5s var(--ease), opacity .5s var(--ease); }
+/* Le logo du pied de page prend le relais quand il passe sous l'en-tête */
+.site-header.cede-logo:not(.active) .wordmark { opacity: 0; pointer-events: none; }
+.site-header.active { background-color: #fff; color: #282828; }
+
+.ouvrir-menu { position: relative; display: block; padding: 9px 10px; margin-left: -10px; background: none; border: 0; cursor: pointer; color: inherit; }
+.ouvrir-menu span, .ouvrir-menu::before, .ouvrir-menu::after {
+  content: ""; display: block; width: 21px; height: 1px; margin: 5px 0;
+  background: currentColor; transition: all .5s;
+}
+.site-header.active .ouvrir-menu span { opacity: 0; }
+.site-header.active .ouvrir-menu::before, .site-header.active .ouvrir-menu::after { position: absolute; left: 10px; top: 50%; margin: 0; }
+.site-header.active .ouvrir-menu::before { transform: rotate(45deg); }
+.site-header.active .ouvrir-menu::after { transform: rotate(-45deg); }
+
+.langues { display: flex; list-style: none; margin: 0; padding: 0; font-family: var(--f-ui); font-size: 13px; text-transform: uppercase; }
+.langues li:not(:last-child)::after { content: "/"; margin: 0 .55em; }
+.langues a { text-decoration: none; opacity: .55; transition: opacity .3s; }
+.langues a[aria-current] { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+.langues a:hover { opacity: .85; }
+
+.mainnav {
+  position: fixed; inset: 0; z-index: 55;
+  background: #fff; color: #282828;
+  font-family: var(--f-ui); font-size: 13px; line-height: 1.2;
+  transform: translateX(-100%); visibility: hidden;
+  transition: transform .5s, visibility 0s .5s;
+  overflow-y: auto; overscroll-behavior: contain;
+}
+.mainnav.active { transform: none; visibility: visible; transition: transform .5s; }
+body.menu-ouvert { overflow: hidden; }
+.mainnav a { text-decoration: none; color: inherit; }
+.mainnav ul { list-style: none; margin: 0; padding: 0; }
+.mainnav-contenu { position: relative; min-height: 100%; padding: 70px 5%; display: flex; flex-direction: column; justify-content: space-around; }
+
+.menu-principal { text-align: center; }
+.menu-principal > li { margin: 41px 0 30px; }
+.menu-principal > li > a { display: inline-block; overflow: hidden; vertical-align: top; }
+.menu-principal > li > a > span {
+  display: inline-block;
+  font-family: var(--f-menu); font-weight: 300; text-transform: uppercase;
+  font-size: clamp(3.2rem, 6.8vw, 98px); line-height: 1.1; letter-spacing: -.03em;
+  transform: translateY(100%);
+}
+.mainnav.active .menu-principal > li > a > span { animation: monte 1s .2s both; }
+.mainnav.active .menu-principal > li:nth-child(2) > a > span { animation-delay: .28s; }
+.mainnav.active .menu-principal > li:nth-child(3) > a > span { animation-delay: .36s; }
+.mainnav.active .menu-principal > li:nth-child(4) > a > span { animation-delay: .44s; }
+@keyframes monte { from { transform: translateY(100%); } to { transform: none; } }
+.menu-principal .num { margin-left: 10px; font-family: var(--f-ui); font-weight: 500; font-size: 13px; letter-spacing: normal; }
+.sous-menu { display: flex; flex-wrap: wrap; justify-content: center; }
+.sous-menu a, .menu-second a, .menu-third a, .lien-trait {
+  position: relative; display: inline-block;
+  text-transform: uppercase; font-family: var(--f-ui); font-weight: 500; font-size: 13px; letter-spacing: .01em;
+}
+.sous-menu a { margin: 0 16px; }
+.sous-menu a::after, .menu-second a::after, .menu-third a::after, .lien-trait::after {
+  content: ""; position: absolute; right: 0; bottom: -2px;
+  width: 100%; height: 1px; background: currentColor; transition: width .3s;
+}
+.sous-menu a:hover::after, .menu-second a:hover::after, .menu-third a:hover::after, .lien-trait:hover::after { width: 0; }
+.menu-second, .menu-third { position: absolute; right: 12px; top: 84px; text-align: right; }
+.menu-second li, .menu-third li { margin: 20px 0; }
+.menu-second a, .menu-third a { margin: 0 10px; }
+.menu-third { top: auto; bottom: 7px; }
+.mainnav.active .mainnav-menus .menu-second, .mainnav.active .mainnav-menus .sous-menu,
+.mainnav.active .mainnav-menus .menu-third, .mainnav.active .mainnav-enquete { animation: fondu 1s .2s both; }
+@keyframes fondu { from { opacity: 0; } to { opacity: 1; } }
+
+.mainnav-enquete { position: absolute; width: 23%; bottom: 22px; left: 21px; z-index: 1; }
+.titre-3 { margin: 0; font-family: var(--f-serif); font-size: 17px; line-height: 1.4; }
+/* Couverture composée comme la pochette du podcast de Cheval Blanc : photo encadrée, grand titre sur bandeaux */
+.mainnav .couverture-enquete {
+  position: relative; display: block; margin-top: 12px; aspect-ratio: 1; overflow: hidden;
+  background: #0d0d0d; color: #fff;
+}
+.couverture-enquete .marque { position: absolute; top: 6.5%; left: 0; right: 0; text-align: center; font-family: var(--f-mark); font-size: 11px; letter-spacing: .5em; text-transform: uppercase; opacity: .85; }
+.couverture-enquete .photo { position: absolute; top: 15%; left: 15%; right: 15%; bottom: 24%; overflow: hidden; }
+.couverture-enquete img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1) brightness(.8); transition: transform .8s, opacity .8s; }
+.couverture-enquete:hover img { opacity: .7; transform: scale(1.02); }
+.couverture-enquete .cachet {
+  position: absolute; top: 20%; right: 9%; transform: rotate(-6deg);
+  padding: .45em .8em; border: 1.5px solid var(--vigne); background: rgba(13, 13, 13, .55); color: var(--vigne);
+  font-family: var(--f-ui); font-weight: 500; font-size: 10px; letter-spacing: .24em; text-transform: uppercase; white-space: nowrap;
+}
+.couverture-enquete .titre {
+  position: absolute; left: 7%; right: 4%; bottom: 6%;
+  font-family: var(--f-ui); font-weight: 500; font-size: clamp(1.5rem, 3.4vw, 3.3rem); line-height: 1.08; letter-spacing: -.02em; text-transform: uppercase;
+}
+.couverture-enquete .titre span { display: inline-block; padding: 0 .12em; background: #0d0d0d; }
+.couverture-enquete .titre span:last-of-type { margin-left: .55em; color: var(--vigne); }
+/* La loupe tient la place du bouton lecture du podcast */
+.couverture-enquete .loupe {
+  position: absolute; left: 50%; top: 44%; width: 40px; height: 40px; margin: -20px 0 0 -20px;
+  border: 1.5px solid #fff; border-radius: 50%; transition: transform .8s;
+}
+.couverture-enquete .loupe::after { content: ""; position: absolute; right: -9px; bottom: -6px; width: 14px; height: 1.5px; background: #fff; transform: rotate(45deg); }
+.couverture-enquete:hover .loupe { transform: scale(1.05); }
+
+@media (max-width: 900px) {
+  .site-header { padding: 14px 5%; }
+  .site-header .wordmark { width: 132px; }
+  .mainnav-contenu { flex-direction: column-reverse; justify-content: flex-end; }
+  .menu-principal > li { margin: 16px 0; }
+  .menu-principal > li > a > span { font-size: 42px; letter-spacing: -.04em; line-height: 1.35; }
+  .sous-menu { display: block; max-height: 0; overflow: hidden; transition: max-height .5s; }
+  .sous-menu li { margin: 25px 0; }
+  .menu-principal > li.active .sous-menu { max-height: 500px; }
+  .menu-second, .menu-third { position: static; text-align: center; margin: 0; }
+  .menu-second li, .menu-third li { margin: 31px 0; }
+  .menu-second::before { content: ""; display: block; width: 50px; height: 1px; margin: 0 auto; background: rgba(0, 0, 0, .5); }
+  .mainnav-enquete { position: static; width: 100%; margin-top: auto; padding-top: 18px; text-align: center; }
+  .couverture-enquete { max-width: 340px; margin: 12px auto 0; }
+  .couverture-enquete .titre { font-size: 2.1rem; text-align: left; }
+}
+
+/* ---------- Intro (d'après The Symphony of Vines) : logo, racine, noms des trois châteaux ---------- */
+.intro-ecran {
+  position: absolute; inset: 0; z-index: 2; overflow: hidden;
+  background: var(--earth-5); cursor: default;
+  transition: opacity 1s var(--ease), visibility 1s;
+}
+.intro-ecran.is-fini { opacity: 0; visibility: hidden; }
+.intro-logo {
+  position: absolute; left: 50%; top: 40%;
+  width: clamp(230px, 22vw, 330px); color: var(--or);
+  opacity: 0; filter: blur(8px); transform: translate(-50%, -50%) scale(.8);
+  transition: opacity 2s var(--ease), filter 2s var(--ease), transform 2s var(--ease);
+}
+.intro-ecran.is-joue .intro-logo { opacity: 1; filter: blur(0); transform: translate(-50%, -50%); }
+.intro-racines { position: absolute; left: 0; right: 0; bottom: 8vh; height: 34vh; }
+.intro-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.intro-svg .piste { fill: none; stroke: var(--root); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0; transition: opacity 1.2s; }
+.intro-ecran.is-trace .intro-svg .piste { opacity: .3; }
+.intro-svg .revele { fill: none; stroke: #fff; stroke-width: 18; }
+.intro-svg .sarment { fill: var(--root); }
+/* La feuille de vigne se déplie au passage de la pointe du sarment */
+.intro-svg .feuille { opacity: 0; transform: scale(0) rotate(-28deg); transition: transform 1.6s cubic-bezier(.2, .8, .25, 1.06), opacity .8s; }
+.intro-svg .noeud.is-ouvert .feuille { opacity: 1; transform: none; }
+.intro-svg .limbe { fill: var(--vigne); }
+.intro-svg .nervures { fill: none; stroke: var(--earth-5); stroke-width: .7; stroke-linecap: round; }
+.intro-svg .petiole { fill: none; stroke: var(--root); stroke-width: .9; }
+.intro-svg .pousse { fill: none; stroke: var(--vigne); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
+.intro-noms {
+  position: absolute; left: 0; right: 0; top: 50%;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  margin: 0; padding: 0 var(--gutter); list-style: none;
+  color: var(--on-dark); text-align: center;
+}
+/* Le nom s'écrit de gauche à droite derrière la pointe de la racine (--f, de 0 à 1, piloté par intro.js) */
+.intro-nom .mot {
+  --f: 0;
+  display: inline-block; font-size: clamp(.95rem, 2vw, 1.8rem); line-height: 1.1; letter-spacing: .12em; text-transform: uppercase;
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(var(--f) * (100% + 1.4em) - 1.4em), transparent calc(var(--f) * (100% + 1.4em)));
+  mask-image: linear-gradient(90deg, #000 calc(var(--f) * (100% + 1.4em) - 1.4em), transparent calc(var(--f) * (100% + 1.4em)));
+}
+.intro-nom--coufran .mot { font-family: var(--f-coufran); }
+.intro-nom--verdignan .mot { font-family: var(--f-verdignan); letter-spacing: .08em; }
+.intro-nom--soudars .mot { font-family: var(--f-soudars); letter-spacing: .05em; }
+.intro-nom small {
+  display: block; margin-top: 1.5em;
+  font-family: var(--f-mark); font-size: .62rem; letter-spacing: .3em; color: var(--on-dark-mute);
+  opacity: 0; transform: translateY(6px); transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.intro-nom.is-ecrit small { opacity: 1; transform: none; }
+
+/* ---------- Vérification de l'âge : l'écran d'entrée, sur la photo de famille de 1931 ---------- */
+.age-gate {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center; padding: var(--gutter);
+  background: radial-gradient(120% 90% at 50% 100%, var(--earth-2), var(--earth-5) 70%);
+  color: var(--on-dark); text-align: center;
+  transition: opacity 1.2s var(--ease), visibility 1.2s;
+}
+.age-gate.is-gone { opacity: 0; visibility: hidden; }
+.entree-fond { position: absolute; inset: 0; overflow: hidden; }
+.entree-fond img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%;
+  filter: grayscale(1) brightness(.42) contrast(1.1);
+  transform: scale(1.12); transition: transform 16s cubic-bezier(.2, .6, .2, 1);
+}
+.age-gate.is-pret .entree-fond img { transform: scale(1); }
+.entree-fond::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(42% 34% at 50% 50%, rgba(var(--voile), .5), transparent),
+    radial-gradient(75% 65% at 50% 45%, transparent 30%, rgba(var(--voile), .8)),
+    linear-gradient(transparent 55%, rgba(var(--voile), .85));
+}
+.entree { position: relative; z-index: 1; }
+.entree > * { opacity: 0; transform: translateY(22px); transition: opacity 1.3s var(--ease), transform 1.3s var(--ease); }
+.age-gate.is-pret .entree > * { opacity: 1; transform: none; }
+.entree > :nth-child(2) { transition-delay: .15s; }
+.entree > :nth-child(3) { transition-delay: .25s; }
+.entree > :nth-child(4) { transition-delay: .4s; }
+.entree > :nth-child(n+5) { transition-delay: .55s; }
+.entree .wordmark { width: min(480px, 76vw); margin-bottom: 2.4rem; color: var(--or); }
+.age-gate p { max-width: 34em; margin: 0 auto 1.6rem; color: var(--on-dark-mute); }
+.age-gate .choix { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; margin-top: 1.8rem; }
+/* Boutons au contour ovale tracé à la main, comme « Enter experience » */
+.age-gate .btn { position: relative; border: 0; border-radius: 0; padding: 1.25em 2.1em; background: none; color: var(--on-dark); }
+.age-gate .btn::before, .age-gate .btn::after {
+  content: ""; position: absolute; inset: -3px -8px; pointer-events: none;
+  border: 1px solid var(--root); border-radius: 48% 52% 46% 54% / 58% 44% 56% 42%;
+  transition: transform .9s var(--ease), border-color .5s;
+}
+.age-gate .btn::after { inset: 2px -3px; opacity: .45; border-radius: 55% 45% 52% 48% / 44% 58% 42% 56%; transform: rotate(-1.6deg); }
+.age-gate .btn--plein::before { border-color: var(--sap); }
+.age-gate .btn:hover { background: none; }
+.age-gate .btn:hover > span { color: var(--sap); }
+.age-gate .btn:hover::before { transform: rotate(1.6deg) scale(1.04); }
+.age-gate .btn:hover::after { transform: rotate(.8deg) scale(.97); }
+.age-gate .refus { margin-top: 1.4rem; font-family: var(--f-ui); font-size: .78rem; letter-spacing: .08em; background: none; border: 0; color: var(--on-dark-mute); text-decoration: underline; cursor: pointer; }
+.age-gate .mention { margin-top: 2.6rem; font-family: var(--f-ui); font-size: .72rem; letter-spacing: .06em; color: var(--on-dark-mute); }
+.age-gate .refus-message { display: none; margin-top: 1rem; color: var(--sap); }
+.age-gate.is-refused .refus-message { display: block; }
+
+/* ---------- Vignettes gravées (silhouettes des châteaux) ---------- */
+.vignette svg { width: 100%; height: auto; overflow: visible; }
+.vignette .trait {
+  fill: none; stroke: currentColor; stroke-width: 1.25; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.6s var(--ease);
+}
+.vignette .trait.leger { stroke-width: .8; opacity: .55; }
+.vignette .trait.plein { fill: currentColor; fill-opacity: 0; transition: stroke-dashoffset 2.6s var(--ease), fill-opacity 1.2s 1.8s; }
+.is-drawn .vignette .trait, .vignette.is-drawn .trait { stroke-dashoffset: 0; }
+.is-drawn .vignette .trait.plein, .vignette.is-drawn .trait.plein { fill-opacity: .9; }
+
+/* ---------- Révélations au défilement ---------- */
+[data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 1.2s var(--ease), transform 1.2s var(--ease); }
+[data-reveal].is-in { opacity: 1; transform: none; }
+[data-reveal="image"] { opacity: 1; transform: none; clip-path: inset(12% 8% 12% 8%); transition: clip-path 1.6s var(--ease); }
+[data-reveal="image"].is-in { clip-path: inset(0 0 0 0); }
+[data-reveal="image"] img { transform: scale(1.12); transition: transform 2.2s var(--ease); }
+[data-reveal="image"].is-in img { transform: scale(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-reveal], [data-reveal="image"] { opacity: 1; transform: none; clip-path: none; }
+  .vignette .trait { stroke-dashoffset: 0; }
+}
+
+/* =========================================================
+   ACCUEIL
+   ========================================================= */
+
+/* --- La surface --- */
+.surface {
+  position: relative; min-height: max(100svh, 680px);
+  display: grid; grid-template-rows: 1fr auto;
+  padding: 120px var(--gutter) 0;
+  background:
+    radial-gradient(60% 45% at 50% 92%, rgba(var(--lueur), .05), transparent 70%),
+    linear-gradient(180deg, var(--paper-2) 0%, var(--paper) 50%);
+  overflow: hidden;
+}
+.surface-titre { text-align: center; align-self: center; max-width: 1100px; margin: 0 auto; }
+.surface-titre .overline { color: var(--mute); margin-bottom: 1.6rem; display: block; }
+.surface-titre h1 { font-size: clamp(3rem, 8.4vw, 7.4rem); font-weight: 300; }
+.surface-titre h1 em { font-weight: 300; color: var(--vigne); }
+.surface-titre .sous { margin-top: 1.4rem; color: var(--mute); font-size: 1.05em; }
+
+.horizon {
+  position: relative; display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, 3vw, 48px); align-items: end;
+  max-width: 1180px; width: 100%; margin: 4vh auto 0;
+}
+.horizon::after {
+  content: ""; position: absolute; left: calc(-1 * var(--gutter) - 50vw); right: calc(-1 * var(--gutter) - 50vw); bottom: 0;
+  height: 1.5px; background: var(--ink); opacity: .85;
+}
+.porte {
+  position: relative; display: block; text-decoration: none; color: var(--ink);
+  text-align: center; padding: 0 2% 0;
+  transition: transform .8s var(--ease);
+}
+.porte:hover { transform: translateY(-6px); }
+.porte .vignette { color: var(--ink); }
+.porte .nom {
+  display: block; margin: 0 0 1rem;
+  font-size: clamp(.95rem, 1.8vw, 1.5rem); letter-spacing: .12em; text-transform: uppercase;
+}
+.porte .nom small { display: block; font-family: var(--f-mark); font-size: .62rem; letter-spacing: .3em; color: var(--mute); margin-top: .35em; }
+.porte--coufran .nom { font-family: var(--f-coufran); color: var(--coufran-encre); }
+.porte--verdignan .nom { font-family: var(--f-verdignan); color: var(--verdignan-encre); letter-spacing: .08em; }
+.porte--soudars .nom { font-family: var(--f-soudars); color: var(--soudars-encre); letter-spacing: .04em; text-transform: none; }
+.porte .vignette .trait:first-child { display: none; }
+.porte .entrer {
+  position: absolute; left: 50%; top: -34px; transform: translate(-50%, 8px);
+  font-family: var(--f-ui); font-size: .66rem; letter-spacing: .24em; text-transform: uppercase;
+  opacity: 0; transition: opacity .6s, transform .6s var(--ease); white-space: nowrap;
+}
+.porte:hover .entrer, .seve-arrivee .porte .entrer { opacity: .9; transform: translate(-50%, 0); }
+.seve-arrivee .porte .vignette { filter: drop-shadow(0 0 14px rgba(var(--lueur), .75)); transition: filter 1.5s; }
+
+/* --- La descente --- */
+.descente {
+  position: relative; color: var(--on-dark);
+  background: linear-gradient(180deg,
+    var(--earth-1) 0%, var(--earth-2) 9%, var(--earth-3) 32%,
+    var(--earth-4) 64%, var(--earth-5) 100%);
+  padding-bottom: 12vh;
+  isolation: isolate;
+}
+.racines-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.racines-svg .strate { fill: none; stroke: rgba(var(--clair), .07); stroke-width: 1; }
+.racines-svg .strate-label { font-family: "Cinzel", serif; font-size: 10px; letter-spacing: .3em; fill: rgba(var(--clair), .26); text-transform: uppercase; }
+.racines-svg .galet { fill: rgba(var(--clair), .045); stroke: rgba(var(--clair), .07); stroke-width: .6; }
+.racines-svg .fossile { fill: none; stroke: rgba(var(--clair), .12); stroke-width: .8; }
+.racines-svg .racine { fill: var(--root); }
+.racines-svg .racine.fine { fill: var(--root-2); }
+.racines-svg .noeud circle.coeur { fill: var(--earth-4); stroke: var(--sap); stroke-width: 1.5; }
+.racines-svg .noeud circle.halo { fill: url(#halo); opacity: 0; transition: opacity 1.4s; }
+.racines-svg .noeud text { font-family: "Cinzel", serif; font-size: 15px; letter-spacing: .18em; font-weight: 500; fill: var(--sap); opacity: 0; transition: opacity 1.2s; }
+.racines-svg .noeud.is-lit circle.halo { opacity: .9; }
+.racines-svg .noeud.is-lit text { opacity: 1; }
+.racines-svg .pointe { fill: url(#halo); }
+.racines-svg .pointe-coeur { fill: #fbe7dd; }
+.racines-svg .seve { fill: var(--sap); }
+
+.descente-intro {
+  position: relative; z-index: 1; text-align: center;
+  max-width: 900px; margin: 0 auto; padding: 18vh var(--gutter) 22vh;
+}
+.descente-intro p { font-size: clamp(1.35rem, 2.6vw, 2.15rem); line-height: 1.32; font-weight: 300; margin-bottom: .8em; }
+.descente-intro p strong { font-weight: 500; color: var(--sap); }
+.descente-intro .indice { margin-top: 3rem; font-family: var(--f-ui); font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--on-dark-mute); }
+.descente-intro .indice::after {
+  content: ""; display: block; width: 1px; height: 64px; margin: 18px auto 0;
+  background: linear-gradient(var(--sap), transparent);
+  animation: indice 2.4s var(--ease) infinite;
+  transform-origin: top;
+}
+@keyframes indice { 0% { transform: scaleY(0); } 60% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* --- Les actes --- */
+.acte {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(12, 1fr); column-gap: clamp(12px, 2vw, 32px);
+  align-items: center;
+  max-width: 1320px; margin: 0 auto; padding: 18vh var(--gutter);
+  min-height: 100svh;
+}
+.acte .annee-fond {
+  position: absolute; z-index: -1; top: 50%; transform: translateY(-50%);
+  font-family: var(--f-mark); font-weight: 400; line-height: .8;
+  font-size: clamp(7rem, 22vw, 20rem); letter-spacing: -.02em;
+  color: transparent; -webkit-text-stroke: 1px rgba(var(--lueur), .14);
+  pointer-events: none; user-select: none; white-space: nowrap;
+}
+.acte--gauche .annee-fond { right: 2vw; }
+.acte--droite .annee-fond { left: 2vw; }
+.acte-texte {
+  position: relative; padding: clamp(18px, 3vw, 40px);
+  background: linear-gradient(180deg, rgba(var(--voile), .62), rgba(var(--voile), .38));
+  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+  border-left: 1px solid rgba(var(--lueur), .25);
+}
+.acte--gauche .acte-texte { grid-column: 1 / span 5; }
+.acte--gauche .acte-media { grid-column: 7 / span 6; }
+.acte--droite .acte-texte { grid-column: 8 / span 5; order: 2; }
+.acte--droite .acte-media { grid-column: 1 / span 6; order: 1; }
+.acte-texte .overline { color: var(--sap); display: block; margin-bottom: 1.4rem; }
+.acte-texte h2 { font-size: clamp(2.4rem, 4.6vw, 4.4rem); margin-bottom: 1.6rem; }
+.acte-texte h2 em { color: var(--sap); }
+.acte-texte p { color: var(--on-dark-texte); }
+.acte-texte blockquote {
+  margin: 1.8rem 0 0; padding: 0;
+  font-size: 1.3em; line-height: 1.35; font-style: italic; color: var(--on-dark);
+}
+.acte-texte blockquote cite { display: block; margin-top: .7rem; font-style: normal; font-family: var(--f-ui); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--on-dark-mute); }
+.chiffres { display: flex; flex-wrap: wrap; gap: 26px 40px; margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid rgba(var(--lueur), .18); }
+.chiffres div { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--on-dark-mute); }
+.chiffres strong { display: block; font-family: var(--f-serif); font-size: 2.3rem; font-weight: 300; letter-spacing: 0; text-transform: none; color: var(--on-dark); line-height: 1.1; }
+
+.acte-media { position: relative; }
+.cadre { position: relative; overflow: hidden; background: #000; }
+.cadre img { width: 100%; height: 100%; object-fit: cover; }
+.cadre--archive img { filter: grayscale(1) contrast(1.06) brightness(.95); }
+.cadre--sombre img { filter: saturate(.85) brightness(.88); }
+.legende { margin-top: .8rem; font-family: var(--f-ui); font-size: .7rem; letter-spacing: .08em; color: var(--on-dark-mute); }
+.media-duo { display: grid; grid-template-columns: 1.15fr .85fr; gap: 14px; align-items: end; }
+.media-duo .cadre:nth-child(2) { margin-bottom: -8vh; }
+
+/* Sceau (acte 1793) */
+.sceau { width: min(420px, 80vw); margin: 0 auto; color: var(--sap); }
+.sceau svg { width: 100%; height: auto; overflow: visible; }
+.sceau .tourne { transform-origin: 160px 160px; animation: tourne 80s linear infinite; }
+@keyframes tourne { to { transform: rotate(360deg); } }
+
+/* Finale : la racine */
+.finale { position: relative; z-index: 1; text-align: center; max-width: 900px; margin: 0 auto; padding: 22vh var(--gutter) 10vh; }
+.finale h2 { font-size: clamp(2.4rem, 5.6vw, 5rem); margin-bottom: 2.2rem; }
+.finale h2 em { color: var(--sap); }
+.finale .greffe { font-size: 1.25em; line-height: 1.5; color: var(--on-dark-texte); max-width: 34em; margin: 0 auto 2.4rem; }
+.finale .greffe strong { color: var(--on-dark); font-weight: 500; }
+.finale .seve-titre { font-size: clamp(1.6rem, 3vw, 2.4rem); font-style: italic; color: var(--sap); margin: 4rem 0 1.8rem; }
+
+/* Jauge de profondeur */
+.profondeur {
+  position: fixed; right: calc(var(--gutter) * .6); top: 50%; z-index: 40;
+  transform: translate(20px, -50%); opacity: 0; pointer-events: none;
+  transition: opacity .6s, transform .6s var(--ease);
+  color: var(--on-dark);
+}
+.profondeur.is-visible { opacity: 1; transform: translate(0, -50%); pointer-events: auto; }
+.profondeur ol { list-style: none; margin: 0; padding: 0 0 0 16px; border-left: 1px solid rgba(var(--lueur), .3); display: grid; gap: 18px; }
+.profondeur button {
+  display: block; background: none; border: 0; padding: 0; cursor: pointer; text-align: left;
+  font-family: var(--f-mark); font-size: .66rem; letter-spacing: .22em; color: var(--on-dark-mute);
+  position: relative; transition: color .4s;
+}
+.profondeur button::before {
+  content: ""; position: absolute; left: -20.5px; top: 50%; width: 8px; height: 8px; margin-top: -4px;
+  border-radius: 50%; background: var(--earth-4); border: 1px solid rgba(var(--lueur), .5); transition: background .4s, transform .4s;
+}
+.profondeur button.is-active { color: var(--sap); }
+.profondeur button.is-active::before { background: var(--sap); transform: scale(1.3); }
+.profondeur .titre { font-family: var(--f-ui); font-size: .6rem; letter-spacing: .26em; text-transform: uppercase; color: var(--on-dark-mute); margin: 0 0 14px 16px; }
+@media (max-width: 860px) { .profondeur { display: none; } }
+
+/* --- L'Enquête : la campagne phare, juste avant les châteaux --- */
+.enquete {
+  position: relative; overflow: hidden;
+  padding: 18vh var(--gutter) 16vh;
+  background: radial-gradient(70% 40% at 50% 0%, rgba(var(--lueur), .14), transparent 70%), #050505;
+  color: var(--on-dark);
+}
+.enquete > div { max-width: 1240px; margin-left: auto; margin-right: auto; }
+.enquete-entete { text-align: center; margin-bottom: 12vh; }
+.tampon {
+  display: inline-block; margin-bottom: 2.4rem; padding: .6em 1.2em;
+  border: 1.5px solid var(--vigne); color: var(--vigne); transform: rotate(-4deg);
+  font-family: var(--f-ui); font-weight: 500; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase;
+}
+.enquete-entete .overline { display: block; color: var(--on-dark-mute); margin-bottom: 1.4rem; }
+.enquete-entete h2 { font-size: clamp(3.6rem, 11vw, 10rem); line-height: .92; letter-spacing: -.02em; }
+.enquete-entete h2 em { color: var(--vigne); }
+.enquete-entete .accroche { margin: 2rem 0 0; font-family: var(--f-ui); font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; color: var(--on-dark-texte); }
+
+/* Le carnet d'Élie, sa page déchirée et les trois signatures */
+.enquete-prologue { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(32px, 7vw, 110px); align-items: center; margin-bottom: 18vh; }
+.carnet { position: relative; max-width: 440px; justify-self: center; }
+.carnet-page {
+  position: relative; padding: 46px 40px 26px; transform: rotate(-2.2deg);
+  background: #f2efe9; color: #1d1a17; box-shadow: 0 30px 60px rgba(0, 0, 0, .55);
+}
+.carnet-page::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(transparent 0 33px, rgba(0, 0, 0, .06) 33px 34px); pointer-events: none; }
+.carnet-lieu { font-family: var(--f-plume); font-size: 1.15rem; margin: 0 0 1rem; }
+.carnet-texte { position: relative; font-family: var(--f-plume); font-size: 1.02rem; line-height: 2.1; margin: 0; }
+.carnet-page .dechirure { position: absolute; left: 0; right: 0; top: 100%; width: 100%; height: 34px; fill: #f2efe9; }
+.carnet-signatures { display: flex; justify-content: space-around; margin-top: 66px; transform: rotate(-2.2deg); }
+.carnet-signatures span { font-family: var(--f-signature); font-size: clamp(2.6rem, 4vw, 3.4rem); line-height: 1; }
+.carnet-signatures span:nth-child(1) { color: var(--coufran); }
+.carnet-signatures span:nth-child(2) { color: #7f97ff; }
+.carnet-signatures span:nth-child(3) { color: var(--soudars); }
+.carnet figcaption { margin-top: 1.6rem; text-align: center; font-family: var(--f-ui); font-size: .7rem; letter-spacing: .08em; color: var(--on-dark-mute); }
+.prologue-texte p { color: var(--on-dark-texte); }
+.prologue-texte .lead { color: var(--on-dark); }
+.mot-lovely { margin-top: 2.4rem; padding-left: 1.4rem; border-left: 1px solid var(--vigne); font-size: 1.35em; font-style: italic; line-height: 1.35; color: var(--on-dark) !important; }
+.mot-lovely span { display: block; margin-top: .8rem; font-style: normal; font-family: var(--f-ui); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--on-dark-mute); }
+
+.enquete-sous-titre { text-align: center; margin-bottom: 6vh; font-family: var(--f-ui); font-weight: 500; font-size: .78rem; letter-spacing: .3em; text-transform: uppercase; color: var(--vigne); line-height: 1.4; }
+
+/* Les trois témoins, chacun dans la couleur et la police de son château */
+.temoins { margin-bottom: 18vh; }
+.temoins-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 26px); }
+.temoin { display: flex; flex-direction: column; padding: clamp(24px, 3vw, 40px); min-height: 100%; }
+.temoin .numero { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .26em; text-transform: uppercase; opacity: .7; }
+.temoin .qui { margin: 2.2rem 0 .3rem; font-family: var(--f-ui); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+.temoin h4 { margin: 0; font-weight: 400; font-size: clamp(2.4rem, 3.6vw, 3.6rem); line-height: 1; }
+.temoin .trait { margin: .6rem 0 1.6rem; font-size: 1.3em; }
+.temoin .portrait { font-size: .95em; opacity: .88; }
+.temoin blockquote { margin: auto 0 0; padding-top: 1.6rem; font-style: italic; font-size: 1.08em; line-height: 1.4; border-top: 1px solid currentColor; border-color: rgba(255, 255, 255, .16); }
+.lien-temoin { margin-top: 1.8rem; align-self: flex-start; font-family: var(--f-ui); font-weight: 500; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 5px; }
+.temoin--coufran { background: var(--coufran-fond); color: var(--coufran-texte); box-shadow: inset 0 3px 0 var(--coufran); }
+.temoin--coufran h4 { font-family: var(--f-coufran); text-transform: uppercase; letter-spacing: .06em; color: var(--coufran); }
+.temoin--coufran .trait em { font-family: var(--f-coufran); font-style: italic; color: var(--coufran); }
+.temoin--verdignan { background: var(--verdignan-fond); color: var(--verdignan-texte); box-shadow: inset 0 3px 0 var(--verdignan); }
+.temoin--verdignan h4 { font-family: var(--f-verdignan); text-transform: uppercase; letter-spacing: .03em; color: #7f97ff; }
+.temoin--verdignan .trait em { font-family: var(--f-verdignan-it); color: #7f97ff; }
+.temoin--soudars { background: var(--soudars-fond); color: var(--soudars-texte); box-shadow: inset 0 3px 0 var(--soudars); }
+.temoin--soudars h4 { font-family: var(--f-soudars); color: var(--soudars); }
+.temoin--soudars .trait em { font-family: "Bookman", serif; color: var(--soudars); }
+.temoin .lien-temoin:hover { opacity: .75; }
+
+/* Mener l'enquête */
+.enquete-regles { margin-bottom: 18vh; }
+.enquete-regles ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 60px); }
+.enquete-regles li { color: var(--on-dark-texte); }
+.enquete-regles .etape { display: block; font-family: var(--f-serif); font-weight: 300; font-size: clamp(3.4rem, 6vw, 5.2rem); line-height: 1; color: var(--vigne); margin-bottom: 1rem; }
+.enquete-regles strong { display: block; color: var(--on-dark); font-weight: 500; font-size: 1.2em; margin-bottom: .3rem; }
+.enquete-regles .duree { margin-top: 6vh; text-align: center; font-family: var(--f-ui); font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; color: var(--on-dark-mute); }
+
+/* Trois terrains d'enquête */
+.enquete-formats { margin-bottom: 18vh; }
+.formats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(var(--clair), .16); }
+.format { padding: 2.4rem clamp(16px, 2.4vw, 36px) 0; border-left: 1px solid rgba(var(--clair), .16); }
+.format:first-child { border-left: 0; padding-left: 0; }
+.format-num { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .24em; text-transform: uppercase; color: var(--vigne); }
+.format h4 { margin: 1rem 0 1rem; font-weight: 300; font-size: clamp(1.7rem, 2.4vw, 2.3rem); line-height: 1.1; }
+.format p { color: var(--on-dark-texte); font-size: .96em; }
+
+/* Ce que l'on gagne */
+.gains { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: clamp(14px, 2vw, 26px); align-items: stretch; }
+.gain { padding: clamp(24px, 3vw, 40px); border: 1px solid rgba(var(--clair), .18); }
+.gain .quand { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; color: var(--on-dark-mute); }
+.gain h4 { margin: 1.2rem 0 1rem; font-weight: 300; font-size: clamp(1.7rem, 2.4vw, 2.4rem); line-height: 1.08; }
+.gain p { color: var(--on-dark-texte); font-size: .96em; margin: 0; }
+.gain--grand { background: var(--vigne); border-color: var(--vigne); }
+.gain--grand .quand, .gain--grand p { color: rgba(255, 255, 255, .86); }
+
+.enquete-cta { margin-top: 12vh; text-align: center; }
+.enquete-cta .btn { font-size: .86rem; padding: 1.3em 2.4em; }
+.mention-jeu { max-width: 44em; margin: 2.6rem auto 0; font-family: var(--f-ui); font-size: .7rem; line-height: 1.6; letter-spacing: .02em; color: var(--on-dark-mute); }
+
+@media (max-width: 900px) {
+  .enquete-prologue, .temoins-grille, .enquete-regles ol, .formats, .gains { grid-template-columns: 1fr; }
+  .format, .format:first-child { border-left: 0; padding-left: 0; padding-right: 0; }
+  .format + .format { border-top: 1px solid rgba(var(--clair), .16); margin-top: 2.4rem; }
+  .carnet-page { padding: 34px 26px 20px; }
+}
+
+/* --- Les trois greffons (portes) --- */
+.greffons { background: var(--earth-5); color: var(--on-dark); padding: 16vh var(--gutter); }
+.greffons .entete { text-align: center; max-width: 760px; margin: 0 auto 8vh; }
+.greffons .entete .overline { color: var(--sap); display: block; margin-bottom: 1.2rem; }
+.greffons .entete h2 { font-size: clamp(2.2rem, 4.4vw, 3.8rem); }
+.cartes { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 28px); max-width: 1320px; margin: 0 auto; }
+.carte {
+  position: relative; display: flex; flex-direction: column; text-decoration: none;
+  padding: clamp(22px, 3vw, 40px); min-height: 560px; overflow: hidden;
+  transition: transform .8s var(--ease);
+}
+.carte:hover { transform: translateY(-8px); }
+.carte .vignette { width: 78%; margin: 0 auto 2rem; }
+.carte .nom { font-size: clamp(2rem, 3.2vw, 3rem); line-height: 1; margin-bottom: .6rem; }
+.carte .devise { font-style: italic; font-size: 1.15em; margin-bottom: 1.4rem; }
+.carte .meta { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; opacity: .75; margin-top: auto; }
+.carte .fleche { font-family: var(--f-ui); font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; margin-top: 1.2rem; }
+.carte strong { font-weight: 600; }
+.carte--coufran { background: var(--coufran-fond); color: var(--coufran-texte); box-shadow: inset 0 3px 0 var(--coufran); }
+.carte--coufran .nom { font-family: var(--f-coufran); letter-spacing: .08em; text-transform: uppercase; color: var(--coufran); }
+.carte--verdignan { background: var(--verdignan-fond); color: var(--verdignan-texte); box-shadow: inset 0 3px 0 var(--verdignan); }
+.carte--verdignan .nom { font-family: var(--f-verdignan); text-transform: uppercase; letter-spacing: .04em; color: #7f97ff; }
+.carte--soudars { background: var(--soudars-fond); color: var(--soudars-texte); box-shadow: inset 0 3px 0 var(--soudars); }
+.carte--soudars .nom { font-family: var(--f-soudars); color: var(--soudars); }
+.carte .vignette { color: currentColor; opacity: .85; }
+.greffons .entete h2 em { color: var(--sap); }
+.greffons .sous-entete { margin: 1.4rem auto 0; max-width: 34em; color: var(--on-dark-texte); }
+
+/* --- Visiter --- */
+.visiter { background: var(--paper); color: var(--ink); padding: 16vh var(--gutter); }
+.visiter-grille { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 96px); max-width: 1240px; margin: 0 auto; align-items: center; }
+.visiter h2 { font-size: clamp(2.2rem, 4.4vw, 3.8rem); margin: 1rem 0 1.6rem; }
+.visiter .overline { color: var(--mute); }
+.visiter ul { list-style: none; padding: 0; margin: 2rem 0; display: grid; gap: 1rem; }
+.visiter li { padding-left: 1.6rem; position: relative; }
+.visiter li::before { content: ""; position: absolute; left: 0; top: .75em; width: .8rem; height: 1px; background: var(--root-2); }
+.visiter .cadre { aspect-ratio: 4 / 5; }
+
+/* --- Pied de page --- */
+.site-footer { background: var(--earth-5); color: var(--on-dark-mute); padding: 12vh var(--gutter) 6vh; font-family: var(--f-ui); font-size: .82rem; letter-spacing: .02em; }
+.site-footer .haut { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; max-width: 1240px; margin: 0 auto; }
+.site-footer .wordmark { width: min(300px, 72vw); color: var(--or); margin-bottom: 1.6rem; }
+.site-footer h3 { font-family: var(--f-mark); font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: var(--on-dark); margin-bottom: 1rem; font-weight: 500; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--on-dark); }
+.site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.site-footer .bas { max-width: 1240px; margin: 8vh auto 0; padding-top: 2rem; border-top: 1px solid rgba(var(--lueur), .14); display: grid; gap: .8rem; font-size: .74rem; }
+.site-footer .sante { color: var(--on-dark); letter-spacing: .06em; }
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 860px) {
+  .horizon { gap: 4px; }
+  .porte .nom small { letter-spacing: .14em; }
+  .acte { display: block; min-height: auto; padding: 12vh var(--gutter); }
+  .acte-texte { margin-bottom: 28px; }
+  .acte .annee-fond { top: 8vh; transform: none; font-size: 30vw; }
+  .media-duo .cadre:nth-child(2) { margin-bottom: 0; }
+  .cartes { grid-template-columns: 1fr; }
+  .carte { min-height: 0; }
+  .visiter-grille { grid-template-columns: 1fr; }
+  .site-footer .haut { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .surface { padding-top: 104px; }
+  .porte .nom { font-size: .78rem; letter-spacing: .06em; }
+  .porte .nom small { font-size: .5rem; }
+  .site-footer .wordmark { width: 62vw; }
+  .intro-noms { padding: 0 10px; }
+  .intro-nom .mot { font-size: .8rem; letter-spacing: .06em; }
+}
+
+/* Mode capture (?capture) : tout est révélé d'emblée */
+.capture [data-reveal], .capture [data-reveal="image"] { opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important; }
+.capture [data-reveal="image"] img { transform: none !important; }
+.capture .vignette .trait { stroke-dashoffset: 0 !important; transition: none !important; }
+.capture .vignette .trait.plein { fill-opacity: .9 !important; }
+.capture .age-gate { display: none; }
+.capture body::after { display: none; }
+.capture .surface, .capture .acte { min-height: 900px; }
+/* en capture, la fenêtre est très haute : on remplace les unités vh par des valeurs fixes */
+.capture .descente-intro { padding: 160px var(--gutter) 200px; }
+.capture .acte { padding: 150px var(--gutter); }
+.capture .acte .annee-fond { top: 50%; }
+.capture .media-duo .cadre:nth-child(2) { margin-bottom: -70px; }
+.capture .finale { padding: 200px var(--gutter) 100px; }
+.capture .descente { padding-bottom: 110px; }
+.capture .greffons, .capture .visiter { padding: 140px var(--gutter); }
+.capture .enquete { padding: 160px var(--gutter) 140px; }
+.capture .enquete-entete, .capture .enquete-prologue, .capture .temoins, .capture .enquete-regles, .capture .enquete-formats { margin-bottom: 140px; }
+.capture .enquete-cta { margin-top: 110px; }
+.capture .enquete-sous-titre { margin-bottom: 50px; }
+.capture .greffons .entete { margin-bottom: 70px; }
+.capture .site-footer { padding: 110px var(--gutter) 50px; }
+.capture .site-footer .bas { margin-top: 70px; }
+.capture .horizon { margin-top: 40px; }
+.capture .profondeur { display: none; }
+.capture .racines-svg .noeud circle.halo, .capture .racines-svg .noeud text { transition: none; }

@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script src="assets/js/langue.js"></script><!-- la langue d'abord : la page est traduite avant d'être montrée -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enquête à la racine · MIAILHE</title>
+  <meta name="description" content="Neuf bouteilles ont disparu du chai. Six étapes, trois générations, trois châteaux : l'enquête de la famille Miailhe, à jouer en ligne.">
+  <link rel="stylesheet" href="assets/css/polices.css">
+  <link rel="stylesheet" href="assets/css/typographie.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/enquete.css">
+</head>
+<body class="page-enquete">
+
+  <!-- Âge légal (sans intro : on ne le redemande pas à qui l'a déjà confirmé sur la vitrine) -->
+  <div class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-titre">
+    <figure class="entree-fond"><img src="assets/img/enquete/chai-nuit.jpg" alt=""></figure>
+    <div class="entree">
+      <span class="wordmark" aria-label="MIAILHE"><span class="sr-only">MIAILHE</span></span>
+      <p id="age-titre">L'enquête de la famille Miailhe est réservée aux personnes ayant l'âge légal de consommer de l'alcool dans leur pays.</p>
+      <div class="choix">
+        <button class="btn btn--plein" type="button" data-entrer><span>J'ai l'âge légal, entrer</span></button>
+      </div>
+      <button class="refus" type="button">Je n'ai pas l'âge légal</button>
+      <p class="refus-message">Revenez nous voir plus tard. La vigne, elle, sait attendre.</p>
+      <p class="mention">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+      <ul class="langues langues--porte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </div>
+
+  <header class="site-header on-dark">
+    <div class="header-gauche">
+      <button class="ouvrir-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu"><span></span></button>
+    </div>
+    <a class="wordmark" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="MIAILHE, accueil"><span class="sr-only">MIAILHE</span></a>
+    <div class="header-droite">
+      <!-- La boutique et l'enquête en avant, puis l'espace client, le panier et la langue (source/entete.py ; espace.js) -->
+      <a class="entete-fort entete-fort--boutique" href="boutique.html" aria-label="La boutique de la famille : les vins des trois châteaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 2.6h3.6M10.7 2.6v4.5c0 .8-.4 1.3-1 1.9-.9.8-1.5 1.8-1.5 3.1v8.2c0 .6.5 1.1 1.1 1.1h5.4c.6 0 1.1-.5 1.1-1.1v-8.2c0-1.3-.6-2.3-1.5-3.1-.6-.6-1-1.1-1-1.9V2.6"/><path d="M8.2 13.4h7.6v4.4H8.2z"/></svg><span>La boutique</span></a>
+      <a class="entete-fort entete-fort--enquete" href="enquete.html" aria-current="page" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <a class="entete-icone entete-compte-lien" href="compte.html" data-compte aria-label="Mon espace client"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.3" r="3.8"/><path d="M4.6 20.4c.9-3.9 3.9-6 7.4-6s6.5 2.1 7.4 6"/></svg><span class="entete-initiale" data-compte-initiale translate="no" hidden></span></a>
+      <a class="entete-icone" href="boutique.html#panier" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 11.3a1.1 1.1 0 0 1-1.1 1H7.4a1.1 1.1 0 0 1-1.1-1L5.2 8.2z"/><path d="M9 10.4V6.6a3 3 0 0 1 6 0v3.8"/></svg><b class="entete-pastille" data-panier-compte translate="no" hidden>0</b></a>
+      <ul class="langues langues--compacte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </header>
+
+  <nav class="mainnav" id="menu-principal" aria-label="Menu principal" aria-hidden="true">
+    <div class="mainnav-contenu">
+      <div class="mainnav-enquete">
+        <p class="titre-3">L'enquête &nbsp;—&nbsp; <a class="lien-trait" href="enquete.html">Enquête à la racine</a></p>
+        <a class="couverture-enquete couverture-enquete--racine" href="enquete.html" aria-label="Ouvrir le dossier de l'enquête">
+          <span class="marque">Miailhe</span>
+          <span class="photo"><img src="assets/img/enquete/couverture-racines.jpg" alt="" loading="lazy"></span>
+          <span class="cachet">Dossier n° 1924-001</span>
+          <span class="loupe" aria-hidden="true"></span>
+          <span class="titre"><span>Enquête</span><br><span>à la racine</span></span>
+        </a>
+        <p class="mainnav-trimestre">Une nouvelle enquête chaque trimestre</p>
+      </div>
+      <div class="mainnav-menus">
+        <ul class="menu-principal">
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#accueil"><span>Nos châteaux<span class="num">I.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="coufran/index.html?porte"><span>Château Coufran</span></a></li>
+              <li><a href="verdignan/index.html?porte"><span>Château Verdignan</span></a></li>
+              <li><a href="soudars/index.html?porte"><span>Château Soudars</span></a></li>
+              <li><a href="quiz.html"><span>Quel château vous ressemble ?</span></a></li>
+              <li><a href="boutique.html"><span>La boutique des trois châteaux</span></a></li>
+              <li><a href="boutique.html#ou-trouver"><span>Où trouver nos vins</span></a></li>
+            </ul>
+          </li>
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#famille"><span>La famille<span class="num">II.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#famille"><span>Cinq générations</span></a></li>
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#racine"><span>Une même racine</span></a></li>
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#pret-a-boire"><span>Le prêt-à-boire</span></a></li>
+              <li><a href="blog/index.html"><span>Le blog de la famille</span></a></li>
+              <li><a href="identite.html"><span>Notre identité</span></a></li>
+            </ul>
+          </li>
+          <li><a href="enquete.html"><span>L'enquête<span class="num">III.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="enquete.html"><span>Ouvrir le dossier</span></a></li>
+              <li><a href="enquete.html#inscription"><span>S'inscrire</span></a></li>
+              <li class="sous-groupe"><span class="sous-label">Les témoins</span> <a href="coufran/index.html#temoin"><span>Coufran</span></a> <a href="verdignan/index.html#temoin"><span>Verdignan</span></a> <a href="soudars/index.html#temoin"><span>Soudars</span></a></li>
+              <li><a href="enquete.html#reglement"><span>Le règlement</span></a></li>
+            </ul>
+          </li>
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#visiter"><span>Visiter<span class="num">IV.</span></span></a>
+            <ul class="sous-menu">
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#visiter"><span>Venir à Saint-Seurin</span></a></li>
+              <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#contact"><span>Visites sur rendez-vous</span></a></li>
+              <li><a href="boutique.html?espace=pro"><span>Professionnels</span></a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="menu-second">
+          <li><a href="boutique.html"><span>La boutique</span></a></li>
+          <li><a href="boutique.html#panier"><span>Mon panier</span></a></li>
+          <li><a href="quiz.html"><span>Trouver mon château</span></a></li>
+          <li><a href="blog/index.html"><span>Le blog</span></a></li>
+          <li><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#contact"><span>Contact &amp; accès</span></a></li>
+        </ul>
+        <ul class="menu-third">
+          <li><nav class="reseaux" data-reseaux></nav></li>
+          <li><a href="compte.html"><span>Mon espace client</span></a></li>
+          <li><a href="boutique.html?espace=pro"><span>Espace professionnel</span></a></li>
+          <li><ul class="langues langues--menu" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="bureau" data-header="dark">
+
+    <!-- ============ Ouverture : le chai, la nuit ============ -->
+    <section class="ouverture" aria-labelledby="titre-enquete">
+      <figure class="ouverture-fond"><img src="assets/img/enquete/chai-nuit.jpg" alt=""></figure>
+      <div class="ouverture-texte">
+        <p class="ouverture-lieu">Saint-Seurin-de-Cadourne, octobre</p>
+        <p class="ouverture-phrase"><span>Des bouteilles</span> <span>ont disparu</span> <span>du chai.</span></p>
+      </div>
+      <button class="ouverture-suite" type="button" data-vers-livret>Ouvrir le dossier</button>
+    </section>
+
+    <!-- ============ Le livret : une étape par double page ============ -->
+    <section class="table" id="dossier" aria-label="Le dossier de l'enquête">
+      <div class="livret" data-planche="0">
+
+        <!-- 0 · La couverture -->
+        <article class="planche planche--couverture is-active" data-n="0" aria-labelledby="couv-titre">
+          <div class="page page--g couverture">
+            <img class="couverture-racines" src="assets/img/enquete/couverture-racines.jpg" alt="">
+            <div class="couverture-haut">
+              <span class="wordmark" aria-hidden="true"></span>
+              <p>Vignobles du Haut-Médoc</p>
+            </div>
+            <h1 id="couv-titre"><span>Enquête</span><span>à la racine</span></h1>
+            <p class="couverture-sous">L'enquête des trois châteaux<br>de la famille Miailhe</p>
+            <ul class="couverture-chateaux">
+              <li><span class="armoirie" data-armoirie="coufran"></span>Coufran<small>depuis 1924</small></li>
+              <li><span class="armoirie" data-armoirie="verdignan"></span>Verdignan<small>depuis 1976</small></li>
+              <li><span class="armoirie" data-armoirie="soudars"></span>Soudars<small>depuis 1980</small></li>
+            </ul>
+          </div>
+          <div class="page page--d lettre">
+            <p class="lettre-ref">Dossier n° 1924-001</p>
+            <span class="estampille estampille--rouge">Confidentiel</span>
+            <p class="lettre-a">À l'attention de l'enquêteur</p>
+            <div class="lettre-corps">
+              <p>Cher enquêteur,</p>
+              <p>Ce matin, au chai, l'inventaire ne tombe pas juste : des bouteilles manquent. Aucun signe d'effraction, aucune note pour expliquer leur départ.</p>
+              <p>Les registres semblent en ordre, mais certains détails ne collent pas.</p>
+              <p>Pour comprendre, vous allez interroger trois générations, examiner la vigne, percer le secret de l'assemblage et croiser les registres. <strong>Chaque étape vous donne une lettre.</strong> Les six lettres ouvrent le dernier dossier de l'affaire.</p>
+              <p>Votre mission : découvrir quelles bouteilles ont disparu, où elles sont parties, et pourquoi.</p>
+              <p>Bonne enquête.</p>
+            </div>
+            <div class="lettre-signe">
+              <p class="lettre-signature">La famille Miailhe</p>
+              <img class="lettre-croquis" src="assets/img/enquete/croquis-vigne.jpg" alt="">
+            </div>
+            <!-- L'inscription : avec un compte, la partie est sauvegardée et l'enquête résolue participe au tirage du trimestre ;
+                 sans compte, on joue tout de suite, mais rien n'est gardé. Maquette : rien n'est envoyé, le « compte » vit dans ce navigateur. -->
+            <div class="inscription" id="inscription">
+              <p class="inscription-titre">Enquêteur chargé du dossier</p>
+              <div class="inscription-choix" role="radiogroup" aria-label="Comment voulez-vous enquêter ?">
+                <label><input type="radio" name="mode" value="inscrit" checked> <span>Avec inscription</span></label>
+                <label><input type="radio" name="mode" value="invite"> <span>Sans inscription</span></label>
+              </div>
+              <form class="inscription-form" data-commencer novalidate>
+                <div class="inscription-champs">
+                  <label class="champ"><span>Prénom</span><input id="nom-enqueteur" name="nom" type="text" maxlength="40" autocomplete="given-name" required></label>
+                  <label class="champ" data-si-inscrit><span>E-mail</span><input name="mail" type="email" autocomplete="email" required></label>
+                </div>
+                <ul class="inscription-atouts" data-si-inscrit>
+                  <li>Votre progression est sauvegardée : reprenez l'enquête quand vous voulez.</li>
+                  <li>Affaire résolue : vous participez au tirage au sort du trimestre, <strong>une bouteille offerte</strong> à l'un des enquêteurs.</li>
+                  <li><strong>Une nouvelle enquête chaque trimestre</strong>, et vous êtes prévenu le premier.</li>
+                </ul>
+                <p class="inscription-invite" data-si-invite hidden>Sans inscription, vous jouez tout de suite, mais <strong>rien n'est sauvegardé</strong> : si vous fermez la page, l'enquête recommence. Vous pourrez vous inscrire à la fin pour participer au tirage.</p>
+                <label class="accord" data-si-inscrit><input type="checkbox" name="reglement" required> <span>J'ai 18 ans ou plus et j'accepte le <a href="#reglement">règlement du jeu</a>.</span></label>
+                <label class="accord" data-si-inscrit><input type="checkbox" name="nouvelles"> <span>Je veux recevoir la prochaine enquête et les nouvelles de la famille par e-mail (facultatif, désinscription en un clic).</span></label>
+                <p class="retour" role="status" aria-live="polite"></p>
+                <button class="bouton-dossier" type="submit" data-libelle-inscrit="M'inscrire et commencer" data-libelle-invite="Commencer sans m'inscrire">M'inscrire et commencer</button>
+              </form>
+              <details class="reprendre">
+                <summary>Déjà inscrit ? Reprendre ma partie</summary>
+                <form class="reprendre-form" data-reprise novalidate>
+                  <label class="champ"><span>Votre e-mail d'inscription</span><input name="mail" type="email" autocomplete="email" required></label>
+                  <button class="bouton-dossier bouton-dossier--clair" type="submit">Reprendre</button>
+                  <p class="retour" role="status" aria-live="polite"></p>
+                </form>
+              </details>
+              <p class="lettre-note">Dix à quinze minutes, sur téléphone ou ordinateur. Des indices se cachent aussi sur les sites des trois châteaux.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 1 · L'ouverture de l'affaire : l'inventaire attend douze Soudars 2018, le casier n'en garde qu'une rangée -->
+        <article class="planche" data-n="1" data-lettre="F" aria-labelledby="t1">
+          <div class="page page--g">
+            <p class="etape-num">Étape 1</p>
+            <h2 id="t1">L'ouverture de l'affaire</h2>
+            <p class="etape-sous">Les bouteilles disparues</p>
+            <div class="consigne"><span class="i" aria-hidden="true">i</span><p><strong>Objectif :</strong> identifier les informations manquantes pour comprendre ce qui a disparu.<br><strong>Mécanique :</strong> observation et déduction.</p></div>
+            <figure class="piece piece--photo">
+              <span class="piece-tampon">Pièce à conviction n° 1</span>
+              <img src="assets/img/enquete/casier.jpg" alt="Le casier du chai">
+              <figcaption class="post-it">Tout ce qui manque n'a pas disparu. Et ce qui a disparu ne laisse pas toujours de trou.</figcaption>
+            </figure>
+            <div class="inventaire">
+              <p class="fiche-prod-titre">Bouteilles attendues · inventaire du 1er octobre</p>
+              <table>
+                <tbody>
+                  <tr><td>Coufran 2005</td><td>6</td></tr>
+                  <tr><td>Coufran 2016</td><td>6</td></tr>
+                  <tr><td>Verdignan 2000</td><td>6</td></tr>
+                  <tr><td>Verdignan 2010</td><td>6</td></tr>
+                  <tr><td>Soudars 2016</td><td>6</td></tr>
+                  <tr><td>Soudars 2018</td><td>12</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="folio">1</p>
+          </div>
+          <div class="page page--d">
+            <p class="sous-titre">Le casier, ce matin</p>
+            <div class="casier" aria-label="Le casier : chaque rangée porte une étiquette à la craie">
+              <div class="rang"><span class="ardoise">Coufran 2005</span><i></i><i></i><i></i><i></i><i></i><i></i><span class="sr-only">complet</span></div>
+              <div class="rang"><span class="ardoise">Coufran 2016</span><i></i><i></i><i></i><i></i><i></i><b></b><span class="craie">1 → boutique, le 3</span><span class="sr-only">1 bouteille manquante</span></div>
+              <div class="rang"><span class="ardoise">Verdignan 2000</span><i></i><i></i><i></i><i></i><i></i><i></i><span class="sr-only">complet</span></div>
+              <div class="rang"><span class="ardoise">Verdignan 2010</span><i></i><i></i><i></i><i></i><b></b><b></b><span class="craie">2 → salon des vins, le 4</span><span class="sr-only">2 bouteilles manquantes</span></div>
+              <div class="rang"><span class="ardoise">Soudars 2016</span><i></i><i></i><i></i><i></i><i></i><i></i><span class="sr-only">complet</span></div>
+              <div class="rang"><span class="ardoise">Soudars 2018</span><i></i><i></i><i></i><i></i><i></i><i></i><span class="sr-only">complet</span></div>
+            </div>
+            <form class="enigme" data-enigme="1">
+              <p class="sous-titre">Le signalement</p>
+              <p class="fiche-ligne">Complétez ce qui manque au signalement.</p>
+              <div class="champs">
+                <label>Château<select name="chateau"><option value="">····</option><option value="coufran">Coufran</option><option value="verdignan">Verdignan</option><option value="soudars">Soudars</option></select></label>
+                <label>Millésime<select name="millesime"><option value="">····</option><option value="2000">2000</option><option value="2005">2005</option><option value="2010">2010</option><option value="2016">2016</option><option value="2018">2018</option></select></label>
+                <label>Bouteilles disparues<input name="total" inputmode="numeric" maxlength="2" placeholder="··"></label>
+              </div>
+              <p class="retour" role="status" aria-live="polite"></p>
+              <button class="bouton-dossier" type="submit">Valider le signalement</button>
+            </form>
+            <div class="indices" data-indices="1"><button class="indices-bouton" type="button">Un indice ?</button><ol class="indices-liste"><li hidden><span class="indices-niveau">Indice 1 · difficile</span><p>Le casier ne montre que ce qui reste. Une bouteille qui manque laisse un trou ; une rangée entière qui disparaît n'en laisse aucun.</p></li><li hidden><span class="indices-niveau">Indice 2 · plus facile</span><p>Comparez l'inventaire du 1er octobre et le casier, vin par vin. Les trous notés à la craie sont expliqués : ces bouteilles sont parties à la boutique et au salon. Cherchez le vin dont il manque des bouteilles sans aucun trou.</p></li><li hidden><span class="indices-niveau">Indice 3 · très facile</span><p>L'inventaire attend douze Soudars 2018 ; le casier n'en garde qu'une rangée de six. Six bouteilles de Soudars 2018 ont disparu.</p></li></ol></div>
+            <div class="lettre-gagnee" hidden><span>F</span><p>Sur l'ardoise de la rangée Soudars 2018, quelqu'un a ajouté une lettre à la craie : <strong>F</strong>.</p><button class="bouton-dossier" type="button" data-suivant>Étape suivante</button></div>
+            <p class="folio">2</p>
+          </div>
+        </article>
+
+        <!-- 2 · Les témoins de l'histoire : l'arbre de la famille -->
+        <article class="planche" data-n="2" data-lettre="R" aria-labelledby="t2">
+          <div class="page page--g">
+            <p class="etape-num">Étape 2</p>
+            <h2 id="t2">Les témoins de l'histoire</h2>
+            <p class="etape-sous">Trois générations, trois châteaux</p>
+            <div class="consigne"><span class="i" aria-hidden="true">i</span><p><strong>Objectif :</strong> relier les dates, les personnes et les événements pour reconstituer l'arbre de la famille.<br><strong>Mécanique :</strong> chronologie et arbre généalogique.</p></div>
+            <div class="portraits">
+              <figure><img src="assets/img/enquete/portrait-louis.jpg" alt="Portrait de Louis Miailhe"><figcaption><strong>Louis</strong>1892 – 1982<small>le grand-père</small></figcaption></figure>
+              <figure><img src="assets/img/enquete/portrait-jean.jpg" alt="Portrait de Jean Miailhe"><figcaption><strong>Jean</strong>1925 – 2009<small>le père</small></figcaption></figure>
+              <figure><img src="assets/img/enquete/portrait-eric.jpg" alt="Portrait d'Éric Miailhe"><figcaption><strong>Éric</strong>né en 1950<small>le fils</small></figcaption></figure>
+            </div>
+            <p class="mention-portraits">Portraits d'illustration</p>
+            <p class="folio">3</p>
+          </div>
+          <div class="page page--d">
+            <p class="sous-titre">Ce que disent les archives</p>
+            <ol class="archives">
+              <li>« Le premier château est entré dans la famille quand son acquéreur avait trente-deux ans. »</li>
+              <li>« Le père a acheté le voisin du château du grand-père. »</li>
+              <li>« Le fils n'a rien acheté de bâti : il a créé son vignoble sur quinze hectares de friches pleines de pierres, quatre ans après l'achat de son père. »</li>
+            </ol>
+            <form class="enigme arbre-famille" data-enigme="2">
+              <p class="sous-titre">L'arbre de la famille</p>
+              <ol class="generations">
+                <li class="generation"><p class="generation-qui"><strong>Louis</strong> le grand-père</p><select name="a-louis" aria-label="L'année de Louis"><option value="">Quelle année ?</option><option value="1924">1924</option><option value="1976">1976</option><option value="1980">1980</option></select><select name="c-louis" aria-label="Le château de Louis"><option value="">Quel château ?</option><option value="Coufran">Coufran</option><option value="Verdignan">Verdignan</option><option value="Soudars">Soudars</option></select></li>
+                <li class="generation"><p class="generation-qui"><strong>Jean</strong> le père</p><select name="a-jean" aria-label="L'année de Jean"><option value="">Quelle année ?</option><option value="1924">1924</option><option value="1976">1976</option><option value="1980">1980</option></select><select name="c-jean" aria-label="Le château de Jean"><option value="">Quel château ?</option><option value="Coufran">Coufran</option><option value="Verdignan">Verdignan</option><option value="Soudars">Soudars</option></select></li>
+                <li class="generation"><p class="generation-qui"><strong>Éric</strong> le fils</p><select name="a-eric" aria-label="L'année d'Éric"><option value="">Quelle année ?</option><option value="1924">1924</option><option value="1976">1976</option><option value="1980">1980</option></select><select name="c-eric" aria-label="Le château d'Éric"><option value="">Quel château ?</option><option value="Coufran">Coufran</option><option value="Verdignan">Verdignan</option><option value="Soudars">Soudars</option></select></li>
+                <li class="generation generation--suite"><p class="generation-qui"><strong>Lovely</strong> la fille d'Éric</p><p class="generation-note">rejoint son père en 2006</p></li>
+              </ol>
+              <p class="retour" role="status" aria-live="polite"></p>
+              <button class="bouton-dossier" type="submit">Compléter l'arbre</button>
+            </form>
+            <div class="indices" data-indices="2"><button class="indices-bouton" type="button">Un indice ?</button><ol class="indices-liste"><li hidden><span class="indices-niveau">Indice 1 · difficile</span><p>Sous les portraits, les dates ne sont pas là pour décorer : elles permettent de vérifier la première archive.</p></li><li hidden><span class="indices-niveau">Indice 2 · plus facile</span><p>Louis est né en 1892 : à trente-deux ans, nous sommes en 1924. Pour les châteaux, relisez la couverture du dossier, ou la page « La famille » de chaque site.</p></li><li hidden><span class="indices-niveau">Indice 3 · très facile</span><p>Louis : 1924, Coufran. Jean : 1976, Verdignan, le voisin de Coufran. Éric : 1980, Soudars, planté sur quinze hectares de friches.</p></li></ol><p class="liens">Les pages « La famille » : <a href="coufran/famille.html" target="_blank" rel="noopener">Coufran</a> · <a href="verdignan/famille.html" target="_blank" rel="noopener">Verdignan</a> · <a href="soudars/famille.html" target="_blank" rel="noopener">Soudars</a></p></div>
+            <div class="lettre-gagnee" hidden><span>R</span><p>Au dos du portrait d'Éric, une lettre au crayon : <strong>R</strong>.</p><button class="bouton-dossier" type="button" data-suivant>Étape suivante</button></div>
+            <p class="folio">4</p>
+          </div>
+        </article>
+
+        <!-- 3 · Les indices dans la vigne : l'ordre de production, dont chaque carte bien placée donne une lettre du code -->
+        <article class="planche" data-n="3" data-lettre="I" aria-labelledby="t3">
+          <div class="page page--g">
+            <p class="etape-num">Étape 3</p>
+            <h2 id="t3">Les indices dans la vigne</h2>
+            <p class="etape-sous">Du raisin au vin</p>
+            <div class="consigne"><span class="i" aria-hidden="true">i</span><p><strong>Objectif :</strong> trouver l'anomalie de la fiche de production, remettre les étapes dans l'ordre et ouvrir le registre de cuverie.<br><strong>Mécanique :</strong> associer les étapes de production et résoudre un code.</p></div>
+            <figure class="piece piece--vigne">
+              <img src="assets/img/enquete/vigne.jpg" alt="Un vendangeur dans les rangs de vigne">
+              <div class="fiche-prod">
+                <p class="fiche-prod-titre">Fiche de production · Soudars 2018</p>
+                <ol><li>Vendanges</li><li>Tri</li><li>Éraflage</li><li>Fermentation</li><li class="anomalie">Élevage</li><li class="anomalie">Assemblage</li><li>Mise en bouteille</li></ol>
+                <p class="fiche-prod-cadenas">Registre de cuverie : verrouillé · code de sept lettres</p>
+                <span class="estampille estampille--rouge estampille--petit">Anomalie</span>
+              </div>
+            </figure>
+            <p class="folio">5</p>
+          </div>
+          <div class="page page--d">
+            <p class="sous-titre">Reconstituez le bon ordre</p>
+            <p class="fiche-ligne">Touchez les étapes dans l'ordre où le raisin devient vin. Chaque étape bien placée se retourne : au dos, une lettre à la craie. Les sept lettres forment le code du registre de cuverie.</p>
+            <div class="enigme ordre" data-enigme="3">
+              <div class="cartes-ordre">
+                <button type="button" data-rang="6" data-code="R">Élevage en barriques</button>
+                <button type="button" data-rang="1" data-code="S">Vendanges</button>
+                <button type="button" data-rang="4" data-code="D">Fermentation et macération</button>
+                <button type="button" data-rang="2" data-code="O">Tri des raisins</button>
+                <button type="button" data-rang="5" data-code="A">Assemblage</button>
+                <button type="button" data-rang="7" data-code="S">Mise en bouteille</button>
+                <button type="button" data-rang="3" data-code="U">Éraflage</button>
+              </div>
+              <ol class="ordre-choisi" aria-label="Votre ordre"></ol>
+              <p class="code-titre">Le code du registre</p>
+              <ol class="code-cuverie" aria-label="Le code, lettre par lettre"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+              <p class="retour" role="status" aria-live="polite"></p>
+              <button class="lien-reprendre" type="button" data-reprendre>Tout reprendre</button>
+            </div>
+            <div class="indices" data-indices="3"><button class="indices-bouton" type="button">Un indice ?</button><ol class="indices-liste"><li hidden><span class="indices-niveau">Indice 1 · difficile</span><p>La fiche retrouvée au chai est presque juste : deux lignes soulignées de rouge ont échangé leur place. Attention : au premier faux pas, tout est à refaire.</p></li><li hidden><span class="indices-niveau">Indice 2 · plus facile</span><p>Sur le site de Soudars, ouvrez la fiche du grand vin, puis « Son élaboration » : après les longues macérations vient l'assemblage, et seulement ensuite l'élevage en barriques.</p></li><li hidden><span class="indices-niveau">Indice 3 · très facile</span><p>Vendanges, tri des raisins, éraflage, fermentation et macération, assemblage, élevage en barriques, mise en bouteille.</p></li></ol><p class="liens"><a href="soudars/chateau-soudars.html" target="_blank" rel="noopener">Château Soudars, le grand vin</a></p></div>
+            <div class="lettre-gagnee" hidden><span>I</span><p>Sur la couverture du registre de cuverie, une lettre gravée : <strong>I</strong>.</p><button class="bouton-dossier" type="button" data-suivant>Étape suivante</button></div>
+            <p class="folio">6</p>
+          </div>
+        </article>
+
+        <!-- 4 · Le mystère de l'assemblage -->
+        <article class="planche" data-n="4" data-lettre="C" aria-labelledby="t4">
+          <div class="page page--g">
+            <p class="etape-num">Étape 4</p>
+            <h2 id="t4">Le mystère de l'assemblage</h2>
+            <p class="etape-sous">L'art de l'équilibre</p>
+            <div class="consigne"><span class="i" aria-hidden="true">i</span><p><strong>Objectif :</strong> les registres montrent des cépages en proportions différentes. Retrouvez la part de chaque cépage dans les vignes de chaque château, en écoutant les trois témoins.<br><strong>Mécanique :</strong> énigme logique : trois cépages font toujours 100 %.</p></div>
+            <ul class="indices-assemblage">
+              <li><img src="assets/img/enquete/gravure-coufran.jpg" alt="Gravure du château Coufran"><p><strong>Chez Louis</strong> « J'ai tout misé sur le merlot. Il ne reste que quinze parts de cabernet-sauvignon, et pas une de cabernet franc. »</p></li>
+              <li><img src="assets/img/enquete/gravure-verdignan.jpg" alt="Gravure du château Verdignan"><p><strong>Chez Jean</strong> « Dans mes vignes, le cabernet-sauvignon mène, avec soixante-cinq parts. Le cabernet franc n'en a que cinq. »</p></li>
+              <li><img src="assets/img/enquete/gravure-soudars.jpg" alt="Gravure de l'enclos de Soudars"><p><strong>Chez Éric</strong> « Le merlot fait exactement la moitié. Le cabernet franc, une seule part. »</p></li>
+            </ul>
+            <p class="folio">7</p>
+          </div>
+          <div class="page page--d">
+            <p class="sous-titre">Les registres du vignoble</p>
+            <form class="enigme assemblages" data-enigme="4">
+              <fieldset class="assemblage" data-chateau="coufran"><legend>Coufran</legend>
+                <label>Merlot<input name="coufran-m" inputmode="numeric" maxlength="3"></label><label>Cabernet-sauvignon<input name="coufran-cs" inputmode="numeric" maxlength="3"></label><label>Cabernet franc<input name="coufran-cf" inputmode="numeric" maxlength="3"></label><output class="total">0 %</output>
+              </fieldset>
+              <fieldset class="assemblage" data-chateau="verdignan"><legend>Verdignan</legend>
+                <label>Merlot<input name="verdignan-m" inputmode="numeric" maxlength="3"></label><label>Cabernet-sauvignon<input name="verdignan-cs" inputmode="numeric" maxlength="3"></label><label>Cabernet franc<input name="verdignan-cf" inputmode="numeric" maxlength="3"></label><output class="total">0 %</output>
+              </fieldset>
+              <fieldset class="assemblage" data-chateau="soudars"><legend>Soudars</legend>
+                <label>Merlot<input name="soudars-m" inputmode="numeric" maxlength="3"></label><label>Cabernet-sauvignon<input name="soudars-cs" inputmode="numeric" maxlength="3"></label><label>Cabernet franc<input name="soudars-cf" inputmode="numeric" maxlength="3"></label><output class="total">0 %</output>
+              </fieldset>
+              <p class="retour" role="status" aria-live="polite"></p>
+              <button class="bouton-dossier" type="submit">Vérifier les vignobles</button>
+            </form>
+            <div class="indices" data-indices="4"><button class="indices-bouton" type="button">Un indice ?</button><ol class="indices-liste"><li hidden><span class="indices-niveau">Indice 1 · difficile</span><p>Chaque témoin ne vous donne que deux chiffres. Le troisième se déduit : trois cépages font toujours cent parts.</p></li><li hidden><span class="indices-niveau">Indice 2 · plus facile</span><p>Une part vaut un pour cent, et une case laissée vide compte pour zéro. Chaque château confirme son chiffre clé dans sa pièce à conviction, en bas de sa page d'accueil.</p></li><li hidden><span class="indices-niveau">Indice 3 · très facile</span><p>Coufran : 85 % de merlot, et pas de cabernet franc. Verdignan : 65 % de cabernet-sauvignon et 5 % de cabernet franc. Soudars : 50 % de merlot et 1 % de cabernet franc. Complétez chaque ligne jusqu'à 100.</p></li></ol><p class="liens">Les pièces à conviction : <a href="coufran/index.html#temoin" target="_blank" rel="noopener">Coufran</a> · <a href="verdignan/index.html#temoin" target="_blank" rel="noopener">Verdignan</a> · <a href="soudars/index.html#temoin" target="_blank" rel="noopener">Soudars</a></p></div>
+            <div class="lettre-gagnee" hidden><span>C</span><p>Dans la marge du registre, à l'encre rouge : <strong>C</strong>.</p><button class="bouton-dossier" type="button" data-suivant>Étape suivante</button></div>
+            <p class="folio">8</p>
+          </div>
+        </article>
+
+        <!-- 5 · Les registres ne mentent pas -->
+        <article class="planche" data-n="5" data-lettre="H" aria-labelledby="t5">
+          <div class="page page--g">
+            <p class="etape-num">Étape 5</p>
+            <h2 id="t5">Les registres ne mentent pas</h2>
+            <p class="etape-sous">Entre stocks et millésimes</p>
+            <div class="consigne"><span class="i" aria-hidden="true">i</span><p><strong>Objectif :</strong> croiser les stocks, les millésimes et les mouvements de bouteilles pour éliminer les fausses pistes et savoir où sont passées les bouteilles.<br><strong>Mécanique :</strong> recoupement d'indices et déduction.</p></div>
+            <figure class="piece piece--photo">
+              <img src="assets/img/enquete/registre.jpg" alt="Le registre du chai">
+              <figcaption class="post-it">Attention aux fausses pistes : les plus grosses lignes du registre ne sont pas forcément les bonnes.</figcaption>
+            </figure>
+            <p class="folio">9</p>
+          </div>
+          <div class="page page--d">
+            <p class="sous-titre">Extrait du registre du chai, octobre</p>
+            <table class="registre">
+              <thead><tr><th>Date</th><th>Vin</th><th>Qté</th><th>Mouvement</th><th>Visa</th></tr></thead>
+              <tbody>
+                <tr><td>02</td><td>Coufran 2016</td><td>600</td><td>Palette · importateur, Belgique</td><td>É. M.</td></tr>
+                <tr><td>03</td><td>Coufran 2016</td><td>1</td><td>Boutique en ligne</td><td>Exp.</td></tr>
+                <tr><td>04</td><td>Verdignan 2010</td><td>2</td><td>Salon des vins, Bordeaux</td><td>L. M.</td></tr>
+                <tr><td>05</td><td>Soudars 2018</td><td>300</td><td>Demi-palette · importateur, Norvège</td><td>É. M.</td></tr>
+                <tr><td>07</td><td>Soudars 2018</td><td>6</td><td>Sortie · dossier « É.-F. »</td><td>É. M.</td></tr>
+                <tr><td>08</td><td>Verdignan 2016</td><td>600</td><td>Palette · importateur, Japon</td><td>É. M.</td></tr>
+              </tbody>
+            </table>
+            <form class="enigme" data-enigme="5">
+              <fieldset class="choix-radio"><legend>Où sont passées les bouteilles ?</legend>
+                <label><input type="radio" name="ou" value="norvege"> Parties en Norvège avec la demi-palette</label>
+                <label><input type="radio" name="ou" value="salon"> Emportées au salon des vins de Bordeaux</label>
+                <label><input type="radio" name="ou" value="dossier"> Sorties du chai pour le dossier « É.-F. »</label>
+                <label><input type="radio" name="ou" value="chai"> Toujours au chai, rangées ailleurs</label>
+              </fieldset>
+              <label class="qui">Qui les a sorties ?<select name="qui"><option value="">Le visa…</option><option value="eric">É. M. · Éric Miailhe</option><option value="lovely">L. M. · Lovely Miailhe</option><option value="exp">Exp. · le service des expéditions</option></select></label>
+              <p class="retour" role="status" aria-live="polite"></p>
+              <button class="bouton-dossier" type="submit">Conclure</button>
+            </form>
+            <div class="indices" data-indices="5"><button class="indices-bouton" type="button">Un indice ?</button><ol class="indices-liste"><li hidden><span class="indices-niveau">Indice 1 · difficile</span><p>Les plus grosses lignes du registre sont rarement les plus intéressantes. Cherchez celle qui reprend exactement votre signalement.</p></li><li hidden><span class="indices-niveau">Indice 2 · plus facile</span><p>Votre signalement : six bouteilles de Soudars 2018. Une seule ligne porte ce vin et cette quantité. Lisez sa mention, puis son visa.</p></li><li hidden><span class="indices-niveau">Indice 3 · très facile</span><p>Le 7, six Soudars 2018 sont sorties du chai pour le dossier « É.-F. », sous le visa É. M. : Éric Miailhe.</p></li></ol></div>
+            <div class="lettre-gagnee" hidden><span>H</span><p>Sous la ligne du 07, au crayon : <strong>H</strong>.</p><button class="bouton-dossier" type="button" data-suivant>Étape suivante</button></div>
+            <p class="folio">10</p>
+          </div>
+        </article>
+
+        <!-- 6 · La révélation : le trajet des bouteilles, et le mot de passe du dossier « É.-F. » -->
+        <article class="planche" data-n="6" data-lettre="E" aria-labelledby="t6">
+          <div class="page page--g">
+            <p class="etape-num">Étape 6</p>
+            <h2 id="t6">La révélation</h2>
+            <p class="etape-sous">Le dossier « É.-F. »</p>
+            <div class="consigne"><span class="i" aria-hidden="true">i</span><p><strong>Objectif :</strong> reconstituer le trajet des bouteilles et déchiffrer le mot de passe du dernier dossier.<br><strong>Mécanique :</strong> déchiffrer le message final grâce aux lettres de votre carnet.</p></div>
+            <figure class="piece piece--enveloppe">
+              <img src="assets/img/enquete/enveloppe.jpg" alt="Un dossier fermé d'un cachet de cire">
+              <figcaption class="post-it">Dossier « É.-F. » : accès protégé. Le mot de passe dit d'où tout est parti.</figcaption>
+            </figure>
+            <div class="bordereau">
+              <p class="fiche-prod-titre">Le trajet des bouteilles · bordereau du 07</p>
+              <ol>
+                <li><strong>07, 8 h</strong> Chai de Soudars, Saint-Seurin-de-Cadourne : six Soudars 2018, visa É. M.</li>
+                <li><strong>07, 11 h</strong> Plateforme du transporteur, Bordeaux</li>
+                <li><strong>09</strong> Livraison : <span class="bordereau-cache">sous le cachet du dossier</span></li>
+              </ol>
+            </div>
+            <p class="folio">11</p>
+          </div>
+          <div class="page page--d">
+            <p class="sous-titre">Le mot de passe du dossier</p>
+            <p class="fiche-ligne">Six lettres : les cinq de votre carnet, puis l'initiale du fils qui a tout commencé à Soudars. Remettez-les dans l'ordre.</p>
+            <div class="enigme mot" data-enigme="6">
+              <ol class="cases-mot" aria-label="Le mot de passe, lettre par lettre"><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+              <div class="tuiles" aria-label="Vos lettres"></div>
+              <p class="retour" role="status" aria-live="polite"></p>
+              <button class="lien-reprendre" type="button" data-reprendre>Tout reprendre</button>
+            </div>
+            <div class="indices" data-indices="6"><button class="indices-bouton" type="button">Un indice ?</button><ol class="indices-liste"><li hidden><span class="indices-niveau">Indice 1 · difficile</span><p>Le mot de passe dit d'où Éric est parti, en 1980.</p></li><li hidden><span class="indices-niveau">Indice 2 · plus facile</span><p>Vos cinq premières lettres sont arrivées dans l'ordre de l'enquête : relisez votre carnet, de l'étape 1 à l'étape 5, puis ajoutez l'initiale d'Éric.</p></li><li hidden><span class="indices-niveau">Indice 3 · très facile</span><p>F, R, I, C, H, puis le E d'Éric : FRICHE.</p></li></ol></div>
+            <div class="lettre-gagnee" hidden><span>E</span><p>Le dossier s'ouvre. Sur sa première page, un tampon : « Opération Éric – Fils ».</p><button class="bouton-dossier" type="button" data-suivant>Ouvrir le dossier</button></div>
+            <p class="folio">12</p>
+          </div>
+        </article>
+
+        <!-- 7 · Le dossier ouvert : l'opération « Éric – Fils » -->
+        <article class="planche planche--fin" data-n="7" aria-labelledby="t7">
+          <div class="page page--g conclusion">
+            <p class="etape-num">Le dossier</p>
+            <h2 id="t7">Opération<br>« Éric – Fils »</h2>
+            <figure class="piece piece--photo piece--friche"><img src="assets/img/acte-soudars-pierres.jpg" alt="Les pierres blanches au pied des vignes de Soudars"></figure>
+            <p>Les bouteilles n'ont pas été volées. Elles ont été confiées à une mission : faire entrer Soudars dans de nouveaux points de vente, et faire découvrir son histoire à un nouveau public.</p>
+            <p>Car parmi les trois châteaux de la famille, Soudars a une histoire à part. Coufran et Verdignan se sont transmis de génération en génération. Soudars, Éric l'a créé : en 1980, sur quinze hectares de friches couvertes de pierres et de ronces, en partant de presque rien.</p>
+            <p class="conclusion-chute">La bouteille que vous cherchiez raconte l'histoire d'un fils qui a construit son propre domaine.</p>
+            <p class="folio">13</p>
+          </div>
+          <div class="page page--d">
+            <span class="estampille estampille--vert">Affaire résolue</span>
+            <div class="la-bouteille">
+              <img src="assets/img/bouteille-soudars-2018.webp" alt="Une bouteille de Château Soudars 2018">
+              <div>
+                <p class="sous-titre">La bouteille</p>
+                <p class="la-bouteille-nom">Château Soudars 2018</p>
+                <p class="la-bouteille-qui">Haut-Médoc · le vin du fils</p>
+                <p class="la-bouteille-gout">Fruité, souple et convivial : un vin qui se partage dès sa jeunesse.</p>
+                <p class="la-bouteille-trajet">Le 9, les six bouteilles sont arrivées dans les caves V and B. C'est là que Soudars est désormais disponible.</p>
+                <p class="la-bouteille-liens"><a href="boutique.html#ou-trouver">Trouver une cave V and B</a> <a href="boutique.html?vin=chateau-soudars#soudars">Le commander en ligne</a></p>
+              </div>
+            </div>
+            <div class="recompense">
+              <p class="sous-titre">Votre accès, <span data-enqueteur translate="no">enquêteur</span></p>
+              <p>La famille ouvre aux enquêteurs sa vente privée de vieux millésimes, gardés au château jusqu'à ce qu'ils soient prêts à boire. En quantités limitées.</p>
+              <!-- Inscrit : la victoire est déjà enregistrée. Sans inscription : on peut encore s'inscrire pour la faire compter. -->
+              <p class="acces-ok" data-acces-ok hidden></p>
+              <form class="acces" data-acces novalidate>
+                <p class="acces-appel">Vous avez joué sans inscription : inscrivez-vous pour enregistrer votre victoire, participer au tirage du trimestre et recevoir votre accès.</p>
+                <label for="mail-acces" class="sr-only">Votre e-mail</label>
+                <input id="mail-acces" name="mail" type="email" placeholder="Votre e-mail" autocomplete="email" required>
+                <button class="bouton-dossier" type="submit">Enregistrer ma victoire</button>
+                <label class="accord"><input type="checkbox" name="reglement" required> <span>J'ai 18 ans ou plus et j'accepte le <a href="#reglement">règlement du jeu</a>.</span></label>
+                <label class="accord"><input type="checkbox" name="nouvelles"> <span>Je veux recevoir la prochaine enquête et les nouvelles de la famille (facultatif).</span></label>
+                <p class="retour" role="status" aria-live="polite"></p>
+              </form>
+              <p class="mention-jeu">Jeu gratuit, sans obligation d'achat, réservé aux personnes majeures. Une nouvelle enquête chaque trimestre. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+              <p class="suites"><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html#accueil">Rencontrer les trois châteaux</a> <button type="button" data-recommencer>Rejouer</button></p>
+            </div>
+            <p class="folio">14</p>
+          </div>
+        </article>
+
+        <div class="tranche" aria-hidden="true"></div>
+      </div>
+
+      <!-- Le carnet des lettres trouvées, et la navigation entre les étapes -->
+      <nav class="progression" aria-label="Progression de l'enquête">
+        <button class="progression-fleche" type="button" data-precedent aria-label="Page précédente"></button>
+        <ol class="progression-lettres">
+          <li data-etape="1"><span>·</span><small>1</small></li><li data-etape="2"><span>·</span><small>2</small></li><li data-etape="3"><span>·</span><small>3</small></li>
+          <li data-etape="4"><span>·</span><small>4</small></li><li data-etape="5"><span>·</span><small>5</small></li><li data-etape="6"><span>·</span><small>6</small></li>
+        </ol>
+        <button class="progression-fleche progression-fleche--suiv" type="button" data-avancer aria-label="Page suivante"></button>
+        <span class="progression-statut" data-statut role="status"></span>
+      </nav>
+    </section>
+
+    <!-- ============ Le règlement (résumé) ============ -->
+    <section class="reglement" id="reglement" aria-labelledby="reglement-titre">
+      <details>
+        <summary><span id="reglement-titre">Règlement du jeu</span> <small>Enquête à la racine · une enquête par trimestre</small></summary>
+        <ol>
+          <li><strong>Organisateur.</strong> Les vignobles de la famille Miailhe, Château Coufran, 33180 Saint-Seurin-de-Cadourne.</li>
+          <li><strong>Participation.</strong> Gratuite et sans obligation d'achat, réservée aux personnes majeures résidant en France métropolitaine. On peut jouer sans inscription, mais seule une enquête résolue par un enquêteur inscrit participe au tirage. Une participation par personne et par trimestre.</li>
+          <li><strong>Durée.</strong> Chaque enquête dure un trimestre civil. Une nouvelle enquête ouvre au début du trimestre suivant ; les inscrits en sont prévenus s'ils l'ont demandé.</li>
+          <li><strong>Tirage au sort.</strong> Parmi les enquêteurs inscrits qui ont résolu l'enquête pendant le trimestre, un gagnant est tiré au sort dans les quinze jours qui suivent la fin du trimestre. Il est prévenu par e-mail.</li>
+          <li><strong>Dotation.</strong> Une bouteille (75 cl) de l'un des trois châteaux, à retirer au château ou envoyée au gagnant. Elle ne peut être échangée contre sa valeur en argent.</li>
+          <li><strong>Vos données.</strong> Le prénom et l'e-mail servent à sauvegarder votre partie, à organiser le tirage et, seulement si vous l'avez accepté, à vous envoyer la prochaine enquête et les nouvelles de la famille. Ils ne sont jamais cédés ni vendus, et sont conservés trois ans après votre dernier contact. Vous pouvez y accéder, les corriger ou les faire effacer à tout moment en écrivant au château.</li>
+        </ol>
+        <p class="reglement-note">Maquette : règlement indicatif, à faire valider par un juriste (loi Évin pour la dotation en vin, droit des jeux-concours, RGPD).</p>
+      </details>
+    </section>
+
+    <footer class="enquete-pied">
+      <a class="wordmark" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="MIAILHE, accueil"><span class="sr-only">MIAILHE</span></a>
+      <nav class="reseaux" data-reseaux></nav>
+      <ul class="langues langues--pied" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+      <p>L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Maquette de concept, projet étudiant ISCOM 2026, site non officiel.</p>
+    </footer>
+  </main>
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/feuille-miailhe.js"></script><!-- la feuille de vigne du logo, partout la même -->
+  <script src="assets/js/armoiries.js"></script>
+  <script src="assets/js/logos-chateaux.js"></script>
+  <script src="assets/js/typographie.js"></script>
+  <script src="assets/js/reseaux.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/espace.js"></script><!-- l'initiale du client et le panier, dans l'en-tête -->
+  <script src="assets/js/survol.js"></script><!-- la racine sous les liens de l'en-tête, au survol -->
+  <script src="assets/js/enquete.js"></script>
+</body>
+</html>

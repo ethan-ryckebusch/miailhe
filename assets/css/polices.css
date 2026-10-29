@@ -1,0 +1,50 @@
+/* Polices tirées du Livre de polices de l'équipe, converties en WOFF2 (assets/fonts).
+   Maquette étudiante : vérifier les licences web de chaque fonte avant toute mise en ligne.
+
+   Système typographique (27/10/2026, voir typographie.css) : une même écriture pour les trois châteaux.
+   - Cormorant (SIL OFL) : titres et texte éditorial, de 300 à 700, avec ses vraies petites capitales (Cormorant SC) ;
+   - Canela italique : le mot mis en avant dans les titres ;
+   - Cinzel (SIL OFL), la romaine du logotype MIAILHE : les inscriptions ;
+   - Circular Std : l'interface, comme Privios ; Felix Titling : les titres du menu, comme Cheval Blanc.
+   Les logos des châteaux sont dessinés sans police (Logos/CHATEAUX, 27/10/2026). Les polices historiques,
+   Albertus (Coufran, 1924), Didot (Verdignan, 1972) et Cooper Black (Soudars, 1973), ne servent plus qu'aux
+   noms écrits par l'intro de la vitrine.
+   Écritures manuscrites de l'Enquête : Meddon (le carnet d'Élie), Bad Script (le mot de Lovely),
+   Herr Von Muellerhoff (les signatures). */
+
+@font-face { font-family: "Circular"; src: url("../fonts/circular-book.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Circular"; src: url("../fonts/circular-medium.woff2") format("woff2"); font-weight: 500 700; font-display: swap; }
+@font-face { font-family: "Felix Titling"; src: url("../fonts/felix-titling.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+
+@font-face { font-family: "Albertus"; src: url("../fonts/albertus.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Albertus"; src: url("../fonts/albertus-light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Albertus"; src: url("../fonts/albertus-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+
+@font-face { font-family: "Didot Headline"; src: url("../fonts/didot-headline.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Bodoni"; src: url("../fonts/bodoni.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Bodoni"; src: url("../fonts/bodoni-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+
+/* Cooper Black n'a ni point médian ni italique : le navigateur prend le point dans la police suivante */
+@font-face { font-family: "Cooper Black"; src: url("../fonts/cooper-black.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Bookman"; src: url("../fonts/bookman.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Bookman"; src: url("../fonts/bookman-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+
+@font-face { font-family: "Meddon"; src: url("../fonts/meddon.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Bad Script"; src: url("../fonts/bad-script.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Herr Von Muellerhoff"; src: url("../fonts/herr-von-muellerhoff.woff2") format("woff2"); font-display: swap; }
+/* Canela (Commercial Type), l'italique éditoriale de la vitrine : le mot mis en avant dans les titres. Licence à vérifier. */
+@font-face { font-family: "Canela"; src: url("../fonts/canela-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+
+/* Cinzel (la romaine du logotype) et Cormorant : licence libre (SIL OFL). */
+@font-face { font-family: "Cinzel"; src: url("../fonts/cinzel.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("../fonts/cinzel-semibold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-light-italic.woff2") format("woff2"); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-medium-italic.woff2") format("woff2"); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-semibold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Cormorant SC"; src: url("../fonts/cormorant-sc-medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Cormorant SC"; src: url("../fonts/cormorant-sc-semibold.woff2") format("woff2"); font-weight: 600; font-display: swap; }

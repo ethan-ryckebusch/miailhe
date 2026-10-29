@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quel vin de la Famille Miailhe vous ressemble ? · MIAILHE</title>
+  <meta name="description" content="Cinq questions pour trouver, parmi Coufran, Verdignan et Soudars, le vin de la famille Miailhe qui vous ressemble le plus.">
+  <link rel="stylesheet" href="assets/css/polices.css">
+  <link rel="stylesheet" href="assets/css/typographie.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/motifs.css">
+  <link rel="stylesheet" href="assets/css/vitrine.css">
+  <style>
+    /* La page des QR codes (étiquettes, coffrets, salons) : le quiz seul, pensé d'abord pour le téléphone */
+    .page-quiz { background: var(--pale); }
+    .page-quiz .site-header { background: #fff; }
+    .page-quiz main { min-height: 100svh; padding: 110px 4vw 60px; }
+    .page-quiz .circuit { min-height: calc(100svh - 230px); }
+    .page-quiz .quiz-pied { display: grid; justify-items: center; gap: 6px; padding: 30px 6vw 40px; font-family: var(--f-ui); font-size: 12.5px; color: var(--muet); text-align: center; }
+    .page-quiz .quiz-pied a { color: var(--encre); }
+    @media (max-width: 900px) { .page-quiz main { padding: 84px 3vw 30px; } }
+  </style>
+</head>
+<body class="page-quiz">
+
+  <!-- Âge légal (sans intro : on ne le redemande pas à qui l'a déjà confirmé) -->
+  <div class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-titre">
+    <figure class="entree-fond"><img src="assets/img/acte-famille-1931.jpg" alt=""></figure>
+    <div class="entree">
+      <span class="wordmark" aria-label="MIAILHE"><span class="sr-only">MIAILHE</span></span>
+      <p id="age-titre">Le quiz de la famille Miailhe est réservé aux personnes ayant l'âge légal de consommer de l'alcool dans leur pays.</p>
+      <div class="choix">
+        <button class="btn btn--plein" type="button" data-entrer><span>J'ai l'âge légal, entrer</span></button>
+      </div>
+      <button class="refus" type="button">Je n'ai pas l'âge légal</button>
+      <p class="refus-message">Revenez nous voir plus tard. La vigne, elle, sait attendre.</p>
+      <p class="mention">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-gauche"></div>
+    <a class="wordmark" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="MIAILHE, accueil"><span class="sr-only">MIAILHE</span></a>
+    <div class="header-droite">
+      <nav class="familles" aria-label="Les trois châteaux de la famille">
+        <a class="famille-lien" href="coufran/index.html" data-nom="Coufran"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span><span class="sr-only">Château Coufran</span></a>
+        <a class="famille-lien" href="verdignan/index.html" data-nom="Verdignan"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span><span class="sr-only">Château Verdignan</span></a>
+        <a class="famille-lien" href="soudars/index.html" data-nom="Soudars"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span><span class="sr-only">Château Soudars</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="circuit" data-quiz="">
+      <div class="circuit-ecran circuit-depart">
+        <p class="v-sur-titre">Le quiz de la famille</p>
+        <h1 class="v-h2"><span>Quel vin de la famille</span><span>vous <em>ressemble</em> le plus ?</span></h1>
+        <p class="v-chapeau">Cinq questions, trois réponses à chaque fois. La lettre qui revient le plus souvent désigne votre château : A pour Coufran, B pour Verdignan, C pour Soudars.</p>
+        <button class="v-bouton" type="button" data-commencer>Commencer le quiz</button>
+        <noscript><p class="v-chapeau">Le quiz demande JavaScript. Poussez directement une porte : <a href="coufran/index.html">Coufran</a>, <a href="verdignan/index.html">Verdignan</a> ou <a href="soudars/index.html">Soudars</a>.</p></noscript>
+      </div>
+    </div>
+  </main>
+
+  <footer class="quiz-pied">
+    <p><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html">miailhe.com</a> · Trois châteaux du Haut-Médoc, une même famille</p>
+    <p>L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </footer>
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/armoiries.js"></script>
+  <script src="assets/js/logos-chateaux.js"></script>
+  <script src="assets/js/typographie.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script src="assets/js/langue.js"></script><!-- la langue d'abord : la page est traduite avant d'être montrée -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La boutique de la famille · MIAILHE</title>
+  <meta name="description" content="Les vins de Château Coufran, Château Verdignan et Château Soudars réunis dans une seule boutique : un seul panier, une seule livraison, les millésimes gardés au château.">
+  <link rel="stylesheet" href="assets/css/polices.css">
+  <link rel="stylesheet" href="assets/css/typographie.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/motifs.css">
+  <link rel="stylesheet" href="assets/css/boutique.css">
+</head>
+<!-- La boutique commune des trois châteaux (28/10/2026, demande de l'utilisateur) : elle remplace les deux anciennes
+     boutiques en ligne (coufran-verdignan.com pour Coufran et Verdignan, boutique.chateausoudars.com pour Soudars), avec
+     les mêmes produits et les mêmes prix, relevés par source/boutique/releve_boutiques.py (assets/js/boutique-catalogue.js).
+     Un seul panier pour les trois châteaux : tous les cartons comptent ensemble pour la livraison offerte.
+     Maquette : la commande n'envoie rien et ne débite rien (assets/js/boutique.js). -->
+<body class="page-boutique">
+
+  <!-- Âge légal (sans intro : on ne le redemande pas à qui l'a déjà confirmé) -->
+  <div class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-titre">
+    <figure class="entree-fond"><img src="assets/img/acte-famille-1931.jpg" alt=""></figure>
+    <div class="entree">
+      <span class="wordmark" aria-label="MIAILHE"><span class="sr-only">MIAILHE</span></span>
+      <p id="age-titre">La boutique de la famille Miailhe est réservée aux personnes ayant l'âge légal de consommer de l'alcool dans leur pays.</p>
+      <div class="choix">
+        <button class="btn btn--plein" type="button" data-entrer><span>J'ai l'âge légal, entrer</span></button>
+      </div>
+      <button class="refus" type="button">Je n'ai pas l'âge légal</button>
+      <p class="refus-message">Revenez nous voir plus tard. La vigne, elle, sait attendre.</p>
+      <p class="mention">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+      <ul class="langues langues--porte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-gauche">
+      <a class="bq-retour" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html"><span class="chev chev--g" aria-hidden="true"></span><span>Les trois portes</span></a>
+    </div>
+    <a class="wordmark" href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="MIAILHE, accueil"><span class="sr-only">MIAILHE</span></a>
+    <div class="header-droite">
+      <!-- La boutique et l'enquête en avant, puis l'espace client, le panier et la langue (source/entete.py ; espace.js) -->
+      <a class="entete-fort entete-fort--boutique" href="boutique.html" aria-current="page" aria-label="La boutique de la famille : les vins des trois châteaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 2.6h3.6M10.7 2.6v4.5c0 .8-.4 1.3-1 1.9-.9.8-1.5 1.8-1.5 3.1v8.2c0 .6.5 1.1 1.1 1.1h5.4c.6 0 1.1-.5 1.1-1.1v-8.2c0-1.3-.6-2.3-1.5-3.1-.6-.6-1-1.1-1-1.9V2.6"/><path d="M8.2 13.4h7.6v4.4H8.2z"/></svg><span>La boutique</span></a>
+      <a class="entete-fort entete-fort--enquete" href="enquete.html" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <a class="entete-icone entete-compte-lien" href="compte.html" data-compte aria-label="Mon espace client"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.3" r="3.8"/><path d="M4.6 20.4c.9-3.9 3.9-6 7.4-6s6.5 2.1 7.4 6"/></svg><span class="entete-initiale" data-compte-initiale translate="no" hidden></span></a>
+      <button class="entete-icone bouton-panier" type="button" data-ouvrir-panier aria-controls="panier" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 11.3a1.1 1.1 0 0 1-1.1 1H7.4a1.1 1.1 0 0 1-1.1-1L5.2 8.2z"/><path d="M9 10.4V6.6a3 3 0 0 1 6 0v3.8"/></svg><b class="entete-pastille" data-panier-compte translate="no" hidden>0</b></button>
+      <ul class="langues langues--compacte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- L'ouverture : un plan-séquence sur les vraies photos des casiers de Coufran et de Verdignan (sites des châteaux),
+         chaque plan dans un lent travelling ; la promesse de la famille, elle garde ses vins jusqu'à ce qu'ils soient prêts -->
+    <section class="bq-ouverture" data-header="dark">
+      <div class="bq-film" aria-hidden="true">
+        <img class="bq-plan" src="assets/img/coufran-stock.jpg" alt="">
+        <img class="bq-plan" src="assets/img/verdignan-culots.jpg" alt="">
+        <img class="bq-plan" src="assets/img/verdignan-casiers.jpg" alt="">
+      </div>
+      <div class="bq-ouverture-texte">
+        <p class="bq-sur">La boutique de la famille</p>
+        <h1 class="bq-titre"><span>Ce que nous avons</span><span><em>gardé pour vous.</em></span></h1>
+        <p class="bq-chapeau">À Coufran et à Verdignan, les bouteilles vieillissent au château et ne partent que lorsqu'elles sont prêtes à boire. Soudars se partage dès sa jeunesse, et garde ses doubles magnums pour les grandes tablées. Trois châteaux, une même cave, un seul panier.</p>
+        <div class="bq-actions">
+          <a class="bq-bouton bq-bouton--clair" href="#la-cave">Entrer dans la cave</a>
+          <a class="bq-lien bq-lien--clair" href="#doyennes">Les doyennes de la cave</a>
+        </div>
+      </div>
+      <ul class="bq-promesses">
+        <li><b>Prêts à boire</b><span>Des millésimes <span data-bq-plage translate="no"></span></span></li>
+        <li><b>Un seul panier</b><span>Les trois châteaux partent ensemble</span></li>
+        <li><b>Livraison offerte</b><span>Dès 12 bouteilles ou un double magnum</span></li>
+      </ul>
+      <p class="bq-photo-legende">Les casiers de Coufran et de Verdignan, au château</p>
+    </section>
+
+    <!-- Les doyennes : la plus ancienne bouteille de chaque château encore en vente (boutique.js, d'après le catalogue) -->
+    <section class="bq-doyennes" id="doyennes" aria-labelledby="doyennes-titre">
+      <header class="bq-section-tete">
+        <p class="bq-sur bq-sur--trait">Les doyennes de la cave</p>
+        <h2 class="bq-h2" id="doyennes-titre"><span>Trois bouteilles</span><span>qui ont <em>attendu.</em></span></h2>
+        <p class="bq-chapeau bq-chapeau--sombre">La plus ancienne bouteille de chaque château encore en vente. Elles ont vieilli chez nous ; vous n'avez plus qu'à les ouvrir.</p>
+      </header>
+      <div class="bq-doyennes-grille" data-doyennes translate="no"></div>
+    </section>
+
+    <!-- La famille : de 1931 à aujourd'hui, la même famille garde ses vins avant de vous les confier -->
+    <section class="bq-famille" aria-labelledby="famille-titre">
+      <figure class="bq-famille-photo bq-famille-photo--hier"><img src="assets/img/acte-famille-1931.jpg" alt="La famille Miailhe réunie en 1931" loading="lazy"><figcaption>La famille, en 1931</figcaption></figure>
+      <div class="bq-famille-texte">
+        <p class="bq-sur bq-sur--trait">Une famille, une même cave</p>
+        <h2 class="bq-h2" id="famille-titre"><span>De génération</span><span>en <em>génération.</em></span></h2>
+        <p>Louis à Coufran en 1924, Jean à Verdignan en 1972, Éric à Soudars en 1973. Aujourd'hui, Éric et sa fille Lovely veillent sur les trois châteaux, et sur ce qu'ils gardent pour vous.</p>
+        <ol class="bq-generations">
+          <li data-chateau="coufran"><span class="armoirie" data-armoirie="coufran"></span><b>Louis</b><small>le grand-père · Coufran</small></li>
+          <li data-chateau="verdignan"><span class="armoirie" data-armoirie="verdignan"></span><b>Jean</b><small>le père · Verdignan</small></li>
+          <li data-chateau="soudars"><span class="armoirie" data-armoirie="soudars"></span><b>Éric</b><small>le fils · Soudars</small></li>
+        </ol>
+      </div>
+      <figure class="bq-famille-photo bq-famille-photo--aujourdhui"><img src="assets/img/acte-aujourdhui.jpg" alt="Éric et Lovely Miailhe devant le château Coufran" loading="lazy"><figcaption>Éric et Lovely, aujourd'hui</figcaption></figure>
+    </section>
+
+    <!-- La cave : un château, un format, un ordre ; l'adresse garde le château choisi (#coufran…) -->
+    <section class="bq-cave" id="la-cave" aria-labelledby="cave-titre">
+      <header class="bq-section-tete bq-section-tete--cave">
+        <p class="bq-sur bq-sur--trait">La cave</p>
+        <h2 class="bq-h2" id="cave-titre"><span>Choisir <em>son vin.</em></span></h2>
+        <p class="bq-chapeau bq-chapeau--sombre">Chaque château a son caractère, chaque millésime son âge. Les bouteilles se vendent par carton de six, et vous pouvez mélanger les trois châteaux.</p>
+      </header>
+
+      <div class="bq-filtres" role="toolbar" aria-label="Choisir les vins">
+        <div class="bq-choix" data-filtre="chateau" role="group" aria-label="Château">
+          <button type="button" data-valeur="tous" aria-pressed="true">Les trois châteaux</button>
+          <button type="button" data-valeur="coufran" aria-pressed="false"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span>Coufran</button>
+          <button type="button" data-valeur="verdignan" aria-pressed="false"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span>Verdignan</button>
+          <button type="button" data-valeur="soudars" aria-pressed="false"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span>Soudars</button>
+        </div>
+        <div class="bq-choix" data-filtre="forme" role="group" aria-label="Format">
+          <button type="button" data-valeur="tout" aria-pressed="true">Tous les formats</button>
+          <button type="button" data-valeur="bouteille" aria-pressed="false">Bouteilles</button>
+          <button type="button" data-valeur="double-magnum" aria-pressed="false">Doubles magnums</button>
+        </div>
+        <label class="bq-recherche"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2L20.5 20.5"/></svg><span class="sr-only">Chercher un vin</span><input type="search" data-recherche placeholder="Un château, un millésime…" autocomplete="off" spellcheck="false" enterkeyhint="search"></label>
+        <label class="bq-tri"><span>Trier</span>
+          <select data-tri>
+            <option value="jeune">Du plus jeune au plus ancien</option>
+            <option value="ancien">Du plus ancien au plus jeune</option>
+            <option value="prix">Prix croissant</option>
+            <option value="prix-desc">Prix décroissant</option>
+          </select>
+        </label>
+        <p class="bq-compte" aria-live="polite" data-bq-compte translate="no"></p>
+      </div>
+
+      <!-- ce que boutique.js écrit est déjà traduit (MIAILHE.t) : translate="no" pour que langue.js n'y repasse pas -->
+      <div class="bq-catalogue" data-catalogue translate="no"></div>
+      <noscript><p class="bq-sans-js">La boutique demande JavaScript. Les vins de chaque château sont présentés sur son site : <a href="coufran/index.html#nos-vins">Coufran</a>, <a href="verdignan/index.html#nos-vins">Verdignan</a>, <a href="soudars/index.html#nos-vins">Soudars</a>.</p></noscript>
+    </section>
+
+    <!-- Livraison et retrait : depuis le château, chez vous -->
+    <section class="bq-conditions" id="livraison" aria-labelledby="livraison-titre">
+      <figure class="bq-conditions-photo"><img src="assets/img/coufran-casiers.jpg" alt="Les casiers de bouteilles dans le local climatisé de Coufran" loading="lazy"></figure>
+      <div class="bq-conditions-texte">
+        <p class="bq-sur bq-sur--trait" id="livraison-titre">Livraison et retrait</p>
+        <h2 class="bq-h2"><span>Du château</span><span><em>à votre table.</em></span></h2>
+        <div class="bq-conditions-grille">
+          <div>
+            <h3>Un seul panier</h3>
+            <p>Les trois châteaux partent ensemble : un carton de Coufran et un carton de Soudars font 12 bouteilles, et la livraison est offerte.</p>
+          </div>
+          <div>
+            <h3>La livraison</h3>
+            <p>30 € pour un carton de 6 bouteilles, offerte dès 12 bouteilles ou un double magnum. En France métropolitaine, sous 10 à 12 jours ouvrés ; pour la Corse, contactez-nous.</p>
+          </div>
+          <div>
+            <h3>Au château</h3>
+            <p>Vous préférez venir chercher vos vins à Saint-Seurin-de-Cadourne ? Prévenez-nous avant de commander, sur le site de <a href="coufran/index.html#contact">Coufran</a>, de <a href="verdignan/index.html#contact">Verdignan</a> ou de <a href="soudars/index.html#contact">Soudars</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- La fiche d'un vin : sa bouteille, ce qu'en dit le château, son prix au carton (boutique.js) -->
+  <div class="bq-fiche-voile" data-fermer-fiche hidden></div>
+  <section class="bq-fiche" role="dialog" aria-modal="true" aria-labelledby="fiche-titre" aria-hidden="true" data-fiche-panneau translate="no"></section>
+
+  <!-- Le panier : un tiroir à droite, puis la commande (maquette : rien n'est envoyé ni débité) -->
+  <div class="bq-voile" data-fermer-panier hidden></div>
+  <aside class="bq-panier" id="panier" role="dialog" aria-modal="true" aria-labelledby="panier-titre" aria-hidden="true">
+    <div class="bq-panier-tete">
+      <h2 id="panier-titre">Votre panier</h2>
+      <button class="bq-fermer" type="button" data-fermer-panier aria-label="Fermer le panier"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="bq-panier-corps" data-panier-corps translate="no"></div>
+    <form class="bq-commande" data-commande hidden novalidate>
+      <button class="bq-retour-panier" type="button" data-retour-panier><span class="chev chev--g" aria-hidden="true"></span> Revenir au panier</button>
+      <h3>Livraison</h3>
+      <p class="bq-client" data-client translate="no" hidden></p>
+      <div class="bq-champs">
+        <label><span>Prénom</span><input name="prenom" autocomplete="given-name" required></label>
+        <label><span>Nom</span><input name="nom" autocomplete="family-name" required></label>
+        <label class="large"><span>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="large"><span>Téléphone</span><input name="tel" type="tel" autocomplete="tel"></label>
+        <label class="large"><span>Adresse</span><input name="adresse" autocomplete="street-address" required></label>
+        <label><span>Code postal</span><input name="cp" autocomplete="postal-code" inputmode="numeric" required pattern="[0-9]{5}"></label>
+        <label><span>Ville</span><input name="ville" autocomplete="address-level2" required></label>
+      </div>
+      <p class="bq-pays">Livraison en France métropolitaine.</p>
+      <label class="bq-coche"><input type="checkbox" name="age" required> <span>Je certifie avoir l'âge légal pour acheter de l'alcool (18 ans en France).</span></label>
+      <label class="bq-coche"><input type="checkbox" name="cgv" required> <span>J'accepte les conditions générales de vente.</span></label>
+      <p class="bq-erreur" data-erreur role="alert" translate="no" hidden></p>
+      <div class="bq-recap" data-recap translate="no"></div>
+      <button class="bq-bouton bq-valider" type="submit">Valider la commande</button>
+      <p class="bq-maquette">Maquette : aucune commande n'est passée, rien n'est envoyé ni débité. Sur miailhe.com, le paiement sécurisé viendrait ici.</p>
+    </form>
+    <div class="bq-merci" data-merci hidden tabindex="-1" translate="no"></div>
+  </aside>
+  <p class="bq-annonce" aria-live="polite" data-annonce translate="no"></p>
+
+  <footer class="bq-pied">
+    <span class="wordmark bq-pied-logo" aria-hidden="true"></span>
+    <p><a href="%E2%98%85%20MIAILHE%20Vitrine%20V1.html">miailhe.com</a> · Trois châteaux du Haut-Médoc, une même famille</p>
+    <nav class="reseaux" data-reseaux></nav>
+    <ul class="langues langues--pied" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    <p>Prix TTC. La vente d'alcool aux mineurs est interdite.</p>
+    <p>L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </footer>
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/feuille-miailhe.js"></script><!-- la feuille de vigne du logo, partout la même -->
+  <script src="assets/js/armoiries.js"></script>
+  <script src="assets/js/logos-chateaux.js"></script>
+  <script src="assets/js/typographie.js"></script>
+  <script src="assets/js/reseaux.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/espace.js"></script><!-- l'initiale du client et le panier, dans l'en-tête -->
+  <script src="assets/js/survol.js"></script><!-- la racine sous les liens de l'en-tête, au survol -->
+  <script src="assets/js/millesimes.js"></script>
+  <script src="assets/js/boutique-catalogue.js"></script>
+  <script src="assets/js/boutique.js"></script>
+</body>
+</html>

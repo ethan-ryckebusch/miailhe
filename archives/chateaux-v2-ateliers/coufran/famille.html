@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La famille · Château Coufran · Le vin du grand-père</title>
+  <meta name="description" content="L'histoire du château Coufran et de la famille Miailhe.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-coufran">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="coufran" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <a class="ch-logo" href="index.html" aria-label="Château Coufran, accueil">Coufran</a>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins">Nos vins</a>
+      <a href="famille.html" aria-current="page">La famille</a>
+      <a href="index.html#temoin">L'enquête</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="ch-droite">
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien ici" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran" aria-current="page"><span class="armoirie" data-armoirie="coufran" data-forme="petit"></span></a><a class="famille-lien" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan"><span class="armoirie" data-armoirie="verdignan" data-forme="petit"></span></a><a class="famille-lien" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars"><span class="armoirie" data-armoirie="soudars" data-forme="petit"></span></a></nav>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Une maison de la famille MIAILHE">Une maison <span class="wordmark"></span></a>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main>
+    <section class="histoire-intro">
+      <img src="../assets/img/acte-famille-1931.jpg" alt="La famille Miailhe réunie en 1931">
+      <h1 class="intro-texte" data-anime><span>L'<span class="it">histoire</span><br>du grand-père</span></h1>
+      <a class="fleche-bas" href="#recit" aria-label="Lire l'histoire"></a>
+    </section>
+
+    <section class="bloc-texte" id="recit">
+      <h2 class="titre-65" data-anime>
+        <span>Louis,</span>
+        <span>1924,</span>
+        <span><span class="it">le pari du merlot</span></span>
+      </h2>
+      <div class="paragraphe" data-anime="2">
+        <p>Au XVIII<sup>e</sup> siècle, les archives de l'abbé Baurein citent déjà la maison noble de « Cousran ». Le domaine passe ensuite entre bien des mains : le baron de Brane, le « Napoléon des vignes », qui imposa le cabernet en Médoc ; l'armateur Jean-Valère Cabarrus après la Révolution ; puis les Célérier, négociants à Bordeaux, qui donnent au château son architecture.</p>
+        <p>En 1924, Louis Miailhe, courtier en vins comme les siens depuis 1793, l'achète et fixe son nom : Coufran. En pleine crise, le vin, très cabernet, ne se vend plus. Louis arrache et replante en merlot, plus rond, plus charmeur. Un journaliste l'appellera « le Pomerol du Médoc ». Cent ans plus tard, le domaine n'a pas changé de cap.</p>
+      </div>
+    </section>
+
+    <!-- Avant et après 1924 ([data-avant-apres]) -->
+    <section class="atelier atelier--avant-apres" aria-labelledby="avant-titre">
+      <div class="atelier-texte atelier-texte--large">
+        <h2 class="titre-65" id="avant-titre" data-anime><span>Couffrant</span><span>devient <span class="it">Coufran</span></span></h2>
+        <p class="paragraphe" data-anime="2">En 1924, Louis achète « Couffrant » et en fixe l'orthographe. Le vignoble est alors planté de cabernet-sauvignon ; il le replante en merlot. Faites glisser pour passer d'une époque à l'autre.</p>
+      </div>
+      <div class="avant-apres" data-avant-apres data-anime="2" style="--pos: 50%">
+        <img class="apres" src="../assets/img/coufran-aujourdhui-cadre.jpg" alt="Le château Coufran aujourd'hui" loading="lazy">
+        <div class="avant"><img src="../assets/img/acte-coufran-carte-postale.jpg" alt="Le château vers 1900, encore orthographié Couffrant" loading="lazy"></div>
+        <span class="poignee" aria-hidden="true"></span>
+        <input type="range" min="0" max="100" value="50" aria-label="Passer de la carte postale de 1900 à la photo d'aujourd'hui">
+        <p class="etiquette etiquette--avant">Vers 1900 · surtout du cabernet-sauvignon</p>
+        <p class="etiquette etiquette--apres">Aujourd'hui · 85 % merlot, 15 % cabernet-sauvignon</p>
+      </div>
+    </section>
+
+    <section class="galerie" aria-label="Galerie">
+      <div class="galerie-piste">
+        <figure><img src="../assets/img/coufran-tour.jpg" alt="Le pigeonnier au bout d'un rang de vigne" loading="lazy"></figure>
+        <figure><img src="../assets/img/coufran-vendangeur.jpg" alt="Un vendangeur dans les rangs" loading="lazy"></figure>
+        <figure><img src="../assets/img/coufran-chateau.jpg" alt="La façade du château" loading="lazy"></figure>
+        <figure><img src="../assets/img/coufran-vinification.jpg" alt="Le vin jaillit d'une cuve" loading="lazy"></figure>
+        <figure><img src="../assets/img/coufran-elevage.jpg" alt="Les barriques du chai" loading="lazy"></figure>
+        <figure><img src="../assets/img/coufran-stock.jpg" alt="Les bouteilles qui attendent d'être prêtes" loading="lazy"></figure>
+        <figure><img src="../assets/img/coufran-graves.jpg" alt="Le sol de graves" loading="lazy"></figure>
+        <figure><img src="../assets/img/acte-coufran-carte-postale.jpg" alt="Le château vers 1900, encore orthographié Couffrant" loading="lazy"></figure>
+      </div>
+      <button class="fleche-carrousel fleche-carrousel--prec" type="button" aria-label="Photos précédentes"></button>
+      <button class="fleche-carrousel fleche-carrousel--suiv" type="button" aria-label="Photos suivantes"></button>
+    </section>
+
+    <section class="terroir">
+      <figure class="carte-terroir" data-anime>
+        <svg viewBox="0 0 600 520" role="img" aria-label="Carte indicative : les trois domaines de la famille à Saint-Seurin-de-Cadourne, au bord de l'estuaire">
+          <path class="estuaire" d="M372 0H600V520H572C548 430 516 352 476 286C444 232 410 150 372 0Z"/>
+          <text x="540" y="210" class="petit" transform="rotate(66 540 210)">Estuaire de la Gironde</text>
+          <path class="route" d="M120 40C200 140 300 220 320 300S300 440 330 520"/>
+          <circle cx="306" cy="226" r="3.5" fill="currentColor" opacity=".6"/>
+          <text x="296" y="230" text-anchor="end" class="petit">Saint-Seurin-de-Cadourne</text>
+          <text x="306" y="498" class="petit">Saint-Estèphe ↓</text>
+          <text x="20" y="306" class="petit">← Océan, 30 km</text>
+          <path class="domaine ici" d="M262 92C292 70 344 74 366 98C388 122 380 160 352 176C322 194 274 188 254 162C236 138 236 110 262 92Z"/>
+          <text x="308" y="66" text-anchor="middle" class="ici">Coufran</text>
+          <path class="domaine" d="M356 236C380 220 418 226 430 250C442 276 428 304 400 312C372 320 344 304 340 280C336 262 340 246 356 236Z"/>
+          <text x="388" y="210" text-anchor="middle" class="">Verdignan</text>
+          <path class="domaine" d="M196 356C214 342 244 344 254 362C264 380 252 402 230 406C208 410 186 398 184 380C182 370 186 362 196 356Z"/>
+          <text x="220" y="334" text-anchor="middle" class="">Soudars</text>
+        </svg>
+      </figure>
+      <div class="bloc">
+        <h2 class="titre-65" data-anime>
+          <span>Soixante-seize hectares</span>
+          <span><span class="it">d'un seul tenant</span></span>
+        </h2>
+        <p class="paragraphe" data-anime="2">Au nord de Saint-Seurin-de-Cadourne, une colline de graves et d'argiles culmine à vingt et un mètres et regarde l'estuaire de la Gironde. L'eau et l'océan tout proches tempèrent le climat. Les vieux merlots, cinquante ans en moyenne, donnent au vin sa rondeur et sa tenue.</p>
+        <div class="chiffres" data-anime="3">
+          <div><strong>76 ha</strong>d'un seul tenant</div>
+          <div><strong>85 %</strong>de merlot</div>
+          <div><strong>50 ans</strong>âge moyen des vignes</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lignee">
+      <div class="lignee-grille">
+        <figure class="photo-a" data-anime><img src="../assets/img/coufran-chai.jpg" alt="L'allée du chai à barriques" loading="lazy"></figure>
+        <div class="centre">
+          <h2 class="titre-65" data-anime>
+            <span>Louis l'a planté,</span>
+            <span>Jean l'a <span class="it">gardé</span>,</span>
+            <span>Éric le fait vivre</span>
+          </h2>
+          <div class="paragraphe" data-anime="2">
+            <p>Jean, le fils de Louis, est le seul de ses enfants à rester vigneron : il reprend Coufran. Depuis les années 1980, ses enfants Éric Miailhe et Marie-Cécile Vicaire ont pris le relais, Éric à la vigne et au chai, Marie-Cécile à l'administration. Depuis 2006, Lovely, la fille d'Éric, travaille à ses côtés.</p>
+            <p>Ici, on ne vend pas un vin tant qu'il n'est pas prêt : les bouteilles attendent au château, au frais. Cette patience-là se transmet de père en fils.</p>
+          </div>
+          <ol class="generations" aria-label="Quatre générations de vignerons" data-anime="3">
+            <li class="ici"><strong>Louis</strong>1924</li>
+            <li class=""><strong>Jean</strong>1972</li>
+            <li class=""><strong>Éric</strong>1973</li>
+            <li class=""><strong>Lovely</strong>2006</li>
+          </ol>
+          <div class="signe" data-anime="4">
+            <p>Le vigneron :</p>
+            <p class="signature">Éric Miailhe</p>
+            <p>Œnologue-conseil : Éric Boissenot</p>
+          </div>
+        </div>
+        <figure class="photo-b" data-anime="2"><img src="../assets/img/acte-aujourdhui.jpg" alt="La famille Miailhe devant le château Coufran" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <a class="decouvrir" href="index.html#nos-vins">
+      <img src="../assets/img/coufran-casiers.jpg" alt="" loading="lazy">
+      <p data-anime><span class="it">Découvrez</span><br>nos vins</p>
+    </a>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593102">+33 5 56 59 31 02</a> &nbsp; <a href="mailto:contact@chateau-coufran.com">contact@chateau-coufran.com</a></p>
+        <p class="gris">Visites sur rendez-vous, pour les particuliers et les professionnels.</p>
+      </div>
+      <span class="embleme" data-armoirie="coufran" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Coufran, 33180 Saint-Seurin-de-Cadourne</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Coufran · une maison de la famille <span class="wordmark"></span></a>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../verdignan/index.html">Verdignan</a> · <a href="../soudars/index.html">Soudars</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script src="../assets/js/langue.js"></script><!-- la langue d'abord : la page est traduite avant d'être montrée -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Espace professionnel · Château Soudars · palettes sur devis</title>
+  <meta name="description" content="Château Soudars pour les professionnels : importateurs, distributeurs, négociants, cavistes et restaurateurs. Palettes sur devis, fiches techniques, kit importateur.">
+  <link rel="stylesheet" href="../assets/css/polices.css">
+  <link rel="stylesheet" href="../assets/css/typographie.css">
+  <link rel="stylesheet" href="../assets/css/motifs.css">
+  <link rel="stylesheet" href="../assets/css/chateau.css">
+</head>
+<body class="ch ch-soudars">
+  <!-- Âge légal, comme sur privios.com ; confirmé une seule fois pour toute la famille -->
+  <div class="age" role="dialog" aria-modal="true" aria-labelledby="age-question">
+    <div class="age-centre">
+      <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+      <p class="age-question" id="age-question">Avez-vous l'âge légal pour boire du vin ?</p>
+      <button class="pilule pilule--pleine oui" type="button">Oui, entrer</button>
+      <button class="non" type="button">Non</button>
+      <p class="non-message" hidden>Revenez plus tard : la vigne, elle, sait attendre.</p>
+    </div>
+    <ul class="langues langues--porte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    <p class="age-bas">En entrant, vous confirmez avoir l'âge légal de consommer de l'alcool dans votre pays. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+  <header class="ch-entete">
+    <div class="ch-signature">
+      <a class="ch-logo" href="index.html" aria-label="Château Soudars, accueil"><span class="logo-chateau " data-logo-chateau="soudars" data-forme="logotype" aria-hidden="true"></span></a>
+      <a class="ch-maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html" aria-label="Par MIAILHE : la maison de famille"><i>par</i><span class="wordmark"></span></a>
+    </div>
+    <nav class="ch-nav" aria-label="Navigation du château">
+      <a href="index.html#nos-vins">Nos vins</a>
+      <a href="famille.html">La famille</a>
+      <a href="professionnels.html" aria-current="page">Professionnels</a>
+      <a href="#contact">Contact</a>
+      <a class="ch-nav-mobile" href="../boutique.html#soudars">La boutique</a>
+      <a class="ch-nav-mobile" href="../enquete.html">L'enquête</a>
+      <a class="ch-nav-mobile" href="../compte.html">Mon espace client</a>
+      <ul class="langues langues--menu" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </nav>
+    <div class="ch-droite">
+      <a class="ch-fort ch-fort--boutique" href="../boutique.html#soudars" aria-label="La boutique de la famille : les vins des trois châteaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 2.6h3.6M10.7 2.6v4.5c0 .8-.4 1.3-1 1.9-.9.8-1.5 1.8-1.5 3.1v8.2c0 .6.5 1.1 1.1 1.1h5.4c.6 0 1.1-.5 1.1-1.1v-8.2c0-1.3-.6-2.3-1.5-3.1-.6-.6-1-1.1-1-1.9V2.6"/><path d="M8.2 13.4h7.6v4.4H8.2z"/></svg><span>La boutique</span></a>
+      <a class="ch-fort" href="../enquete.html" aria-label="L'enquête Miailhe : participer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L20 20"/></svg><span>L'enquête</span></a>
+      <nav class="ch-familles" aria-label="Les trois châteaux de la famille"><a class="famille-lien" href="../coufran/index.html" data-nom="Coufran" aria-label="Château Coufran"><span class="armoirie" data-armoirie="coufran"></span></a><a class="famille-lien" href="../verdignan/index.html" data-nom="Verdignan" aria-label="Château Verdignan"><span class="armoirie" data-armoirie="verdignan"></span></a><a class="famille-lien ici" href="../soudars/index.html" data-nom="Soudars" aria-label="Château Soudars" aria-current="page"><span class="armoirie" data-armoirie="soudars"></span></a></nav>
+      <span class="ch-icones"><a class="entete-icone entete-compte-lien" href="../compte.html" data-compte aria-label="Mon espace client"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.3" r="3.8"/><path d="M4.6 20.4c.9-3.9 3.9-6 7.4-6s6.5 2.1 7.4 6"/></svg><span class="entete-initiale" data-compte-initiale translate="no" hidden></span></a>
+      <a class="entete-icone" href="../boutique.html#panier" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 11.3a1.1 1.1 0 0 1-1.1 1H7.4a1.1 1.1 0 0 1-1.1-1L5.2 8.2z"/><path d="M9 10.4V6.6a3 3 0 0 1 6 0v3.8"/></svg><b class="entete-pastille" data-panier-compte translate="no" hidden>0</b></a></span>
+      <ul class="langues langues--compacte" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+    </div>
+    <button class="ch-burger" type="button" aria-expanded="false" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main class="pro" data-chateau="soudars">
+    <section class="pro-intro">
+      <img src="../assets/img/soudars-barriques.jpg" alt="Deux rangées de barriques dans le chai de Soudars">
+      <div class="pro-intro-texte">
+        <p class="pro-cachet" data-anime>Espace professionnel · Château Soudars</p>
+        <h1 data-anime="2">Le vin gourmand<br><span class="it">des grandes tablées</span></h1>
+        <p class="pro-accroche" data-anime="3">Importateurs, distributeurs, négociants, cavistes et restaurateurs : commandez Soudars sur devis, au départ du château.</p>
+        <div class="pro-boutons" data-anime="4">
+          <a class="pilule pilule--blanche" href="#demande">Demander un devis</a>
+          <button class="pilule pilule--contour" type="button" data-client>Déjà client</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pro-chiffres" aria-label="En bref">
+      <div data-anime="1"><strong>400 à 600</strong>bouteilles par palette</div>
+      <div data-anime="2"><strong>6</strong>millésimes au choix</div>
+      <div data-anime="3"><strong>Sur devis</strong>aucun prix public</div>
+      <div data-anime="4"><strong>Une équipe</strong>pour les trois châteaux</div>
+    </section>
+
+    <section class="pro-argument">
+      <div class="motif" aria-hidden="true"></div>
+      <p class="pro-sur" data-anime>Pourquoi Soudars</p>
+      <p class="pro-grand" data-anime="2">Rond, juteux et floral : un vin facile à aimer, qui va avec presque tous les plats. Pour le vin au verre, les bistrots et les cavistes qui cherchent un Haut-Médoc à partager, avec des millésimes gardés à la propriété.</p>
+    </section>
+
+    <section class="pro-etapes" aria-labelledby="etapes-titre">
+      <h2 class="titre-65" id="etapes-titre" data-anime><span>Comment</span><span class="it">commander</span></h2>
+      <ol>
+        <li data-anime="1"><span class="pro-num">01</span><h3>Ouvrir un compte</h3><p>La famille valide chaque compte professionnel. Il donne accès aux tarifs, au kit et à l'historique de vos commandes.</p></li>
+        <li data-anime="2"><span class="pro-num">02</span><h3>Composer la palette</h3><p>Un vin ou plusieurs, un millésime, un conditionnement. Pas de panier ni de prix publics : chaque palette se chiffre.</p></li>
+        <li data-anime="3"><span class="pro-num">03</span><h3>Recevoir le devis</h3><p>L'équipe commerciale, commune aux trois châteaux, chiffre le vin, le transport, les droits et les documents d'export.</p></li>
+        <li data-anime="4"><span class="pro-num">04</span><h3>Expédier</h3><p>La palette part du château, à Saint-Seurin-de-Cadourne, ou rejoint votre transitaire à Bordeaux.</p></li>
+      </ol>
+    </section>
+
+    <section class="pro-offre" id="offre" aria-labelledby="offre-titre">
+      <h2 class="titre-65" id="offre-titre" data-anime><span>L'offre</span><span class="it">du château</span></h2>
+      <div class="pro-vins">
+        <article class="pro-vin" data-anime>
+          <img src="../assets/img/bouteille-soudars.webp" alt="Château Soudars" loading="lazy">
+          <div>
+            <p class="pro-sur">Le grand vin</p>
+            <h3>Château Soudars</h3>
+            <dl>
+              <div><dt>Cépages</dt><dd>50 % merlot, 49 % cabernet-sauvignon, 1 % cabernet franc</dd></div>
+              <div><dt>Garde</dt><dd>Tout de suite, ou dans dix ans</dd></div>
+              <div><dt>Millésimes</dt><dd>Millésime en cours et vieux millésimes</dd></div>
+              <div><dt>Formats</dt><dd>75 cl · cartons de 6 ou de 12</dd></div>
+            </dl>
+            <div class="pro-actions">
+              <button class="pilule pilule--pleine" type="button" data-ajouter="chateau-soudars">Ajouter à ma demande</button>
+              <a class="pro-lien" href="../assets/docs/soudars-commentaires-2000-2016.pdf" target="_blank" rel="noopener">Les millésimes 2000-2016 (PDF)</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="pro-vieux" aria-labelledby="vieux-titre">
+      <div class="pro-vieux-texte">
+        <p class="pro-sur" data-anime>La marque de la maison</p>
+        <h2 class="titre-65" id="vieux-titre" data-anime="2"><span>Des millésimes</span><span class="it">prêts à boire</span></h2>
+        <p class="paragraphe" data-anime="3">Ici, on ne vend pas un vin tant qu'il n'est pas prêt : les bouteilles attendent au château, au frais. Vos clients reçoivent des millésimes plus anciens, à ouvrir dès leur arrivée. Disponibilités selon le stock, sur demande.</p>
+      </div>
+      <ol class="pro-frise" data-anime="2">
+        <li><strong>2016</strong><p>Fruits noirs et boisé raffiné : gras et onctueux.</p></li>
+        <li><strong>2015</strong><p>Fraise des bois et cassis : rond, tendu et long.</p></li>
+        <li><strong>2014</strong><p>Cerise, cassis et épices : souple, gras et frais.</p></li>
+        <li><strong>2010</strong><p>Fruits noirs mûrs, une puissance et une tension rares : sans doute un des meilleurs vins jamais produits ici.</p></li>
+        <li><strong>2009</strong><p>Le must de la maison, comme 2000 et 2005 : du fruit, de la fraîcheur, des notes grillées et de tabac.</p></li>
+      </ol>
+    </section>
+
+    <section class="pro-formats" aria-labelledby="formats-titre">
+      <h2 class="titre-65" id="formats-titre" data-anime><span>Trois façons</span><span class="it">de remplir une palette</span></h2>
+      <div class="pro-formats-grille">
+        <div class="pro-format" data-anime="1"><p class="pro-sur">La palette du château</p><strong>400 à 600 bouteilles</strong><p>Un vin, ou les vins du château panachés, en cartons de 6 ou de 12.</p></div>
+        <div class="pro-format" data-anime="2"><p class="pro-sur">La demi-palette</p><strong>200 à 300 bouteilles</strong><p>Pour un premier ordre, un caviste ou un groupe de restaurants.</p></div>
+        <div class="pro-format" data-anime="3"><p class="pro-sur">La palette famille</p><strong>400 à 600 bouteilles</strong><p>Un tiers de chaque château : Coufran, Verdignan et Soudars, aux tarifs habituels.</p></div>
+      </div>
+    </section>
+
+    <section class="pro-famille" aria-labelledby="famille-titre">
+      <div class="motif" aria-hidden="true"></div>
+      <p class="pro-sur" data-anime>La palette famille</p>
+      <h2 id="famille-titre" data-anime="2">Trois châteaux,<br><span class="it">une même racine</span></h2>
+      <p class="pro-famille-texte" data-anime="3">Un tiers de chaque château, aux tarifs habituels. Vous ne vendez plus trois vins séparés mais une famille, et vous couvrez trois occasions avec un seul fournisseur.</p>
+      <div class="pro-trio" data-anime="3">
+        <a class="pro-trio-vin" href="../coufran/professionnels.html">
+          <img src="../assets/img/bouteille-coufran.webp" alt="" loading="lazy">
+          <strong>Coufran</strong><small>le déjeuner de famille</small>
+        </a>
+        <a class="pro-trio-vin" href="../verdignan/professionnels.html">
+          <img src="../assets/img/bouteille-verdignan.webp" alt="" loading="lazy">
+          <strong>Verdignan</strong><small>les grandes occasions</small>
+        </a>
+        <a class="pro-trio-vin ici" href="../soudars/professionnels.html">
+          <img src="../assets/img/bouteille-soudars.webp" alt="" loading="lazy">
+          <strong>Soudars</strong><small>les repas simples</small>
+        </a>
+      </div>
+      <button class="pilule pilule--blanche" type="button" data-format="famille" data-anime="4">Demander la palette famille</button>
+    </section>
+
+    <section class="pro-kit" aria-labelledby="kit-titre">
+      <div>
+        <p class="pro-sur" data-anime>Pour vos équipes et vos clients</p>
+        <h2 class="titre-65" id="kit-titre" data-anime="2"><span>Le kit</span><span class="it">importateur</span></h2>
+        <ul data-anime="3">
+          <li>Les trois personnalités de la famille, et l'occasion de chaque vin</li>
+          <li>Les fiches techniques et les commentaires de millésimes</li>
+          <li>Les photos des bouteilles, des châteaux et de la famille</li>
+          <li>Les visuels pour les rayons et les réseaux sociaux</li>
+          <li>Le lien vers l'enquête et ses vidéos sous-titrées</li>
+        </ul>
+        <p class="pro-langues" data-anime="4"><span>Français</span><span>English</span><span>Nederlands</span><span>日本語</span><span>Norsk</span></p>
+      </div>
+      <div class="pro-kit-boite" data-anime="2">
+        <div class="motif" aria-hidden="true"></div>
+        <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+        <p class="pro-kit-nom">Le kit<br>importateur</p>
+        <span class="wordmark"></span>
+        <p class="pro-kit-cle"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Réservé aux comptes validés</p>
+        <button class="pilule pilule--blanche" type="button" data-client>Se connecter pour le télécharger</button>
+      </div>
+    </section>
+
+    <section class="pro-demande" id="demande" aria-labelledby="demande-titre">
+      <div class="pro-demande-texte">
+        <h2 class="titre-65" id="demande-titre" data-anime><span>Votre demande</span><span class="it">de devis</span></h2>
+        <p class="paragraphe" data-anime="2">Choisissez les vins, le millésime et le format : l'équipe commerciale de la famille vous répond avec un devis complet, transport, droits et documents d'export compris.</p>
+        <div class="pro-note" data-anime="3">
+          <p class="pro-sur">Nos partenaires d'abord</p>
+          <p>Vous achetez déjà nos vins auprès d'un négociant de la Place de Bordeaux, ou votre pays a un importateur exclusif ? Dites-le-nous : nous vous mettons en relation avec lui, pour que rien ne change dans vos habitudes.</p>
+        </div>
+        <div class="pro-contact" data-anime="4">
+          <p class="pro-sur">L'équipe commerciale</p>
+          <p><a href="tel:+33556593609">+33 5 56 59 36 09</a><br><a href="mailto:vignoblesmiailhe@orange.fr">vignoblesmiailhe@orange.fr</a></p>
+          <p class="pro-gris">Visites et dégustations sur rendez-vous. Chaque année, aux vendanges, une journée au domaine réunit nos importateurs.</p>
+        </div>
+      </div>
+
+      <div class="pro-demande-cadre">
+        <form class="pro-form" novalidate>
+          <fieldset>
+            <legend>Le format</legend>
+            <div class="pro-radios">
+            <label class="pro-radio"><input type="radio" name="format" value="chateau" checked> <span>La palette du château<small>400 à 600 bouteilles</small></span></label>
+            <label class="pro-radio"><input type="radio" name="format" value="demi"> <span>La demi-palette<small>200 à 300 bouteilles</small></span></label>
+            <label class="pro-radio"><input type="radio" name="format" value="famille"> <span>La palette famille<small>400 à 600 bouteilles</small></span></label>
+            </div>
+          </fieldset>
+          <fieldset class="pro-champ-vins">
+            <legend>Les vins de Soudars</legend>
+          <label class="pro-coche"><input type="checkbox" name="vins" value="chateau-soudars"> <span>Château Soudars</span><select name="millesime-chateau-soudars" aria-label="Millésime de Château Soudars"><option value="Millésime en cours">Millésime en cours</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2010">2010</option><option value="2009">2009</option></select></label>
+            <p class="pro-famille-info" hidden>La palette famille réunit les grands vins des trois châteaux, Coufran, Verdignan et Soudars, un tiers de chacun. Précisez les millésimes dans votre message.</p>
+          </fieldset>
+          <fieldset>
+            <legend>Le conditionnement et la livraison</legend>
+            <div class="pro-ligne">
+              <label>Cartons<select name="carton"><option value="Cartons de 6">Cartons de 6</option><option value="Cartons de 12">Cartons de 12</option></select></label>
+              <label>Livraison<select name="livraison"><option value="Départ du château">Départ du château</option><option value="Chez mon transitaire à Bordeaux">Chez mon transitaire à Bordeaux</option><option value="Rendu chez moi, à chiffrer">Rendu chez moi, à chiffrer</option></select></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Vous</legend>
+            <div class="pro-ligne">
+              <label>Société<input name="societe" required autocomplete="organization"></label>
+              <label>Vous êtes<select name="metier" required><option value="">Choisir</option><option value="Importateur">Importateur</option><option value="Distributeur">Distributeur</option><option value="Négociant">Négociant</option><option value="Caviste">Caviste</option><option value="Restaurant ou hôtel">Restaurant ou hôtel</option><option value="Cadeaux d'entreprise">Cadeaux d'entreprise</option></select></label>
+            </div>
+            <div class="pro-ligne">
+              <label>Nom<input name="nom" required autocomplete="name"></label>
+              <label>Pays<select name="pays" required><option value="">Choisir</option><option value="Belgique">Belgique</option><option value="États-Unis">États-Unis</option><option value="Japon">Japon</option><option value="Norvège">Norvège</option><option value="Canada">Canada</option><option value="France">France</option><option value="Un autre pays">Un autre pays</option></select></label>
+            </div>
+            <div class="pro-ligne">
+              <label>E-mail professionnel<input name="email" type="email" required autocomplete="email"></label>
+              <label>Téléphone<input name="tel" type="tel" autocomplete="tel"></label>
+            </div>
+            <label>Message<textarea name="message" rows="3" placeholder="Vos quantités, votre importateur ou négociant actuel, vos délais…"></textarea></label>
+            <label class="pro-coche pro-coche--seule"><input type="checkbox" name="pro" required> <span>J'achète à titre professionnel.</span></label>
+          </fieldset>
+          <p class="pro-erreur" role="alert"></p>
+          <button class="pilule pilule--pleine" type="submit">Envoyer ma demande de devis</button>
+        </form>
+        <div class="pro-merci" hidden tabindex="-1">
+          <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+          <h3>Merci, votre demande est partie.</h3>
+          <p>Demande n° <strong class="pro-ref"></strong>. L'équipe commerciale de la famille vous répond sous deux jours ouvrés, avec un devis complet.</p>
+          <button class="pilule" type="button" data-nouvelle>Faire une autre demande</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="pro-client" role="dialog" aria-modal="true" aria-labelledby="client-titre" hidden>
+      <div class="pro-client-boite">
+        <button class="pro-fermer" type="button" aria-label="Fermer"></button>
+        <span class="embleme" data-armoirie="soudars" aria-hidden="true"></span>
+        <h3 id="client-titre">Espace client</h3>
+        <p>Recevez un lien de connexion par e-mail : vos tarifs, votre historique et le réassort de votre dernière palette en quelques clics.</p>
+        <form class="pro-lien-form" novalidate>
+          <label>E-mail professionnel<input type="email" name="email" required autocomplete="email"></label>
+          <button class="pilule pilule--pleine" type="submit">Recevoir le lien</button>
+          <p class="pro-lien-ok" hidden>Si ce compte existe, le lien vient de partir. Pas encore de compte ? <a href="#demande">Faites une demande</a> : la famille valide chaque compte.</p>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer class="ch-pied" id="contact">
+    <div class="ch-pied-haut">
+      <div>
+        <p class="titre">Adresse</p>
+        <p>Château Soudars<br>33180 Saint-Seurin-de-Cadourne, France</p>
+        <p class="gris">AOC Haut-Médoc</p>
+      </div>
+      <span class="logo-chateau pied-logo" data-logo-chateau="soudars" data-forme="logo" aria-hidden="true"></span>
+      <div>
+        <p class="titre">Contact</p>
+        <p><a href="tel:+33556593609">+33 5 56 59 36 09</a><br><a href="mailto:vignoblesmiailhe@orange.fr">vignoblesmiailhe@orange.fr</a></p>
+        <p class="gris">Visites sur rendez-vous</p>
+      </div>
+    </div>
+    <div class="ch-contacts">
+      <div class="ch-contact">
+        <p class="titre">Nous rendre visite</p>
+        <p>Les visites de la propriété se font pour les professionnels et les particuliers, uniquement sur rendez-vous.</p>
+        <p>Votre demande : <a href="mailto:vignoblesmiailhe@orange.fr">vignoblesmiailhe@orange.fr</a></p>
+        <p><a class="lien-fleche" href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20Soudars%20Saint-Seurin-de-Cadourne" target="_blank" rel="noopener">Itinéraire ↗</a></p>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Acheter nos vins</p>
+        <ul class="ch-achats"><li><a href="../boutique.html#soudars">La boutique de la famille</a><small>Les trois châteaux, un seul panier</small></li><li>Maisons du Vin<small>Saint-Seurin-de-Cadourne et Pauillac</small></li><li>En Belgique<small>Delhaize</small></li><li>Dans le monde<small>Les négociants de la Place de Bordeaux</small></li></ul>
+      </div>
+      <div class="ch-contact">
+        <p class="titre">Suivez-nous</p>
+        <p><a href="https://fr-fr.facebook.com/chateausoudars" target="_blank" rel="noopener">Château Soudars sur Facebook ↗</a></p>
+        <p><a href="https://www.instagram.com/chateauxcoufranverdignan/" target="_blank" rel="noopener">La famille sur Instagram ↗</a></p>
+      </div>
+    </div>
+    <div class="ch-pied-bas">
+      <a class="maison" href="../%E2%98%85%20MIAILHE%20Vitrine%20V1.html">Château Soudars · une maison de la famille <span class="wordmark"></span></a>
+      <nav class="reseaux" data-reseaux data-facebook="https://fr-fr.facebook.com/chateausoudars"></nav>
+      <ul class="langues langues--pied" aria-label="Langue du site"><li><a href="?lang=fr" lang="fr" data-langue="fr" aria-current="true">Fr</a></li><li><a href="?lang=en" lang="en" data-langue="en">En</a></li><li><a href="?lang=ja" lang="ja" data-langue="ja">日本語</a></li></ul>
+      <nav aria-label="Liens du pied de page">
+        <span>Les autres maisons : <a href="../coufran/index.html">Coufran</a> · <a href="../verdignan/index.html">Verdignan</a></span>
+        <a href="../enquete.html">L'enquête</a>
+        <a href="professionnels.html">Espace professionnel</a>
+        <button class="haut-page" type="button">↑ Haut</button>
+      </nav>
+    </div>
+    <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    <p class="mentions">Château Soudars · RCS Bordeaux 384 685 541 · siège : Château Soudars, 33180 Saint-Seurin-de-Cadourne · directeur de la publication : Éric Miailhe, représentant légal. Maquette de concept, projet étudiant ISCOM 2026, site non officiel. Photographies : sites des châteaux Coufran, Verdignan et Soudars.</p>
+  </footer>
+  <script src="../assets/js/logo.js"></script>
+  <script src="../assets/js/feuille-miailhe.js"></script>
+  <script src="../assets/js/armoiries.js"></script>
+  <script src="../assets/js/logos-chateaux.js"></script>
+  <script src="../assets/js/typographie.js"></script>
+  <script src="../assets/js/reseaux.js"></script>
+  <script src="../assets/js/espace.js"></script>
+  <script src="../assets/js/voix.js"></script>
+  <script src="../assets/js/chateau.js"></script>
+  <script src="../assets/js/survol.js"></script>
+</body>
+</html>

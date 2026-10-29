@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Châteaux Coufran &amp; Verdignan (@chateauxcoufranverdignan) • Photos et vidéos Instagram</title>
+<!-- Le compte Instagram de la famille, avant et après (28/10/2026, demandes de l'utilisateur).
+     Reproduit à l'identique la page du compte telle qu'on la voit connecté sur ordinateur (relevée le 28/10/2026 dans
+     le Chrome de l'utilisateur) : barre latérale d'icônes, en-tête, boutons Suivre / Contacter, cinq stories à la une,
+     quatre onglets, grille de quatre publications par ligne en 3:4. Mesures, icônes et textes viennent de la vraie
+     page ; les images sont dans assets/img/instagram/. N'y figure rien de propre au compte de celui qui regarde (pas de
+     pastilles de notification, pas de photo de profil du visiteur), ni le lien « Download All » d'une extension.
+     « Avant » : @chateauxcoufranverdignan et ses 12 dernières publications. « Après » : le même compte renommé
+     @famillemiailhe (décision du 28/10/2026 : on garde les 1 905 abonnés), photo noire au logo MIAILHE officiel, bio
+     réécrite avec le lien vers le site, stories des trois châteaux, 12 cases vides pour les prochaines publications.
+     Le bouton Avant / Après passe de l'un à l'autre (#avant, #apres). Maquette : rien n'est envoyé. -->
+<style>
+  :root {
+    --fond: #fff; --texte: rgb(12, 16, 20); --gris: rgb(115, 115, 115); --lien: rgb(0, 55, 107);
+    --bouton: rgb(74, 93, 249); --bouton-2: rgb(239, 239, 239); --anneau: rgb(219, 223, 228); --onglet: rgb(115, 115, 115);
+    --vide: #efefef; --vide-icone: #c7c7c7; --pastille: rgb(239, 239, 239);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: rgb(12, 16, 20); --texte: rgb(245, 245, 245); --gris: rgb(168, 168, 168); --lien: rgb(133, 161, 255);
+      --bouton-2: rgb(37, 41, 46); --anneau: rgb(43, 48, 54); --onglet: rgb(168, 168, 168);
+      --vide: rgb(30, 34, 39); --vide-icone: rgb(58, 63, 68); --pastille: rgb(37, 41, 46);
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--fond); color: var(--texte); font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; }
+  svg { display: block; }
+  p { margin: 0; }
+
+  /* ---------- La barre latérale d'Instagram (connecté, ordinateur) ---------- */
+  .ig-barre { position: fixed; z-index: 10; top: 0; bottom: 0; left: 0; width: 72px; }
+  .ig-case { position: absolute; left: 12px; display: grid; place-items: center; width: 48px; height: 56px; border-radius: 8px; color: var(--texte); }
+  .ig-case:hover { background: var(--pastille); }
+  .ig-logo { top: 24px; }
+  .ig-milieu { position: absolute; top: calc(50% - 255px); left: 0; }
+  .ig-bas { position: absolute; bottom: 24px; left: 0; }
+  .ig-milieu .ig-case, .ig-bas .ig-case { position: static; margin-left: 12px; }
+  .ig-moi { width: 24px; height: 24px; border-radius: 50%; background: var(--vide); display: grid; place-items: center; color: var(--gris); }
+
+  /* ---------- Le profil ---------- */
+  .page { width: min(74vw, 1457px); margin: 0 auto; padding: 30px 20px 0; box-sizing: content-box; }
+  .profil { display: none; }
+  .profil.is-montre { display: block; animation: fondu .45s ease-out; }
+  @keyframes fondu { from { opacity: 0; transform: translateY(6px); } }
+
+  .tete { display: grid; grid-template-columns: 150px 1fr; column-gap: 28px; max-width: 680px; margin: 0 auto; }
+  .avatar { grid-row: 1 / span 2; width: 150px; height: 150px; margin-top: 48px; border-radius: 50%; overflow: hidden; background: var(--vide); }
+  .avatar img, .avatar svg { width: 100%; height: 100%; object-fit: cover; }
+  .infos { min-width: 0; padding-top: 17px; }
+  .ligne-nom { display: flex; align-items: center; gap: 8px; }
+  .nom-compte { min-width: 0; overflow: hidden; margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; }
+  .certifie { flex: none; width: 18px; height: 18px; margin-left: -4px; }
+  .options { flex: none; display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
+  .nom-complet { margin-top: 5px; }
+  .chiffres { display: flex; flex-wrap: wrap; gap: 0 16px; margin: 12px 0 0; padding: 0; list-style: none; }
+  .chiffres b { font-weight: 600; }
+  .texte-profil { min-width: 0; padding-top: 20px; }
+  .categorie { color: var(--gris); }
+  .bio { white-space: pre-line; }
+  .lien-bio { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; color: var(--lien); font-weight: 600; }
+
+  .actions { display: grid; grid-template-columns: 302fr 318fr 44px; gap: 8px; max-width: 680px; margin: 24px auto 0; }
+  .actions > * { display: grid; place-items: center; height: 44px; border: 0; border-radius: 12px; background: var(--bouton-2); font-weight: 600; cursor: pointer; }
+  .actions .suivre { background: var(--bouton); color: #fff; }
+
+  /* les stories à la une : l'image, un liseré du fond, puis l'anneau. La rangée défile quand elle déborde, avec les
+     flèches d'Instagram ; 7 px de marge en haut et en bas pour ne pas couper l'anneau */
+  .une-rangee { position: relative; max-width: 680px; margin: 47px auto -7px; }
+  .a-la-une { display: flex; gap: 12px; margin: 0; padding: 7px 0 7px 15px; list-style: none; overflow-x: auto; scrollbar-width: none; scroll-behavior: smooth; }
+  .a-la-une::-webkit-scrollbar { display: none; }
+  .une { flex: none; display: grid; justify-items: center; width: 85px; gap: 15px; cursor: pointer; }
+  .une-fleche { position: absolute; top: 31px; display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 50%; background: #fff; color: #737373; box-shadow: 0 0 5px rgba(0, 0, 0, .25); cursor: pointer; }
+  .une-fleche[data-sens="1"] { right: 6px; }
+  .une-fleche[data-sens="-1"] { left: 6px; }
+  .une-fleche[data-sens="-1"] svg { transform: scaleX(-1); }
+  .une-fleche[hidden] { display: none; }
+  .une-image { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; overflow: hidden; background: var(--vide); box-shadow: 0 0 0 3px var(--fond), 0 0 0 6.5px var(--anneau); }
+  .une-image img { width: 100%; height: 100%; object-fit: cover; }
+  .une-titre { width: 85px; overflow: hidden; font-size: 12px; line-height: 16px; font-weight: 600; text-align: center; white-space: nowrap; text-overflow: ellipsis; }
+
+  /* les quatre onglets */
+  .onglets { display: flex; justify-content: center; gap: 133px; margin-top: 34px; }
+  .onglet { display: grid; place-items: center; width: 64px; height: 44px; border-bottom: 2px solid transparent; color: var(--onglet); }
+  .onglet.is-actif { border-bottom-color: var(--texte); color: var(--texte); }
+
+  /* la grille : quatre publications par ligne, en 3:4, 1 px entre elles */
+  .grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 1px 0 0; padding: 0; list-style: none; }
+  .case { position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; background: var(--vide); }
+  .case img { width: 100%; height: 100%; object-fit: cover; }
+  .case::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0); transition: background .15s; }
+  a.case:hover::after, .case--maquette:hover::after { background: rgba(0, 0, 0, .3); }
+  .case-type, .case-types { position: absolute; z-index: 1; top: 8px; right: 9px; color: #fff; filter: drop-shadow(0 0 2px rgba(0, 0, 0, .45)); }
+  .case-types { display: flex; gap: 6px; }
+  /* @famillemiailhe : trois publications par ligne (28/10/2026, demande de l'utilisateur) */
+  [data-profil="apres"] .grille { grid-template-columns: repeat(3, 1fr); }
+  .case--vide { display: grid; place-items: center; color: var(--vide-icone); }
+
+  /* le pied de page d'Instagram */
+  .ig-pied { margin-top: 22px; padding: 22px 16px 120px; color: var(--gris); font-size: 12px; line-height: 16px; text-align: center; }
+  .ig-pied-liens { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 16px; margin: 0 0 22px; padding: 0; list-style: none; }
+  .ig-pied-bas { display: flex; justify-content: center; gap: 16px; }
+  .ig-langue { display: inline-flex; align-items: center; gap: 4px; }
+
+  /* la fenêtre « Messages », en bas à droite */
+  .ig-messages { position: fixed; z-index: 10; right: 32px; bottom: 31px; display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 22px 0 18px; border-radius: 999px; background: var(--bouton-2); box-shadow: 0 4px 12px rgba(0, 0, 0, .15); font-size: 16px; font-weight: 600; }
+
+  /* ---------- Avant / Après : deux mots en haut à droite, dans le style des onglets d'Instagram (texte, trait sous
+     l'onglet actif), sans pastille, sans flou ni animation de curseur ---------- */
+  .comparer { position: fixed; z-index: 20; top: 18px; right: 32px; display: flex; gap: 22px; margin: 0; }
+  .comparer button { padding: 6px 0 5px; border: 0; border-bottom: 1px solid transparent; background: none; cursor: pointer; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); }
+  .comparer button:hover { color: var(--texte); }
+  .comparer button[aria-pressed="true"] { border-bottom-color: var(--texte); color: var(--texte); }
+  .comparer button:focus-visible { outline: 1px solid var(--texte); outline-offset: 3px; }
+
+  /* ---------- Téléphone : la version mobile d'Instagram (barre d'icônes en bas, trois colonnes) ---------- */
+  @media (max-width: 767px) {
+    .ig-barre { top: auto; right: 0; width: auto; height: 50px; border-top: 1px solid var(--anneau); background: var(--fond); display: flex; justify-content: space-around; align-items: center; }
+    .ig-logo, .ig-bas, .ig-case[data-seul-ordinateur] { display: none; }
+    .ig-milieu { position: static; display: contents; }
+    .ig-milieu .ig-case { margin: 0; height: 50px; }
+    .page { width: auto; padding: 52px 0 0; }
+    .tete { grid-template-columns: 77px 1fr; column-gap: 20px; padding: 0 16px; }
+    .avatar { grid-row: auto; width: 77px; height: 77px; margin-top: 0; }
+    .infos { padding-top: 4px; }
+    .nom-compte { font-size: 20px; line-height: 25px; }
+    .chiffres { gap: 0 14px; margin-top: 8px; }
+    .texte-profil { grid-column: 1 / -1; padding-top: 14px; }
+    .actions { margin: 16px 16px 0; grid-template-columns: 1fr 1fr 34px; gap: 6px; }
+    .actions > * { height: 34px; border-radius: 8px; }
+    .une-rangee { max-width: none; margin: 22px 0 0; }
+    .a-la-une { padding: 6px 16px 8px 22px; gap: 14px; }
+    .une-fleche { display: none; }
+    .une { width: 64px; gap: 12px; }
+    .une-image { width: 56px; height: 56px; }
+    .une-titre { width: 64px; }
+    .onglets { gap: 0; justify-content: space-around; margin-top: 18px; }
+    .grille { grid-template-columns: repeat(3, 1fr); }
+    .case-type, .case-types { top: 5px; right: 5px; }
+    .case-type, .case-types svg { width: 15px; height: 15px; }
+    .case-types { gap: 3px; }
+    .ig-messages { display: none; }
+    /* sur téléphone, les deux mots ont leur ligne au-dessus du profil, et défilent avec la page */
+    .comparer { position: absolute; top: 12px; right: 16px; gap: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .profil.is-montre { animation: none; } }
+</style>
+</head>
+<body>
+
+<!-- La barre d'icônes d'Instagram -->
+<nav class="ig-barre" aria-label="Navigation d'Instagram">
+  <a class="ig-case ig-logo" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="instagram" aria-hidden="true"></svg></a>
+  <div class="ig-milieu">
+    <a class="ig-case" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Accueil"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="accueil" aria-hidden="true"></svg></a>
+    <a class="ig-case" href="https://www.instagram.com/reels/" target="_blank" rel="noopener" aria-label="Reels"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="reels" aria-hidden="true"></svg></a>
+    <a class="ig-case" href="https://www.instagram.com/direct/inbox/" target="_blank" rel="noopener" aria-label="Messages"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="messages" aria-hidden="true"></svg></a>
+    <a class="ig-case" href="https://www.instagram.com/explore/" target="_blank" rel="noopener" aria-label="Recherche"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="recherche" aria-hidden="true"></svg></a>
+    <span class="ig-case" data-seul-ordinateur aria-label="Notifications"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="notifications" aria-hidden="true"></svg></span>
+    <span class="ig-case" aria-label="Nouvelle publication"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="nouvelle" aria-hidden="true"></svg></span>
+    <span class="ig-case" data-seul-ordinateur aria-label="Tableau de bord professionnel"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="tableau" aria-hidden="true"></svg></span>
+    <span class="ig-case" aria-label="Profil"><span class="ig-moi"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M2 23c0-5.5 4.5-9 10-9s10 3.5 10 9Z"/></svg></span></span>
+  </div>
+  <div class="ig-bas">
+    <span class="ig-case" aria-label="Paramètres"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="parametres" aria-hidden="true"></svg></span>
+    <span class="ig-case" aria-label="Autres applications Meta"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="meta" aria-hidden="true"></svg></span>
+  </div>
+</nav>
+
+<main class="page">
+  <section class="profil" data-profil="avant" aria-label="Le compte aujourd'hui : @chateauxcoufranverdignan"></section>
+  <section class="profil" data-profil="apres" aria-label="Le même compte renommé : @famillemiailhe"></section>
+
+  <footer class="ig-pied">
+    <ul class="ig-pied-liens">
+      <li>Meta</li><li>À propos</li><li>Blog</li><li>Emplois</li><li>Aide</li><li>API</li><li>Confidentialité</li><li>Conditions</li><li>Lieux</li><li>Populaire</li><li>Instagram Lite</li><li>Meta AI</li><li>Muse</li><li>Threads</li><li>Importation des contacts et non-utilisateurs</li><li>Meta Verified</li><li>Résilier des contrats ici</li>
+    </ul>
+    <div class="ig-pied-bas">
+      <span class="ig-langue">Français <svg fill="currentColor" height="12" viewBox="0 0 24 24" width="12" aria-hidden="true" style="transform:rotate(180deg)"><path d="M21 17.502a.997.997 0 0 1-.707-.293L12 8.913l-8.293 8.296a1 1 0 1 1-1.414-1.414l9-9.004a1.03 1.03 0 0 1 1.414 0l9 9.004A1 1 0 0 1 21 17.502Z"></path></svg></span>
+      <span>© 2026 Instagram from Meta</span>
+    </div>
+  </footer>
+</main>
+
+<a class="ig-messages" href="https://www.instagram.com/direct/inbox/" target="_blank" rel="noopener"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" data-icone="messages" aria-hidden="true"></svg>Messages</a>
+
+<!-- Passer du compte d'aujourd'hui au compte renommé -->
+<div class="comparer" role="group" aria-label="Le compte avant et après le renommage">
+  <button type="button" data-vers="avant" aria-pressed="true" title="Le compte aujourd’hui, @chateauxcoufranverdignan">Avant</button>
+  <button type="button" data-vers="apres" aria-pressed="false" title="Le même compte renommé, @famillemiailhe">Après</button>
+</div>
+
+<script src="assets/js/logo.js"></script>
+<script src="assets/js/instagram.js"></script>
+</body>
+</html>

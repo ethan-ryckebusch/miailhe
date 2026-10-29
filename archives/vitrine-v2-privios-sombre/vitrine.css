@@ -1,0 +1,266 @@
+/* La vitrine MIAILHE après l'entrée : mise en page reproduite d'après privios.com (accueil et « Nosotros »),
+   aux couleurs de la maison mère : noir, graphite, blanc et un seul rouge, le rouge vigne #e50041.
+   Titres en Circular, le mot mis en avant en Cormorant italique (le « serif-text » de Privios),
+   les années en Felix Titling comme les titres du menu, les signatures à la plume.
+   main.css garde la base, l'en-tête et le menu, l'intro, l'âge légal et l'Enquête. */
+
+.v {
+  --v-fond: #000;
+  --v-fond-2: #121212;
+  --v-fond-3: #1e1e1e;
+  --v-texte: #fff;
+  --v-gris: rgba(255, 255, 255, .56);
+  --v-beige: #d9d2c9;
+  --v-rouge: var(--vigne);
+  --v-rouge-texte: #ff3366;
+  --v-it: "Cormorant Garamond", Garamond, serif;
+  background: var(--v-fond);
+  color: var(--v-texte);
+  font-family: var(--f-ui);
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* Remises à zéro hors de l'Enquête (qui garde ses styles de main.css) : poids d'une balise, sous celui des classes */
+:where(.v > :not(.enquete)) :is(h1, h2, h3, p, blockquote, figure) { margin: 0; font-weight: 400; line-height: inherit; }
+:where(.v > :not(.enquete)) a { text-decoration: none; }
+.v .enquete { font-family: var(--f-serif); font-size: clamp(18px, 1.15vw + 12px, 21px); line-height: 1.55; }
+.v .gris { color: var(--v-gris); }
+
+/* ---------- Typographie Privios ---------- */
+.v-titre { font-family: var(--f-ui); font-weight: 400; font-size: clamp(34px, 3.5vw, 50px); line-height: 1.06; letter-spacing: -.005em; }
+.v-titre > span { display: block; }
+.v-titre em { font-family: var(--v-it); font-style: italic; font-weight: 500; font-size: 1.14em; line-height: .9; letter-spacing: -.01em; }
+.v-titre--grand { font-size: clamp(40px, 4.5vw, 65px); line-height: 1.05; }
+.v-paragraphe { max-width: 520px; font-family: var(--v-it); font-size: 19px; line-height: 1.55; color: var(--v-gris); }
+.v-paragraphe p + p { margin-top: 1.1em; }
+
+/* Bouton pilule (comme Privios) */
+.v .pilule, .v-pied .pilule {
+  display: inline-flex; align-items: center; gap: .6em; padding: .8em 1.6em; border-radius: 30px; cursor: pointer;
+  font-family: var(--f-ui); font-weight: 500; font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  border: 1px solid currentColor; background: none; color: #fff; transition: background .3s, color .3s, border-color .3s;
+}
+.v .pilule:hover { background: #fff; color: #000; border-color: #fff; }
+.v .pilule--pleine { background: #fff; color: #000; border-color: #fff; }
+.v .pilule--pleine:hover { background: var(--v-rouge); color: #fff; border-color: var(--v-rouge); }
+
+/* ---------- 1. L'ouverture : film plein écran, armoiries, promesse ---------- */
+.v-ouverture { position: relative; height: 100svh; min-height: 600px; overflow: hidden; background: #000; }
+.v-fond { position: absolute; inset: 0; }
+.v-fond video { width: 100%; height: 100%; object-fit: cover; opacity: .7; }
+.v-ouverture::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(44% 48% at 50% 50%, rgba(0, 0, 0, .52), transparent 100%), linear-gradient(rgba(0, 0, 0, .35), transparent 26%, transparent 60%, rgba(0, 0, 0, .7));
+}
+.v-ouverture-contenu {
+  position: absolute; z-index: 1; left: 50%; top: 52%; transform: translate(-50%, -50%); width: min(92vw, 820px);
+  display: grid; justify-items: center; gap: 38px; text-align: center; text-shadow: 0 2px 26px rgba(0, 0, 0, .55);
+}
+.v-trio { display: flex; gap: clamp(14px, 1.6vw, 22px); }
+.v-trio .armoirie { width: clamp(44px, 4.2vw, 60px); filter: drop-shadow(0 6px 22px rgba(0, 0, 0, .45)); }
+.v-titre--ouverture { font-size: clamp(38px, 4vw, 58px); }
+.v-fleche-bas { position: absolute; z-index: 1; left: 50%; bottom: 34px; width: 46px; height: 30px; margin-left: -23px; color: #fff; }
+.v-fleche-bas::before { content: ""; position: absolute; left: 50%; top: -6px; width: 30px; height: 30px; margin-left: -15px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); }
+
+/* Entrée : les armoiries tombent l'une après l'autre, puis le titre */
+.v-trio .armoirie, .v-titre--ouverture > span { opacity: 0; transform: translateY(18px); transition: opacity 1.1s var(--ease), transform 1.1s var(--ease); }
+.v.is-entree .v-trio .armoirie, .v.is-entree .v-titre--ouverture > span { opacity: 1; transform: none; }
+.v-trio .armoirie:nth-child(2) { transition-delay: .12s; }
+.v-trio .armoirie:nth-child(3) { transition-delay: .24s; }
+.v-titre--ouverture > span:nth-child(1) { transition-delay: .4s; }
+.v-titre--ouverture > span:nth-child(2) { transition-delay: .52s; }
+.v-titre--ouverture > span:nth-child(3) { transition-delay: .64s; }
+
+/* ---------- 2. Bloc de texte centré (« Innovación, investigación e historia ») ---------- */
+.v-bloc { display: grid; justify-items: center; gap: 46px; padding: 160px 6vw; text-align: center; background: var(--v-fond); }
+.v-bloc--serre { padding: 150px 6vw 70px; }
+
+/* ---------- 3. Le récit en cinq chapitres ---------- */
+.v-recit { position: relative; padding: 40px 0 120px; background: var(--v-fond); }
+/* La racine : un fil rouge qui pousse vers le bas au fil des chapitres (--p, de 0 à 1, piloté par vitrine.js) */
+.v-racine { position: absolute; top: 0; bottom: 120px; left: 50%; width: 1px; margin-left: -.5px; background: rgba(255, 255, 255, .1); }
+.v-racine span { position: absolute; inset: 0; background: var(--v-rouge); transform-origin: top; transform: scaleY(var(--p, 0)); }
+.v-chapitre {
+  position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; column-gap: 12vw;
+  min-height: 100svh; padding: 100px 6vw;
+}
+.v-chapitre::before {   /* le nœud de la racine, à hauteur de chaque chapitre */
+  content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px;
+  border-radius: 50%; background: var(--v-fond); border: 1.5px solid var(--v-rouge);
+}
+.v-chapitre:nth-of-type(even) .v-media { order: 2; }
+.v-media { position: relative; justify-self: center; width: 100%; max-width: 520px; aspect-ratio: 4 / 5; overflow: hidden; background: var(--v-fond-2); }
+.v-media :is(img, video) { width: 100%; height: 100%; object-fit: cover; }
+.v-media figcaption, .v-oenologue-photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 14px; font-size: 11.5px; line-height: 1.4; color: rgba(255, 255, 255, .78);
+  background: linear-gradient(transparent, rgba(0, 0, 0, .6));
+}
+.v-chapitre-texte { display: grid; justify-items: center; gap: 30px; text-align: center; }
+.v-numero { font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--v-gris); }
+.v-numero span { color: var(--v-texte); }
+.v-annee { margin: -6px 0 -12px; font-family: var(--f-menu); font-size: clamp(72px, 8vw, 128px); line-height: .9; letter-spacing: .02em; color: var(--v-rouge); }
+.v-citation { max-width: 440px; font-family: var(--v-it); font-style: italic; font-size: 22px; line-height: 1.4; color: var(--v-beige); }
+.v-signe { display: grid; justify-items: center; gap: 0; }
+.v-signe p:first-child { font-size: 13px; font-weight: 500; color: var(--v-beige); }
+.v-signature { font-family: var(--f-signature); font-size: 60px; line-height: 1.05; color: var(--v-rouge-texte); }
+.v-lien-chateau {
+  display: inline-flex; align-items: center; gap: 12px; padding-bottom: 6px; border-bottom: 1px solid rgba(255, 255, 255, .3);
+  font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; transition: border-color .3s, gap .3s;
+}
+.v-lien-chateau .armoirie { width: 20px; }
+.v-lien-chateau:hover { border-color: var(--armoirie-lien, #fff); gap: 16px; }
+.v-chapitre--coufran .v-lien-chateau { --armoirie-lien: var(--coufran); }
+.v-chapitre--verdignan .v-lien-chateau { --armoirie-lien: var(--verdignan); }
+.v-chapitre--soudars .v-lien-chateau { --armoirie-lien: var(--soudars); }
+
+/* ---------- 4. La galerie du savoir-faire (le carrousel de photos de « Nosotros ») ---------- */
+.v-savoir { background: var(--v-fond); padding-bottom: 110px; }
+.v-galerie { position: relative; }
+.v-galerie-piste { display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 0 6vw; cursor: grab; }
+.v-galerie-piste::-webkit-scrollbar { display: none; }
+.v-galerie-piste figure { position: relative; flex: 0 0 auto; height: min(62vh, 560px); aspect-ratio: 4 / 5; overflow: hidden; scroll-snap-align: center; background: var(--v-fond-2); }
+.v-galerie-piste video { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.v-galerie-piste figure:hover video { transform: scale(1.04); }
+.v-galerie-piste figcaption { position: absolute; left: 18px; bottom: 16px; font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; text-shadow: 0 1px 12px rgba(0, 0, 0, .6); }
+.v-fleche { position: absolute; top: calc(50% - 27px); z-index: 2; width: 54px; height: 54px; border: 0; background: none; cursor: pointer; color: #fff; opacity: .85; }
+.v-fleche::before { content: ""; position: absolute; left: 50%; top: 50%; width: 20px; height: 20px; margin: -10px 0 0 -14px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); }
+.v-fleche--prec { left: 2vw; transform: scaleX(-1); }
+.v-fleche--suiv { right: 2vw; }
+.v-fleche:disabled { opacity: .15; cursor: default; }
+.v-credit { margin: 22px 6vw 0; font-size: 11.5px; color: var(--v-gris); }
+
+/* ---------- 5. La racine commune (« La importancia del origen ») ---------- */
+.v-terroir { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; min-height: 100svh; padding: 120px 6vw; background: var(--v-fond-2); overflow: hidden; }
+.v-carte { width: 100%; max-width: 640px; justify-self: center; }
+.v-carte svg { width: 100%; height: auto; overflow: visible; }
+.v-carte .estuaire { fill: rgba(255, 255, 255, .05); stroke: var(--v-gris); stroke-width: 1.2; }
+.v-carte .route { fill: none; stroke: var(--v-gris); stroke-width: 1; stroke-dasharray: 2 5; opacity: .5; }
+.v-carte .racine { fill: none; stroke: var(--v-rouge); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 900; stroke-dashoffset: 900; transition: stroke-dashoffset 3s var(--ease) .4s; }
+.v-carte.is-in .racine { stroke-dashoffset: 0; }
+.v-carte .village { fill: var(--v-gris); }
+.v-carte .domaine { stroke: none; opacity: .92; }
+.v-carte .domaine--coufran { fill: var(--coufran); }
+.v-carte .domaine--verdignan { fill: var(--verdignan); }
+.v-carte .domaine--soudars { fill: var(--soudars); }
+.v-carte text { font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; fill: var(--v-texte); }
+.v-carte text.petit { font-size: 9.5px; fill: var(--v-gris); }
+.v-carte text.nom { font-weight: 500; }
+.v-terroir-texte { display: grid; justify-items: center; gap: 40px; text-align: center; }
+.v-chiffres { display: flex; justify-content: center; gap: 44px; flex-wrap: wrap; }
+.v-chiffres div { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--v-gris); }
+.v-chiffres strong { display: block; font-family: var(--f-menu); font-weight: 400; font-size: 46px; line-height: 1.1; letter-spacing: 0; color: var(--v-rouge-texte); }
+
+/* ---------- 6. L'œnologue (le bloc « Enólogo ») ---------- */
+.v-oenologue { padding: 150px 6vw 160px; background: var(--v-fond-2); }
+.v-oenologue-grille { display: grid; grid-template-columns: 7fr 5fr; grid-template-rows: auto 1fr; column-gap: clamp(40px, 8vw, 130px); row-gap: 50px; max-width: 1280px; margin: 0 auto; align-items: start; }
+.v-titre--citation { grid-column: 1; text-align: center; color: var(--v-beige); }
+.v-oenologue-texte { grid-column: 1; display: grid; justify-items: center; gap: 36px; text-align: center; }
+.v-oenologue-photo { grid-column: 2; grid-row: 1 / 3; align-self: center; position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
+.v-oenologue-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- 7. Le manifeste en rouge et le cercle ---------- */
+.v-manifeste { display: grid; justify-items: center; gap: 64px; padding: 150px 6vw 170px; background: var(--v-fond); text-align: center; }
+.v-manifeste-titre { font-size: clamp(36px, 4vw, 60px); line-height: 1.06; color: var(--v-rouge-texte); }
+.v-cercle { position: relative; display: block; width: 280px; height: 280px; border-radius: 50%; overflow: hidden; }
+.v-cercle img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: transform .9s var(--ease); }
+.v-cercle:hover img { transform: scale(1.1); }
+.v-cercle::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, .42); transition: background .5s; }
+.v-cercle:hover::after { background: rgba(229, 0, 65, .45); }
+.v-cercle span { position: absolute; z-index: 1; left: 0; right: 0; top: 50%; transform: translateY(-50%); font-size: 30px; line-height: 1.05; color: #fff; }
+.v-cercle em { font-family: var(--v-it); font-style: italic; font-weight: 500; font-size: 1.14em; }
+
+/* ---------- 8. Les châteaux : bandeau et carrousel des trois grands vins ---------- */
+.v-decouvrir { position: relative; display: grid; place-items: center; height: 80svh; min-height: 480px; overflow: hidden; background: #000; text-align: center; }
+.v-decouvrir img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .38; filter: saturate(.6); }
+.v-decouvrir h2 { position: relative; }
+
+.v-bouteilles { position: relative; overflow: hidden; padding: 90px 0 80px; background: linear-gradient(180deg, var(--v-fond-2) 0%, var(--v-fond-3) 100%); }
+.v-piste { position: relative; height: min(64vh, 620px); }
+.v-bouteille {
+  position: absolute; left: 50%; bottom: 40px; height: 88%; width: auto; aspect-ratio: 1 / 3.9;
+  display: grid; place-items: end center; cursor: pointer; border: 0; background: none; padding: 0;
+  transform: translateX(calc(-50% + var(--x, 0px))) rotate(var(--r, 0deg)) scale(var(--s, 1));
+  transform-origin: 50% 100%; opacity: var(--o, 1); filter: brightness(var(--b, 1));
+  transition: transform 1s cubic-bezier(.6, 0, .2, 1), opacity 1s, filter 1s;
+}
+.v-bouteille img { height: 100%; width: auto; filter: drop-shadow(0 28px 26px rgba(0, 0, 0, .55)); }
+.v-bouteille.is-active { cursor: default; }
+.v-bouteille::after { content: ""; position: absolute; bottom: -14px; left: 12%; right: 12%; height: 18px; border-radius: 50%; background: radial-gradient(rgba(0, 0, 0, .55), transparent 70%); }
+.v-bouteilles .v-fleche { top: 40%; }
+.v-bouteilles .v-fleche--prec { left: 6vw; }
+.v-bouteilles .v-fleche--suiv { right: 6vw; }
+.v-bouteille-desc { display: grid; justify-items: center; gap: 4px; min-height: 96px; text-align: center; }
+.v-bouteille-desc .armoirie-active { display: block; width: 30px; margin-bottom: 8px; }
+.v-bouteille-desc .armoirie-active .armoirie { width: 100%; }
+.v-bouteille-desc .nom { font-weight: 500; font-size: 15px; }
+.v-bouteille-desc .origine { font-size: 14px; color: var(--v-gris); }
+.v-points { display: flex; justify-content: center; gap: 7px; margin: 18px 0 30px; }
+.v-points button { width: 6px; height: 6px; padding: 0; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .3); cursor: pointer; }
+.v-points button.is-active { background: #fff; }
+.v-bouteilles-bas { display: flex; justify-content: center; }
+
+/* ---------- 9. Visiter (le bloc « Saborea el futuro de la tradición ») ---------- */
+.v-visiter { display: grid; grid-template-columns: 5fr 6fr; align-items: center; gap: 6vw; min-height: 100svh; padding: 120px 6vw 120px 0; background: var(--v-fond-2); }
+.v-visiter-photo { aspect-ratio: 4 / 5; max-height: 82svh; overflow: hidden; }
+.v-visiter-photo img { width: 100%; height: 100%; object-fit: cover; }
+.v-visiter-texte { display: grid; justify-items: center; gap: 40px; text-align: center; }
+
+/* ---------- Pied de page (comme Privios) ---------- */
+.v-pied { padding: 0 6vw 30px; background: #000; color: #fff; font-family: var(--f-ui); font-size: 12.5px; line-height: 1.5; }
+.v-pied p { margin: 0; }
+.v-pied a { text-decoration: none; }
+.v-pied .titre { font-weight: 500; }
+.v-pied .gris { color: rgba(255, 255, 255, .55); }
+.v-pied-haut { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; padding: 34px 0; border-top: 1px solid rgba(255, 255, 255, .6); }
+.v-pied-haut > :last-child { justify-self: end; text-align: right; }
+.v-pied .wordmark { width: 150px; color: #fff; }
+.v-pied-bas { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 30px; padding-top: 6px; color: rgba(255, 255, 255, .6); }
+.v-pied-bas nav { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+.v-pied-bas a:hover { color: #fff; }
+.v-pied-chateaux a { display: inline-flex; align-items: center; gap: 8px; }
+.v-pied-chateaux .armoirie { width: 14px; }
+.v-sante { margin-top: 22px !important; color: #fff; }
+.v-mentions { margin-top: 6px !important; color: rgba(255, 255, 255, .45); font-size: 11.5px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .v-bloc { padding: 110px 6vw; gap: 34px; }
+  .v-bloc--serre { padding: 110px 6vw 50px; }
+  .v-racine { left: 22px; }
+  .v-chapitre { grid-template-columns: 1fr; row-gap: 40px; min-height: 0; padding: 70px 6vw 70px calc(6vw + 22px); }
+  .v-chapitre::before { left: 22px; top: 70px; }
+  .v-chapitre:nth-of-type(even) .v-media { order: 0; }
+  .v-media { max-width: 440px; }
+  .v-terroir, .v-visiter { grid-template-columns: 1fr; min-height: 0; padding: 100px 6vw; }
+  .v-visiter-photo { max-height: none; }
+  .v-oenologue { padding: 110px 6vw; }
+  .v-oenologue-grille { grid-template-columns: 1fr; }
+  .v-titre--citation, .v-oenologue-texte, .v-oenologue-photo { grid-column: 1; grid-row: auto; }
+  .v-oenologue-photo { max-width: 420px; justify-self: center; width: 100%; }
+  .v-pied-haut { grid-template-columns: 1fr 1fr; }
+  .v-pied-haut .wordmark { display: none; }
+  .v-piste { height: 56vh; }
+  .v-bouteilles .v-fleche--prec { left: 2vw; } .v-bouteilles .v-fleche--suiv { right: 2vw; }
+}
+@media (max-width: 520px) {
+  .v-galerie-piste figure { height: 58vh; }
+  .v-chiffres { gap: 26px; }
+  .v-cercle { width: 230px; height: 230px; }
+  .v-pied-haut { grid-template-columns: 1fr; }
+  .v-pied-haut > :last-child { justify-self: start; text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v-trio .armoirie, .v-titre--ouverture > span { opacity: 1; transform: none; }
+  .v-carte .racine { stroke-dashoffset: 0; }
+}
+
+/* Mode capture (?capture) : tout est visible d'emblée, hauteurs fixes (la fenêtre de capture est très haute) */
+.capture .v-trio .armoirie, .capture .v-titre--ouverture > span { opacity: 1; transform: none; transition: none; }
+.capture .v-carte .racine { stroke-dashoffset: 0; transition: none; }
+.capture .v-racine span { transform: none; }
+.capture .v-ouverture { height: 900px; }
+.capture .v-chapitre, .capture .v-terroir, .capture .v-visiter { min-height: 900px; }
+.capture .v-decouvrir { height: 700px; }
+.capture .v-piste { height: 600px; }
+.capture .v-galerie-piste figure { height: 540px; }
